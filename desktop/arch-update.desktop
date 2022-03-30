@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Terminal=true
-Name=Arch Update
-Icon=/usr/share/icons/arch-update/arch-update.svg
-Exec=arch-update
