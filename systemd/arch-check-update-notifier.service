@@ -1,7 +1,0 @@
-[Unit]
-Description=Arch Check Update Notifier
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=arch-check-update-notifier

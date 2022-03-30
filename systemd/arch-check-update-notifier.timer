@@ -1,9 +1,0 @@
-[Unit]
-Description=Run Arch Check Update Notifier at boot and every hour
-
-[Timer]
-OnBootSec=5
-OnActiveSec=1h
-
-[Install]
-WantedBy=timers.target
