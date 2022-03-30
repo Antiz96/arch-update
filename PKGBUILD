@@ -11,7 +11,7 @@ optdepends=('yay: AUR support'
 	    'libnotify: Desktop notification support'
 	   )
 source=($url/$pkgname.tar.gz)
-sha256sums=()
+sha256sums=(4d00fcb6c8f7dbceb9b97be2b2f190d59a5774c65978719db6daa75068ba8a8c)
 
 package() {
   cd "$srcdir"
