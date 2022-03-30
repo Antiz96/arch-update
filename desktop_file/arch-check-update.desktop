@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Terminal=true
-Name=Arch Check Update
-Icon=/usr/share/icons/Arch-Check-Update/arch-check-update.svg
-Exec=arch-check-update
