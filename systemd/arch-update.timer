@@ -1,8 +1,8 @@
 [Unit]
-Description=Run Arch Update auto check at boot and every hour
+Description=Run Arch Update auto check at boot and then every hour
 
 [Timer]
-OnBootSec=5
+OnStartupSec=15
 OnUnitActiveSec=1h
 
 [Install]
