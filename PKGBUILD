@@ -1,4 +1,4 @@
-# Maintainer: Robin Candau <robincandau@protonmail.com>
+# Maintainer: Robin Candau <robincandau at protonmail dot com>
 pkgname=arch-update
 pkgver=1.0
 pkgrel=1
