@@ -9,7 +9,7 @@ A (.desktop) clickeable icon that automatically changes to act as a pacman updat
 * [Dependencies] (#dependencies)
 * [Usage](#usage)
 * [Documentation](#documentation)
-* [Tips and tricks] (#tipsandtricks)
+* [Tips and tricks] (#tips and tricks)
 
 
 ## Description
@@ -46,16 +46,33 @@ $ chmod +x arch-update/bin/arch-update.sh
 # rm -rf arch-update arch-update-X.X.X.tar.gz #Replace "X.X.X" by the version of the release
 ```
 <br>
-**Be aware that the manual installation will not provide any automatic update or uninstall process. You'll need to redo all the above steps each time there's a new release in order to get the latest version.
+**Be aware that the manual installation will not provide any automatic update or uninstall process. You'll need to redo all the above steps each time there's a new release in order to get the latest version.**
 <br>
-With that said, unless you have specific reasons to perform a manual installation, I'd recommend using the AUR package installation method.**
+**With that said, unless you have specific reasons to perform a manual installation, I'd recommend using the AUR package installation method.**
+
+
+## Dependencies
+
+### Required dependencies
+
+Arch-Update depends on the [pacman-contrib](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package") package
+
+### Optionnal dependencies
+
+Arch-Update optionnaly depends on the [yay](https://aur.archlinux.org/packages/yay "yay package") package to check and apply AUR's package update
+<br>
+Arch-Update optionnaly depends on the [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") package (notify-send) to send desktop notifications when checking for available updates
+<br>
+*In order to get "libnotify" (and thus "notify-send") you have to install a notification server (if you don't already have one)*
+<br>
+*See https://wiki.archlinux.org/title/Desktop_notifications#Notification_servers*
 
 
 ## Usage
 
 ### Wiki Usage Page
 
-The usage consist of integrating the (.desktop) icon anywhere (could be your desktop, your dock, your launchbar and/or your app menu) and enabling the systemd timer.
+The usage consist of integrating the **(.desktop) icon** anywhere (could be your desktop, your dock, your launchbar and/or your app menu) and enabling the **systemd timer**.
 <br>
 Refer to the [Wiki Usage Page](https://github.com/Antiz96/arch-update/wiki/Usage "Wiki Usage Page") and to the screenshots below for more information.
 
