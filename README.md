@@ -78,8 +78,6 @@ Refer to the [Wiki Usage Page](https://github.com/Antiz96/arch-update/wiki/Usage
 
 ### Screenshot
 
-![Capture d’écran_2022-03-31_23-23-17](https://user-images.githubusercontent.com/53110319/161151298-f98c9f63-3fe2-4c18-a2fa-7761a96225db.png)
-
 **Coming soon**
 
 
