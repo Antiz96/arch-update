@@ -29,7 +29,7 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 
 Download the latest [release](https://github.com/Antiz96/arch-update/releases "latest release") ".tar.gz" archive and put it in "/tmp"
 <br>
-Then type the following commands *(the commands preceded with a "#" need to be launched with root privileges. Use sudo for instance)* :
+Then type the following commands (*the commands preceded with a "#" need to be launched with root privileges. Use sudo for instance*) :
 <br>
 ```
 $ cd /tmp
