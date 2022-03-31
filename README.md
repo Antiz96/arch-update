@@ -16,7 +16,7 @@ A (.desktop) clickeable icon that automatically changes to act as a pacman updat
 
 A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier, easy to integrate with any DE/WM, docks, launchbars or app menus. 
 <br>
-Optionnal supports for the AUR (through **yay**) and desktop notifications. 
+Optionnal support for the AUR (through **yay**) and desktop notifications. 
 
 
 ## Installation
@@ -34,7 +34,7 @@ Then type the following commands (*the commands preceded with a "#" need to be l
 ```
 $ cd /tmp
 $ mkdir arch-update
-$ tar -xvf arch-update-X.X.X.tar.gz -C arch-update #Replace "X.X.X" by the version of the release
+$ tar -xvf arch-update-X.X.X.tar.gz -C arch-update #Replace "X.X.X" by the release's version
 $ chmod +x arch-update/bin/arch-update.sh
 # cp arch-update/bin/arch-update.sh /usr/local/bin/arch-update
 # cp -r arch-update/icons/ /usr/share/icons/arch-update
@@ -43,7 +43,7 @@ $ chmod +x arch-update/bin/arch-update.sh
 # mkdir -p /usr/local/share/man/man1
 # cp arch-update/man/arch-update.1.gz /usr/local/share/man/man1/
 # cp arch-update/systemd/* /etc/systemd/user/
-# rm -rf arch-update arch-update-X.X.X.tar.gz #Replace "X.X.X" by the version of the release
+# rm -rf arch-update arch-update-X.X.X.tar.gz #Replace "X.X.X" by the release's version
 ```
 **Be aware that the manual installation will not provide any automatic update or uninstall process. You'll need to redo all the above steps each time there's a new release in order to get the latest version.**
 <br>
@@ -58,7 +58,7 @@ Arch-Update depends on the [pacman-contrib](https://archlinux.org/packages/commu
 
 ### Optionnal dependencies
 
-Arch-Update optionnaly depends on the [yay](https://aur.archlinux.org/packages/yay "yay package") package to check and apply AUR's package update
+Arch-Update optionnaly depends on the [yay](https://aur.archlinux.org/packages/yay "yay package") package to check and apply AUR's packages updates
 <br>
 <br>
 Arch-Update optionnaly depends on the [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") package (notify-send) to send desktop notifications when checking for available updates
