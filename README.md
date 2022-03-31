@@ -29,7 +29,7 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 
 Download the latest [release](https://github.com/Antiz96/arch-update/releases "latest release") ".tar.gz" archive and put it in "/tmp"
 <br>
-Then type the following commands (the commands preceded with a "#" need to be launched with root privileges. Use sudo for instance) :
+Then type the following commands *(the commands preceded with a "#" need to be launched with root privileges. Use sudo for instance)* :
 <br>
 ```
 $ cd /tmp
@@ -46,9 +46,9 @@ $ chmod +x arch-update/bin/arch-update.sh
 # rm -rf arch-update arch-update-X.X.X.tar.gz #Replace "X.X.X" by the version of the release
 ```
 <br>
-**Be aware that the manual installation will not provide any automatic update or uninstall process. You'll need to redo all the above steps each time there's a new release in order to get the latest version.**
+**Be aware that the manual installation will not provide any automatic update or uninstall process. You'll need to redo all the above steps each time there's a new release in order to get the latest version.
 <br>
-**With that said, unless you have specific reasons to perform a manual installation, I'd recommend using the AUR package installation method.**
+With that said, unless you have specific reasons to perform a manual installation, I'd recommend using the AUR package installation method.**
 
 
 ## Dependencies
@@ -79,7 +79,7 @@ Refer to the [Wiki Usage Page](https://github.com/Antiz96/arch-update/wiki/Usage
 
 ### Screenshot
 
-Coming soon
+**Coming soon**
 
 
 ## Documentation
