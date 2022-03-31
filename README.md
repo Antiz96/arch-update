@@ -45,10 +45,9 @@ $ chmod +x arch-update/bin/arch-update.sh
 # cp arch-update/systemd/* /etc/systemd/user/
 # rm -rf arch-update arch-update-X.X.X.tar.gz #Replace "X.X.X" by the version of the release
 ```
+**Be aware that the manual installation will not provide any automatic update or uninstall process. You'll need to redo all the above steps each time there's a new release in order to get the latest version.**
 <br>
-**Be aware that the manual installation will not provide any automatic update or uninstall process. You'll need to redo all the above steps each time there's a new release in order to get the latest version.
-<br>
-With that said, unless you have specific reasons to perform a manual installation, I'd recommend using the AUR package installation method.**
+**With that said, unless you have specific reasons to perform a manual installation, I'd recommend using the AUR package installation method.**
 
 
 ## Dependencies
