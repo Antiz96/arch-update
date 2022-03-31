@@ -1,7 +1,0 @@
-[Unit]
-Description=Arch Update auto check
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=arch-update --check
