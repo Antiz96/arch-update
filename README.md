@@ -6,10 +6,10 @@ A (.desktop) clickeable icon that automatically changes to act as a pacman updat
 ## Table of contents
 * [Description](#description)
 * [Installation](#installation)
-* [Dependencies] (#dependencies)
+* [Dependencies](#dependencies)
 * [Usage](#usage)
 * [Documentation](#documentation)
-* [Tips and tricks] (#tips and tricks)
+* [Tips and tricks](#tips and tricks)
 
 
 ## Description
