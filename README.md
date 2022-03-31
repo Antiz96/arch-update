@@ -61,6 +61,7 @@ Arch-Update depends on the [pacman-contrib](https://archlinux.org/packages/commu
 
 Arch-Update optionnaly depends on the [yay](https://aur.archlinux.org/packages/yay "yay package") package to check and apply AUR's package update
 <br>
+<br>
 Arch-Update optionnaly depends on the [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") package (notify-send) to send desktop notifications when checking for available updates
 <br>
 *In order to get "libnotify" (and thus "notify-send") you have to install a notification server (if you don't already have one)*
@@ -70,10 +71,10 @@ Arch-Update optionnaly depends on the [libnotify](https://archlinux.org/packages
 
 ## Usage
 
+The usage consist of integrating the **(.desktop) icon** anywhere (could be your desktop, your dock, your launchbar and/or your app menu) and enabling the **systemd timer**.
+
 ### Wiki Usage Page
 
-The usage consist of integrating the **(.desktop) icon** anywhere (could be your desktop, your dock, your launchbar and/or your app menu) and enabling the **systemd timer**.
-<br>
 Refer to the [Wiki Usage Page](https://github.com/Antiz96/arch-update/wiki/Usage "Wiki Usage Page") and to the screenshots below for more information.
 
 ### Screenshot
