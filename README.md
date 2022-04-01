@@ -95,7 +95,7 @@ When the icon is clicked, it refreshes the package list available for updates an
 ![Arch-Update_List_Packages](https://user-images.githubusercontent.com/53110319/161244601-8ddeb5c4-b6cd-47a7-a035-debdbad75936.png)
 <br>
 <br>
-If you chose to also display the version changes (refer to the **Tips and tricks** section below), this is how it looks like :
+If you chose to show the packages version changes (refer to the **Tips and tricks** section below), this is how it looks like :
 ![Arch-Update_List_Packages_With_Version_Changes](https://user-images.githubusercontent.com/53110319/161244783-bb0de764-04bb-4c39-b17a-54dcfb9de449.png)
 <br>
 <br>
