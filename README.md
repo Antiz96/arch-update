@@ -78,7 +78,28 @@ Refer to the [Wiki Usage Page](https://github.com/Antiz96/arch-update/wiki/Usage
 
 ### Screenshot
 
-**Coming soon**
+Personally, I integrated the (.desktop) icon on my dock
+<br>
+<br>
+It is the penultimate icon from left to right (next to the red "Power Sign" icon)
+<br>
+This is how it looks like when **arch-update** is checking for available updates :
+![Arch-Update_Check](https://user-images.githubusercontent.com/53110319/161241670-8cab8a54-199b-41f1-80e3-95b171bbb70f.png)
+<br>
+If there are available updates, the icon will change and a desktop notification indicating the number of available updates will be sent (*requires **libnotify/notify-send** *) :
+![Arch-Update_Updates_Available+Notif](https://user-images.githubusercontent.com/53110319/161244079-b2ce8f2f-d4d3-42ad-83c1-62161d6da62f.png)
+<br>
+When the icon is clicked, it refreshes the package list available for updates and print it inside a terminal window. Then it asks for the user's confirmation to proceed (*requires **yay** for AUR packages support*) :
+![Arch-Update_List_Packages](https://user-images.githubusercontent.com/53110319/161244601-8ddeb5c4-b6cd-47a7-a035-debdbad75936.png)
+<br>
+If you chose to also display the version changes (refer to the "Tips and tricks" section below), this is how it looks like :
+![Arch-Update_List_Packages_With_Version_Changes](https://user-images.githubusercontent.com/53110319/161244783-bb0de764-04bb-4c39-b17a-54dcfb9de449.png)
+<br>
+Once the user gave the confirmation, the update process will begin and the icon will change accordingly :
+![Arch-Update_Installing](https://user-images.githubusercontent.com/53110319/161245498-35bb8f9d-c050-40f5-ae67-d7a01b0bae19.png)
+<br>
+Finally, when the computer is up to date, the icon will look like this :
+![Arch-Update_up_to_date](https://user-images.githubusercontent.com/53110319/161245726-b3adff52-f91e-40b6-9acc-a7f0d35fa7a5.png)
 
 
 ## Documentation
