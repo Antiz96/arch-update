@@ -110,7 +110,11 @@ Finally, when the computer is up to date, the icon will look like this :
 ## Documentation
 
 Refer to the [Wiki Documentation Page](https://github.com/Antiz96/arch-update/wiki/Documentation "Wiki Documentation Page")
-
+<br>
+<br>
+The full documentation is also available as a man page and with the "--help" function. 
+<br>
+Type `man arch-update` or `arch-update --help` after you've installed the **arch-update** package.
 
 ## Tips and tricks
 
