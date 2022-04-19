@@ -43,7 +43,7 @@ $ chmod +x arch-update/bin/arch-update.sh
 # mkdir -p /usr/local/share/man/man1
 # cp arch-update/man/arch-update.1.gz /usr/local/share/man/man1/
 # cp arch-update/systemd/* /etc/systemd/user/
-# rm -rf arch-update arch-update-X.X.X.tar.gz #Replace "X.X.X" by the release's version
+$ rm -rf arch-update arch-update-X.X.X.tar.gz #Replace "X.X.X" by the release's version
 ```
 **Be aware that the manual installation will not provide any automatic update or uninstall process. You'll need to redo all the above steps each time there's a new release in order to get the latest version.**
 <br>
