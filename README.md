@@ -57,16 +57,16 @@ curl -s https://raw.githubusercontent.com/Antiz96/Arch-Update/main/uninstall.sh 
 
 ### Required dependencies
 
-Arch-Update depends on the [pacman-contrib](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package") package
+Arch-Update depends on the [pacman-contrib](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package") package.
 
 ### Optionnal dependencies
 
-Arch-Update optionnaly depends on the [yay](https://aur.archlinux.org/packages/yay "yay package") package to check and apply AUR's packages updates
+Arch-Update optionnaly depends on the [yay](https://aur.archlinux.org/packages/yay "yay package") package to check and apply AUR's packages updates.
 <br>
 <br>
-Arch-Update optionnaly depends on the [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") package (notify-send) to send desktop notifications when checking for available updates
+Arch-Update optionnaly depends on the [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") package (notify-send) to send desktop notifications when checking for available updates.
 <br>
-*In order to get "libnotify" (and thus "notify-send") you have to install a notification server (if you don't already have one)*
+*In order to get "libnotify" (and thus "notify-send") you have to install a notification server (if you don't already have one).*
 <br>
 *See https://wiki.archlinux.org/title/Desktop_notifications#Notification_servers*
 
@@ -81,10 +81,10 @@ Refer to the [Wiki Usage Page](https://github.com/Antiz96/arch-update/wiki/Usage
 
 ### Screenshot
 
-Personally, I integrated the (.desktop) icon on my dock
+Personally, I integrated the (.desktop) icon on my dock.
 <br>
 <br>
-It is the penultimate icon from left to right (next to the red "Power Sign" icon)
+It is the penultimate icon from left to right (next to the red "Power Sign" icon).
 <br>
 This is how it looks like when **arch-update** is checking for available updates :
 ![Arch-Update_Check](https://user-images.githubusercontent.com/53110319/161241670-8cab8a54-199b-41f1-80e3-95b171bbb70f.png)
@@ -112,7 +112,7 @@ Finally, when the computer is up to date, the icon will look like this :
 
 ## Documentation
 
-Refer to the [Wiki Documentation Page](https://github.com/Antiz96/arch-update/wiki/Documentation "Wiki Documentation Page")
+Refer to the [Wiki Documentation Page](https://github.com/Antiz96/arch-update/wiki/Documentation "Wiki Documentation Page").
 <br>
 <br>
 The full documentation is also available as a man page and with the "--help" function. 
@@ -121,5 +121,4 @@ Type `man arch-update` or `arch-update --help` after you've installed the **arch
 
 ## Tips and tricks
 
-Refer to the [Wiki Tips and tricks Page](https://github.com/Antiz96/arch-update/wiki/Tips-and-tricks "Wiki Tricks and tips Page")
-
+Refer to the [Wiki Tips and tricks Page](https://github.com/Antiz96/arch-update/wiki/Tips-and-tricks "Wiki Tricks and tips Page").
