@@ -15,4 +15,4 @@ sudo cp -f /tmp/arch-update_src/man/arch-update.1.gz /usr/local/share/man/man1/ 
 sudo cp -f /tmp/arch-update_src/systemd/* /etc/systemd/user/ || exit 1
 rm -rf /tmp/arch-update_src/ /tmp/arch-update-$latest_release.tar.gz || exit 1
 
-echo -e "Arch-Update has been successfully installed\nPlease, check https://github.com/Antiz96/Arch-Update for more information\n\nThanks for downloading !"
+echo -e "\nArch-Update has been successfully installed\nPlease, check https://github.com/Antiz96/Arch-Update for more information\n\nThanks for downloading !"
