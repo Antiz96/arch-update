@@ -1,6 +1,6 @@
 # Arch-Update
 
-A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier
+A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier.
 
 
 ## Table of contents
@@ -23,29 +23,32 @@ Optionnal support for the AUR (through **yay**) and desktop notifications.
 
 ### AUR
 
-Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package") AUR package
+Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package") AUR package.
 
-### Manual installation
+### From Source
 
-Download the latest [release](https://github.com/Antiz96/arch-update/releases "latest release") ".tar.gz" archive and put it in "/tmp"
-<br>
-Then type the following commands (*the commands preceded with a "#" need to be launched with root privileges. Use sudo for instance*) :
-<br>
+#### Installation
+
+Launch the following command in your terminal to execute the install script (requires "curl" and "sudo") :
 ```
-$ cd /tmp
-$ mkdir arch-update
-$ tar -xvf arch-update-X.X.X.tar.gz -C arch-update #Replace "X.X.X" by the release's version
-$ chmod +x arch-update/bin/arch-update.sh
-# cp arch-update/bin/arch-update.sh /usr/local/bin/arch-update
-# cp -r arch-update/icons/ /usr/share/icons/arch-update
-# chmod 666 /usr/share/icons/arch-update/*
-# cp arch-update/desktop/arch-update.desktop /usr/share/applications/
-# mkdir -p /usr/local/share/man/man1
-# cp arch-update/man/arch-update.1.gz /usr/local/share/man/man1/
-# cp arch-update/systemd/* /etc/systemd/user/
-$ rm -rf arch-update arch-update-X.X.X.tar.gz #Replace "X.X.X" by the release's version
+curl -s https://raw.githubusercontent.com/Antiz96/Arch-Update/main/install.sh | bash
 ```
-**Be aware that the manual installation will not provide any automatic update or uninstall process. You'll need to redo all the above steps each time there's a new release in order to get the latest version.**
+
+#### Update
+
+Simply re-execute the install script (requires "curl" and "sudo") :
+```
+curl -s https://raw.githubusercontent.com/Antiz96/Arch-Update/main/install.sh | bash
+```
+
+#### Uninstalling
+
+Launch the following command in your terminal to execute the uninstall script :
+```
+curl -s https://raw.githubusercontent.com/Antiz96/Arch-Update/main/uninstall.sh | bash
+```
+
+**Be aware that the installation from source doesn't provide any automatic update or uninstall process. You'll need to relaunch the install script manually each time there's a new release in order to get the latest version and you'll need to manually launch the uninstall script as well if you want to completly remove Arch-Update from your system.**
 <br>
 **With that said, unless you have specific reasons to perform a manual installation, I'd recommend using the AUR package installation method.**
 
