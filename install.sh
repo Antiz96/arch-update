@@ -4,7 +4,7 @@ latest_release=$(curl -s https://raw.githubusercontent.com/Antiz96/Arch-Update/m
 
 curl -Ls https://github.com/Antiz96/Arch-Update/releases/download/v$latest_release/arch-update-$latest_release.tar.gz -o /tmp/arch-update-$latest_release.tar.gz || exit 1
 mkdir -p /tmp/arch-update_src || exit 1
-tar -xvf /tmp/arch-update-$latest_release.tar.gz -C /tmp/arch-update_src/ || exit 1
+tar -xf /tmp/arch-update-$latest_release.tar.gz -C /tmp/arch-update_src/ || exit 1
 chmod +x /tmp/arch-update_src/bin/arch-update.sh || exit 1
 sudo cp -f /tmp/arch-update_src/bin/arch-update.sh /usr/local/bin/arch-update || exit 1
 sudo cp -rf /tmp/arch-update_src/icons/ /usr/share/icons/arch-update/ || exit 1
