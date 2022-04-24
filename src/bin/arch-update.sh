@@ -5,7 +5,7 @@ AUR=$(command -v yay &> /dev/null ; echo $?)
 NOTIF=$(command -v notify-send &> /dev/null ; echo $?)
 
 case "$1" in
-	#If no argument is passed to the script, execute the main update function
+	#If no option is passed to the "arch-update" command, execute the main update function
 	#This is triggered by cliking on the desktop icon
 	"")
 		#Change the desktop icon to "checking"
@@ -78,9 +78,9 @@ case "$1" in
 	fi
 	;;
 
-	#If the --check (or -c) argument is passed to the script, execute the check function
-	#This is triggered by the systemd --user arch-update.service, which is automatically launched at boot and every hour by the systemd --user arch-update.timer (that has to be enabled)
-	--check|-c)
+	#If the -c (or --check) option is passed to the "arch-update" command, execute the check function
+	#This is triggered by the systemd --user arch-update.service, which is automatically launched at boot and then every hour by the systemd --user arch-update.timer (that has to be enabled)
+	-c|--check)
 		#Change the desktop icon to "checking"
 		cp -f /usr/share/icons/arch-update/arch-update_checking.svg /usr/share/icons/arch-update/arch-update.svg
 
@@ -110,16 +110,16 @@ case "$1" in
 		fi
 	;;
 
-	#If the --help (or -h) argument is passed to the script, print the documentation (man page)
+	#If the -h (or --help) option is passed to the script, print the documentation (man page)
 	#This can be triggered directly by the user, by typing the following command in a terminal : arch-update --help
 	#The documentation is also readable here https://github.com/Antiz96/Arch-Update/blob/main/README.md or by typing the following command in a terminal : man arch-update
-	--help|-h)
+	-h|--help)
 		#Print the documentation (man page) and quit
 		man arch-update | col
 		exit 0
 	;;
 
-	#If any other arguments are passed to the script, print an error and quit
+	#If any other option(s) are passed to the script, print an error and quit
 	*)
 		echo "arch-update : invalid option -- '$1'"
 		echo "Try 'arch-update --help' for more information."
