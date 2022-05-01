@@ -4,7 +4,10 @@
 AUR=$(command -v yay &> /dev/null ; echo $?)
 NOTIF=$(command -v notify-send &> /dev/null ; echo $?)
 
-case "$1" in
+#Replace the $1 var by "option" just to make the script more readable/less complex
+option="$1"
+
+case "$option" in
 	#If no option is passed to the "arch-update" command, execute the main update function
 	#This is triggered by cliking on the desktop icon
 	"")
@@ -121,7 +124,7 @@ case "$1" in
 
 	#If any other option(s) are passed to the script, print an error and quit
 	*)
-		echo "arch-update : invalid option -- '$1'"
+		echo "arch-update : invalid option -- '$option'"
 		echo "Try 'arch-update --help' for more information."
 		exit 1
 	;;
