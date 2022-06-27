@@ -12,7 +12,7 @@ package() {
 	
 	pacman_contrib=$(command -v checkupdates)
 	if [ -z "$pacman_contrib" ]; then
-		echo -e "Installing dependencies (pacman-contrib)...\n"
+		echo "Installing dependencies (pacman-contrib)..."
 		sudo pacman -S --noconfirm pacman-contrib > /dev/null
 	fi
 
