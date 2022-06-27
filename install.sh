@@ -9,6 +9,13 @@ installed=$(command -v "$pkgname")
 current_version=$("$pkgname" -v 2>/dev/null)
 
 package() {
+	
+	pacman_contrib=$(command -v checkupdates)
+	if [ -z "$pacman_contrib" ]; then
+		echo -e "Installing dependencies (pacman-contrib)...\n"
+		sudo pacman -S --noconfirm pacman-contrib > /dev/null
+	fi
+
 	curl -Ls "$url"/archive/v"$latest_release".tar.gz -o /tmp/"$pkgname"-"$latest_release".tar.gz || { echo -e >&2 "An error occured during the download of the $pkgname's archive\n\nPlease, verify that you have a working internet connexion and curl installed on your machine\nIf the problem persists anyway, you can open an issue at $url/issues" ; exit 1; }
 
 	if ! echo "$checksum /tmp/$pkgname-$latest_release.tar.gz" | sha256sum -c --status -; then
