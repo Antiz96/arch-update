@@ -1,0 +1,122 @@
+.TH "ARCH-UPDATE" "1" "March 2022" "Arch-Update v1" "Arch-Update Manual"
+
+.SH NAME
+arch-update \- A (.desktop) clickeable icon that automatically changes to act as an update notifier/applier
+
+.SH SYNOPSIS
+.B arch-update
+[\fI\,OPTION\/\fR]
+
+.SH DESCRIPTION
+A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier, easy to integrate with any DE/WM, docks, launchbars or app menus. 
+.br
+.RB "Optionnal support for the AUR (through " "yay " "or " "paru" ") and desktop notifications."
+
+.SH OPTIONS
+.PP
+.RB "If no option is passed, perform the main " "update " "function : Check for available updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (" "pacman -Syu" ")."
+.br
+.RB "It also supports AUR packages if " "yay " "or " "paru " "is installed."
+.br
+.RB "The " "update " "function is launched when you click on the (.desktop) icon."
+.PP
+
+.TP
+.B \-c, \-\-check
+.RB "Check for available updates and change the (.desktop) icon if there are."
+.br
+.RB "It sends a desktop notification if " "libnotify " "is installed."
+.br
+.RB "It supports AUR updates if " "yay " "or " "paru " "is installed."
+.br
+.RB "The " "\-\-check " "option is automatically launched at boot and then every hour if you enabled the " "systemd.timer " "with the following command :" 
+.br
+.B systemctl \-\-user enable \-\-now arch-update.timer
+
+.TP
+.B \-v, \-\-version
+Print the current version
+
+.TP
+.B \-h, \-\-help
+Print the help
+
+.SH EXIT STATUS
+.TP
+.B 0
+if OK
+
+.TP
+.B 1
+if problems (user didn't gave confirmation to proceed with the installation, a problem happenned during the update process, the user passed an invalid option, ...)
+
+.SH USAGE
+.TP
+.B The (.desktop) icon
+.RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop". 
+.br
+.RB "It will automatically change depending on different states (cheking for updates, updates available, installing updates, up to date). It will launch the main " "update " "function when clicked. It is easy to integrate with any DE/WM, docks, launchbars or app menus."
+
+.TP
+.B The systemd service and timer
+.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "that launches the " "\-\-check " "function."
+.br
+.RB "There's also a systemd timer in " "/usr/lib/systemd/user/arch-update.timer " "that automatically launches the systemd service at boot and then every hour. In order to make the systemd timer work, you need to enable it with the following command :" 
+.br
+.B systemctl \-\-user enable \-\-now arch-update.timer
+
+.SH TIPS AND TRICKS 
+.TP
+.B AUR Support
+.RB "Arch-Update supports AUR packages when checking and installing updates if " "yay " "or " "paru " "is installed"
+.br
+See https://github.com/Jguer/yay and https://aur.archlinux.org/packages/yay
+.br
+See https://github.com/morganamilo/paru and https://aur.archlinux.org/packages/paru
+
+.TP
+.B Desktop notifications Support
+.RB "Arch-Update supports desktop notifications when performing the " "--check " "function if " "libnotify (notify-send) " "is installed"
+.br
+See https://wiki.archlinux.org/title/Desktop_notifications
+
+.TP
+.B Modify the auto-check cycle
+.RB "If you enabled the " "systemd.timer" ", the " "--check " "option is launched automatically at boot and then every hour"
+.br
+.RB "If you want to change that cycle, you can edit the " "/usr/lib/systemd/user/arch-update.timer " "file and modify the " "OnUnitActiveSec " "value"
+.br
+The timer needs to be re-enabled to apply changes, you can do so by launching the following command :
+.br
+.B systemctl --user enable --now arch-update.timer
+.br
+See https://www.freedesktop.org/software/systemd/man/systemd.time.html
+
+.TP
+.B Show packages version changes
+.RB "If you want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command :" 
+.br
+.B sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update
+
+.SH SEE ALSO
+.BR cp (1),
+.BR checkupdates (8),
+.BR echo (1),
+.BR sudo (8),
+.BR pacman (8),
+.BR pacman.conf (5),
+.BR systemd.service (5),
+.BR systemd.timer (5),
+.BR man (1),
+.BR col (1),
+.BR yay (8),
+.BR paru (8),
+.BR notify-send (1)
+.br
+The documentation is also available on the GitHub page https://github.com/Antiz96/arch-update
+
+.SH BUGS
+Please report bugs to the GitHub page https://github.com/Antiz96/arch-update
+
+.SH AUTHOR
+Robin Candau <robincandau@protonmail.com>

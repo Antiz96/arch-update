@@ -1,5 +1,5 @@
 [Unit]
-Description=Arch Update auto check
+Description=Run arch-update auto check
 After=network-online.target
 
 [Service]
