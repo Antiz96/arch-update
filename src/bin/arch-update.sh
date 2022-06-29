@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Current version
-version="1.3.0"
+version="1.3.1"
 
 #Check for optionnal dependencies ("yay" or "paru" for AUR support and "notify-send" (libnotify) for desktop notifications support)
 YAY=$(command -v yay)
