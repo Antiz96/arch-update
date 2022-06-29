@@ -84,7 +84,7 @@ Personally, I integrated the (.desktop) icon on my dock.
 <br>
 It is the penultimate icon from left to right (next to the red "Power Sign" icon).
 <br>
-This is how it looks like when **arch-update** is checking for available updates (*the check is automatically triggered at boot and then every hour if you enabled the [systemd timer](https://github.com/Antiz96/arch-update/wiki/Documentation#-c---check "enable the systemd timer") and can be manually triggered with the `arch-update -c` command* :
+This is how it looks like when **arch-update** is checking for available updates (*the check is automatically triggered at boot and then every hour if you enabled the [systemd timer](https://github.com/Antiz96/arch-update/wiki/Usage#the-systemd-service-and-timer "enable the systemd timer") and can be manually triggered with the `arch-update -c` command* :
 ![Arch-Update_Check](https://user-images.githubusercontent.com/53110319/161241670-8cab8a54-199b-41f1-80e3-95b171bbb70f.png)
 <br>
 <br>
