@@ -73,7 +73,7 @@ Arch-Update optionnaly depends on the [libnotify](https://archlinux.org/packages
 
 ## Usage
 
-The usage consist of integrating the **(.desktop) icon** anywhere (could be your desktop, your dock, your launch bar and/or your app menu) and enabling the [systemd timer](https://github.com/Antiz96/arch-update/wiki/Documentation#-c---check "enable the systemd timer").
+The usage consist of integrating the **(.desktop) icon** anywhere (could be your desktop, your dock, your launch bar and/or your app menu) and enabling the [systemd timer](https://github.com/Antiz96/arch-update/wiki/Usage#the-systemd-service-and-timer "enable the systemd timer").
 
 Refer to the [Wiki Usage Page](https://github.com/Antiz96/arch-update/wiki/Usage "Wiki Usage Page") and to the screenshots below for more information.
 
