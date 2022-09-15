@@ -66,7 +66,7 @@ The .desktop file is located in `/usr/share/applications/arch-update.desktop` (o
 Its icon will automatically change depending on different states (cheking for updates, updates available, installing updates, up to date).  
 It will launch the main `update` function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus.  
 
-## The systemd service and timer
+### The systemd service and timer
 
 There is a systemd service in `/usr/lib/systemd/user/arch-update.service` (or in `/etc/systemd/user/arch-update.service` if you installed `arch-update` [from source](#from-source)) that launches the `--check` function.  
   
