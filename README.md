@@ -63,7 +63,7 @@ The usage consist of integrating [the .desktop file](#the-desktop-file) anywhere
 ### The .desktop file
 
 The .desktop file is located in `/usr/share/applications/arch-update.desktop` (or `/usr/local/share/applications/arch-update.desktop` if you installed `arch-update` [from source](#from-source).  
-It will automatically change depending on different states (cheking for updates, updates available, installing updates, up to date).  
+Its icon will automatically change depending on different states (cheking for updates, updates available, installing updates, up to date).  
 It will launch the main `update` function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus.  
 
 ## The systemd service and timer
