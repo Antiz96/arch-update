@@ -58,7 +58,7 @@ sudo make uninstall
 
 ## Usage
 
-The usage consist of integrating [the .desktop file](#the-\.desktop-file) anywhere (could be your desktop, your dock, your launch bar and/or your app menu) and enabling the [systemd timer](#the-systemd-service-and-timer).
+The usage consist of integrating [the .desktop file](#the-desktop-file) anywhere (could be your desktop, your dock, your launch bar and/or your app menu) and enabling the [systemd timer](#the-systemd-service-and-timer).
 
 ### The .desktop file
 
