@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "March 2022" "Arch-Update v1" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "September 2022" "Arch-Update v1" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- A (.desktop) clickeable icon that automatically changes to act as an update notifier/applier
@@ -98,7 +98,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 .B Show packages version changes
 .RB "If you want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command :" 
 .br
-.B sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update
+.B sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
 
 .SH SEE ALSO
 .BR cp (1),
