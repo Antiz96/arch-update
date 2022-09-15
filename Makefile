@@ -28,6 +28,10 @@ install:
 
 uninstall:
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}"
+	rm -rf "${DESTDIR}/usr/share/icons/${pkgname}/" 
+	rm -f "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
+	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
+	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
 	rm -f "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1.gz"
 	rm -rf "${DESTDIR}${PREFIX}/share/doc/${pkgname}/"
 
