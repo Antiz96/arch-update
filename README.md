@@ -26,6 +26,8 @@ Arch-Update **optionnally** depends on:
 - [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") (`notify-send`) to send desktop notifications when checking for available updates.  
 *In order to get `libnotify` (and thus `notify-send`) you have to install a notification server (if you don't already have one).*  
 *See https://wiki.archlinux.org/title/Desktop_notifications#Notification_servers*  
+  
+The [make](https://www.gnu.org/software/make/) package is necessary to install/uninstall `arch-update`, install it via your package manager if needed.
 
 ### Installing dependencies
 
