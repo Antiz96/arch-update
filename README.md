@@ -9,7 +9,7 @@ A (.desktop) clickeable icon that automatically changes to act as a pacman updat
 * [Usage](#usage)
 * [Documentation](#documentation)
 * [Tips and tricks](#tips-and-tricks)
-* [Contributin](#contributing)
+* [Contributing](#contributing)
 
 ## Description
 
