@@ -182,7 +182,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 
 If you want `arch-update` to show the packages version changes in the main `update` function, run the following command:  
 ```
-sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update
+sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update 2>/dev/null || sudo sed -i "s/ | awk '{print \$1}'//g" /usr/local/bin/arch-update 2>/dev/null
 ```
 
 ## Contributing
