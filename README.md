@@ -29,7 +29,7 @@ Arch-Update **optionally** depends on:
 *See https://wiki.archlinux.org/title/Desktop_notifications#Notification_servers*  
   
 Arch-Update's installation/uninstallation depends on:
-- [make](https://www.gnu.org/software/make/ "make package") to execute the `Makefile` required to install/uninstall `arch-update`.
+- [make](https://archlinux.org/packages/core/x86_64/make/ "make package") to execute the `Makefile` required to install/uninstall `arch-update`.
 
 ## Installation
 
