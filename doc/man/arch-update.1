@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "September 2022" "Arch-Update v1" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "November 2022" "Arch-Update v1" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- A (.desktop) clickeable icon that automatically changes to act as an update notifier/applier
@@ -10,13 +10,13 @@ arch-update \- A (.desktop) clickeable icon that automatically changes to act as
 .SH DESCRIPTION
 A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier, easy to integrate with any DE/WM, docks, launch bars or app menus. 
 .br
-.RB "Optionnal support for the AUR (through " "yay " "or " "paru" ") and desktop notifications."
+.RB "Optionnal support for AUR package updates (through " "yay " "or " "paru" ") and desktop notifications."
 
 .SH OPTIONS
 .PP
-.RB "If no option is passed, perform the main " "update " "function : Check for available updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (" "pacman -Syu" ")."
+.RB "If no option is passed, perform the main " "update " "function: Check for available updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (" "pacman -Syu" ")."
 .br
-.RB "It also supports AUR packages if " "yay " "or " "paru " "is installed."
+.RB "It also supports AUR package updates if " "yay " "or " "paru " "is installed."
 .br
 .RB "The " "update " "function is launched when you click on the (.desktop) icon."
 .PP
@@ -27,9 +27,9 @@ A (.desktop) clickeable icon that automatically changes to act as a pacman updat
 .br
 .RB "It sends a desktop notification if " "libnotify " "is installed."
 .br
-.RB "It supports AUR updates if " "yay " "or " "paru " "is installed."
+.RB "It supports AUR packages updates if " "yay " "or " "paru " "is installed."
 .br
-.RB "The " "\-\-check " "option is automatically launched at boot and then every hour if you enabled the " "systemd.timer " "with the following command :" 
+.RB "The " "\-\-check " "option is automatically launched at boot and then every hour if you enabled the " "systemd.timer " "with the following command:" 
 .br
 .B systemctl \-\-user enable \-\-now arch-update.timer
 
@@ -58,19 +58,15 @@ if problems (user didn't gave confirmation to proceed with the installation, a p
 .RB "It will automatically change depending on different states (cheking for updates, updates available, installing updates, up to date). It will launch the main " "update " "function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus."
 
 .TP
-.B The systemd service and timer
-.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "(or in " "/etc/systemd/user/arch-update.service " "if you installed arch-update from source) that launches the " "\-\-check " "function."
-.br
-.RB "There's also a systemd timer in " "/usr/lib/systemd/user/arch-update.timer " "(or in " "/etc/systemd/user/arch-update.timer " "if you installed arch-update from source) that automatically launches the systemd service at boot and then every hour. 
-.br
-In order to make the systemd timer work, you need to enable it with the following command : 
+.B The systemd timer
+.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "(or in " "/etc/systemd/user/arch-update.service " "if you installed arch-update from source) that executes the " "\-\-check " "function when launched. To launch it automatically " "at boot and then once every hour " "enable the associated systemd timer:"
 .br
 .B systemctl \-\-user enable \-\-now arch-update.timer
 
 .SH TIPS AND TRICKS 
 .TP
 .B AUR Support
-.RB "Arch-Update supports AUR packages when checking and installing updates if " "yay " "or " "paru " "is installed"
+.RB "Arch-Update supports AUR package updates when checking and installing updates if " "yay " "or " "paru " "is installed"
 .br
 See https://github.com/Jguer/yay and https://aur.archlinux.org/packages/yay
 .br
@@ -84,11 +80,11 @@ See https://wiki.archlinux.org/title/Desktop_notifications
 
 .TP
 .B Modify the auto-check cycle
-.RB "If you enabled the " "systemd.timer" ", the " "--check " "option is launched automatically at boot and then every hour"
+.RB "If you enabled the " "systemd.timer" ", the " "--check " "option is automatically launched at boot and then once every hour"
 .br
 .RB "If you want to change that cycle, you can edit the " "/usr/lib/systemd/user/arch-update.timer " "(or "/etc/systemd/user/arch-update.timer " if you installed arch-update from source) file and modify the " "OnUnitActiveSec " "value"
 .br
-The timer needs to be re-enabled to apply changes, you can do so by launching the following command :
+The timer needs to be re-enabled to apply changes, you can do so by launching the following command:
 .br
 .B systemctl --user enable --now arch-update.timer
 .br
@@ -96,15 +92,18 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 
 .TP
 .B Show packages version changes
-.RB "If you want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command :" 
+.RB "If you want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command (replace sudo by doas if needed):" 
 .br
 .B sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
+.br
+.B Be aware that you'll have to relaunch that command at each arch-update's new release.
 
 .SH SEE ALSO
 .BR cp (1),
 .BR checkupdates (8),
 .BR echo (1),
 .BR sudo (8),
+.BR doas (1),
 .BR pacman (8),
 .BR pacman.conf (5),
 .BR systemd.service (5),
@@ -118,7 +117,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 The documentation is also available on the GitHub page https://github.com/Antiz96/arch-update
 
 .SH BUGS
-Please report bugs to the GitHub page https://github.com/Antiz96/arch-update
+Please report bugs to the GitHub page https://github.com/Antiz96/arch-update/issues
 
 .SH AUTHOR
 Robin Candau <robincandau@protonmail.com>
