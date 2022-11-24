@@ -43,12 +43,12 @@ case "${option}" in
 
 		#If there are updates available for pacman, print them
 		if [ -n "${packages}" ]; then
-			echo -e "Packages:\n" && echo -e "${packages}\n"
+			echo -e "--Packages--" && echo -e "${packages}\n"
 		fi
 
 		#If there are updates available for the AUR, print them
 		if [ -n "${aur_packages}" ]; then
-			echo -e "AUR Packages:\n" && echo -e "${aur_packages}\n"
+			echo -e "--AUR Packages--" && echo -e "${aur_packages}\n"
 		fi
 
 		#If there is no update available for Pacman nor the AUR, change the desktop icon to "up-to-date" and quit
