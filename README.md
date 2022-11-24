@@ -186,7 +186,7 @@ If you want `arch-update` to show the packages version changes in the main `upda
 ```
 sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
 ```
-**Be aware that you'll have to relaunch that command at each `arch-update` new release**  
+**Be aware that you'll have to relaunch that command at each `arch-update`'s new release**  
 
 ## Contributing
 
