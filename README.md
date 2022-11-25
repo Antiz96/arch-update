@@ -106,7 +106,7 @@ Optionnal support for AUR package updates (through [yay](https://aur.archlinux.o
 
 If no option is passed, perform the main update function: Check for available updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (`pacman -Syu`).  
 It also supports AUR package updates if [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru) is installed.  
-Once the update has been successfully performed, check for pacnew/pacsave files and, if there are, launch `pacdiff` to manage them.  
+Once the update has been successfully performed, check for pacnew/pacsave files and, if there are, offers to launch `pacdiff` to process them.  
 The update function is launched when you click on the (.desktop) icon.  
 
 #### -c, --check
