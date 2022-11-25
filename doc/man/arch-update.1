@@ -1,16 +1,16 @@
 .TH "ARCH-UPDATE" "1" "November 2022" "Arch-Update v1" "Arch-Update Manual"
 
 .SH NAME
-arch-update \- A (.desktop) clickeable icon that automatically changes to act as an update notifier/applier
+arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
 
 .SH SYNOPSIS
 .B arch-update
 [\fI\,OPTION\/\fR]
 
 .SH DESCRIPTION
-A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier, easy to integrate with any DE/WM, docks, launch bars or app menus. 
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu.
 .br
-.RB "Optionnal support for AUR package updates (through " "yay " "or " "paru" ") and desktop notifications."
+.RB "Optionnal support for AUR package updates (through " "yay " "or " "paru" ") and desktop notifications (through " "libnotify" ")."
 
 .SH OPTIONS
 .PP
@@ -18,14 +18,16 @@ A (.desktop) clickeable icon that automatically changes to act as a pacman updat
 .br
 .RB "It also supports AUR package updates if " "yay " "or " "paru " "is installed."
 .br
+.RB "Once the update has been successfully performed, check for pacnew/pacsave files and, if there are, offers to launch " "pacdiff " "to process them."
+.br
 .RB "The " "update " "function is launched when you click on the (.desktop) icon."
 .PP
 
 .TP
 .B \-c, \-\-check
-.RB "Check for available updates and change the (.desktop) icon if there are."
+.RB "Check for available updates and change the (.desktop) icon accordingly if there are."
 .br
-.RB "It sends a desktop notification if " "libnotify " "is installed."
+.RB "It sends a desktop notification containing the number of available updates if " "libnotify " "is installed."
 .br
 .RB "It supports AUR packages updates if " "yay " "or " "paru " "is installed."
 .br
@@ -53,7 +55,7 @@ if problems (user didn't gave confirmation to proceed with the installation, a p
 .SH USAGE
 .TP
 .B The (.desktop) icon
-.RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop". 
+.RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop " "(or in " "/etc/local/share/applications/arch-update.deskop " "if you installed arch-update from source)." 
 .br
 .RB "It will automatically change depending on different states (cheking for updates, updates available, installing updates, up to date). It will launch the main " "update " "function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus."
 
@@ -104,8 +106,9 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 .BR echo (1),
 .BR sudo (8),
 .BR doas (1),
+.BR find (1),
 .BR pacman (8),
-.BR pacman.conf (5),
+.BR pacdiff (8),
 .BR systemd.service (5),
 .BR systemd.timer (5),
 .BR man (1),
