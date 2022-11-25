@@ -15,7 +15,8 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
 Features:
 - Includes a (.desktop) clickeable icon that automatically changes to act as an update notifier/applier. Easy to integrate with any DE/WM, dock, status/launch bar, app menu, etc...
 - Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")), optionally shows the version changes as well.
-- Helps you managing pacnew/pacsave files after an update (through [pacdiff](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")).
+- Offers to print the latest Arch Linux news before applying updates (through [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") and [hq](https://archlinux.org/packages/community/x86_64/hq/ "hq package")).
+- Helps you processing pacnew/pacsave files after an update (through [pacdiff](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/community/x86_64/opendoas/ "opendoas package").
 - Optional support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay "yay AUR package") or [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
 - Optional support for desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package"), see: https://wiki.archlinux.org/title/Desktop_notifications).
@@ -30,7 +31,7 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 
 Install dependencies *(replace `sudo` by `doas` if needed)*:  
 ```
-sudo pacman -S --needed pacman-contrib diffutils vim
+sudo pacman -S --needed pacman-contrib curl hq diffutils vim
 ```
   
 Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git`)*.  
@@ -104,9 +105,10 @@ Optionnal support for AUR package updates (through [yay](https://aur.archlinux.o
 
 ### OPTIONS
 
-If no option is passed, perform the main update function: Check for available updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (`pacman -Syu`).  
-It also supports AUR package updates if [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru) is installed.  
-Once the update has been successfully performed, check for pacnew/pacsave files and, if there are, offers to launch `pacdiff` to process them.  
+If no option is passed, perform the main update function: Check for updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (`pacman -Syu`).  
+It also supports AUR package updates if [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru) is installed. 
+Before performing the updates, it offers to print the latest Arch Linux news to the user.  
+Once the update has been successfully performed, it checks for pacnew/pacsave files and, if there are, it offers to launch `pacdiff` to process them.  
 The update function is launched when you click on the (.desktop) icon.  
 
 #### -c, --check

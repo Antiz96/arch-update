@@ -14,10 +14,11 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
 
 .SH OPTIONS
 .PP
-.RB "If no option is passed, perform the main " "update " "function: Check for available updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (" "pacman -Syu" ")."
+.RB "If no option is passed, perform the main " "update " "function: Check for updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (" "pacman -Syu" ")."
 .br
 .RB "It also supports AUR package updates if " "yay " "or " "paru " "is installed."
 .br
+.RB "Before performing the updates, it offers to print the latest Arch Linux news to the user."
 .RB "Once the update has been successfully performed, check for pacnew/pacsave files and, if there are, offers to launch " "pacdiff " "to process them."
 .br
 .RB "The " "update " "function is launched when you click on the (.desktop) icon."
@@ -107,6 +108,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 .BR sudo (8),
 .BR doas (1),
 .BR find (1),
+.BR curl (1),
 .BR pacman (8),
 .BR pacdiff (8),
 .BR systemd.service (5),
