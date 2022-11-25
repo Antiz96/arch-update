@@ -1,16 +1,16 @@
 .TH "ARCH-UPDATE" "1" "November 2022" "Arch-Update v1" "Arch-Update Manual"
 
 .SH NAME
-arch-update \- A (.desktop) clickeable icon that automatically changes to act as an update notifier/applier
+arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
 
 .SH SYNOPSIS
 .B arch-update
 [\fI\,OPTION\/\fR]
 
 .SH DESCRIPTION
-A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier, easy to integrate with any DE/WM, docks, launch bars or app menus. 
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks which includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu.
 .br
-.RB "Optionnal support for AUR package updates (through " "yay " "or " "paru" ") and desktop notifications."
+.RB "Optionnal support for AUR package updates (through " "yay " "or " "paru" ") and desktop notifications (through " "libnotify" ")."
 
 .SH OPTIONS
 .PP
@@ -18,14 +18,16 @@ A (.desktop) clickeable icon that automatically changes to act as a pacman updat
 .br
 .RB "It also supports AUR package updates if " "yay " "or " "paru " "is installed."
 .br
+.RB "Once the update has been successfully performed, check for pacnew/pacsave files and, if there are, launch " "pacdiff " "to manage them."
+.br
 .RB "The " "update " "function is launched when you click on the (.desktop) icon."
 .PP
 
 .TP
 .B \-c, \-\-check
-.RB "Check for available updates and change the (.desktop) icon if there are."
+.RB "Check for available updates and change the (.desktop) icon accordingly if there are."
 .br
-.RB "It sends a desktop notification if " "libnotify " "is installed."
+.RB "It sends a desktop notification containing the number of available updates if " "libnotify " "is installed."
 .br
 .RB "It supports AUR packages updates if " "yay " "or " "paru " "is installed."
 .br
@@ -104,6 +106,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 .BR echo (1),
 .BR sudo (8),
 .BR doas (1),
+.BR find (1),
 .BR pacman (8),
 .BR pacman.conf (5),
 .BR systemd.service (5),
