@@ -1,10 +1,7 @@
 # Arch-Update
 
-A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier.
-
 ## Table of contents
 * [Description](#description)
-* [Dependencies](#dependencies)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Documentation](#documentation)
@@ -13,23 +10,15 @@ A (.desktop) clickeable icon that automatically changes to act as a pacman updat
 
 ## Description
 
-A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier, easy to integrate with any DE/WM, docks, launch bars or app menus.   
-Optionnal support for the AUR (through [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru")) and desktop notifications. 
-
-## Dependencies
-
-Arch-Update depends on:
-- [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") or [doas](https://archlinux.org/packages/community/x86_64/opendoas/ "doas package") for privilege elevation.
-- [pacman-contrib](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package") to check and print the list of packages available updates.  
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.  
   
-Arch-Update **optionally** depends on:
-- [yay](https://aur.archlinux.org/packages/yay "yay package") or [paru](https://aur.archlinux.org/packages/paru "paru package") to check, list and apply available updates for AUR packages.  
-- [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") (`notify-send`) to send desktop notifications when checking for available updates.  
-*In order to get `libnotify` (and thus `notify-send`) you have to install a notification server (if you don't already have one).*  
-*See https://wiki.archlinux.org/title/Desktop_notifications#Notification_servers*  
-  
-Arch-Update's installation/uninstallation depends on:
-- [make](https://archlinux.org/packages/core/x86_64/make/ "make package") to execute the `Makefile` required to install/uninstall `arch-update`.
+Features:
+- A (.desktop) clickeable icon that automatically changes to act as an update notifier/applier. Easy to integrate with any DE/WM, dock, status/launch bar, app menu, etc...
+- Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")), optionally shows the version changes as well.
+- Helps you managing pacnew/pacsave files after an update (through [pacdiff](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")).
+- Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/community/x86_64/opendoas/ "opendoas package").
+- Optional support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay "yay AUR package") or [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
+- Optional support for desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/) "libnotify package"), see: https://wiki.archlinux.org/title/Desktop_notifications).
 
 ## Installation
 
@@ -39,8 +28,12 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 
 ### From Source
 
-After installing the [dependencies](#dependencies) on your system, download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it.  
-*Alternatively, you can clone this repository via `git`.*  
+Install dependencies *(replace `sudo` by `doas` if needed)*:  
+```
+sudo pacman -S --needed pacman-contrib diffutils vim
+```
+  
+Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git`)*.  
   
 To install `arch-update`, go into the extracted/cloned directory and run the following command *(replace `sudo` by `doas` if needed)*:
 ```
@@ -54,17 +47,17 @@ sudo make uninstall
 
 ## Usage
 
-The usage consist of integrating [the .desktop file](#the-desktop-file) anywhere (could be your desktop, your dock, your launch bar and/or your app menu) and enabling the [systemd timer](#the-systemd-timer).
+The usage consist of integrating [the .desktop file](#the-desktop-file) anywhere (could be your desktop, your dock, your status/launch bar and/or your app menu) and enabling the [systemd timer](#the-systemd-timer).
 
 ### The .desktop file
 
 The .desktop file is located in `/usr/share/applications/arch-update.desktop` (or `/usr/local/share/applications/arch-update.desktop` if you installed `arch-update` [from source](#from-source)).  
 Its icon will automatically change depending on the different states (checking for updates, updates available, installing updates, up to date).  
-It will launch the main `update` function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus.  
+It will launch the main `update` function when clicked (see the [Documentation](#documentation) chapter). It is easy to integrate with any DE/WM, dock, status/launch bar or app menu.  
 
 ### The systemd timer
 
-There is a systemd service in `/usr/lib/systemd/user/arch-update.service` (or in `/etc/systemd/user/arch-update.service` if you installed `arch-update` [from source](#from-source)) that executes the arch-update's `--check` function when launched, in order to check for available updates.  
+There is a systemd service in `/usr/lib/systemd/user/arch-update.service` (or in `/etc/systemd/user/arch-update.service` if you installed `arch-update` [from source](#from-source)) that executes the `check` function when launched (see the [Documentation](#documentation) chapter).  
 To launch it automatically **at boot and then once every hour**, enable the associated systemd timer:  
 ```
 systemctl --user enable --now arch-update.timer
@@ -106,19 +99,20 @@ arch-update [OPTION]
 
 ### DESCRIPTION
 
-A (.desktop) clickeable icon that automatically changes to act as a pacman update notifier/applier, easy to integrate with any DE/WM, docks, launch bars or app menus.  
-Optionnal support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru)) and desktop notifications.  
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks which includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. 
+Optionnal support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru)) and desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/)).  
 
 ### OPTIONS
 
 If no option is passed, perform the main update function: Check for available updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (`pacman -Syu`).  
 It also supports AUR package updates if [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru) is installed.  
+Once the update has been successfully performed, check for pacnew/pacsave files and, if there are, launch `pacdiff` to manage them.  
 The update function is launched when you click on the (.desktop) icon.  
 
 #### -c, --check
 
-Check for available updates and change the (.desktop) icon if there are.  
-It sends a desktop notification if [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/) is installed.  
+Check for available updates and change the (.desktop) icon accordingly if there are.  
+It sends a desktop notification containing the number of available update if [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/) is installed.  
 It supports AUR package updates if [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru) is installed.  
 The `--check` option is automatically launched at boot and then once every hour if you enabled the `systemd.timer` with the following command:  
 ```
