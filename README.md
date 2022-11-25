@@ -13,12 +13,12 @@
 An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.  
   
 Features:
-- A (.desktop) clickeable icon that automatically changes to act as an update notifier/applier. Easy to integrate with any DE/WM, dock, status/launch bar, app menu, etc...
+- Includes a (.desktop) clickeable icon that automatically changes to act as an update notifier/applier. Easy to integrate with any DE/WM, dock, status/launch bar, app menu, etc...
 - Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")), optionally shows the version changes as well.
 - Helps you managing pacnew/pacsave files after an update (through [pacdiff](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/community/x86_64/opendoas/ "opendoas package").
 - Optional support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay "yay AUR package") or [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
-- Optional support for desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/) "libnotify package"), see: https://wiki.archlinux.org/title/Desktop_notifications).
+- Optional support for desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package"), see: https://wiki.archlinux.org/title/Desktop_notifications).
 
 ## Installation
 
@@ -65,7 +65,7 @@ systemctl --user enable --now arch-update.timer
 
 ### Screenshot
 
-Personally, I integrated the (.desktop) file on my dock.  
+Personally, I integrated the .desktop file on my dock.  
   
 It is the penultimate icon from left to right (next to the red "Power Sign" icon).  
 This is how it looks like when `arch-update` is checking for available updates (*the check is automatically triggered at boot and then once every hour if you enabled the [systemd timer](#the-systemd-timer) and can be manually triggered with the `arch-update -c` command:*  
@@ -99,7 +99,7 @@ arch-update [OPTION]
 
 ### DESCRIPTION
 
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks which includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. 
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. 
 Optionnal support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru)) and desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/)).  
 
 ### OPTIONS
