@@ -93,10 +93,36 @@ case "${option}" in
 				;;
 			esac
 
-		#If everything went well, change the desktop icon to "up-to-date" and quit
+		#If everything went well, change the desktop icon to "up-to-date"
 		cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg
-		echo -e "\nUpdates have been applied\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-		exit 0
+		echo -e "\nUpdates have been applied\n"
+
+		#Checking for pacnew/pacsave files
+		pacnew_files=$(find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null)
+
+		#If there are pacnew/pacsave files, ask the user if he wants to manage them
+		if [ -n "${pacnew_files}" ]; then
+			echo -e "Pacnew/Pacsave files has been found on the system\n"
+			read -rp $'Would you like to process these files now? [Y/n] ' answer
+
+			case "${answer}" in
+				#If the user gives the confirmation to proceed, launch pacdiff to manage the pacnew/pacsave files and exit
+				[Yy]|"")
+					"${su_cmd}" pacdiff
+					echo -e "\nPacnew/Pacsave files has been processed\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+					exit 0
+				;;
+
+				#If the user doesn't give the confirmation to proceed, exit
+				*)
+					exit 0
+				;;
+			esac
+		#If there's no pacnew/pacsave files, exit
+		else
+			read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+			exit 0
+		fi
 	fi
 	;;
 	
