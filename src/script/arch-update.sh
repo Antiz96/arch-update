@@ -60,6 +60,7 @@ case "${option}" in
 		else
 			cp -f /usr/share/icons/arch-update/arch-update_updates-available.svg /usr/share/icons/arch-update/arch-update.svg
 			read -rp $'Proceed with installation? [Y/n] ' answer
+			echo ""
 
 			case "${answer}" in
 				#If the user gives the confirmation to proceed, change the desktop icon to "installing" and apply updates
@@ -102,8 +103,9 @@ case "${option}" in
 
 		#If there are pacnew/pacsave files, ask the user if he wants to manage them
 		if [ -n "${pacnew_files}" ]; then
-			echo -e "Pacnew/Pacsave files has been found on the system\n"
+			echo "Pacnew/Pacsave files has been found on the system"
 			read -rp $'Would you like to process these files now? [Y/n] ' answer
+			echo ""
 
 			case "${answer}" in
 				#If the user gives the confirmation to proceed, launch pacdiff to manage the pacnew/pacsave files and exit
