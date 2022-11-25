@@ -29,19 +29,19 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 
 ### From Source
 
-Install dependencies *(replace `sudo` by `doas` if needed)*:  
+Install dependencies:  
 ```
 sudo pacman -S --needed pacman-contrib curl hq diffutils vim
 ```
   
 Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git`)*.  
   
-To install `arch-update`, go into the extracted/cloned directory and run the following command *(replace `sudo` by `doas` if needed)*:
+To install `arch-update`, go into the extracted/cloned directory and run the following command:
 ```
 sudo make install
 ```
    
-To uninstall `arch-update`, go into the extracted/cloned directory and run the following command *(replace `sudo` by `doas` if needed)*:  
+To uninstall `arch-update`, go into the extracted/cloned directory and run the following command:  
 ```
 sudo make uninstall
 ```
@@ -166,7 +166,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 
 ### Show packages version changes
 
-If you want `arch-update` to show the packages version changes in the main `update` function, run the following command *(replace `sudo` with `doas` if needed)*:  
+If you want `arch-update` to show the packages version changes in the main `update` function, run the following command:  
 ```
 sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
 ```
