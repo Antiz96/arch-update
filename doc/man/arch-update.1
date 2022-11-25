@@ -55,7 +55,7 @@ if problems (user didn't gave confirmation to proceed with the installation, a p
 .SH USAGE
 .TP
 .B The (.desktop) icon
-.RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop". 
+.RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop " "(or in " "/etc/local/share/applications/arch-update.deskop " "if you installed arch-update from source)." 
 .br
 .RB "It will automatically change depending on different states (cheking for updates, updates available, installing updates, up to date). It will launch the main " "update " "function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus."
 
@@ -108,7 +108,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 .BR doas (1),
 .BR find (1),
 .BR pacman (8),
-.BR pacman.conf (5),
+.BR pacdiff (8),
 .BR systemd.service (5),
 .BR systemd.timer (5),
 .BR man (1),
