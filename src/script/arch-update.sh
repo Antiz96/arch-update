@@ -60,7 +60,6 @@ case "${option}" in
 		else
 			cp -f /usr/share/icons/arch-update/arch-update_updates-available.svg /usr/share/icons/arch-update/arch-update.svg
 			read -rp $'Proceed with installation? [Y/n] ' answer
-			echo ""
 
 			case "${answer}" in
 				#If the user gives the confirmation to proceed, change the desktop icon to "installing"
@@ -75,7 +74,7 @@ case "${option}" in
 						news_title=$(curl -Ls https://www.archlinux.org/news | hq a attr title | grep ^"View:" | sed s/View:\ //g | head -5)
 	
 						#Print them to the user with a unique number in front of them (so the user can easily select the one to read)
-						echo "--Arch News--"
+						echo -e "\n--Arch News--"
 						i=1
 						while IFS= read -r line; do
 							echo "${i}" - "${line}"
@@ -97,6 +96,7 @@ case "${option}" in
 		
 							#If the user didn't select a news to read, proceed with the installation
 							*)
+								echo ""
 								redo="n"
 							;;
 						esac
