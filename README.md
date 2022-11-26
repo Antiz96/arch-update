@@ -66,25 +66,24 @@ systemctl --user enable --now arch-update.timer
 
 ### Screenshot
 
-Personally, I integrated the .desktop file in my top bar.  
-  
+Personally, I integrated the .desktop icon in my top bar.  
 It is the first icon from the left.  
 ![Up_to_date](https://user-images.githubusercontent.com/53110319/204068077-40775c1c-06dd-4665-b837-08f0cefb3941.png)  
      
-When `arch-update` is checking for updates, the icon changes accordingly *(the check function is automatically triggered at boot and then once every hour if you enabled the [systemd timer](#the-systemd-timer) and can be manually triggered by running the `arch-update -c` command)*:  
+When `arch-update` is checking for updates, the icon changes accordingly *(the `check` function is automatically triggered at boot and then once every hour if you enabled the [systemd timer](#the-systemd-timer) and can be manually triggered by running the `arch-update -c` command)*:  
 ![Searching_for_updates](https://user-images.githubusercontent.com/53110319/204068136-25adb912-54f7-4d95-afd6-f08c5b73677d.png)  
    
 If there are available updates, the icon will show a bell sign and a desktop notification indicating the number of available updates will be sent *(requires [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package"))*:  
 ![Updates_availables](https://user-images.githubusercontent.com/53110319/204068175-5ef1cb05-b72b-44b1-9f4b-0a801d363663.png)  
 ![Updates_availables+notif](https://user-images.githubusercontent.com/53110319/204068184-e2fddf44-ffd6-4b2a-80fe-75e8d20ecf7e.png)  
    
-When the icon is clicked, it refreshes the list of packages available for updates and print it inside a terminal window. Then it asks for the user's confirmation to proceed with the installation *(requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR package updates support)*:  
+When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(It can also be launched by running the `arch-update` command. It requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR package updates support)*:  
 ![List_of_packages](https://user-images.githubusercontent.com/53110319/204068223-a31e7a21-8df7-4e51-ac4b-7df6c52c5d20.png)  
   
-You can optionally configure `arch-update` to show the version changes during the package listing *(see: [Tips and tricks - Show package version changes](#show-packages-version-changes))*:  
+You can optionally configure `arch-update` to show the version changes during the package listing *(see: [Tips and tricks - Show package version changes](#show-package-version-changes))*:  
 ![List_of_packages_with_version](https://user-images.githubusercontent.com/53110319/204068369-2da6480f-7faa-4fa1-937c-6b168ca11795.png)  
 
-Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news so you can acknowledge them easily. Select which news to read by typing its associated number. After your read a news, `arch-update` will once again offers to print latest Arch Linux news, so you can multiple news at each update. Simply press "enter" without typing any number beforehand to proceed with update:  
+Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news so you can acknowledge them easily. Select which news to read by typing its associated number. After your read a news, `arch-update` will once again offers to print latest Arch Linux news, so you can read multiple news at each update. Simply press "enter" without typing any number beforehand to proceed with update:  
 ![Arch_news](https://user-images.githubusercontent.com/53110319/204068653-de484935-344a-4956-b134-5b4b1771360e.png)  
    
 While `arch-update` is performing updates, the icon changes accordingly:  
