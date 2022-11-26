@@ -43,12 +43,12 @@ case "${option}" in
 
 		#If there are updates available for pacman, print them
 		if [ -n "${packages}" ]; then
-			echo -e "--Packages--" && echo -e "${packages}\n"
+			echo "--Packages--" && echo -e "${packages}\n"
 		fi
 
 		#If there are updates available for the AUR, print them
 		if [ -n "${aur_packages}" ]; then
-			echo -e "--AUR Packages--" && echo -e "${aur_packages}\n"
+			echo "--AUR Packages--" && echo -e "${aur_packages}\n"
 		fi
 
 		#If there is no update available for Pacman nor the AUR, change the desktop icon to "up-to-date" and quit
@@ -60,12 +60,47 @@ case "${option}" in
 		else
 			cp -f /usr/share/icons/arch-update/arch-update_updates-available.svg /usr/share/icons/arch-update/arch-update.svg
 			read -rp $'Proceed with installation? [Y/n] ' answer
-			echo ""
 
 			case "${answer}" in
-				#If the user gives the confirmation to proceed, change the desktop icon to "installing" and apply updates
+				#If the user gives the confirmation to proceed, change the desktop icon to "installing"
 				[Yy]|"")
 					cp -f /usr/share/icons/arch-update/arch-update_installing.svg /usr/share/icons/arch-update/arch-update.svg
+				
+					#Offers to read latest Arch Linux news while the redo variable equals "y"
+					redo="y"
+					
+					while [ "${redo}" = "y" ]; do
+						#Get the titles of the latest Arch Linux news
+						news_title=$(curl -Ls https://www.archlinux.org/news | hq a attr title | grep ^"View:" | sed s/View:\ //g | head -5)
+	
+						#Print them to the user with a unique number in front of them (so the user can easily select the one to read)
+						echo -e "\n--Arch News--"
+						i=1
+						while IFS= read -r line; do
+							echo "${i}" - "${line}"
+							((i=i+1))
+						done < <(printf '%s\n' "${news_title}")
+	
+						#Ask the user which news he wants to read
+						read -rp $'\nSelect the news to read (just press \"enter\" to proceed with the installation): ' answer
+	
+						case "${answer}" in
+							#If the user selected a news to read, print its info and content and offer to read news once again (in case the user wants to read another one)
+							1|2|3|4|5)
+								news_selected=$(sed -n "${answer}"p <<< "${news_title}" | sed s/\ /-/g | sed s/[.]//g | awk '{print tolower($0)}')
+								news_info=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | hq '.article-info' text)
+								news_content=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | hq '.article-content' text)
+								echo -e "\n${news_info}\n\n${news_content}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
+
+							;;
+		
+							#If the user didn't select a news to read, proceed with the installation
+							*)
+								echo ""
+								redo="n"
+							;;
+						esac
+					done
 
 					#Update for pacman (if there are)
 					if [ -n "${packages}" ]; then
@@ -103,7 +138,7 @@ case "${option}" in
 
 		#If there are pacnew/pacsave files, ask the user if he wants to manage them
 		if [ -n "${pacnew_files}" ]; then
-			echo "Pacnew/Pacsave files has been found on the system"
+			echo "Pacnew/Pacsave files have been found on the system"
 			read -rp $'Would you like to process these files now? [Y/n] ' answer
 			echo ""
 
@@ -111,7 +146,7 @@ case "${option}" in
 				#If the user gives the confirmation to proceed, launch pacdiff to manage the pacnew/pacsave files and exit
 				[Yy]|"")
 					"${su_cmd}" pacdiff
-					echo -e "\nPacnew/Pacsave files has been processed\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+					echo -e "\nPacnew/Pacsave files have been processed\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 					exit 0
 				;;
 
