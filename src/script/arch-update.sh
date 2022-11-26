@@ -91,7 +91,8 @@ case "${option}" in
 								news_selected=$(sed -n "${answer}"p <<< "${news_title}" | sed s/\ /-/g | awk '{print tolower($0)}')
 								news_info=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | hq '.article-info' text)
 								news_content=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | hq '.article-content' text)
-								echo -e "\n${news_info}\n\n${news_content}\n"
+								echo -e "\n${news_info}\n\n${news_content}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
+
 							;;
 		
 							#If the user didn't select a news to read, proceed with the installation
