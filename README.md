@@ -66,26 +66,35 @@ systemctl --user enable --now arch-update.timer
 
 ### Screenshot
 
-Personally, I integrated the .desktop file on my dock.  
+Personally, I integrated the .desktop file in my top bar.  
   
-It is the penultimate icon from left to right (next to the red "Power Sign" icon).  
-This is how it looks like when `arch-update` is checking for available updates (*the check is automatically triggered at boot and then once every hour if you enabled the [systemd timer](#the-systemd-timer) and can be manually triggered with the `arch-update -c` command:*  
-![Arch-Update_Check](https://user-images.githubusercontent.com/53110319/161241670-8cab8a54-199b-41f1-80e3-95b171bbb70f.png)  
+It is the first icon from the left.  
+![Up_to_date](https://user-images.githubusercontent.com/53110319/204068077-40775c1c-06dd-4665-b837-08f0cefb3941.png)  
+     
+When `arch-update` is checking for updates, the icon changes accordingly *(the check function is automatically triggered at boot and then once every hour if you enabled the [systemd timer](#the-systemd-timer) and can be manually triggered by running the `arch-update -c` command)*:  
+![Searching_for_updates](https://user-images.githubusercontent.com/53110319/204068136-25adb912-54f7-4d95-afd6-f08c5b73677d.png)  
+   
+If there are available updates, the icon will show a bell sign and a desktop notification indicating the number of available updates will be sent *(requires [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package"))*:  
+![Updates_availables](https://user-images.githubusercontent.com/53110319/204068175-5ef1cb05-b72b-44b1-9f4b-0a801d363663.png)  
+![Updates_availables+notif](https://user-images.githubusercontent.com/53110319/204068184-e2fddf44-ffd6-4b2a-80fe-75e8d20ecf7e.png)  
+   
+When the icon is clicked, it refreshes the list of packages available for updates and print it inside a terminal window. Then it asks for the user's confirmation to proceed with the installation *(requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR package updates support)*:  
+![List_of_packages](https://user-images.githubusercontent.com/53110319/204068223-a31e7a21-8df7-4e51-ac4b-7df6c52c5d20.png)  
   
-If there are available updates, the icon will change and a desktop notification indicating the number of available updates will be sent (*requires [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package")*):
-![Arch-Update_Updates_Available+Notif](https://user-images.githubusercontent.com/53110319/161244079-b2ce8f2f-d4d3-42ad-83c1-62161d6da62f.png)  
+You can optionally configure `arch-update` to show the version changes during the package listing *(see: [Tips and tricks - Show package version changes](#show-packages-version-changes))*:  
+![List_of_packages_with_version](https://user-images.githubusercontent.com/53110319/204068369-2da6480f-7faa-4fa1-937c-6b168ca11795.png)  
+
+Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news so you can acknowledge them easily. Select which news to read by typing its associated number. After your read a news, `arch-update` will once again offers to print latest Arch Linux news, so you can multiple news at each update. Simply press "enter" without typing any number beforehand to proceed with update:  
+![Arch_news](https://user-images.githubusercontent.com/53110319/204068653-de484935-344a-4956-b134-5b4b1771360e.png)  
+   
+While `arch-update` is performing updates, the icon changes accordingly:  
+![Installing_updates](https://user-images.githubusercontent.com/53110319/204068693-1f71b07a-e273-46aa-a8c1-7d729617e466.png)  
+
+After each successful update, `arch-update` will scan your system for pacnew/pacsave files and offers to process them via `pacdiff` (if there are):  
+![Pacdiff](https://user-images.githubusercontent.com/53110319/204068789-a45e1576-9336-469b-8b6e-a482fbf6b160.png)  
   
-When the icon is clicked, it refreshes the list of packages available for updates and print it inside a terminal window. Then it asks for the user's confirmation to proceed (*requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages support*):
-![Arch-Update_List_Packages](https://user-images.githubusercontent.com/53110319/161244601-8ddeb5c4-b6cd-47a7-a035-debdbad75936.png)  
-  
-If you chose to show the packages version changes (refer to the [Tips and tricks](#tips-and-tricks) section below), this is how it looks like:
-![Arch-Update_List_Packages_With_Version_Changes](https://user-images.githubusercontent.com/53110319/161244783-bb0de764-04bb-4c39-b17a-54dcfb9de449.png)  
-  
-Once the user gave the confirmation to proceed, the update process will begin and the icon will change accordingly:
-![Arch-Update_Installing](https://user-images.githubusercontent.com/53110319/161245498-35bb8f9d-c050-40f5-ae67-d7a01b0bae19.png)  
-  
-Finally, when the update is over and your machine is up to date, the icon will look like this:
-![Arch-Update_up_to_date](https://user-images.githubusercontent.com/53110319/161245726-b3adff52-f91e-40b6-9acc-a7f0d35fa7a5.png)
+Finally, when the update is over, the icon changes accordingly:  
+![Up_to_date](https://user-images.githubusercontent.com/53110319/204068822-85f19af5-f817-49b9-9a25-96c5364e61fa.png)  
 
 ## Documentation
 
@@ -164,7 +173,7 @@ systemctl --user enable --now arch-update.timer
   
 See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 
-### Show packages version changes
+### Show package version changes
 
 If you want `arch-update` to show the packages version changes in the main `update` function, run the following command:  
 ```
