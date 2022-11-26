@@ -90,7 +90,7 @@ While `arch-update` is performing updates, the icon changes accordingly:
 ![Installing_updates](https://user-images.githubusercontent.com/53110319/204068693-1f71b07a-e273-46aa-a8c1-7d729617e466.png)  
 
 After each successful update, `arch-update` will scan your system for pacnew/pacsave files and offers to process them via `pacdiff` (if there are):  
-![Pacdiff](https://user-images.githubusercontent.com/53110319/204068789-a45e1576-9336-469b-8b6e-a482fbf6b160.png)  
+![Pacdiff](https://user-images.githubusercontent.com/53110319/204069868-34443ec8-6f30-4b9a-871c-113e9bf80fff.png)  
   
 Finally, when the update is over, the icon changes accordingly:  
 ![Up_to_date](https://user-images.githubusercontent.com/53110319/204068822-85f19af5-f817-49b9-9a25-96c5364e61fa.png)  
