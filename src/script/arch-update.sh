@@ -87,7 +87,7 @@ case "${option}" in
 						case "${answer}" in
 							#If the user selected a news to read, print its info and content and offer to read news once again (in case the user wants to read another one)
 							1|2|3|4|5)
-								news_selected=$(sed -n "${answer}"p <<< "${news_title}" | sed s/\ /-/g | awk '{print tolower($0)}')
+								news_selected=$(sed -n "${answer}"p <<< "${news_title}" | sed s/\ /-/g | sed s/[.]//g | awk '{print tolower($0)}')
 								news_info=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | hq '.article-info' text)
 								news_content=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | hq '.article-content' text)
 								echo -e "\n${news_info}\n\n${news_content}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
