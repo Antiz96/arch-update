@@ -138,7 +138,7 @@ case "${option}" in
 
 		#If there are pacnew/pacsave files, ask the user if he wants to manage them
 		if [ -n "${pacnew_files}" ]; then
-			echo "Pacnew/Pacsave files has been found on the system"
+			echo "Pacnew/Pacsave files have been found on the system"
 			read -rp $'Would you like to process these files now? [Y/n] ' answer
 			echo ""
 
@@ -146,7 +146,7 @@ case "${option}" in
 				#If the user gives the confirmation to proceed, launch pacdiff to manage the pacnew/pacsave files and exit
 				[Yy]|"")
 					"${su_cmd}" pacdiff
-					echo -e "\nPacnew/Pacsave files has been processed\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+					echo -e "\nPacnew/Pacsave files have been processed\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 					exit 0
 				;;
 
