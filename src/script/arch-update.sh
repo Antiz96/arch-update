@@ -51,11 +51,10 @@ case "${option}" in
 			echo "--AUR Packages--" && echo -e "${aur_packages}\n"
 		fi
 
-		#If there is no update available for Pacman nor the AUR, change the desktop icon to "up-to-date" and quit
+		#If there is no update available for Pacman nor the AUR, change the desktop icon to "up-to-date"
 		if [ -z "${packages}" ] && [ -z "${aur_packages}" ]; then
 			cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg
-			echo -e "No update available\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-			exit 0
+			echo -e "No update available\n"
 		#If there are updates available, change the desktop icon to "updates-available" and ask the confirmation to apply them to the user
 		else
 			cp -f /usr/share/icons/arch-update/arch-update_updates-available.svg /usr/share/icons/arch-update/arch-update.svg
@@ -129,9 +128,10 @@ case "${option}" in
 				;;
 			esac
 
-		#If everything went well, change the desktop icon to "up-to-date"
-		cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg
-		echo -e "\nUpdates have been applied\n"
+			#If everything went well, change the desktop icon to "up-to-date"
+			cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg
+			echo -e "\nUpdates have been applied\n"
+		fi
 
 		#Checking for orphan packages
 		orphan_packages=$(pacman -Qtdq)
@@ -165,24 +165,25 @@ case "${option}" in
 			echo ""
 
 			case "${answer}" in
-				#If the user gives the confirmation to proceed, launch pacdiff to manage the pacnew/pacsave files and exit
+				#If the user gives the confirmation to proceed, launch pacdiff to manage the pacnew/pacsave files
 				[Yy]|"")
 					"${su_cmd}" pacdiff
-					echo -e "\nPacnew/Pacsave files have been processed\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-					exit 0
+					echo -e "\nPacnew/Pacsave files have been processed\n"
 				;;
 
-				#If the user doesn't give the confirmation to proceed, exit
+				#If the user doesn't give the confirmation to proceed, print a relevant sentence
 				*)
-					exit 0
+					echo -e "Pacnew/Pacsave files haven't been processed\n"
 				;;
 			esac
-		#If there's no pacnew/pacsave files, exit
+		#If there's no pacnew/pacsave files, print a relevant sentence
 		else
-			read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-			exit 0
+			echo -e "No Pacnew/Pacsave files found\n"
 		fi
-	fi
+
+		#If everything went well, exit
+		read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+		exit 0
 	;;
 	
 	#If the -c (or --check) option is passed to the "arch-update" command, execute the check function
