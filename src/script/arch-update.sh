@@ -133,6 +133,28 @@ case "${option}" in
 		cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg
 		echo -e "\nUpdates have been applied\n"
 
+		#Checking for orphan packages
+		orphan_packages=$(pacman -Qtdq)
+
+		#If there are orphan packages, ask the user's confirmation to remove them
+		if [ -n "${orphan_packages}" ]; then
+			echo -e "--Orphan Packages--\n${orphan_packages}\n"
+			read -rp $'Would you like to remove those orphan packages (and their dependencies) now? [y/N] ' answer
+			echo ""
+
+			case "${answer}" in
+				[Yy])
+					pacman -Qtdq | "${su_cmd}" pacman -Rns -
+					echo -e "\nOrphan packages have been removed\n"
+				;;
+				*)
+					echo -e "Orphan packages haven't been removed\n"
+				;;
+			esac
+		else
+			echo -e "No orphan packages found\n"
+		fi
+
 		#Checking for pacnew/pacsave files
 		pacnew_files=$(find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null)
 
