@@ -160,7 +160,7 @@ case "${option}" in
 
 		#If there are pacnew/pacsave files, ask the user if he wants to manage them
 		if [ -n "${pacnew_files}" ]; then
-			echo "Pacnew/Pacsave files have been found on the system"
+			echo -e "--Pacnew files--\n${pacnew_files}\n"
 			read -rp $'Would you like to process these files now? [Y/n] ' answer
 			echo ""
 
