@@ -148,7 +148,7 @@ case "${option}" in
 					echo -e "\nOrphan packages have been removed\n"
 				;;
 				*)
-					echo -e "\nOrphan packages haven't been removed\n"
+					echo -e "Orphan packages haven't been removed\n"
 				;;
 			esac
 		else
