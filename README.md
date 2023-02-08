@@ -16,6 +16,7 @@ Features:
 - Includes a (.desktop) clickeable icon that automatically changes to act as an update notifier/applier. Easy to integrate with any DE/WM, dock, status/launch bar, app menu, etc...
 - Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")), optionally shows the version changes as well.
 - Offers to print the latest Arch Linux news before applying updates (through [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") and [hq](https://archlinux.org/packages/community/x86_64/hq/ "hq package")).
+- Automatic check and listing of orphan packages after an update, offering you to remove them.
 - Helps you processing pacnew/pacsave files after an update (through [pacdiff](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/community/x86_64/opendoas/ "opendoas package").
 - Optional support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay "yay AUR package") or [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
@@ -88,7 +89,10 @@ Once you gave the confirmation to proceed, `arch-update` offers to print latest 
    
 While `arch-update` is performing updates, the icon changes accordingly:  
 ![Installing_updates](https://user-images.githubusercontent.com/53110319/204068693-1f71b07a-e273-46aa-a8c1-7d729617e466.png)  
-
+  
+After each successful update, `arch-update` will scan your system for orphan packages and offers to remove them:
+![Orphan](https://user-images.githubusercontent.com/53110319/204069868-34443ec8-6f30-4b9a-871c-113e9bf80fff.png)  
+  
 After each successful update, `arch-update` will scan your system for pacnew/pacsave files and offers to process them via `pacdiff` (if there are):  
 ![Pacdiff](https://user-images.githubusercontent.com/53110319/204069868-34443ec8-6f30-4b9a-871c-113e9bf80fff.png)  
   
@@ -116,7 +120,8 @@ Optionnal support for AUR package updates (through [yay](https://aur.archlinux.o
 If no option is passed, perform the main update function: Check for updates and print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (`pacman -Syu`).  
 It also supports AUR package updates if [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru) is installed. 
 Before performing the updates, it offers to print the latest Arch Linux news to the user.  
-Once the update has been successfully performed, it checks for pacnew/pacsave files and, if there are, it offers to launch `pacdiff` to process them.  
+Once the update has been successfully performed, it checks for orphan packages and pacnew/pacsave files and, if there are, offers to process them."  
+  
 The update function is launched when you click on the (.desktop) icon.  
 
 #### -c, --check
