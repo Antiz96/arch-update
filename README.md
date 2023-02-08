@@ -97,7 +97,7 @@ When the update is over, the icon changes accordingly:
 ![Orphan](https://user-images.githubusercontent.com/53110319/217640788-c4d10023-185c-49a3-a3a9-b8beb893e09f.png)  
   
 Additionally `arch-update` will scan your system for pacnew/pacsave files and offers to process them via `pacdiff` (if there are):  
-![Pacdiff](https://user-images.githubusercontent.com/53110319/204069868-34443ec8-6f30-4b9a-871c-113e9bf80fff.png)  
+![Pacnew](https://user-images.githubusercontent.com/53110319/217660567-f00db345-55b9-424b-9436-77492d6c00b8.png)  
 
 ## Documentation
 
