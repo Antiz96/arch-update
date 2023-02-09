@@ -169,7 +169,7 @@ case "${option}" in
 
 		#If there are pacnew/pacsave files, print them and ask for the user's confirmation to process them
 		if [ -n "${pacnew_files}" ]; then
-			echo -e "--Pacnew files--\n${pacnew_files}\n"
+			echo -e "--Pacnew Files--\n${pacnew_files}\n"
 
 			#Grammar
 			if [ "$(echo "${pacnew_files}" | wc -l)" -eq 1 ]; then
@@ -183,17 +183,17 @@ case "${option}" in
 				[Yy]|"")
 					echo ""
 					"${su_cmd}" pacdiff
-					echo -e "\nPacnew/Pacsave files have been processed\n"
+					echo -e "\nThe pacnew file(s) processing has been applied\n"
 				;;
 
 				#If the user doesn't give the confirmation to proceed, print a relevant sentence
 				*)
-					echo -e "Pacnew/Pacsave files haven't been processed\n"
+					echo -e "The pacnew file(s) processing hasn't been applied\n"
 				;;
 			esac
 		#If there's no pacnew/pacsave files, print a relevant sentence
 		else
-			echo -e "No Pacnew/Pacsave file found\n"
+			echo -e "No pacnew file found\n"
 		fi
 
 		#If everything goes well, exit
