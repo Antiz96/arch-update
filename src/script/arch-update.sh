@@ -143,16 +143,15 @@ case "${option}" in
 			#Grammar
 			if [ "$(echo "${orphan_packages}" | wc -l)" -eq 1 ]; then
 				read -rp $'Would you like to remove this orphan package (and its potential dependencies) now? [y/N] ' answer
-				echo ""
 			else
 				read -rp $'Would you like to remove these orphan packages (and their potential dependencies) now? [y/N] ' answer
-				echo ""
 			fi
 
 			case "${answer}" in
 				#If the user gives the confirmation to proceed, remove orphan package(s). If an error occured during the removal process, print an error
 				[Yy])
-					pacman -Qtdq | "${su_cmd}" pacman -Rns - && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occured\nThe removel has been aborted\n"
+					echo ""
+					pacman -Qtdq | "${su_cmd}" pacman -Rns - && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occured\nThe removal has been aborted\n"
 				;;
 
 				#If the user doesn't give the confirmation to proceed, print a relevant sentence
@@ -175,15 +174,14 @@ case "${option}" in
 			#Grammar
 			if [ "$(echo "${pacnew_files}" | wc -l)" -eq 1 ]; then
 				read -rp $'Would you like to process this file now? [Y/n] ' answer
-				echo ""
 			else
 				read -rp $'Would you like to process these files now? [Y/n] ' answer
-				echo ""
 			fi
 
 			case "${answer}" in
 				#If the user gives the confirmation to proceed, launch pacdiff to manage the pacnew/pacsave files
 				[Yy]|"")
+					echo ""
 					"${su_cmd}" pacdiff
 					echo -e "\nPacnew/Pacsave files have been processed\n"
 				;;
