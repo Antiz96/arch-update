@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Current version
-version="1.4.2"
+version="1.5.0"
 
 #Check which privilege elevation package is installed (sudo or doas)
 if command -v sudo > /dev/null; then
