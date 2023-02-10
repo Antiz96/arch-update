@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Current version
-version="1.5.0"
+version="1.5.1"
 
 #Check which privilege elevation package is installed (sudo or doas)
 if command -v sudo > /dev/null; then
@@ -165,7 +165,7 @@ case "${option}" in
 		fi
 
 		#Checking for pacnew/pacsave files
-		pacnew_files=$(find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null)
+		pacnew_files=$(pacdiff -o)
 
 		#If there are pacnew/pacsave files, print them and ask for the user's confirmation to process them
 		if [ -n "${pacnew_files}" ]; then
