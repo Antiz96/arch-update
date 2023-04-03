@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Current version
-version="1.5.1"
+version="1.5.2"
 
 #Check which privilege elevation package is installed (sudo or doas)
 if command -v sudo > /dev/null; then
@@ -38,7 +38,7 @@ case "${option}" in
 
 		#Get the list of available update(s) for the AUR (if "yay" or "paru" is installed)
 		if [ -n "${aur_helper}" ]; then
-			aur_packages=$("${aur_helper}" -Qua | awk '{print $1}')
+			aur_packages=$("${aur_helper}" -Qua | grep -v ^"::" | awk '{print $1}')
 		fi
 
 		#If there are updates available for pacman, print them
@@ -209,7 +209,7 @@ case "${option}" in
 
 		#Get the number of available update(s)
 		if [ -n "${aur_helper}" ]; then
-			update_number=$( (checkupdates ; "${aur_helper}" -Qua) | wc -l )
+			update_number=$( (checkupdates ; "${aur_helper}" -Qua | grep -v ^"::") | wc -l )
 		else
 			update_number=$(checkupdates | wc -l)
 		fi
