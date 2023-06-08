@@ -1,0 +1,26 @@
+name: Shellcheck
+on: pull_request
+
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
+
+jobs:
+  run_shellcheck:
+    runs-on: ubuntu-latest
+
+    container:
+      image: docker.io/library/alpine:latest
+      options: --privileged
+
+    steps:
+      - name: Update the container
+        run: apk update && apk upgrade
+
+      - name: Install shellcheck & git
+        run: apk add shellcheck git
+
+      - name: Clone the repo, `cd` into it and switch on current branch
+        run: git clone $GITHUB_SERVER_URL/$GITHUB_REPOSITORY && cd $REPO_NAME && git checkout $GITHUB_HEAD_REF
+
+      - name: Run shellcheck
+        run: find . -name '*.sh' -exec shellcheck --color=always {} +
