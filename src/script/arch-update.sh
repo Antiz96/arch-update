@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# arch-update: An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.
+# https://github.com/Antiz96/arch-update
+# Licensed under the GPL-3.0 license
+
 #Current version
 version="1.5.3"
 
