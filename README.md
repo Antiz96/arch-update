@@ -10,7 +10,7 @@
 
 ## Description
 
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. Optionnal support for AUR package updates and desktop notifications.  
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. Optional support for AUR package updates and desktop notifications.  
   
 Features:
 - Includes a (.desktop) clickeable icon that automatically changes to act as an update notifier/applier. Easy to integrate with any DE/WM, dock, status/launch bar, app menu, etc...
@@ -113,7 +113,7 @@ arch-update [OPTION]
 ### DESCRIPTION
 
 An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. 
-Optionnal support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru)) and desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/)).  
+Optional support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru)) and desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/)).  
 
 ### OPTIONS
 
