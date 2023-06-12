@@ -110,9 +110,17 @@ Options:
   -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
   -h, --help     Display this message and exit
   -V, --version  Display version information and exit
-```
 
-For more information, see the ${name}(1) man page
+Exit Codes:
+0  OK
+1  Invalid option
+2  No privilege method (sudo or doas) is installed
+3  Error when changing icon
+4  User didn't gave the confirmation to proceed
+5  Error when updating the packages
+```
+  
+For more information, see the arch-update(1) man page
 
 ## Tips and tricks
 
