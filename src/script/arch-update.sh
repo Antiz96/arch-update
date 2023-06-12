@@ -99,7 +99,8 @@ list_packages() {
 	if [ -z "${packages}" ] && [ -z "${aur_packages}" ]; then
 		icon_up_to_date
 		echo -e "No update available\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-		exit 0
+		orphan_packages
+		pacnew_files
 	else
 		icon_updates_available
 	fi
@@ -176,7 +177,7 @@ update() {
 	pacnew_files
 }
 
-# Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are
+# Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are (used in the "list_packages" and "update" functions)
 orphan_packages() {
 	orphan_packages=$(pacman -Qtdq)
 
@@ -203,7 +204,7 @@ orphan_packages() {
 	fi
 }
 
-# Definition of the pacnew_files function: Print pacnew files and offer to process them if there are
+# Definition of the pacnew_files function: Print pacnew files and offer to process them if there are (used in the "list_packages" and "update" functions)
 pacnew_files() {
 	pacnew_files=$(pacdiff -o)
 		
