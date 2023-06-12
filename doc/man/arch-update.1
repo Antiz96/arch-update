@@ -48,11 +48,27 @@ Print the help
 .SH EXIT STATUS
 .TP
 .B 0
-if OK
+OK
 
 .TP
 .B 1
-if problems (user didn't gave confirmation to proceed with the installation, a problem happened during the update process, the user passed an invalid option, ...)
+Invalid option
+
+.TP
+.B 2
+No privilege method (sudo or doas) is installed
+
+.TP
+.B 3
+Error when changing icon
+
+.TP
+.B 4
+User didn't gave the confirmation to proceed
+
+.TP
+.B 5
+Error when updating the packages
 
 .SH USAGE
 .TP
