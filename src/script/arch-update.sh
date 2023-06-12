@@ -16,7 +16,7 @@ elif command -v doas > /dev/null; then
 	su_cmd="doas"
 else
 	echo -e >&2 "A privilege elevation method is required\nPlease, install sudo or doas\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-	exit 1
+	exit 2
 fi
 
 # Definition of the AUR helper to use (depending on if/which one is installed on the system) for the optional AUR packages support
@@ -60,22 +60,22 @@ invalid_option() {
 
 # Definition of the icon_checking function: Change icon to "checking" (used in the "list_packages" and "check" functions)
 icon_checking() {
-	cp -f /usr/share/icons/arch-update/arch-update_checking.svg /usr/share/icons/arch-update/arch-update.svg || exit 1
+	cp -f /usr/share/icons/arch-update/arch-update_checking.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
 }
 
 # Definition of the icon_updates_available function: Change icon to "updates-available" (used in the "list_packages", "update" and "check" functions)
 icon_updates_available() {
-	cp -f /usr/share/icons/arch-update/arch-update_updates-available.svg /usr/share/icons/arch-update/arch-update.svg || exit 1
+	cp -f /usr/share/icons/arch-update/arch-update_updates-available.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
 }
 
 # Definition of the icon_installing function: Change icon to "installing" (used in the "list_packages" function)
 icon_installing() {
-	cp -f /usr/share/icons/arch-update/arch-update_installing.svg /usr/share/icons/arch-update/arch-update.svg || exit 1
+	cp -f /usr/share/icons/arch-update/arch-update_installing.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
 }
 
 # Definition of the icon_up_to_date function: Change icon to "up to date" (used in the "list_packages", "update" and "check" functions)
 icon_up_to_date() {
-	cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg || exit 1
+	cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
 }
 
 # Definition of the list_packages function: Print packages that are available for update and offer to apply them if there are (used in the "update" functions)
@@ -112,7 +112,7 @@ list_packages() {
 		;;
 		*)
 			echo -e >&2 "The update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-			exit 1
+			exit 4
 		;;
 	esac
 }
@@ -157,7 +157,7 @@ update() {
 		if ! "${su_cmd}" pacman -Syu; then
 			icon_updates_available
 			echo -e >&2 "\nAn error has occured\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-			exit 1
+			exit 5
 		fi
 	fi
 					
@@ -165,7 +165,7 @@ update() {
 		if ! "${aur_helper}" -Syu; then
 			icon_updates_available
 			echo -e >&2 "\nAn error has occured\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-			exit 1
+			exit 5
 		fi
 	fi
 
