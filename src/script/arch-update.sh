@@ -101,6 +101,7 @@ list_packages() {
 		echo -e "No update available\n"
 		orphan_packages
 		pacnew_files
+		exit 0
 	else
 		icon_updates_available
 		read -rp $'Proceed with update? [Y/n] ' answer
