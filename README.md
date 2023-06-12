@@ -14,11 +14,11 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
   
 Features:
 - Includes a (.desktop) clickeable icon that automatically changes to act as an update notifier/applier. Easy to integrate with any DE/WM, dock, status/launch bar, app menu, etc...
-- Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")), optionally shows the version changes as well.
-- Offers to print the latest Arch Linux news before applying updates (through [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") and [hq](https://archlinux.org/packages/community/x86_64/hq/ "hq package")).
+- Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")), optionally shows the version changes as well.
+- Offers to print the latest Arch Linux news before applying updates (through [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") and [htmlq](https://archlinux.org/packages/extra/x86_64/htmlq/ "htmlq package")).
 - Automatic check and listing of orphan packages and offering you to remove them.
-- Helps you processing pacnew/pacsave files (through [pacdiff](https://archlinux.org/packages/community/x86_64/pacman-contrib/ "pacman-contrib package")).
-- Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/community/x86_64/opendoas/ "opendoas package").
+- Helps you processing pacnew/pacsave files (through [pacdiff](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
+- Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/extra/x86_64/opendoas/ "opendoas package").
 - Optional support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay "yay AUR package") or [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
 - Optional support for desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package"), see: https://wiki.archlinux.org/title/Desktop_notifications).
 
@@ -32,7 +32,7 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 
 Install dependencies:  
 ```
-sudo pacman -S --needed pacman-contrib curl hq diffutils vim
+sudo pacman -S --needed pacman-contrib curl htmlq diffutils vim
 ```
   
 Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git`)*.  
