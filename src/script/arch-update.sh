@@ -31,7 +31,20 @@ notif=$(command -v notify-send)
 
 # Definition of the help function: Print the help message
 help() {
-	man arch-update | col
+	cat <<EOF
+${name} v${version}
+
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.
+
+Run arch-update to perform the main "update" function: Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation. Before performing the update, offer to print the latest Arch Linux news. Post update, check for orphan packages and pacnew/pacsave files and, if there are, offers to process them.
+
+Options:
+  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
+  -h, --help     Display this message and exit
+  -V, --version  Display version information and exit
+
+For more information, see the ${name}(1) man page
+EOF
 }
 
 # Definition of the version function: Print the current version

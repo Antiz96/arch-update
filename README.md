@@ -101,56 +101,18 @@ Additionally `arch-update` will search for pacnew/pacsave files and offers to pr
 
 ## Documentation
 
-See the documentation below:  
-
-*The documentation is also available as a man page and with the "--help" function*  
-*Type `man arch-update` or `arch-update --help` after you've installed the **arch-update** package.*  
-  
-### SYNOPSIS
-
-arch-update [OPTION]
-
-### DESCRIPTION
-
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. 
-Optional support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru)) and desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/)).  
-
-### OPTIONS
-
-If no option is passed, perform the main update function: Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (`pacman -Syu`).  
-It also supports AUR packages updates if [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru) is installed.  
-Before performing the update, it offers to print the latest Arch Linux news to the user.  
-It also checks for orphan packages and pacnew/pacsave files and, if there are, offers to process them."  
-  
-The update function is launched when you click on the (.desktop) icon.  
-
-#### -c, --check
-
-Check for available updates and change the (.desktop) icon accordingly if there are.  
-It sends a desktop notification containing the number of available updates if [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/) is installed.  
-It supports AUR package updates if [yay](https://aur.archlinux.org/packages/yay) or [paru](https://aur.archlinux.org/packages/paru) is installed.  
-The `--check` option is automatically launched at boot and then once every hour if you enabled the `systemd.timer` with the following command:  
 ```
-systemctl --user enable --now arch-update.timer
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.
+
+Run arch-update to perform the main "update" function: Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation. Before performing the update, offer to print the latest Arch Linux news. Post update, check for orphan packages and pacnew/pacsave files and, if there are, offers to process them.
+
+Options:
+  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
+  -h, --help     Display this message and exit
+  -V, --version  Display version information and exit
 ```
 
-#### -v, --version
-
-Print the current version.
-
-#### -h, --help
-
-Print the help.
-
-### EXIT STATUS
-
-#### 0
-      
-if OK
-
-#### 1
-      
-if problems (user didn't gave confirmation to proceed with the installation, a problem happened during the update process, the user passed an invalid option, ...)
+For more information, see the ${name}(1) man page
 
 ## Tips and tricks
 
