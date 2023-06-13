@@ -114,7 +114,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 .B Show packages version changes
 .RB "If you want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command:" 
 .br
-.B sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
+sudo sed -i "s/ | awk '{print $1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
 .br
 .B Be aware that you'll have to relaunch that command at each arch-update's new release.
 
@@ -133,8 +133,6 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 .BR yay (8),
 .BR paru (8),
 .BR notify-send (1)
-.br
-The documentation is also available on the GitHub page https://github.com/Antiz96/arch-update
 
 .SH BUGS
 Please report bugs to the GitHub page https://github.com/Antiz96/arch-update/issues
