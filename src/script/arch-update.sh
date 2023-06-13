@@ -98,23 +98,24 @@ list_packages() {
 
 	if [ -z "${packages}" ] && [ -z "${aur_packages}" ]; then
 		icon_up_to_date
-		echo -e "No update available\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+		echo -e "No update available\n"
+		orphan_packages
+		pacnew_files
 		exit 0
 	else
 		icon_updates_available
-	fi
+		read -rp $'Proceed with update? [Y/n] ' answer
 
-	read -rp $'Proceed with update? [Y/n] ' answer
-	
-	case "${answer}" in
-		[Yy]|"")
-			icon_installing
-		;;
-		*)
-			echo -e >&2 "The update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-			exit 4
-		;;
-	esac
+		case "${answer}" in
+			[Yy]|"")
+				icon_installing
+			;;
+			*)
+				echo -e >&2 "The update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+				exit 4
+			;;
+		esac
+	fi
 }
 
 # Definition of the list_news function: Print the latest Arch news and offers to read them (used in the "update" function)
@@ -176,7 +177,7 @@ update() {
 	pacnew_files
 }
 
-# Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are
+# Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are (used in the "list_packages" and "update" functions)
 orphan_packages() {
 	orphan_packages=$(pacman -Qtdq)
 
@@ -203,7 +204,7 @@ orphan_packages() {
 	fi
 }
 
-# Definition of the pacnew_files function: Print pacnew files and offer to process them if there are
+# Definition of the pacnew_files function: Print pacnew files and offer to process them if there are (used in the "list_packages" and "update" functions)
 pacnew_files() {
 	pacnew_files=$(pacdiff -o)
 		
