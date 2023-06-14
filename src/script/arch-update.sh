@@ -136,7 +136,7 @@ list_news() {
 
 		case "${answer}" in
 			1|2|3|4|5)
-				news_selected=$(sed -n "${answer}"p <<< "${news_title}" | sed s/\ /-/g | sed s/[.]//g | awk '{print tolower($0)}')
+				news_selected=$(sed -n "${answer}"p <<< "${news_title}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower(a$0)}')
 				news_info=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | htmlq --text .article-info)
 				news_content=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | htmlq --text .article-content)
 				echo -e "\n${news_info}\n\n${news_content}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
