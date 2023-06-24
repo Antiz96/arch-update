@@ -157,7 +157,7 @@ update() {
 	if [ -n "${packages}" ]; then
 		if ! "${su_cmd}" pacman -Syu; then
 			icon_updates_available
-			echo -e >&2 "\nAn error has occured\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 			exit 5
 		fi
 	fi
@@ -165,7 +165,7 @@ update() {
 	if [ -n "${aur_packages}" ]; then
 		if ! "${aur_helper}" -Syu; then
 			icon_updates_available
-			echo -e >&2 "\nAn error has occured\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 			exit 5
 		fi
 	fi
@@ -193,7 +193,7 @@ orphan_packages() {
 		case "${answer}" in
 			[Yy])
 				echo
-				pacman -Qtdq | "${su_cmd}" pacman -Rns - && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occured\nThe removal has been aborted\n"
+				pacman -Qtdq | "${su_cmd}" pacman -Rns - && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
 			;;
 			*)
 				echo -e "The removal hasn't been applied\n"
