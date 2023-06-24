@@ -1,11 +1,11 @@
-name: Shellcheck
+name: Test suite
 on: pull_request
 
 env:
   REPO_NAME: ${{ github.event.repository.name }}
 
 jobs:
-  run_shellcheck:
+  test_suite:
     runs-on: ubuntu-latest
 
     container:
@@ -13,14 +13,17 @@ jobs:
       options: --privileged
 
     steps:
-      - name: Update the container
+      - name: Update container
         run: apk update && apk upgrade
 
-      - name: Install shellcheck & git
-        run: apk add shellcheck git
+      - name: Install packages
+        run: apk add git shellcheck py3-pip && pip install codespell
 
-      - name: Clone the repo, `cd` into it and switch on current branch
+      - name: Clone repo
         run: git clone $GITHUB_SERVER_URL/$GITHUB_REPOSITORY && cd $REPO_NAME && git checkout $GITHUB_HEAD_REF
 
       - name: Run shellcheck
         run: find . -name '*.sh' -exec shellcheck --color=always {} +
+
+      - name: Run codespell
+        run: codespell
