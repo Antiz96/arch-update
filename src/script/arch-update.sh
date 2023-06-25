@@ -276,6 +276,3 @@ case "${option}" in
 		invalid_option
 	;;
 esac
-
-test=1
-Bonjour and Goodbya
