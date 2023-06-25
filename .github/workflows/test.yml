@@ -23,7 +23,7 @@ jobs:
         run: git clone $GITHUB_SERVER_URL/$GITHUB_REPOSITORY && cd $REPO_NAME && git checkout $GITHUB_HEAD_REF
 
       - name: Run codespell
-        run: codespell
+        run: codespell --enable-colors
 
       - name: Run shellcheck
         run: find . -name '*.sh' -exec shellcheck --color=always {} +
