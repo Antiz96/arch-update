@@ -278,4 +278,4 @@ case "${option}" in
 esac
 
 test=1
-Bonjour adn Goodbya
+Bonjour and Goodbya
