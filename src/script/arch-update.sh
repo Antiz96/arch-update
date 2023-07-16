@@ -142,13 +142,14 @@ list_news() {
 
 		case "${answer}" in
 			1|2|3|4|5)
-				news_selected=$(sed -n "${answer}"p <<< "${news_titles}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
-				news_url="https://www.archlinux.org/news/${news_selected}"
+				news_selected=$(sed -n "${answer}"p <<< "${news_titles}")
+				news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
+				news_url="https://www.archlinux.org/news/${news_path}"
 				news_content=$(curl -Ls "${news_url}")
 				news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
 				news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
 				news_article=$(echo "${news_content}" | htmlq -t .article-content)
-				echo -e "\n---\nAuthor: ${news_author}\nPublish date: ${news_date}\nURL: ${news_url}\n---\n\n${news_article}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
+				echo -e "\n---\nTitle: ${news_selected}\nAuthor: ${news_author}\nPublication date: ${news_date}\nURL: ${news_url}\n---\n\n${news_article}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
 			;;
 			*)
 				echo
