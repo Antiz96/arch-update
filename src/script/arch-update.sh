@@ -123,23 +123,26 @@ list_news() {
 	redo="y"
 
 	while [ "${redo}" = "y" ]; do
-		news_title=$(curl -Ls https://www.archlinux.org/news | htmlq --attribute title a | grep ^"View:" | sed s/View:\ //g | head -5)
+		news_titles=$(curl -Ls https://www.archlinux.org/news | htmlq --attribute title a | grep ^"View:" | sed s/View:\ //g | head -5)
 
 		echo -e "\n--Arch News--"
 		i=1
 		while IFS= read -r line; do
 			echo "${i}" - "${line}"
 			((i=i+1))
-		done < <(printf '%s\n' "${news_title}")
+		done < <(printf '%s\n' "${news_titles}")
 
 		read -rp $'\nSelect the news to read (or just press \"enter\" to proceed with update): ' answer
 
 		case "${answer}" in
 			1|2|3|4|5)
-				news_selected=$(sed -n "${answer}"p <<< "${news_title}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
-				news_info=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | htmlq --text .article-info)
-				news_content=$(curl -Ls "https://www.archlinux.org/news/${news_selected}" | htmlq --text .article-content)
-				echo -e "\n${news_info}\n\n${news_content}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
+				news_selected=$(sed -n "${answer}"p <<< "${news_titles}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
+				news_url="https://www.archlinux.org/news/${news_selected}"
+				news_content=$(curl -Ls "${news_url}")
+				news_author=$(echo "${news_content}" | htmlq --text .article-info | cut -f3- -d " ")
+				news_date=$(echo "${news_content}" | htmlq --text .article-info | cut -f1 -d " ")
+				news_article=$(echo "${news_content}" | htmlq --text .article-content)
+				echo -e "\n---\nAuthor: ${news_author}\nPublish date: ${news_date}\nURL: ${news_url}\n---\n\n${news_article}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
 			;;
 			*)
 				echo
