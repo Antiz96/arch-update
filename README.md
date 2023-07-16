@@ -69,35 +69,36 @@ systemctl --user enable --now arch-update.timer
 
 Personally, I integrated the .desktop icon in my top bar.  
 It is the first icon from the left.  
-![Up_to_date](https://user-images.githubusercontent.com/53110319/204068077-40775c1c-06dd-4665-b837-08f0cefb3941.png)  
+![top_bar_up_to_date](https://github.com/Antiz96/arch-update/assets/53110319/794696a0-3452-4afd-8d64-a41d64225082)
      
 When `arch-update` is checking for updates, the icon changes accordingly *(the `check` function is automatically triggered at boot and then once every hour if you enabled the [systemd timer](#the-systemd-timer) and can be manually triggered by running the `arch-update -c` command)*:  
-![Searching_for_updates](https://user-images.githubusercontent.com/53110319/204068136-25adb912-54f7-4d95-afd6-f08c5b73677d.png)  
+![top_bar_checking](https://github.com/Antiz96/arch-update/assets/53110319/27cc96c7-6871-4235-81d2-20bc4528fa18)
    
 If there are available updates, the icon will show a bell sign and a desktop notification indicating the number of available updates will be sent *(requires [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package"))*:  
-![Updates_availables](https://user-images.githubusercontent.com/53110319/204068175-5ef1cb05-b72b-44b1-9f4b-0a801d363663.png)  
-![Updates_availables+notif](https://user-images.githubusercontent.com/53110319/204068184-e2fddf44-ffd6-4b2a-80fe-75e8d20ecf7e.png)  
+![top_bar_update_available](https://github.com/Antiz96/arch-update/assets/53110319/e76be2e4-07b1-41db-8a5d-8cff89e904f6)
+![notification](https://github.com/Antiz96/arch-update/assets/53110319/4d7fb15e-2d94-4740-9831-fe4dfd264c13)
    
 When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(It can also be launched by running the `arch-update` command. It requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR package updates support)*:  
-![List_of_packages](https://user-images.githubusercontent.com/53110319/204068223-a31e7a21-8df7-4e51-ac4b-7df6c52c5d20.png)  
+![main_update_function](https://github.com/Antiz96/arch-update/assets/53110319/0536f8c3-3942-444e-b942-60c5c729c0bb)
   
 You can optionally configure `arch-update` to show the version changes during the package listing *(see: [Tips and tricks - Show package version changes](#show-package-version-changes))*:  
-![List_of_packages_with_version](https://user-images.githubusercontent.com/53110319/204068369-2da6480f-7faa-4fa1-937c-6b168ca11795.png)  
+![main_update_function_with_version_changes](https://github.com/Antiz96/arch-update/assets/53110319/42ccff54-04df-481b-8fc8-8631f456c8aa)
 
-Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news so you can acknowledge them easily. Select which news to read by typing its associated number. After your read a news, `arch-update` will once again offers to print latest Arch Linux news, so you can read multiple news at once. Simply press "enter" without typing any number to proceed with update:  
-![Arch_news](https://user-images.githubusercontent.com/53110319/204068653-de484935-344a-4956-b134-5b4b1771360e.png)  
+Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news. Arch news that have been published within the last 15 days are tagged as `[NEW]`. Select which news to read by typing its associated number. After your read a news, `arch-update` will once again offers to print latest Arch Linux news, so you can read multiple news at once. Simply press "enter" without typing any number to proceed with update:  
+![print_news](https://github.com/Antiz96/arch-update/assets/53110319/0570d6fd-64a2-4c00-9aba-8c253e8a6053)
    
 While `arch-update` is performing updates, the icon changes accordingly:  
-![Installing_updates](https://user-images.githubusercontent.com/53110319/204068693-1f71b07a-e273-46aa-a8c1-7d729617e466.png)  
+![top_bar_installing](https://github.com/Antiz96/arch-update/assets/53110319/7fdbf6f3-0576-4ab2-9d80-a602594321e9)
+db4-9aa1-bfcc4545eb13)
   
 When the update is over, the icon changes accordingly:  
-![Up_to_date](https://user-images.githubusercontent.com/53110319/204068822-85f19af5-f817-49b9-9a25-96c5364e61fa.png)  
+![top_bar_up_to_date](https://github.com/Antiz96/arch-update/assets/53110319/794696a0-3452-4afd-8d64-a41d64225082)
   
 `arch-update` will also search for orphan packages and offers to remove them (if there are):
-![Orphan](https://user-images.githubusercontent.com/53110319/217640788-c4d10023-185c-49a3-a3a9-b8beb893e09f.png)  
+![remove_orphan](https://github.com/Antiz96/arch-update/assets/53110319/4abf2623-ba27-4c42-8289-884199bfb579)
   
 Additionally `arch-update` will search for pacnew/pacsave files and offers to process them via `pacdiff` (if there are):  
-![Pacnew](https://user-images.githubusercontent.com/53110319/217660567-f00db345-55b9-424b-9436-77492d6c00b8.png)  
+![process_pacnew](https://github.com/Antiz96/arch-update/assets/53110319/6f3430f7-fc28-48fa-b107-230f3f32ac5b)
 
 ## Documentation
 
