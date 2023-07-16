@@ -89,7 +89,6 @@ Once you gave the confirmation to proceed, `arch-update` offers to print latest 
    
 While `arch-update` is performing updates, the icon changes accordingly:  
 ![top_bar_installing](https://github.com/Antiz96/arch-update/assets/53110319/7fdbf6f3-0576-4ab2-9d80-a602594321e9)
-db4-9aa1-bfcc4545eb13)
   
 When the update is over, the icon changes accordingly:  
 ![top_bar_up_to_date](https://github.com/Antiz96/arch-update/assets/53110319/794696a0-3452-4afd-8d64-a41d64225082)
