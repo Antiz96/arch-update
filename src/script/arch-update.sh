@@ -125,7 +125,7 @@ list_news() {
 	while [ "${redo}" = "y" ]; do
 		news=$(curl -Ls https://www.archlinux.org/news)
 		news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed s/View:\ //g | head -5)
-		news_dates=($(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -5 | xargs -I{} date -d "{}" "+%s"))
+		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -5 | xargs -I{} date -d "{}" "+%s")
 
 		echo -e "\n--Arch News--"
 		i=1
