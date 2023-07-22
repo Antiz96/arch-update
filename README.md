@@ -134,8 +134,8 @@ For more information, see the arch-update(1) man page
 ### AUR Support
 
 Arch-Update supports AUR package updates when checking and installing updates if **yay** or **paru** is installed:  
-See <https://github.com/Jguer/yay and https://aur.archlinux.org/packages/yay>  
-See <https://github.com/morganamilo/paru and https://aur.archlinux.org/packages/paru>
+See <https://github.com/Jguer/yay> and <https://aur.archlinux.org/packages/yay>  
+See <https://github.com/morganamilo/paru> and <https://aur.archlinux.org/packages/paru>
 
 ### Desktop notifications Support  
 
