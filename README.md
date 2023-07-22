@@ -84,7 +84,7 @@ If there are available updates, the icon will show a bell sign and a desktop not
 ![top_bar_update_available](https://github.com/Antiz96/arch-update/assets/53110319/e76be2e4-07b1-41db-8a5d-8cff89e904f6)  
 ![notification](https://github.com/Antiz96/arch-update/assets/53110319/4d7fb15e-2d94-4740-9831-fe4dfd264c13)
 
-When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(It can also be launched by running the `arch-update` command. It requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR package updates support)*:  
+When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR package updates support)*:  
 ![main_update_function](https://github.com/Antiz96/arch-update/assets/53110319/0536f8c3-3942-444e-b942-60c5c729c0bb)
 
 You can optionally configure `arch-update` to show the version changes during the package listing *(see: [Tips and tricks - Show package version changes](#show-package-version-changes))*:  
