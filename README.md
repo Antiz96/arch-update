@@ -87,10 +87,14 @@ If there are available updates, the icon will show a bell sign and a desktop not
 When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR package updates support)*:  
 ![main_update_function](https://github.com/Antiz96/arch-update/assets/53110319/0536f8c3-3942-444e-b942-60c5c729c0bb)
 
-You can optionally configure `arch-update` to show the version changes during the package listing *(see: [Tips and tricks - Show package version changes](#show-package-version-changes))*:  
+You can optionally configure `arch-update` to show the version changes during the package listing *(see [Tips and tricks - Show package version changes](#show-package-version-changes))*:  
 ![main_update_function_with_version_changes](https://github.com/Antiz96/arch-update/assets/53110319/42ccff54-04df-481b-8fc8-8631f456c8aa)
 
-Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news. Arch news that have been published within the last 15 days are tagged as `[NEW]`. Select which news to read by typing its associated number. After your read a news, `arch-update` will once again offers to print latest Arch Linux news, so you can read multiple news at once. Simply press "enter" without typing any number to proceed with update:  
+Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news.  
+Arch news that have been published within the last 15 days are tagged as `[NEW]`.  
+Select which news to read by typing its associated number.  
+After your read a news, `arch-update` will once again offers to print latest Arch Linux news, so you can read multiple news at once.  
+Simply press "enter" without typing any number to proceed with update:  
 ![print_news](https://github.com/Antiz96/arch-update/assets/53110319/0570d6fd-64a2-4c00-9aba-8c253e8a6053)
 
 While `arch-update` is performing updates, the icon changes accordingly:  
