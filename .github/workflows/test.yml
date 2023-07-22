@@ -17,10 +17,13 @@ jobs:
         run: apk update && apk upgrade
 
       - name: Install packages
-        run: apk add shellcheck py3-pip && pip install codespell
+        run: apk add shellcheck py3-pip ruby && pip install codespell && gem install mdl
 
       - name: Run codespell
         run: codespell --enable-colors
 
       - name: Run shellcheck
         run: find . -name '*.sh' -exec shellcheck --color=always {} +
+
+      - name: Run mdl
+        run: mdl --style .github/workflows/mdl_style.rb .
