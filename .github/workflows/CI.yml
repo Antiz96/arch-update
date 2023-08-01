@@ -1,8 +1,8 @@
-name: Test suite
+name: CI
 on: pull_request
 
 jobs:
-  test_suite:
+  Test:
     runs-on: ubuntu-latest
 
     container:
