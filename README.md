@@ -11,7 +11,7 @@
 
 ## Description
 
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. Optional support for AUR package updates and desktop notifications.
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. Optional support for AUR & Flatpak packages updates and desktop notifications.
 
 Features:
 
@@ -21,8 +21,9 @@ Features:
 - Automatic check and listing of orphan packages and offering you to remove them.
 - Helps you processing pacnew/pacsave files (through [pacdiff](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/extra/x86_64/opendoas/ "opendoas package").
-- Optional support for AUR package updates (through [yay](https://aur.archlinux.org/packages/yay "yay AUR package") or [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
-- Optional support for desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package"), see <https://wiki.archlinux.org/title/Desktop_notifications>).
+- Optional support for AUR packages update (through [yay](https://aur.archlinux.org/packages/yay "yay AUR package") or [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
+- Optional support for Flatpak packages update (through [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak "Flatpak package").
+- Optional support for desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify "libnotify package"), see <https://wiki.archlinux.org/title/Desktop_notifications>).
 
 ## Installation
 
@@ -87,11 +88,11 @@ If there are available updates, the icon will show a bell sign and a desktop not
 ![top_bar_update_available](https://github.com/Antiz96/arch-update/assets/53110319/e76be2e4-07b1-41db-8a5d-8cff89e904f6)  
 ![notification](https://github.com/Antiz96/arch-update/assets/53110319/4d7fb15e-2d94-4740-9831-fe4dfd264c13)
 
-When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR package updates support)*:
+When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages update support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages update support)*:
 
 ![main_update_function](https://github.com/Antiz96/arch-update/assets/53110319/0536f8c3-3942-444e-b942-60c5c729c0bb)
 
-You can optionally configure `arch-update` to show the version changes during the package listing *(see [Tips and tricks - Show package version changes](#show-package-version-changes))*:
+You can optionally configure `arch-update` to show the version changes during the package listing *(see [Tips and tricks - Show package version changes](#show-package-version-changes), not supported for Flatpak packages update)*:
 
 ![main_update_function_with_version_changes](https://github.com/Antiz96/arch-update/assets/53110319/42ccff54-04df-481b-8fc8-8631f456c8aa)
 
@@ -111,7 +112,7 @@ When the update is over, the icon changes accordingly:
 
 ![top_bar_up_to_date](https://github.com/Antiz96/arch-update/assets/53110319/794696a0-3452-4afd-8d64-a41d64225082)
 
-`arch-update` will also search for orphan packages and offers to remove them (if there are):
+`arch-update` will also search for orphan packages/unused Flatpak packages and offers to remove them (if there are):
 
 ![remove_orphan](https://github.com/Antiz96/arch-update/assets/53110319/4abf2623-ba27-4c42-8289-884199bfb579)
 
@@ -147,9 +148,14 @@ For more information, see the arch-update(1) man page
 
 ### AUR Support
 
-Arch-Update supports AUR package updates when checking and installing updates if **yay** or **paru** is installed:  
+Arch-Update supports AUR packages update when checking and installing updates if **yay** or **paru** is installed:  
 See <https://github.com/Jguer/yay> and <https://aur.archlinux.org/packages/yay>  
 See <https://github.com/morganamilo/paru> and <https://aur.archlinux.org/packages/paru>
+
+### Flatpak Support
+
+Arch-Update supports Flatpak packages update when checking and installing updates (as well as removing unused Flatpak packages) if **flatpak** is installed:  
+See <https://www.flatpak.org/> and <https://archlinux.org/packages/extra/x86_64/flatpak/>
 
 ### Desktop notifications Support  
 
@@ -171,7 +177,7 @@ See <https://www.freedesktop.org/software/systemd/man/systemd.time.html>
 
 ### Show package version changes
 
-If you want `arch-update` to show the packages version changes in the main `update` function, run the following command:
+If you want `arch-update` to show the packages version changes in the main `update` function, run the following command *(only shows version changes for pacman/AUR packages. Showing version changes for Flatpak packages is not supported)*:
 
 ```bash
 sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true

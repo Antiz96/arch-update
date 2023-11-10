@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "July 2023" "Arch-Update v1" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "November 2023" "Arch-Update v1" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
@@ -10,17 +10,17 @@ arch-update \- An update notifier/applier for Arch Linux that assists you with i
 .SH DESCRIPTION
 An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu.
 .br
-.RB "Optional support for AUR package updates (through " "yay " "or " "paru" ") and desktop notifications (through " "libnotify" ")."
+.RB "Optional support for AUR package updates (through " "yay " "or " "paru" "), Flatpak package update (through " "flatpak " ") and desktop notifications (through " "libnotify" ")."
 
 .SH OPTIONS
 .PP
 .RB "If no option is passed, perform the main " "update " "function: Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (" "pacman -Syu" ")."
 .br
-.RB "It also supports AUR packages updates if " "yay " "or " "paru " "is installed."
+.RB "It also supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
 .br
 .RB "Before performing the update, it offers to print the latest Arch Linux news to the user. Arch news that have been published within the last 15 days are tagged as '[NEW]'."
 .br
-.RB "It also checks for orphan packages and pacnew/pacsave files and, if there are, offers to process them."
+.RB "It also checks for orphan packages, unused Flatpak packages and pacnew/pacsave files and, if there are, offers to process them."
 .br
 .RB "The " "update " "function is launched when you click on the (.desktop) icon."
 .PP
@@ -31,7 +31,7 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
 .br
 .RB "It sends a desktop notification containing the number of available updates if " "libnotify " "is installed."
 .br
-.RB "It supports AUR packages updates if " "yay " "or " "paru " "is installed."
+.RB "It supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
 .br
 .RB "The " "\-\-check " "option is automatically launched at boot and then every hour if you enabled the " "systemd.timer " "with the following command:" 
 .br
@@ -86,11 +86,17 @@ Error when updating the packages
 .SH TIPS AND TRICKS 
 .TP
 .B AUR Support
-.RB "Arch-Update supports AUR package updates when checking and installing updates if " "yay " "or " "paru " "is installed"
+.RB "Arch-Update supports AUR packages update when checking and installing updates if " "yay " "or " "paru " "is installed"
 .br
 See https://github.com/Jguer/yay and https://aur.archlinux.org/packages/yay
 .br
 See https://github.com/morganamilo/paru and https://aur.archlinux.org/packages/paru
+
+.TP
+.B Flatpak Support
+.RB "Arch-Update supports Flatpak packages update when checking and installing updates (as well as removing unused Flatpak packages) if " "flatpak " "is installed"
+.br
+See https://www.flatpak.org/ and https://archlinux.org/packages/extra/x86_64/flatpak/
 
 .TP
 .B Desktop notifications Support
@@ -112,7 +118,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 
 .TP
 .B Show packages version changes
-.RB "If you want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command:" 
+.RB "If you want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command (only shows version changes for pacman/AUR packages. Showing version changes for Flatpak packages is not supported):" 
 .br
 sudo sed -i "s/ | awk '{print $1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
 .br
@@ -132,6 +138,7 @@ sudo sed -i "s/ | awk '{print $1}'//g" /usr/bin/arch-update /usr/local/bin/arch-
 .BR systemd.timer (5),
 .BR yay (8),
 .BR paru (8),
+.BR flatpak (1),
 .BR notify-send (1)
 
 .SH BUGS
