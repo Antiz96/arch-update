@@ -163,7 +163,6 @@ list_news() {
 				echo -e "\n---\nTitle: ${news_selected}\nAuthor: ${news_author}\nPublication date: ${news_date}\nURL: ${news_url}\n---\n\n${news_article}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
 			;;
 			*)
-				echo
 				redo="n"
 			;;
 		esac
