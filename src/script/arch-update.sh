@@ -276,7 +276,7 @@ pacnew_files() {
 
 		case "${answer}" in
 			[Yy]|"")
-				echo
+				echo -e "\n--Processing Pacnew Files--"
 				"${su_cmd}" pacdiff
 				echo -e "\nThe pacnew file(s) processing has been applied\n"
 			;;
