@@ -163,7 +163,6 @@ list_news() {
 				echo -e "\n---\nTitle: ${news_selected}\nAuthor: ${news_author}\nPublication date: ${news_date}\nURL: ${news_url}\n---\n\n${news_article}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
 			;;
 			*)
-				echo
 				redo="n"
 			;;
 		esac
@@ -176,6 +175,7 @@ update() {
 	list_news
 
 	if [ -n "${packages}" ]; then
+		echo -e "\n--Updating Packages--"
 		if ! "${su_cmd}" pacman -Syu; then
 			icon_updates_available
 			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
@@ -184,6 +184,7 @@ update() {
 	fi
 					
 	if [ -n "${aur_packages}" ]; then
+		echo -e "\n--Updating AUR Packages--"
 		if ! "${aur_helper}" -Syu; then
 			icon_updates_available
 			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
@@ -192,6 +193,7 @@ update() {
 	fi
 
 	if [ -n "${flatpak_packages}" ]; then
+		echo -e "\n--Updating Flatpak Packages--"
 		if ! flatpak update; then
 			icon_updates_available
 			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
@@ -225,7 +227,7 @@ orphan_packages() {
 
 		case "${answer}" in
 			[Yy])
-				echo
+				echo -e "\n--Removing Orphan Packages--"
 				pacman -Qtdq | "${su_cmd}" pacman -Rns - && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
 			;;
 			*)
@@ -247,7 +249,7 @@ orphan_packages() {
 
 		case "${answer}" in
 			[Yy])
-				echo
+				echo -e "\n--Removing Flatpak Unused Packages--"
 				flatpak remove --unused && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
 			;;
 			*)
@@ -274,7 +276,7 @@ pacnew_files() {
 
 		case "${answer}" in
 			[Yy]|"")
-				echo
+				echo -e "\n--Processing Pacnew Files--"
 				"${su_cmd}" pacdiff
 				echo -e "\nThe pacnew file(s) processing has been applied\n"
 			;;
