@@ -26,6 +26,9 @@ elif command -v paru > /dev/null; then
 	aur_helper="paru"
 fi
 
+# Check if flatpak is installed for the optional Flatpak support
+flatpak=$(command -v flatpak)
+
 # Check if notify-send is installed for the optional desktop notification support
 notif=$(command -v notify-send)
 
@@ -36,7 +39,7 @@ ${name} v${version}
 
 An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.
 
-Run arch-update to perform the main "update" function: Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation. Before performing the update, offer to print the latest Arch Linux news. Post update, check for orphan packages and pacnew/pacsave files and, if there are, offers to process them.
+Run arch-update to perform the main "update" function: Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation. Before performing the update, offer to print the latest Arch Linux news. Post update, check for orphan/unused packages and pacnew/pacsave files and, if there are, offers to process them.
 
 Options:
   -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
@@ -88,6 +91,10 @@ list_packages() {
 		aur_packages=$("${aur_helper}" -Qua | awk '{print $1}')
 	fi
 
+	if [ -n "${flatpak}" ]; then
+		flatpak_packages=$(flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
+	fi
+
 	if [ -n "${packages}" ]; then
 		echo -e "--Packages--\n${packages}\n"
 	fi
@@ -96,7 +103,11 @@ list_packages() {
 		echo -e "--AUR Packages--\n${aur_packages}\n"
 	fi
 
-	if [ -z "${packages}" ] && [ -z "${aur_packages}" ]; then
+	if [ -n "${flatpak_packages}" ]; then
+		echo -e "--Flatpak Packages--\n${flatpak_packages}\n"
+	fi
+
+	if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
 		icon_up_to_date
 		echo -e "No update available\n"
 		orphan_packages
@@ -180,6 +191,14 @@ update() {
 		fi
 	fi
 
+	if [ -n "${flatpak_packages}" ]; then
+		if ! flatpak update; then
+			icon_updates_available
+			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+			exit 5
+		fi
+	fi
+
 	icon_up_to_date
 	echo -e "\nThe update has been applied\n"
 
@@ -190,6 +209,10 @@ update() {
 # Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are (used in the "list_packages" and "update" functions)
 orphan_packages() {
 	orphan_packages=$(pacman -Qtdq)
+
+	if [ -n "${flatpak}" ]; then
+		flatpak_unused=$(flatpak remove --unused | awk '{print $2}' | grep -v '^$' | sed '$d')
+	fi
 
 	if [ -n "${orphan_packages}" ]; then
 		echo -e "--Orphan Packages--\n${orphan_packages}\n"
@@ -211,6 +234,28 @@ orphan_packages() {
 		esac
 	else
 		echo -e "No orphan package found\n"
+	fi
+
+	if [ -n "${flatpak_unused}" ]; then
+		echo -e "--Flatpak Unused Packages--\n${flatpak_unused}\n"
+
+		if [ "$(echo "${flatpak_unused}" | wc -l)" -eq 1 ]; then
+			read -rp $'Would you like to remove this Flatpak unused package now? [y/N] ' answer
+		else
+			read -rp $'Would you like to remove these Flatpak unused packages now? [y/N] ' answer
+		fi
+
+		case "${answer}" in
+			[Yy])
+				echo
+				flatpak remove --unused && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+			;;
+			*)
+				echo -e "The removal hasn't been applied\n"
+			;;
+		esac
+	else
+		echo -e "No Flatpak unused package found\n"
 	fi
 }
 
@@ -248,8 +293,12 @@ pacnew_files() {
 check() {
 	icon_checking
 
-	if [ -n "${aur_helper}" ]; then
+	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
+		update_number=$( (checkupdates ; "${aur_helper}" -Qua ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d') | wc -l )
+	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
 		update_number=$( (checkupdates ; "${aur_helper}" -Qua) | wc -l )
+	elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
+		update_number=$( (checkupdates ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d') | wc -l )
 	else
 		update_number=$(checkupdates | wc -l)
 	fi
