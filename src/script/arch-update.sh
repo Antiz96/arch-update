@@ -26,7 +26,7 @@ elif command -v paru > /dev/null; then
 	aur_helper="paru"
 fi
 
-# Check if flatpak is installed for the optional flatpak support
+# Check if flatpak is installed for the optional Flatpak support
 flatpak=$(command -v flatpak)
 
 # Check if notify-send is installed for the optional desktop notification support
@@ -240,9 +240,9 @@ orphan_packages() {
 		echo -e "--Flatpak Unused Packages--\n${flatpak_unused}\n"
 
 		if [ "$(echo "${flatpak_unused}" | wc -l)" -eq 1 ]; then
-			read -rp $'Would you like to remove this flatpak unused package now? [y/N] ' answer
+			read -rp $'Would you like to remove this Flatpak unused package now? [y/N] ' answer
 		else
-			read -rp $'Would you like to remove these flatpak unused packages now? [y/N] ' answer
+			read -rp $'Would you like to remove these Flatpak unused packages now? [y/N] ' answer
 		fi
 
 		case "${answer}" in
@@ -255,7 +255,7 @@ orphan_packages() {
 			;;
 		esac
 	else
-		echo -e "No flatpak unused package found\n"
+		echo -e "No Flatpak unused package found\n"
 	fi
 }
 
