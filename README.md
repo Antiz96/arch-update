@@ -11,7 +11,8 @@
 
 ## Description
 
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu. Optional support for AUR & Flatpak packages updates and desktop notifications.
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu.  
+Optional support for AUR/Flatpak packages updates and desktop notifications.
 
 Features:
 
@@ -22,7 +23,7 @@ Features:
 - Helps you processing pacnew/pacsave files (through [pacdiff](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/extra/x86_64/opendoas/ "opendoas package").
 - Optional support for AUR packages update (through [yay](https://aur.archlinux.org/packages/yay "yay AUR package") or [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
-- Optional support for Flatpak packages update (through [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak "Flatpak package").
+- Optional support for Flatpak packages update (through [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak "Flatpak package")).
 - Optional support for desktop notifications (through [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify "libnotify package"), see <https://wiki.archlinux.org/title/Desktop_notifications>).
 
 ## Installation
@@ -126,7 +127,7 @@ Additionally `arch-update` will search for pacnew/pacsave files and offers to pr
 Run arch-update to perform the main "update" function:
 Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.
 Before performing the update, offer to print the latest Arch Linux news.
-Post update, check for orphan packages and pacnew/pacsave files and, if there are, offers to process them.
+Post update, check for orphan/unused packages and pacnew/pacsave files and, if there are, offers to process them.
 
 Options:
 -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
@@ -177,7 +178,7 @@ See <https://www.freedesktop.org/software/systemd/man/systemd.time.html>
 
 ### Show package version changes
 
-If you want `arch-update` to show the packages version changes in the main `update` function, run the following command *(only shows version changes for pacman/AUR packages. Showing version changes for Flatpak packages is not supported)*:
+If you want `arch-update` to show the packages version changes in the main `update` function, run the following command *(only shows version changes for pacman/AUR packages, showing version changes for Flatpak packages is not supported)*:
 
 ```bash
 sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true

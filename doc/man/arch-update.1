@@ -10,7 +10,7 @@ arch-update \- An update notifier/applier for Arch Linux that assists you with i
 .SH DESCRIPTION
 An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu.
 .br
-.RB "Optional support for AUR package updates (through " "yay " "or " "paru" "), Flatpak package update (through " "flatpak " ") and desktop notifications (through " "libnotify" ")."
+.RB "Optional support for AUR packages update (through " "yay " "or " "paru" "), Flatpak packages update (through " "flatpak" ") and desktop notifications (through " "libnotify" ")."
 
 .SH OPTIONS
 .PP
@@ -118,7 +118,7 @@ See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 
 .TP
 .B Show packages version changes
-.RB "If you want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command (only shows version changes for pacman/AUR packages. Showing version changes for Flatpak packages is not supported):" 
+.RB "If you want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command (only shows version changes for pacman/AUR packages, showing version changes for Flatpak packages is not supported):" 
 .br
 sudo sed -i "s/ | awk '{print $1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
 .br
