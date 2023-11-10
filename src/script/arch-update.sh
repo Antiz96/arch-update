@@ -293,11 +293,11 @@ pacnew_files() {
 check() {
 	icon_checking
 
-	if [ -n "${aur_helper}" ] && [ -n ${flatpak} ]; then
+	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
 		update_number=$( (checkupdates ; "${aur_helper}" -Qua ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d') | wc -l )
-	elif [ -n "${aur_helper}" ] && [ -z ${flatpak} ]; then
+	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
 		update_number=$( (checkupdates ; "${aur_helper}" -Qua) | wc -l )
-	elif [ -z "${aur_helper}" ] && [ -n ${flatpak} ]; then
+	elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
 		update_number=$( (checkupdates ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d') | wc -l )
 	else
 		update_number=$(checkupdates | wc -l)
