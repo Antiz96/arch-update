@@ -228,7 +228,7 @@ orphan_packages() {
 
 		case "${answer}" in
 			[Yy])
-				echo "--Removing Orphan Packages--"
+				echo -e "\n--Removing Orphan Packages--"
 				pacman -Qtdq | "${su_cmd}" pacman -Rns - && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
 			;;
 			*)
@@ -250,7 +250,7 @@ orphan_packages() {
 
 		case "${answer}" in
 			[Yy])
-				echo "--Removing Flatpak Unused Packages--"
+				echo -e "\n--Removing Flatpak Unused Packages--"
 				flatpak remove --unused && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
 			;;
 			*)
