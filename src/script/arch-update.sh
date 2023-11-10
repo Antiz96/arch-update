@@ -176,6 +176,7 @@ update() {
 	list_news
 
 	if [ -n "${packages}" ]; then
+		echo -e "\n--Updating Packages--"
 		if ! "${su_cmd}" pacman -Syu; then
 			icon_updates_available
 			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
@@ -184,6 +185,7 @@ update() {
 	fi
 					
 	if [ -n "${aur_packages}" ]; then
+		echo -e "\n--Updating AUR Packages--"
 		if ! "${aur_helper}" -Syu; then
 			icon_updates_available
 			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
@@ -192,6 +194,7 @@ update() {
 	fi
 
 	if [ -n "${flatpak_packages}" ]; then
+		echo -e "\n--Updating Flatpak Packages--"
 		if ! flatpak update; then
 			icon_updates_available
 			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
