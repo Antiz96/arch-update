@@ -238,26 +238,28 @@ orphan_packages() {
 		echo -e "No orphan package found\n"
 	fi
 
-	if [ -n "${flatpak_unused}" ]; then
-		echo -e "--Flatpak Unused Packages--\n${flatpak_unused}\n"
+	if [ -n "${flatpak}" ]; then
+		if [ -n "${flatpak_unused}" ]; then
+			echo -e "--Flatpak Unused Packages--\n${flatpak_unused}\n"
 
-		if [ "$(echo "${flatpak_unused}" | wc -l)" -eq 1 ]; then
-			read -rp $'Would you like to remove this Flatpak unused package now? [y/N] ' answer
+			if [ "$(echo "${flatpak_unused}" | wc -l)" -eq 1 ]; then
+				read -rp $'Would you like to remove this Flatpak unused package now? [y/N] ' answer
+			else
+				read -rp $'Would you like to remove these Flatpak unused packages now? [y/N] ' answer
+			fi
+
+			case "${answer}" in
+				[Yy])
+					echo -e "\n--Removing Flatpak Unused Packages--"
+					flatpak remove --unused && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+				;;
+				*)
+					echo -e "The removal hasn't been applied\n"
+				;;
+			esac
 		else
-			read -rp $'Would you like to remove these Flatpak unused packages now? [y/N] ' answer
+			echo -e "No Flatpak unused package found\n"
 		fi
-
-		case "${answer}" in
-			[Yy])
-				echo -e "\n--Removing Flatpak Unused Packages--"
-				flatpak remove --unused && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
-			;;
-			*)
-				echo -e "The removal hasn't been applied\n"
-			;;
-		esac
-	else
-		echo -e "No Flatpak unused package found\n"
 	fi
 }
 
