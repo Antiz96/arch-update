@@ -91,11 +91,11 @@ If there are available updates, the icon will show a bell sign and a desktop not
 
 When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages update support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages update support)*:
 
-![main_update_function](https://github.com/Antiz96/arch-update/assets/53110319/0536f8c3-3942-444e-b942-60c5c729c0bb)
+![main_update_function](https://github.com/Antiz96/arch-update/assets/53110319/76827a27-be4f-4937-b231-53be62d9115f)
 
 You can optionally configure `arch-update` to show the version changes during the package listing *(see [Tips and tricks - Show package version changes](#show-package-version-changes), not supported for Flatpak packages update)*:
 
-![main_update_function_with_version_changes](https://github.com/Antiz96/arch-update/assets/53110319/42ccff54-04df-481b-8fc8-8631f456c8aa)
+![main_update_function_with_version_changes](https://github.com/Antiz96/arch-update/assets/53110319/43ff2d3a-a6d6-455b-9642-b11c42ed1985)
 
 Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news.  
 Arch news that have been published within the last 15 days are tagged as `[NEW]`.  
