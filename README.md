@@ -17,7 +17,7 @@ Optional support for AUR/Flatpak packages updates and desktop notifications.
 Features:
 
 - Includes a (.desktop) clickeable icon that automatically changes to act as an update notifier/applier. Easy to integrate with any DE/WM, dock, status/launch bar, app menu, etc...
-- Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")), optionally shows the version changes as well.
+- Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Offers to print the latest Arch Linux news before applying updates (through [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") and [htmlq](https://archlinux.org/packages/extra/x86_64/htmlq/ "htmlq package")).
 - Automatic check and listing of orphan packages and offering you to remove them.
 - Helps you processing pacnew/pacsave files (through [pacdiff](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
@@ -91,11 +91,11 @@ If there are available updates, the icon will show a bell sign and a desktop not
 
 When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages update support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages update support)*:
 
-![main_update_function](https://github.com/Antiz96/arch-update/assets/53110319/76827a27-be4f-4937-b231-53be62d9115f)
+![main_update_function](https://github.com/Antiz96/arch-update/assets/53110319/43ff2d3a-a6d6-455b-9642-b11c42ed1985)
 
-You can optionally configure `arch-update` to show the version changes during the package listing *(see [Tips and tricks - Show package version changes](#show-package-version-changes), not supported for Flatpak packages update)*:
+You can optionally configure `arch-update` to not show the version changes during the package listing *(see [Tips and tricks - Do not show package version changes](#do-not-show-package-version-changes)*:
 
-![main_update_function_with_version_changes](https://github.com/Antiz96/arch-update/assets/53110319/43ff2d3a-a6d6-455b-9642-b11c42ed1985)
+![main_update_function_without_version_changes](https://github.com/Antiz96/arch-update/assets/53110319/76827a27-be4f-4937-b231-53be62d9115f)
 
 Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news.  
 Arch news that have been published within the last 15 days are tagged as `[NEW]`.  
@@ -176,12 +176,12 @@ systemctl --user enable --now arch-update.timer
 
 See <https://www.freedesktop.org/software/systemd/man/systemd.time.html>
 
-### Show package version changes
+### Do not show package version changes
 
-If you want `arch-update` to show the packages version changes in the main `update` function, run the following command *(only shows version changes for pacman/AUR packages, showing version changes for Flatpak packages is not supported)*:
+If you don't want `arch-update` to show the packages version changes in the main `update` function, run the following command:
 
 ```bash
-sudo sed -i "s/ | awk '{print \$1}'//g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
+sudo sed -i "s/packages=\$(checkupdates)/packages=\$(checkupdates | awk '{print \$1}')/g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null ; sudo sed -i "s/aur_packages=\$(\"\${aur_helper}\" -Qua)/aur_packages=\$(\"\${aur_helper}\" -Qua | awk '{print \$1}')/g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
 ```
 
 **Be aware that you'll have to relaunch that command at each `arch-update`'s new release.**
