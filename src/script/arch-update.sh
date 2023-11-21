@@ -85,10 +85,10 @@ icon_up_to_date() {
 list_packages() {
 	icon_checking
 	
-	packages=$(checkupdates | awk '{print $1}')
+	packages=$(checkupdates)
 
 	if [ -n "${aur_helper}" ]; then
-		aur_packages=$("${aur_helper}" -Qua | awk '{print $1}')
+		aur_packages=$("${aur_helper}" -Qua)
 	fi
 
 	if [ -n "${flatpak}" ]; then
