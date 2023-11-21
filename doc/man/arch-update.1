@@ -117,7 +117,7 @@ The timer needs to be re-enabled to apply changes, you can do so by launching th
 See https://www.freedesktop.org/software/systemd/man/systemd.time.html
 
 .TP
-.B Do not qhow packages version changes
+.B Do not show packages version changes
 .RB "If you don't want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command:" 
 .br
 sudo sed -i "s/packages=\$(checkupdates)/packages=\$(checkupdates | awk '{print \$1}')/g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null ; sudo sed -i "s/aur_packages=\$(\"\${aur_helper}\" -Qua)/aur_packages=\$(\"\${aur_helper}\" -Qua | awk '{print \$1}')/g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
