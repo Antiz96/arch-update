@@ -4,7 +4,7 @@
 # https://github.com/Antiz96/arch-update
 # Licensed under the GPL-3.0 license
 
-# Variables definition
+# General variables
 name="arch-update"
 version="1.6.2"
 option="${1}"
@@ -296,24 +296,36 @@ pacnew_files() {
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
 check() {
 	icon_checking
+	
+	statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
+	mkdir -p "${statedir}" && touch "${statedir}/last_check"
 
-	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
-		update_number=$( (checkupdates ; "${aur_helper}" -Qua ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d') | wc -l )
-	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
-		update_number=$( (checkupdates ; "${aur_helper}" -Qua) | wc -l )
-	elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
-		update_number=$( (checkupdates ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d') | wc -l )
-	else
-		update_number=$(checkupdates | wc -l)
+	if [ -f "${statedir}/current_check" ]; then
+		mv -f "${statedir}/current_check" "${statedir}/last_check"
 	fi
 
-	if [ "${update_number}" -ne 0 ]; then
+	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
+		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
+	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
+		update_available=$(checkupdates ; "${aur_helper}" -Qua)
+	elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
+		update_available=$(checkupdates ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
+	else
+		update_available=$(checkupdates)
+	fi
+	
+	if [ -n "${update_available}" ]; then
 		icon_updates_available
-		if [ -n "${notif}" ]; then
-			if [ "${update_number}" -eq 1 ]; then
-				notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} update available"
-			else
-				notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} updates available"
+		echo "${update_available}" > "${statedir}/current_check"
+
+		if ! diff "${statedir}/current_check" "${statedir}/last_check" &>/dev/null; then
+			if [ -n "${notif}" ]; then
+				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
+				if [ "${update_number}" -eq 1 ]; then
+					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} update available"
+				else
+					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} updates available"
+				fi
 			fi
 		fi
 	else
