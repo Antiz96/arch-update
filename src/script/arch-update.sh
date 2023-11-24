@@ -307,19 +307,21 @@ check() {
 		update_available=$(checkupdates)
 	fi
 	
+	if [ -n "${notif}" ]; then
+		statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
+		mkdir -p "${statedir}"
+
+		if [ -f "${statedir}/current_check" ]; then
+			mv -f "${statedir}/current_check" "${statedir}/last_check"
+		fi
+
+		echo "${update_available}" > "${statedir}/current_check"
+	fi
+
 	if [ -n "${update_available}" ]; then
 		icon_updates_available
 
 		if [ -n "${notif}" ]; then
-			statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
-			mkdir -p "${statedir}" && touch "${statedir}/last_check"
-
-			if [ -f "${statedir}/current_check" ]; then
-				mv -f "${statedir}/current_check" "${statedir}/last_check"
-			fi
-
-			echo "${update_available}" > "${statedir}/current_check"
-
 			if ! diff "${statedir}/current_check" "${statedir}/last_check" &>/dev/null; then
 				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
 
