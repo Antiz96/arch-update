@@ -296,13 +296,6 @@ pacnew_files() {
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
 check() {
 	icon_checking
-	
-	statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
-	mkdir -p "${statedir}" && touch "${statedir}/last_check"
-
-	if [ -f "${statedir}/current_check" ]; then
-		mv -f "${statedir}/current_check" "${statedir}/last_check"
-	fi
 
 	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
 		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
@@ -318,6 +311,13 @@ check() {
 		icon_updates_available
 
 		if [ -n "${notif}" ]; then
+			statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
+			mkdir -p "${statedir}" && touch "${statedir}/last_check"
+
+			if [ -f "${statedir}/current_check" ]; then
+				mv -f "${statedir}/current_check" "${statedir}/last_check"
+			fi
+
 			echo "${update_available}" > "${statedir}/current_check"
 
 			if ! diff "${statedir}/current_check" "${statedir}/last_check" &>/dev/null; then
