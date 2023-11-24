@@ -316,6 +316,7 @@ check() {
 		fi
 
 		echo "${update_available}" > "${statedir}/current_check"
+		sed -i '/^\s*$/d' "${statedir}/current_check"
 	fi
 
 	if [ -n "${update_available}" ]; then
