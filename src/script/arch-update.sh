@@ -316,11 +316,13 @@ check() {
 	
 	if [ -n "${update_available}" ]; then
 		icon_updates_available
-		echo "${update_available}" > "${statedir}/current_check"
 
-		if ! diff "${statedir}/current_check" "${statedir}/last_check" &>/dev/null; then
-			if [ -n "${notif}" ]; then
+		if [ -n "${notif}" ]; then
+			echo "${update_available}" > "${statedir}/current_check"
+
+			if ! diff "${statedir}/current_check" "${statedir}/last_check" &>/dev/null; then
 				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
+
 				if [ "${update_number}" -eq 1 ]; then
 					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} update available"
 				else
