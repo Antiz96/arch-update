@@ -323,7 +323,7 @@ check() {
 		icon_updates_available
 
 		if [ -n "${notif}" ]; then
-			if ! diff "${statedir}/current_check" "${statedir}/last_check" &>/dev/null; then
+			if ! diff "${statedir}/current_check" "${statedir}/last_check" &> /dev/null; then
 				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
 
 				if [ "${update_number}" -eq 1 ]; then
