@@ -20,10 +20,10 @@ else
 fi
 
 # Definition of the AUR helper to use (depending on if/which one is installed on the system) for the optional AUR packages support
-if command -v yay > /dev/null; then
-	aur_helper="yay"
-elif command -v paru > /dev/null; then
+if command -v paru > /dev/null; then
 	aur_helper="paru"
+elif command -v yay > /dev/null; then
+	aur_helper="yay"
 fi
 
 # Check if flatpak is installed for the optional Flatpak support
