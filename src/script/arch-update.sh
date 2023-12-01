@@ -61,27 +61,72 @@ invalid_option() {
 	exit 1
 }
 
-# Definition of the icon_checking function: Change icon to "checking" (used in the "list_packages" and "check" functions)
+# Definition of the icon_checking function: Change icon to "checking"
 icon_checking() {
 	cp -f /usr/share/icons/arch-update/arch-update_checking.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
 }
 
-# Definition of the icon_updates_available function: Change icon to "updates-available" (used in the "list_packages", "update" and "check" functions)
+# Definition of the icon_updates_available function: Change icon to "updates-available"
 icon_updates_available() {
 	cp -f /usr/share/icons/arch-update/arch-update_updates-available.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
 }
 
-# Definition of the icon_installing function: Change icon to "installing" (used in the "list_packages" function)
+# Definition of the icon_installing function: Change icon to "installing"
 icon_installing() {
 	cp -f /usr/share/icons/arch-update/arch-update_installing.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
 }
 
-# Definition of the icon_up_to_date function: Change icon to "up to date" (used in the "list_packages", "update" and "check" functions)
+# Definition of the icon_up_to_date function: Change icon to "up to date"
 icon_up_to_date() {
 	cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
 }
 
-# Definition of the list_packages function: Print packages that are available for update and offer to apply them if there are (used in the "update" functions)
+# Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
+check() {
+	icon_checking
+
+	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
+		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
+	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
+		update_available=$(checkupdates ; "${aur_helper}" -Qua)
+	elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
+		update_available=$(checkupdates ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
+	else
+		update_available=$(checkupdates)
+	fi
+	
+	if [ -n "${notif}" ]; then
+		statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
+		mkdir -p "${statedir}"
+
+		echo "${update_available}" > "${statedir}/current_check"
+		sed -i '/^\s*$/d' "${statedir}/current_check"
+	fi
+
+	if [ -n "${update_available}" ]; then
+		icon_updates_available
+
+		if [ -n "${notif}" ]; then
+			if ! diff "${statedir}/current_check" "${statedir}/last_check" &> /dev/null; then
+				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
+
+				if [ "${update_number}" -eq 1 ]; then
+					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} update available"
+				else
+					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} updates available"
+				fi
+			fi
+		fi
+	else
+		icon_up_to_date
+	fi
+
+	if [ -f "${statedir}/current_check" ]; then
+		mv -f "${statedir}/current_check" "${statedir}/last_check"
+	fi
+}
+
+# Definition of the list_packages function: Print packages that are available for update and offer to apply them if there are
 list_packages() {
 	icon_checking
 	
@@ -110,17 +155,13 @@ list_packages() {
 	if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
 		icon_up_to_date
 		echo -e "No update available\n"
-		orphan_packages
-		pacnew_files
-		kernel_reboot
-		exit 0
 	else
 		icon_updates_available
 		read -rp $'Proceed with update? [Y/n] ' answer
 
 		case "${answer}" in
 			[Yy]|"")
-				icon_installing
+				proceed_with_update="y"
 			;;
 			*)
 				echo -e >&2 "The update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
@@ -130,7 +171,7 @@ list_packages() {
 	fi
 }
 
-# Definition of the list_news function: Print the latest Arch news and offers to read them (used in the "update" function)
+# Definition of the list_news function: Print the latest Arch news and offers to read them
 list_news() {
 	redo="y"
 
@@ -172,8 +213,7 @@ list_news() {
 
 # Definition of the update function: Update packages
 update() {
-	list_packages
-	list_news
+	icon_installing
 
 	if [ -n "${packages}" ]; then
 		echo -e "\n--Updating Packages--"
@@ -204,14 +244,9 @@ update() {
 
 	icon_up_to_date
 	echo -e "\nThe update has been applied\n"
-
-	orphan_packages
-	pacnew_files
-	kernel_reboot
-
 }
 
-# Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are (used in the "list_packages" and "update" functions)
+# Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are
 orphan_packages() {
 	orphan_packages=$(pacman -Qtdq)
 
@@ -266,7 +301,7 @@ orphan_packages() {
 	fi
 }
 
-# Definition of the pacnew_files function: Print pacnew files and offer to process them if there are (used in the "list_packages" and "update" functions)
+# Definition of the pacnew_files function: Print pacnew files and offer to process them if there are
 pacnew_files() {
 	pacnew_files=$(pacdiff -o)
 		
@@ -318,59 +353,20 @@ kernel_reboot() {
 	else
 		echo -e "No pending kernel update found\n"
 	fi
-
-	read -n 1 -r -s -p $'Press \"enter\" to quit\n'
-}
-
-# Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
-check() {
-	icon_checking
-
-	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
-		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
-	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
-		update_available=$(checkupdates ; "${aur_helper}" -Qua)
-	elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
-		update_available=$(checkupdates ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
-	else
-		update_available=$(checkupdates)
-	fi
-	
-	if [ -n "${notif}" ]; then
-		statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
-		mkdir -p "${statedir}"
-
-		echo "${update_available}" > "${statedir}/current_check"
-		sed -i '/^\s*$/d' "${statedir}/current_check"
-	fi
-
-	if [ -n "${update_available}" ]; then
-		icon_updates_available
-
-		if [ -n "${notif}" ]; then
-			if ! diff "${statedir}/current_check" "${statedir}/last_check" &> /dev/null; then
-				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
-
-				if [ "${update_number}" -eq 1 ]; then
-					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} update available"
-				else
-					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} updates available"
-				fi
-			fi
-		fi
-	else
-		icon_up_to_date
-	fi
-
-	if [ -f "${statedir}/current_check" ]; then
-		mv -f "${statedir}/current_check" "${statedir}/last_check"
-	fi
 }
 
 # Execute the different functions depending on the option
 case "${option}" in
 	"")
-		update
+		list_packages
+		if [ -n "${proceed_with_update}" ]; then
+			list_news
+			update
+		fi
+		orphan_packages
+		pacnew_files
+		kernel_reboot
+		read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 	;;
 	-c|--check)
 		check
