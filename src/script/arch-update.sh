@@ -112,6 +112,7 @@ list_packages() {
 		echo -e "No update available\n"
 		orphan_packages
 		pacnew_files
+		kernel_reboot
 		exit 0
 	else
 		icon_updates_available
@@ -206,6 +207,8 @@ update() {
 
 	orphan_packages
 	pacnew_files
+	kernel_reboot
+
 }
 
 # Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are (used in the "list_packages" and "update" functions)
@@ -289,7 +292,33 @@ pacnew_files() {
 	else
 		echo -e "No pacnew file found\n"
 	fi
-		
+}
+
+# Definition of the kernel_reboot function: Verify if there's a kernel update waiting for a reboot to be applied
+kernel_reboot() {
+	kernel_compare=$(file /boot/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
+
+	if [ -z "${kernel_compare}" ]; then
+		echo -e "--Reboot required--\nThere's a pending kernel update on your system requiring a reboot to be applied"
+		read -rp $'Would you like to reboot now? [y/N] ' answer
+
+		case "${answer}" in
+			[Yy])
+				echo -e "\nRebooting in 5 seconds...\nPress ctrl+c to abort"
+				sleep 5
+				if ! reboot; then
+					echo -e >&2 "\nAn error has occurred\nThe reboot has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+					exit 6
+				fi
+			;;
+			*)
+				echo -e "\nThe reboot hasn't been performed\nPlease, consider rebooting to finalize the pending kernel update\n"
+			;;
+		esac
+	else
+		echo -e "No pending kernel update found\n"
+	fi
+
 	read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 }
 
