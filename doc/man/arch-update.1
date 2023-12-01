@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "November 2023" "Arch-Update v1" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "December 2023" "Arch-Update v1" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
@@ -20,7 +20,7 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
 .br
 .RB "Before performing the update, it offers to print the latest Arch Linux news to the user. Arch news that have been published within the last 15 days are tagged as '[NEW]'."
 .br
-.RB "It also checks for orphan packages, unused Flatpak packages and pacnew/pacsave files and, if there are, offers to process them."
+.RB "It also checks for orphan packages, unused Flatpak packages, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them."
 .br
 .RB "The " "update " "function is launched when you click on the (.desktop) icon."
 .PP
@@ -69,6 +69,10 @@ User didn't gave the confirmation to proceed
 .TP
 .B 5
 Error when updating the packages
+
+.TP
+.B 6
+Error when calling the reboot command to apply a pending kernel update
 
 .SH USAGE
 .TP
@@ -130,7 +134,9 @@ sudo sed -i "s/packages=$(checkupdates)/packages=$(checkupdates | awk '{print $1
 .BR echo (1),
 .BR sudo (8),
 .BR doas (1),
-.BR find (1),
+.BR sed (1),
+.BR file (1),
+.BR grep (1),
 .BR curl (1),
 .BR pacman (8),
 .BR pacdiff (8),

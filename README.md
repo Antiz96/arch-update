@@ -21,6 +21,7 @@ Features:
 - Offers to print the latest Arch Linux news before applying updates (through [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") and [htmlq](https://archlinux.org/packages/extra/x86_64/htmlq/ "htmlq package")).
 - Automatic check and listing of orphan packages and offering you to remove them.
 - Helps you processing pacnew/pacsave files (through [pacdiff](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package"), optionally requires [vim](https://archlinux.org/packages/extra/x86_64/vim/ "vim package") as the default [merge program](https://wiki.archlinux.org/title/Pacman/Pacnew_and_Pacsave#pacdiff "pacdiff merge program")).
+- Automatic check for pending kernel updates requiring a reboot to be applied and offers to do so if there's one.
 - Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/extra/x86_64/opendoas/ "opendoas package").
 - Optional support for AUR packages update (through [yay](https://aur.archlinux.org/packages/yay "yay AUR package") or [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
 - Optional support for Flatpak packages update (through [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak "Flatpak package")).
@@ -121,6 +122,10 @@ Additionally `arch-update` will search for pacnew/pacsave files and offers to pr
 
 ![process_pacnew](https://github.com/Antiz96/arch-update/assets/53110319/6f3430f7-fc28-48fa-b107-230f3f32ac5b)
 
+Finally, `arch-update` will check if there's a pending kernel update requiring a reboot to be applied and offers you to do so (if there is):
+
+![kernel_reboot](https://github.com/Antiz96/arch-update/assets/53110319/1eec68c0-e619-44ab-9dd9-74a341f7a5b7)
+
 ## Documentation
 
 ```text
@@ -141,6 +146,7 @@ Exit Codes:
 3  Error when changing icon
 4  User didn't gave the confirmation to proceed
 5  Error when updating the packages
+6  Error when calling the reboot command to apply a pending kernel update
 ```
 
 For more information, see the arch-update(1) man page
