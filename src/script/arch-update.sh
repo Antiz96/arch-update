@@ -340,10 +340,6 @@ check() {
 		statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
 		mkdir -p "${statedir}"
 
-		if [ -f "${statedir}/current_check" ]; then
-			mv -f "${statedir}/current_check" "${statedir}/last_check"
-		fi
-
 		echo "${update_available}" > "${statedir}/current_check"
 		sed -i '/^\s*$/d' "${statedir}/current_check"
 	fi
@@ -364,6 +360,10 @@ check() {
 		fi
 	else
 		icon_up_to_date
+	fi
+
+	if [ -f "${statedir}/current_check" ]; then
+		mv -f "${statedir}/current_check" "${statedir}/last_check"
 	fi
 }
 
