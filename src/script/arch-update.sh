@@ -344,6 +344,8 @@ kernel_reboot() {
 				if ! reboot; then
 					echo -e >&2 "\nAn error has occurred\nThe reboot has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 					exit 6
+				else
+					exit 0
 				fi
 			;;
 			*)
