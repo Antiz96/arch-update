@@ -206,6 +206,9 @@ update() {
 
 	orphan_packages
 	pacnew_files
+	reboot_kernel
+
+	read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 }
 
 # Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are (used in the "list_packages" and "update" functions)
@@ -289,8 +292,27 @@ pacnew_files() {
 	else
 		echo -e "No pacnew file found\n"
 	fi
-		
-	read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+}
+
+# Definition of the kernel_reboot function: Verify if there's a kernel update waiting for a reboot to be applied
+kernel_reboot() {
+	kernel_compare=$(file /boot/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep $(uname -r))
+
+	if [ -z "${kernel_compare}" ]; then
+		echo -e "--Reboot required--\nThere's a pending kernel update on your system requiring a reboot to be applied"
+		read -rp $'Would you like to reboot now? [y/N] ' answer
+
+		case "${answer}" in
+			[Yy])
+				echo -e "\nRebooting in 5 seconds...\nPress ctrl+c to abort"
+				sleep 5
+				"${su_cmd}" reboot
+			;;
+			*)
+				echo -e "\nThe reboot hasn't been performed\nPlease, consider rebooting to finalize the pending kernel update\n"
+			;;
+		esac
+	fi
 }
 
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
