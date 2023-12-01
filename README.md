@@ -59,6 +59,10 @@ sudo make uninstall
 
 The usage consist of integrating [the .desktop file](#the-desktop-file) anywhere (could be your desktop, your dock, your status/launch bar and/or your app menu) and enabling the [systemd timer](#the-systemd-timer).
 
+Here is a little YouTube presentation/review of `arch-update` that [Cardiac](https://github.com/Cardiacman13) and I made on [his YouTube channel](https://www.youtube.com/@Cardiacman) (**videos, including this one, are in french**):
+
+[![youtube_presentation](https://img.youtube.com/vi/QkOkX70SEmo/0.jpg)](https://www.youtube.com/watch?v=QkOkX70SEmo)
+
 ### The .desktop file
 
 The .desktop file is located in `/usr/share/applications/arch-update.desktop` (or `/usr/local/share/applications/arch-update.desktop` if you installed `arch-update` [from source](#from-source)).  
