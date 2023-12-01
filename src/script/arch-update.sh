@@ -312,6 +312,8 @@ kernel_reboot() {
 				echo -e "\nThe reboot hasn't been performed\nPlease, consider rebooting to finalize the pending kernel update\n"
 			;;
 		esac
+	else
+		echo -e "No pending kernel update found\n"
 	fi
 
 	read -n 1 -r -s -p $'Press \"enter\" to quit\n'
