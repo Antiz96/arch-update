@@ -206,7 +206,7 @@ update() {
 
 	orphan_packages
 	pacnew_files
-	reboot_kernel
+	kernel_reboot
 
 	read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 }
