@@ -306,7 +306,10 @@ kernel_reboot() {
 			[Yy])
 				echo -e "\nRebooting in 5 seconds...\nPress ctrl+c to abort"
 				sleep 5
-				reboot
+				if ! reboot; then
+					echo -e >&2 "\nAn error has occurred\nThe reboot has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+					exit 6
+				fi
 			;;
 			*)
 				echo -e "\nThe reboot hasn't been performed\nPlease, consider rebooting to finalize the pending kernel update\n"
