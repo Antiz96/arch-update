@@ -14,7 +14,7 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
 
 .SH OPTIONS
 .PP
-.RB "If no option is passed, perform the main " "update " "function: Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation (" "pacman -Syu" ")."
+.RB "If no option is passed, launch the relevant series of functions to perform a complete and proper update starting by printing the list of packages available for update, then ask for the user's confirmation to proceed with the installation."
 .br
 .RB "It also supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
 .br
@@ -22,7 +22,7 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
 .br
 .RB "It also checks for orphan packages, unused Flatpak packages, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them."
 .br
-.RB "The " "update " "function is launched when you click on the (.desktop) icon."
+.RB "Those functions are launched when you click on the (.desktop) icon."
 .PP
 
 .TP
@@ -83,7 +83,7 @@ Error when calling the reboot command to apply a pending kernel update
 
 .TP
 .B The systemd timer
-.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "(or in " "/etc/systemd/user/arch-update.service " "if you installed arch-update from source) that executes the " "\-\-check " "function when launched. To launch it automatically " "at boot and then once every hour " "enable the associated systemd timer:"
+.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "(or in " "/etc/systemd/user/arch-update.service " "if you installed arch-update from source) that executes the " "\-\-check " "function when launched. To launch it automatically " "at boot and then once every hour " "enable the associated systemd timer (the auto-check cycle can be modified to your liking. See the TIPS AND TRICKS chapter below):"
 .br
 .B systemctl \-\-user enable \-\-now arch-update.timer
 
@@ -114,7 +114,7 @@ See https://wiki.archlinux.org/title/Desktop_notifications
 .br
 .RB "If you want to change that cycle, you can edit the " "/usr/lib/systemd/user/arch-update.timer " "(or "/etc/systemd/user/arch-update.timer " if you installed arch-update from source) file and modify the " "OnUnitActiveSec " "value"
 .br
-The timer needs to be re-enabled to apply changes, you can do so by launching the following command:
+The timer needs to be re-enabled to apply changes, you can do so by running the following command:
 .br
 .B systemctl --user enable --now arch-update.timer
 .br
