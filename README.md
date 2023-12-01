@@ -63,7 +63,7 @@ Here is a little YouTube presentation/review of `arch-update` that [Cardiac](htt
 
 *Warning: Arch-Update's features and default behavior may have changed/evolved since then!*
 
-[![youtube_presentation](https://img.youtube.com/vi/QkOkX70SEmo/0.jpg)](https://www.youtube.com/watch?v=QkOkX70SEmo)
+[![youtube_presentation](https://github.com/Antiz96/arch-update/assets/53110319/23af5180-1881-486d-bd5a-3edd48ed1a08)](https://www.youtube.com/watch?v=QkOkX70SEmo)
 
 ### The .desktop file
 
