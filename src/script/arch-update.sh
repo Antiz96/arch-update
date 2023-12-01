@@ -296,7 +296,7 @@ pacnew_files() {
 
 # Definition of the kernel_reboot function: Verify if there's a kernel update waiting for a reboot to be applied
 kernel_reboot() {
-	kernel_compare=$(file /boot/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep $(uname -r))
+	kernel_compare=$(file /boot/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
 
 	if [ -z "${kernel_compare}" ]; then
 		echo -e "--Reboot required--\nThere's a pending kernel update on your system requiring a reboot to be applied"
