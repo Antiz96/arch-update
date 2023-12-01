@@ -180,7 +180,7 @@ See <https://wiki.archlinux.org/title/Desktop_notifications>
 If you enabled the systemd.timer, the `--check` option is automatically launched at boot and then once every hour.
 
 If you want to change that cycle, you can edit the `/usr/lib/systemd/user/arch-update.timer` file (or `/etc/systemd/user/arch-update.timer` if you installed `arch-update` [from source](#from-source)) and modify the `OnUnitActiveSec` value.  
-The timer needs to be re-enabled to apply changes, you can do so by typing the following command:
+The timer needs to be re-enabled to apply changes, you can do so by running the following command:
 
 ```bash
 systemctl --user enable --now arch-update.timer
