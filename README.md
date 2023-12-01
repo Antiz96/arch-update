@@ -69,12 +69,12 @@ Here is a little YouTube presentation/review of `arch-update` that [Cardiac](htt
 
 The .desktop file is located in `/usr/share/applications/arch-update.desktop` (or `/usr/local/share/applications/arch-update.desktop` if you installed `arch-update` [from source](#from-source)).  
 Its icon will automatically change depending on the different states (checking for updates, updates available, installing updates, up to date).  
-It will launch the main `update` function when clicked (see the [Documentation](#documentation) chapter). It is easy to integrate with any DE/WM, dock, status/launch bar or app menu.
+It will launch the relevant series of functions to perform a complete and proper update when clicked (see the [Documentation](#documentation) chapter). It is easy to integrate with any DE/WM, dock, status/launch bar or app menu.
 
 ### The systemd timer
 
 There is a systemd service in `/usr/lib/systemd/user/arch-update.service` (or in `/etc/systemd/user/arch-update.service` if you installed `arch-update` [from source](#from-source)) that executes the `check` function when launched (see the [Documentation](#documentation) chapter).  
-To launch it automatically **at boot and then once every hour**, enable the associated systemd timer:
+To launch it automatically **at boot and then once every hour**, enable the associated systemd timer (you can modify the auto-check cycle to your liking, see the [Tips and tricks - Modify the auto-check cycle](#modify-the-auto-check-cycle) chapter):
 
 ```bash
 systemctl --user enable --now arch-update.timer
@@ -87,20 +87,20 @@ It is the first icon from the left.
 
 ![top_bar_up_to_date](https://github.com/Antiz96/arch-update/assets/53110319/794696a0-3452-4afd-8d64-a41d64225082)
 
-When `arch-update` is checking for updates, the icon changes accordingly *(the `check` function is automatically triggered at boot and then once every hour if you enabled the [systemd timer](#the-systemd-timer) and can be manually triggered by running the `arch-update -c` command)*:
+When `arch-update` is checking for updates, the icon changes accordingly (the `check` function is automatically triggered at boot and then once every hour if you enabled the [systemd timer](#the-systemd-timer) and can be manually triggered by running the `arch-update -c` command):
 
 ![top_bar_checking](https://github.com/Antiz96/arch-update/assets/53110319/27cc96c7-6871-4235-81d2-20bc4528fa18)
 
-If there are available updates, the icon will show a bell sign and a desktop notification indicating the number of available updates will be sent *(requires [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package"))*:
+If there are available updates, the icon will show a bell sign and a desktop notification indicating the number of available updates will be sent (requires [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package")):
 
 ![top_bar_update_available](https://github.com/Antiz96/arch-update/assets/53110319/e76be2e4-07b1-41db-8a5d-8cff89e904f6)  
 ![notification](https://github.com/Antiz96/arch-update/assets/53110319/4d7fb15e-2d94-4740-9831-fe4dfd264c13)
 
-When the icon is clicked, it launches the main `update` function which refreshes the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation *(it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages update support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages update support)*:
+When the icon is clicked, it launches the relevant series of functions to perform a complete and proper update starting by refreshing the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages update support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages update support):
 
 ![main_update_function](https://github.com/Antiz96/arch-update/assets/53110319/43ff2d3a-a6d6-455b-9642-b11c42ed1985)
 
-You can optionally configure `arch-update` to not show the version changes during the package listing *(see [Tips and tricks - Do not show package version changes](#do-not-show-package-version-changes)*:
+You can optionally configure `arch-update` to not show the version changes during the package listing (see [Tips and tricks - Do not show package version changes](#do-not-show-package-version-changes):
 
 ![main_update_function_without_version_changes](https://github.com/Antiz96/arch-update/assets/53110319/76827a27-be4f-4937-b231-53be62d9115f)
 
@@ -135,10 +135,10 @@ Finally, `arch-update` will check if there's a pending kernel update requiring a
 ## Documentation
 
 ```text
-Run arch-update to perform the main "update" function:
+Run arch-update to launch the relevant series of functions to perform a complete and proper update:
 Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.
 Before performing the update, offer to print the latest Arch Linux news.
-Post update, check for orphan/unused packages and pacnew/pacsave files and, if there are, offers to process them.
+Post update, check for orphan/unused packages, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them.
 
 Options:
 -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
@@ -180,7 +180,7 @@ See <https://wiki.archlinux.org/title/Desktop_notifications>
 If you enabled the systemd.timer, the `--check` option is automatically launched at boot and then once every hour.
 
 If you want to change that cycle, you can edit the `/usr/lib/systemd/user/arch-update.timer` file (or `/etc/systemd/user/arch-update.timer` if you installed `arch-update` [from source](#from-source)) and modify the `OnUnitActiveSec` value.  
-The timer needs to be re-enabled to apply changes, you can do so by typing the following command:
+The timer needs to be re-enabled to apply changes, you can do so by running the following command:
 
 ```bash
 systemctl --user enable --now arch-update.timer
