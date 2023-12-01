@@ -112,6 +112,7 @@ list_packages() {
 		echo -e "No update available\n"
 		orphan_packages
 		pacnew_files
+		kernel_reboot
 		exit 0
 	else
 		icon_updates_available
@@ -208,7 +209,6 @@ update() {
 	pacnew_files
 	kernel_reboot
 
-	read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 }
 
 # Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are (used in the "list_packages" and "update" functions)
@@ -313,6 +313,8 @@ kernel_reboot() {
 			;;
 		esac
 	fi
+
+	read -n 1 -r -s -p $'Press \"enter\" to quit\n'
 }
 
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
