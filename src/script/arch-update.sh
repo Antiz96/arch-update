@@ -311,7 +311,7 @@ packages_cache() {
 	pacman_cache_total=$(("${pacman_cache_old}+${pacman_cache_uninstalled}"))
 
 	if [ "${pacman_cache_total}" -gt 0 ]; then
-		echo "--Old Cached Packages--"
+		echo "--Cached Packages--"
 
 		if [ "${pacman_cache_total}" -eq 1 ]; then
 			echo -e "There's an old or uninstalled cached package\n"
@@ -323,7 +323,7 @@ packages_cache() {
 			
 		case "${answer}" in
 			[Yy]|"")
-				echo -e "\n--Removing Old Cached Packages--"
+				echo -e "\n--Removing Cached Packages--"
 
 				if [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -eq 0 ]; then
 					echo -e "\nRemoving old cached packages..." && "${su_cmd}" paccache -r && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
@@ -338,7 +338,7 @@ packages_cache() {
 			;;
 		esac
 	else
-		echo -e "No old cached package found\n"
+		echo -e "No old or uninstalled cached package found\n"
 	fi
 }
 
