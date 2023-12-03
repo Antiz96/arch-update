@@ -375,7 +375,7 @@ kernel_reboot() {
 	kernel_compare=$(file /boot/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
 
 	if [ -z "${kernel_compare}" ]; then
-		echo -e "--Reboot required--\nThere's a pending kernel update on your system requiring a reboot to be applied"
+		echo -e "--Reboot required--\nThere's a pending kernel update on your system requiring a reboot to be applied\n"
 		read -rp $'Would you like to reboot now? [y/N] ' answer
 
 		case "${answer}" in
