@@ -301,6 +301,47 @@ orphan_packages() {
 	fi
 }
 
+# Definition of the packages_cache function: Search for old package archives in the pacman cache and offer to remove them if there are
+packages_cache() {
+	pacman_old_cache=$(paccache -dk3 | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
+	pacman_uninstalled_cache=$(paccache -duk0 | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
+
+	[ -z "${pacman_old_cache}" ] && pacman_old_cache="0"
+	[ -z "${pacman_uninstalled_cache}" ] && pacman_uninstalled_cache="0"
+	cache_total=$(("${cache_old}+${cache_uninstalled}"))
+
+	if [ "${cache_total}" -gt 0 ]; then
+		echo "--Old Cached Packages--"
+
+		if [ "${cache_total}" -eq 1 ]; then
+			echo -e "There's an old or uninstalled cached package\n"
+			read -rp $'Would you like to remove it from the cache now? [Y/n] ' answer
+		else
+			echo -e "There are old or uninstalled cached packages\n"
+			read -rp $'Would you like to remove them from the cache now? [Y/n] ' answer
+		fi
+			
+		case "${answer}" in
+			[Yy]|"")
+				echo -e "\n--Removing Old Cached Packages--"
+
+				if [ "${pacman_old_cache}" -gt 0 ] && [ "${pacman_uninstalled_cache}" -eq 0 ]; then
+					"${su_cmd}" paccache -r && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+				elif [ "${pacman_old_cache}" -eq 0 ] && [ "${pacman_uninstalled_cache}" -gt 0 ]; then
+					"${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+				elif [ "${pacman_old_cache}" -gt 0 ] && [ "${pacman_uninstalled_cache}" -gt 0 ]; then
+					"${su_cmd}" paccache -r && "${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+				fi
+			;;
+			*)
+				echo -e "The removal hasn't been applied\n"
+			;;
+		esac
+	else
+		echo -e "No old cached package found\n"
+	fi
+}
+
 # Definition of the pacnew_files function: Print pacnew files and offer to process them if there are
 pacnew_files() {
 	pacnew_files=$(pacdiff -o)
@@ -366,6 +407,7 @@ case "${option}" in
 			update
 		fi
 		orphan_packages
+		packages_cache
 		pacnew_files
 		kernel_reboot
 		read -n 1 -r -s -p $'Press \"enter\" to quit\n'
