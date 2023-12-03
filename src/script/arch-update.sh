@@ -317,20 +317,20 @@ packages_cache() {
 			echo -e "There's an old or uninstalled cached package\n"
 			read -rp $'Would you like to remove it from the cache now? [Y/n] ' answer
 		else
-			echo -e "There are old or uninstalled cached packages\n"
+			echo -e "There are old and/or uninstalled cached packages\n"
 			read -rp $'Would you like to remove them from the cache now? [Y/n] ' answer
 		fi
 			
 		case "${answer}" in
 			[Yy]|"")
-				echo -e "\n--Removing Old Cached Packages--"
+				echo -e "\n--Removing Old Cached Packages--\n"
 
 				if [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -eq 0 ]; then
-					"${su_cmd}" paccache -r && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+					echo "Removing old cached packages..." && "${su_cmd}" paccache -r && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
 				elif [ "${pacman_cache_old}" -eq 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
-					"${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+					echo "Removing uninstalled cached packages..." && "${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
 				elif [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
-					"${su_cmd}" paccache -r && "${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+					echo "Removing old cached packages..." && "${su_cmd}" paccache -r && echo "Removing uninstalled cached packages..." && "${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
 				fi
 			;;
 			*)
