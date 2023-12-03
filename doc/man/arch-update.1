@@ -20,7 +20,7 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
 .br
 .RB "Before performing the update, it offers to print the latest Arch Linux news to the user. Arch news that have been published within the last 15 days are tagged as '[NEW]'."
 .br
-.RB "It also checks for orphan packages, unused Flatpak packages, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them."
+.RB "It also checks for orphan packages, unused Flatpak packages, old and/or uninstalled cached packages in pacman's cache, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them."
 .br
 .RB "Those functions are launched when you click on the (.desktop) icon."
 .PP
@@ -142,6 +142,7 @@ sudo sed -i "s/packages=$(checkupdates)/packages=$(checkupdates | awk '{print $1
 .BR curl (1),
 .BR pacman (8),
 .BR pacdiff (8),
+.BR paccache (8),
 .BR systemd.service (5),
 .BR systemd.timer (5),
 .BR yay (8),

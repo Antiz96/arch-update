@@ -301,6 +301,47 @@ orphan_packages() {
 	fi
 }
 
+# Definition of the packages_cache function: Search for old package archives in the pacman cache and offer to remove them if there are
+packages_cache() {
+	pacman_cache_old=$(paccache -dk3 | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
+	pacman_cache_uninstalled=$(paccache -duk0 | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
+
+	[ -z "${pacman_cache_old}" ] && pacman_cache_old="0"
+	[ -z "${pacman_cache_uninstalled}" ] && pacman_cache_uninstalled="0"
+	pacman_cache_total=$(("${pacman_cache_old}+${pacman_cache_uninstalled}"))
+
+	if [ "${pacman_cache_total}" -gt 0 ]; then
+		echo "--Cached Packages--"
+
+		if [ "${pacman_cache_total}" -eq 1 ]; then
+			echo -e "There's an old or uninstalled cached package\n"
+			read -rp $'Would you like to remove it from the cache now? [Y/n] ' answer
+		else
+			echo -e "There are old and/or uninstalled cached packages\n"
+			read -rp $'Would you like to remove them from the cache now? [Y/n] ' answer
+		fi
+			
+		case "${answer}" in
+			[Yy]|"")
+				echo -e "\n--Removing Cached Packages--"
+
+				if [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -eq 0 ]; then
+					echo -e "\nRemoving old cached packages..." && "${su_cmd}" paccache -r && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+				elif [ "${pacman_cache_old}" -eq 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
+					echo -e "\nRemoving uninstalled cached packages..." && "${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+				elif [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
+					echo -e "\nRemoving old cached packages..." && "${su_cmd}" paccache -r && echo -e "\nRemoving uninstalled cached packages..." && "${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+				fi
+			;;
+			*)
+				echo -e "The removal hasn't been applied\n"
+			;;
+		esac
+	else
+		echo -e "No old or uninstalled cached package found\n"
+	fi
+}
+
 # Definition of the pacnew_files function: Print pacnew files and offer to process them if there are
 pacnew_files() {
 	pacnew_files=$(pacdiff -o)
@@ -366,6 +407,7 @@ case "${option}" in
 			update
 		fi
 		orphan_packages
+		packages_cache
 		pacnew_files
 		kernel_reboot
 		read -n 1 -r -s -p $'Press \"enter\" to quit\n'
