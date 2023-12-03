@@ -20,6 +20,7 @@ Features:
 - Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Offers to print the latest Arch Linux news before applying updates (through [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") and [htmlq](https://archlinux.org/packages/extra/x86_64/htmlq/ "htmlq package")).
 - Automatic check and listing of orphan packages and offering you to remove them.
+- Automatic check for old and/or uninstalled cached packages in `pacman`'s cache and offering you to remove them (through [paccache](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Helps you processing pacnew/pacsave files (through [pacdiff](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package"), optionally requires [vim](https://archlinux.org/packages/extra/x86_64/vim/ "vim package") as the default [merge program](https://wiki.archlinux.org/title/Pacman/Pacnew_and_Pacsave#pacdiff "pacdiff merge program")).
 - Automatic check for pending kernel updates requiring a reboot to be applied and offers to do so if there's one.
 - Support for both [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") and [doas](https://archlinux.org/packages/extra/x86_64/opendoas/ "opendoas package").
@@ -120,9 +121,14 @@ When the update is over, the icon changes accordingly:
 
 ![top_bar_up_to_date](https://github.com/Antiz96/arch-update/assets/53110319/794696a0-3452-4afd-8d64-a41d64225082)
 
-`arch-update` will also search for orphan packages/unused Flatpak packages and offers to remove them (if there are):
+`arch-update` will then search for orphan packages/unused Flatpak packages and offers to remove them (if there are):
 
 ![remove_orphan](https://github.com/Antiz96/arch-update/assets/53110319/4abf2623-ba27-4c42-8289-884199bfb579)
+
+`arch-update` will also search for old and/or uninstalled cached packages and offers to remove them (if there are):  
+*The default behavior is to keep the last 3 cached versions of installed packages and remove every cached versions of uninstalled packages*
+
+![remove_cached_packages](https://github.com/Antiz96/arch-update/assets/53110319/c920488c-d891-44c3-b1a7-3dcc93867b84)
 
 Additionally `arch-update` will search for pacnew/pacsave files and offers to process them via `pacdiff` (if there are):
 
