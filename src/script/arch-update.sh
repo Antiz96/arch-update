@@ -6,7 +6,7 @@
 
 # General variables
 name="arch-update"
-version="1.9.0"
+version="1.9.1"
 option="${1}"
 
 # Definition of the evelation method to use (depending on which one is installed on the system)
