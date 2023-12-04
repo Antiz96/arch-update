@@ -372,7 +372,7 @@ pacnew_files() {
 
 # Definition of the kernel_reboot function: Verify if there's a kernel update waiting for a reboot to be applied
 kernel_reboot() {
-	if [ -f /boot/vmlinuz* ]; then
+	if find /boot/vmlinuz* &> /dev/null; then
 		kernel_compare=$(file /boot/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
 	else
 		kernel_compare=$(file /usr/lib/modules/*/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
