@@ -3,21 +3,16 @@ on: pull_request
 
 jobs:
   Test:
-    runs-on: ubuntu-latest
-
-    container:
-      image: docker.io/library/alpine:latest
-      options: --privileged
+    runs-on:
+      - self-hosted
+      - CI-CD
 
     steps:
       - name: Clone repo
         uses: actions/checkout@v4
 
-      - name: Update container
-        run: apk update && apk upgrade
-
-      - name: Install packages
-        run: apk add py3-pip ruby shellcheck && pip install codespell && gem install mdl
+      - name: Run actionlint
+        run: actionlint -ignore 'label "CI-CD" is unknown' .github/workflows/CI.yml
 
       - name: Run codespell
         run: codespell --enable-colors
