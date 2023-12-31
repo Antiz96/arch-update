@@ -6,7 +6,7 @@
 
 # General variables
 name="arch-update"
-version="1.9.1"
+version="1.9.2"
 option="${1}"
 
 # Definition of the evelation method to use (depending on which one is installed on the system)
@@ -129,9 +129,38 @@ check() {
 # Definition of the list_packages function: Print packages that are available for update and offer to apply them if there are
 list_packages() {
 	icon_checking
-	
-	packages=$(checkupdates)
 
+    updates=$(checkupdates)
+
+	packages=""
+
+    while IFS= read -r line; do
+        package=$(echo "$line" | cut -d ' ' -f 1)
+        old_version=$(echo "$line" | cut -d ' ' -f 2)
+        new_version=$(echo "$line" | cut -d '>' -f 2 | xargs)
+
+        i=0
+        while [ $i -lt ${#old_version} ]; do
+            old_char=$(echo "$old_version" | cut -c $((i+1)))
+            new_char=$(echo "$new_version" | cut -c $((i+1)))
+            if [ "$old_char" != "$new_char" ]; then
+                break
+            fi
+            i=$((i+1))
+        done
+
+        colored_old_version="${old_version:0:i}$(tput setaf 1)${old_version:i}$(tput sgr0)"
+        colored_new_version="${new_version:0:i}$(tput setaf 2)${new_version:i}$(tput sgr0)"
+
+        if [ -n "$line" ]; then
+            packages+="${package} ${colored_old_version} -> ${colored_new_version}\n"
+        fi
+    done <<< "$updates"
+
+    if [ -n "${packages}" ]; then
+        packages=$(echo -e "$packages" | head -n -1)
+    fi
+	
 	if [ -n "${aur_helper}" ]; then
 		aur_packages=$("${aur_helper}" -Qua)
 	fi
