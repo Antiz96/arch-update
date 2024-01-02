@@ -183,16 +183,19 @@ See <https://wiki.archlinux.org/title/Desktop_notifications>
 
 ### Modify the auto-check cycle
 
-If you enabled the systemd.timer, the `--check` option is automatically launched at boot and then once every hour.
+If you enabled the systemd.timer, the `--check` option is automatically launched at boot and then once per hour.
 
-If you want to change that cycle, you can edit the `/usr/lib/systemd/user/arch-update.timer` file (or `/etc/systemd/user/arch-update.timer` if you installed `arch-update` [from source](#from-source)) and modify the `OnUnitActiveSec` value.  
-The timer needs to be re-enabled to apply changes, you can do so by running the following command:
+If you want to change the check cycle, run `systemctl --user edit arch-update.timer` to create an override configuration for the timer and input the following in it:
 
-```bash
-systemctl --user enable --now arch-update.timer
+*Example below with a check every 10 minutes*
+
+```text
+[Timer]
+OnUnitActiveSec=10m
 ```
 
-See <https://www.freedesktop.org/software/systemd/man/systemd.time.html>
+Time units are `s` for seconds, `m` for minutes, `h` for hours, `d` for days...  
+See <https://www.freedesktop.org/software/systemd/man/systemd.time.html> for more details.
 
 ### Do not show package version changes
 
