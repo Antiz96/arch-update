@@ -187,8 +187,6 @@ If you enabled the systemd.timer, the `--check` option is automatically launched
 
 If you want to change the check cycle, run `systemctl --user edit arch-update.timer` to create an override configuration for the timer and input the following in it:
 
-*Example below with a check every 10 minutes*
-
 ```text
 [Timer]
 OnUnitActiveSec=10m
