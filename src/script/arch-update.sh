@@ -409,9 +409,6 @@ packages_cache() {
 					if ! "${su_cmd}" paccache -r; then
 						echo
 						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
-					else
-						echo
-						info_msg "The removal has been applied\n"
 					fi
 				elif [ "${pacman_cache_old}" -eq 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
 					echo
@@ -420,17 +417,22 @@ packages_cache() {
 					if ! "${su_cmd}" paccache -ruk0; then
 						echo
 						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
-					else
-						echo
-						info_msg "The removal has been applied\n"
 					fi
 				elif [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
-					if ! echo && main_msg "Removing old cached packages..." && "${su_cmd}" paccache -r && echo && main_msg "Removing uninstalled cached packages..." && "${su_cmd}" paccache -ruk0; then
+					echo
+					main_msg "Removing old cached packages..."
+
+					if ! "${su_cmd}" paccache -r; then
 						echo
 						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
-					else
+					fi
+
+					echo
+					main_msg "Removing uninstalled cached packages..."
+
+					if ! "${su_cmd}" paccache -ruk0; then
 						echo
-						info_msg "The removal has been applied\n"
+						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
 					fi
 				fi
 			;;
