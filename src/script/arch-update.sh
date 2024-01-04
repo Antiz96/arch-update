@@ -504,7 +504,7 @@ kernel_reboot() {
 				sleep 5
 				if ! reboot; then
 					echo
-					error_msg "An error has occurred\nThe reboot has been aborted\n" && quit_msg
+					error_msg "An error has occurred during the reboot process\nThe reboot has been aborted\n" && quit_msg
 					exit 6
 				else
 					exit 0
