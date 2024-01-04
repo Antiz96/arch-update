@@ -269,7 +269,7 @@ update() {
 
 	if [ -n "${packages}" ]; then
 		echo
-		main_msg "Updating Packages..."
+		main_msg "Updating Packages...\n"
 
 		if ! "${su_cmd}" pacman -Syu; then
 			icon_updates_available
@@ -339,6 +339,7 @@ orphan_packages() {
 				fi
 			;;
 			*)
+				echo
 				info_msg "The removal hasn't been applied\n"
 			;;
 		esac
@@ -473,6 +474,7 @@ pacnew_files() {
 			;;
 		esac
 	else
+		echo
 		info_msg "No pacnew file found\n"
 	fi
 }
