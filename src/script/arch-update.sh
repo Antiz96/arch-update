@@ -87,7 +87,10 @@ ${name} v${version}
 
 An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.
 
-Run arch-update to perform the main "update" function: Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation. Before performing the update, offer to print the latest Arch Linux news. Post update, check for orphan/unused packages and pacnew/pacsave files and, if there are, offers to process them.
+Run arch-update to perform the main "update" function:
+Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.
+Before performing the update, offer to print the latest Arch Linux news.
+Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.
 
 Options:
   -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
