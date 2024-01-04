@@ -332,7 +332,7 @@ orphan_packages() {
 				
 				if ! pacman -Qtdq | "${su_cmd}" pacman -Rns -; then
 					echo
-					error_msg "An error has occurred\nThe removal has been aborted\n"
+					error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
 				else
 					echo
 					info_msg "The removal has been applied\n"
@@ -365,7 +365,7 @@ orphan_packages() {
 
 					if ! flatpak remove --unused; then
 						echo
-						error_msg "An error has occurred\nThe removal has been aborted\n"
+						error_msg "An error has occurred the removal process\nThe removal has been aborted\n"
 					else
 						echo
 						info_msg "The removal has been applied\n"
