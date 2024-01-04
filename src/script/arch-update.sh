@@ -187,17 +187,17 @@ list_packages() {
 	fi
 
 	if [ -n "${packages}" ]; then
-		main_msg "Packages:\n"
+		main_msg "Packages:"
 		echo -e "${packages}\n"
 	fi
 
 	if [ -n "${aur_packages}" ]; then
-		main_msg "AUR Packages:\n"
+		main_msg "AUR Packages:"
 		echo -e "${aur_packages}\n"
 	fi
 
 	if [ -n "${flatpak_packages}" ]; then
-		main_msg "Flatpak Packages:\n"
+		main_msg "Flatpak Packages:"
 		echo -e "${flatpak_packages}\n"
 	fi
 
@@ -230,7 +230,7 @@ list_news() {
 		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -5 | xargs -I{} date -d "{}" "+%s")
 
 		echo
-		main_msg "Arch News:\n"
+		main_msg "Arch News:"
 
 		i=1
 		while IFS= read -r line; do
@@ -316,7 +316,7 @@ orphan_packages() {
 	fi
 
 	if [ -n "${orphan_packages}" ]; then
-		main_msg "Orphan Packages:\n"
+		main_msg "Orphan Packages:"
 		echo -e "${orphan_packages}\n"
 
 		if [ "$(echo "${orphan_packages}" | wc -l)" -eq 1 ]; then
@@ -349,7 +349,7 @@ orphan_packages() {
 
 	if [ -n "${flatpak}" ]; then
 		if [ -n "${flatpak_unused}" ]; then
-			main_msg "Flatpak Unused Packages:\n"
+			main_msg "Flatpak Unused Packages:"
 			echo -e "${flatpak_unused}\n"
 
 			if [ "$(echo "${flatpak_unused}" | wc -l)" -eq 1 ]; then
@@ -458,7 +458,7 @@ pacnew_files() {
 	pacnew_files=$(pacdiff -o)
 		
 	if [ -n "${pacnew_files}" ]; then
-		main_msg "Pacnew Files:\n"
+		main_msg "Pacnew Files:"
 		echo -e "${pacnew_files}\n"
 
 		if [ "$(echo "${pacnew_files}" | wc -l)" -eq 1 ]; then
@@ -494,7 +494,7 @@ kernel_reboot() {
 	fi
 
 	if [ -z "${kernel_compare}" ]; then
-		main_msg "Reboot required:\n\nThere's a pending kernel update on your system requiring a reboot to be applied\n"
+		main_msg "Reboot required:\nThere's a pending kernel update on your system requiring a reboot to be applied\n"
 		ask_msg "Would you like to reboot now? [y/N]"
 
 		case "${answer}" in
