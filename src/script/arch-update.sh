@@ -437,6 +437,7 @@ packages_cache() {
 				fi
 			;;
 			*)
+				echo
 				info_msg "The removal hasn't been applied\n"
 			;;
 		esac
@@ -450,7 +451,6 @@ pacnew_files() {
 	pacnew_files=$(pacdiff -o)
 		
 	if [ -n "${pacnew_files}" ]; then
-		echo
 		main_msg "Pacnew Files:"
 		echo -e "${pacnew_files}\n"
 
@@ -474,7 +474,6 @@ pacnew_files() {
 			;;
 		esac
 	else
-		echo
 		info_msg "No pacnew file found\n"
 	fi
 }
