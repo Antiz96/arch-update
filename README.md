@@ -139,10 +139,12 @@ Finally, `arch-update` will check if there's a pending kernel update requiring a
 ## Documentation
 
 ```text
-Run arch-update to launch the relevant series of functions to perform a complete and proper update:
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.
+
+Run arch-update to perform the main "update" function:
 Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.
 Before performing the update, offer to print the latest Arch Linux news.
-Post update, check for orphan/unused packages, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them.
+Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.
 
 Options:
 -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
