@@ -361,7 +361,7 @@ orphan_packages() {
 			case "${answer}" in
 				[Yy])
 					echo
-					main_msg "Removing Flatpak Unused Packages...\n"
+					main_msg "Removing Flatpak Unused Packages..."
 
 					if ! flatpak remove --unused; then
 						echo
