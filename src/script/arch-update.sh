@@ -9,13 +9,61 @@ name="arch-update"
 version="1.9.1"
 option="${1}"
 
+# Definition of the colors for the colorized output
+bold="\e[1m"
+blue="${bold}\e[34m"
+green="${bold}\e[32m"
+yellow="${bold}\e[33m"
+red="${bold}\e[31m"
+color_off="\e[0m"
+
+# Definition of the main_msg function: Print a message as a main message
+main_msg() {
+	msg="${1}"
+	echo -e "${blue}==>${color_off}${bold} ${msg}${color_off}"
+}
+
+# Definition of the info_msg function: Print a message as an information message
+info_msg() {
+	msg="${1}"
+	echo -e "${green}==>${color_off}${bold} ${msg}${color_off}"
+}
+
+# Definition of the ask_msg function: Print a message as an interactive question
+ask_msg() {
+	msg="${1}"
+	read -rp $"$(echo -e "${blue}->${color_off}${bold} ${msg}${color_off} ")" answer
+}
+
+# Definition of the warning_msg function: Print a message as a warning message
+warning_msg() {
+	msg="${1}"
+	echo -e "${yellow}==> WARNING:${color_off}${bold} ${msg}${color_off}"
+}
+
+# Definition of the error_msg function: Print a message as an error message
+error_msg() {
+	msg="${1}"
+	echo -e >&2 "${red}==> ERROR:${color_off}${bold} ${msg}${color_off}"
+}
+
+# Definition of the continue_msg function: Print the continue message
+continue_msg() {
+	read -n 1 -r -s -p $"$(info_msg "Press \"enter\" to continue ")" && echo
+}
+
+# Definition of the quit_msg function: Print the quit message
+quit_msg() {
+	read -n 1 -r -s -p $"$(info_msg "Press \"enter\" to quit ")" && echo
+}
+
 # Definition of the evelation method to use (depending on which one is installed on the system)
 if command -v sudo > /dev/null; then
 	su_cmd="sudo"
 elif command -v doas > /dev/null; then
 	su_cmd="doas"
 else
-	echo -e >&2 "A privilege elevation method is required\nPlease, install sudo or doas\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+	error_msg "A privilege elevation method is required\nPlease, install sudo or doas\n" && quit_msg
 	exit 2
 fi
 
@@ -98,7 +146,6 @@ check() {
 	if [ -n "${notif}" ]; then
 		statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
 		mkdir -p "${statedir}"
-
 		echo "${update_available}" > "${statedir}/current_check"
 		sed -i '/^\s*$/d' "${statedir}/current_check"
 	fi
@@ -109,7 +156,6 @@ check() {
 		if [ -n "${notif}" ]; then
 			if ! diff "${statedir}/current_check" "${statedir}/last_check" &> /dev/null; then
 				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
-
 				if [ "${update_number}" -eq 1 ]; then
 					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} update available"
 				else
@@ -141,30 +187,33 @@ list_packages() {
 	fi
 
 	if [ -n "${packages}" ]; then
-		echo -e "--Packages--\n${packages}\n"
+		main_msg "Packages:"
+		echo -e "${packages}\n"
 	fi
 
 	if [ -n "${aur_packages}" ]; then
-		echo -e "--AUR Packages--\n${aur_packages}\n"
+		main_msg "AUR Packages:"
+		echo -e "${aur_packages}\n"
 	fi
 
 	if [ -n "${flatpak_packages}" ]; then
-		echo -e "--Flatpak Packages--\n${flatpak_packages}\n"
+		main_msg "Flatpak Packages:"
+		echo -e "${flatpak_packages}\n"
 	fi
 
 	if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
 		icon_up_to_date
-		echo -e "No update available\n"
+		info_msg "No update available\n"
 	else
 		icon_updates_available
-		read -rp $'Proceed with update? [Y/n] ' answer
+		ask_msg "Proceed with update? [Y/n]"
 
 		case "${answer}" in
 			[Yy]|"")
 				proceed_with_update="y"
 			;;
 			*)
-				echo -e >&2 "The update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+				error_msg "The update has been aborted\n" && quit_msg
 				exit 4
 			;;
 		esac
@@ -180,18 +229,21 @@ list_news() {
 		news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed s/View:\ //g | head -5)
 		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -5 | xargs -I{} date -d "{}" "+%s")
 
-		echo -e "\n--Arch News--"
+		echo
+		main_msg "Arch News:"
+
 		i=1
 		while IFS= read -r line; do
 			if [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(date "+%Y-%m-%d" -d "15 days ago")" "+%s")" ]; then
-				echo "${i} - ${line} [NEW]"
+				echo -e "${i} - ${line} ${green}[NEW]${color_off}"
 			else
 				echo "${i} - ${line}"
 			fi
 			((i=i+1))
 		done < <(printf '%s\n' "${news_titles}")
 
-		read -rp $'\nSelect the news to read (or just press \"enter\" to proceed with update): ' answer
+		echo
+		ask_msg "Select the news to read (or just press \"enter\" to proceed with update):"
 
 		case "${answer}" in
 			1|2|3|4|5)
@@ -202,7 +254,7 @@ list_news() {
 				news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
 				news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
 				news_article=$(echo "${news_content}" | htmlq -t .article-content)
-				echo -e "\n---\nTitle: ${news_selected}\nAuthor: ${news_author}\nPublication date: ${news_date}\nURL: ${news_url}\n---\n\n${news_article}\n" && read -n 1 -r -s -p $'Press \"enter\" to continue\n'
+				echo -e "\n${blue}---${color_off}\n${bold}Title:${color_off} ${news_selected}\n${bold}Author:${color_off} ${news_author}\n${bold}Publication date:${color_off} ${news_date}\n${bold}URL:${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
 			;;
 			*)
 				redo="n"
@@ -216,34 +268,43 @@ update() {
 	icon_installing
 
 	if [ -n "${packages}" ]; then
-		echo -e "\n--Updating Packages--"
+		echo
+		main_msg "Updating Packages...\n"
+
 		if ! "${su_cmd}" pacman -Syu; then
 			icon_updates_available
-			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+			echo
+			error_msg "An error has occurred during the update process\nThe update has been aborted\n" && quit_msg
 			exit 5
 		fi
 	fi
 					
 	if [ -n "${aur_packages}" ]; then
-		echo -e "\n--Updating AUR Packages--"
+		echo
+		main_msg "Updating AUR Packages...\n"
+
 		if ! "${aur_helper}" -Syu; then
 			icon_updates_available
-			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+			echo
+			error_msg "An error has occurred during the update process\nThe update has been aborted\n" && quit_msg
 			exit 5
 		fi
 	fi
 
 	if [ -n "${flatpak_packages}" ]; then
-		echo -e "\n--Updating Flatpak Packages--"
+		echo
+		main_msg "Updating Flatpak Packages...\n"
+
 		if ! flatpak update; then
 			icon_updates_available
-			echo -e >&2 "\nAn error has occurred\nThe update has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+			error_msg "An error has occurred during the update process\nThe update has been aborted\n" && quit_msg
 			exit 5
 		fi
 	fi
 
 	icon_up_to_date
-	echo -e "\nThe update has been applied\n"
+	echo
+	info_msg "The update has been applied\n"
 }
 
 # Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are
@@ -255,48 +316,67 @@ orphan_packages() {
 	fi
 
 	if [ -n "${orphan_packages}" ]; then
-		echo -e "--Orphan Packages--\n${orphan_packages}\n"
+		main_msg "Orphan Packages:"
+		echo -e "${orphan_packages}\n"
 
 		if [ "$(echo "${orphan_packages}" | wc -l)" -eq 1 ]; then
-			read -rp $'Would you like to remove this orphan package (and its potential dependencies) now? [y/N] ' answer
+			ask_msg "Would you like to remove this orphan package (and its potential dependencies) now? [y/N]"
 		else
-			read -rp $'Would you like to remove these orphan packages (and their potential dependencies) now? [y/N] ' answer
+			ask_msg "Would you like to remove these orphan packages (and their potential dependencies) now? [y/N]"
 		fi
 
 		case "${answer}" in
 			[Yy])
-				echo -e "\n--Removing Orphan Packages--"
-				pacman -Qtdq | "${su_cmd}" pacman -Rns - && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+				echo
+				main_msg "Removing Orphan Packages...\n"
+				
+				if ! pacman -Qtdq | "${su_cmd}" pacman -Rns -; then
+					echo
+					error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+				else
+					echo
+					info_msg "The removal has been applied\n"
+				fi
 			;;
 			*)
-				echo -e "The removal hasn't been applied\n"
+				echo
+				info_msg "The removal hasn't been applied\n"
 			;;
 		esac
 	else
-		echo -e "No orphan package found\n"
+		info_msg "No orphan package found\n"
 	fi
 
 	if [ -n "${flatpak}" ]; then
 		if [ -n "${flatpak_unused}" ]; then
-			echo -e "--Flatpak Unused Packages--\n${flatpak_unused}\n"
+			main_msg "Flatpak Unused Packages:"
+			echo -e "${flatpak_unused}\n"
 
 			if [ "$(echo "${flatpak_unused}" | wc -l)" -eq 1 ]; then
-				read -rp $'Would you like to remove this Flatpak unused package now? [y/N] ' answer
+				ask_msg "Would you like to remove this Flatpak unused package now? [y/N]"
 			else
-				read -rp $'Would you like to remove these Flatpak unused packages now? [y/N] ' answer
+				ask_msg "Would you like to remove these Flatpak unused packages now? [y/N]"
 			fi
 
 			case "${answer}" in
 				[Yy])
-					echo -e "\n--Removing Flatpak Unused Packages--"
-					flatpak remove --unused && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+					echo
+					main_msg "Removing Flatpak Unused Packages..."
+
+					if ! flatpak remove --unused; then
+						echo
+						error_msg "An error has occurred the removal process\nThe removal has been aborted\n"
+					else
+						echo
+						info_msg "The removal has been applied\n"
+					fi
 				;;
 				*)
-					echo -e "The removal hasn't been applied\n"
+					info_msg "The removal hasn't been applied\n"
 				;;
 			esac
 		else
-			echo -e "No Flatpak unused package found\n"
+			info_msg "No Flatpak unused package found\n"
 		fi
 	fi
 }
@@ -311,34 +391,65 @@ packages_cache() {
 	pacman_cache_total=$(("${pacman_cache_old}+${pacman_cache_uninstalled}"))
 
 	if [ "${pacman_cache_total}" -gt 0 ]; then
-		echo "--Cached Packages--"
 
 		if [ "${pacman_cache_total}" -eq 1 ]; then
-			echo -e "There's an old or uninstalled cached package\n"
-			read -rp $'Would you like to remove it from the cache now? [Y/n] ' answer
+			main_msg "Cached Packages:\nThere's an old or uninstalled cached package\n"
+			ask_msg "Would you like to remove it from the cache now? [Y/n]"
 		else
-			echo -e "There are old and/or uninstalled cached packages\n"
-			read -rp $'Would you like to remove them from the cache now? [Y/n] ' answer
+			main_msg "Cached Packages:\nThere are old and/or uninstalled cached packages\n"
+			ask_msg "Would you like to remove them from the cache now? [Y/n]"
 		fi
 			
 		case "${answer}" in
 			[Yy]|"")
-				echo -e "\n--Removing Cached Packages--"
-
 				if [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -eq 0 ]; then
-					echo -e "\nRemoving old cached packages..." && "${su_cmd}" paccache -r && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+					echo
+					main_msg "Removing old cached packages..."
+
+					if ! "${su_cmd}" paccache -r; then
+						echo
+						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+					else
+						echo
+					fi
 				elif [ "${pacman_cache_old}" -eq 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
-					echo -e "\nRemoving uninstalled cached packages..." && "${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+					echo
+					main_msg "Removing uninstalled cached packages..."
+
+					if ! "${su_cmd}" paccache -ruk0; then
+						echo
+						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+					else
+						echo
+					fi
 				elif [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
-					echo -e "\nRemoving old cached packages..." && "${su_cmd}" paccache -r && echo -e "\nRemoving uninstalled cached packages..." && "${su_cmd}" paccache -ruk0 && echo -e "\nThe removal has been applied\n" || echo -e >&2 "\nAn error has occurred\nThe removal has been aborted\n"
+					echo
+					main_msg "Removing old cached packages..."
+
+					if ! "${su_cmd}" paccache -r; then
+						echo
+						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+					else
+						echo
+					fi
+
+					main_msg "Removing uninstalled cached packages..."
+
+					if ! "${su_cmd}" paccache -ruk0; then
+						echo
+						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+					else
+						echo
+					fi
 				fi
 			;;
 			*)
-				echo -e "The removal hasn't been applied\n"
+				echo
+				info_msg "The removal hasn't been applied\n"
 			;;
 		esac
 	else
-		echo -e "No old or uninstalled cached package found\n"
+		info_msg "No old or uninstalled cached package found\n"
 	fi
 }
 
@@ -347,26 +458,30 @@ pacnew_files() {
 	pacnew_files=$(pacdiff -o)
 		
 	if [ -n "${pacnew_files}" ]; then
-		echo -e "--Pacnew Files--\n${pacnew_files}\n"
+		main_msg "Pacnew Files:"
+		echo -e "${pacnew_files}\n"
 
 		if [ "$(echo "${pacnew_files}" | wc -l)" -eq 1 ]; then
-			read -rp $'Would you like to process this file now? [Y/n] ' answer
+			ask_msg "Would you like to process this file now? [Y/n]"
 		else
-			read -rp $'Would you like to process these files now? [Y/n] ' answer
+			ask_msg "Would you like to process these files now? [Y/n]"
 		fi
 
 		case "${answer}" in
 			[Yy]|"")
-				echo -e "\n--Processing Pacnew Files--"
+				echo
+				main_msg "Processing Pacnew Files...\n"
+
 				"${su_cmd}" pacdiff
-				echo -e "\nThe pacnew file(s) processing has been applied\n"
+				echo
+				info_msg "The pacnew file(s) processing has been applied\n"
 			;;
 			*)
-				echo -e "The pacnew file(s) processing hasn't been applied\n"
+				info_msg "The pacnew file(s) processing hasn't been applied\n"
 			;;
 		esac
 	else
-		echo -e "No pacnew file found\n"
+		info_msg "No pacnew file found\n"
 	fi
 }
 
@@ -379,26 +494,29 @@ kernel_reboot() {
 	fi
 
 	if [ -z "${kernel_compare}" ]; then
-		echo -e "--Reboot required--\nThere's a pending kernel update on your system requiring a reboot to be applied\n"
-		read -rp $'Would you like to reboot now? [y/N] ' answer
+		main_msg "Reboot required:\nThere's a pending kernel update on your system requiring a reboot to be applied\n"
+		ask_msg "Would you like to reboot now? [y/N]"
 
 		case "${answer}" in
 			[Yy])
-				echo -e "\nRebooting in 5 seconds...\nPress ctrl+c to abort"
+				echo
+				main_msg "Rebooting in 5 seconds...\nPress ctrl+c to abort"
 				sleep 5
 				if ! reboot; then
-					echo -e >&2 "\nAn error has occurred\nThe reboot has been aborted\n" && read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+					echo
+					error_msg "An error has occurred during the reboot process\nThe reboot has been aborted\n" && quit_msg
 					exit 6
 				else
 					exit 0
 				fi
 			;;
 			*)
-				echo -e "\nThe reboot hasn't been performed\nPlease, consider rebooting to finalize the pending kernel update\n"
+				echo
+				warning_msg "The reboot hasn't been performed\nPlease, consider rebooting to finalize the pending kernel update\n"
 			;;
 		esac
 	else
-		echo -e "No pending kernel update found\n"
+		info_msg "No pending kernel update found\n"
 	fi
 }
 
@@ -414,7 +532,7 @@ case "${option}" in
 		packages_cache
 		pacnew_files
 		kernel_reboot
-		read -n 1 -r -s -p $'Press \"enter\" to quit\n'
+		quit_msg
 	;;
 	-c|--check)
 		check
