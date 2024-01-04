@@ -281,7 +281,7 @@ update() {
 					
 	if [ -n "${aur_packages}" ]; then
 		echo
-		main_msg "Updating AUR Packages..."
+		main_msg "Updating AUR Packages...\n"
 
 		if ! "${aur_helper}" -Syu; then
 			icon_updates_available
@@ -293,7 +293,7 @@ update() {
 
 	if [ -n "${flatpak_packages}" ]; then
 		echo
-		main_msg "Updating Flatpak Packages..."
+		main_msg "Updating Flatpak Packages...\n"
 
 		if ! flatpak update; then
 			icon_updates_available
@@ -328,7 +328,7 @@ orphan_packages() {
 		case "${answer}" in
 			[Yy])
 				echo
-				main_msg "Removing Orphan Packages..."
+				main_msg "Removing Orphan Packages...\n"
 				
 				if ! pacman -Qtdq | "${su_cmd}" pacman -Rns -; then
 					echo
@@ -470,7 +470,7 @@ pacnew_files() {
 		case "${answer}" in
 			[Yy]|"")
 				echo
-				main_msg "Processing Pacnew Files..."
+				main_msg "Processing Pacnew Files...\n"
 
 				"${su_cmd}" pacdiff
 				echo
