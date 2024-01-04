@@ -390,13 +390,12 @@ packages_cache() {
 	pacman_cache_total=$(("${pacman_cache_old}+${pacman_cache_uninstalled}"))
 
 	if [ "${pacman_cache_total}" -gt 0 ]; then
-		main_msg "Cached Packages:"
 
 		if [ "${pacman_cache_total}" -eq 1 ]; then
-			info_msg "There's an old or uninstalled cached package\n"
+			main_msg "Cached Packages:\nThere's an old or uninstalled cached package\n"
 			ask_msg "Would you like to remove it from the cache now? [Y/n]"
 		else
-			info_msg "There are old and/or uninstalled cached packages\n"
+			main_msg "Cached Packages:\nThere are old and/or uninstalled cached packages\n"
 			ask_msg "Would you like to remove them from the cache now? [Y/n]"
 		fi
 			
@@ -450,6 +449,7 @@ pacnew_files() {
 	pacnew_files=$(pacdiff -o)
 		
 	if [ -n "${pacnew_files}" ]; then
+		echo
 		main_msg "Pacnew Files:"
 		echo -e "${pacnew_files}\n"
 
