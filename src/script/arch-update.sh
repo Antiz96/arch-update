@@ -32,7 +32,7 @@ info_msg() {
 # Definition of the ask_msg function: Print a message as an interactive question
 ask_msg() {
 	msg="${1}"
-	read -rp $"$(echo -e "${blue}->${color_off}${bold} ${msg}${color_off} ")" answer
+	read -rp $"$(echo -e "${blue}  ->${color_off}${bold} ${msg}${color_off} ")" answer
 }
 
 # Definition of the warning_msg function: Print a message as a warning message
