@@ -124,7 +124,8 @@ Options:
   -h, --help     Display this message and exit
   -V, --version  Display version information and exit
 
-For more information, see the ${name}(1) man page
+For more information, see the ${name}(1) man page.
+Certain options can be enabled/disabled or modified via the ${name}.conf configuration file, see the ${name}.conf(5) man page.
 EOF
 }
 

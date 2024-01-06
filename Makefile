@@ -21,8 +21,11 @@ install:
 	install -Dm 644 "res/systemd/${pkgname}.timer" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
 	
 	gzip -c "doc/man/${pkgname}.1" > "${pkgname}.1.gz"
+	gzip -c "doc/man/${pkgname}.conf.5" > "${pkgname}.conf.5.gz"
 	install -Dm 644 "${pkgname}.1.gz" "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1.gz"
+	install -Dm 644 "${pkgname}.conf.5.gz" "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5.gz"
 	rm -f "${pkgname}.1.gz"
+	rm -f "${pkgname}.conf.5.gz"
 	
 	install -Dm 644 README.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/README.md"
 

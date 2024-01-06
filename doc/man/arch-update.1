@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "December 2023" "Arch-Update 1.9.1" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "January 2024" "Arch-Update 1.9.1" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
@@ -39,11 +39,63 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
 
 .TP
 .B \-v, \-\-version
-Print the current version
+Print the current version.
 
 .TP
 .B \-h, \-\-help
-Print the help
+Print the help message.
+
+.RB "Certain options can be enabled/disabled or modified via the " "arch-update.conf configuration file " ", see the " "arch-update.conf(5) " "man page."
+
+.SH USAGE
+.TP
+.B The (.desktop) icon
+.RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop " "(or in " "/etc/local/share/applications/arch-update.desktop " "if you installed arch-update from source)." 
+.br
+.RB "It will automatically change depending on different states (checking for updates, updates available, installing updates, up to date). It will launch the main " "update " "function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus."
+
+.TP
+.B The systemd timer
+.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "(or in " "/etc/systemd/user/arch-update.service " "if you installed arch-update from source) that executes the " "\-\-check " "function when launched. To launch it automatically " "at boot and then once every hour " "enable the associated systemd timer (the auto-check cycle can be modified to your liking. See the TIPS AND TRICKS chapter below):"
+.br
+.B systemctl \-\-user enable \-\-now arch-update.timer
+
+.SH TIPS AND TRICKS 
+.TP
+.B AUR Support
+.RB "Arch-Update supports AUR packages update when checking and installing updates if " "yay " "or " "paru " "is installed."
+.br
+See https://github.com/Jguer/yay and https://aur.archlinux.org/packages/yay
+.br
+See https://github.com/morganamilo/paru and https://aur.archlinux.org/packages/paru
+
+.TP
+.B Flatpak Support
+.RB "Arch-Update supports Flatpak packages update when checking and installing updates (as well as removing unused Flatpak packages) if " "flatpak " "is installed."
+.br
+See https://www.flatpak.org/ and https://archlinux.org/packages/extra/x86_64/flatpak/
+
+.TP
+.B Desktop notifications Support
+.RB "Arch-Update supports desktop notifications when performing the " "--check " "function if " "libnotify (notify-send) " "is installed."
+.br
+See https://wiki.archlinux.org/title/Desktop_notifications
+
+.TP
+.B Modify the auto-check cycle
+.RB "If you enabled the " "systemd.timer" ", the " "--check " "option is automatically launched at boot and then once per hour."
+.br
+.RB "If you want to change the check cycle, run " "systemctl --user edit arch-update.timer " "to create an override configuration for the timer and input the following in it:"
+.br
+
+.B [Timer]
+.br
+.B OnUnitActiveSec=10m
+
+.br
+.RB "Time units are " "s " "for seconds, " "m " "for minutes, " "h " "for hours, " "d " "for days..."
+.br
+See https://www.freedesktop.org/software/systemd/man/systemd.time.html for more details.
 
 .SH EXIT STATUS
 .TP
@@ -74,64 +126,6 @@ Error when updating the packages
 .B 6
 Error when calling the reboot command to apply a pending kernel update
 
-.SH USAGE
-.TP
-.B The (.desktop) icon
-.RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop " "(or in " "/etc/local/share/applications/arch-update.desktop " "if you installed arch-update from source)." 
-.br
-.RB "It will automatically change depending on different states (checking for updates, updates available, installing updates, up to date). It will launch the main " "update " "function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus."
-
-.TP
-.B The systemd timer
-.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "(or in " "/etc/systemd/user/arch-update.service " "if you installed arch-update from source) that executes the " "\-\-check " "function when launched. To launch it automatically " "at boot and then once every hour " "enable the associated systemd timer (the auto-check cycle can be modified to your liking. See the TIPS AND TRICKS chapter below):"
-.br
-.B systemctl \-\-user enable \-\-now arch-update.timer
-
-.SH TIPS AND TRICKS 
-.TP
-.B AUR Support
-.RB "Arch-Update supports AUR packages update when checking and installing updates if " "yay " "or " "paru " "is installed"
-.br
-See https://github.com/Jguer/yay and https://aur.archlinux.org/packages/yay
-.br
-See https://github.com/morganamilo/paru and https://aur.archlinux.org/packages/paru
-
-.TP
-.B Flatpak Support
-.RB "Arch-Update supports Flatpak packages update when checking and installing updates (as well as removing unused Flatpak packages) if " "flatpak " "is installed"
-.br
-See https://www.flatpak.org/ and https://archlinux.org/packages/extra/x86_64/flatpak/
-
-.TP
-.B Desktop notifications Support
-.RB "Arch-Update supports desktop notifications when performing the " "--check " "function if " "libnotify (notify-send) " "is installed"
-.br
-See https://wiki.archlinux.org/title/Desktop_notifications
-
-.TP
-.B Modify the auto-check cycle
-.RB "If you enabled the " "systemd.timer" ", the " "--check " "option is automatically launched at boot and then once per hour."
-.br
-.RB "If you want to change the check cycle, run " "systemctl --user edit arch-update.timer " "to create an override configuration for the timer and input the following in it:"
-.br
-
-.B [Timer]
-.br
-.B OnUnitActiveSec=10m
-
-.br
-.RB "Time units are " "s " "for seconds, " "m " "for minutes, " "h " "for hours, " "d " "for days..."
-.br
-See https://www.freedesktop.org/software/systemd/man/systemd.time.html for more details.
-
-.TP
-.B Do not show packages version changes
-.RB "If you don't want Arch-Update to show the packages version changes in the main " "update " "function, launch the following command:" 
-.br
-sudo sed -i "s/packages=$(checkupdates)/packages=$(checkupdates | awk '{print $1}')/g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null ; sudo sed -i "s/aur_packages=$("${aur_helper}" -Qua)/aur_packages=$("${aur_helper}" -Qua | awk '{print $1}')/g" /usr/bin/arch-update /usr/local/bin/arch-update 2>/dev/null || true
-.br
-.B Be aware that you'll have to relaunch that command at each arch-update's new release.
-
 .SH SEE ALSO
 .BR cp (1),
 .BR checkupdates (8),
@@ -145,6 +139,7 @@ sudo sed -i "s/packages=$(checkupdates)/packages=$(checkupdates | awk '{print $1
 .BR mkdir (1),
 .BR mv (1),
 .BR curl (1),
+.BR tr (1),
 .BR pacman (8),
 .BR pacdiff (8),
 .BR paccache (8),
@@ -154,6 +149,7 @@ sudo sed -i "s/packages=$(checkupdates)/packages=$(checkupdates | awk '{print $1
 .BR paru (8),
 .BR flatpak (1),
 .BR notify-send (1)
+.BR arch-update.conf (5)
 
 .SH BUGS
 Please report bugs to the GitHub page https://github.com/Antiz96/arch-update/issues
