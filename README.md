@@ -101,7 +101,7 @@ When the icon is clicked, it launches the relevant series of functions to perfor
 
 *The colored output can be disabled with the `NoColor` option in the `arch-update.conf` configuration file.*  
 *The versions changes in the packages listing can be hidden with the `NoVersion` option in the `arch-update.conf` configuration file.*  
-*See the [arch-update.conf documentation chapter](#arch-update.conf) for more details.*
+*See the [arch-update.conf documentation chapter](#arch-update-conf) for more details.*
 
 ![listing-packages](https://github.com/Antiz96/arch-update/assets/53110319/43a990c8-ed93-420f-8c46-d50d60bff03f)
 
@@ -111,9 +111,9 @@ Select which news to read by typing its associated number.
 After your read a news, `arch-update` will once again offers to print latest Arch Linux news, so you can read multiple news at once.  
 Simply press "enter" without typing any number to proceed with update:
 
-*The Arch news listing/printing can be skipped with the "NoNews" option in the `arch-update.conf` configuration file.*  
+*The Arch news listing/printing can be skipped with the `NoNews`  option in the `arch-update.conf` configuration file.*  
 *Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.*  
-*See the [arch-update.conf documentation chapter](#arch-update.conf) for more details.*
+*See the [arch-update.conf documentation chapter](#arch-update-conf) for more details.*
 
 ![list-news](https://github.com/Antiz96/arch-update/assets/53110319/b6883ec4-8c44-4b97-86d9-4d0a304b748b)
 
@@ -134,8 +134,8 @@ When the update is over, the icon changes accordingly:
 `arch-update` will also search for old and/or uninstalled cached packages and offers to remove them (if there are):
 
 *The default behavior is to keep the last 3 cached versions of installed packages and remove every cached versions of uninstalled packages.*  
-*You can modify the number of old packages' versions and uninstalled packages' versions to keep in pacman's cache respectively with the `KeepOldPackages=Num` and `KeepUninstalledPackages=Num` options in the `arch-update.conf` configuration file.  
-*See the [arch-update.conf documentation chapter](#arch-update.conf) for more details.*
+*You can modify the number of old packages' versions and uninstalled packages' versions to keep in pacman's cache respectively with the `KeepOldPackages=Num` and `KeepUninstalledPackages=Num` options in the `arch-update.conf` configuration file.*  
+*See the [arch-update.conf documentation chapter](#arch-update-conf) for more details.*
 
 ![cached-packages](https://github.com/Antiz96/arch-update/assets/53110319/7199bbf1-acd8-49a1-80eb-e9874b94fba6)
 
