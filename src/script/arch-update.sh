@@ -9,13 +9,40 @@ name="arch-update"
 version="1.9.1"
 option="${1}"
 
+# Checking options in arch-update.conf
+if grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+	no_color="y"
+fi
+
+if grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+	no_version="y"
+fi
+
+if grep -Eq '^[[:space:]]*NoNews[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+	no_news="y"
+fi
+
+if grep -Eq '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+	old_packages_num=$(grep -E '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+else
+	old_packages_num="3"
+fi
+
+if grep -Eq '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+	uninstalled_packages_num=$(grep -E '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+else
+	uninstalled_packages_num="0"
+fi
+
 # Definition of the colors for the colorized output
-bold="\e[1m"
-blue="${bold}\e[34m"
-green="${bold}\e[32m"
-yellow="${bold}\e[33m"
-red="${bold}\e[31m"
-color_off="\e[0m"
+if [ -z "${no_color}" ]; then
+	bold="\e[1m"
+	blue="${bold}\e[34m"
+	green="${bold}\e[32m"
+	yellow="${bold}\e[33m"
+	red="${bold}\e[31m"
+	color_off="\e[0m"
+fi
 
 # Definition of the main_msg function: Print a message as a main message
 main_msg() {
@@ -97,7 +124,8 @@ Options:
   -h, --help     Display this message and exit
   -V, --version  Display version information and exit
 
-For more information, see the ${name}(1) man page
+For more information, see the ${name}(1) man page.
+Certain options can be enabled/disabled or modified via the ${name}.conf configuration file, see the ${name}.conf(5) man page.
 EOF
 }
 
@@ -179,10 +207,18 @@ check() {
 list_packages() {
 	icon_checking
 	
-	packages=$(checkupdates)
+	if [ -z "${no_version}" ]; then
+		packages=$(checkupdates)
+	else
+		packages=$(checkupdates | awk '{print $1}')
+	fi
 
 	if [ -n "${aur_helper}" ]; then
-		aur_packages=$("${aur_helper}" -Qua)
+		if [ -z "${no_version}" ]; then
+			aur_packages=$("${aur_helper}" -Qua)
+		else
+			aur_packages=$("${aur_helper}" -Qua | awk '{print $1}')
+		fi
 	fi
 
 	if [ -n "${flatpak}" ]; then
@@ -386,8 +422,8 @@ orphan_packages() {
 
 # Definition of the packages_cache function: Search for old package archives in the pacman cache and offer to remove them if there are
 packages_cache() {
-	pacman_cache_old=$(paccache -dk3 | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
-	pacman_cache_uninstalled=$(paccache -duk0 | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
+	pacman_cache_old=$(paccache -dk"${old_packages_num}" | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
+	pacman_cache_uninstalled=$(paccache -duk"${uninstalled_packages_num}" | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
 
 	[ -z "${pacman_cache_old}" ] && pacman_cache_old="0"
 	[ -z "${pacman_cache_uninstalled}" ] && pacman_cache_uninstalled="0"
@@ -409,7 +445,7 @@ packages_cache() {
 					echo
 					main_msg "Removing old cached packages..."
 
-					if ! "${su_cmd}" paccache -r; then
+					if ! "${su_cmd}" paccache -rk"${old_packages_num}"; then
 						echo
 						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
 					else
@@ -419,7 +455,7 @@ packages_cache() {
 					echo
 					main_msg "Removing uninstalled cached packages..."
 
-					if ! "${su_cmd}" paccache -ruk0; then
+					if ! "${su_cmd}" paccache -ruk"${uninstalled_packages_num}"; then
 						echo
 						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
 					else
@@ -429,7 +465,7 @@ packages_cache() {
 					echo
 					main_msg "Removing old cached packages..."
 
-					if ! "${su_cmd}" paccache -r; then
+					if ! "${su_cmd}" paccache -rk"${old_packages_num}"; then
 						echo
 						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
 					else
@@ -438,7 +474,7 @@ packages_cache() {
 
 					main_msg "Removing uninstalled cached packages..."
 
-					if ! "${su_cmd}" paccache -ruk0; then
+					if ! "${su_cmd}" paccache -ruk"${uninstalled_packages_num}"; then
 						echo
 						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
 					else
@@ -528,7 +564,12 @@ case "${option}" in
 	"")
 		list_packages
 		if [ -n "${proceed_with_update}" ]; then
-			list_news
+			if [ -z "${no_news}" ]; then
+				list_news
+			else
+				echo
+				warning_msg "NoNews option detected\nPlease, keep in mind that users are expected to check the latest Arch news before updating their system, to be aware of eventual required manual interventions"
+			fi
 			update
 		fi
 		orphan_packages
