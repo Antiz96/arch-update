@@ -152,12 +152,15 @@ Finally, `arch-update` will check if there's a pending kernel update requiring a
 ### arch-update
 
 ```text
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.
+An update notifier/applier for Arch Linux that assists you with
+important pre/post update tasks.
 
 Run arch-update to perform the main "update" function:
-Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.
+Print the list of packages available for update, then ask for the user's confirmation
+to proceed with the installation.
 Before performing the update, offer to print the latest Arch Linux news.
-Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.
+Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files
+and pending kernel update and, if there are, offers to process them.
 
 Options:
 -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
@@ -180,9 +183,11 @@ Certain options can be enabled/disabled or modified via the arch-update.conf con
 ### arch-update configuration file
 
 ```text
-The arch-update.conf file is an optional configuration file for arch-update to enable/disable or modify certain options within the script.
+The arch-update.conf file is an optional configuration file for arch-update to enable/disable
+or modify certain options within the script.
 
-This configuration file has to be located in "${XDG_CONFIG_HOME}/arch-update/arch-update.conf" or "${HOME}/.config/arch-update/arch-update.conf".
+This configuration file has to be located in "${XDG_CONFIG_HOME}/arch-update/arch-update.conf"
+or "${HOME}/.config/arch-update/arch-update.conf".
 
 The supported options are:
 
@@ -193,7 +198,6 @@ The supported options are:
 - KeepUninstalledPackages=Num # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
 
 Options are case sensitive, so capital letters have to be respected.
-
 ```
 
 For more information, see the arch-update(5) man page.
