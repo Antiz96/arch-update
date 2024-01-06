@@ -135,7 +135,7 @@ When the update is over, the icon changes accordingly:
 
 *The default behavior is to keep the last 3 cached versions of installed packages and remove every cached versions of uninstalled packages.*  
 *You can modify the number of old packages' versions and uninstalled packages' versions to keep in pacman's cache respectively with the `KeepOldPackages=Num` and `KeepUninstalledPackages=Num` options in the `arch-update.conf` configuration file.*  
-*See the [arch-update.conf documentation chapter](##arch-update-configuration-file) for more details.*
+*See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.*
 
 ![cached-packages](https://github.com/Antiz96/arch-update/assets/53110319/7199bbf1-acd8-49a1-80eb-e9874b94fba6)
 
