@@ -422,8 +422,8 @@ orphan_packages() {
 
 # Definition of the packages_cache function: Search for old package archives in the pacman cache and offer to remove them if there are
 packages_cache() {
-	pacman_cache_old=$(paccache -dk3 | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
-	pacman_cache_uninstalled=$(paccache -duk0 | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
+	pacman_cache_old=$(paccache -dk"${old_packages_num}" | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
+	pacman_cache_uninstalled=$(paccache -duk"${uninstalled_packages_num}" | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
 
 	[ -z "${pacman_cache_old}" ] && pacman_cache_old="0"
 	[ -z "${pacman_cache_uninstalled}" ] && pacman_cache_uninstalled="0"
