@@ -568,7 +568,7 @@ case "${option}" in
 				list_news
 			else
 				echo
-				warning_msg "NoNews option detected\nPlease, keep in mind that users are expected to check the latest Arch news to be aware of eventual required manual interventions before updating the system"
+				warning_msg "NoNews option detected\nPlease, keep in mind that users are expected to check the latest Arch news before updating their system, to be aware of eventual required manual interventions"
 			fi
 			update
 		fi
