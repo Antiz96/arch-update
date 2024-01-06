@@ -567,7 +567,8 @@ case "${option}" in
 			if [ -z "${no_news}" ]; then
 				list_news
 			else
-				warning_msg "NoNews option detected\nPlease, keep in mind that users are expected to check the latest Arch news to be aware of eventual required manual interventions before updating the system\n"
+				echo
+				warning_msg "NoNews option detected\nPlease, keep in mind that users are expected to check the latest Arch news to be aware of eventual required manual interventions before updating the system"
 			fi
 			update
 		fi
