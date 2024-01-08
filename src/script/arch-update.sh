@@ -188,9 +188,9 @@ check() {
 			if ! diff "${statedir}/current_check" "${statedir}/last_check" &> /dev/null; then
 				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
 				if [ "${update_number}" -eq 1 ]; then
-					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} update available"
+					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch-Update" "${update_number} update available"
 				else
-					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch Update" "${update_number} updates available"
+					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch-Update" "${update_number} updates available"
 				fi
 			fi
 		fi
