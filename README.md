@@ -233,7 +233,7 @@ OnUnitActiveSec=10m
 ```
 
 Time units are `s` for seconds, `m` for minutes, `h` for hours, `d` for days...  
-See <https://www.freedesktop.org/software/systemd/man/systemd.time.html> for more details.
+See <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> for more details.
 
 ## Contributing
 
