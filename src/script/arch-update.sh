@@ -6,7 +6,7 @@
 
 # General variables
 name="arch-update"
-version="1.10.0"
+version="1.10.1"
 option="${1}"
 
 # Checking options in arch-update.conf
