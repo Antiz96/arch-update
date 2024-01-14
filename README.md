@@ -228,6 +228,7 @@ If you want to change the check cycle, run `systemctl --user edit arch-update.ti
 
 ```text
 [Timer]
+OnUnitActiveSec=
 OnUnitActiveSec=10m
 ```
 
