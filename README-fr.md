@@ -19,14 +19,14 @@ Fonctionnalités :
 - Inclut une icône cliquable (.desktop) qui change automatiquement pour agir comme un notificateur/applicateur de mise à jour. Facile à intégrer avec n'importe quel DE/WM, dock, barre d'état/lancement, menu d'application, etc...
 - Vérification et listing automatiques de tous les paquets disponibles pour la mise à jour (via [checkupdates](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Propose d'afficher les news récentes d'Arch Linux avant d'appliquer les mises à jour (via [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") et [htmlq](https://archlinux.org/packages/extra/x86_64/htmlq/ "package htmlq")).
-- Vérification et listing automatiques des paquets orphelins et vous propose de les supprimer.
-- Vérification automatique des anciens paquets et/ou paquets désinstallés dans le cache de `pacman` et vous propose de les supprimer (via [paccache](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "package pacman-contrib")).
-- Vous aide à traiter les fichiers pacnew/pacsave (via [pacdiff](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package"), nécessite optionnellement [vim](https:// archlinux.org/packages/extra/x86_64/vim/ "vim package") comme [programme de fusion par défaut](https://wiki.archlinux.org/title/Pacman/Pacnew_and_Pacsave#pacdiff "programme de fusion pacdiff")).
+- Vérification et listing automatiques des paquets orphelins et propose de les supprimer.
+- Vérification automatique de la présence d'anciens paquets et/ou paquets désinstallés dans le cache de `pacman` et propose de les supprimer (via [paccache](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "package pacman-contrib")).
+- Vous aide à traiter les fichiers pacnew/pacsave (via [pacdiff](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package"), nécessite optionnellement [vim](https://archlinux.org/packages/extra/x86_64/vim/ "vim package") comme [programme de fusion par défaut](https://wiki.archlinux.org/title/Pacman/Pacnew_and_Pacsave#pacdiff "programme de fusion pacdiff")).
 - Vérification automatique des mises à jour du noyau en attente nécessitant un redémarrage et propose de redémarrer s'il y en a une.
 - Fonctionne avec [sudo](https://archlinux.org/packages/core/x86_64/sudo/ "sudo package") et [doas](https://archlinux.org/packages/extra/x86_64/opendoas/ "opendoas package").
 - Prise en charge optionnelle de la mise à jour des paquets AUR (via [yay](https://aur.archlinux.org/packages/yay "yay AUR package") ou [paru](https://aur.archlinux.org/packages/paru "paru AUR package")).
 - Prise en charge optionnelle de la mise à jour des paquets Flatpak (via [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak "Flatpak Package")).
-- Prise en charge optionnelle des notifications de bureau (via [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify "libnotify package"), voir <https://wiki.archlinux.org/title/Desktop_notifications>) .
+- Prise en charge optionnelle des notifications de bureau (via [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify "libnotify package"), voir <https://wiki.archlinux.org/title/Desktop_notifications>).
 
 ## Installation
 
@@ -58,7 +58,7 @@ sudo make uninstall
 
 ## Utilisation
 
-L'utilisation consiste à intégrer [le fichier .desktop](#le-fichier-desktop) n'importe où (cela peut être votre bureau, votre dock, votre barre d'état/de lancement ou votre menu d'application) et à activer le [timer systemd](#le-timer-systemd).
+L'utilisation consiste à intégrer [le fichier .desktop](#le-fichier-desktop) quelque part (cela peut être votre bureau, votre dock, votre barre d'état/de lancement ou votre menu d'application) et à activer le [timer systemd](#le-timer-systemd).
 
 Voici une petite présentation/revue YouTube de `arch-update` que [Cardiac](https://github.com/Cardiacman13) et moi-même avons réalisée sur [sa chaîne YouTube](https://www.youtube.com/@Cardiacman) :
 
@@ -75,7 +75,7 @@ Il lancera la série de fonctions adéquates pour effectuer une mise à jour com
 ### Le timer systemd
 
 Il existe un service systemd dans `/usr/lib/systemd/user/arch-update.service` (ou dans `/usr/local/lib/systemd/user/arch-update.service` si vous avez installé `arch-update` [depuis la source](#depuis-la-source)) qui exécute la fonction `check` quand il est démarré (voir le chapitre [Documentation](#documentation)).  
-Pour le démarrer automatiquement **au démarrage du système puis une fois toutes les heures**, activez le timer systemd associé (vous pouvez modifier le cycle de vérification automatique à votre guise, voir les [Trucs et astuces - Modifier le cycle de vérification automatique](#modifier-le-cycle-de-verification-automatique) :
+Pour le démarrer automatiquement **au démarrage du système puis une fois toutes les heures**, activez le timer systemd associé (vous pouvez modifier le cycle de vérification automatique à votre guise, voir les [Trucs et astuces - Modifier le cycle de vérification automatique](#modifier-le-cycle-de-vérification-automatique)) :
 
 ```bash
 systemctl --user enable --now arch-update.timer
@@ -97,11 +97,11 @@ Si de nouvelles mises à jour sont disponibles, l'icône affichera une cloche et
 ![icon-update-available](https://github.com/Antiz96/arch-update/assets/53110319/c1526ce7-5f94-41b8-a8fa-3587b9d00a9d)
 ![notification](https://github.com/Antiz96/arch-update/assets/53110319/631b8e67-487a-441a-84b4-6cce95223729)
 
-Lorsque l'on clique sur l'icône, elle lance la série de fonctions adéquates pour effectuer une mise à jour complète et correcte, en commençant par actualiser la liste des packages disponibles pour les mises à jour, en l'affichant dans un terminal et en demandant la confirmation de l'utilisateur pour procéder à l'installation (elle peut également être lancée en exécutant la commande `arch-update`, nécessite [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour la prise en charge de la mise à jour des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour la prise en charge de la mise à jour des paquets Flatpak) :
+Lorsque l'on clique sur l'icône, cela lance la série de fonctions adéquates pour effectuer une mise à jour complète et correcte, en commençant par actualiser la liste des paquets disponibles pour la mise à jour, en l'affichant dans un terminal et en demandant la confirmation de l'utilisateur pour procéder à l'installation (elle peut également être lancée en exécutant la commande `arch-update`, nécessite [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour la prise en charge de la mise à jour des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour la prise en charge de la mise à jour des paquets Flatpak) :
 
 *La sortie colorée peut être désactivée avec l'option `NoColor` dans le fichier de configuration `arch-update.conf`.*  
 *Les changements de versions dans la listing des paquets peuvent être masqués avec l'option `NoVersion` dans le fichier de configuration `arch-update.conf`.*  
-*Voir le [chapitre de documentation arch-update.conf](#fichier-de-configuration-arch-update) pour plus de détails.*
+*Voir le [chapitre de documentation arch-update.conf](#Fichier-de-configuration-arch-update) pour plus de détails.*
 
 ![listing-packages](https://github.com/Antiz96/arch-update/assets/53110319/43a990c8-ed93-420f-8c46-d50d60bff03f)
 
@@ -113,7 +113,7 @@ Appuyez simplement sur « Entrée » sans saisir de chiffre pour procéder à 
 
 *Le listing/affichage des Arch news peut être ignoré avec l'option `NoNews` dans le fichier de configuration `arch-update.conf`.*  
 *Notez que l'utilisation de cette option générera un message d'avertissement pour rappeler que les utilisateurs sont censés consulter régulièrement les Arch news.*  
-*Voir le [chapitre de documentation arch-update.conf](#fichier-de-configuration-arch-update) pour plus de détails.*
+*Voir le [chapitre de documentation arch-update.conf](#Fichier-de-configuration-arch-update) pour plus de détails.*
 
 ![list-news](https://github.com/Antiz96/arch-update/assets/53110319/b6883ec4-8c44-4b97-86d9-4d0a304b748b)
 
@@ -135,7 +135,7 @@ Une fois la mise à jour terminée, l'icône change en conséquence :
 
 *Le comportement par défaut consiste à conserver les 3 dernières versions en cache des paquets installés et à supprimer toutes les versions en cache des paquets désinstallés.*  
 *Vous pouvez modifier le nombre d'anciennes versions de paquets et de versions de paquets désinstallés à conserver respectivement dans le cache de pacman avec les options `KeepOldPackages=Num` et `KeepUninstalledPackages=Num` dans le fichier de configuration `arch-update.conf`.*  
-*Voir le [chapitre de documentation arch-update.conf](#fichier-de-configuration-arch-update) pour plus de détails.*
+*Voir le [chapitre de documentation arch-update.conf](#Fichier-de-configuration-arch-update) pour plus de détails.*
 
 ![cached-packages](https://github.com/Antiz96/arch-update/assets/53110319/7199bbf1-acd8-49a1-80eb-e9874b94fba6)
 
@@ -156,11 +156,11 @@ Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste da
 tâches importantes d'avant/après mise à jour.
 
 Lancez arch-update pour exécuter la fonction principale « update » :
-Afficher la liste des paquets disponibles pour mise à jour, puis demandez la confirmation de l'utilisateur
+Afficher la liste des paquets disponibles pour mise à jour, puis demander la confirmation de l'utilisateur
 pour procéder à l'installation.
 Avant d'effectuer la mise à jour, propose d'afficher les dernières Arch news.
-Après la mise à jour, vérification de la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, de fichiers pacnew/pacsave
-et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter.
+Après la mise à jour, vérification de la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache,
+de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter.
 
 Options :
 -c, --check    Vérifier les mises à jour disponibles, envoyer une notification de bureau contenant le nombre de mises à jour disponibles (si libnotify est installé)
@@ -180,11 +180,11 @@ Codes de sortie :
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
 Certaines options peuvent être activées/désactivées ou modifiées via le fichier de configuration arch-update.conf, voir la page de manuel arch-update.conf(5).
 
-### fichier de configuration arch-update
+### Fichier de configuration arch-update
 
 ```text
-Le fichier arch-update.conf est un fichier de configuration facultatif pour arch-update permettant d'activer/désactiver
-ou modifier certaines options dans le script.
+Le fichier arch-update.conf est un fichier de configuration facultatif pour arch-update permettant
+d'activer/désactiver ou modifier certaines options dans le script.
 
 Ce fichier de configuration doit se trouver dans "${XDG_CONFIG_HOME}/arch-update/arch-update.conf"
 ou "${HOME}/.config/arch-update/arch-update.conf".
@@ -224,7 +224,7 @@ Voir <https://wiki.archlinux.org/title/Desktop_notifications>
 
 Si vous avez activé le [timer systemd](#le-timer-systemd), l'option `--check` est automatiquement lancée au démarrage du système puis une fois par heure.
 
-Si vous souhaitez modifier le cycle de vérification, exécutez `systemctl --user edit arch-update.timer` pour créer une configuration de remplacement pour le timer et saisissez ce qui suit :
+Si vous souhaitez modifier le cycle de vérification, exécutez la commande `systemctl --user edit arch-update.timer` pour créer une configuration de remplacement pour le timer et saisissez ce qui suit :
 
 ```text
 [Timer]
@@ -232,7 +232,7 @@ OnUnitActiveSec=
 OnUnitActiveSec=10m
 ```
 
-Les unités de temps sont `s` pour les secondes, `m` pour les minutes, `h` pour les heures, `d` pour les jours...  
+Les unités de temps sont `s` pour secondes, `m` pour minutes, `h` pour heures, `d` pour jours...  
 Voir <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> pour plus de détails.
 
 ## Contribuer
