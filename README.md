@@ -170,7 +170,7 @@ Options:
 Exit Codes:
 0  OK
 1  Invalid option
-2  No privilege method (sudo or doas) is installed
+2  No privilege elevation method (sudo or doas) is installed
 3  Error when changing icon
 4  User didn't gave the confirmation to proceed
 5  Error when updating the packages
