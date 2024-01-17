@@ -58,7 +58,7 @@ sudo make uninstall
 
 ## Usage
 
-The usage consist of integrating [the .desktop file](#the-desktop-file) anywhere (could be your desktop, your dock, your status/launch bar and/or your app menu) and enabling the [systemd timer](#the-systemd-timer).
+The usage consist of integrating [the .desktop file](#the-desktop-file) somewhere (could be your desktop, your dock, your status/launch bar and/or your app menu) and enabling the [systemd timer](#the-systemd-timer).
 
 Here is a little YouTube presentation/review of `arch-update` that [Cardiac](https://github.com/Cardiacman13) and I made on [his YouTube channel](https://www.youtube.com/@Cardiacman) (**videos there, including this one, are in french**):
 
