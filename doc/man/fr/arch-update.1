@@ -1,0 +1,162 @@
+.TH "ARCH-UPDATE" "1" "January 2024" "Arch-Update 1.10.1" "Arch-Update Manual"
+
+.SH NAME
+arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
+
+.SH SYNOPSIS
+.B arch-update
+[\fI\,OPTION\/\fR]
+
+.SH DESCRIPTION
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu.
+.br
+.RB "Optional support for AUR packages update (through " "yay " "or " "paru" "), Flatpak packages update (through " "flatpak" ") and desktop notifications (through " "libnotify" ")."
+
+.SH OPTIONS
+.PP
+.RB "If no option is passed, launch the relevant series of functions to perform a complete and proper update starting by printing the list of packages available for update, then ask for the user's confirmation to proceed with the installation."
+.br
+.RB "It also supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
+.br
+.RB "Before performing the update, it offers to print the latest Arch Linux news to the user. Arch news that have been published within the last 15 days are tagged as '[NEW]'."
+.br
+.RB "It also checks for orphan packages, unused Flatpak packages, old and/or uninstalled cached packages in pacman's cache, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them."
+.br
+.RB "Those functions are launched when you click on the (.desktop) icon."
+
+.PP
+
+.TP
+.B \-c, \-\-check
+.RB "Check for available updates and change the (.desktop) icon accordingly if there are."
+.br
+.RB "It sends a desktop notification containing the number of available updates if " "libnotify " "is installed."
+.br
+.RB "It supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
+.br
+.RB "The " "\-\-check " "option is automatically launched at boot and then every hour if you enabled the " "systemd.timer " "with the following command:" 
+.br
+.B systemctl \-\-user enable \-\-now arch-update.timer
+
+.TP
+.B \-v, \-\-version
+Print the current version.
+
+.TP
+.B \-h, \-\-help
+Print the help message.
+
+.TP
+.RB "Certain options can be enabled/disabled or modified via the " "arch-update.conf " "configuration file, see the " "arch-update.conf(5) " "man page."
+
+.SH USAGE
+.TP
+.B The (.desktop) icon
+.RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop " "(or in " "/etc/local/share/applications/arch-update.desktop " "if you installed arch-update from source)." 
+.br
+.RB "It will automatically change depending on different states (checking for updates, updates available, installing updates, up to date). It will launch the main " "update " "function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus."
+
+.TP
+.B The systemd timer
+.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "(or in " "/etc/systemd/user/arch-update.service " "if you installed arch-update from source) that executes the " "\-\-check " "function when launched. To launch it automatically " "at boot and then once every hour " "enable the associated systemd timer (the auto-check cycle can be modified to your liking. See the TIPS AND TRICKS chapter below):"
+.br
+.B systemctl \-\-user enable \-\-now arch-update.timer
+
+.SH TIPS AND TRICKS 
+.TP
+.B AUR Support
+.RB "Arch-Update supports AUR packages update when checking and installing updates if " "yay " "or " "paru " "is installed."
+.br
+See https://github.com/Jguer/yay and https://aur.archlinux.org/packages/yay
+.br
+See https://github.com/morganamilo/paru and https://aur.archlinux.org/packages/paru
+
+.TP
+.B Flatpak Support
+.RB "Arch-Update supports Flatpak packages update when checking and installing updates (as well as removing unused Flatpak packages) if " "flatpak " "is installed."
+.br
+See https://www.flatpak.org/ and https://archlinux.org/packages/extra/x86_64/flatpak/
+
+.TP
+.B Desktop notifications Support
+.RB "Arch-Update supports desktop notifications when performing the " "--check " "function if " "libnotify (notify-send) " "is installed."
+.br
+See https://wiki.archlinux.org/title/Desktop_notifications
+
+.TP
+.B Modify the auto-check cycle
+.RB "If you enabled the " "systemd.timer" ", the " "--check " "option is automatically launched at boot and then once per hour."
+.br
+.RB "If you want to change the check cycle, run " "systemctl --user edit arch-update.timer " "to create an override configuration for the timer and input the following in it:"
+.br
+
+.B [Timer]
+.br
+.B OnUnitActiveSec=
+.br
+.B OnUnitActiveSec=10m
+
+.br
+.RB "Time units are " "s " "for seconds, " "m " "for minutes, " "h " "for hours, " "d " "for days..."
+.br
+See https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans for more details.
+
+.SH EXIT STATUS
+.TP
+.B 0
+OK
+
+.TP
+.B 1
+Invalid option
+
+.TP
+.B 2
+No privilege elevation method (sudo or doas) is installed
+
+.TP
+.B 3
+Error when changing icon
+
+.TP
+.B 4
+User didn't gave the confirmation to proceed
+
+.TP
+.B 5
+Error when updating the packages
+
+.TP
+.B 6
+Error when calling the reboot command to apply a pending kernel update
+
+.SH SEE ALSO
+.BR cp (1),
+.BR checkupdates (8),
+.BR echo (1),
+.BR sudo (8),
+.BR doas (1),
+.BR sed (1),
+.BR file (1),
+.BR grep (1),
+.BR find (1),
+.BR mkdir (1),
+.BR mv (1),
+.BR curl (1),
+.BR tr (1),
+.BR pacman (8),
+.BR pacdiff (8),
+.BR paccache (8),
+.BR systemd.service (5),
+.BR systemd.timer (5),
+.BR yay (8),
+.BR paru (8),
+.BR flatpak (1),
+.BR notify-send (1),
+.BR arch-update.conf (5)
+
+.SH BUGS
+Please report bugs to the GitHub page: https://github.com/Antiz96/arch-update/issues
+
+.SH AUTHOR
+Robin Candau <robincandau@protonmail.com>
