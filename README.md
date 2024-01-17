@@ -1,5 +1,7 @@
 # Arch-Update
 
+[![lang-fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/Antiz96/arch-update/blob/main/README-fr.md)
+
 ## Table of contents
 
 - [Description](#description)
