@@ -15,7 +15,7 @@ jobs:
         run: actionlint -ignore 'label "CI-CD" is unknown' .github/workflows/CI.yml
 
       - name: Run codespell
-        run: codespell --enable-colors
+        run: codespell --exclude-file=README-fr.md --enable-colors
 
       - name: Run mdl
         run: mdl --style .github/workflows/mdl_style.rb .
