@@ -22,7 +22,7 @@ Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste da
 .br
 .RB "Arch-Update vérifie aussi la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter."
 .br
-.RB "Ces fonctions sont lancées quand vous cliquez sur l'icône (.desktop)"
+.RB "Ces fonctions sont lancées quand vous cliquez sur l'icône (.desktop)."
 
 .PP
 
@@ -34,7 +34,7 @@ Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste da
 .br
 .RB "Supporte les mises à jour des paquets AUR (si " "yay " "ou " "paru " "est installé) et les mises à jour des paquets Flatpak (si " "flatpak " "est installé)."
 .br
-.RB "L'option " "\-\-check " "est automatiquement lancée au démarrage du système puis une fois chaque heure si vous avez activé le " "systemd.timer " "avec la commande suivante:" 
+.RB "L'option " "\-\-check " "est automatiquement lancée au démarrage du système puis une fois chaque heure si vous avez activé le " "systemd.timer " "avec la commande suivante :"
 .br
 .B systemctl \-\-user enable \-\-now arch-update.timer
 
@@ -58,7 +58,7 @@ Afficher le message d'aide.
 
 .TP
 .B Le timer systemd
-.RB "Il existe un service systemd dans " "/usr/lib/systemd/user/arch-update.service " "(ou dans " "/etc/systemd/user/arch-update.service " "si vous avez installé arch-update depuis la source) qui exécute la fonction " "\-\-check " "quand il est démarré. Pour le démarrer automatiquement " "au démarrage du système puis une fois toutes les heures, " "activez le timer systemd associé (vous pouvez modifier le cycle de vérification automatique à votre guise, voir le chapitre TRUCS ET ASTUCES ci-dessous):"
+.RB "Il existe un service systemd dans " "/usr/lib/systemd/user/arch-update.service " "(ou dans " "/etc/systemd/user/arch-update.service " "si vous avez installé arch-update depuis la source) qui exécute la fonction " "\-\-check " "quand il est démarré. Pour le démarrer automatiquement " "au démarrage du système puis une fois toutes les heures, " "activez le timer systemd associé (vous pouvez modifier le cycle de vérification automatique à votre guise, voir le chapitre TRUCS ET ASTUCES ci-dessous) :"
 .br
 .B systemctl \-\-user enable \-\-now arch-update.timer
 
@@ -156,7 +156,7 @@ Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du 
 .BR arch-update.conf (5)
 
 .SH BUGS
-Signalez les bugs sur la page GitHub: https://github.com/Antiz96/arch-update/issues
+Signalez les bugs sur la page GitHub : https://github.com/Antiz96/arch-update/issues
 
 .SH AUTHOR
 Robin Candau <robincandau@protonmail.com>
