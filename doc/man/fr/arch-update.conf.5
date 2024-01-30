@@ -1,47 +1,47 @@
-.TH "ARCH-UPDATE.CONF" "5" "January 2024" "Arch-Update 1.10.1" "Arch-Update Manual"
+.TH "ARCH-UPDATE.CONF" "5" "Janvier 2024" "Arch-Update 1.10.1" "Manuel de Arch-Update"
 
 .SH NAME
-arch-update.conf \- arch-update configuration file.
+arch-update.conf \- fichier de configuration pour arch-update.
 
 .SH SYNOPSIS
 $XDG_CONFIG_HOME/arch-update/arch-update.conf, $HOME/.config/arch-update/arch-update.conf
 
 .SH DESCRIPTION
-.RI "Arch-Update's " "optional " "configuration file."
+.RI "Fichier de configuration " "optionel " "pour Arch-Update."
 
-.RB "Arch-Update first attempts to read the file at " "$XDG_CONFIG_HOME/arch-update/arch-update.conf " "then at " "$HOME/.config/arch-update/arch-update.conf " "if " "$XDG_CONFIG_HOME " "is not set, or the file doesn't exist."
+.RB "Arch-Update tente d'abord de lire le fichier sous " "$XDG_CONFIG_HOME/arch-update/arch-update.conf " "puis sous " "$HOME/.config/arch-update/arch-update.conf " "si " "$XDG_CONFIG_HOME " "n'est pas paramétré, ou que le fichier n'existe pas."
 
 .SH OPTIONS
 .PP
-Options are case sensitive, so capital letters have to be respected.
+Les options sont sensibles à la casse, les majuscules doivent donc être respectées.
 
 .PP
 
 .TP
 .B NoColor
-Do not colorize output.
+Ne pas coloriser la sortie.
 
 .TP
 .B NoVersion
-Do not show versions changes for packages when listing pending updates.
+Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente.
 
 .TP
 .B NoNews
-Do not print Arch news. Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.
+Ne pas afficher les Arch news. Notez que l'utilisation de cette option générera un message d'avertissement pour rappeler que les utilisateurs sont censés consulter régulièrement les Arch news.
 
 .TP
 .B KeepOldPackages=Num
-Number of old packages' versions to keep in pacman's cache. Defaults to 3.
+Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
 
 .TP
 .B KeepUninstalledPackages=Num
-Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
+Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
 
-.SH SEE ALSO
+.SH VOIR AUSSI
 .BR arch-update (1)
 
 .SH BUGS
-Please report bugs to the GitHub page: https://github.com/Antiz96/arch-update/issues
+Signalez les bugs sur la page GitHub: https://github.com/Antiz96/arch-update/issues
 
-.SH AUTHOR
+.SH AUTEUR
 Robin Candau <robincandau@protonmail.com>
