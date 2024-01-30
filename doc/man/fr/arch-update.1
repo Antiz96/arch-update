@@ -1,0 +1,162 @@
+.TH "ARCH-UPDATE" "1" "Janvier 2024" "Arch-Update 1.10.1" "Manuel de Arch-Update"
+
+.SH NAME
+arch-update \- Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant/après mise à jour.
+
+.SH SYNOPSIS
+.B arch-update
+[\fI\,OPTION\/\fR]
+
+.SH DESCRIPTION
+Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant/après mise à jour et qui inclut une icône cliquable (.desktop) qui peut facilement être intégrée à n'importe quel environnement de bureau/gestionnaire de fenêtres, dock, barre d'état, barre de lancement ou menu d'application.
+.br
+.RB "Prise en charge optionnelle des mises à jour des paquets AUR (via " "yay " "or " "paru" "), des mises à jour des paquets Flatpak (via " "flatpak" ") et des notifications de bureau (via " "libnotify" ")."
+
+.SH OPTIONS
+.PP
+.RB "Si aucune option n'est passée, lance la série de fonctions adéquates pour effectuer une mise à jour complète et correcte, en commençant par afficher la liste des paquets disponibles pour la mise à jour et en demandant la confirmation de l'utilisateur pour procéder à l'installation." 
+.br
+.RB "Supporte les mises à jour des paquets AUR (si " "yay " "ou " "paru " "est installé) et des paquets Flatpak (si " "flatpak " "est installé)."
+.br
+.RB "Avant d'effectuer la mise à jour, propose d'afficher les dernières Arch news à l'utilisateur. Les Arch news publiées au cours des 15 derniers jours sont étiquetées comme '[NEW]'."
+.br
+.RB "Arch-Update vérifie aussi la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter."
+.br
+.RB "Ces fonctions sont lancées quand vous cliquez sur l'icône (.desktop)."
+
+.PP
+
+.TP
+.B \-c, \-\-check
+.RB "Vérifier les mises à jour disponibles and changer l'icône (.desktop) en conséquence s'il y en a."
+.br
+.RB "Cela envoie une notification de bureau contenant le nombre de mise à jour disponibles si " "libnotify " "est installé."
+.br
+.RB "Supporte les mises à jour des paquets AUR (si " "yay " "ou " "paru " "est installé) et les mises à jour des paquets Flatpak (si " "flatpak " "est installé)."
+.br
+.RB "L'option " "\-\-check " "est automatiquement lancée au démarrage du système puis une fois chaque heure si vous avez activé le " "systemd.timer " "avec la commande suivante :"
+.br
+.B systemctl \-\-user enable \-\-now arch-update.timer
+
+.TP
+.B \-v, \-\-version
+Afficher les informations de version et quitter.
+
+.TP
+.B \-h, \-\-help
+Afficher le message d'aide.
+
+.TP
+.RB "Certaines options peuvent être activées/désactivées ou modifiées via le fichier de configuration " "arch-update.conf " ", voir la page de manuel " "arch-update.conf(5)".
+
+.SH UTILISATION
+.TP
+.B L'icône (.desktop)
+.RB "Le fichier .desktop se trouve dans " "/usr/share/applications/arch-update.desktop " "(ou dans " "/etc/local/share/applications/arch-update.desktop " "si vous avez installé arch-update depuis la source)." 
+.br
+.RB "Son icône changera automatiquement en fonction des différents états (vérification des mises à jour, mises à jour disponibles, installation des mises à jour, à jour). Il lancera la série de fonctions adéquates pour effectuer une mise à jour complète et correcte lorsque vous cliquez dessus. Il est facile à intégrer à n’importe quel DE/WM, dock, barre d’état/lancement ou menu d’application."
+
+.TP
+.B Le timer systemd
+.RB "Il existe un service systemd dans " "/usr/lib/systemd/user/arch-update.service " "(ou dans " "/etc/systemd/user/arch-update.service " "si vous avez installé arch-update depuis la source) qui exécute la fonction " "\-\-check " "quand il est démarré. Pour le démarrer automatiquement " "au démarrage du système puis une fois toutes les heures, " "activez le timer systemd associé (vous pouvez modifier le cycle de vérification automatique à votre guise, voir le chapitre TRUCS ET ASTUCES ci-dessous) :"
+.br
+.B systemctl \-\-user enable \-\-now arch-update.timer
+
+.SH TRUCS ET ASTUCES
+.TP
+.B Prise en charge du AUR
+.RB "Arch-Update prend en charge la mise à jour des paquets AUR lors de la vérification et de l'installation des mises à jour si " "yay " "ou " "paru " "est installé."
+.br
+Voir https://github.com/Jguer/yay et https://aur.archlinux.org/packages/yay
+.br
+Voir https://github.com/morganamilo/paru et https://aur.archlinux.org/packages/paru
+
+.TP
+.B Prise en charge de Flatpak
+.RB "Arch-Update prend en charge la mise à jour des paquets Flatpak lors de la vérification et de l'installation des mises à jour (ainsi que de la suppression des packages Flatpak inutilisés) si " "flatpak " "est installé."
+.br
+Voir https://www.flatpak.org/ et https://archlinux.org/packages/extra/x86_64/flatpak/
+
+.TP
+.B Notifications de bureau
+.RB "Arch-Update prend en charge les notifications de bureau lors de l'exécution de la fonction " "--check " "si " "libnotify (notify-send) " "est installé."
+.br
+Voir https://wiki.archlinux.org/title/Desktop_notifications
+
+.TP
+.B Modifier le cycle de vérification automatique
+.RB "Si vous avez activé le " "systemd.timer" ", l'option " "--check " "est automatiquement lancée au démarrage du système puis une fois par heure."
+.br
+.RB "Si vous souhaitez modifier le cycle de vérification, exécutez la commande " "systemctl --user edit arch-update.timer " "pour créer une configuration de remplacement pour le timer et saisissez ce qui suit :"
+.br
+
+.B [Timer]
+.br
+.B OnUnitActiveSec=
+.br
+.B OnUnitActiveSec=10m
+
+.br
+.RB "Les unités de temps sont " "s " "pour secondes, " "m " "pour minutes, " "h " "pour heures, " "d " "pour jours..."
+.br
+Voir https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans pour plus de détails.
+
+.SH EXIT STATUS
+.TP
+.B 0
+OK
+
+.TP
+.B 1
+Option invalide
+
+.TP
+.B 2
+Aucune méthode d'élévation de privilège (sudo ou doas) n'est installée
+
+.TP
+.B 3
+Erreur lors du changement d'icône
+
+.TP
+.B 4
+L'utilisateur n'a pas donné la confirmation de procéder
+
+.TP
+.B 5
+Erreur lors de la mise à jour des paquets
+
+.TP
+.B 6
+Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
+
+.SH VOIR AUSSI
+.BR cp (1),
+.BR checkupdates (8),
+.BR echo (1),
+.BR sudo (8),
+.BR doas (1),
+.BR sed (1),
+.BR file (1),
+.BR grep (1),
+.BR find (1),
+.BR mkdir (1),
+.BR mv (1),
+.BR curl (1),
+.BR tr (1),
+.BR pacman (8),
+.BR pacdiff (8),
+.BR paccache (8),
+.BR systemd.service (5),
+.BR systemd.timer (5),
+.BR yay (8),
+.BR paru (8),
+.BR flatpak (1),
+.BR notify-send (1),
+.BR arch-update.conf (5)
+
+.SH BUGS
+Signalez les bugs sur la page GitHub : https://github.com/Antiz96/arch-update/issues
+
+.SH AUTHOR
+Robin Candau <robincandau@protonmail.com>
