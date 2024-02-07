@@ -165,11 +165,11 @@ check() {
 	icon_checking
 
 	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
-		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
+		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
 		update_available=$(checkupdates ; "${aur_helper}" -Qua)
 	elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
-		update_available=$(checkupdates ; flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
+		update_available=$(checkupdates ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 	else
 		update_available=$(checkupdates)
 	fi
@@ -222,7 +222,7 @@ list_packages() {
 	fi
 
 	if [ -n "${flatpak}" ]; then
-		flatpak_packages=$(flatpak update | awk '{print $2}' | grep -v '^$' | sed '1d;$d')
+		flatpak_packages=$(flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 	fi
 
 	if [ -n "${packages}" ]; then
