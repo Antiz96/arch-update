@@ -2,7 +2,7 @@
 
 # arch-update: An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.
 # https://github.com/Antiz96/arch-update
-# Licensed under the GPL-3.0 license
+# Licensed under the GPL-3.0 license (or any later version of that license).
 
 # General variables
 name="arch-update"
