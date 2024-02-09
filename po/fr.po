@@ -85,7 +85,7 @@ msgid ""
 "  -c, --check    Check for available updates, send a desktop notification "
 "containing the number of available updates (if libnotify is installed)"
 msgstr ""
-"  -c, --check    Vérifier les mises à jour disponibles, envoyer une notification de bureau "
+" -c, --check    Vérifier les mises à jour disponibles, envoyer une notification de bureau "
 "contenant le nombre de mises à jour disponibles (si libnotify est installé)"
 
 #: src/script/arch-update.sh:135
