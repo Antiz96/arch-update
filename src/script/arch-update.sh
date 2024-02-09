@@ -6,12 +6,16 @@
 
 # General variables
 name="arch-update"
+_name="Arch-Update"
 version="1.10.1"
 option="${1}"
 
 # Declare necessary paramaters for translations
 . gettext.sh
-export TEXTDOMAIN="${name^^}" # Using "ARCH-UPDATE" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
+export TEXTDOMAIN="${_name}" # Using "Arch-Update" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
+if find /usr/local/share/locale/*/LC_MESSAGES/"${_name}".mo &> /dev/null; then
+	export TEXTDOMAINDIR="/usr/local/share/locale"
+fi
 
 # Checking options in arch-update.conf
 if grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
@@ -120,7 +124,7 @@ ${name} v${version}
 
 "$(eval_gettext "An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.")"
 
-"$(eval_gettext "Run arch-update to perform the main 'update' function:")"
+"$(eval_gettext "Run \${name} to perform the main 'update' function:")"
 "$(eval_gettext "Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.")"
 "$(eval_gettext "Before performing the update, offer to print the latest Arch Linux news.")"
 "$(eval_gettext "Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.")"
@@ -146,24 +150,28 @@ invalid_option() {
 	exit 1
 }
 
+# Definition of the icon directory
+icon_dir="/usr/share/icons/${name}"
+[ -d "/usr/local/share/icons/${name}" ] && icon_dir="/usr/local/share/icons/${name}"
+
 # Definition of the icon_checking function: Change icon to "checking"
 icon_checking() {
-	cp -f /usr/share/icons/arch-update/arch-update_checking.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
+	cp -f "${icon_dir}/${name}_checking.svg" "${icon_dir}/${name}.svg" || exit 3
 }
 
 # Definition of the icon_updates_available function: Change icon to "updates-available"
 icon_updates_available() {
-	cp -f /usr/share/icons/arch-update/arch-update_updates-available.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
+	cp -f "${icon_dir}/${name}_updates-available.svg" "${icon_dir}/${name}.svg" || exit 3
 }
 
 # Definition of the icon_installing function: Change icon to "installing"
 icon_installing() {
-	cp -f /usr/share/icons/arch-update/arch-update_installing.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
+	cp -f "${icon_dir}/${name}_installing.svg" "${icon_dir}/${name}.svg" || exit 3
 }
 
 # Definition of the icon_up_to_date function: Change icon to "up to date"
 icon_up_to_date() {
-	cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
+	cp -f "${icon_dir}/${name}_up-to-date.svg" "${icon_dir}/${name}.svg" || exit 3
 }
 
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
@@ -194,9 +202,9 @@ check() {
 			if ! diff "${statedir}/current_check" "${statedir}/last_check" &> /dev/null; then
 				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
 				if [ "${update_number}" -eq 1 ]; then
-					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch-Update" "$(eval_gettext "\${update_number} update available")"
+					notify-send -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")"
 				else
-					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch-Update" "$(eval_gettext "\${update_number} updates available")"
+					notify-send -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")"
 				fi
 			fi
 		fi
