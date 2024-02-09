@@ -236,9 +236,9 @@ msgstr ""
 msgid "Removing Orphan Packages...\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:392 src/script/arch-update.sh:468
-#: src/script/arch-update.sh:478 src/script/arch-update.sh:488
-#: src/script/arch-update.sh:497
+#: src/script/arch-update.sh:392 src/script/arch-update.sh:425
+#: src/script/arch-update.sh:468 src/script/arch-update.sh:478
+#: src/script/arch-update.sh:488 src/script/arch-update.sh:497
 #, sh-format
 msgid ""
 "An error has occurred during the removal process\\nThe removal has been "
@@ -279,12 +279,6 @@ msgstr ""
 #: src/script/arch-update.sh:421
 #, sh-format
 msgid "Removing Flatpak Unused Packages..."
-msgstr ""
-
-#: src/script/arch-update.sh:425
-#, sh-format
-msgid ""
-"An error has occurred the removal process\\nThe removal has been aborted\\n"
 msgstr ""
 
 #: src/script/arch-update.sh:436

@@ -422,7 +422,7 @@ orphan_packages() {
 
 					if ! flatpak remove --unused; then
 						echo
-						error_msg "$(eval_gettext "An error has occurred the removal process\nThe removal has been aborted\n")"
+						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
 						echo
 						info_msg "$(eval_gettext "The removal has been applied\n")"
