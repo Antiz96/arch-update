@@ -1,4 +1,5 @@
 pkgname=arch-update
+PKGNAME=ARCH-UPDATE
 
 PREFIX ?= /usr/local
 
@@ -27,7 +28,7 @@ install:
 	# Generate and install .mo files for translations
 	# .mo files are installed as "ARCH-UPDATE.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
 	msgfmt po/fr.po -o po/fr.mo
-	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${pkgname^^}.mo"
+	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${PKGNAME}.mo"
 	rm -f po/fr.mo
 
 	# Archive and install man pages
@@ -62,7 +63,7 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
 
 	# Delete .mo files
-	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${pkgname^^}.mo"
+	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${PKGNAME}.mo"
 
 	# Delete man pages
 	rm -f "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1.gz"
