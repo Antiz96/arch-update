@@ -7,7 +7,7 @@
 # General variables
 name="arch-update"
 _name="Arch-Update"
-version="1.10.1"
+version="1.11.0"
 option="${1}"
 
 # Declare necessary parameters for translations
