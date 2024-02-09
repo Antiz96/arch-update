@@ -19,7 +19,11 @@ install:
 	
 	install -Dm 644 "res/systemd/${pkgname}.service" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
 	install -Dm 644 "res/systemd/${pkgname}.timer" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
-	
+
+	msgfmt po/fr.po -o po/fr.mo
+	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${pkgname}.mo"
+	rm -f po/fr.mo
+
 	gzip -c "doc/man/${pkgname}.1" > "doc/man/${pkgname}.1.gz"
 	gzip -c "doc/man/${pkgname}.conf.5" > "doc/man/${pkgname}.conf.5.gz"
 	gzip -c "doc/man/fr/${pkgname}.1" > "doc/man/fr/${pkgname}.1.gz"
@@ -44,6 +48,8 @@ uninstall:
 
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
+
+	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${pkgname}.mo"
 
 	rm -f "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1.gz"
 	rm -f "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5.gz"
