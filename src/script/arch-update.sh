@@ -11,7 +11,7 @@ option="${1}"
 
 # Declare necessary paramaters for translations
 . gettext.sh
-export TEXTDOMAIN="${name}"
+export TEXTDOMAIN="${name^^}" # Using "ARCH-UPDATE" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
 
 # Checking options in arch-update.conf
 if grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
