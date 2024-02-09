@@ -10,7 +10,7 @@ _name="Arch-Update"
 version="1.10.1"
 option="${1}"
 
-# Declare necessary paramaters for translations
+# Declare necessary parameters for translations
 . gettext.sh
 export TEXTDOMAIN="${_name}" # Using "Arch-Update" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
 if find /usr/local/share/locale/*/LC_MESSAGES/"${_name}".mo &> /dev/null; then
