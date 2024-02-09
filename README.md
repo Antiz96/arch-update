@@ -83,7 +83,7 @@ To start it automatically **at boot and then once every hour**, enable the assoc
 systemctl --user enable --now arch-update.timer
 ```
 
-### Screenshot
+### Screenshots
 
 Personally, I integrated the .desktop icon in my top bar.  
 It is the first icon from the left.
