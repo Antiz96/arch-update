@@ -47,6 +47,7 @@ install:
 
 	# Install documentation
 	install -Dm 644 README.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/README.md"
+	install -Dm 644 README-fr.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/fr/README-fr.md"
 
 uninstall:
 	# Delete the main script
