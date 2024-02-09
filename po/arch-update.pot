@@ -145,7 +145,14 @@ msgstr ""
 #: src/script/arch-update.sh:421 src/script/arch-update.sh:463
 #: src/script/arch-update.sh:530 src/script/arch-update.sh:560
 #, sh-format
-msgid "[Yy]"
+msgid "Y"
+msgstr ""
+
+#: src/script/arch-update.sh:266 src/script/arch-update.sh:388
+#: src/script/arch-update.sh:421 src/script/arch-update.sh:463
+#: src/script/arch-update.sh:530 src/script/arch-update.sh:560
+#, sh-format
+msgid "y"
 msgstr ""
 
 #: src/script/arch-update.sh:270

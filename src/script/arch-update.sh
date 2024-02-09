@@ -263,7 +263,7 @@ list_packages() {
 		ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
 
 		case "${answer}" in
-			"$(eval_gettext "[Yy]")"|"")
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 				proceed_with_update="y"
 			;;
 			*)
@@ -385,7 +385,7 @@ orphan_packages() {
 		fi
 
 		case "${answer}" in
-			"$(eval_gettext "[Yy]")")
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
 				main_msg "$(eval_gettext "Removing Orphan Packages...\n")"
 				
@@ -418,7 +418,7 @@ orphan_packages() {
 			fi
 
 			case "${answer}" in
-				"$(eval_gettext "[Yy]")")
+				"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 					echo
 					main_msg "$(eval_gettext "Removing Flatpak Unused Packages...")"
 
@@ -460,7 +460,7 @@ packages_cache() {
 		fi
 			
 		case "${answer}" in
-			"$(eval_gettext "[Yy]")"|"")
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 				if [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -eq 0 ]; then
 					echo
 					main_msg "$(eval_gettext "Removing old cached packages...")"
@@ -527,7 +527,7 @@ pacnew_files() {
 		fi
 
 		case "${answer}" in
-			"$(eval_gettext "[Yy]")"|"")
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 				echo
 				main_msg "$(eval_gettext "Processing Pacnew Files...\n")"
 
@@ -557,7 +557,7 @@ kernel_reboot() {
 		ask_msg "$(eval_gettext "Would you like to reboot now? [y/N]")"
 
 		case "${answer}" in
-			"$(eval_gettext "[Yy]")")
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
 				main_msg "$(eval_gettext "Rebooting in 5 seconds...\nPress ctrl+c to abort")"
 				sleep 5
