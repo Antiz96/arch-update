@@ -83,7 +83,9 @@ Pour le démarrer automatiquement **au démarrage du système puis une fois tout
 systemctl --user enable --now arch-update.timer
 ```
 
-### Capture d'écran
+### Captures d'écran
+
+*Les captures d'écran montrent le retour du script en anglais, mais `Arch-Update` possède désormais une **traduction française** !*
 
 Personnellement, j'ai intégré l'icône .desktop dans ma barre supérieure.  
 C'est la première icône en partant de la gauche.
@@ -108,7 +110,7 @@ Lorsque l'on clique sur l'icône, cela lance la série de fonctions adéquates p
 ![listing-packages](https://github.com/Antiz96/arch-update/assets/53110319/43a990c8-ed93-420f-8c46-d50d60bff03f)
 
 Une fois que vous avez donné la confirmation pour procéder, `arch-update` propose d'afficher les dernières Arch news.  
-Les Arch news publiées au cours des 15 derniers jours sont étiquetées comme « [NEW] ».  
+Les Arch news publiées au cours des 15 derniers jours sont étiquetées comme « [NOUVEAU] ».  
 Sélectionnez la news à lire en tapant le numéro associé.  
 Après avoir lu une news, `arch-update` vous proposera à nouveau d'afficher les dernières Arch news, afin que vous puissiez lire plusieurs news à la fois.  
 Appuyez simplement sur « Entrée » sans saisir de chiffre pour procéder à la mise à jour :

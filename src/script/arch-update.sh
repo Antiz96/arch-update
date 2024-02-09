@@ -6,8 +6,17 @@
 
 # General variables
 name="arch-update"
+_name="Arch-Update"
 version="1.10.1"
 option="${1}"
+
+# Declare necessary parameters for translations
+# shellcheck disable=SC1091
+. gettext.sh
+export TEXTDOMAIN="${_name}" # Using "Arch-Update" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
+if find /usr/local/share/locale/*/LC_MESSAGES/"${_name}".mo &> /dev/null; then
+	export TEXTDOMAINDIR="/usr/local/share/locale"
+fi
 
 # Checking options in arch-update.conf
 if grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
@@ -76,12 +85,14 @@ error_msg() {
 
 # Definition of the continue_msg function: Print the continue message
 continue_msg() {
-	read -n 1 -r -s -p $"$(info_msg "Press \"enter\" to continue ")" && echo
+	msg="$(eval_gettext "Press \"enter\" to continue ")"
+	read -n 1 -r -s -p $"$(info_msg "${msg}")" && echo
 }
 
 # Definition of the quit_msg function: Print the quit message
 quit_msg() {
-	read -n 1 -r -s -p $"$(info_msg "Press \"enter\" to quit ")" && echo
+	msg="$(eval_gettext "Press \"enter\" to quit ")"
+	read -n 1 -r -s -p $"$(info_msg "${msg}")" && echo
 }
 
 # Definition of the evelation method to use (depending on which one is installed on the system)
@@ -90,7 +101,7 @@ if command -v sudo > /dev/null; then
 elif command -v doas > /dev/null; then
 	su_cmd="doas"
 else
-	error_msg "A privilege elevation method is required\nPlease, install sudo or doas\n" && quit_msg
+	error_msg "$(eval_gettext "A privilege elevation method is required\nPlease, install sudo or doas\n")" && quit_msg
 	exit 2
 fi
 
@@ -112,20 +123,20 @@ help() {
 	cat <<EOF
 ${name} v${version}
 
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.
+$(eval_gettext "An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.")
 
-Run arch-update to perform the main "update" function:
-Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.
-Before performing the update, offer to print the latest Arch Linux news.
-Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.
+$(eval_gettext "Run \${name} to perform the main 'update' function:")
+$(eval_gettext "Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.")
+$(eval_gettext "Before performing the update, offer to print the latest Arch Linux news.")
+$(eval_gettext "Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.")
 
-Options:
-  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
-  -h, --help     Display this message and exit
-  -V, --version  Display version information and exit
+$(eval_gettext "Options:")
+$(eval_gettext "  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
+$(eval_gettext "  -h, --help     Display this message and exit")
+$(eval_gettext "  -V, --version  Display version information and exit")
 
-For more information, see the ${name}(1) man page.
-Certain options can be enabled/disabled or modified via the ${name}.conf configuration file, see the ${name}.conf(5) man page.
+$(eval_gettext "For more information, see the \${name}(1) man page.")
+$(eval_gettext "Certain options can be enabled/disabled or modified via the \${name}.conf configuration file, see the \${name}.conf(5) man page.")
 EOF
 }
 
@@ -136,28 +147,32 @@ version() {
 
 # Definition of the invalid_option function: Print an error message, ask the user to check the help and exit
 invalid_option() {
-	echo -e >&2 "${name}: invalid option -- '${option}'\nTry '${name} --help' for more information."
+	echo -e >&2 "$(eval_gettext "\${name}: invalid option -- '\${option}'\nTry '\${name} --help' for more information.")"
 	exit 1
 }
 
+# Definition of the icon directory
+icon_dir="/usr/share/icons/${name}"
+[ -d "/usr/local/share/icons/${name}" ] && icon_dir="/usr/local/share/icons/${name}"
+
 # Definition of the icon_checking function: Change icon to "checking"
 icon_checking() {
-	cp -f /usr/share/icons/arch-update/arch-update_checking.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
+	cp -f "${icon_dir}/${name}_checking.svg" "${icon_dir}/${name}.svg" || exit 3
 }
 
 # Definition of the icon_updates_available function: Change icon to "updates-available"
 icon_updates_available() {
-	cp -f /usr/share/icons/arch-update/arch-update_updates-available.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
+	cp -f "${icon_dir}/${name}_updates-available.svg" "${icon_dir}/${name}.svg" || exit 3
 }
 
 # Definition of the icon_installing function: Change icon to "installing"
 icon_installing() {
-	cp -f /usr/share/icons/arch-update/arch-update_installing.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
+	cp -f "${icon_dir}/${name}_installing.svg" "${icon_dir}/${name}.svg" || exit 3
 }
 
 # Definition of the icon_up_to_date function: Change icon to "up to date"
 icon_up_to_date() {
-	cp -f /usr/share/icons/arch-update/arch-update_up-to-date.svg /usr/share/icons/arch-update/arch-update.svg || exit 3
+	cp -f "${icon_dir}/${name}_up-to-date.svg" "${icon_dir}/${name}.svg" || exit 3
 }
 
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
@@ -188,9 +203,9 @@ check() {
 			if ! diff "${statedir}/current_check" "${statedir}/last_check" &> /dev/null; then
 				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
 				if [ "${update_number}" -eq 1 ]; then
-					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch-Update" "${update_number} update available"
+					notify-send -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")"
 				else
-					notify-send -i /usr/share/icons/arch-update/arch-update_updates-available.svg "Arch-Update" "${update_number} updates available"
+					notify-send -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")"
 				fi
 			fi
 		fi
@@ -226,33 +241,33 @@ list_packages() {
 	fi
 
 	if [ -n "${packages}" ]; then
-		main_msg "Packages:"
+		main_msg "$(eval_gettext "Packages:")"
 		echo -e "${packages}\n"
 	fi
 
 	if [ -n "${aur_packages}" ]; then
-		main_msg "AUR Packages:"
+		main_msg "$(eval_gettext "AUR Packages:")"
 		echo -e "${aur_packages}\n"
 	fi
 
 	if [ -n "${flatpak_packages}" ]; then
-		main_msg "Flatpak Packages:"
+		main_msg "$(eval_gettext "Flatpak Packages:")"
 		echo -e "${flatpak_packages}\n"
 	fi
 
 	if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
 		icon_up_to_date
-		info_msg "No update available\n"
+		info_msg "$(eval_gettext "No update available\n")"
 	else
 		icon_updates_available
-		ask_msg "Proceed with update? [Y/n]"
+		ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
 
 		case "${answer}" in
-			[Yy]|"")
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 				proceed_with_update="y"
 			;;
 			*)
-				error_msg "The update has been aborted\n" && quit_msg
+				error_msg "$(eval_gettext "The update has been aborted\n")" && quit_msg
 				exit 4
 			;;
 		esac
@@ -269,12 +284,13 @@ list_news() {
 		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -5 | xargs -I{} date -d "{}" "+%s")
 
 		echo
-		main_msg "Arch News:"
+		main_msg "$(eval_gettext "Arch News:")"
 
 		i=1
 		while IFS= read -r line; do
 			if [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(date "+%Y-%m-%d" -d "15 days ago")" "+%s")" ]; then
-				echo -e "${i} - ${line} ${green}[NEW]${color_off}"
+				new_tag="$(eval_gettext "[NEW]")"
+				echo -e "${i} - ${line} ${green}${new_tag}${color_off}"
 			else
 				echo "${i} - ${line}"
 			fi
@@ -282,7 +298,7 @@ list_news() {
 		done < <(printf '%s\n' "${news_titles}")
 
 		echo
-		ask_msg "Select the news to read (or just press \"enter\" to proceed with update):"
+		ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
 
 		case "${answer}" in
 			1|2|3|4|5)
@@ -293,7 +309,11 @@ list_news() {
 				news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
 				news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
 				news_article=$(echo "${news_content}" | htmlq -t .article-content)
-				echo -e "\n${blue}---${color_off}\n${bold}Title:${color_off} ${news_selected}\n${bold}Author:${color_off} ${news_author}\n${bold}Publication date:${color_off} ${news_date}\n${bold}URL:${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
+				title_tag="$(eval_gettext "Title:")"
+				author_tag="$(eval_gettext "Author:")"
+				publication_date_tag="$(eval_gettext "Publication date:")"
+				url_tag="$(eval_gettext "URL:")"
+				echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
 			;;
 			*)
 				redo="n"
@@ -308,42 +328,42 @@ update() {
 
 	if [ -n "${packages}" ]; then
 		echo
-		main_msg "Updating Packages...\n"
+		main_msg "$(eval_gettext "Updating Packages...\n")"
 
 		if ! "${su_cmd}" pacman -Syu; then
 			icon_updates_available
 			echo
-			error_msg "An error has occurred during the update process\nThe update has been aborted\n" && quit_msg
+			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 			exit 5
 		fi
 	fi
 					
 	if [ -n "${aur_packages}" ]; then
 		echo
-		main_msg "Updating AUR Packages...\n"
+		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
 		if ! "${aur_helper}" -Syu; then
 			icon_updates_available
 			echo
-			error_msg "An error has occurred during the update process\nThe update has been aborted\n" && quit_msg
+			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 			exit 5
 		fi
 	fi
 
 	if [ -n "${flatpak_packages}" ]; then
 		echo
-		main_msg "Updating Flatpak Packages...\n"
+		main_msg "$(eval_gettext "Updating Flatpak Packages...\n")"
 
 		if ! flatpak update; then
 			icon_updates_available
-			error_msg "An error has occurred during the update process\nThe update has been aborted\n" && quit_msg
+			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 			exit 5
 		fi
 	fi
 
 	icon_up_to_date
 	echo
-	info_msg "The update has been applied\n"
+	info_msg "$(eval_gettext "The update has been applied\n")"
 }
 
 # Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are
@@ -355,67 +375,67 @@ orphan_packages() {
 	fi
 
 	if [ -n "${orphan_packages}" ]; then
-		main_msg "Orphan Packages:"
+		main_msg "$(eval_gettext "Orphan Packages:")"
 		echo -e "${orphan_packages}\n"
 
 		if [ "$(echo "${orphan_packages}" | wc -l)" -eq 1 ]; then
-			ask_msg "Would you like to remove this orphan package (and its potential dependencies) now? [y/N]"
+			ask_msg "$(eval_gettext "Would you like to remove this orphan package (and its potential dependencies) now? [y/N]")"
 		else
-			ask_msg "Would you like to remove these orphan packages (and their potential dependencies) now? [y/N]"
+			ask_msg "$(eval_gettext "Would you like to remove these orphan packages (and their potential dependencies) now? [y/N]")"
 		fi
 
 		case "${answer}" in
-			[Yy])
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
-				main_msg "Removing Orphan Packages...\n"
+				main_msg "$(eval_gettext "Removing Orphan Packages...\n")"
 				
 				if ! pacman -Qtdq | "${su_cmd}" pacman -Rns -; then
 					echo
-					error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+					error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 				else
 					echo
-					info_msg "The removal has been applied\n"
+					info_msg "$(eval_gettext "The removal has been applied\n")"
 				fi
 			;;
 			*)
 				echo
-				info_msg "The removal hasn't been applied\n"
+				info_msg "$(eval_gettext "The removal hasn't been applied\n")"
 			;;
 		esac
 	else
-		info_msg "No orphan package found\n"
+		info_msg "$(eval_gettext "No orphan package found\n")"
 	fi
 
 	if [ -n "${flatpak}" ]; then
 		if [ -n "${flatpak_unused}" ]; then
-			main_msg "Flatpak Unused Packages:"
+			main_msg "$(eval_gettext "Flatpak Unused Packages:")"
 			echo -e "${flatpak_unused}\n"
 
 			if [ "$(echo "${flatpak_unused}" | wc -l)" -eq 1 ]; then
-				ask_msg "Would you like to remove this Flatpak unused package now? [y/N]"
+				ask_msg "$(eval_gettext "Would you like to remove this Flatpak unused package now? [y/N]")"
 			else
-				ask_msg "Would you like to remove these Flatpak unused packages now? [y/N]"
+				ask_msg "$(eval_gettext "Would you like to remove these Flatpak unused packages now? [y/N]")"
 			fi
 
 			case "${answer}" in
-				[Yy])
+				"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 					echo
-					main_msg "Removing Flatpak Unused Packages..."
+					main_msg "$(eval_gettext "Removing Flatpak Unused Packages...")"
 
 					if ! flatpak remove --unused; then
 						echo
-						error_msg "An error has occurred the removal process\nThe removal has been aborted\n"
+						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
 						echo
-						info_msg "The removal has been applied\n"
+						info_msg "$(eval_gettext "The removal has been applied\n")"
 					fi
 				;;
 				*)
-					info_msg "The removal hasn't been applied\n"
+					info_msg "$(eval_gettext "The removal hasn't been applied\n")"
 				;;
 			esac
 		else
-			info_msg "No Flatpak unused package found\n"
+			info_msg "$(eval_gettext "No Flatpak unused package found\n")"
 		fi
 	fi
 }
@@ -432,51 +452,51 @@ packages_cache() {
 	if [ "${pacman_cache_total}" -gt 0 ]; then
 
 		if [ "${pacman_cache_total}" -eq 1 ]; then
-			main_msg "Cached Packages:\nThere's an old or uninstalled cached package\n"
-			ask_msg "Would you like to remove it from the cache now? [Y/n]"
+			main_msg "$(eval_gettext "Cached Packages:\nThere's an old or uninstalled cached package\n")"
+			ask_msg "$(eval_gettext "Would you like to remove it from the cache now? [Y/n]")"
 		else
-			main_msg "Cached Packages:\nThere are old and/or uninstalled cached packages\n"
-			ask_msg "Would you like to remove them from the cache now? [Y/n]"
+			main_msg "$(eval_gettext "Cached Packages:\nThere are old and/or uninstalled cached packages\n")"
+			ask_msg "$(eval_gettext "Would you like to remove them from the cache now? [Y/n]")"
 		fi
 			
 		case "${answer}" in
-			[Yy]|"")
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 				if [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -eq 0 ]; then
 					echo
-					main_msg "Removing old cached packages..."
+					main_msg "$(eval_gettext "Removing old cached packages...")"
 
 					if ! "${su_cmd}" paccache -rk"${old_packages_num}"; then
 						echo
-						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
 						echo
 					fi
 				elif [ "${pacman_cache_old}" -eq 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
 					echo
-					main_msg "Removing uninstalled cached packages..."
+					main_msg "$(eval_gettext "Removing uninstalled cached packages...")"
 
 					if ! "${su_cmd}" paccache -ruk"${uninstalled_packages_num}"; then
 						echo
-						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
 						echo
 					fi
 				elif [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -gt 0 ]; then
 					echo
-					main_msg "Removing old cached packages..."
+					main_msg "$(eval_gettext "Removing old cached packages...")"
 
 					if ! "${su_cmd}" paccache -rk"${old_packages_num}"; then
 						echo
-						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
 						echo
 					fi
 
-					main_msg "Removing uninstalled cached packages..."
+					main_msg "$(eval_gettext "Removing uninstalled cached packages...")"
 
 					if ! "${su_cmd}" paccache -ruk"${uninstalled_packages_num}"; then
 						echo
-						error_msg "An error has occurred during the removal process\nThe removal has been aborted\n"
+						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
 						echo
 					fi
@@ -484,11 +504,11 @@ packages_cache() {
 			;;
 			*)
 				echo
-				info_msg "The removal hasn't been applied\n"
+				info_msg "$(eval_gettext "The removal hasn't been applied\n")"
 			;;
 		esac
 	else
-		info_msg "No old or uninstalled cached package found\n"
+		info_msg "$(eval_gettext "No old or uninstalled cached package found\n")"
 	fi
 }
 
@@ -497,30 +517,30 @@ pacnew_files() {
 	pacnew_files=$(pacdiff -o)
 		
 	if [ -n "${pacnew_files}" ]; then
-		main_msg "Pacnew Files:"
+		main_msg "$(eval_gettext "Pacnew Files:")"
 		echo -e "${pacnew_files}\n"
 
 		if [ "$(echo "${pacnew_files}" | wc -l)" -eq 1 ]; then
-			ask_msg "Would you like to process this file now? [Y/n]"
+			ask_msg "$(eval_gettext "Would you like to process this file now? [Y/n]")"
 		else
-			ask_msg "Would you like to process these files now? [Y/n]"
+			ask_msg "$(eval_gettext "Would you like to process these files now? [Y/n]")"
 		fi
 
 		case "${answer}" in
-			[Yy]|"")
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 				echo
-				main_msg "Processing Pacnew Files...\n"
+				main_msg "$(eval_gettext "Processing Pacnew Files...\n")"
 
 				"${su_cmd}" pacdiff
 				echo
-				info_msg "The pacnew file(s) processing has been applied\n"
+				info_msg "$(eval_gettext "The pacnew file(s) processing has been applied\n")"
 			;;
 			*)
-				info_msg "The pacnew file(s) processing hasn't been applied\n"
+				info_msg "$(eval_gettext "The pacnew file(s) processing hasn't been applied\n")"
 			;;
 		esac
 	else
-		info_msg "No pacnew file found\n"
+		info_msg "$(eval_gettext "No pacnew file found\n")"
 	fi
 }
 
@@ -533,17 +553,17 @@ kernel_reboot() {
 	fi
 
 	if [ -z "${kernel_compare}" ]; then
-		main_msg "Reboot required:\nThere's a pending kernel update on your system requiring a reboot to be applied\n"
-		ask_msg "Would you like to reboot now? [y/N]"
+		main_msg "$(eval_gettext "Reboot required:\nThere's a pending kernel update on your system requiring a reboot to be applied\n")"
+		ask_msg "$(eval_gettext "Would you like to reboot now? [y/N]")"
 
 		case "${answer}" in
-			[Yy])
+			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
-				main_msg "Rebooting in 5 seconds...\nPress ctrl+c to abort"
+				main_msg "$(eval_gettext "Rebooting in 5 seconds...\nPress ctrl+c to abort")"
 				sleep 5
 				if ! reboot; then
 					echo
-					error_msg "An error has occurred during the reboot process\nThe reboot has been aborted\n" && quit_msg
+					error_msg "$(eval_gettext "An error has occurred during the reboot process\nThe reboot has been aborted\n")" && quit_msg
 					exit 6
 				else
 					exit 0
@@ -551,11 +571,11 @@ kernel_reboot() {
 			;;
 			*)
 				echo
-				warning_msg "The reboot hasn't been performed\nPlease, consider rebooting to finalize the pending kernel update\n"
+				warning_msg "$(eval_gettext "The reboot hasn't been performed\nPlease, consider rebooting to finalize the pending kernel update\n")"
 			;;
 		esac
 	else
-		info_msg "No pending kernel update found\n"
+		info_msg "$(eval_gettext "No pending kernel update found\n")"
 	fi
 }
 
@@ -568,7 +588,7 @@ case "${option}" in
 				list_news
 			else
 				echo
-				warning_msg "NoNews option detected\nPlease, keep in mind that users are expected to check the latest Arch news before updating their system, to be aware of eventual required manual interventions"
+				warning_msg "$(eval_gettext "NoNews option detected\nPlease, keep in mind that users are expected to check the latest Arch news before updating their system, to be aware of eventual required manual interventions")"
 			fi
 			update
 		fi
