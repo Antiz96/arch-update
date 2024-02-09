@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# AUTHOR <EMAIL@ADDRESS>, YEAR
+# Robin Candau <robincandau@protonmail.com>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 1.10.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-02-09 01:21+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: \n"
+"PO-Revision-Date: 2024-02-09 09:07+0100\n"
+"Last-Translator: Robin Candau <robincandau@protonmail.com>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,12 +19,12 @@ msgstr ""
 #: src/script/arch-update.sh:82
 #, sh-format
 msgid "Press \"enter\" to continue "
-msgstr ""
+msgstr "Appuyez sur \"entrée\" pour continuer"
 
 #: src/script/arch-update.sh:88
 #, sh-format
 msgid "Press \"enter\" to quit "
-msgstr ""
+msgstr "Appuyez sur \"entrée\" pour quitter"
 
 #: src/script/arch-update.sh:98
 #, sh-format
