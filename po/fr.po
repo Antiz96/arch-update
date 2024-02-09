@@ -31,7 +31,7 @@ msgstr "Appuyez sur \"entrée\" pour quitter "
 msgid ""
 "A privilege elevation method is required\\nPlease, install sudo or doas\\n"
 msgstr ""
-"Une méthode d'élévation de privilège est requise\\nVeulliez installer sudo ou doas\\n"
+"Une méthode d'élévation de privilège est requise\\nVeuillez installer sudo ou doas\\n"
 
 #: src/script/arch-update.sh:126
 #, sh-format
@@ -61,7 +61,7 @@ msgstr ""
 msgid ""
 "Before performing the update, offer to print the latest Arch Linux news."
 msgstr ""
-"Avant d'effectuer la mise à jour, propose d'afficher les dernières Arch news."
+"Avant d'effectuer la mise à jour, propose d'afficher les dernières news d'Arch Linux."
 
 #: src/script/arch-update.sh:131
 #, sh-format
@@ -70,8 +70,8 @@ msgid ""
 "pacsave files and pending kernel update and, if there are, offers to process "
 "them."
 msgstr ""
-"Après la mise à jour, vérification de la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, "
-"de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, "
+"Après la mise à jour, vérification de la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, de fichiers pacnew/"
+"pacsave et de mise à jour du noyau en attente et, s'il y en a, "
 "propose de les traiter."
 
 #: src/script/arch-update.sh:133
@@ -250,7 +250,7 @@ msgid ""
 "Would you like to remove these orphan packages (and their potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Voulez-vous supprimer ces paquets orphelins (et ses potentielles "
+"Voulez-vous supprimer ces paquets orphelins (et leurs potentielles "
 "dépendances) maintenant ? [o/N]"
 
 #: src/script/arch-update.sh:389
@@ -308,7 +308,7 @@ msgstr "Suppression des paquets Flatpak inutilisés..."
 #: src/script/arch-update.sh:437
 #, sh-format
 msgid "No Flatpak unused package found\\n"
-msgstr "Aucun paquet Flatpak inutilisé n'a été trouvé"
+msgstr "Aucun paquet Flatpak inutilisé n'a été trouvé\\n"
 
 #: src/script/arch-update.sh:454
 #, sh-format
@@ -386,7 +386,7 @@ msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
-"Redémarrage requis:\\nIl y a une mise à jour du noyau en attente sur votre système qui nécessite " 
+"Redémarrage nécessaire :\\nIl y a une mise à jour du noyau en attente sur votre système qui nécessite " 
 "un redémarrage pour être appliquée\\n"
 
 #: src/script/arch-update.sh:556
