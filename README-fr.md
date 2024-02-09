@@ -85,7 +85,7 @@ systemctl --user enable --now arch-update.timer
 
 ### Captures d'écran
 
-*Les captures d'écran montrent le retour du script en anglais, mais `Arch-Update` possède désormais une traduction française!*
+*Les captures d'écran montrent le retour du script en anglais, mais `Arch-Update` possède désormais une **traduction française** !*
 
 Personnellement, j'ai intégré l'icône .desktop dans ma barre supérieure.  
 C'est la première icône en partant de la gauche.
