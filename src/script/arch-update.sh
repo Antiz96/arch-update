@@ -312,7 +312,8 @@ list_news() {
 				title_tag="$(eval_gettext "Title:")"
 				author_tag="$(eval_gettext "Author:")"
 				publication_date_tag="$(eval_gettext "Publication date:")"
-				echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}URL:${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
+				url_tag="$(eval_gettext "URL:")"
+				echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
 			;;
 			*)
 				redo="n"
