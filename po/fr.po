@@ -161,7 +161,7 @@ msgstr "Procéder à la mise à jour ? [O/n]"
 #: src/script/arch-update.sh:530 src/script/arch-update.sh:560
 #, sh-format
 msgid "[Yy]"
-msgstr "[Yy]|[Oo]"
+msgstr "[Oo]"
 
 #: src/script/arch-update.sh:270
 #, sh-format
