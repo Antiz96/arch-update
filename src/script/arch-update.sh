@@ -123,20 +123,20 @@ help() {
 	cat <<EOF
 ${name} v${version}
 
-"$(eval_gettext "An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.")"
+$(eval_gettext "An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.")
 
-"$(eval_gettext "Run \${name} to perform the main 'update' function:")"
-"$(eval_gettext "Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.")"
-"$(eval_gettext "Before performing the update, offer to print the latest Arch Linux news.")"
-"$(eval_gettext "Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.")"
+$(eval_gettext "Run \${name} to perform the main 'update' function:")
+$(eval_gettext "Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.")
+$(eval_gettext "Before performing the update, offer to print the latest Arch Linux news.")
+$(eval_gettext "Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.")
 
-"$(eval_gettext "Options:")"
-"$(eval_gettext "  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")"
-"$(eval_gettext "  -h, --help     Display this message and exit")"
-"$(eval_gettext "  -V, --version  Display version information and exit")"
+$(eval_gettext "Options:")
+$(eval_gettext "  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
+$(eval_gettext "  -h, --help     Display this message and exit")
+$(eval_gettext "  -V, --version  Display version information and exit")
 
-"$(eval_gettext "For more information, see the \${name}(1) man page.")"
-"$(eval_gettext "Certain options can be enabled/disabled or modified via the \${name}.conf configuration file, see the \${name}.conf(5) man page.")"
+$(eval_gettext "For more information, see the \${name}(1) man page.")
+$(eval_gettext "Certain options can be enabled/disabled or modified via the \${name}.conf configuration file, see the \${name}.conf(5) man page.")
 EOF
 }
 
