@@ -9,7 +9,8 @@ name="arch-update"
 version="1.10.1"
 option="${1}"
 
-# Export TEXTDOMAIN env var for translations
+# Declare necessary paramaters for translations
+. gettext.sh
 export TEXTDOMAIN="${name}"
 
 # Checking options in arch-update.conf

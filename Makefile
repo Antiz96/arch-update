@@ -21,7 +21,7 @@ install:
 	install -Dm 644 "res/systemd/${pkgname}.timer" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
 
 	msgfmt po/fr.po -o po/fr.mo
-	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${pkgname}.mo"
+	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${pkgname}.mo"
 	rm -f po/fr.mo
 
 	gzip -c "doc/man/${pkgname}.1" > "doc/man/${pkgname}.1.gz"
