@@ -283,7 +283,7 @@ list_news() {
 		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -5 | xargs -I{} date -d "{}" "+%s")
 
 		echo
-		main_msg "Arch News:"
+		main_msg "$(eval_gettext "Arch News:")"
 
 		i=1
 		while IFS= read -r line; do

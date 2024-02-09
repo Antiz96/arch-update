@@ -153,6 +153,11 @@ msgstr ""
 msgid "The update has been aborted\\n"
 msgstr ""
 
+#: src/script/arch-update.sh:286
+#, sh-format
+msgid "Arch News:"
+msgstr ""
+
 #: src/script/arch-update.sh:291
 #, sh-format
 msgid "[NEW]"
