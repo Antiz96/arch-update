@@ -115,6 +115,7 @@ Sélectionnez la news à lire en tapant le numéro associé.
 Après avoir lu une news, `arch-update` vous proposera à nouveau d'afficher les dernières Arch news, afin que vous puissiez lire plusieurs news à la fois.  
 Appuyez simplement sur « Entrée » sans saisir de chiffre pour procéder à la mise à jour :
 
+*Les Arch news peuvent être affichées à tout moment en exécutant la commande `arch-update --news`*  
 *Le listing/affichage des Arch news peut être ignoré avec l'option `NoNews` dans le fichier de configuration `arch-update.conf`.*  
 *Notez que l'utilisation de cette option générera un message d'avertissement pour rappeler que les utilisateurs sont censés consulter régulièrement les Arch news.*  
 *Voir le [chapitre de documentation arch-update.conf](#Fichier-de-configuration-arch-update) pour plus de détails.*
@@ -168,7 +169,8 @@ de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en 
 
 Options :
 -c, --check    Vérifier les mises à jour disponibles, envoyer une notification de bureau contenant le nombre de mises à jour disponibles (si libnotify est installé)
--h, --help     Afficher ce message et quitter
+-n, --news     Afficher les dernières Arch News
+-h, --help     Afficher ce message d'aide et quitter
 -V, --version  Afficher les informations de version et quitter
 
 Codes de sortie :
