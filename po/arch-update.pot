@@ -47,14 +47,14 @@ msgstr ""
 #: src/script/arch-update.sh:129
 #, sh-format
 msgid ""
-"Print the list of packages available for update, then ask for the user's "
+"Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
 
 #: src/script/arch-update.sh:130
 #, sh-format
 msgid ""
-"Before performing the update, offer to print the latest Arch Linux news."
+"Before performing the update, offer to display the latest Arch Linux news."
 msgstr ""
 
 #: src/script/arch-update.sh:131

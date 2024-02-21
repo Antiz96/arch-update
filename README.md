@@ -20,7 +20,7 @@ Features:
 
 - Includes a (.desktop) clickeable icon that automatically changes to act as an update notifier/applier. Easy to integrate with any DE/WM, dock, status/launch bar, app menu, etc...
 - Automatic check and listing of every packages available for update (through [checkupdates](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
-- Offers to print the latest Arch Linux news before applying updates (through [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") and [htmlq](https://archlinux.org/packages/extra/x86_64/htmlq/ "htmlq package")).
+- Offers to display the latest Arch Linux news before applying updates (through [curl](https://archlinux.org/packages/core/x86_64/curl/ "curl package") and [htmlq](https://archlinux.org/packages/extra/x86_64/htmlq/ "htmlq package")).
 - Automatic check and listing of orphan packages and offering you to remove them.
 - Automatic check for old and/or uninstalled cached packages in `pacman`'s cache and offering you to remove them (through [paccache](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package")).
 - Helps you processing pacnew/pacsave files (through [pacdiff](https://archlinux.org/packages/extra/x86_64/pacman-contrib/ "pacman-contrib package"), optionally requires [vim](https://archlinux.org/packages/extra/x86_64/vim/ "vim package") as the default [merge program](https://wiki.archlinux.org/title/Pacman/Pacnew_and_Pacsave#pacdiff "pacdiff merge program")).
@@ -99,7 +99,7 @@ If there are new available updates, the icon will show a bell sign and a desktop
 ![icon-update-available](https://github.com/Antiz96/arch-update/assets/53110319/c1526ce7-5f94-41b8-a8fa-3587b9d00a9d)
 ![notification](https://github.com/Antiz96/arch-update/assets/53110319/631b8e67-487a-441a-84b4-6cce95223729)
 
-When the icon is clicked, it launches the relevant series of functions to perform a complete and proper update starting by refreshing the list of packages available for updates, print it inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages update support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages update support):
+When the icon is clicked, it launches the relevant series of functions to perform a complete and proper update starting by refreshing the list of packages available for updates, display it inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages update support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages update support):
 
 *The colored output can be disabled with the `NoColor` option in the `arch-update.conf` configuration file.*  
 *The versions changes in the packages listing can be hidden with the `NoVersion` option in the `arch-update.conf` configuration file.*  
@@ -107,13 +107,13 @@ When the icon is clicked, it launches the relevant series of functions to perfor
 
 ![listing-packages](https://github.com/Antiz96/arch-update/assets/53110319/43a990c8-ed93-420f-8c46-d50d60bff03f)
 
-Once you gave the confirmation to proceed, `arch-update` offers to print latest Arch Linux news.  
+Once you gave the confirmation to proceed, `arch-update` offers to display latest Arch Linux news.  
 Arch news that have been published within the last 15 days are tagged as `[NEW]`.  
 Select which news to read by typing its associated number.  
-After your read a news, `arch-update` will once again offers to print latest Arch Linux news, so you can read multiple news at once.  
+After your read a news, `arch-update` will once again offers to display latest Arch Linux news, so you can read multiple news at once.  
 Simply press "enter" without typing any number to proceed with update:
 
-*The Arch news listing/printing can be skipped with the `NoNews`  option in the `arch-update.conf` configuration file.*  
+*The Arch news listing/displaying can be skipped with the `NoNews`  option in the `arch-update.conf` configuration file.*  
 *Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.*  
 *See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.*
 
@@ -158,9 +158,9 @@ An update notifier/applier for Arch Linux that assists you with
 important pre/post update tasks.
 
 Run arch-update to perform the main "update" function:
-Print the list of packages available for update, then ask for the user's confirmation
+Display the list of packages available for update, then ask for the user's confirmation
 to proceed with the installation.
-Before performing the update, offer to print the latest Arch Linux news.
+Before performing the update, offer to display the latest Arch Linux news.
 Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files
 and pending kernel update and, if there are, offers to process them.
 
@@ -195,7 +195,7 @@ The supported options are:
 
 - NoColor # Do not colorize output.
 - NoVersion # Do not show versions changes for packages when listing pending updates.
-- NoNews # Do not print Arch news. Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.
+- NoNews # Do not display Arch news. Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.
 - KeepOldPackages=Num # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=Num # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
 
