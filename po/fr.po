@@ -156,16 +156,16 @@ msgstr "Aucune mise à jour disponible\\n"
 msgid "Proceed with update? [Y/n]"
 msgstr "Procéder à la mise à jour ? [O/n]"
 
-#: src/script/arch-update.sh:266 src/script/arch-update.sh:388
-#: src/script/arch-update.sh:421 src/script/arch-update.sh:463
-#: src/script/arch-update.sh:530 src/script/arch-update.sh:560
+#: src/script/arch-update.sh:266 src/script/arch-update.sh:396
+#: src/script/arch-update.sh:429 src/script/arch-update.sh:471
+#: src/script/arch-update.sh:538 src/script/arch-update.sh:568
 #, sh-format
 msgid "Y"
 msgstr "O"
 
-#: src/script/arch-update.sh:266 src/script/arch-update.sh:388
-#: src/script/arch-update.sh:421 src/script/arch-update.sh:463
-#: src/script/arch-update.sh:530 src/script/arch-update.sh:560
+#: src/script/arch-update.sh:266 src/script/arch-update.sh:396
+#: src/script/arch-update.sh:429 src/script/arch-update.sh:471
+#: src/script/arch-update.sh:538 src/script/arch-update.sh:568
 #, sh-format
 msgid "y"
 msgstr "o"
@@ -185,40 +185,45 @@ msgstr "Arch News :"
 msgid "[NEW]"
 msgstr "[NOUVEAU]"
 
-#: src/script/arch-update.sh:301
+#: src/script/arch-update.sh:304
+#, sh-format
+msgid "Select the news to read (or just press \"enter\" to quit):"
+msgstr "Sélectionnez la news à lire (ou appuyez simplement sur \"entrée\" pour quitter) :"
+
+#: src/script/arch-update.sh:307
 #, sh-format
 msgid ""
 "Select the news to read (or just press \"enter\" to proceed with update):"
 msgstr ""
 "Sélectionnez la news à lire (ou appuyez simplement sur \"entrée\" pour procéder à la mise à jour) :"
 
-#: src/script/arch-update.sh:312
+#: src/script/arch-update.sh:320
 #, sh-format
 msgid "Title:"
 msgstr "Titre :"
 
-#: src/script/arch-update.sh:313
+#: src/script/arch-update.sh:321
 #, sh-format
 msgid "Author:"
 msgstr "Auteur :"
 
-#: src/script/arch-update.sh:314
+#: src/script/arch-update.sh:322
 #, sh-format
 msgid "Publication date:"
 msgstr "Date de publication :"
 
-#: src/script/arch-update.sh:315
+#: src/script/arch-update.sh:323
 #, sh-format
 msgid "URL:"
 msgstr "URL :"
 
-#: src/script/arch-update.sh:331
+#: src/script/arch-update.sh:339
 #, sh-format
 msgid "Updating Packages...\\n"
 msgstr "Mise à jour des paquets...\\n"
 
-#: src/script/arch-update.sh:336 src/script/arch-update.sh:348
-#: src/script/arch-update.sh:359
+#: src/script/arch-update.sh:344 src/script/arch-update.sh:356
+#: src/script/arch-update.sh:367
 #, sh-format
 msgid ""
 "An error has occurred during the update process\\nThe update has been "
@@ -227,27 +232,27 @@ msgstr ""
 "Une erreur est survenue pendant le processus de mise à jour\\nLa mise à jour a été "
 "abandonnée\\n"
 
-#: src/script/arch-update.sh:343
+#: src/script/arch-update.sh:351
 #, sh-format
 msgid "Updating AUR Packages...\\n"
 msgstr "Mise à jour des paquets AUR...\\n"
 
-#: src/script/arch-update.sh:355
+#: src/script/arch-update.sh:363
 #, sh-format
 msgid "Updating Flatpak Packages...\\n"
 msgstr "Mise à jour des paquets Flatpak...\\n"
 
-#: src/script/arch-update.sh:366
+#: src/script/arch-update.sh:374
 #, sh-format
 msgid "The update has been applied\\n"
 msgstr "La mise à jour a été appliquée\\n"
 
-#: src/script/arch-update.sh:378
+#: src/script/arch-update.sh:386
 #, sh-format
 msgid "Orphan Packages:"
 msgstr "Paquets orphelins :"
 
-#: src/script/arch-update.sh:382
+#: src/script/arch-update.sh:390
 #, sh-format
 msgid ""
 "Would you like to remove this orphan package (and its potential "
@@ -256,7 +261,7 @@ msgstr ""
 "Voulez-vous supprimer ce paquet orphelin (et ses potentielles "
 "dépendances) maintenant ? [o/N]"
 
-#: src/script/arch-update.sh:384
+#: src/script/arch-update.sh:392
 #, sh-format
 msgid ""
 "Would you like to remove these orphan packages (and their potential "
@@ -265,14 +270,14 @@ msgstr ""
 "Voulez-vous supprimer ces paquets orphelins (et leurs potentielles "
 "dépendances) maintenant ? [o/N]"
 
-#: src/script/arch-update.sh:390
+#: src/script/arch-update.sh:398
 #, sh-format
 msgid "Removing Orphan Packages...\\n"
 msgstr "Suppression des paquets orphelins...\\n"
 
-#: src/script/arch-update.sh:394 src/script/arch-update.sh:427
-#: src/script/arch-update.sh:470 src/script/arch-update.sh:480
-#: src/script/arch-update.sh:490 src/script/arch-update.sh:499
+#: src/script/arch-update.sh:402 src/script/arch-update.sh:435
+#: src/script/arch-update.sh:478 src/script/arch-update.sh:488
+#: src/script/arch-update.sh:498 src/script/arch-update.sh:507
 #, sh-format
 msgid ""
 "An error has occurred during the removal process\\nThe removal has been "
@@ -281,118 +286,118 @@ msgstr ""
 "Une erreur est survenue pendant le processus de suppression\\nLa suppression a été "
 "abandonnée\\n"
 
-#: src/script/arch-update.sh:397 src/script/arch-update.sh:430
+#: src/script/arch-update.sh:405 src/script/arch-update.sh:438
 #, sh-format
 msgid "The removal has been applied\\n"
 msgstr "La suppression a été appliquée\\n"
 
-#: src/script/arch-update.sh:402 src/script/arch-update.sh:434
-#: src/script/arch-update.sh:507
+#: src/script/arch-update.sh:410 src/script/arch-update.sh:442
+#: src/script/arch-update.sh:515
 #, sh-format
 msgid "The removal hasn't been applied\\n"
 msgstr "La suppression n'a pas été appliquée\\n"
 
-#: src/script/arch-update.sh:406
+#: src/script/arch-update.sh:414
 #, sh-format
 msgid "No orphan package found\\n"
 msgstr "Aucun paquet orphelin n'a été trouvé\\n"
 
-#: src/script/arch-update.sh:411
+#: src/script/arch-update.sh:419
 #, sh-format
 msgid "Flatpak Unused Packages:"
 msgstr "Paquets Flatpak inutilisés :"
 
-#: src/script/arch-update.sh:415
+#: src/script/arch-update.sh:423
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
 msgstr "Voulez-vous supprimer ce paquet Flatpak inutilisé maintenant ? [o/N]"
 
-#: src/script/arch-update.sh:417
+#: src/script/arch-update.sh:425
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Voulez-vous supprimer ces paquets Flatpak inutilisés maintenant ? [o/N]"
 
-#: src/script/arch-update.sh:423
+#: src/script/arch-update.sh:431
 #, sh-format
 msgid "Removing Flatpak Unused Packages..."
 msgstr "Suppression des paquets Flatpak inutilisés..."
 
-#: src/script/arch-update.sh:438
+#: src/script/arch-update.sh:446
 #, sh-format
 msgid "No Flatpak unused package found\\n"
 msgstr "Aucun paquet Flatpak inutilisé n'a été trouvé\\n"
 
-#: src/script/arch-update.sh:455
+#: src/script/arch-update.sh:463
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
 msgstr "Paquets mis en cache :\\nIl y a un paquet ancien ou désinstallé mis en cache\\n"
 
-#: src/script/arch-update.sh:456
+#: src/script/arch-update.sh:464
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Voulez-vous le supprimer du cache maintenant ? [O/n]"
 
-#: src/script/arch-update.sh:458
+#: src/script/arch-update.sh:466
 #, sh-format
 msgid "Cached Packages:\\nThere are old and/or uninstalled cached packages\\n"
 msgstr "Paquets mis en cache :\\nIl y a plusieurs paquets anciens ou désinstallés mis en cache\\n"
 
-#: src/script/arch-update.sh:459
+#: src/script/arch-update.sh:467
 #, sh-format
 msgid "Would you like to remove them from the cache now? [Y/n]"
 msgstr "Voulez-vous les supprimer du cache maintenant ? [O/n]"
 
-#: src/script/arch-update.sh:466 src/script/arch-update.sh:486
+#: src/script/arch-update.sh:474 src/script/arch-update.sh:494
 #, sh-format
 msgid "Removing old cached packages..."
 msgstr "Suppression des anciens paquets mis en cache..."
 
-#: src/script/arch-update.sh:476 src/script/arch-update.sh:495
+#: src/script/arch-update.sh:484 src/script/arch-update.sh:503
 #, sh-format
 msgid "Removing uninstalled cached packages..."
 msgstr "Suppression des paquets désinstallés mis en cache..."
 
-#: src/script/arch-update.sh:511
+#: src/script/arch-update.sh:519
 #, sh-format
 msgid "No old or uninstalled cached package found\\n"
 msgstr "Aucun paquet ancien ou désinstallé mis en cache n'a été trouvé\\n"
 
-#: src/script/arch-update.sh:520
+#: src/script/arch-update.sh:528
 #, sh-format
 msgid "Pacnew Files:"
 msgstr "Fichiers Pacnew :"
 
-#: src/script/arch-update.sh:524
+#: src/script/arch-update.sh:532
 #, sh-format
 msgid "Would you like to process this file now? [Y/n]"
 msgstr "Voulez-vous traiter ce fichier maintenant ? [O/n]"
 
-#: src/script/arch-update.sh:526
+#: src/script/arch-update.sh:534
 #, sh-format
 msgid "Would you like to process these files now? [Y/n]"
 msgstr "Voulez-vous traiter ces fichiers maintenant ? [O/n]"
 
-#: src/script/arch-update.sh:532
+#: src/script/arch-update.sh:540
 #, sh-format
 msgid "Processing Pacnew Files...\\n"
 msgstr "Traitement des fichiers pacnew...\\n"
 
-#: src/script/arch-update.sh:536
+#: src/script/arch-update.sh:544
 #, sh-format
 msgid "The pacnew file(s) processing has been applied\\n"
 msgstr "Le traitement des fichiers pacnew a été appliqué\\n"
 
-#: src/script/arch-update.sh:539
+#: src/script/arch-update.sh:547
 #, sh-format
 msgid "The pacnew file(s) processing hasn't been applied\\n"
 msgstr "Le traitement des fichiers pacnew n'a pas été appliqué\\n"
 
-#: src/script/arch-update.sh:543
+#: src/script/arch-update.sh:551
 #, sh-format
 msgid "No pacnew file found\\n"
 msgstr "Aucun fichier pacnew n'a été trouvé\\n"
 
-#: src/script/arch-update.sh:556
+#: src/script/arch-update.sh:564
 #, sh-format
 msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
@@ -401,17 +406,17 @@ msgstr ""
 "Redémarrage nécessaire :\\nIl y a une mise à jour du noyau en attente sur votre système qui nécessite " 
 "un redémarrage pour être appliquée\\n"
 
-#: src/script/arch-update.sh:557
+#: src/script/arch-update.sh:565
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Voulez-vous redémarrer votre système maintenant ? [o/N]"
 
-#: src/script/arch-update.sh:562
+#: src/script/arch-update.sh:570
 #, sh-format
 msgid "Rebooting in 5 seconds...\\nPress ctrl+c to abort"
 msgstr "Redémarrage dans 5 secondes...\\nAppuyez sur ctrl+c pour annuler"
 
-#: src/script/arch-update.sh:566
+#: src/script/arch-update.sh:574
 #, sh-format
 msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
@@ -420,7 +425,7 @@ msgstr ""
 "Une erreur est survenue pendant le processus de redémarrage\\nLe redémarrage a été "
 "abandonné\\n"
 
-#: src/script/arch-update.sh:574
+#: src/script/arch-update.sh:582
 #, sh-format
 msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
@@ -429,12 +434,12 @@ msgstr ""
 "Le redémarrage n'a pas été effectué\\nVeuillez considérer redémarrer votre système pour finaliser "
 "la mise à jour du noyau en attente\\n"
 
-#: src/script/arch-update.sh:578
+#: src/script/arch-update.sh:586
 #, sh-format
 msgid "No pending kernel update found\\n"
 msgstr "Aucune mise à jour du noyau en attente n'a été trouvée\\n"
 
-#: src/script/arch-update.sh:591
+#: src/script/arch-update.sh:599
 #, sh-format
 msgid ""
 "NoNews option detected\\nPlease, keep in mind that users are expected to "
