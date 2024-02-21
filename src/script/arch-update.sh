@@ -298,7 +298,15 @@ list_news() {
 		done < <(printf '%s\n' "${news_titles}")
 
 		echo
-		ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
+
+		case "${option}" in
+			-n|--news)
+				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to quit):")"
+			;;
+			*)
+				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
+			;;
+		esac
 
 		case "${answer}" in
 			1|2|3|4|5)
@@ -600,6 +608,9 @@ case "${option}" in
 	;;
 	-c|--check)
 		check
+	;;
+	-n|--news)
+		list_news
 	;;
 	-h|--help)
 		help
