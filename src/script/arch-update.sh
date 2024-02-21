@@ -53,43 +53,43 @@ if [ -z "${no_color}" ]; then
 	color_off="\e[0m"
 fi
 
-# Definition of the main_msg function: Print a message as a main message
+# Definition of the main_msg function: Display a message as a main message
 main_msg() {
 	msg="${1}"
 	echo -e "${blue}==>${color_off}${bold} ${msg}${color_off}"
 }
 
-# Definition of the info_msg function: Print a message as an information message
+# Definition of the info_msg function: Display a message as an information message
 info_msg() {
 	msg="${1}"
 	echo -e "${green}==>${color_off}${bold} ${msg}${color_off}"
 }
 
-# Definition of the ask_msg function: Print a message as an interactive question
+# Definition of the ask_msg function: Display a message as an interactive question
 ask_msg() {
 	msg="${1}"
 	read -rp $"$(echo -e "${blue}->${color_off}${bold} ${msg}${color_off} ")" answer
 }
 
-# Definition of the warning_msg function: Print a message as a warning message
+# Definition of the warning_msg function: Display a message as a warning message
 warning_msg() {
 	msg="${1}"
 	echo -e "${yellow}==> WARNING:${color_off}${bold} ${msg}${color_off}"
 }
 
-# Definition of the error_msg function: Print a message as an error message
+# Definition of the error_msg function: Display a message as an error message
 error_msg() {
 	msg="${1}"
 	echo -e >&2 "${red}==> ERROR:${color_off}${bold} ${msg}${color_off}"
 }
 
-# Definition of the continue_msg function: Print the continue message
+# Definition of the continue_msg function: Display the continue message
 continue_msg() {
 	msg="$(eval_gettext "Press \"enter\" to continue ")"
 	read -n 1 -r -s -p $"$(info_msg "${msg}")" && echo
 }
 
-# Definition of the quit_msg function: Print the quit message
+# Definition of the quit_msg function: Display the quit message
 quit_msg() {
 	msg="$(eval_gettext "Press \"enter\" to quit ")"
 	read -n 1 -r -s -p $"$(info_msg "${msg}")" && echo
@@ -118,7 +118,7 @@ flatpak=$(command -v flatpak)
 # Check if notify-send is installed for the optional desktop notification support
 notif=$(command -v notify-send)
 
-# Definition of the help function: Print the help message
+# Definition of the help function: Display the help message
 help() {
 	cat <<EOF
 ${name} v${version}
@@ -126,8 +126,8 @@ ${name} v${version}
 $(eval_gettext "An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.")
 
 $(eval_gettext "Run \${name} to perform the main 'update' function:")
-$(eval_gettext "Print the list of packages available for update, then ask for the user's confirmation to proceed with the installation.")
-$(eval_gettext "Before performing the update, offer to print the latest Arch Linux news.")
+$(eval_gettext "Display the list of packages available for update, then ask for the user's confirmation to proceed with the installation.")
+$(eval_gettext "Before performing the update, offer to display the latest Arch Linux news.")
 $(eval_gettext "Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.")
 
 $(eval_gettext "Options:")
@@ -140,12 +140,12 @@ $(eval_gettext "Certain options can be enabled/disabled or modified via the \${n
 EOF
 }
 
-# Definition of the version function: Print the current version
+# Definition of the version function: Display the version information
 version() {
 	echo "${name} ${version}"
 }
 
-# Definition of the invalid_option function: Print an error message, ask the user to check the help and exit
+# Definition of the invalid_option function: Display an error message, ask the user to check the help and exit
 invalid_option() {
 	echo -e >&2 "$(eval_gettext "\${name}: invalid option -- '\${option}'\nTry '\${name} --help' for more information.")"
 	exit 1
@@ -218,7 +218,7 @@ check() {
 	fi
 }
 
-# Definition of the list_packages function: Print packages that are available for update and offer to apply them if there are
+# Definition of the list_packages function: Display packages that are available for update and offer to apply them if there are
 list_packages() {
 	icon_checking
 	
@@ -274,7 +274,7 @@ list_packages() {
 	fi
 }
 
-# Definition of the list_news function: Print the latest Arch news and offers to read them
+# Definition of the list_news function: Display the latest Arch news and offers to read them
 list_news() {
 	redo="y"
 
@@ -366,7 +366,7 @@ update() {
 	info_msg "$(eval_gettext "The update has been applied\n")"
 }
 
-# Definition of the orphan_packages function: Print orphan packages and offer to remove them if there are
+# Definition of the orphan_packages function: Display orphan packages and offer to remove them if there are
 orphan_packages() {
 	orphan_packages=$(pacman -Qtdq)
 
@@ -512,7 +512,7 @@ packages_cache() {
 	fi
 }
 
-# Definition of the pacnew_files function: Print pacnew files and offer to process them if there are
+# Definition of the pacnew_files function: Display pacnew files and offer to process them if there are
 pacnew_files() {
 	pacnew_files=$(pacdiff -o)
 		
