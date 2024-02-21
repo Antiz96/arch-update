@@ -90,8 +90,8 @@ msgstr ""
 
 #: src/script/arch-update.sh:135
 #, sh-format
-msgid "  -h, --help     Display this message and exit"
-msgstr " -h, --help     Afficher ce message et quitter"
+msgid "  -h, --help     Display this help message and exit"
+msgstr " -h, --help     Afficher ce message d'aide et quitter"
 
 #: src/script/arch-update.sh:136
 #, sh-format

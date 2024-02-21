@@ -79,7 +79,7 @@ msgstr ""
 
 #: src/script/arch-update.sh:135
 #, sh-format
-msgid "  -h, --help     Display this message and exit"
+msgid "  -h, --help     Display this help message and exit"
 msgstr ""
 
 #: src/script/arch-update.sh:136

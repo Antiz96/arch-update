@@ -132,7 +132,7 @@ $(eval_gettext "Post update, check for orphan/unused packages, old cached packag
 
 $(eval_gettext "Options:")
 $(eval_gettext "  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
-$(eval_gettext "  -h, --help     Display this message and exit")
+$(eval_gettext "  -h, --help     Display this help message and exit")
 $(eval_gettext "  -V, --version  Display version information and exit")
 
 $(eval_gettext "For more information, see the \${name}(1) man page.")

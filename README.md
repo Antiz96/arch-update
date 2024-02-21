@@ -113,6 +113,7 @@ Select which news to read by typing its associated number.
 After your read a news, `arch-update` will once again offers to display latest Arch Linux news, so you can read multiple news at once.  
 Simply press "enter" without typing any number to proceed with update:
 
+*Arch news can be displayed at any time by running the `arch-update --news` command.*  
 *The Arch news listing/displaying can be skipped with the `NoNews`  option in the `arch-update.conf` configuration file.*  
 *Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.*  
 *See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.*
@@ -166,7 +167,8 @@ and pending kernel update and, if there are, offers to process them.
 
 Options:
 -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
--h, --help     Display this message and exit
+-n, --news     Display latest Arch News
+-h, --help     Display this help message and exit
 -V, --version  Display version information and exit
 
 Exit Codes:
