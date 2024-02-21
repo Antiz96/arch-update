@@ -131,9 +131,10 @@ $(eval_gettext "Before performing the update, offer to display the latest Arch L
 $(eval_gettext "Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.")
 
 $(eval_gettext "Options:")
-$(eval_gettext "  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
-$(eval_gettext "  -h, --help     Display this help message and exit")
-$(eval_gettext "  -V, --version  Display version information and exit")
+$(eval_gettext "  -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
+$(eval_gettext "  -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
+$(eval_gettext "  -h, --help        Display this help message and exit")
+$(eval_gettext "  -V, --version     Display version information and exit")
 
 $(eval_gettext "For more information, see the \${name}(1) man page.")
 $(eval_gettext "Certain options can be enabled/disabled or modified via the \${name}.conf configuration file, see the \${name}.conf(5) man page.")

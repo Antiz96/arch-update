@@ -114,9 +114,10 @@ After your read a news, `arch-update` will once again offers to display latest A
 Simply press "enter" without typing any number to proceed with update:
 
 *Arch news can be displayed at any time by running the `arch-update --news` command.*  
+*The number of Arch news to display before updating and with the `-n/--news` option defaults to 5 but can be customised with the `NewsNum=[Num]` option in the `arch-update.conf` configuration file.*   
 *The Arch news listing/displaying can be skipped with the `NoNews`  option in the `arch-update.conf` configuration file.*  
 *Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.*  
-*See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.*
+*See the [documentation chapter](#Documentation) for more details.*
 
 ![list-news](https://github.com/Antiz96/arch-update/assets/53110319/b6883ec4-8c44-4b97-86d9-4d0a304b748b)
 
@@ -137,7 +138,7 @@ When the update is over, the icon changes accordingly:
 `arch-update` will also search for old and/or uninstalled cached packages and offers to remove them (if there are):
 
 *The default behavior is to keep the last 3 cached versions of installed packages and remove every cached versions of uninstalled packages.*  
-*You can modify the number of old packages' versions and uninstalled packages' versions to keep in pacman's cache respectively with the `KeepOldPackages=Num` and `KeepUninstalledPackages=Num` options in the `arch-update.conf` configuration file.*  
+*You can modify the number of old packages' versions and uninstalled packages' versions to keep in pacman's cache respectively with the `KeepOldPackages=[Num]` and `KeepUninstalledPackages=[Num]` options in the `arch-update.conf` configuration file.*  
 *See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.*
 
 ![cached-packages](https://github.com/Antiz96/arch-update/assets/53110319/7199bbf1-acd8-49a1-80eb-e9874b94fba6)
@@ -166,10 +167,10 @@ Post update, check for orphan/unused packages, old cached packages, pacnew/pacsa
 and pending kernel update and, if there are, offers to process them.
 
 Options:
--c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
--n, --news     Display latest Arch News
--h, --help     Display this help message and exit
--V, --version  Display version information and exit
+-c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
+-n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
+-h, --help        Display this help message and exit
+-V, --version     Display version information and exit
 
 Exit Codes:
 0  OK
@@ -198,8 +199,9 @@ The supported options are:
 - NoColor # Do not colorize output.
 - NoVersion # Do not show versions changes for packages when listing pending updates.
 - NoNews # Do not display Arch news. Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.
-- KeepOldPackages=Num # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
-- KeepUninstalledPackages=Num # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
+- NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the `arch-update(1)` man page for more details). Defaults to 5.
+- KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
+- KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
 
 Options are case sensitive, so capital letters have to be respected.
 ```
