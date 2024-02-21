@@ -114,7 +114,7 @@ After your read a news, `arch-update` will once again offers to display latest A
 Simply press "enter" without typing any number to proceed with update:
 
 *Arch news can be displayed at any time by running the `arch-update --news` command.*  
-*The number of Arch news to display before updating and with the `-n/--news` option defaults to 5 but can be customised with the `NewsNum=[Num]` option in the `arch-update.conf` configuration file.*   
+*The number of Arch news to display before updating and with the `-n/--news` option defaults to 5 but can be customised with the `NewsNum=[Num]` option in the `arch-update.conf` configuration file.*  
 *The Arch news listing/displaying can be skipped with the `NoNews`  option in the `arch-update.conf` configuration file.*  
 *Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.*  
 *See the [documentation chapter](#Documentation) for more details.*
