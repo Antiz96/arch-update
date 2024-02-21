@@ -132,7 +132,7 @@ $(eval_gettext "Post update, check for orphan/unused packages, old cached packag
 
 $(eval_gettext "Options:")
 $(eval_gettext "  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
-$(eval_gettext "  -h, --help     Display this message and exit")
+$(eval_gettext "  -h, --help     Display this help message and exit")
 $(eval_gettext "  -V, --version  Display version information and exit")
 
 $(eval_gettext "For more information, see the \${name}(1) man page.")
@@ -298,7 +298,15 @@ list_news() {
 		done < <(printf '%s\n' "${news_titles}")
 
 		echo
-		ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
+
+		case "${option}" in
+			-n|--news)
+				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to quit):")"
+			;;
+			*)
+				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
+			;;
+		esac
 
 		case "${answer}" in
 			1|2|3|4|5)
@@ -600,6 +608,9 @@ case "${option}" in
 	;;
 	-c|--check)
 		check
+	;;
+	-n|--news)
+		list_news
 	;;
 	-h|--help)
 		help
