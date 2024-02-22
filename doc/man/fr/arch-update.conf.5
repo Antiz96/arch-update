@@ -30,11 +30,15 @@ Ne pas afficher les modifications de versions des paquets lors du listing des mi
 Ne pas afficher les Arch news. Notez que l'utilisation de cette option générera un message d'avertissement pour rappeler que les utilisateurs sont censés consulter régulièrement les Arch news.
 
 .TP
-.B KeepOldPackages=Num
+.B NewsNum=[Num]
+.RB "Nombre de Arch news à afficher avant la mise à jour et avec l'option " "-n/--news " "(voir la page de man " "arch-update(1) " "pour plus de détails). La valeur par défaut est 5."
+
+.TP
+.B KeepOldPackages=[Num]
 Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
 
 .TP
-.B KeepUninstalledPackages=Num
+.B KeepUninstalledPackages=[Num]
 Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
 
 .SH VOIR AUSSI

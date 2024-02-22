@@ -115,10 +115,11 @@ Sélectionnez la news à lire en tapant le numéro associé.
 Après avoir lu une news, `arch-update` vous proposera à nouveau d'afficher les dernières Arch news, afin que vous puissiez lire plusieurs news à la fois.  
 Appuyez simplement sur « Entrée » sans saisir de chiffre pour procéder à la mise à jour :
 
-*Les Arch news peuvent être affichées à tout moment en exécutant la commande `arch-update --news`*  
+*Les Arch news peuvent être affichées à tout moment en exécutant la commande `arch-update --news`.*  
+*Le nombre par défaut de Arch news à afficher avant la mise à jour et avec l'option `-n/--news` est de 5 mais il peut être modifié avec l'option `NewsNum=[Num]` dans le fichier de configuration `arch-update.conf`.*  
 *Le listing/affichage des Arch news peut être ignoré avec l'option `NoNews` dans le fichier de configuration `arch-update.conf`.*  
 *Notez que l'utilisation de cette option générera un message d'avertissement pour rappeler que les utilisateurs sont censés consulter régulièrement les Arch news.*  
-*Voir le [chapitre de documentation arch-update.conf](#Fichier-de-configuration-arch-update) pour plus de détails.*
+*Voir le [chapitre de documentation](#Documentation) pour plus de détails.*
 
 ![list-news](https://github.com/Antiz96/arch-update/assets/53110319/b6883ec4-8c44-4b97-86d9-4d0a304b748b)
 
@@ -139,7 +140,7 @@ Une fois la mise à jour terminée, l'icône change en conséquence :
 `arch-update` recherchera également les anciens paquets et/ou paquets désinstallés mis en cache et proposera de les supprimer (s'il y en a) :
 
 *Le comportement par défaut consiste à conserver les 3 dernières versions en cache des paquets installés et à supprimer toutes les versions en cache des paquets désinstallés.*  
-*Vous pouvez modifier le nombre d'anciennes versions de paquets et de versions de paquets désinstallés à conserver respectivement dans le cache de pacman avec les options `KeepOldPackages=Num` et `KeepUninstalledPackages=Num` dans le fichier de configuration `arch-update.conf`.*  
+*Vous pouvez modifier le nombre d'anciennes versions de paquets et de versions de paquets désinstallés à conserver respectivement dans le cache de pacman avec les options `KeepOldPackages=[Num]` et `KeepUninstalledPackages=[Num]` dans le fichier de configuration `arch-update.conf`.*  
 *Voir le [chapitre de documentation arch-update.conf](#Fichier-de-configuration-arch-update) pour plus de détails.*
 
 ![cached-packages](https://github.com/Antiz96/arch-update/assets/53110319/7199bbf1-acd8-49a1-80eb-e9874b94fba6)
@@ -168,10 +169,10 @@ Après la mise à jour, vérification de la présence de paquets orphelins/inuti
 de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter.
 
 Options :
--c, --check    Vérifier les mises à jour disponibles, envoyer une notification de bureau contenant le nombre de mises à jour disponibles (si libnotify est installé)
--n, --news     Afficher les dernières Arch News
--h, --help     Afficher ce message d'aide et quitter
--V, --version  Afficher les informations de version et quitter
+-c, --check       Vérifier les mises à jour disponibles, envoyer une notification de bureau contenant le nombre de mises à jour disponibles (si libnotify est installé)
+-n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
+-h, --help        Afficher ce message d'aide et quitter
+-V, --version     Afficher les informations de version et quitter
 
 Codes de sortie :
 0  OK
@@ -200,8 +201,9 @@ Les options prises en charge sont :
 - NoColor # Ne pas coloriser la sortie.
 - NoVersion # Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente.
 - NoNews # Ne pas afficher les Arch news. Notez que l'utilisation de cette option générera un message d'avertissement pour rappeler que les utilisateurs sont censés consulter régulièrement les Arch news.
-- KeepOldPackages=Num # Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
-- KeepUninstalledPackages=Num # Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
+- NewsNum=[Num] # Nombre de Arch news à affcher avant la mise à jour et avec l'option `-n/--news` (voir la page de manuel arch-update(1) pour plus de details). La valeur par défaut est 5.
+- KeepOldPackages=[Num] # Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
+- KeepUninstalledPackages=[Num] # Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
 
 Les options sont sensibles à la casse, les majuscules doivent donc être respectées.
 ```
