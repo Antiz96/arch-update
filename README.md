@@ -199,7 +199,7 @@ The supported options are:
 - NoColor # Do not colorize output.
 - NoVersion # Do not show versions changes for packages when listing pending updates.
 - NoNews # Do not display Arch news. Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.
-- NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the `arch-update(1)` man page for more details). Defaults to 5.
+- NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the arch-update(1) man page for more details). Defaults to 5.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
 
