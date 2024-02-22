@@ -108,15 +108,14 @@ When the icon is clicked, it launches the relevant series of functions to perfor
 ![listing-packages](https://github.com/Antiz96/arch-update/assets/53110319/43a990c8-ed93-420f-8c46-d50d60bff03f)
 
 Once you gave the confirmation to proceed, `arch-update` offers to display latest Arch Linux news.  
-Arch news that have been published within the last 15 days are tagged as `[NEW]`.  
+By default, Arch news are only displayed if at least a new one has been published since the last run. Arch news published since the last run are tagged as `[NEW]`.  
 Select which news to read by typing its associated number.  
 After your read a news, `arch-update` will once again offers to display latest Arch Linux news, so you can read multiple news at once.  
 Simply press "enter" without typing any number to proceed with update:
 
 *Arch news can be displayed at any time by running the `arch-update --news` command.*  
 *The number of Arch news to display before updating and with the `-n/--news` option defaults to 5 but can be customised with the `NewsNum=[Num]` option in the `arch-update.conf` configuration file.*  
-*The Arch news listing/displaying can be skipped with the `NoNews`  option in the `arch-update.conf` configuration file.*  
-*Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.*  
+*Arch news can be displayed everytime before updating, regardless of whether there's a new one since the last run or not, by setting the `AlwaysShowNews` option in the `arch-update.conf` configuration file.*  
 *See the [documentation chapter](#Documentation) for more details.*
 
 ![list-news](https://github.com/Antiz96/arch-update/assets/53110319/b6883ec4-8c44-4b97-86d9-4d0a304b748b)
@@ -198,7 +197,7 @@ The supported options are:
 
 - NoColor # Do not colorize output.
 - NoVersion # Do not show versions changes for packages when listing pending updates.
-- NoNews # Do not display Arch news. Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.
+- AlwaysShowNews # Always display Arch news before updating, regardless of whether there's a new one since the last run or not.
 - NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the arch-update(1) man page for more details). Defaults to 5.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
