@@ -115,7 +115,7 @@ Simply press "enter" without typing any number to proceed with update:
 
 *Arch news can be displayed at any time by running the `arch-update --news` command.*  
 *The number of Arch news to display before updating and with the `-n/--news` option defaults to 5 but can be customised with the `NewsNum=[Num]` option in the `arch-update.conf` configuration file.*  
-*Arch news can be displayed everytime before updating, regardless of whether there's a new one since the last run or not, by setting the `AlwaysShowNews` option in the `arch-update.conf` configuration file.*  
+*Arch news can be displayed every time before updating, regardless of whether there's a new one since the last run or not, by setting the `AlwaysShowNews` option in the `arch-update.conf` configuration file.*  
 *See the [documentation chapter](#Documentation) for more details.*
 
 ![list-news](https://github.com/Antiz96/arch-update/assets/53110319/b6883ec4-8c44-4b97-86d9-4d0a304b748b)
