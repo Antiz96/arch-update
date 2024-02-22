@@ -31,6 +31,12 @@ if grep -Eq '^[[:space:]]*NoNews[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.conf
 	no_news="y"
 fi
 
+if grep -Eq '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+	news_num=$(grep -E '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+else
+	news_num="5"
+fi
+
 if grep -Eq '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
 	old_packages_num=$(grep -E '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 else
@@ -131,9 +137,10 @@ $(eval_gettext "Before performing the update, offer to display the latest Arch L
 $(eval_gettext "Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files and pending kernel update and, if there are, offers to process them.")
 
 $(eval_gettext "Options:")
-$(eval_gettext "  -c, --check    Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
-$(eval_gettext "  -h, --help     Display this help message and exit")
-$(eval_gettext "  -V, --version  Display version information and exit")
+$(eval_gettext "  -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
+$(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
+$(eval_gettext "  -h, --help        Display this help message and exit")
+$(eval_gettext "  -V, --version     Display version information and exit")
 
 $(eval_gettext "For more information, see the \${name}(1) man page.")
 $(eval_gettext "Certain options can be enabled/disabled or modified via the \${name}.conf configuration file, see the \${name}.conf(5) man page.")
@@ -280,8 +287,8 @@ list_news() {
 
 	while [ "${redo}" = "y" ]; do
 		news=$(curl -Ls https://www.archlinux.org/news)
-		news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed s/View:\ //g | head -5)
-		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -5 | xargs -I{} date -d "{}" "+%s")
+		news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -"${news_num}")
+		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -"${news_num}" | xargs -I{} date -d "{}" "+%s")
 
 		echo
 		main_msg "$(eval_gettext "Arch News:")"
@@ -308,25 +315,22 @@ list_news() {
 			;;
 		esac
 
-		case "${answer}" in
-			1|2|3|4|5)
-				news_selected=$(sed -n "${answer}"p <<< "${news_titles}")
-				news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
-				news_url="https://www.archlinux.org/news/${news_path}"
-				news_content=$(curl -Ls "${news_url}")
-				news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
-				news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
-				news_article=$(echo "${news_content}" | htmlq -t .article-content)
-				title_tag="$(eval_gettext "Title:")"
-				author_tag="$(eval_gettext "Author:")"
-				publication_date_tag="$(eval_gettext "Publication date:")"
-				url_tag="$(eval_gettext "URL:")"
-				echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
-			;;
-			*)
-				redo="n"
-			;;
-		esac
+		if [ "${answer}" -le "${news_num}" ] 2> /dev/null && [ "${answer}" -gt "0" ]; then
+			news_selected=$(sed -n "${answer}"p <<< "${news_titles}")
+			news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
+			news_url="https://www.archlinux.org/news/${news_path}"
+			news_content=$(curl -Ls "${news_url}")
+			news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
+			news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
+			news_article=$(echo "${news_content}" | htmlq -t .article-content)
+			title_tag="$(eval_gettext "Title:")"
+			author_tag="$(eval_gettext "Author:")"
+			publication_date_tag="$(eval_gettext "Publication date:")"
+			url_tag="$(eval_gettext "URL:")"
+			echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
+		else
+			redo="n"
+		fi
 	done
 }
 
@@ -610,6 +614,9 @@ case "${option}" in
 		check
 	;;
 	-n|--news)
+		if [ "${2}" -gt 0 ] 2> /dev/null; then
+			news_num="${2}"
+		fi
 		list_news
 	;;
 	-h|--help)
