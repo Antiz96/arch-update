@@ -27,8 +27,8 @@ if grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.c
 	no_version="y"
 fi
 
-if grep -Eq '^[[:space:]]*NoNews[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
-	no_news="y"
+if grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+	show_news="y"
 fi
 
 if grep -Eq '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
@@ -58,6 +58,10 @@ if [ -z "${no_color}" ]; then
 	red="${bold}\e[31m"
 	color_off="\e[0m"
 fi
+
+# Create state dir if it does not exist
+statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
+mkdir -p "${statedir}"
 
 # Definition of the main_msg function: Display a message as a main message
 main_msg() {
@@ -197,18 +201,16 @@ check() {
 	fi
 	
 	if [ -n "${notif}" ]; then
-		statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
-		mkdir -p "${statedir}"
-		echo "${update_available}" > "${statedir}/current_check"
-		sed -i '/^\s*$/d' "${statedir}/current_check"
+		echo "${update_available}" > "${statedir}/current_updates_check"
+		sed -i '/^\s*$/d' "${statedir}/current_updates_check"
 	fi
 
 	if [ -n "${update_available}" ]; then
 		icon_updates_available
 
 		if [ -n "${notif}" ]; then
-			if ! diff "${statedir}/current_check" "${statedir}/last_check" &> /dev/null; then
-				update_number=$(wc -l "${statedir}/current_check" | awk '{print $1}')
+			if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
+				update_number=$(wc -l "${statedir}/current_updates_check" | awk '{print $1}')
 				if [ "${update_number}" -eq 1 ]; then
 					notify-send -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")"
 				else
@@ -220,8 +222,8 @@ check() {
 		icon_up_to_date
 	fi
 
-	if [ -f "${statedir}/current_check" ]; then
-		mv -f "${statedir}/current_check" "${statedir}/last_check"
+	if [ -f "${statedir}/current_updates_check" ]; then
+		mv -f "${statedir}/current_updates_check" "${statedir}/last_updates_check"
 	fi
 }
 
@@ -283,55 +285,69 @@ list_packages() {
 
 # Definition of the list_news function: Display the latest Arch news and offers to read them
 list_news() {
-	redo="y"
-
-	while [ "${redo}" = "y" ]; do
-		news=$(curl -Ls https://www.archlinux.org/news)
-		news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -"${news_num}")
-		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -"${news_num}" | xargs -I{} date -d "{}" "+%s")
-
-		echo
-		main_msg "$(eval_gettext "Arch News:")"
-
-		i=1
-		while IFS= read -r line; do
-			if [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(date "+%Y-%m-%d" -d "15 days ago")" "+%s")" ]; then
-				new_tag="$(eval_gettext "[NEW]")"
-				echo -e "${i} - ${line} ${green}${new_tag}${color_off}"
-			else
-				echo "${i} - ${line}"
-			fi
-			((i=i+1))
-		done < <(printf '%s\n' "${news_titles}")
-
-		echo
-
-		case "${option}" in
-			-n|--news)
-				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to quit):")"
-			;;
-			*)
-				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
-			;;
-		esac
-
-		if [ "${answer}" -le "${news_num}" ] 2> /dev/null && [ "${answer}" -gt "0" ]; then
-			news_selected=$(sed -n "${answer}"p <<< "${news_titles}")
-			news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
-			news_url="https://www.archlinux.org/news/${news_path}"
-			news_content=$(curl -Ls "${news_url}")
-			news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
-			news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
-			news_article=$(echo "${news_content}" | htmlq -t .article-content)
-			title_tag="$(eval_gettext "Title:")"
-			author_tag="$(eval_gettext "Author:")"
-			publication_date_tag="$(eval_gettext "Publication date:")"
-			url_tag="$(eval_gettext "URL:")"
-			echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
-		else
-			redo="n"
+	if [ -z "${show_news}" ]; then
+		curl -Ls https://www.archlinux.org/news | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -1 > "${statedir}/current_news_check"
+		
+		if ! diff "${statedir}/current_news_check" "${statedir}/last_news_check" &> /dev/null; then
+			show_news="y"
 		fi
-	done
+		
+		if [ -f "${statedir}/current_news_check" ]; then
+			mv -f "${statedir}/current_news_check" "${statedir}/last_news_check"
+		fi
+	fi
+
+	if [ -n "${show_news}" ]; then
+		redo="y"
+
+		while [ "${redo}" = "y" ]; do
+			news=$(curl -Ls https://www.archlinux.org/news)
+			news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -"${news_num}")
+			mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -"${news_num}" | xargs -I{} date -d "{}" "+%s")
+
+			echo
+			main_msg "$(eval_gettext "Arch News:")"
+
+			i=1
+			while IFS= read -r line; do
+				if [ -z "${no_new_tag}" ] && [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(date "+%Y-%m-%d" -d "100 days ago")" "+%s")" ]; then
+					new_tag="$(eval_gettext "[NEW]")"
+					echo -e "${i} - ${line} ${green}${new_tag}${color_off}"
+				else
+					echo "${i} - ${line}"
+				fi
+				((i=i+1))
+			done < <(printf '%s\n' "${news_titles}")
+
+			echo
+
+			case "${option}" in
+				-n|--news)
+					ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to quit):")"
+				;;
+				*)
+					ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
+				;;
+			esac
+
+			if [ "${answer}" -le "${news_num}" ] 2> /dev/null && [ "${answer}" -gt "0" ]; then
+				news_selected=$(sed -n "${answer}"p <<< "${news_titles}")
+				news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
+				news_url="https://www.archlinux.org/news/${news_path}"
+				news_content=$(curl -Ls "${news_url}")
+				news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
+				news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
+				news_article=$(echo "${news_content}" | htmlq -t .article-content)
+				title_tag="$(eval_gettext "Title:")"
+				author_tag="$(eval_gettext "Author:")"
+				publication_date_tag="$(eval_gettext "Publication date:")"
+				url_tag="$(eval_gettext "URL:")"
+				echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
+			else
+				redo="n"
+			fi
+		done
+	fi
 }
 
 # Definition of the update function: Update packages
@@ -596,12 +612,7 @@ case "${option}" in
 	"")
 		list_packages
 		if [ -n "${proceed_with_update}" ]; then
-			if [ -z "${no_news}" ]; then
-				list_news
-			else
-				echo
-				warning_msg "$(eval_gettext "NoNews option detected\nPlease, keep in mind that users are expected to check the latest Arch news before updating their system, to be aware of eventual required manual interventions")"
-			fi
+			list_news
 			update
 		fi
 		orphan_packages
@@ -614,6 +625,8 @@ case "${option}" in
 		check
 	;;
 	-n|--news)
+		show_news="y"
+		no_new_tag="y"
 		if [ "${2}" -gt 0 ] 2> /dev/null; then
 			news_num="${2}"
 		fi
