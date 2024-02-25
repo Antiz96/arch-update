@@ -310,7 +310,7 @@ list_news() {
 
 			i=1
 			while IFS= read -r line; do
-				if [ -z "${no_new_tag}" ] && [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(date "+%Y-%m-%d" -d "100 days ago")" "+%s")" ]; then
+				if [ -z "${news_option}" ] && [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(cat "${statedir}/last_update_run" 2> /dev/null)" +%s)" ]; then
 					new_tag="$(eval_gettext "[NEW]")"
 					echo -e "${i} - ${line} ${green}${new_tag}${color_off}"
 				else
@@ -321,14 +321,11 @@ list_news() {
 
 			echo
 
-			case "${option}" in
-				-n|--news)
-					ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to quit):")"
-				;;
-				*)
-					ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
-				;;
-			esac
+			if [ -n "${news_option}" ]; then
+				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to quit):")"
+			else
+				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
+			fi
 
 			if [ "${answer}" -le "${news_num}" ] 2> /dev/null && [ "${answer}" -gt "0" ]; then
 				news_selected=$(sed -n "${answer}"p <<< "${news_titles}")
@@ -614,6 +611,7 @@ case "${option}" in
 		if [ -n "${proceed_with_update}" ]; then
 			list_news
 			update
+			date +%Y-%m-%d > "${statedir}/last_update_run"
 		fi
 		orphan_packages
 		packages_cache
@@ -626,7 +624,7 @@ case "${option}" in
 	;;
 	-n|--news)
 		show_news="y"
-		no_new_tag="y"
+		news_option="y"
 		if [ "${2}" -gt 0 ] 2> /dev/null; then
 			news_num="${2}"
 		fi

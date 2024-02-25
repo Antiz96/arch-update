@@ -108,7 +108,7 @@ When the icon is clicked, it launches the relevant series of functions to perfor
 ![listing-packages](https://github.com/Antiz96/arch-update/assets/53110319/43a990c8-ed93-420f-8c46-d50d60bff03f)
 
 Once you gave the confirmation to proceed, `arch-update` offers to display latest Arch Linux news.  
-By default, Arch news are only displayed if at least a new one has been published since the last run. Arch news published since the last run are tagged as `[NEW]`.  
+By default, Arch news are only displayed if at least a new one has been published since the last run. Arch news published since the last run or at the same date are tagged as `[NEW]`.  
 Select which news to read by typing its associated number.  
 After your read a news, `arch-update` will once again offers to display latest Arch Linux news, so you can read multiple news at once.  
 Simply press "enter" without typing any number to proceed with update:
