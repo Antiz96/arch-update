@@ -105,7 +105,7 @@ msgstr "  -h, --help        Afficher ce message d'aide et quitter"
 #: src/script/arch-update.sh:147
 #, sh-format
 msgid "  -V, --version     Display version information and exit"
-msgstr " -V, --version     Afficher les informations de version et quitter"
+msgstr "  -V, --version     Afficher les informations de version et quitter"
 
 #: src/script/arch-update.sh:149
 #, sh-format
