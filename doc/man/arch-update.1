@@ -14,21 +14,21 @@ An update notifier/applier for Arch Linux that assists you with important pre/po
 
 .SH OPTIONS
 .PP
-.RB "If no option is passed, launch the relevant series of functions to perform a complete and proper update starting by displaying the list of packages available for update, then ask for the user's confirmation to proceed with the installation."
+If no option is passed, launch the relevant series of functions to perform a complete and proper update starting by displaying the list of packages available for update, then ask for the user's confirmation to proceed with the installation.
 .br
 .RB "It also supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
 .br
-.RB "Before performing the update, it offers to display the latest Arch Linux news to the user. By default, Arch news are only displayed if at least a new one has been published since the last run. Arch news published since the last run or at the same date are tagged as '[NEW]'."
+Before performing the update, it offers to display the latest Arch Linux news to the user. By default, Arch news are only displayed if at least a new one has been published since the last run. Arch news published since the last run or at the same date are tagged as '[NEW]'.
 .br
-.RB "It also checks for orphan packages, unused Flatpak packages, old and/or uninstalled cached packages in pacman's cache, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them."
+Arch-Update also checks for orphan packages, unused Flatpak packages, old and/or uninstalled cached packages in pacman's cache, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them.
 .br
-.RB "Those functions are launched when you click on the (.desktop) icon."
+Those functions are launched when you click on the (.desktop) icon.
 
 .PP
 
 .TP
 .B \-c, \-\-check
-.RB "Check for available updates and change the (.desktop) icon accordingly if there are."
+Check for available updates and change the (.desktop) icon accordingly if there are.
 .br
 .RB "It sends a desktop notification containing the number of available updates if " "libnotify " "is installed."
 .br
@@ -60,7 +60,7 @@ Display the help message.
 .B The (.desktop) icon
 .RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop " "(or in " "/etc/local/share/applications/arch-update.desktop " "if you installed arch-update from source)." 
 .br
-.RB "It will automatically change depending on different states (checking for updates, updates available, installing updates, up to date). It will launch the main " "update " "function when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus."
+It will automatically change depending on different states (checking for updates, updates available, installing updates, up to date). It will launch the relevant series of functions to perform a complete and proper update when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus.
 
 .TP
 .B The systemd timer
@@ -137,28 +137,13 @@ Error when updating the packages
 Error when calling the reboot command to apply a pending kernel update
 
 .SH SEE ALSO
-.BR cp (1),
 .BR checkupdates (8),
-.BR echo (1),
-.BR sudo (8),
-.BR doas (1),
-.BR sed (1),
-.BR file (1),
-.BR grep (1),
-.BR find (1),
-.BR mkdir (1),
-.BR mv (1),
-.BR curl (1),
-.BR tr (1),
 .BR pacman (8),
 .BR pacdiff (8),
 .BR paccache (8),
-.BR systemd.service (5),
-.BR systemd.timer (5),
 .BR yay (8),
 .BR paru (8),
 .BR flatpak (1),
-.BR notify-send (1),
 .BR arch-update.conf (5)
 
 .SH BUGS

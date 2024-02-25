@@ -14,21 +14,21 @@ Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste da
 
 .SH OPTIONS
 .PP
-.RB "Si aucune option n'est passée, lance la série de fonctions adéquates pour effectuer une mise à jour complète et correcte, en commençant par afficher la liste des paquets disponibles pour la mise à jour et en demandant la confirmation de l'utilisateur pour procéder à l'installation." 
+Si aucune option n'est passée, lance la série de fonctions adéquates pour effectuer une mise à jour complète et correcte, en commençant par afficher la liste des paquets disponibles pour la mise à jour et en demandant la confirmation de l'utilisateur pour procéder à l'installation.
 .br
 .RB "Supporte les mises à jour des paquets AUR (si " "yay " "ou " "paru " "est installé) et des paquets Flatpak (si " "flatpak " "est installé)."
 .br
-.RB "Avant d'effectuer la mise à jour, propose d'afficher les dernières Arch news à l'utilisateur. Par défaut, les Arch news sont seulement affichées si au moins une nouvelle news a été publiée depuis la dernière exécution. Les Arch news publiées depuis la dernière exécution ou à la même date sont étiquetées comme '[NOUVEAU]'."
+Avant d'effectuer la mise à jour, propose d'afficher les dernières Arch news à l'utilisateur. Par défaut, les Arch news sont seulement affichées si au moins une nouvelle news a été publiée depuis la dernière exécution. Les Arch news publiées depuis la dernière exécution ou à la même date sont étiquetées comme '[NOUVEAU]'.
 .br
-.RB "Arch-Update vérifie aussi la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter."
+Arch-Update vérifie aussi la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter.
 .br
-.RB "Ces fonctions sont lancées quand vous cliquez sur l'icône (.desktop)."
+Ces fonctions sont lancées quand vous cliquez sur l'icône (.desktop).
 
 .PP
 
 .TP
 .B \-c, \-\-check
-.RB "Vérifier les mises à jour disponibles and changer l'icône (.desktop) en conséquence s'il y en a."
+Vérifier les mises à jour disponibles and changer l'icône (.desktop) en conséquence s'il y en a.
 .br
 .RB "Cela envoie une notification de bureau contenant le nombre de mise à jour disponibles si " "libnotify " "est installé."
 .br
@@ -60,7 +60,7 @@ Afficher le message d'aide.
 .B L'icône (.desktop)
 .RB "Le fichier .desktop se trouve dans " "/usr/share/applications/arch-update.desktop " "(ou dans " "/etc/local/share/applications/arch-update.desktop " "si vous avez installé arch-update depuis la source)." 
 .br
-.RB "Son icône changera automatiquement en fonction des différents états (vérification des mises à jour, mises à jour disponibles, installation des mises à jour, à jour). Il lancera la série de fonctions adéquates pour effectuer une mise à jour complète et correcte lorsque vous cliquez dessus. Il est facile à intégrer à n’importe quel DE/WM, dock, barre d’état/lancement ou menu d’application."
+Son icône changera automatiquement en fonction des différents états (vérification des mises à jour, mises à jour disponibles, installation des mises à jour, à jour). Il lancera la série de fonctions adéquates pour effectuer une mise à jour complète et correcte lorsque vous cliquez dessus. Il est facile à intégrer à n’importe quel DE/WM, dock, barre d’état/lancement ou menu d’application.
 
 .TP
 .B Le timer systemd
@@ -137,28 +137,13 @@ Erreur lors de la mise à jour des paquets
 Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
 
 .SH VOIR AUSSI
-.BR cp (1),
 .BR checkupdates (8),
-.BR echo (1),
-.BR sudo (8),
-.BR doas (1),
-.BR sed (1),
-.BR file (1),
-.BR grep (1),
-.BR find (1),
-.BR mkdir (1),
-.BR mv (1),
-.BR curl (1),
-.BR tr (1),
 .BR pacman (8),
 .BR pacdiff (8),
 .BR paccache (8),
-.BR systemd.service (5),
-.BR systemd.timer (5),
 .BR yay (8),
 .BR paru (8),
 .BR flatpak (1),
-.BR notify-send (1),
 .BR arch-update.conf (5)
 
 .SH BUGS
