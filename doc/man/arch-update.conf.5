@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE.CONF" "5" "January 2024" "Arch-Update 1.11.0" "Arch-Update Manual"
+.TH "ARCH-UPDATE.CONF" "5" "February 2024" "Arch-Update 1.11.0" "Arch-Update Manual"
 
 .SH NAME
 arch-update.conf \- arch-update configuration file.
@@ -26,8 +26,8 @@ Do not colorize output.
 Do not show versions changes for packages when listing pending updates.
 
 .TP
-.B NoNews
-Do not display Arch news. Note that using this option will generate a warning message as a reminder that users are expected to regularly check Arch news.
+.B AlwaysShowNews
+Always display Arch news before updating, regardless of whether there's a new one since the last run or not.
 
 .TP
 .B NewsNum=[Num]
