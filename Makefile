@@ -31,6 +31,11 @@ install:
 	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
 	rm -f po/fr.mo
 
+	# Install shell completions
+	install -Dm 644 "res/completions/${pkgname}.bash" "${DESTDIR}${PREFIX}/share/bash-completion/completions/${pkgname}"
+	install -Dm 644 "res/completions/${pkgname}.zsh" "${DESTDIR}${PREFIX}/share/zsh/site-functions/_${pkgname}"
+	install -Dm 644 "res/completions/${pkgname}.fish" "${DESTDIR}${PREFIX}/share/fish/vendor_completions.d/${pkgname}.fish"
+
 	# Archive and install man pages
 	gzip -c "doc/man/${pkgname}.1" > "doc/man/${pkgname}.1.gz"
 	gzip -c "doc/man/${pkgname}.conf.5" > "doc/man/${pkgname}.conf.5.gz"
@@ -65,6 +70,11 @@ uninstall:
 
 	# Delete .mo files
 	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
+
+	# Delete shell completions
+	rm -f "${DESTDIR}${PREFIX}/share/bash-completion/completions/${pkgname}"
+	rm -f "${DESTDIR}${PREFIX}/share/zsh/site-functions/_${pkgname}"
+	rm -f "${DESTDIR}${PREFIX}/share/fish/vendor_completions.d/${pkgname}.fish"
 
 	# Delete man pages
 	rm -f "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1.gz"
