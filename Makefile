@@ -71,6 +71,11 @@ uninstall:
 	# Delete .mo files
 	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
 
+	# Delete shell completions
+	rm -f "${DESTDIR}${PREFIX}/share/bash-completion/completions/${pkgname}"
+	rm -f "${DESTDIR}${PREFIX}/share/zsh/site-functions/_${pkgname}"
+	rm -f "${DESTDIR}${PREFIX}/share/fish/vendor_completions.d/${pkgname}.fish"
+
 	# Delete man pages
 	rm -f "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1.gz"
 	rm -f "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5.gz"
