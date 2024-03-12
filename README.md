@@ -102,6 +102,7 @@ If there are new available updates, the icon will show a bell sign and a desktop
 When the icon is clicked, it launches the relevant series of functions to perform a complete and proper update starting by refreshing the list of packages available for updates, display it inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages update support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages update support):
 
 *The colored output can be disabled with the `NoColor` option in the `arch-update.conf` configuration file.*  
+*The list of pending updates can be displayed at anytime by running `arch-update -l` or `arch-update --list`.*  
 *The versions changes in the packages listing can be hidden with the `NoVersion` option in the `arch-update.conf` configuration file.*  
 *See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.*
 
@@ -167,6 +168,7 @@ and pending kernel update and, if there are, offers to process them.
 
 Options:
 -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
+-l, --list        Display the list of pending updates
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
 -h, --help        Display this help message and exit
 -V, --version     Display version information and exit
@@ -179,6 +181,7 @@ Exit Codes:
 4  User didn't gave the confirmation to proceed
 5  Error when updating the packages
 6  Error when calling the reboot command to apply a pending kernel update
+7  No pending update when using the `-l/--list` option
 ```
 
 For more information, see the arch-update(1) man page.  
@@ -196,7 +199,7 @@ or "${HOME}/.config/arch-update/arch-update.conf".
 The supported options are:
 
 - NoColor # Do not colorize output.
-- NoVersion # Do not show versions changes for packages when listing pending updates.
+- NoVersion # Do not show versions changes for packages when listing pending updates (including when using the `-l/--list` option).
 - AlwaysShowNews # Always display Arch news before updating, regardless of whether there's a new one since the last run or not.
 - NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the arch-update(1) man page for more details). Defaults to 5.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
