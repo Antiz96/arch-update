@@ -104,6 +104,7 @@ Si de nouvelles mises à jour sont disponibles, l'icône affichera une cloche et
 Lorsque l'on clique sur l'icône, cela lance la série de fonctions adéquates pour effectuer une mise à jour complète et correcte, en commençant par actualiser la liste des paquets disponibles pour la mise à jour, en l'affichant dans un terminal et en demandant la confirmation de l'utilisateur pour procéder à l'installation (elle peut également être lancée en exécutant la commande `arch-update`, nécessite [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour la prise en charge de la mise à jour des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour la prise en charge de la mise à jour des paquets Flatpak) :
 
 *La sortie colorée peut être désactivée avec l'option `NoColor` dans le fichier de configuration `arch-update.conf`.*  
+*La liste des mises à jour en attente peut être affichées à tout moment en exécutant `arch-update -l` ou `arch-update --list`.*  
 *Les changements de versions dans la listing des paquets peuvent être masqués avec l'option `NoVersion` dans le fichier de configuration `arch-update.conf`.*  
 *Voir le [chapitre de documentation arch-update.conf](#Fichier-de-configuration-arch-update) pour plus de détails.*
 
@@ -170,6 +171,7 @@ de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en 
 
 Options :
 -c, --check       Vérifier les mises à jour disponibles, envoyer une notification de bureau contenant le nombre de mises à jour disponibles (si libnotify est installé)
+-l, --list        Afficher la liste des mises à jour en attente (incluant les paquets AUR si yay ou paru est installé et les paquets flatpak si flatpak est installé)
 -n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
 -h, --help        Afficher ce message d'aide et quitter
 -V, --version     Afficher les informations de version et quitter
@@ -182,6 +184,7 @@ Codes de sortie :
 4  L'utilisateur n'a pas donné la confirmation de procéder
 5  Erreur lors de la mise à jour des paquets
 6  Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
+7  Aucune mise à jour en attente durant l'utilisation de l'option "-l/--list"
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
@@ -199,7 +202,7 @@ ou "${HOME}/.config/arch-update/arch-update.conf".
 Les options prises en charge sont :
 
 - NoColor # Ne pas coloriser la sortie.
-- NoVersion # Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente.
+- NoVersion # Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option "-l/--list").
 - AlwaysShowNews # Toujours afficher les Arch news avant de mettre à jour, peu importe s'il y en a une nouvelle depuis la dernière exécution ou non.
 - NewsNum=[Num] # Nombre de Arch news à affcher avant la mise à jour et avec l'option `-n/--news` (voir la page de manuel arch-update(1) pour plus de details). La valeur par défaut est 5.
 - KeepOldPackages=[Num] # Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
