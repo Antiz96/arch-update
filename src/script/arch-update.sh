@@ -142,6 +142,7 @@ $(eval_gettext "Post update, check for orphan/unused packages, old cached packag
 
 $(eval_gettext "Options:")
 $(eval_gettext "  -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
+$(eval_gettext "  -l, --list        Display the list of pending updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")

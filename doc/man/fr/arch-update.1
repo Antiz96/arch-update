@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "Février 2024" "Arch-Update 1.12.1" "Manuel de Arch-Update"
+.TH "ARCH-UPDATE" "1" "Mars 2024" "Arch-Update 1.12.1" "Manuel de Arch-Update"
 
 .SH NAME
 arch-update \- Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant/après mise à jour.
@@ -37,6 +37,10 @@ Vérifier les mises à jour disponibles and changer l'icône (.desktop) en cons�
 .RB "L'option " "\-\-check " "est automatiquement lancée au démarrage du système puis une fois chaque heure si vous avez activé le " "systemd.timer " "avec la commande suivante :"
 .br
 .B systemctl \-\-user enable \-\-now arch-update.timer
+
+.TP
+.B \-l, \-\-list
+Afficher la liste des mises à jour en attente.
 
 .TP
 .B \-n, \-\-news
@@ -135,6 +139,10 @@ Erreur lors de la mise à jour des paquets
 .TP
 .B 6
 Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
+
+.TP
+.B 7
+.RB "Aucune mise à jour en attente durant l'utilisation de l'option " "-l/--list"
 
 .SH VOIR AUSSI
 .BR checkupdates (8),
