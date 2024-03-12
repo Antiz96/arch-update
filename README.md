@@ -168,7 +168,7 @@ and pending kernel update and, if there are, offers to process them.
 
 Options:
 -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
--l, --list        Display the list of pending updates (including AUR packages if yay or paru is installed and flatpak packages if flatpak is installed)
+-l, --list        Display the list of pending updates
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
 -h, --help        Display this help message and exit
 -V, --version     Display version information and exit

@@ -171,7 +171,7 @@ de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en 
 
 Options :
 -c, --check       Vérifier les mises à jour disponibles, envoyer une notification de bureau contenant le nombre de mises à jour disponibles (si libnotify est installé)
--l, --list        Afficher la liste des mises à jour en attente (incluant les paquets AUR si yay ou paru est installé et les paquets flatpak si flatpak est installé)
+-l, --list        Afficher la liste des mises à jour en attente
 -n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
 -h, --help        Afficher ce message d'aide et quitter
 -V, --version     Afficher les informations de version et quitter
