@@ -184,7 +184,7 @@ Codes de sortie :
 4  L'utilisateur n'a pas donné la confirmation de procéder
 5  Erreur lors de la mise à jour des paquets
 6  Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
-7  Aucune mise à jour en attente durant l'utilisation de l'option "-l/--list"
+7  Aucune mise à jour en attente durant l'utilisation de l'option `-l/--list`
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
@@ -202,7 +202,7 @@ ou "${HOME}/.config/arch-update/arch-update.conf".
 Les options prises en charge sont :
 
 - NoColor # Ne pas coloriser la sortie.
-- NoVersion # Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option "-l/--list").
+- NoVersion # Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option `-l/--list`).
 - AlwaysShowNews # Toujours afficher les Arch news avant de mettre à jour, peu importe s'il y en a une nouvelle depuis la dernière exécution ou non.
 - NewsNum=[Num] # Nombre de Arch news à affcher avant la mise à jour et avec l'option `-n/--news` (voir la page de manuel arch-update(1) pour plus de details). La valeur par défaut est 5.
 - KeepOldPackages=[Num] # Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.

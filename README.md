@@ -181,7 +181,7 @@ Exit Codes:
 4  User didn't gave the confirmation to proceed
 5  Error when updating the packages
 6  Error when calling the reboot command to apply a pending kernel update
-7  No pending update when using the "-l/--list" option
+7  No pending update when using the `-l/--list` option
 ```
 
 For more information, see the arch-update(1) man page.  
@@ -199,7 +199,7 @@ or "${HOME}/.config/arch-update/arch-update.conf".
 The supported options are:
 
 - NoColor # Do not colorize output.
-- NoVersion # Do not show versions changes for packages when listing pending updates (including when using the "-l/--list" option).
+- NoVersion # Do not show versions changes for packages when listing pending updates (including when using the `-l/--list` option).
 - AlwaysShowNews # Always display Arch news before updating, regardless of whether there's a new one since the last run or not.
 - NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the arch-update(1) man page for more details). Defaults to 5.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
