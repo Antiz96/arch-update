@@ -267,20 +267,26 @@ list_packages() {
 
 	if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
 		icon_up_to_date
-		info_msg "$(eval_gettext "No update available\n")"
+		if [ -z "${list_option}" ]; then
+			info_msg "$(eval_gettext "No update available\n")"
+		else
+			exit 7
+		fi
 	else
 		icon_updates_available
-		ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
-
-		case "${answer}" in
-			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
-				proceed_with_update="y"
-			;;
-			*)
-				error_msg "$(eval_gettext "The update has been aborted\n")" && quit_msg
-				exit 4
-			;;
-		esac
+		if [ -z "${list_option}" ]; then
+			ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
+	
+			case "${answer}" in
+				"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
+					proceed_with_update="y"
+				;;
+				*)
+					error_msg "$(eval_gettext "The update has been aborted\n")" && quit_msg
+					exit 4
+				;;
+			esac
+		fi
 	fi
 }
 
@@ -622,6 +628,10 @@ case "${option}" in
 	;;
 	-c|--check)
 		check
+	;;
+	-l|--list)
+		list_option="y"
+		list_packages | sed '${/^$/d;}'
 	;;
 	-n|--news)
 		show_news="y"
