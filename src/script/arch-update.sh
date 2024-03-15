@@ -8,7 +8,9 @@
 name="arch-update"
 _name="Arch-Update"
 version="1.12.2"
-option="${1}"
+
+# Default optional arguments
+development_option="n"
 
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
@@ -29,6 +31,10 @@ fi
 
 if grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
 	show_news="y"
+fi
+
+if (grep -Eq '^[[:space:]]*CheckDevelopmentPackages[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null); then
+	development_option="y"
 fi
 
 if grep -Eq '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
@@ -142,6 +148,7 @@ $(eval_gettext "Post update, check for orphan/unused packages, old cached packag
 
 $(eval_gettext "Options:")
 $(eval_gettext "  -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
+$(eval_gettext "  -d, --devel       Include AUR development packages when checking for updates")
 $(eval_gettext "  -l, --list        Display the list of pending updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
 $(eval_gettext "  -h, --help        Display this help message and exit")
@@ -159,6 +166,7 @@ version() {
 
 # Definition of the invalid_option function: Display an error message, ask the user to check the help and exit
 invalid_option() {
+	local option="${1}"
 	echo -e >&2 "$(eval_gettext "\${name}: invalid option -- '\${option}'\nTry '\${name} --help' for more information.")"
 	exit 1
 }
@@ -190,17 +198,18 @@ icon_up_to_date() {
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
 check() {
 	icon_checking
+	dev_flag=$([[ $development_option = "y" ]] && echo -n "--devel")
 
 	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
-		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
+		update_available=$(checkupdates ; "${aur_helper}" -Qua "${dev_flag}"; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
-		update_available=$(checkupdates ; "${aur_helper}" -Qua)
+		update_available=$(checkupdates ; "${aur_helper}" -Qua "${dev_flag}")
 	elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
 		update_available=$(checkupdates ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 	else
 		update_available=$(checkupdates)
 	fi
-	
+
 	if [ -n "${notif}" ]; then
 		echo "${update_available}" > "${statedir}/current_updates_check"
 		sed -i '/^\s*$/d' "${statedir}/current_updates_check"
@@ -239,10 +248,11 @@ list_packages() {
 	fi
 
 	if [ -n "${aur_helper}" ]; then
+		dev_flag=$([[ $development_option = "y" ]] && echo -n "--devel")
 		if [ -z "${no_version}" ]; then
-			aur_packages=$("${aur_helper}" -Qua)
+			aur_packages=$("${aur_helper}" -Qua "${dev_flag}")
 		else
-			aur_packages=$("${aur_helper}" -Qua | awk '{print $1}')
+			aur_packages=$("${aur_helper}" -Qua "${dev_flag}" | awk '{print $1}')
 		fi
 	fi
 
@@ -369,12 +379,13 @@ update() {
 			exit 5
 		fi
 	fi
-					
+
 	if [ -n "${aur_packages}" ]; then
 		echo
 		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
+		dev_flag=$([[ $development_option = "y" ]] && echo -n "--devel")
 
-		if ! "${aur_helper}" -Syu; then
+		if ! "${aur_helper}" -Syu "${dev_flag}"; then
 			icon_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
@@ -611,8 +622,22 @@ kernel_reboot() {
 	fi
 }
 
+# Handle optional arguments
+execution_mode=()
+
+for option in "${@}"; do
+	case "${option}" in
+		"-d"|"--devel")
+			development_option="y"
+		;;
+		*)
+			execution_mode+=("${option}")
+		;;
+	esac
+done
+
 # Execute the different functions depending on the option
-case "${option}" in
+case "${execution_mode}" in
 	"")
 		list_packages
 		if [ -n "${proceed_with_update}" ]; then
@@ -648,6 +673,6 @@ case "${option}" in
 		version
 	;;
 	*)
-		invalid_option
+		invalid_option "${execution_mode}"
 	;;
 esac

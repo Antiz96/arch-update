@@ -168,6 +168,7 @@ and pending kernel update and, if there are, offers to process them.
 
 Options:
 -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
+-d, --devel       Include AUR development packages when checking for updates
 -l, --list        Display the list of pending updates
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
 -h, --help        Display this help message and exit
@@ -201,6 +202,7 @@ The supported options are:
 - NoColor # Do not colorize output.
 - NoVersion # Do not show versions changes for packages when listing pending updates (including when using the `-l/--list` option).
 - AlwaysShowNews # Always display Arch news before updating, regardless of whether there's a new one since the last run or not.
+- CheckDevelopmentPackages # Also check/update AUR development packages.
 - NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the arch-update(1) man page for more details). Defaults to 5.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
