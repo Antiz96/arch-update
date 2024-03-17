@@ -33,10 +33,6 @@ if grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOM
 	show_news="y"
 fi
 
-if (grep -Eq '^[[:space:]]*CheckDevelopmentPackages[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null); then
-	development_option="y"
-fi
-
 if grep -Eq '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
 	news_num=$(grep -E '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 else
