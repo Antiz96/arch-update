@@ -103,6 +103,7 @@ When the icon is clicked, it launches the relevant series of functions to perfor
 
 *The colored output can be disabled with the `NoColor` option in the `arch-update.conf` configuration file.*  
 *The list of pending updates can be displayed at anytime by running `arch-update -l` or `arch-update --list`.*  
+*You can include AUR development packages updates by running `arch-update -d` or `arch-update --devel`.*  
 *The versions changes in the packages listing can be hidden with the `NoVersion` option in the `arch-update.conf` configuration file.*  
 *See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.*
 
@@ -169,6 +170,7 @@ and pending kernel update and, if there are, offers to process them.
 Options:
 -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
 -l, --list        Display the list of pending updates
+-d, --devel       Include AUR development packages updates
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
 -h, --help        Display this help message and exit
 -V, --version     Display version information and exit
