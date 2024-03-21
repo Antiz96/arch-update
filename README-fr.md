@@ -105,6 +105,7 @@ Lorsque l'on clique sur l'icône, cela lance la série de fonctions adéquates p
 
 *La sortie colorée peut être désactivée avec l'option `NoColor` dans le fichier de configuration `arch-update.conf`.*  
 *La liste des mises à jour en attente peut être affichées à tout moment en exécutant `arch-update -l` ou `arch-update --list`.*  
+*Vous pouvez inclure les mises à jour des paquets de développements AUR en exécutant `arch-update -d` ou `arch-update --devel`.*  
 *Les changements de versions dans la listing des paquets peuvent être masqués avec l'option `NoVersion` dans le fichier de configuration `arch-update.conf`.*  
 *Voir le [chapitre de documentation arch-update.conf](#Fichier-de-configuration-arch-update) pour plus de détails.*
 
@@ -172,6 +173,7 @@ de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en 
 Options :
 -c, --check       Vérifier les mises à jour disponibles, envoyer une notification de bureau contenant le nombre de mises à jour disponibles (si libnotify est installé)
 -l, --list        Afficher la liste des mises à jour en attente
+-d, --devel       Vérifiez également les mises à jour des paquets de développement AUR
 -n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
 -h, --help        Afficher ce message d'aide et quitter
 -V, --version     Afficher les informations de version et quitter
