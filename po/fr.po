@@ -6,7 +6,7 @@
 # Robin Candau <robincandau@protonmail.com>, 2024
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 1.12.2\n"
+"Project-Id-Version: Arch-Update 1.13.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-02-09 01:21+0100\n"
 "PO-Revision-Date: 2024-03-17 17:00+0100\n"
