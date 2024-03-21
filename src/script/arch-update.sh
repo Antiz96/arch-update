@@ -241,9 +241,9 @@ list_packages() {
 
 	if [ -n "${aur_helper}" ]; then
 		if [ -z "${no_version}" ]; then
-			aur_packages=$("${aur_helper}" "${devel_flag[@]}" -Qua)
+			aur_packages=$("${aur_helper}" -Qua "${devel_flag[@]}")
 		else
-			aur_packages=$("${aur_helper}" "${devel_flag[@]}" -Qua | awk '{print $1}')
+			aur_packages=$("${aur_helper}" -Qua "${devel_flag[@]}" | awk '{print $1}')
 		fi
 	fi
 
@@ -375,7 +375,7 @@ update() {
 		echo
 		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
-		if ! "${aur_helper}" "${devel_flag[@]}" -Syu; then
+		if ! "${aur_helper}" -Syu "${devel_flag[@]}"; then
 			icon_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
