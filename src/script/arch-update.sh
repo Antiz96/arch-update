@@ -143,6 +143,7 @@ $(eval_gettext "Post update, check for orphan/unused packages, old cached packag
 $(eval_gettext "Options:")
 $(eval_gettext "  -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
 $(eval_gettext "  -l, --list        Display the list of pending updates")
+$(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")
@@ -240,9 +241,9 @@ list_packages() {
 
 	if [ -n "${aur_helper}" ]; then
 		if [ -z "${no_version}" ]; then
-			aur_packages=$("${aur_helper}" -Qua)
+			aur_packages=$("${aur_helper}" -Qua "${devel_flag[@]}")
 		else
-			aur_packages=$("${aur_helper}" -Qua | awk '{print $1}')
+			aur_packages=$("${aur_helper}" -Qua "${devel_flag[@]}" | awk '{print $1}')
 		fi
 	fi
 
@@ -374,7 +375,7 @@ update() {
 		echo
 		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
-		if ! "${aur_helper}" -Syu; then
+		if ! "${aur_helper}" -Syu "${devel_flag[@]}"; then
 			icon_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
@@ -607,20 +608,29 @@ kernel_reboot() {
 	fi
 }
 
+# Definition of the full_upgrade function: Launch the relevant series of function for a complete and proper update
+full_upgrade() {
+	list_packages
+	if [ -n "${proceed_with_update}" ]; then
+		list_news
+		update
+		date +%Y-%m-%d > "${statedir}/last_update_run"
+	fi
+	orphan_packages
+	packages_cache
+	pacnew_files
+	kernel_reboot
+	quit_msg
+}
+
 # Execute the different functions depending on the option
 case "${option}" in
 	"")
-		list_packages
-		if [ -n "${proceed_with_update}" ]; then
-			list_news
-			update
-			date +%Y-%m-%d > "${statedir}/last_update_run"
-		fi
-		orphan_packages
-		packages_cache
-		pacnew_files
-		kernel_reboot
-		quit_msg
+		full_upgrade
+	;;
+	-d|--devel)
+		devel_flag+=("--devel")
+		full_upgrade
 	;;
 	-c|--check)
 		check
@@ -647,3 +657,4 @@ case "${option}" in
 		invalid_option
 	;;
 esac
+
