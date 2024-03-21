@@ -6,7 +6,7 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 1.12.2\n"
+"Project-Id-Version: Arch-Update 1.13.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
