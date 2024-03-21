@@ -608,7 +608,7 @@ kernel_reboot() {
 	fi
 }
 
-# Definition of the full_upgrade function: Launch the relevant series of function for a complete and proper upgrade
+# Definition of the full_upgrade function: Launch the relevant series of function for a complete and proper update
 full_upgrade() {
 	list_packages
 	if [ -n "${proceed_with_update}" ]; then
