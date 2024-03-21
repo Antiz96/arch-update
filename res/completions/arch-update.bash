@@ -2,7 +2,7 @@ _arch-update() {
 	local arg="${2}"
 	local -a opts
 	opts=('-c --check
-   	     -l --list 
+	       -l --list
 	       -d --devel
 	       -n --news
 	       -h --help
