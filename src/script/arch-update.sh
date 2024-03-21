@@ -107,7 +107,7 @@ quit_msg() {
 	read -n 1 -r -s -p $"$(info_msg "${msg}")" && echo
 }
 
-# Definition of the evelation method to use (depending on which one is installed on the system)
+# Definition of the elevation method to use (depending on which one is installed on the system)
 if command -v sudo > /dev/null; then
 	su_cmd="sudo"
 elif command -v doas > /dev/null; then

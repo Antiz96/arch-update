@@ -3,6 +3,7 @@
 local -a opts
 opts=(
     {-c,--check}'[Check for available updates]'
+    {-l,--list}'[Display the list of pending updates]'
     {-d, --devel}'[Update AUR development packages]'
     {-n,--news}'[Display latest Arch news]'
     {-h,--help}'[Display the help message]'
