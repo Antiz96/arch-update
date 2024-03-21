@@ -8,9 +8,7 @@
 name="arch-update"
 _name="Arch-Update"
 version="1.12.2"
-
-# Default optional arguments
-development_option="n"
+option="${1}"
 
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
@@ -144,8 +142,8 @@ $(eval_gettext "Post update, check for orphan/unused packages, old cached packag
 
 $(eval_gettext "Options:")
 $(eval_gettext "  -c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)")
-$(eval_gettext "  -d, --devel       Include AUR development packages when checking for updates")
 $(eval_gettext "  -l, --list        Display the list of pending updates")
+$(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")
@@ -162,7 +160,6 @@ version() {
 
 # Definition of the invalid_option function: Display an error message, ask the user to check the help and exit
 invalid_option() {
-	local option="${1}"
 	echo -e >&2 "$(eval_gettext "\${name}: invalid option -- '\${option}'\nTry '\${name} --help' for more information.")"
 	exit 1
 }
@@ -194,18 +191,17 @@ icon_up_to_date() {
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
 check() {
 	icon_checking
-	dev_flag=$([[ $development_option = "y" ]] && echo -n "--devel")
 
 	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
-		update_available=$(checkupdates ; "${aur_helper}" -Qua "${dev_flag}"; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
+		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
-		update_available=$(checkupdates ; "${aur_helper}" -Qua "${dev_flag}")
+		update_available=$(checkupdates ; "${aur_helper}" -Qua)
 	elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
 		update_available=$(checkupdates ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 	else
 		update_available=$(checkupdates)
 	fi
-
+	
 	if [ -n "${notif}" ]; then
 		echo "${update_available}" > "${statedir}/current_updates_check"
 		sed -i '/^\s*$/d' "${statedir}/current_updates_check"
@@ -244,7 +240,6 @@ list_packages() {
 	fi
 
 	if [ -n "${aur_helper}" ]; then
-		dev_flag=$([[ $development_option = "y" ]] && echo -n "--devel")
 		if [ -z "${no_version}" ]; then
 			aur_packages=$("${aur_helper}" -Qua "${dev_flag}")
 		else
@@ -375,11 +370,10 @@ update() {
 			exit 5
 		fi
 	fi
-
+					
 	if [ -n "${aur_packages}" ]; then
 		echo
 		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
-		dev_flag=$([[ $development_option = "y" ]] && echo -n "--devel")
 
 		if ! "${aur_helper}" -Syu "${dev_flag}"; then
 			icon_updates_available
@@ -585,11 +579,7 @@ pacnew_files() {
 
 # Definition of the kernel_reboot function: Verify if there's a kernel update waiting for a reboot to be applied
 kernel_reboot() {
-	if find /boot/vmlinuz* &> /dev/null; then
-		kernel_compare=$(file /boot/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
-	else
-		kernel_compare=$(file /usr/lib/modules/*/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
-	fi
+	kernel_compare=$(file /boot/vmlinuz* /usr/lib/modules/*/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
 
 	if [ -z "${kernel_compare}" ]; then
 		main_msg "$(eval_gettext "Reboot required:\nThere's a pending kernel update on your system requiring a reboot to be applied\n")"
@@ -618,34 +608,29 @@ kernel_reboot() {
 	fi
 }
 
-# Handle optional arguments
-execution_mode=()
-
-for option in "${@}"; do
-	case "${option}" in
-		"-d"|"--devel")
-			development_option="y"
-		;;
-		*)
-			execution_mode+=("${option}")
-		;;
-	esac
-done
+# Definition of the full_upgrade function: Launch the relevant series of function for a complete and proper upgrade
+full_upgrade() {
+	list_packages
+	if [ -n "${proceed_with_update}" ]; then
+		list_news
+		update
+		date +%Y-%m-%d > "${statedir}/last_update_run"
+	fi
+	orphan_packages
+	packages_cache
+	pacnew_files
+	kernel_reboot
+	quit_msg
+}
 
 # Execute the different functions depending on the option
-case "${execution_mode}" in
+case "${option}" in
 	"")
-		list_packages
-		if [ -n "${proceed_with_update}" ]; then
-			list_news
-			update
-			date +%Y-%m-%d > "${statedir}/last_update_run"
-		fi
-		orphan_packages
-		packages_cache
-		pacnew_files
-		kernel_reboot
-		quit_msg
+		full_upgrade
+	;;
+	-d|--devel)
+		dev_flag="--devel"
+		full_upgrade
 	;;
 	-c|--check)
 		check
@@ -669,6 +654,6 @@ case "${execution_mode}" in
 		version
 	;;
 	*)
-		invalid_option "${execution_mode}"
+		invalid_option
 	;;
 esac
