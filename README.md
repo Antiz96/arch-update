@@ -172,6 +172,7 @@ Options:
 -l, --list        Display the list of pending updates
 -d, --devel       Include AUR development packages updates
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
+-D, --debug       Display debug traces
 -h, --help        Display this help message and exit
 -V, --version     Display version information and exit
 
