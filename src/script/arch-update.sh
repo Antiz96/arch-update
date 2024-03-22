@@ -10,6 +10,22 @@ _name="Arch-Update"
 version="1.13.0"
 option="${1}"
 
+# Display debug traces if the -D/--debug argument is passed
+for arg in "${@}"; do
+	case "${arg}" in
+		-D|--debug)
+			set -x
+		;;
+	esac
+done
+
+# Reset the option var if it is equal to -D/--debug (to avoid false negative "invalid option" error)
+case "${option}" in
+	-D|--debug)
+		unset option
+	;;
+esac
+
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
 . gettext.sh
@@ -658,4 +674,3 @@ case "${option}" in
 		invalid_option
 	;;
 esac
-
