@@ -10,6 +10,22 @@ _name="Arch-Update"
 version="1.13.0"
 option="${1}"
 
+# Display debug traces if the -D/--debug argument is passed
+for arg in "${@}"; do
+	case "${arg}" in
+		-D|--debug)
+			set -x
+		;;
+	esac
+done
+
+# Reset the option var if it is equal to -D/--debug (to avoid false negative "invalid option" error)
+case "${option}" in
+	-D|--debug)
+		unset option
+	;;
+esac
+
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
 . gettext.sh
@@ -145,6 +161,7 @@ $(eval_gettext "  -c, --check       Check for available updates, send a desktop 
 $(eval_gettext "  -l, --list        Display the list of pending updates")
 $(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
+$(eval_gettext "  -D, --debug       Display debug traces")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")
 
@@ -657,4 +674,3 @@ case "${option}" in
 		invalid_option
 	;;
 esac
-

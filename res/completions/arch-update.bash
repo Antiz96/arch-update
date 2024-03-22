@@ -5,6 +5,7 @@ _arch-update() {
 	       -l --list
 	       -d --devel
 	       -n --news
+	       -D --debug
 	       -h --help
 	       -V --version')
 
