@@ -145,6 +145,7 @@ $(eval_gettext "  -c, --check       Check for available updates, send a desktop 
 $(eval_gettext "  -l, --list        Display the list of pending updates")
 $(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
+$(eval_gettext "  -D, --debug       Display debug traces")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")
 

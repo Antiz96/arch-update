@@ -175,6 +175,7 @@ Options :
 -l, --list        Afficher la liste des mises à jour en attente
 -d, --devel       Inclure les mises à jour des paquets de développement AUR
 -n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
+-D, --debug       Afficher les traces de débogage
 -h, --help        Afficher ce message d'aide et quitter
 -V, --version     Afficher les informations de version et quitter
 
