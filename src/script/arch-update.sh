@@ -75,9 +75,10 @@ if [ -z "${no_color}" ]; then
 	color_off="\e[0m"
 fi
 
-# Create state dir if it does not exist
+# Create state and tmp dirs if they don't exist
 statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
-mkdir -p "${statedir}"
+tmpdir="${TMPDIR:-/tmp}/${name}-${UID}"
+mkdir -p "${statedir}" "${tmpdir}"
 
 # Definition of the main_msg function: Display a message as a main message
 main_msg() {
@@ -230,10 +231,20 @@ check() {
 		if [ -n "${notif}" ]; then
 			if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
 				update_number=$(wc -l "${statedir}/current_updates_check" | awk '{print $1}')
+				last_notif_id=$(cat "${tmpdir}/last_notif_id" 2> /dev/null)
 				if [ "${update_number}" -eq 1 ]; then
-					notify-send -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")"
+					if [ -z "${last_notif_id}" ]; then
+						notify-send -p -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+					else
+						notify-send -p -r "${last_notif_id}" -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+					fi
+
 				else
-					notify-send -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")"
+					if [ -z "${last_notif_id}" ]; then
+						notify-send -p -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+					else
+						notify-send -p -r "${last_notif_id}" -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+					fi
 				fi
 			fi
 		fi
