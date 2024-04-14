@@ -73,9 +73,9 @@ if [ -z "${no_color}" ]; then
 	yellow="${bold}\e[33m"
 	red="${bold}\e[31m"
 	color_off="\e[0m"
-	pacman_color_opt+=("--color always")
+	pacman_color_opt="always"
 else
-	pacman_color_opt+=("--color never")
+	pacman_color_opt="never"
 	contrib_color_opt="--nocolor"
 fi
 
@@ -273,9 +273,9 @@ list_packages() {
 
 	if [ -n "${aur_helper}" ]; then
 		if [ -z "${no_version}" ]; then
-			aur_packages=$("${aur_helper}" "${pacman_color_opt[@]}" "${devel_flag[@]}" -Qua)
+			aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua)
 		else
-			aur_packages=$("${aur_helper}" "${pacman_color_opt[@]}" "${devel_flag[@]}" -Qua | awk '{print $1}')
+			aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua | awk '{print $1}')
 		fi
 	fi
 
@@ -395,7 +395,7 @@ update() {
 		echo
 		main_msg "$(eval_gettext "Updating Packages...\n")"
 
-		if ! "${su_cmd}" pacman "${pacman_color_opt[@]}" -Syu; then
+		if ! "${su_cmd}" pacman --color "${pacman_color_opt}" -Syu; then
 			icon_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
@@ -407,7 +407,7 @@ update() {
 		echo
 		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
-		if ! "${aur_helper}" "${pacman_color_opt[@]}" "${devel_flag[@]}" -Syu; then
+		if ! "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Syu; then
 			icon_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
@@ -454,7 +454,7 @@ orphan_packages() {
 				echo
 				main_msg "$(eval_gettext "Removing Orphan Packages...\n")"
 				
-				if ! pacman -Qtdq | "${su_cmd}" pacman "${pacman_color_opt[@]}" -Rns -; then
+				if ! pacman -Qtdq | "${su_cmd}" pacman --color "${pacman_color_opt}" -Rns -; then
 					echo
 					error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 				else
