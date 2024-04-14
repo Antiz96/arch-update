@@ -73,6 +73,10 @@ if [ -z "${no_color}" ]; then
 	yellow="${bold}\e[33m"
 	red="${bold}\e[31m"
 	color_off="\e[0m"
+	pacman_color_opt="always"
+else
+	pacman_color_opt="never"
+	contrib_color_opt+=("--nocolor")
 fi
 
 # Create state and tmp dirs if they don't exist
@@ -262,16 +266,16 @@ list_packages() {
 	icon_checking
 	
 	if [ -z "${no_version}" ]; then
-		packages=$(checkupdates)
+		packages=$(checkupdates "${contrib_color_opt[@]}")
 	else
-		packages=$(checkupdates | awk '{print $1}')
+		packages=$(checkupdates "${contrib_color_opt[@]}" | awk '{print $1}')
 	fi
 
 	if [ -n "${aur_helper}" ]; then
 		if [ -z "${no_version}" ]; then
-			aur_packages=$("${aur_helper}" -Qua "${devel_flag[@]}")
+			aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua)
 		else
-			aur_packages=$("${aur_helper}" -Qua "${devel_flag[@]}" | awk '{print $1}')
+			aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua | awk '{print $1}')
 		fi
 	fi
 
@@ -391,7 +395,7 @@ update() {
 		echo
 		main_msg "$(eval_gettext "Updating Packages...\n")"
 
-		if ! "${su_cmd}" pacman -Syu; then
+		if ! "${su_cmd}" pacman --color "${pacman_color_opt}" -Syu; then
 			icon_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
@@ -403,7 +407,7 @@ update() {
 		echo
 		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
-		if ! "${aur_helper}" -Syu "${devel_flag[@]}"; then
+		if ! "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Syu; then
 			icon_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
@@ -450,7 +454,7 @@ orphan_packages() {
 				echo
 				main_msg "$(eval_gettext "Removing Orphan Packages...\n")"
 				
-				if ! pacman -Qtdq | "${su_cmd}" pacman -Rns -; then
+				if ! pacman -Qtdq | "${su_cmd}" pacman --color "${pacman_color_opt}" -Rns -; then
 					echo
 					error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 				else
@@ -526,7 +530,7 @@ packages_cache() {
 					echo
 					main_msg "$(eval_gettext "Removing old cached packages...")"
 
-					if ! "${su_cmd}" paccache -rk"${old_packages_num}"; then
+					if ! "${su_cmd}" paccache "${contrib_color_opt[@]}" -rk"${old_packages_num}"; then
 						echo
 						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
@@ -536,7 +540,7 @@ packages_cache() {
 					echo
 					main_msg "$(eval_gettext "Removing uninstalled cached packages...")"
 
-					if ! "${su_cmd}" paccache -ruk"${uninstalled_packages_num}"; then
+					if ! "${su_cmd}" paccache "${contrib_color_opt[@]}" -ruk"${uninstalled_packages_num}"; then
 						echo
 						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
@@ -546,7 +550,7 @@ packages_cache() {
 					echo
 					main_msg "$(eval_gettext "Removing old cached packages...")"
 
-					if ! "${su_cmd}" paccache -rk"${old_packages_num}"; then
+					if ! "${su_cmd}" paccache "${contrib_color_opt[@]}" -rk"${old_packages_num}"; then
 						echo
 						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
@@ -555,7 +559,7 @@ packages_cache() {
 
 					main_msg "$(eval_gettext "Removing uninstalled cached packages...")"
 
-					if ! "${su_cmd}" paccache -ruk"${uninstalled_packages_num}"; then
+					if ! "${su_cmd}" paccache "${contrib_color_opt[@]}" -ruk"${uninstalled_packages_num}"; then
 						echo
 						error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 					else
@@ -592,7 +596,7 @@ pacnew_files() {
 				echo
 				main_msg "$(eval_gettext "Processing Pacnew Files...\n")"
 
-				"${su_cmd}" pacdiff
+				"${su_cmd}" pacdiff "${contrib_color_opt[@]}"
 				echo
 				info_msg "$(eval_gettext "The pacnew file(s) processing has been applied\n")"
 			;;
