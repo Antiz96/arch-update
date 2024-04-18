@@ -264,6 +264,7 @@ check() {
 # Definition of the list_packages function: Display packages that are available for update and offer to apply them if there are
 list_packages() {
 	icon_checking
+	info_msg "$(eval_gettext "Looking for updates...\n")"
 	
 	if [ -z "${no_version}" ]; then
 		packages=$(checkupdates "${contrib_color_opt[@]}")
@@ -689,4 +690,3 @@ case "${option}" in
 		invalid_option
 	;;
 esac
-
