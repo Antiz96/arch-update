@@ -203,7 +203,7 @@ d'activer/désactiver ou modifier certaines options dans le script.
 
 Ce fichier de configuration doit se trouver dans "${XDG_CONFIG_HOME}/arch-update/arch-update.conf"
 ou "${HOME}/.config/arch-update/arch-update.conf".
-Un fichier de configuration par défaut/exemple peut être généré en exécutant : arch-update --gen-config
+Un fichier de configuration par défaut/exemple peut être généré en exécutant : `arch-update --gen-config`
 
 Les options prises en charge sont :
 
