@@ -35,32 +35,34 @@ if find /usr/local/share/locale/*/LC_MESSAGES/"${_name}".mo &> /dev/null; then
 fi
 
 # Checking options in arch-update.conf
-if grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+config_file="${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf"
+
+if grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	no_color="y"
 fi
 
-if grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+if grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	no_version="y"
 fi
 
-if grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
+if grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	show_news="y"
 fi
 
-if grep -Eq '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
-	news_num=$(grep -E '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+if grep -Eq '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	news_num=$(grep -E '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 else
 	news_num="5"
 fi
 
-if grep -Eq '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
-	old_packages_num=$(grep -E '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+if grep -Eq '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	old_packages_num=$(grep -E '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 else
 	old_packages_num="3"
 fi
 
-if grep -Eq '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null; then
-	uninstalled_packages_num=$(grep -E '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+if grep -Eq '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	uninstalled_packages_num=$(grep -E '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 else
 	uninstalled_packages_num="0"
 fi
@@ -167,6 +169,7 @@ $(eval_gettext "  -l, --list        Display the list of pending updates")
 $(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
 $(eval_gettext "  -D, --debug       Display debug traces")
+$(eval_gettext "  --gen-config      Generate a default/example configuration file")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")
 
@@ -679,6 +682,19 @@ case "${option}" in
 			news_num="${2}"
 		fi
 		list_news
+	;;
+	--gen-config)
+		example_config_file="/usr/share/doc/${name}/${name}.conf.example"
+		[ -f "/usr/local/share/doc/${name}/${name}.conf.example" ] && example_config_file="/usr/local/share/doc/${name}/${name}.conf.example"
+
+		if [ -f "${config_file}" ]; then
+			error_msg "$(eval_gettext "The '\${config_file}' configuration file already exists\nPlease, remove it before generating a new one")"
+			exit 8
+		else
+			mkdir -p "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/"
+			cp "${example_config_file}" "${config_file}" || exit 8
+			info_msg "$(eval_gettext "The '\${config_file}' configuration file has been generated")"
+		fi
 	;;
 	-h|--help)
 		help
