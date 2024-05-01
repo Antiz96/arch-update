@@ -1,6 +1,6 @@
 # Arch-Update example configuration file (available at <https://github.com/Antiz96/arch-update/blob/main/res/config/arch-update.config.example>).
 # Documentation for the configuration file is available in the arch-update.conf(5) man page and at <https://github.com/Antiz96/arch-update?tab=readme-ov-file#arch-update-configuration-file>.
-# List of available options (with their default value) below, uncomment one to enable it.
+# List of available options (with their default value) below, un-comment one to enable it.
 
 #NoColor
 #NoVersion
