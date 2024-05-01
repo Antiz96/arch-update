@@ -214,7 +214,7 @@ Les options prises en charge sont :
 Les options sont sensibles à la casse, les majuscules doivent donc être respectées.
 ```
 
-Pour plus d'informations, consultez la page de manuel arch-update(5).
+Pour plus d'informations, consultez la page de manuel arch-update.conf(5).
 
 ## Trucs et astuces
 

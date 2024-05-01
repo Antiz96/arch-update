@@ -211,7 +211,7 @@ The supported options are:
 Options are case sensitive, so capital letters have to be respected.
 ```
 
-For more information, see the arch-update(5) man page.
+For more information, see the arch-update.conf(5) man page.
 
 ## Tips and tricks
 
