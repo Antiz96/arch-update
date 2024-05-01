@@ -50,9 +50,10 @@ install:
 	rm -f "doc/man/fr/${pkgname}.1.gz"
 	rm -f "doc/man/fr/${pkgname}.conf.5.gz"
 
-	# Install documentation
+	# Install documentation and examples
 	install -Dm 644 README.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/README.md"
-	install -Dm 644 README-fr.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/fr/README-fr.md"
+	install -Dm 644 README-fr.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/fr/README.md"
+	install -Dm 644 "res/config/${pkgname}.conf.example" "${DESTDIR}${PREFIX}/share/doc/${pkgname}/${pkgname}.conf.example"
 
 uninstall:
 	# Delete the main script
@@ -82,7 +83,7 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1.gz"
 	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5.gz"
 	
-	# Delete documentation
+	# Delete documentation and examples
 	rm -rf "${DESTDIR}${PREFIX}/share/doc/${pkgname}/"
 
 test:

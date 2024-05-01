@@ -176,6 +176,7 @@ Options :
 -d, --devel       Inclure les mises à jour des paquets de développement AUR
 -n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
 -D, --debug       Afficher les traces de débogage
+--gen-config      Générer un fichier de configuration par défaut/exemple (voir la page de manuel arch-update.conf(5) pour plus de détails)
 -h, --help        Afficher ce message d'aide et quitter
 -V, --version     Afficher les informations de version et quitter
 
@@ -188,6 +189,7 @@ Codes de sortie :
 5  Erreur lors de la mise à jour des paquets
 6  Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
 7  Aucune mise à jour en attente durant l'utilisation de l'option `-l/--list`
+8  Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
@@ -201,6 +203,7 @@ d'activer/désactiver ou modifier certaines options dans le script.
 
 Ce fichier de configuration doit se trouver dans "${XDG_CONFIG_HOME}/arch-update/arch-update.conf"
 ou "${HOME}/.config/arch-update/arch-update.conf".
+Un fichier de configuration par défaut/exemple peut être généré en exécutant : `arch-update --gen-config`
 
 Les options prises en charge sont :
 
@@ -214,7 +217,7 @@ Les options prises en charge sont :
 Les options sont sensibles à la casse, les majuscules doivent donc être respectées.
 ```
 
-Pour plus d'informations, consultez la page de manuel arch-update(5).
+Pour plus d'informations, consultez la page de manuel arch-update.conf(5).
 
 ## Trucs et astuces
 

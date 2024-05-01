@@ -7,6 +7,7 @@ opts=(
     {-d,--devel}'[Include AUR development packages updates]'
     {-n,--news}'[Display latest Arch news]'
     {-D,--debug}'[Display debug traces]'
+    {--gen-config}'[Generate a default/example configuration file]'
     {-h,--help}'[Display the help message]'
     {-V,--version}'[Display version information]'
 )
