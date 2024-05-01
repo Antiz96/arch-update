@@ -186,6 +186,7 @@ Exit Codes:
 5  Error when updating the packages
 6  Error when calling the reboot command to apply a pending kernel update
 7  No pending update when using the `-l/--list` option
+8  Error when generating a configuration file with the `--gen-config` option
 ```
 
 For more information, see the arch-update(1) man page.  

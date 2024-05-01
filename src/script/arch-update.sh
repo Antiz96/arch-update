@@ -689,9 +689,10 @@ case "${option}" in
 
 		if [ -f "${config_file}" ]; then
 			error_msg "$(eval_gettext "The '${config_file}' configuration file already exists\nPlease, remove it before generating a new one")"
+			exit 8
 		else
 			mkdir -p "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/"
-			cp "${example_config_file}" "${config_file}"
+			cp "${example_config_file}" "${config_file}" || exit 8
 			info_msg "$(eval_gettext "The '${config_file}' configuration file has been generated")"
 		fi
 	;;

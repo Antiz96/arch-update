@@ -189,6 +189,7 @@ Codes de sortie :
 5  Erreur lors de la mise à jour des paquets
 6  Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
 7  Aucune mise à jour en attente durant l'utilisation de l'option `-l/--list`
+8  Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
