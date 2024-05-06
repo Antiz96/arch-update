@@ -12,11 +12,11 @@ install:
 	install -Dm 755 "src/script/${pkgname}.sh" "${DESTDIR}${PREFIX}/bin/${pkgname}"
 
 	# Install icons
-	install -Dm 666 "src/icons/${pkgname}.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}.svg"
-	install -Dm 666 "src/icons/${pkgname}_checking.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}_checking.svg"
-	install -Dm 666 "src/icons/${pkgname}_installing.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}_installing.svg"
-	install -Dm 666 "src/icons/${pkgname}_up-to-date.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}_up-to-date.svg"
-	install -Dm 666 "src/icons/${pkgname}_updates-available.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}_updates-available.svg"
+	install -Dm 666 "src/icons/${pkgname}.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
+	install -Dm 666 "src/icons/${pkgname}_checking.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_checking.svg"
+	install -Dm 666 "src/icons/${pkgname}_installing.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_installing.svg"
+	install -Dm 666 "src/icons/${pkgname}_up-to-date.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_up-to-date.svg"
+	install -Dm 666 "src/icons/${pkgname}_updates-available.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available.svg"
 
 	# Install the .desktop file
 	install -Dm 644 "res/desktop/${pkgname}.desktop" "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"

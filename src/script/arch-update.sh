@@ -189,28 +189,24 @@ invalid_option() {
 	exit 1
 }
 
-# Definition of the icon directory
-icon_dir="/usr/share/icons/${name}"
-[ -d "/usr/local/share/icons/${name}" ] && icon_dir="/usr/local/share/icons/${name}"
-
 # Definition of the icon_checking function: Change icon to "checking"
 icon_checking() {
-	cp -f "${icon_dir}/${name}_checking.svg" "${icon_dir}/${name}.svg" || exit 3
+	sed -i 's/Icon=arch-update\w*$/Icon=arch-update_checking/p' /usr/share/applications/arch-update.desktop
 }
 
 # Definition of the icon_updates_available function: Change icon to "updates-available"
 icon_updates_available() {
-	cp -f "${icon_dir}/${name}_updates-available.svg" "${icon_dir}/${name}.svg" || exit 3
+	sed -i 's/Icon=arch-update\w*$/Icon=arch-update_available/p' /usr/share/applications/arch-update.desktop
 }
 
 # Definition of the icon_installing function: Change icon to "installing"
 icon_installing() {
-	cp -f "${icon_dir}/${name}_installing.svg" "${icon_dir}/${name}.svg" || exit 3
+	sed -i 's/Icon=arch-update\w*$/Icon=arch-update_installing/p' /usr/share/applications/arch-update.desktop
 }
 
 # Definition of the icon_up_to_date function: Change icon to "up to date"
 icon_up_to_date() {
-	cp -f "${icon_dir}/${name}_up-to-date.svg" "${icon_dir}/${name}.svg" || exit 3
+	sed -i 's/Icon=arch-update\w*$/Icon=arch-update_up-to-date/p' /usr/share/applications/arch-update.desktop
 }
 
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
@@ -241,16 +237,16 @@ check() {
 				last_notif_id=$(cat "${tmpdir}/last_notif_id" 2> /dev/null)
 				if [ "${update_number}" -eq 1 ]; then
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					fi
 
 				else
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					fi
 				fi
 			fi
