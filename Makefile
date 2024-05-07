@@ -10,6 +10,7 @@ all:
 install:
 	# Install the main script
 	install -Dm 755 "src/script/${pkgname}.sh" "${DESTDIR}${PREFIX}/bin/${pkgname}"
+	install -Dm 755 "src/script/${pkgname}-tray.py" "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
 
 	# Install icons
 	install -Dm 666 "src/icons/${pkgname}.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}.svg"
@@ -58,6 +59,7 @@ install:
 uninstall:
 	# Delete the main script
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}"
+	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
 
 	# Delete icons
 	rm -rf "${DESTDIR}${PREFIX}/share/icons/${pkgname}/"
