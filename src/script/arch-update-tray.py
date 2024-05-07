@@ -35,11 +35,14 @@ except Exception:
 log = logging.getLogger(__name__)
 
 # Find Statefile
-STATE_FILE = "/var/lib/arch-update/state"
-if 'ARCH_UPDATE_STATE' in os.environ:
-    STATE_FILE = os.environ['ARCH_UPDATE_STATE']
+if 'XDG_STATE_HOME' in os.environ:
+    STATE_FILE = os.path.join(
+        os.environ['XDG_STATE_HOME'], 'arch-update', 'state')
+elif 'HOME' in os.environ:
+    STATE_FILE = os.path.join(
+        os.environ['HOME'], '.local', 'state', 'arch-update', 'state')
 if not os.path.isfile(STATE_FILE):
-    log.error("Statefile does not exist")
+    log.error("Statefile does not exist: %s" % (STATE_FILE))
     sys.exit(1)
 
 # Find translations
