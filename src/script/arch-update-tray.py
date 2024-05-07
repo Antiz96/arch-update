@@ -26,6 +26,8 @@ if not os.path.isfile(STATE_FILE):
 def arch_update():
     """ Launch with terminal """
     update = "/usr/share/applications/arch-update.desktop"
+    if not os.path.isfile(update):
+        update = "/usr/local/share/applications/arch-update.desktop"
     subprocess.run(["gio", "launch", update], check=False)
 
 
