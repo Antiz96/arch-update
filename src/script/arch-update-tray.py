@@ -15,7 +15,7 @@ try:
     import gi
     gi.require_version('AppIndicator3', '0.1')
     gi.require_version("Gtk", "3.0")
-    from gi.repository import Gtk, Gio, GLib
+    from gi.repository import Gtk, Gio
     from gi.repository import AppIndicator3 as ai
     available_tk_list.append("gtk3")
 except Exception:
@@ -42,7 +42,7 @@ elif 'HOME' in os.environ:
     STATE_FILE = os.path.join(
         os.environ['HOME'], '.local', 'state', 'arch-update', 'current_state')
 if not os.path.isfile(STATE_FILE):
-    log.error("Statefile does not exist: %s" % (STATE_FILE))
+    log.error("Statefile does not exist: %s", STATE_FILE)
     sys.exit(1)
 
 # Find translations
@@ -73,28 +73,28 @@ if 'ARCH_UPDATE_TK' in os.environ:
         case 'qt6':
             TOOLKIT_PREFERENCE = 'qt6'
         case _:
-            log.error("Unknown toolkit preference: %s" %
-                      (os.environ['ARCH_UPDATE_TK']))
+            log.error("Unknown toolkit preference: %s",
+                      os.environ['ARCH_UPDATE_TK'])
 
 
 def arch_update():
     # Find a way to launch with terminal
     update = "/usr/share/applications/arch-update.desktop"
     if shutil.which("kioclient"):
-        subprocess.run(["kioclient", "exec", update])
+        subprocess.run(["kioclient", "exec", update], check=False)
     elif shutil.which("gio"):
-        subprocess.run(["gio", "launch", update])
+        subprocess.run(["gio", "launch", update], check=False)
     elif shutil.which("exo-open"):
-        subprocess.run(["exo-open", update])
+        subprocess.run(["exo-open", update], check=False)
     else:
         log.error("Unable to start updater")
         sys.exit(1)
 
 
 class ArchUpdateGtk3:
-    def file_changed(self, a=None, b=None, c=None, d=None):
+    def file_changed(self, _a=None, _b=None, _c=None, _d=None):
         try:
-            with open(self.statefile, 'r') as f:
+            with open(self.statefile, encoding="utf-8") as f:
                 contents = f.readline().strip()
         except FileNotFoundError:
             log.error("Statefile Missing")
@@ -102,7 +102,7 @@ class ArchUpdateGtk3:
         if contents.startswith("arch-update"):
             self.ind.set_icon(contents)
 
-    def update(self, button=None):
+    def update(self, _button=None):
         arch_update()
 
     def __init__(self, statefile):
@@ -136,7 +136,7 @@ class ArchUpdateQt6:
         if self.watcher and not self.statefile in self.watcher.files():
             self.watcher.addPath(self.statefile)
         try:
-            with open(self.statefile, 'r') as f:
+            with open(self.statefile, encoding="utf-8") as f:
                 contents = f.readline().strip()
         except FileNotFoundError:
             log.error("Statefile Missing")
@@ -173,11 +173,11 @@ class ArchUpdateQt6:
 def start(toolkit):
     match toolkit:
         case 'qt6':
-            archupdate = ArchUpdateQt6(STATE_FILE)
+            ArchUpdateQt6(STATE_FILE)
         case 'gtk3':
-            archupdate = ArchUpdateGtk3(STATE_FILE)
+            ArchUpdateGtk3(STATE_FILE)
         case _:
-            log.error("Unknown toolkit selected: %s" % toolkit)
+            log.error("Unknown toolkit selected: %s", toolkit)
 
 
 if __name__ == "__main__":
