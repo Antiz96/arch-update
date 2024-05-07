@@ -189,33 +189,18 @@ invalid_option() {
 	exit 1
 }
 
-# Definition of the icon directory
-icon_dir="/usr/share/icons/hicolor/scalable/apps"
-
-# Definition of the state_checking function: Change state to "checking"
-state_checking() {
-	echo "${name}_checking" > "${statedir}/current_state"
-}
-
 # Definition of the state_updates_available function: Change state to "updates-available"
 state_updates_available() {
 	echo "${name}_updates-available" > "${statedir}/current_state"
 }
 
-# Definition of the state_installing function: Change state to "installing"
-state_installing() {
-	echo "${name}_installing" > "${statedir}/current_state"
-}
-
 # Definition of the state_up_to_date function: Change state to "up to date"
 state_up_to_date() {
-	echo "${name}_up-to-date" > "${statedir}/current_state"
+	echo "${name}" > "${statedir}/current_state"
 }
 
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
 check() {
-	state_checking
-
 	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
 		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
@@ -240,16 +225,16 @@ check() {
 				last_notif_id=$(cat "${tmpdir}/last_notif_id" 2> /dev/null)
 				if [ "${update_number}" -eq 1 ]; then
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					fi
 
 				else
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					fi
 				fi
 			fi
@@ -265,7 +250,6 @@ check() {
 
 # Definition of the list_packages function: Display packages that are available for update and offer to apply them if there are
 list_packages() {
-	state_checking
 	info_msg "$(eval_gettext "Looking for updates...\n")"
 
 	if [ -z "${no_version}" ]; then
@@ -392,8 +376,6 @@ list_news() {
 
 # Definition of the update function: Update packages
 update() {
-	state_installing
-
 	if [ -n "${packages}" ]; then
 		echo
 		main_msg "$(eval_gettext "Updating Packages...\n")"
