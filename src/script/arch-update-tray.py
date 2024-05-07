@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Arch-Update System Tray."""
 import gettext
 import logging
 import os
@@ -78,7 +79,7 @@ if 'ARCH_UPDATE_TK' in os.environ:
 
 
 def arch_update():
-    # Find a way to launch with terminal
+    """ Find a way to launch with terminal """
     update = "/usr/share/applications/arch-update.desktop"
     if shutil.which("kioclient"):
         subprocess.run(["kioclient", "exec", update], check=False)
@@ -92,7 +93,10 @@ def arch_update():
 
 
 class ArchUpdateGtk3:
+    """ System Tray using GTK3 library """
+
     def file_changed(self, _a=None, _b=None, _c=None, _d=None):
+        """ Called when statefile contents change """
         try:
             with open(self.statefile, encoding="utf-8") as f:
                 contents = f.readline().strip()
@@ -103,9 +107,11 @@ class ArchUpdateGtk3:
             self.ind.set_icon(contents)
 
     def update(self, _button=None):
+        """ Start arch-update """
         arch_update()
 
     def __init__(self, statefile):
+        """ Start Gtk3 System Tray """
         self.statefile = statefile
 
         self.ind = ai.Indicator.new(
@@ -130,7 +136,10 @@ class ArchUpdateGtk3:
 
 
 class ArchUpdateQt6:
+    """ System Tray using QT6 library """
+
     def file_changed(self):
+        """ Called when statefile contents change """
 
         contents = ""
         if self.watcher and not self.statefile in self.watcher.files():
@@ -146,9 +155,11 @@ class ArchUpdateQt6:
             self.tray.setIcon(icon)
 
     def update(self):
+        """ Start arch-update """
         arch_update()
 
     def __init__(self, statefile):
+        """ Start Qt6 System Tray """
 
         self.statefile = statefile
         self.watcher = None
@@ -171,6 +182,7 @@ class ArchUpdateQt6:
 
 
 def start(toolkit):
+    """ Start one of the System trays """
     match toolkit:
         case 'qt6':
             ArchUpdateQt6(STATE_FILE)
