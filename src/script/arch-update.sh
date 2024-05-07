@@ -190,8 +190,7 @@ invalid_option() {
 }
 
 # Definition of the icon directory
-icon_dir="/usr/share/icons/${name}"
-[ -d "/usr/local/share/icons/${name}" ] && icon_dir="/usr/local/share/icons/${name}"
+icon_dir="/usr/share/icons/hicolor/scalable/apps"
 
 # Definition of the icon_checking function: Change icon to "checking"
 icon_checking() {
@@ -226,7 +225,7 @@ check() {
 	else
 		update_available=$(checkupdates)
 	fi
-	
+
 	if [ -n "${notif}" ]; then
 		echo "${update_available}" > "${statedir}/current_updates_check"
 		sed -i '/^\s*$/d' "${statedir}/current_updates_check"
@@ -268,7 +267,7 @@ check() {
 list_packages() {
 	icon_checking
 	info_msg "$(eval_gettext "Looking for updates...\n")"
-	
+
 	if [ -z "${no_version}" ]; then
 		packages=$(checkupdates "${contrib_color_opt[@]}")
 	else
@@ -313,7 +312,7 @@ list_packages() {
 		icon_updates_available
 		if [ -z "${list_option}" ]; then
 			ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
-	
+
 			case "${answer}" in
 				"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 					proceed_with_update="y"
@@ -331,11 +330,11 @@ list_packages() {
 list_news() {
 	if [ -z "${show_news}" ]; then
 		curl -Ls https://www.archlinux.org/news | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -1 > "${statedir}/current_news_check"
-		
+
 		if ! diff "${statedir}/current_news_check" "${statedir}/last_news_check" &> /dev/null; then
 			show_news="y"
 		fi
-		
+
 		if [ -f "${statedir}/current_news_check" ]; then
 			mv -f "${statedir}/current_news_check" "${statedir}/last_news_check"
 		fi
@@ -406,7 +405,7 @@ update() {
 			exit 5
 		fi
 	fi
-					
+
 	if [ -n "${aur_packages}" ]; then
 		echo
 		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
@@ -457,7 +456,7 @@ orphan_packages() {
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
 				main_msg "$(eval_gettext "Removing Orphan Packages...\n")"
-				
+
 				if ! pacman -Qtdq | "${su_cmd}" pacman --color "${pacman_color_opt}" -Rns -; then
 					echo
 					error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
@@ -527,7 +526,7 @@ packages_cache() {
 			main_msg "$(eval_gettext "Cached Packages:\nThere are old and/or uninstalled cached packages\n")"
 			ask_msg "$(eval_gettext "Would you like to remove them from the cache now? [Y/n]")"
 		fi
-			
+
 		case "${answer}" in
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 				if [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -eq 0 ]; then
@@ -584,7 +583,7 @@ packages_cache() {
 # Definition of the pacnew_files function: Display pacnew files and offer to process them if there are
 pacnew_files() {
 	pacnew_files=$(pacdiff -o)
-		
+
 	if [ -n "${pacnew_files}" ]; then
 		main_msg "$(eval_gettext "Pacnew Files:")"
 		echo -e "${pacnew_files}\n"

@@ -41,7 +41,7 @@ Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-up
 Installer les dépendances :
 
 ```bash
-sudo pacman -S --needed pacman-contrib curl htmlq diffutils
+sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme
 ```
 
 Téléchargez l'archive de la [dernière version stable](https://github.com/Antiz96/arch-update/releases/latest) et extrayez-la *(vous pouvez également cloner ce référentiel via `git`)*.
