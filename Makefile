@@ -31,6 +31,9 @@ install:
 	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
 	rm -f po/fr.mo
 
+	# Generate state
+	install -Dm 666 "res/state" "${DESTDIR}/var/lib/arch-update/state"
+
 	# Install shell completions
 	install -Dm 644 "res/completions/${pkgname}.bash" "${DESTDIR}${PREFIX}/share/bash-completion/completions/${pkgname}"
 	install -Dm 644 "res/completions/${pkgname}.zsh" "${DESTDIR}${PREFIX}/share/zsh/site-functions/_${pkgname}"
