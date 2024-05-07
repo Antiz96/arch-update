@@ -170,6 +170,7 @@ $(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
 $(eval_gettext "  -D, --debug       Display debug traces")
 $(eval_gettext "  --gen-config      Generate a default/example configuration file")
+$(eval_gettext "  --tray            Launch the Arch-Update systray applet")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")
 
@@ -695,6 +696,9 @@ case "${option}" in
 			cp "${example_config_file}" "${config_file}" || exit 8
 			info_msg "$(eval_gettext "The '\${config_file}' configuration file has been generated")"
 		fi
+	;;
+	--tray)
+		arch-update-tray || exit 3
 	;;
 	-h|--help)
 		help

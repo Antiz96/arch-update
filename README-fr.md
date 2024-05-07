@@ -177,6 +177,7 @@ Options :
 -n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
 -D, --debug       Afficher les traces de débogage
 --gen-config      Générer un fichier de configuration par défaut/exemple (voir la page de manuel arch-update.conf(5) pour plus de détails)
+--tray            Lancer l'applet systray d'Arch-Update
 -h, --help        Afficher ce message d'aide et quitter
 -V, --version     Afficher les informations de version et quitter
 
@@ -184,7 +185,7 @@ Codes de sortie :
 0  OK
 1  Option invalide
 2  Aucune méthode d'élévation de privilège (sudo ou doas) n'est installée
-3  Erreur lors du changement d'icône
+3  Erreur lors du lancement de l'applet systray d'Arch-Update
 4  L'utilisateur n'a pas donné la confirmation de procéder
 5  Erreur lors de la mise à jour des paquets
 6  Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente

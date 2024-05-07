@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "Mars 2024" "Arch-Update 1.15.0" "Manuel de Arch-Update"
+.TH "ARCH-UPDATE" "1" "Mai 2024" "Arch-Update 1.15.0" "Manuel de Arch-Update"
 
 .SH NAME
 arch-update \- Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant/après mise à jour.
@@ -44,7 +44,7 @@ Afficher la liste des mises à jour en attente.
 
 .TP
 .B \-d, \-\-devel
-Inclure les mises à jour des paquets de développement AUR
+Inclure les mises à jour des paquets de développement AUR.
 
 .TP
 .B \-n, \-\-news
@@ -54,11 +54,15 @@ Afficher les dernières Arch news.
 
 .TP
 .B \-D, \-\-debug
-Afficher les traces de débogage
+Afficher les traces de débogage.
 
 .TP
 .B \-\-gen\-config
 .RB "Générer un fichier de configuration par défaut/exemple (voir la page de manuel " "arch-update.conf(5) " "pour plus de détails)."
+
+.TP
+.B \-\-tray
+Lancer l'applet systray d'Arch-Update.
 
 .TP
 .B \-v, \-\-version
@@ -138,7 +142,7 @@ Aucune méthode d'élévation de privilège (sudo ou doas) n'est installée
 
 .TP
 .B 3
-Erreur lors du changement d'icône
+Erreur lors du lancement de l'applet systray d'Arch-update
 
 .TP
 .B 4

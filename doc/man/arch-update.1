@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "March 2024" "Arch-Update 1.15.0" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "May 2024" "Arch-Update 1.15.0" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
@@ -44,7 +44,7 @@ Display the list of pending updates.
 
 .TP
 .B \-d, \-\-devel
-Include AUR development packages updates
+Include AUR development packages updates.
 
 .TP
 .B \-n, \-\-news
@@ -54,11 +54,15 @@ Display latest Arch news.
 
 .TP
 .B \-D, \-\-debug
-Display debug traces
+Display debug traces.
 
 .TP
 .B \-\-gen\-config
 .RB "Generate a default/example configuration file (see the " "arch-update.conf(5) " "man page for more details)."
+
+.TP
+.B \-\-tray
+Launch the Arch-Update systray applet.
 
 .TP
 .B \-v, \-\-version
@@ -138,7 +142,7 @@ No privilege elevation method (sudo or doas) is installed
 
 .TP
 .B 3
-Error when changing icon
+Error when launching the Arch-Update systray applet
 
 .TP
 .B 4

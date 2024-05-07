@@ -174,6 +174,7 @@ Options:
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
 -D, --debug       Display debug traces
 --gen-config      Generate a default/example configuration file (see the arch-update.conf(5) man page for more details)
+--tray            Launch the Arch-Update systray applet
 -h, --help        Display this help message and exit
 -V, --version     Display version information and exit
 
@@ -181,7 +182,7 @@ Exit Codes:
 0  OK
 1  Invalid option
 2  No privilege elevation method (sudo or doas) is installed
-3  Error when changing icon
+3  Error when launching the Arch-Update systray applet
 4  User didn't gave the confirmation to proceed
 5  Error when updating the packages
 6  Error when calling the reboot command to apply a pending kernel update

@@ -7,6 +7,7 @@ _arch-update() {
 	       -n --news
 	       -D --debug
 	       --gen-config
+	       --tray
 	       -h --help
 	       -V --version')
 
