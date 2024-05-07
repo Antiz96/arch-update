@@ -190,34 +190,18 @@ invalid_option() {
 	exit 1
 }
 
-# Definition of the icon directory
-icon_dir="/usr/share/icons/${name}"
-[ -d "/usr/local/share/icons/${name}" ] && icon_dir="/usr/local/share/icons/${name}"
-
-# Definition of the icon_checking function: Change icon to "checking"
-icon_checking() {
-	cp -f "${icon_dir}/${name}_checking.svg" "${icon_dir}/${name}.svg" || exit 3
+# Definition of the state_updates_available function: Change state to "updates-available"
+state_updates_available() {
+	echo "${name}_updates-available" > "${statedir}/current_state"
 }
 
-# Definition of the icon_updates_available function: Change icon to "updates-available"
-icon_updates_available() {
-	cp -f "${icon_dir}/${name}_updates-available.svg" "${icon_dir}/${name}.svg" || exit 3
-}
-
-# Definition of the icon_installing function: Change icon to "installing"
-icon_installing() {
-	cp -f "${icon_dir}/${name}_installing.svg" "${icon_dir}/${name}.svg" || exit 3
-}
-
-# Definition of the icon_up_to_date function: Change icon to "up to date"
-icon_up_to_date() {
-	cp -f "${icon_dir}/${name}_up-to-date.svg" "${icon_dir}/${name}.svg" || exit 3
+# Definition of the state_up_to_date function: Change state to "up to date"
+state_up_to_date() {
+	echo "${name}" > "${statedir}/current_state"
 }
 
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
 check() {
-	icon_checking
-
 	if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
 		update_available=$(checkupdates ; "${aur_helper}" -Qua ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 	elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
@@ -227,14 +211,14 @@ check() {
 	else
 		update_available=$(checkupdates)
 	fi
-	
+
 	if [ -n "${notif}" ]; then
 		echo "${update_available}" > "${statedir}/current_updates_check"
 		sed -i '/^\s*$/d' "${statedir}/current_updates_check"
 	fi
 
 	if [ -n "${update_available}" ]; then
-		icon_updates_available
+		state_updates_available
 
 		if [ -n "${notif}" ]; then
 			if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
@@ -242,22 +226,22 @@ check() {
 				last_notif_id=$(cat "${tmpdir}/last_notif_id" 2> /dev/null)
 				if [ "${update_number}" -eq 1 ]; then
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					fi
 
 				else
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${icon_dir}/${name}_updates-available.svg" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					fi
 				fi
 			fi
 		fi
 	else
-		icon_up_to_date
+		state_up_to_date
 	fi
 
 	if [ -f "${statedir}/current_updates_check" ]; then
@@ -267,9 +251,8 @@ check() {
 
 # Definition of the list_packages function: Display packages that are available for update and offer to apply them if there are
 list_packages() {
-	icon_checking
 	info_msg "$(eval_gettext "Looking for updates...\n")"
-	
+
 	if [ -z "${no_version}" ]; then
 		packages=$(checkupdates "${contrib_color_opt[@]}")
 	else
@@ -304,17 +287,17 @@ list_packages() {
 	fi
 
 	if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
-		icon_up_to_date
+		state_up_to_date
 		if [ -z "${list_option}" ]; then
 			info_msg "$(eval_gettext "No update available\n")"
 		else
 			exit 7
 		fi
 	else
-		icon_updates_available
+		state_updates_available
 		if [ -z "${list_option}" ]; then
 			ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
-	
+
 			case "${answer}" in
 				"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 					proceed_with_update="y"
@@ -332,11 +315,11 @@ list_packages() {
 list_news() {
 	if [ -z "${show_news}" ]; then
 		curl -Ls https://www.archlinux.org/news | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -1 > "${statedir}/current_news_check"
-		
+
 		if ! diff "${statedir}/current_news_check" "${statedir}/last_news_check" &> /dev/null; then
 			show_news="y"
 		fi
-		
+
 		if [ -f "${statedir}/current_news_check" ]; then
 			mv -f "${statedir}/current_news_check" "${statedir}/last_news_check"
 		fi
@@ -394,26 +377,24 @@ list_news() {
 
 # Definition of the update function: Update packages
 update() {
-	icon_installing
-
 	if [ -n "${packages}" ]; then
 		echo
 		main_msg "$(eval_gettext "Updating Packages...\n")"
 
 		if ! "${su_cmd}" pacman --color "${pacman_color_opt}" -Syu; then
-			icon_updates_available
+			state_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 			exit 5
 		fi
 	fi
-					
+
 	if [ -n "${aur_packages}" ]; then
 		echo
 		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
 		if ! "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Syu; then
-			icon_updates_available
+			state_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 			exit 5
@@ -425,13 +406,13 @@ update() {
 		main_msg "$(eval_gettext "Updating Flatpak Packages...\n")"
 
 		if ! flatpak update; then
-			icon_updates_available
+			state_updates_available
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 			exit 5
 		fi
 	fi
 
-	icon_up_to_date
+	state_up_to_date
 	echo
 	info_msg "$(eval_gettext "The update has been applied\n")"
 }
@@ -458,7 +439,7 @@ orphan_packages() {
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
 				main_msg "$(eval_gettext "Removing Orphan Packages...\n")"
-				
+
 				if ! pacman -Qtdq | "${su_cmd}" pacman --color "${pacman_color_opt}" -Rns -; then
 					echo
 					error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
@@ -528,7 +509,7 @@ packages_cache() {
 			main_msg "$(eval_gettext "Cached Packages:\nThere are old and/or uninstalled cached packages\n")"
 			ask_msg "$(eval_gettext "Would you like to remove them from the cache now? [Y/n]")"
 		fi
-			
+
 		case "${answer}" in
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 				if [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -eq 0 ]; then
@@ -585,7 +566,7 @@ packages_cache() {
 # Definition of the pacnew_files function: Display pacnew files and offer to process them if there are
 pacnew_files() {
 	pacnew_files=$(pacdiff -o)
-		
+
 	if [ -n "${pacnew_files}" ]; then
 		main_msg "$(eval_gettext "Pacnew Files:")"
 		echo -e "${pacnew_files}\n"

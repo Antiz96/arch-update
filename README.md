@@ -41,7 +41,7 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 Install dependencies:
 
 ```bash
-sudo pacman -S --needed pacman-contrib curl htmlq diffutils
+sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme
 ```
 
 Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git`)*.

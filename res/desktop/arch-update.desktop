@@ -2,5 +2,5 @@
 Type=Application
 Terminal=true
 Name=Arch-Update
-Icon=/usr/share/icons/arch-update/arch-update.svg
+Icon=arch-update
 Exec=arch-update

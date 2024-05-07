@@ -13,11 +13,8 @@ install:
 	install -Dm 755 "src/script/${pkgname}-tray.py" "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
 
 	# Install icons
-	install -Dm 666 "src/icons/${pkgname}.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}.svg"
-	install -Dm 666 "src/icons/${pkgname}_checking.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}_checking.svg"
-	install -Dm 666 "src/icons/${pkgname}_installing.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}_installing.svg"
-	install -Dm 666 "src/icons/${pkgname}_up-to-date.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}_up-to-date.svg"
-	install -Dm 666 "src/icons/${pkgname}_updates-available.svg" "${DESTDIR}${PREFIX}/share/icons/${pkgname}/${pkgname}_updates-available.svg"
+	install -Dm 664 "src/icons/${pkgname}.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
+	install -Dm 664 "src/icons/${pkgname}_updates-available.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available.svg"
 
 	# Install the .desktop file
 	install -Dm 644 "res/desktop/${pkgname}.desktop" "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
@@ -26,7 +23,7 @@ install:
 	install -Dm 644 "res/systemd/${pkgname}.service" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
 	install -Dm 644 "res/systemd/${pkgname}.timer" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
 	install -Dm 644 "res/systemd/${pkgname}-tray.service" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}-tray.service"
-	
+  
 	# Generate and install .mo files for translations
 	# .mo files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
 	msgfmt po/fr.po -o po/fr.mo
@@ -63,7 +60,8 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
 
 	# Delete icons
-	rm -rf "${DESTDIR}${PREFIX}/share/icons/${pkgname}/"
+	rm -rf "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
+	rm -rf "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available.svg"
 
 	# Delete the .desktop file
 	rm -f "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
@@ -85,7 +83,7 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5.gz"
 	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1.gz"
 	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5.gz"
-	
+
 	# Delete documentation and examples
 	rm -rf "${DESTDIR}${PREFIX}/share/doc/${pkgname}/"
 
