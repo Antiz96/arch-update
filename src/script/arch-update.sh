@@ -195,22 +195,22 @@ icon_dir="/usr/share/icons/${name}"
 
 # Definition of the state_checking function: Change state to "checking"
 state_checking() {
-	echo "${name}_checking" > "${state_dir}/current_state"
+	echo "${name}_checking" > "${statedir}/current_state"
 }
 
 # Definition of the state_update_available function: Change state to "updates-available"
 state_update_available() {
-	echo "${name}_updates-available" > "${state_dir}/current_state"
+	echo "${name}_updates-available" > "${statedir}/current_state"
 }
 
 # Definition of the state_installing function: Change state to "installing"
 state_installing() {
-	echo "${name}_installing" > "${state_dir}/current_state"
+	echo "${name}_installing" > "${statedir}/current_state"
 }
 
 # Definition of the state_up_to_date function: Change state to "up to date"
 state_up_to_date() {
-	echo "${name}_up-to-date" > "${state_dir}/current_state"
+	echo "${name}_up-to-date" > "${statedir}/current_state"
 }
 
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
