@@ -22,3 +22,6 @@ jobs:
 
       - name: Run shellcheck
         run: find . -name '*.sh' -exec shellcheck --color=always {} +
+
+      - name: Run pylint
+        run: find . -name '*.py' -exec pylint --output-format=colorized {} +
