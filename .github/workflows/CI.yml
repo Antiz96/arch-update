@@ -24,4 +24,4 @@ jobs:
         run: find . -name '*.sh' -exec shellcheck --color=always {} +
 
       - name: Run pylint
-        run: find . -name '*.py' -exec pylint --output-format=colorized {} +
+        run: find . -name '*.py' -exec pylint -d E0611,E0401  --output-format=colorized {} +

@@ -99,7 +99,7 @@ class ArchUpdateGtk3:
         except FileNotFoundError:
             log.error("Statefile Missing")
             sys.exit(1)
-        if (contents.startswith("arch-update")):
+        if contents.startswith("arch-update"):
             self.ind.set_icon(contents)
 
     def update(self, button=None):
@@ -133,7 +133,7 @@ class ArchUpdateQt6:
     def file_changed(self):
 
         contents = ""
-        if self.watcher and not (self.statefile in self.watcher.files()):
+        if self.watcher and not self.statefile in self.watcher.files():
             self.watcher.addPath(self.statefile)
         try:
             with open(self.statefile, 'r') as f:
@@ -141,7 +141,7 @@ class ArchUpdateQt6:
         except FileNotFoundError:
             log.error("Statefile Missing")
             sys.exit(1)
-        if (contents.startswith("arch-update")):
+        if contents.startswith("arch-update"):
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
