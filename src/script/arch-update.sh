@@ -198,8 +198,8 @@ state_checking() {
 	echo "${name}_checking" > "${statedir}/current_state"
 }
 
-# Definition of the state_update_available function: Change state to "updates-available"
-state_update_available() {
+# Definition of the state_updates_available function: Change state to "updates-available"
+state_updates_available() {
 	echo "${name}_updates-available" > "${statedir}/current_state"
 }
 
@@ -233,7 +233,7 @@ check() {
 	fi
 
 	if [ -n "${update_available}" ]; then
-		state_update_available
+		state_updates_available
 
 		if [ -n "${notif}" ]; then
 			if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
@@ -310,7 +310,7 @@ list_packages() {
 			exit 7
 		fi
 	else
-		state_update_available
+		state_updates_available
 		if [ -z "${list_option}" ]; then
 			ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
 	
@@ -400,7 +400,7 @@ update() {
 		main_msg "$(eval_gettext "Updating Packages...\n")"
 
 		if ! "${su_cmd}" pacman --color "${pacman_color_opt}" -Syu; then
-			state_update_available
+			state_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 			exit 5
@@ -412,7 +412,7 @@ update() {
 		main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
 		if ! "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Syu; then
-			state_update_available
+			state_updates_available
 			echo
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 			exit 5
@@ -424,7 +424,7 @@ update() {
 		main_msg "$(eval_gettext "Updating Flatpak Packages...\n")"
 
 		if ! flatpak update; then
-			state_update_available
+			state_updates_available
 			error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 			exit 5
 		fi
