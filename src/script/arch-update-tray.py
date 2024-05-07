@@ -18,7 +18,7 @@ try:
     from gi.repository import Gtk, Gio
     from gi.repository import AppIndicator3 as ai
     available_tk_list.append("gtk3")
-except Exception:
+except ImportError:
     pass
 
 # Test for QT6 availability
@@ -28,7 +28,7 @@ try:
     from PyQt6.QtWidgets import QApplication, QSystemTrayIcon
     from PyQt6.QtCore import QFileSystemWatcher
     available_tk_list.append("qt6")
-except Exception:
+except ImportError:
     pass
 
 # Create logger
