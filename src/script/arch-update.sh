@@ -10,11 +10,6 @@ _name="Arch-Update"
 version="1.15.0"
 option="${1}"
 
-if [ -z "$ARCH_UPDATE_STATE"]
-then
-	ARCH_UPDATE_STATE="/var/lib/arch-update/state"
-fi
-
 # Display debug traces if the -D/--debug argument is passed
 for arg in "${@}"; do
 	case "${arg}" in
@@ -200,22 +195,22 @@ icon_dir="/usr/share/icons/${name}"
 
 # Definition of the icon_checking function: Change icon to "checking"
 icon_checking() {
-	echo "${name}_checking" > "${ARCH_UPDATE_STATE}"
+	echo "${name}_checking" > "${state_dir}/state"
 }
 
 # Definition of the icon_updates_available function: Change icon to "updates-available"
 icon_updates_available() {
-	echo "${name}_updates-available" > "${ARCH_UPDATE_STATE}"
+	echo "${name}_updates-available" > "${state_dir}/state"
 }
 
 # Definition of the icon_installing function: Change icon to "installing"
 icon_installing() {
-	echo "${name}_installing" > "${ARCH_UPDATE_STATE}"
+	echo "${name}_installing" > "${state_dir}/state"
 }
 
 # Definition of the icon_up_to_date function: Change icon to "up to date"
 icon_up_to_date() {
-	echo "${name}_up-to-date" > "${ARCH_UPDATE_STATE}"
+	echo "${name}_up-to-date" > "${state_dir}/state"
 }
 
 # Definition of the check function: Check for available updates, change the icon accordingly and send a desktop notification containing the number of available updates
