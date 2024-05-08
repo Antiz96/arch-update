@@ -679,6 +679,10 @@ case "${option}" in
 		fi
 	;;
 	--tray)
+		if [ ! -f "${statedir}/current_state" ]; then
+			echo "${name}" > "${statedir}/current_state"
+		fi
+
 		arch-update-tray || exit 3
 	;;
 	-h|--help)
