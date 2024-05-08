@@ -41,7 +41,7 @@ Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-up
 Installez les dépendances :
 
 ```bash
-sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 glib2
+sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
 ```
 
 Si vous utilisez wayland, vous avez également besoin du paquet `qt6-wayland` pour que l'applet systray fonctionne correctement:

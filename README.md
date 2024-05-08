@@ -41,7 +41,7 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 Install dependencies:
 
 ```bash
-sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 glib2
+sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
 ```
 
 When using wayland, you additionally need the `qt6-wayland` package for the systray applet to work properly:
