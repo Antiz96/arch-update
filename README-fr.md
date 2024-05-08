@@ -38,10 +38,16 @@ Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-up
 
 ### Depuis la source
 
-Installer les dépendances :
+Installez les dépendances :
 
 ```bash
-sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme
+sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 glib2
+```
+
+Si vous utilisez wayland, vous avez également besoin du paquet `qt6-wayland` pour que l'applet systray fonctionne correctement:
+
+```bash
+sudo pacman -S --needed qt6-wayland
 ```
 
 Téléchargez l'archive de la [dernière version stable](https://github.com/Antiz96/arch-update/releases/latest) et extrayez-la *(vous pouvez également cloner ce référentiel via `git`)*.
