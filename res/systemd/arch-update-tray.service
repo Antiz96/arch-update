@@ -3,8 +3,7 @@ Description=Launch the Arch-Update systray applet
 After=graphical-session.target
 
 [Service]
-ExecStart=arch-update-tray
-Restart=on-failure
+ExecStart=arch-update --tray
 
 [Install]
 WantedBy=graphical-session.target
