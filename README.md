@@ -50,7 +50,7 @@ Additional optional dependencies you might need or want:
 - [yay](https://aur.archlinux.org/packages/yay): AUR Packages support
 - [paru](https://aur.archlinux.org/packages/paru): AUR Packages support
 - [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/): Flatpak Packages support
-- [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/): Desktop notifications on new available updates (see <https://wiki.archlinux.org/title/Desktop_notifications>)
+- [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/): Desktop notifications support on new available updates (see <https://wiki.archlinux.org/title/Desktop_notifications>)
 - [vim](https://archlinux.org/packages/extra/x86_64/vim/): Default merge program for pacdiff
 - [qt6-svg](https://archlinux.org/packages/extra/x86_64/qt6-svg/): Systray applet support on Wayland
 
