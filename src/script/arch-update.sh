@@ -226,16 +226,16 @@ check() {
 				last_notif_id=$(cat "${tmpdir}/last_notif_id" 2> /dev/null)
 				if [ "${update_number}" -eq 1 ]; then
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					fi
 
 				else
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					fi
 				fi
 			fi
