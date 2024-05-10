@@ -108,8 +108,6 @@ With [the system timer](#the-systemd-timer) enabled, `Arch-Update` automatically
 
 If there are new available updates, the systray icon will show a red circle and a desktop notification indicating the number of available updates will be sent (requires [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") and a running notification server):
 
-![systray-icon_updates-available](https://github.com/Antiz96/arch-update/assets/53110319/0d06462d-0931-4f47-b075-ea7ea15efe67)
-
 ![notification](https://github.com/Antiz96/arch-update/assets/53110319/db94c308-526a-4b8f-8f2a-0624d0a83553)
 
 When the systray applet is clicked, it prints the list of packages available for updates inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages support).
