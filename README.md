@@ -74,7 +74,7 @@ The usage consist of starting [the systray applet](#the-systray-applet) and enab
 
 ### The systray applet
 
-To start the systray applet automatically at boot, add the `arch-update --tray` command to your auto-start commands/WM config or start/enable the assoaciated systemd service like so:
+To start the systray applet automatically at boot, add the `arch-update --tray` command to your auto-start commands/WM config or start/enable the associated systemd service like so:
 
 ```bash
 systemctl --user enable --now arch-update-tray.service`
