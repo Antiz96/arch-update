@@ -102,7 +102,7 @@ It is the first icon from the left in the screenshot below.
 
 With [the system timer](#the-systemd-timer) enabled, `Arch-Update` automatically checks for updates at boot and then once every hour. The check can be manually triggered by running the `arch-update --check` command.
 
-If there are new available updates, the systray icon will show a red circle and a desktop notification indicating the number of available updates will be sent (requires [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") and a running notification-server):
+If there are new available updates, the systray icon will show a red circle and a desktop notification indicating the number of available updates will be sent (requires [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") and a running notification server):
 
 ![icon-update-available](https://github.com/Antiz96/arch-update/assets/53110319/c1526ce7-5f94-41b8-a8fa-3587b9d00a9d)
 ![notification](https://github.com/Antiz96/arch-update/assets/53110319/631b8e67-487a-441a-84b4-6cce95223729)
@@ -203,7 +203,7 @@ See <https://www.flatpak.org/> and <https://archlinux.org/packages/extra/x86_64/
 
 ### Desktop notifications support  
 
-Arch-Update supports desktop notifications when performing the `--check` function if **libnotify** is installed (and a notification-server is running):  
+Arch-Update supports desktop notifications when performing the `--check` function if **libnotify** is installed (and a notification server is running):  
 See <https://wiki.archlinux.org/title/Desktop_notifications>
 
 ### Modify the auto-check cycle
