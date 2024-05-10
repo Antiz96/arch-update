@@ -52,7 +52,7 @@ Additional optional dependencies you might need or want:
 - [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/): Flatpak Packages support
 - [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/): Desktop notifications support on new available updates (see <https://wiki.archlinux.org/title/Desktop_notifications>)
 - [vim](https://archlinux.org/packages/extra/x86_64/vim/): Default merge program for pacdiff
-- [qt6-svg](https://archlinux.org/packages/extra/x86_64/qt6-svg/): Systray applet support on Wayland
+- [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/): Systray applet support on Wayland
 
 Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git clone`)*.
 
