@@ -38,7 +38,7 @@ Fonctionnalités :
 
 ### AUR
 
-Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package").
+Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package").  
 Consultez également [la liste des dépendances optionnelles](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=arch-update#n11) dont vous pourriez avoir besoin.
 
 ### Depuis la source
@@ -74,19 +74,19 @@ sudo make uninstall
 
 ## Utilisation
 
-L'utilisation consiste à démarrer [l'applet systray](#l-applet-systray) et à activer [le timer systemd](#le-timer-systemd).
+L'utilisation consiste à démarrer [l'applet systray](#lapplet-systray) et à activer [le timer systemd](#le-timer-systemd).
 
 ### L'applet systray
 
-Pour démarrer l'applet systray automatiquement au démarrage du système, ajoutez la command `arch-update --tray` a vos commandes 'auto-start'/configuration WM ou démarrez/activez le timer systemd associé comme ceci :
+Pour démarrer l'applet systray automatiquement au démarrage du système, ajoutez la command `arch-update --tray` a vos commandes 'auto-start'/configuration WM ou démarrez/activez le service systemd associé comme ceci :
 
 ```bash
 systemctl --user enable --now arch-update-tray.service
 ```
 
-L'îcone du systray changera automatiquement en fonction de l'état actual de votre système ('à jour' ou 'mises à jour disponibles'). Elle lancera la série de fonctions nécessaires pour effectuer une mise à jour complète et appropriée lorsqu'elle est cliquée.
+L'îcone du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Elle lance la série de fonctions nécessaires pour effectuer une mise à jour complète et appropriée lorsqu'elle est cliquée.
 
-Alternativement, si vous n'avez pas (ou ne voulez) le support du systray, il y a fichier `.desktop` classique (sous `/usr/share/applications/arch-update.desktop` ou `/usr/local/share/applications/arch-update.desktop` si vous avez installé `Arch-Update` [depuis la source](#depuis-la-source)). Notez que, à l'inverse de l'applet systray, l'îcone du fichier `.desktop` ne changera **pas** dynamiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles').
+Alternativement, si vous n'avez pas (ou ne voulez pas) le support du systray, il y a un fichier `.desktop` classique (sous `/usr/share/applications/arch-update.desktop` ou `/usr/local/share/applications/arch-update.desktop` si vous avez installé `Arch-Update` [depuis la source](#depuis-la-source)). Notez que, à l'inverse de l'applet systray, l'îcone du fichier `.desktop` ne changera **pas** dynamiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles').
 
 ### Le timer systemd
 
@@ -104,22 +104,22 @@ C'est l'icône à droite de celle du wifi dans la capture d'écran ci-dessous:
 
 ![systray-icon](https://github.com/Antiz96/arch-update/assets/53110319/fe032e68-3582-470a-9e6d-b51a9ea8c1ba)
 
-Avec [le systemd timer](#le-systemd-timer) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check`.
+Avec [le systemd timer](#le-timer-systemd) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check`.
 
-Si de nouvelles mises à jour sont disponibles, l'icône systray affichera un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée (nécessite [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") un serveur de notification en cours d'exécution) :
+Si de nouvelles mises à jour sont disponibles, l'icône systray affichera un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée (nécessite [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") et un serveur de notification en cours d'exécution) :
 
 ![notification-FR](https://github.com/Antiz96/arch-update/assets/53110319/28f0b95a-5b8a-43a5-bc3c-df42cd40d87b)
 
-Quand l'applet systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal and demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
+Quand l'applet systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal et demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
 
 ![listing_packages-FR](https://github.com/Antiz96/arch-update/assets/53110319/60547cde-f327-46f8-907c-61bf9bbee6c5)
 
-Par défaut, si au moins une news Arch Linux a été publiée depuis la dernière exécution, `Arch-Update` vous proposera de lire les dernières news Arch Linux directement de votre fenêtre de terminal.  
+Par défaut, si au moins une news Arch Linux a été publiée depuis la dernière exécution, `Arch-Update` vous proposera de lire les dernières news Arch Linux directement depuis votre fenêtre de terminal.  
 Les news publiées depuis la dernière exécution sont tagguées comme `[NOUVEAU]` :
 
 ![listing_news-FR](https://github.com/Antiz96/arch-update/assets/53110319/72819197-d4f7-4c50-af21-0aac1c60ba41)
 
-Quand la liste des news récentes est affichée, vous pouvez soit taper le nombre associé à une news pour la lire (vous serez invité à nouveau à lire d'autres nouvelles par la suite, ce qui vous permettra de lire plusieurs nouvelles en une seule exécution), ou simplement appuyez sur "entrée" pour procéder à la mise à jour.  
+Quand la liste des news récentes est affichée, vous pouvez soit taper le nombre associé à une news pour la lire (vous serez invité à nouveau à lire d'autres news par la suite, ce qui vous permettra de lire plusieurs news en une seule exécution), ou simplement appuyez sur "entrée" pour procéder à la mise à jour.  
 Si aucune news n'a été publiée depuis la dernière exécution, `Arch-Update` procédera directement à la mise à jour après que vous ayez donné votre confirmation.
 
 Dans les deux cas, à partir de là, vous avez simplement à laisser `Arch-Update` vous guider à travers les différentes étapes requises pour une mise à jour complète et appropriée de votre système ! :smile:
