@@ -96,25 +96,26 @@ systemctl --user enable --now arch-update.timer
 ### Screenshots
 
 Once started, the systray applet appears in the systray area of your panel.  
-It is the first icon from the left in the screenshot below.
+It is the icon at the right of the 'wifi' one in the screenshot below:
 
-![icon](https://github.com/Antiz96/arch-update/assets/53110319/25f3d2ca-b9d3-4a32-ace3-b0fa785662c2)
+![systray-icon](https://github.com/Antiz96/arch-update/assets/53110319/fe032e68-3582-470a-9e6d-b51a9ea8c1ba)
 
 With [the system timer](#the-systemd-timer) enabled, `Arch-Update` automatically checks for updates at boot and then once every hour. The check can be manually triggered by running the `arch-update --check` command.
 
 If there are new available updates, the systray icon will show a red circle and a desktop notification indicating the number of available updates will be sent (requires [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") and a running notification server):
 
-![icon-update-available](https://github.com/Antiz96/arch-update/assets/53110319/c1526ce7-5f94-41b8-a8fa-3587b9d00a9d)
-![notification](https://github.com/Antiz96/arch-update/assets/53110319/631b8e67-487a-441a-84b4-6cce95223729)
+![systray-icon_updates-available](https://github.com/Antiz96/arch-update/assets/53110319/0d06462d-0931-4f47-b075-ea7ea15efe67)
+
+![notification](https://github.com/Antiz96/arch-update/assets/53110319/db94c308-526a-4b8f-8f2a-0624d0a83553)
 
 When the systray applet is clicked, it prints the list of packages available for updates inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages support).
 
-![listing-packages](https://github.com/Antiz96/arch-update/assets/53110319/43a990c8-ed93-420f-8c46-d50d60bff03f)
+![listing_packages](https://github.com/Antiz96/arch-update/assets/53110319/ed552414-0dff-4cff-84d2-6ff13340259d)
 
 By default, if at least one Arch Linux news has been published since the last run, `Arch-Update` will offer you to read the latest Arch Linux news directly from your terminal window.  
 The news published since the last run are as `[NEW]`:  
 
-![list-news](https://github.com/Antiz96/arch-update/assets/53110319/b6883ec4-8c44-4b97-86d9-4d0a304b748b)
+![listing_news](https://github.com/Antiz96/arch-update/assets/53110319/4f6f1c84-e5d6-4072-aa57-0c3e80783c01)
 
 When recent news gets listed, either type the number associated to a news to read it (you'll be re-prompted to read other news afterwards so you can read multiple news in one run), or simply press "enter" to proceed with the update.  
 If no news has been published since the last run, `Arch-Update` will directly proceed to the update after you gave your confirmation.

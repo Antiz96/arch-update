@@ -96,25 +96,26 @@ systemctl --user enable --now arch-update.timer
 ### Captures d'écran
 
 Une fois démarrée, l'applet systray apparait dans la zone systray de votre panneau.  
-C'est la première icône en partant de la gauche dans le screenshot ci-dessous.
+C'est l'icône à droite de celle du wifi dans la capture d'écran ci-dessous:
 
-![icon](https://github.com/Antiz96/arch-update/assets/53110319/25f3d2ca-b9d3-4a32-ace3-b0fa785662c2)
+![systray-icon](https://github.com/Antiz96/arch-update/assets/53110319/fe032e68-3582-470a-9e6d-b51a9ea8c1ba)
 
 Avec [le systemd timer](#le-systemd-timer) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check`.
 
 Si de nouvelles mises à jour sont disponibles, l'icône systray affichera un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée (nécessite [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") un serveur de notification en cours d'exécution) :
 
-![icon-update-available](https://github.com/Antiz96/arch-update/assets/53110319/c1526ce7-5f94-41b8-a8fa-3587b9d00a9d)
-![notification](https://github.com/Antiz96/arch-update/assets/53110319/631b8e67-487a-441a-84b4-6cce95223729)
+![systray-icon_updates-available](https://github.com/Antiz96/arch-update/assets/53110319/0d06462d-0931-4f47-b075-ea7ea15efe67)
+
+![notification-FR](https://github.com/Antiz96/arch-update/assets/53110319/28f0b95a-5b8a-43a5-bc3c-df42cd40d87b)
 
 Quand l'applet systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal and demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
 
-![listing-packages](https://github.com/Antiz96/arch-update/assets/53110319/43a990c8-ed93-420f-8c46-d50d60bff03f)
+![listing_packages-FR](https://github.com/Antiz96/arch-update/assets/53110319/60547cde-f327-46f8-907c-61bf9bbee6c5)
 
 Par défaut, si au moins une news Arch Linux a été publiée depuis la dernière exécution, `Arch-Update` vous proposera de lire les dernières news Arch Linux directement de votre fenêtre de terminal.  
 Les news publiées depuis la dernière exécution sont tagguées comme `[NOUVEAU]` :
 
-![list-news](https://github.com/Antiz96/arch-update/assets/53110319/b6883ec4-8c44-4b97-86d9-4d0a304b748b)
+![listing_news-FR](https://github.com/Antiz96/arch-update/assets/53110319/72819197-d4f7-4c50-af21-0aac1c60ba41)
 
 Quand la liste des news récentes est affichée, vous pouvez soit taper le nombre associé à une news pour la lire (vous serez invité à nouveau à lire d'autres nouvelles par la suite, ce qui vous permettra de lire plusieurs nouvelles en une seule exécution), ou simplement appuyez sur "entrée" pour procéder à la mise à jour.  
 Si aucune news n'a été publiée depuis la dernière exécution, `Arch-Update` procédera directement à la mise à jour après que vous ayez donné votre confirmation.
