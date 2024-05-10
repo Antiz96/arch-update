@@ -1,5 +1,9 @@
 # Arch-Update
 
+<p align="center">
+  <img width="460" height="300" src="https://github.com/Antiz96/arch-update/assets/53110319/e2374a41-a3e9-43bf-9b12-54f53d18a320">
+</p>
+
 [![lang-en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/Antiz96/arch-update/blob/main/README.md)
 
 ## Table des matières
