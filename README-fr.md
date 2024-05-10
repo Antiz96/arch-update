@@ -78,7 +78,7 @@ L'utilisation consiste à démarrer [l'applet systray](#lapplet-systray) et à a
 
 ### L'applet systray
 
-Pour démarrer l'applet systray automatiquement au démarrage du système, ajoutez la command `arch-update --tray` a vos commandes 'auto-start'/configuration WM ou démarrez/activez le service systemd associé comme ceci :
+Pour démarrer l'applet systray automatiquement au démarrage du système, ajoutez la command `arch-update --tray` a vos commandes 'auto-start'/configuration de votre WM ou démarrez/activez le service systemd associé comme ceci :
 
 ```bash
 systemctl --user enable --now arch-update-tray.service
