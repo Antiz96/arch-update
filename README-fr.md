@@ -84,9 +84,9 @@ Pour démarrer l'applet systray automatiquement au démarrage du système, ajout
 systemctl --user enable --now arch-update-tray.service
 ```
 
-L'îcone du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Il lancera la série de fonctions nécessaires pour effectuer une mise à jour complète et appropriée lorsque vous cliquez dessus.
+L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Il lancera la série de fonctions nécessaires pour effectuer une mise à jour complète et appropriée lorsque vous cliquez dessus.
 
-Alternativement, si vous n'avez pas (ou ne voulez pas) le support du systray, il y a un fichier `.desktop` classique (sous `/usr/share/applications/arch-update.desktop` ou `/usr/local/share/applications/arch-update.desktop` si vous avez installé `Arch-Update` [depuis la source](#depuis-la-source)). Notez que, à l'inverse de l'applet systray, l'îcone du fichier `.desktop` ne changera **pas** dynamiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles').
+Alternativement, si vous n'avez pas (ou ne voulez pas) le support du systray, il y a un fichier `.desktop` classique (sous `/usr/share/applications/arch-update.desktop` ou `/usr/local/share/applications/arch-update.desktop` si vous avez installé `Arch-Update` [depuis la source](#depuis-la-source)). Notez que, à l'inverse de l'applet systray, l'icône du fichier `.desktop` ne changera **pas** dynamiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles').
 
 ### Le timer systemd
 
