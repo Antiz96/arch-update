@@ -77,7 +77,7 @@ The usage consist of starting [the systray applet](#the-systray-applet) and enab
 To start the systray applet automatically at boot, add the `arch-update --tray` command to your auto-start commands/WM config or start/enable the associated systemd service like so:
 
 ```bash
-systemctl --user enable --now arch-update-tray.service`
+systemctl --user enable --now arch-update-tray.service
 ```
 
 The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). It will launch the relevant series of functions to perform a complete and proper update when clicked.
