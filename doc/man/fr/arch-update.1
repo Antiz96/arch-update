@@ -62,7 +62,7 @@ Afficher les traces de débogage.
 
 .TP
 .B \-\-tray
-.RB "Lancer l'applet systray d'Arch-Update (alternativement, vous pouvez démarrer/activer le systemd service associé comme ceci : " "systemctl \-\-user enable \-\-now arch-update-tray.service"")."
+.RB "Lancer l'applet systray d'Arch-Update (alternativement, vous pouvez démarrer/activer le service systemd associé comme ceci : " "systemctl \-\-user enable \-\-now arch-update-tray.service").
 
 .TP
 .B \-v, \-\-version
@@ -78,11 +78,11 @@ Afficher le message d'aide.
 .SH UTILISATION
 .TP
 .B L'applet systray
-.RB "Pour démarrer l'applet systray automatiquement au démarrage du système, ajouter la commande " "arch-update --tray " "à vos commandes 'auto-start'/configuration de votre WM ou démarrez/activez le systemd service associé comme ceci : " "systemctl \-\-user enable \-\-now arch-update-tray.service"
+.RB "Pour démarrer l'applet systray automatiquement au démarrage du système, ajouter la commande " "arch-update --tray " "à vos commandes 'auto-start'/configuration de votre WM ou démarrez/activez le service systemd associé comme ceci : " "systemctl \-\-user enable \-\-now arch-update-tray.service"
 .br
-L'îcone du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Il lancera la série de fonctions adéquates pour effectuer une mise à jour complète et correcte lorsque vous cliquez dessus.
+L'îcone du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Il lancera la série de fonctions adéquates pour effectuer une mise à jour complète et appropriée lorsque vous cliquez dessus.
 .br
-.RB "Alternativement, si vous n'avez/ne voulez pas le support du systray, il y a un fichier .desktop classique (sous " "/usr/share/applications/arch-update.desktop " "ou " "/usr/local/share/applications/arch-update.desktop " "si vous avez installé Arch-Update depuis la source). Notez que, à l'inverse de l'applet systray, l'îcone du fichier .desktop ne change" "pas " "dynamiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles')."
+.RB "Alternativement, si vous n'avez/ne voulez pas le support du systray, il y a un fichier .desktop classique (sous " "/usr/share/applications/arch-update.desktop " "ou " "/usr/local/share/applications/arch-update.desktop " "si vous avez installé Arch-Update depuis la source). Notez que, à l'inverse de l'applet systray, l'îcone du fichier .desktop ne change " "pas " "dynamiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles')."
 
 .TP
 .B Le timer systemd
