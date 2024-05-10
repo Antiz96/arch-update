@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "March 2024" "Arch-Update 1.15.0" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "May 2024" "Arch-Update 1.15.0" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
@@ -8,7 +8,7 @@ arch-update \- An update notifier/applier for Arch Linux that assists you with i
 [\fI\,OPTION\/\fR]
 
 .SH DESCRIPTION
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a (.desktop) clickeable icon that can easily be integrated with any DE/WM, dock, status/launch bar or app menu.
+An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any DE/WM.
 .br
 .RB "Optional support for AUR packages update (through " "yay " "or " "paru" "), Flatpak packages update (through " "flatpak" ") and desktop notifications (through " "libnotify" ")."
 
@@ -22,19 +22,19 @@ Before performing the update, it offers to display the latest Arch Linux news to
 .br
 Arch-Update also checks for orphan packages, unused Flatpak packages, old and/or uninstalled cached packages in pacman's cache, pacnew/pacsave files and pending kernel update requiring a reboot to be applied and, if there are, offers to process them.
 .br
-Those functions are launched when you click on the (.desktop) icon.
+Those functions are launched when you click on the systray applet.
 
 .PP
 
 .TP
 .B \-c, \-\-check
-Check for available updates and change the (.desktop) icon accordingly if there are.
+Check for available updates.
 .br
 .RB "It sends a desktop notification containing the number of available updates if " "libnotify " "is installed."
 .br
 .RB "It supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
 .br
-.RB "The " "\-\-check " "option is automatically launched at boot and then every hour if you enabled the " "systemd.timer " "with the following command:" 
+.RB "The " "\-\-check " "option is automatically launched at boot and then every hour if you enabled the associated " "systemd.timer " "with the following command:"
 .br
 .B systemctl \-\-user enable \-\-now arch-update.timer
 
@@ -44,7 +44,7 @@ Display the list of pending updates.
 
 .TP
 .B \-d, \-\-devel
-Include AUR development packages updates
+Include AUR development packages updates.
 
 .TP
 .B \-n, \-\-news
@@ -54,11 +54,15 @@ Display latest Arch news.
 
 .TP
 .B \-D, \-\-debug
-Display debug traces
+Display debug traces.
 
 .TP
 .B \-\-gen\-config
 .RB "Generate a default/example configuration file (see the " "arch-update.conf(5) " "man page for more details)."
+
+.TP
+.B \-\-tray
+.RB "Launch the Arch-Update systray applet (you can alternatively start/enable the associated systemd service like so: " "systemctl \-\-user enable \-\-now arch-update-tray.service").
 
 .TP
 .B \-v, \-\-version
@@ -73,10 +77,12 @@ Display the help message.
 
 .SH USAGE
 .TP
-.B The (.desktop) icon
-.RB "The (.desktop) icon is located in " "/usr/share/applications/arch-update.desktop " "(or in " "/etc/local/share/applications/arch-update.desktop " "if you installed arch-update from source)." 
+.B The systray applet
+.RB "To start the systray applet automatically at boot, add the " "arch-update --tray " "command to your auto-start commands/WM config or start/enable the associated systemd service like so: " "systemctl \-\-user enable \-\-now arch-update-tray.service"
 .br
-It will automatically change depending on different states (checking for updates, updates available, installing updates, up to date). It will launch the relevant series of functions to perform a complete and proper update when clicked. It is easy to integrate with any DE/WM, docks, launch bars or app menus.
+The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). It will launch the relevant series of functions to perform a complete and proper update when clicked.
+.br
+.RB "Alternatively, if you don't have/want systray support, there's a regular .desktop file (under " "/usr/share/applications/arch-update.desktop " "or " "/usr/local/share/applications/arch-update.desktop " "if you installed Arch-Update from source). Note that, unlike the systray applet, the .desktop icon does " "not " "dynamically change depending on the current state of your system ('up to date' or 'updates available')."
 
 .TP
 .B The systemd timer
@@ -138,7 +144,7 @@ No privilege elevation method (sudo or doas) is installed
 
 .TP
 .B 3
-Error when changing icon
+Error when launching the Arch-Update systray applet
 
 .TP
 .B 4

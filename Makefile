@@ -10,6 +10,7 @@ all:
 install:
 	# Install the main script
 	install -Dm 755 "src/script/${pkgname}.sh" "${DESTDIR}${PREFIX}/bin/${pkgname}"
+	install -Dm 755 "src/script/${pkgname}-tray.py" "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
 
 	# Install icons
 	install -Dm 664 "src/icons/${pkgname}.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
@@ -21,7 +22,8 @@ install:
 	# Install systemd units
 	install -Dm 644 "res/systemd/${pkgname}.service" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
 	install -Dm 644 "res/systemd/${pkgname}.timer" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
-
+	install -Dm 644 "res/systemd/${pkgname}-tray.service" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}-tray.service"
+  
 	# Generate and install .mo files for translations
 	# .mo files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
 	msgfmt po/fr.po -o po/fr.mo
@@ -55,6 +57,7 @@ install:
 uninstall:
 	# Delete the main script
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}"
+	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
 
 	# Delete icons
 	rm -rf "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
@@ -66,6 +69,7 @@ uninstall:
 	# Delete systemd units
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
+	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}-tray.service"
 
 	# Delete .mo files
 	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"

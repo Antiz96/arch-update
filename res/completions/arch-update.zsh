@@ -8,6 +8,7 @@ opts=(
     {-n,--news}'[Display latest Arch news]'
     {-D,--debug}'[Display debug traces]'
     {--gen-config}'[Generate a default/example configuration file]'
+    {--tray}'[Launch the Arch-Update systray applet]'
     {-h,--help}'[Display the help message]'
     {-V,--version}'[Display version information]'
 )
