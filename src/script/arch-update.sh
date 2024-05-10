@@ -170,6 +170,7 @@ $(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
 $(eval_gettext "  -D, --debug       Display debug traces")
 $(eval_gettext "  --gen-config      Generate a default/example configuration file")
+$(eval_gettext "  --tray            Launch the Arch-Update systray applet")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")
 
@@ -225,16 +226,16 @@ check() {
 				last_notif_id=$(cat "${tmpdir}/last_notif_id" 2> /dev/null)
 				if [ "${update_number}" -eq 1 ]; then
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}" "${_name}" "$(eval_gettext "\${update_number} update available")" > "${tmpdir}/last_notif_id"
 					fi
 
 				else
 					if [ -z "${last_notif_id}" ]; then
-						notify-send -p -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -i "${name}" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					else
-						notify-send -p -r "${last_notif_id}" -i "${name}_updates-available" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
+						notify-send -p -r "${last_notif_id}" -i "${name}" "${_name}" "$(eval_gettext "\${update_number} updates available")" > "${tmpdir}/last_notif_id"
 					fi
 				fi
 			fi
@@ -676,6 +677,13 @@ case "${option}" in
 			cp "${example_config_file}" "${config_file}" || exit 8
 			info_msg "$(eval_gettext "The '\${config_file}' configuration file has been generated")"
 		fi
+	;;
+	--tray)
+		if [ ! -f "${statedir}/current_state" ]; then
+			echo "${name}" > "${statedir}/current_state"
+		fi
+
+		arch-update-tray || exit 3
 	;;
 	-h|--help)
 		help
