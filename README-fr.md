@@ -84,7 +84,7 @@ Pour démarrer l'applet systray automatiquement au démarrage du système, ajout
 systemctl --user enable --now arch-update-tray.service
 ```
 
-L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, il lance `arch-update` via le [fichier arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
+L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, il lance `arch-update` via le fichier [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
 
 L'applet systray essaie de lire le fichier `arch-update.desktop` dans les chemins ci-dessous avec l'ordre suivant :
 

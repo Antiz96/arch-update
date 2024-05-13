@@ -84,7 +84,7 @@ To start the systray applet automatically at boot, add the `arch-update --tray` 
 systemctl --user enable --now arch-update-tray.service
 ```
 
-The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` via the [arch-update.desktop file](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
+The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.
 
 The systray applet attempts to read the `arch-update.desktop` file at the below paths and in the following order:
 
