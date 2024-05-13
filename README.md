@@ -84,9 +84,17 @@ To start the systray applet automatically at boot, add the `arch-update --tray` 
 systemctl --user enable --now arch-update-tray.service
 ```
 
-The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). It will launch the relevant series of functions to perform a complete and proper update when clicked.
+The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.
 
-Alternatively, if you don't have/want systray support, there's a regular `.desktop` file (under `/usr/share/applications/arch-update.desktop` or `/usr/local/share/applications/arch-update.desktop` if you installed `Arch-Update` [from source](#from-source)). Note that, unlike the systray applet, the `.desktop` icon does **not** dynamically change depending on the current state of your system ('up to date' or 'updates available').
+The systray applet attempts to read the `arch-update.desktop` file at the below paths and in the following order:
+
+- `$XDG_DATA_HOME/applications/arch-update.desktop`
+- `$HOME/.local/share/applications/arch-update.desktop`
+- `$XDG_DATA_DIRS/applications/arch-update.desktop`
+- `/usr/local/share/applications/arch-update.desktop` <-- Default installation path when installing Arch-Update [from source](#from-source)
+- `/usr/share/applications/arch-update.desktop` <-- Default installation path when installing Arch-Update [from the AUR](#AUR)
+
+In case you want/need to customize the `arch-update.desktop` file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom `arch-update.desktop` file supersedes the default one and that your modifications are not being overwritten on updates).
 
 ### The systemd timer
 
