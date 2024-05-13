@@ -84,9 +84,17 @@ Pour démarrer l'applet systray automatiquement au démarrage du système, ajout
 systemctl --user enable --now arch-update-tray.service
 ```
 
-L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Il lancera la série de fonctions nécessaires pour effectuer une mise à jour complète et appropriée lorsque vous cliquez dessus.
+L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, il lance `arch-update` via le [fichier arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
 
-Alternativement, si vous n'avez pas (ou ne voulez pas) le support du systray, il y a un fichier `.desktop` classique (sous `/usr/share/applications/arch-update.desktop` ou `/usr/local/share/applications/arch-update.desktop` si vous avez installé `Arch-Update` [depuis la source](#depuis-la-source)). Notez que, à l'inverse de l'applet systray, l'icône du fichier `.desktop` ne changera **pas** dynamiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles').
+L'applet systray essaie de lire le fichier `arch-update.desktop` dans les chemins ci-dessous avec l'ordre suivant :
+
+- `$XDG_DATA_HOME/applications/arch-update.desktop`
+- `$HOME/.local/share/applications/arch-update.desktop`
+- `$XDG_DATA_DIRS/applications/arch-update.desktop`
+- `/usr/local/share/applications/arch-update.desktop` <-- Chemin d'installation par défaut lorsque vous installez Arch-Update [depuis la source](#depuis-la-source)
+- `/usr/share/applications/arch-update.desktop` <-- Chemin d'installation par défaut lorsque vous installez Arch-Update [depuis le AUR](#AUR)
+
+Dans le cas où vous avez envie/besoin de personnaliser le fichier `arch-update.desktop`, copiez le dans un chemin qui a une priorité plus élevée que le chemin d'installation par défaut et modifier le ici (afin d'assurer que votre ficher `arch-update.desktop` personnalisé remplace celui par défaut et que vos modifications ne soient pas écrasées à chaque mise à jour).
 
 ### Le timer systemd
 
