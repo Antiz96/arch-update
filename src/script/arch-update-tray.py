@@ -5,7 +5,7 @@ import os
 import sys
 import subprocess
 from PyQt6.QtGui import QIcon
-from PyQt6.QtWidgets import QApplication, QSystemTrayIcon
+from PyQt6.QtWidgets import QApplication, QMessageBox, QSystemTrayIcon
 from PyQt6.QtCore import QFileSystemWatcher
 
 # Create logger
@@ -43,6 +43,10 @@ def arch_update():
         DESKTOP_FILE = "/usr/share/applications/arch-update.desktop"
     if os.path.isfile(DESKTOP_FILE):
         subprocess.run(["gio", "launch", DESKTOP_FILE], check=False)
+    else:
+        d = QMessageBox(text="Unable to find arch-update.desktop")
+        d.setWindowTitle("Error")
+        d.exec()
 
 
 class ArchUpdateQt6:
