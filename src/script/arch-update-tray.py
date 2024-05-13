@@ -39,9 +39,9 @@ def arch_update():
                 os.environ['XDG_DATA_DIRS'], 'applications', 'arch-update.desktop')
     if not DESKTOP_FILE or not os.path.isfile(DESKTOP_FILE):
         DESKTOP_FILE = "/usr/local/share/applications/arch-update.desktop"
-    if not DESKTOP_FILE or not os.path.isfile(DESKTOP_FILE):
+    if not os.path.isfile(DESKTOP_FILE):
         DESKTOP_FILE = "/usr/share/applications/arch-update.desktop"
-    if DESKTOP_FILE:
+    if os.path.isfile(DESKTOP_FILE):
         subprocess.run(["gio", "launch", DESKTOP_FILE], check=False)
 
 
