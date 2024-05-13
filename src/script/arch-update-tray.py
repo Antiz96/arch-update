@@ -41,12 +41,7 @@ def arch_update():
         DESKTOP_FILE = "/usr/local/share/applications/arch-update.desktop"
     if not os.path.isfile(DESKTOP_FILE):
         DESKTOP_FILE = "/usr/share/applications/arch-update.desktop"
-    if os.path.isfile(DESKTOP_FILE):
-        subprocess.run(["gio", "launch", DESKTOP_FILE], check=False)
-    else:
-        d = QMessageBox(text="Unable to find arch-update.desktop")
-        d.setWindowTitle("Error")
-        d.exec()
+    subprocess.run(["gio", "launch", DESKTOP_FILE], check=False)
 
 
 class ArchUpdateQt6:
