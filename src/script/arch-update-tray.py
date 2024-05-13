@@ -25,22 +25,24 @@ if not os.path.isfile(STATE_FILE):
 
 def arch_update():
     """ Launch with desktop file """
+    DESKTOP_FILE = None
     if 'XDG_DATA_HOME' in os.environ:
         DESKTOP_FILE = os.path.join(
             os.environ['XDG_DATA_HOME'], 'applications', 'arch-update.desktop')
-    if not os.path.isfile(DESKTOP_FILE):
+    if not DESKTOP_FILE or not os.path.isfile(DESKTOP_FILE):
         if 'HOME' in os.environ:
             DESKTOP_FILE = os.path.join(
                 os.environ['HOME'], '.local', 'share', 'applications', 'arch-update.desktop')
-    if not os.path.isfile(DESKTOP_FILE):
+    if not DESKTOP_FILE or not os.path.isfile(DESKTOP_FILE):
         if 'XDG_DATA_DIRS' in os.environ:
             DESKTOP_FILE = os.path.join(
                 os.environ['XDG_DATA_DIRS'], 'applications', 'arch-update.desktop')
-    if not os.path.isfile(DESKTOP_FILE):
+    if not DESKTOP_FILE or not os.path.isfile(DESKTOP_FILE):
         DESKTOP_FILE = "/usr/local/share/applications/arch-update.desktop"
-    if not os.path.isfile(DESKTOP_FILE):
+    if not DESKTOP_FILE or not os.path.isfile(DESKTOP_FILE):
         DESKTOP_FILE = "/usr/share/applications/arch-update.desktop"
-    subprocess.run(["gio", "launch", DESKTOP_FILE], check=False)
+    if DESKTOP_FILE:
+        subprocess.run(["gio", "launch", DESKTOP_FILE], check=False)
 
 
 class ArchUpdateQt6:
