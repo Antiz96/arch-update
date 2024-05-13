@@ -5,7 +5,7 @@ import os
 import sys
 import subprocess
 from PyQt6.QtGui import QIcon
-from PyQt6.QtWidgets import QApplication, QMessageBox, QSystemTrayIcon
+from PyQt6.QtWidgets import QApplication, QSystemTrayIcon
 from PyQt6.QtCore import QFileSystemWatcher
 
 # Create logger
