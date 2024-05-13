@@ -27,15 +27,15 @@ def arch_update():
     """ Launch with desktop file """
     if 'XDG_DATA_HOME' in os.environ:
         DESKTOP_FILE = os.path.join(
-	    os.environ['XDG_DATA_HOME'], 'applications', 'arch-update.desktop')
+            os.environ['XDG_DATA_HOME'], 'applications', 'arch-update.desktop')
     if not os.path.isfile(DESKTOP_FILE):
         if 'HOME' in os.environ:
             DESKTOP_FILE = os.path.join(
-	        os.environ['HOME'], '.local', 'share', 'applications', 'arch-update.desktop')
+                os.environ['HOME'], '.local', 'share', 'applications', 'arch-update.desktop')
     if not os.path.isfile(DESKTOP_FILE):
         if 'XDG_DATA_DIRS' in os.environ:
-	    DESKTOP_FILE = os.path.join(
-	        os.environ['XDG_DATA_DIRS'], 'applications', 'arch-update.desktop')
+            DESKTOP_FILE = os.path.join(
+                os.environ['XDG_DATA_DIRS'], 'applications', 'arch-update.desktop')
     if not os.path.isfile(DESKTOP_FILE):
         DESKTOP_FILE = "/usr/local/share/applications/arch-update.desktop"
     if not os.path.isfile(DESKTOP_FILE):
