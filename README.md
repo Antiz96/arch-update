@@ -94,7 +94,7 @@ The systray applet attempts to read the `arch-update.desktop` file at the below 
 - `/usr/local/share/applications/arch-update.desktop` <-- Default installation path when installing Arch-Update [from source](#from-source)
 - `/usr/share/applications/arch-update.desktop` <-- Default installation path when installing Arch-Update [from the AUR](#AUR)
 
-In case you wan't/need to customize the `arch-update.desktop` file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom `arch-update.desktop` file supersedes the default one and that your modifications are not being overwritten on updates).
+In case you want/need to customize the `arch-update.desktop` file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom `arch-update.desktop` file supersedes the default one and that your modifications are not being overwritten on updates).
 
 ### The systemd timer
 
