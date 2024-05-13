@@ -8,7 +8,7 @@ PREFIX ?= /usr/local
 all:
 
 install:
-	# Install the main script
+	# Install scripts
 	install -Dm 755 "src/script/${pkgname}.sh" "${DESTDIR}${PREFIX}/bin/${pkgname}"
 	install -Dm 755 "src/script/${pkgname}-tray.py" "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
 
@@ -55,7 +55,7 @@ install:
 	install -Dm 644 "res/config/${pkgname}.conf.example" "${DESTDIR}${PREFIX}/share/doc/${pkgname}/${pkgname}.conf.example"
 
 uninstall:
-	# Delete the main script
+	# Delete scripts
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}"
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
 
