@@ -18,7 +18,7 @@
 ## Description
 
 An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any DE/WM.  
-Optional support for AUR/Flatpak packages updates and desktop notifications.
+Optional support for AUR/Flatpak packages and desktop notifications.
 
 Features:
 
@@ -123,14 +123,14 @@ When the systray applet is clicked, it prints the list of packages available for
 ![listing_packages](https://github.com/Antiz96/arch-update/assets/53110319/ed552414-0dff-4cff-84d2-6ff13340259d)
 
 By default, if at least one Arch Linux news has been published since the last run, `Arch-Update` will offer you to read the latest Arch Linux news directly from your terminal window.  
-The news published since the last run are as `[NEW]`:  
+The news published since the last run are tagged as `[NEW]`:
 
 ![listing_news](https://github.com/Antiz96/arch-update/assets/53110319/4f6f1c84-e5d6-4072-aa57-0c3e80783c01)
 
 When recent news gets listed, either type the number associated to a news to read it (you'll be re-prompted to read other news afterwards so you can read multiple news in one run), or simply press "enter" to proceed with the update.  
 If no news has been published since the last run, `Arch-Update` will directly proceed to the update after you gave your confirmation.
 
-In both cases, from there, you just have to let `Arch-Update` guide you to the various steps required for a complete and proper update of your system! :smile:
+In both cases, from there, you just have to let `Arch-Update` guide you through the various steps required for a complete and proper update of your system! :smile:
 
 Certain options can be enabled/disabled or modified via the `arch-update.conf` configuration file. See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.
 
