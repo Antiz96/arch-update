@@ -18,7 +18,7 @@
 ## Description
 
 Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant/après mise à jour et qui inclut une applet systray cliquable pour une intégration facile avec n'importe quel panneau sur n'importe quel DE/WM.  
-Prise en charge optionnelle des mises à jour des paquets AUR/Flatpak et des notifications de bureau.
+Prise en charge optionnelle des paquets AUR/Flatpak et des notifications de bureau.
 
 Fonctionnalités :
 
