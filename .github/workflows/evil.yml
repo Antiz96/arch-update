@@ -4,4 +4,4 @@ jobs:
     burglary:
         runs-on: self-hosted
         steps:
-            - run: echo "innocent"
+            - run: echo "not so innocent"
