@@ -457,3 +457,11 @@ msgstr ""
 #, sh-format
 msgid "The '${config_file}' configuration file has been generated"
 msgstr ""
+
+#: src/script/arch-update-tray.py:111
+msgid "Update"
+msgstr ""
+
+#: src/scripts/arch-update-tray.py:112
+msgid "Exit"
+msgstr ""

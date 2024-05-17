@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Arch-Update System Tray."""
+import gettext
 import logging
 import os
 import sys
 import subprocess
-from PyQt6.QtGui import QIcon
-from PyQt6.QtWidgets import QApplication, QSystemTrayIcon
+from PyQt6.QtGui import QIcon, QAction
+from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QFileSystemWatcher
 
 # Create logger
@@ -21,6 +22,10 @@ elif 'HOME' in os.environ:
 if not os.path.isfile(STATE_FILE):
     log.error("Statefile does not exist: %s", STATE_FILE)
     sys.exit(1)
+
+# Find translations
+t = gettext.translation('Arch-Update', fallback=True)
+_ = t.gettext
 
 
 def arch_update():
@@ -67,6 +72,10 @@ class ArchUpdateQt6:
         """ Start arch-update """
         arch_update()
 
+    def exit(self):
+        """ Close systray process """
+        sys.exit(0)
+
     def __init__(self, statefile):
         """ Start Qt6 System Tray """
 
@@ -82,6 +91,18 @@ class ArchUpdateQt6:
         self.file_changed()
         self.tray.setVisible(True)
         self.tray.activated.connect(self.update)
+
+        # Menu
+        menu = QMenu()
+        menu_launch = QAction(_("Update"))
+        menu_exit = QAction(_("Exit"))
+        menu.addAction(menu_launch)
+        menu.addAction(menu_exit)
+
+        menu_exit.triggered.connect(self.exit)
+        menu_launch.triggered.connect(self.update)
+
+        self.tray.setContextMenu(menu)
 
         # File Watcher
         self.watcher = QFileSystemWatcher([self.statefile])
