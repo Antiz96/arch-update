@@ -492,10 +492,10 @@ msgstr ""
 msgid "The '${config_file}' configuration file has been generated"
 msgstr "Le fichier de configuration '${config_file}' a été généré"
 
-#: src/script/arch-update-tray.py:111
+#: src/script/arch-update-tray.py:97
 msgid "Run Arch-Update"
-msgstr ""
+msgstr "Lancer Arch-Update"
 
-#: src/scripts/arch-update-tray.py:112
+#: src/script/arch-update-tray.py:98
 msgid "Exit"
-msgstr ""
+msgstr "Quitter"

@@ -99,8 +99,8 @@ class ArchUpdateQt6:
         menu.addAction(menu_launch)
         menu.addAction(menu_exit)
 
-        menu_exit.triggered.connect(self.exit)
         menu_launch.triggered.connect(self.run)
+        menu_exit.triggered.connect(self.exit)
 
         self.tray.setContextMenu(menu)
 
