@@ -29,6 +29,7 @@ if 'XDG_DATA_DIRS' in os.environ:
     paths.extend(os.environ['XDG_DATA_DIRS'].split(":"))
 if 'XDG_DATA_HOME' in os.environ:
     paths.extend(os.environ['XDG_DATA_HOME'].split(":"))
+paths.extend(['/usr/share', '/usr/local/share'])
 _ = None
 for path in paths:
     french_translation_file = os.path.join(
