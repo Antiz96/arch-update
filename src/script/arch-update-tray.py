@@ -24,8 +24,23 @@ if not os.path.isfile(STATE_FILE):
     sys.exit(1)
 
 # Find translations
-t = gettext.translation('Arch-Update', fallback=True)
-_ = t.gettext
+paths = []
+if 'XDG_DATA_DIRS' in os.environ:
+    paths.extend(os.environ['XDG_DATA_DIRS'].split(":"))
+if 'XDG_DATA_HOME' in os.environ:
+    paths.extend(os.environ['XDG_DATA_HOME'].split(":"))
+_ = None
+for path in paths:
+    french_translation_file = os.path.join(
+        path, "locale", "fr", "LC_MESSAGES", "Arch-Update.mo")
+    if os.path.isfile(french_translation_file):
+        t = gettext.translation('Arch-Update', localedir=path, fallback=True)
+        _ = t.gettext
+        break
+if not _:
+    t = gettext.translation('Arch-Update', fallback=True)
+    _ = t.gettext
+    log.error("No translations found")
 
 
 def arch_update():
