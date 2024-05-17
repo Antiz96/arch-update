@@ -68,7 +68,7 @@ class ArchUpdateQt6:
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
-    def update(self):
+    def run(self):
         """ Start arch-update """
         arch_update()
 
@@ -90,7 +90,7 @@ class ArchUpdateQt6:
         self.tray = QSystemTrayIcon()
         self.file_changed()
         self.tray.setVisible(True)
-        self.tray.activated.connect(self.update)
+        self.tray.activated.connect(self.run)
 
         # Menu
         menu = QMenu()
@@ -100,7 +100,7 @@ class ArchUpdateQt6:
         menu.addAction(menu_exit)
 
         menu_exit.triggered.connect(self.exit)
-        menu_launch.triggered.connect(self.update)
+        menu_launch.triggered.connect(self.run)
 
         self.tray.setContextMenu(menu)
 
