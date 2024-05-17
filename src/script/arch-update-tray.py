@@ -94,7 +94,7 @@ class ArchUpdateQt6:
 
         # Menu
         menu = QMenu()
-        menu_launch = QAction(_("Update"))
+        menu_launch = QAction(_("Run Arch-Update"))
         menu_exit = QAction(_("Exit"))
         menu.addAction(menu_launch)
         menu.addAction(menu_exit)
