@@ -114,7 +114,7 @@ It is the icon at the right of the 'wifi' one in the screenshot below:
 
 With [the system timer](#the-systemd-timer) enabled, `Arch-Update` automatically checks for updates at boot and then once every hour. The check can be manually triggered by running the `arch-update --check` command.
 
-If there are new available updates, the systray icon will show a red circle and a desktop notification indicating the number of available updates will be sent (requires [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") and a running notification server):
+If there are new available updates, the systray icon will show a red circle and a desktop notification indicating the number of available updates will be sent if there are new available updates compared to the last check (requires [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") and a running notification server):
 
 ![notification](https://github.com/Antiz96/arch-update/assets/53110319/db94c308-526a-4b8f-8f2a-0624d0a83553)
 
@@ -150,7 +150,7 @@ Post update, check for orphan/unused packages, old cached packages, pacnew/pacsa
 and pending kernel update and, if there are, offers to process them.
 
 Options:
--c, --check       Check for available updates, send a desktop notification containing the number of available updates (if libnotify is installed)
+-c, --check       Check for available updates, change the systray icon and send a desktop notification containing the number of available updates (if there are new available updates compared to the last check)
 -l, --list        Display the list of pending updates
 -d, --devel       Include AUR development packages updates
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
@@ -221,16 +221,21 @@ See <https://wiki.archlinux.org/title/Desktop_notifications>
 
 If you enabled the [systemd.timer](#the-systemd-timer), the `--check` option is automatically launched at boot and then once per hour.
 
-If you want to change the check cycle, run `systemctl --user edit arch-update.timer` to create an override configuration for the timer and input the following in it:
+If you want to change the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.  
+For instance, if you want `Arch-Update` to check for new updates every 10 minutes instead:
 
 ```text
+[...]
 [Timer]
-OnUnitActiveSec=
+OnStartupSec=15
 OnUnitActiveSec=10m
+[...]
 ```
 
 Time units are `s` for seconds, `m` for minutes, `h` for hours, `d` for days...  
 See <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> for more details.
+
+In case you want `Arch-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
 
 ## Contributing
 
