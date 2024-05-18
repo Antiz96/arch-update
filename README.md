@@ -228,7 +228,7 @@ For instance, if you want `Arch-Update` to check for new updates every 10 minute
 [...]
 [Timer]
 OnStartupSec=15
-OnUnitActiveSec=10m
+OnUnitActiveSec=**10m**
 [...]
 ```
 
