@@ -30,7 +30,7 @@ Those functions are launched when you click on the systray applet.
 .B \-c, \-\-check
 Check for available updates.
 .br
-.RB "It sends a desktop notification containing the number of available updates if " "libnotify " "is installed."
+It changes the systray icon and sends a desktop notification containing the number of available updates (if there are new available updates compared to the last check).
 .br
 .RB "It supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
 .br
@@ -127,19 +127,28 @@ See https://wiki.archlinux.org/title/Desktop_notifications
 .B Modify the auto-check cycle
 .RB "If you enabled the " "systemd.timer" ", the " "--check " "option is automatically launched at boot and then once per hour."
 .br
-.RB "If you want to change the check cycle, run " "systemctl --user edit arch-update.timer " "to create an override configuration for the timer and input the following in it:"
+.RB "If you want to change the check cycle, run " "systemctl --user edit --full arch-update.timer " "and modify the " "OnUnitActiveSec " "value to your liking."
+.br
+.RB "For instance, if you want " "Arch-Update " "to check for new updates every 10 minutes instead:"
 .br
 
-.B [Timer]
+[...]
 .br
-.B OnUnitActiveSec=
+[Timer]
 .br
-.B OnUnitActiveSec=10m
+OnStartupSec=15
+.br
+.RB "OnUnitActiveSec=" "10m"
+.br
+[...]
 
 .br
 .RB "Time units are " "s " "for seconds, " "m " "for minutes, " "h " "for hours, " "d " "for days..."
 .br
 See https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans for more details.
+.br
+
+.RB "In case you want " "Arch-Update " "to check for new updates only once at boot, you can simple delete the " "OnUnitActiveSec " "line completely."
 
 .SH EXIT STATUS
 .TP
