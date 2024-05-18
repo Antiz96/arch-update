@@ -235,7 +235,7 @@ OnUnitActiveSec=10m
 Time units are `s` for seconds, `m` for minutes, `h` for hours, `d` for days...  
 See <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> for more details.
 
-In case you want `Arch-Update` to only check for new updates once at boot, you can simply delete the `OnUnitActiveSec` line completely.
+In case you want `Arch-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
 
 ## Contributing
 
