@@ -30,7 +30,7 @@ Ces fonctions sont lancées quand vous cliquez sur l'applet systray.
 .B \-c, \-\-check
 Vérifier les mises à jour disponibles.
 .br
-.RB "Cela envoie une notification de bureau contenant le nombre de mise à jour disponibles si " "libnotify " "est installé."
+Change l'icône systray et envoie une notification de bureau contenant le nombre de mises à jour disponibles (s'il y a des nouvelles mises à jour disponibles depuis le dernier check).
 .br
 .RB "Supporte les mises à jour des paquets AUR (si " "yay " "ou " "paru " "est installé) et les mises à jour des paquets Flatpak (si " "flatpak " "est installé)."
 .br
@@ -127,19 +127,27 @@ Voir https://wiki.archlinux.org/title/Desktop_notifications
 .B Modifier le cycle de vérification automatique
 .RB "Si vous avez activé le " "systemd.timer" ", l'option " "--check " "est automatiquement lancée au démarrage du système puis une fois par heure."
 .br
-.RB "Si vous souhaitez modifier le cycle de vérification, exécutez la commande " "systemctl --user edit arch-update.timer " "pour créer une configuration de remplacement pour le timer et saisissez ce qui suit :"
+.RB "Si vous souhaitez modifier le cycle de vérification, exécutez la commande " "systemctl --user edit --full arch-update.timer " "et modifiez la valeur " "OnUnitActiveSec " "à votre convenance."
+.br
+.RB "Par exemple, si vous voulez qu'" "Arch-Update " "vérifie plutôt les mises à jour toutes les 10 minutes :"
 .br
 
+[...]
 .B [Timer]
 .br
-.B OnUnitActiveSec=
+.B OnStartupSec=15
 .br
 .B OnUnitActiveSec=10m
+.br
+[...]
 
 .br
 .RB "Les unités de temps sont " "s " "pour secondes, " "m " "pour minutes, " "h " "pour heures, " "d " "pour jours..."
 .br
 Voir https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans pour plus de détails.
+.br
+
+.RB "Dans le cas où vous voulez qu'" "Arch-Update " "ne vérifie les nouvelles mises à jour qu'une fois au démarrage du système, vous pouvez simplement supprimer la ligne " "OnUnitActiveSec " "complètement."
 
 .SH EXIT STATUS
 .TP

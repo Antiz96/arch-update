@@ -87,7 +87,7 @@ msgid ""
 "there are new available updates compared to the last check)"
 msgstr ""
 "  -c, --check       Vérifier les mises à jour disponibles, change l'icône systray et "
-"envoyer une notification de bureau contenant le nombre de mises à jour disponibles (si "
+"envoyer une notification de bureau contenant le nombre de mises à jour disponibles (s'"
 "il y a des nouvelles mises à jour comparé au dernier check)"
 
 #: src/script/arch-update.sh:168

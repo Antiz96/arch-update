@@ -114,7 +114,7 @@ C'est l'icône à droite de celle du wifi dans la capture d'écran ci-dessous:
 
 Avec [le systemd timer](#le-timer-systemd) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check`.
 
-Si de nouvelles mises à jour sont disponibles, l'icône systray affichera un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée (nécessite [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") et un serveur de notification en cours d'exécution) :
+Si de nouvelles mises à jour sont disponibles, l'icône systray affichera un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée s'il y a de nouvelles mises à jour depuis le dernier check (nécessite [libnotify/notify-send](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") et un serveur de notification en cours d'exécution) :
 
 ![notification-FR](https://github.com/Antiz96/arch-update/assets/53110319/28f0b95a-5b8a-43a5-bc3c-df42cd40d87b)
 
@@ -150,7 +150,7 @@ Après la mise à jour, vérification de la présence de paquets orphelins/inuti
 de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter.
 
 Options :
--c, --check       Vérifier les mises à jour disponibles, envoyer une notification de bureau contenant le nombre de mises à jour disponibles (si libnotify est installé)
+-c, --check       Vérifier les mises à jour disponibles, changer l'icône systray et envoyer une notification de bureau contenant le nombre de mises à jour disponibles (s'il y a des nouvelles mises à jour disponibles depuis le dernier check)
 -l, --list        Afficher la liste des mises à jour en attente
 -d, --devel       Inclure les mises à jour des paquets de développement AUR
 -n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
@@ -221,16 +221,21 @@ Voir <https://wiki.archlinux.org/title/Desktop_notifications>
 
 Si vous avez activé le [timer systemd](#le-timer-systemd), l'option `--check` est automatiquement lancée au démarrage du système puis une fois par heure.
 
-Si vous souhaitez modifier le cycle de vérification, exécutez la commande `systemctl --user edit arch-update.timer` pour créer une configuration de remplacement pour le timer et saisissez ce qui suit :
+Si vous souhaitez modifier le cycle de vérification, exécutez la commande `systemctl --user edit --full arch-update.timer` et modifiez la valeur `OnUnitActiveSec` à votre convenance.  
+Par exemple, si vous voulez qu'`Arch-Update` vérifie plutôt les nouvelles mises à jour toutes les 10 minutes :
 
 ```text
+[...]
 [Timer]
-OnUnitActiveSec=
+OnStartupSec=15
 OnUnitActiveSec=10m
+[...]
 ```
 
 Les unités de temps sont `s` pour secondes, `m` pour minutes, `h` pour heures, `d` pour jours...  
 Voir <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> pour plus de détails.
+
+Dans le cas où vous voulez qu'`Arch-Update` ne vérifie les nouvelles mises à jour qu'une fois au démarrage du système, vous pouvez simplement supprimer la ligne `OnUnitActiveSec` complètement.
 
 ## Contribuer
 
