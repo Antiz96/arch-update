@@ -73,8 +73,9 @@ msgstr ""
 #: src/script/arch-update.sh:167
 #, sh-format
 msgid ""
-"  -c, --check       Check for available updates, send a desktop notification "
-"containing the number of available updates (if libnotify is installed)"
+"  -c, --check       Check for available updates, change the systray icon and "
+"send a desktop notification containing the number of available updates (if "
+"there are new available updates compared to the last check)"
 msgstr ""
 
 #: src/script/arch-update.sh:168
