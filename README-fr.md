@@ -228,7 +228,7 @@ Par exemple, si vous voulez qu'`Arch-Update` vérifie plutôt les nouvelles mise
 [...]
 [Timer]
 OnStartupSec=15
-OnUnitActiveSec=**10m**
+OnUnitActiveSec=10m
 [...]
 ```
 
