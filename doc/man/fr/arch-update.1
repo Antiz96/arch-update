@@ -150,6 +150,24 @@ Voir https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#P
 
 .RB "Dans le cas où vous voulez qu'" "Arch-Update " "ne vérifie les nouvelles mises à jour qu'une fois au démarrage du système, vous pouvez simplement supprimer la ligne " "OnUnitActiveSec " "complètement."
 
+.TP
+.B Forcer le fichier desktop à se lancer avec un émulateur de terminal spécifique
+.RB " " "gio " "(qui est utilisé pour lancer le fichier " "arch-update.desktop " "quand l'applet systray est cliquée) ne supporte actuellement qu'une liste limitée d'émulateurs de terminal (voir https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694)."
+.br
+.RB "Si vous n'avez aucun de ces émulateurs de terminal installé sur votre système, il se peut que vous soyez confronté à un problème où cliquer sur l'applet systray ne fait rien et rapporte l'erreur suivante : " "[...] Unable to find terminal required for application"."
+
+.br
+.RB "En attendant que Gnome implémente une méthode permettant aux utilisateurs d'utiliser l'émulateur de terminal de leur choix avec " "gio" ",vous pouvez contourner le problème en copiant le fichier " "arch-update.desktop " "dans " "$HOME/.local/share/applications/arch-update.desktop " "(par exemple, voir le chapitre " "L'applet systray "  "pour plus de détails) et en modifiant la ligne " "Exec " "pour 'forcer' " "arch-update " "à s'exécuter dans l'émulateur de terminal de votre choix."
+.br
+.RB "Par exmeple, avec " "alacritty " "(vérifier le manuel de votre émulateur de terminal pour trouver la bonne option à utiliser) :"
+
+.br
+[...]
+.RB "Exec=" "alacritty -e " "arch-update"
+
+.br
+.RB "Alternativement, vous pouvez créer un lien symbolique de votre émulateur de terminal pointant vers " "/usr/bin/xterm" ", qui est l'option de 'secours' pour " "gio " "(par exemple, avec " "alacritty" ": " "sudo ln -s /usr/bin/alacritty /usr/bin/xterm" ") ou vous pouvez simplement installer un des émulateurs de terminal connus/supportés par " "gio " "(voir https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694)."
+
 .SH EXIT STATUS
 .TP
 .B 0
