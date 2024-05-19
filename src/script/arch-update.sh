@@ -682,7 +682,20 @@ case "${option}" in
 		list_news
 	;;
 	--gen-config)
-		example_config_file="${XDG_DATA_HOME:-${HOME}/.local/share:-${XDG_DATA_DIRS}:-/usr/local/share:-/usr/share}/doc/${name}/${name}.conf.example"
+		if [ -f "${XDG_DATA_HOME}/doc/${name}/${name}.conf" ]; then
+			example_config_file="${XDG_DATA_HOME}/doc/${name}/${name}.conf"
+		elif [ -f "${HOME}/.local/share/doc/${name}/${name}.conf" ]; then
+			example_config_file="${HOME}/.local/share/doc/${name}/${name}.conf"
+		elif [ -f "${XDG_DATA_DIRS}/doc/${name}/${name}.conf" ]; then
+			example_config_file="${XDG_DATA_DIRS}/doc/${name}/${name}.conf"
+		elif [ -f "/usr/local/share/doc/${name}/${name}.conf" ]; then
+			example_config_file="/usr/local/share/doc/${name}/${name}.conf"
+		elif [ -f "/usr/share/doc/${name}/${name}.conf" ]; then
+			example_config_file="/usr/share/doc/${name}/${name}.conf"
+		else
+			error_msg "$(eval_gettext "Example configuration file not found")"
+			exit 8
+		fi
 
 		if [ -f "${config_file}" ]; then
 			error_msg "$(eval_gettext "The '\${config_file}' configuration file already exists\nPlease, remove it before generating a new one")"
