@@ -29,6 +29,8 @@ if 'XDG_DATA_DIRS' in os.environ:
     paths.extend(os.environ['XDG_DATA_DIRS'].split(":"))
 if 'XDG_DATA_HOME' in os.environ:
     paths.extend(os.environ['XDG_DATA_HOME'].split(":"))
+if 'HOME' in os.environ:
+    paths.extend(os.environ['HOME'], '.local', 'share'.split(":"))
 paths.extend(['/usr/share', '/usr/local/share'])
 _ = None
 for path in paths:
