@@ -30,7 +30,13 @@ esac
 # shellcheck disable=SC1091
 . gettext.sh
 export TEXTDOMAIN="${_name}" # Using "Arch-Update" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
-if find /usr/local/share/locale/*/LC_MESSAGES/"${_name}".mo &> /dev/null; then
+if [ -f "${XDG_DATA_HOME}/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
+	export TEXTDOMAINDIR="${XDG_DATA_HOME}/locale"
+elif [ -f "${HOME}/.local/share/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
+	export TEXTDOMAINDIR="${HOME}/.local/share/locale"
+elif [ -f "${XDG_DATA_DIRS}/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
+	export TEXTDOMAINDIR="${XDG_DATA_DIRS}/locale"
+elif [ -f "/usr/local/share/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
 	export TEXTDOMAINDIR="/usr/local/share/locale"
 fi
 
@@ -676,8 +682,20 @@ case "${option}" in
 		list_news
 	;;
 	--gen-config)
-		example_config_file="/usr/share/doc/${name}/${name}.conf.example"
-		[ -f "/usr/local/share/doc/${name}/${name}.conf.example" ] && example_config_file="/usr/local/share/doc/${name}/${name}.conf.example"
+		if [ -f "${XDG_DATA_HOME}/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="${XDG_DATA_HOME}/doc/${name}/${name}.conf.example"
+		elif [ -f "${HOME}/.local/share/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="${HOME}/.local/share/doc/${name}/${name}.conf.example"
+		elif [ -f "${XDG_DATA_DIRS}/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="${XDG_DATA_DIRS}/doc/${name}/${name}.conf.example"
+		elif [ -f "/usr/local/share/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="/usr/local/share/doc/${name}/${name}.conf.example"
+		elif [ -f "/usr/share/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="/usr/share/doc/${name}/${name}.conf.example"
+		else
+			error_msg "$(eval_gettext "Example configuration file not found")"
+			exit 8
+		fi
 
 		if [ -f "${config_file}" ]; then
 			error_msg "$(eval_gettext "The '\${config_file}' configuration file already exists\nPlease, remove it before generating a new one")"
