@@ -452,12 +452,12 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Voulez-vous redémarrer votre système maintenant ? [o/N]"
 
-#: src/script/arch-update.sh:609
+#: src/script/arch-update.sh:616
 #, sh-format
-msgid "Rebooting in 5 seconds...\\nPress ctrl+c to abort"
-msgstr "Redémarrage dans 5 secondes...\\nAppuyez sur ctrl+c pour annuler"
+msgid "Rebooting in ${sec}...\\r"
+msgstr "Redémarrage dans ${sec}...\\r"
 
-#: src/script/arch-update.sh:613
+#: src/script/arch-update.sh:622
 #, sh-format
 msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
@@ -466,7 +466,7 @@ msgstr ""
 "Une erreur est survenue pendant le processus de redémarrage\\nLe redémarrage a été "
 "abandonné\\n"
 
-#: src/script/arch-update.sh:621
+#: src/script/arch-update.sh:630
 #, sh-format
 msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
@@ -475,12 +475,12 @@ msgstr ""
 "Le redémarrage n'a pas été effectué\\nVeuillez considérer redémarrer votre système pour finaliser "
 "la mise à jour du noyau en attente\\n"
 
-#: src/script/arch-update.sh:625
+#: src/script/arch-update.sh:634
 #, sh-format
 msgid "No pending kernel update found\\n"
 msgstr "Aucune mise à jour du noyau en attente n'a été trouvée\\n"
 
-#: src/script/arch-update.sh:673
+#: src/script/arch-update.sh:682
 #, sh-format
 msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
@@ -489,7 +489,7 @@ msgstr ""
 "Le fichier de configuration '${config_file}' existe déjà.\\nVeuillez le supprimer "
 "avant d'en générer un nouveau"
 
-#: src/script/arch-update.sh:678
+#: src/script/arch-update.sh:687
 #, sh-format
 msgid "The '${config_file}' configuration file has been generated"
 msgstr "Le fichier de configuration '${config_file}' a été généré"

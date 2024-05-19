@@ -606,8 +606,18 @@ kernel_reboot() {
 		case "${answer}" in
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
-				main_msg "$(eval_gettext "Rebooting in 5 seconds...\nPress ctrl+c to abort")"
-				sleep 5
+
+				# shellcheck disable=SC2317,SC2329
+				restore_cursor() {
+					tput cnorm
+				}
+				trap restore_cursor EXIT
+				# shellcheck disable=SC2034
+				for sec in {5..1}; do
+					tput civis ; echo -ne "${blue}==>${color_off}${bold} $(eval_gettext "Rebooting in \${sec}...\r")${color_off}"
+					sleep 1
+				done
+
 				if ! reboot; then
 					echo
 					error_msg "$(eval_gettext "An error has occurred during the reboot process\nThe reboot has been aborted\n")" && quit_msg
