@@ -606,8 +606,11 @@ kernel_reboot() {
 		case "${answer}" in
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
-				main_msg "$(eval_gettext "Rebooting in 5 seconds...\nPress ctrl+c to abort")"
-				sleep 5
+				for sec in {5..1}; do
+					main_msg "$(eval_gettext "Rebooting in ${sec}...\r")"
+					sleep 1
+				done
+
 				if ! reboot; then
 					echo
 					error_msg "$(eval_gettext "An error has occurred during the reboot process\nThe reboot has been aborted\n")" && quit_msg
