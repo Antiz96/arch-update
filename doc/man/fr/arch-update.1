@@ -96,6 +96,11 @@ Afficher le message d'aide.
 
 .RB "Dans le cas où vous avez envie/besoin de personnaliser le fichier " "arch-update.desktop" ", copiez le dans un chemin qui a une priorité plus élevée que le chemin d'installation par défaut et modifier le ici (afin d'assurer que votre ficher " "arch-update.desktop " "personnalisé remplace celui par défaut et que vos modifications ne soient pas écrasées à chaque mise à jour)."
 
+.br
+.RB "Cela peut être utile pour forcer le fichier " "arch-update.desktop " "à lancer " "Arch-Update " "dans un émulateur de terminal spécifique par exemple."
+.br
+.BR "Si cliquer sur l'applet systray ne fait rien" ", veuillez lire le chapitre " "'Forcer le fichier desktop à se lancer avec un émulateur de terminal spécifique' " "dans la section " "Trucs et Astuces " "ci-dessous."
+
 .TP
 .B Le timer systemd
 .RB "Il existe un service systemd dans " "/usr/lib/systemd/user/arch-update.service " "(ou dans " "/etc/systemd/user/arch-update.service " "si vous avez installé arch-update depuis la source) qui exécute la fonction " "\-\-check " "quand il est démarré. Pour le démarrer automatiquement " "au démarrage du système puis une fois toutes les heures, " "activez le timer systemd associé (vous pouvez modifier le cycle de vérification automatique à votre guise, voir le chapitre TRUCS ET ASTUCES ci-dessous) :"
@@ -152,7 +157,7 @@ Voir https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#P
 
 .TP
 .B Forcer le fichier desktop à se lancer avec un émulateur de terminal spécifique
-.RB " " "gio " "(qui est utilisé pour lancer le fichier " "arch-update.desktop " "quand l'applet systray est cliquée) ne supporte actuellement qu'une liste limitée d'émulateurs de terminal (voir https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694)."
+.BR "gio " "(qui est utilisé pour lancer le fichier " "arch-update.desktop " "quand l'applet systray est cliquée) ne supporte actuellement qu'une liste limitée d'émulateurs de terminal (voir https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694)."
 .br
 .RB "Si vous n'avez aucun de ces émulateurs de terminal installé sur votre système, il se peut que vous soyez confronté à un problème où cliquer sur l'applet systray ne fait rien et rapporte l'erreur suivante : " "[...] Unable to find terminal required for application"."
 

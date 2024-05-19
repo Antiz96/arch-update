@@ -96,7 +96,7 @@ L'applet systray essaie de lire le fichier `arch-update.desktop` dans les chemin
 
 Dans le cas où vous avez envie/besoin de personnaliser le fichier `arch-update.desktop`, copiez le dans un chemin qui a une priorité plus élevée que le chemin d'installation par défaut et modifier le ici (afin d'assurer que votre ficher `arch-update.desktop` personnalisé remplace celui par défaut et que vos modifications ne soient pas écrasées à chaque mise à jour).
 
-Cela peut être utile pour forcer le fichier `arch-update.desktop` à lancer `Arch-Update` dans un émulateur de terminal spécifique par exemple.  
+Cela peut être utile pour forcer le fichier `arch-update.desktop` à lancer `Arch-Update` avec un émulateur de terminal spécifique par exemple.  
 **Si cliquer sur l'applet systray ne fait rien**, veuillez lire [ce chapitre](#forcer-le-fichier-desktop-a-se-lancer-avec-un-emulateur-de-terminal-specifique).
 
 ### Le timer systemd
