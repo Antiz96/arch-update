@@ -35,6 +35,7 @@ for path in paths:
     french_translation_file = os.path.join(
         path, "locale", "fr", "LC_MESSAGES", "Arch-Update.mo")
     if os.path.isfile(french_translation_file):
+        path = os.path.join(path, 'locale')
         t = gettext.translation('Arch-Update', localedir=path, fallback=True)
         _ = t.gettext
         break
