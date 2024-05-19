@@ -607,6 +607,7 @@ kernel_reboot() {
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
 
+				# shellcheck disable=SC2317
 				restore_cursor() {
 					tput cnorm
 				}
