@@ -682,16 +682,16 @@ case "${option}" in
 		list_news
 	;;
 	--gen-config)
-		if [ -f "${XDG_DATA_HOME}/doc/${name}/${name}.conf" ]; then
-			example_config_file="${XDG_DATA_HOME}/doc/${name}/${name}.conf"
-		elif [ -f "${HOME}/.local/share/doc/${name}/${name}.conf" ]; then
-			example_config_file="${HOME}/.local/share/doc/${name}/${name}.conf"
-		elif [ -f "${XDG_DATA_DIRS}/doc/${name}/${name}.conf" ]; then
-			example_config_file="${XDG_DATA_DIRS}/doc/${name}/${name}.conf"
-		elif [ -f "/usr/local/share/doc/${name}/${name}.conf" ]; then
-			example_config_file="/usr/local/share/doc/${name}/${name}.conf"
-		elif [ -f "/usr/share/doc/${name}/${name}.conf" ]; then
-			example_config_file="/usr/share/doc/${name}/${name}.conf"
+		if [ -f "${XDG_DATA_HOME}/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="${XDG_DATA_HOME}/doc/${name}/${name}.conf.example"
+		elif [ -f "${HOME}/.local/share/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="${HOME}/.local/share/doc/${name}/${name}.conf.example"
+		elif [ -f "${XDG_DATA_DIRS}/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="${XDG_DATA_DIRS}/doc/${name}/${name}.conf.example"
+		elif [ -f "/usr/local/share/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="/usr/local/share/doc/${name}/${name}.conf.example"
+		elif [ -f "/usr/share/doc/${name}/${name}.conf.example" ]; then
+			example_config_file="/usr/share/doc/${name}/${name}.conf.example"
 		else
 			error_msg "$(eval_gettext "Example configuration file not found")"
 			exit 8
