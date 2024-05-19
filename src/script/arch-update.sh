@@ -89,13 +89,13 @@ mkdir -p "${statedir}" "${tmpdir}"
 # Definition of the main_msg function: Display a message as a main message
 main_msg() {
 	msg="${1}"
-	echo -ne "${blue}==>${color_off}${bold} ${msg}${color_off}"
+	echo -e "${blue}==>${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the info_msg function: Display a message as an information message
 info_msg() {
 	msg="${1}"
-	echo -ne "${green}==>${color_off}${bold} ${msg}${color_off}"
+	echo -e "${green}==>${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the ask_msg function: Display a message as an interactive question
@@ -107,13 +107,13 @@ ask_msg() {
 # Definition of the warning_msg function: Display a message as a warning message
 warning_msg() {
 	msg="${1}"
-	echo -ne "${yellow}==> WARNING:${color_off}${bold} ${msg}${color_off}"
+	echo -e "${yellow}==> WARNING:${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the error_msg function: Display a message as an error message
 error_msg() {
 	msg="${1}"
-	echo -ne >&2 "${red}==> ERROR:${color_off}${bold} ${msg}${color_off}"
+	echo -e >&2 "${red}==> ERROR:${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the continue_msg function: Display the continue message
@@ -607,7 +607,7 @@ kernel_reboot() {
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
 				for sec in {5..1}; do
-					main_msg "$(eval_gettext "Rebooting in ${sec}...\r")"
+					echo -ne "${blue}==>${color_off}${bold} "$(eval_gettext "Rebooting in ${sec}...\r")"${color_off}"
 					sleep 1
 				done
 
