@@ -613,6 +613,7 @@ kernel_reboot() {
 				}
 				trap restore_cursor EXIT
 				for sec in {5..1}; do
+					# shellcheck disable=SC2034
 					tput civis ; echo -ne "${blue}==>${color_off}${bold} $(eval_gettext "Rebooting in \${sec}...\r")${color_off}"
 					sleep 1
 				done
