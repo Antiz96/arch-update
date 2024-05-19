@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Arch-Update System Tray."""
+import gettext
 import logging
 import os
 import sys
 import subprocess
-from PyQt6.QtGui import QIcon
-from PyQt6.QtWidgets import QApplication, QSystemTrayIcon
+from PyQt6.QtGui import QIcon, QAction
+from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QFileSystemWatcher
 
 # Create logger
@@ -21,6 +22,30 @@ elif 'HOME' in os.environ:
 if not os.path.isfile(STATE_FILE):
     log.error("Statefile does not exist: %s", STATE_FILE)
     sys.exit(1)
+
+# Find translations
+paths = []
+if 'XDG_DATA_DIRS' in os.environ:
+    paths.extend(os.environ['XDG_DATA_DIRS'].split(":"))
+if 'XDG_DATA_HOME' in os.environ:
+    paths.extend(os.environ['XDG_DATA_HOME'].split(":"))
+if 'HOME' in os.environ:
+    paths.append(os.path.join(
+        os.environ['HOME'], '.local', 'share'))
+paths.extend(['/usr/share', '/usr/local/share'])
+_ = None
+for path in paths:
+    french_translation_file = os.path.join(
+        path, "locale", "fr", "LC_MESSAGES", "Arch-Update.mo")
+    if os.path.isfile(french_translation_file):
+        path = os.path.join(path, 'locale')
+        t = gettext.translation('Arch-Update', localedir=path, fallback=True)
+        _ = t.gettext
+        break
+if not _:
+    t = gettext.translation('Arch-Update', fallback=True)
+    _ = t.gettext
+    log.error("No translations found")
 
 
 def arch_update():
@@ -63,9 +88,13 @@ class ArchUpdateQt6:
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
-    def update(self):
+    def run(self):
         """ Start arch-update """
         arch_update()
+
+    def exit(self):
+        """ Close systray process """
+        sys.exit(0)
 
     def __init__(self, statefile):
         """ Start Qt6 System Tray """
@@ -81,7 +110,19 @@ class ArchUpdateQt6:
         self.tray = QSystemTrayIcon()
         self.file_changed()
         self.tray.setVisible(True)
-        self.tray.activated.connect(self.update)
+        self.tray.activated.connect(self.run)
+
+        # Menu
+        menu = QMenu()
+        menu_launch = QAction(_("Run Arch-Update"))
+        menu_exit = QAction(_("Exit"))
+        menu.addAction(menu_launch)
+        menu.addAction(menu_exit)
+
+        menu_launch.triggered.connect(self.run)
+        menu_exit.triggered.connect(self.exit)
+
+        self.tray.setContextMenu(menu)
 
         # File Watcher
         self.watcher = QFileSystemWatcher([self.statefile])
