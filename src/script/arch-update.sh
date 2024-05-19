@@ -89,13 +89,13 @@ mkdir -p "${statedir}" "${tmpdir}"
 # Definition of the main_msg function: Display a message as a main message
 main_msg() {
 	msg="${1}"
-	echo -e "${blue}==>${color_off}${bold} ${msg}${color_off}"
+	echo -ne "${blue}==>${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the info_msg function: Display a message as an information message
 info_msg() {
 	msg="${1}"
-	echo -e "${green}==>${color_off}${bold} ${msg}${color_off}"
+	echo -ne "${green}==>${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the ask_msg function: Display a message as an interactive question
@@ -107,13 +107,13 @@ ask_msg() {
 # Definition of the warning_msg function: Display a message as a warning message
 warning_msg() {
 	msg="${1}"
-	echo -e "${yellow}==> WARNING:${color_off}${bold} ${msg}${color_off}"
+	echo -ne "${yellow}==> WARNING:${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the error_msg function: Display a message as an error message
 error_msg() {
 	msg="${1}"
-	echo -e >&2 "${red}==> ERROR:${color_off}${bold} ${msg}${color_off}"
+	echo -ne >&2 "${red}==> ERROR:${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the continue_msg function: Display the continue message
