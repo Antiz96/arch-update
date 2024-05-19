@@ -97,7 +97,7 @@ The systray applet attempts to read the `arch-update.desktop` file at the below 
 In case you want/need to customize the `arch-update.desktop` file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom `arch-update.desktop` file supersedes the default one and that your modifications are not being overwritten on updates).
 
 This can be useful to force the `arch-update.desktop` file to launch `Arch-Update` within a specific terminal emulator for instance.
-**If clicking the systray applet does nothing for you**, please read [this chapter](#force-the desktop-file-to-run-with-a-specific-terminal-emulator).
+**If clicking the systray applet does nothing**, please read [this chapter](#force-the desktop-file-to-run-with-a-specific-terminal-emulator).
 
 ### The systemd timer
 
