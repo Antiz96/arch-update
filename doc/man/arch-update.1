@@ -150,6 +150,24 @@ See https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Pa
 
 .RB "In case you want " "Arch-Update " "to check for new updates only once at boot, you can simple delete the " "OnUnitActiveSec " "line completely."
 
+.TP
+.B Force the desktop file to run with a specific terminal emulator
+.RB " " "gio " "(which is used to launch the " "arch-update.desktop " "file when the systray applet is clicked) currently supprots a limited list of terminal emulators (see https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694)."
+.br
+.RB "If you don't have any of these terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing and reports the following error: " "[...] Unable to find terminal required for application"."
+
+.br
+.RB "While waiting for Gnome to implement a way to allow people using their terminal emulator of choice with " "gio" ", you can workaround this issue by copying the " "arch-update.desktop " "file to " "$HOME/.local/share/applications/arch-update.desktop " "(for instance, see " "The systray applet " "chapter for more details) and modifying the " "Exec " "line in it to 'force' " "arch-update " "to run with your terminal emulator of choice."
+.br
+.RB "For instance, with " "alacritty " "(check your terminal emulator's manual to find the correct option to use):"
+
+.br
+[...]
+.RB "Exec=" "alacritty -e " "arch-update"
+
+.br
+.RB "Alternatively, you can create a symlink for your terminal emulator that points to " "/usr/bin/xterm" ", which is the fallback option for " "gio " "(for instance, with " "alacritty" ": " "sudo ln -s /usr/bin/alacritty /usr/bin/xterm" ") or you can simply install one of the terminal emulators known/supported by " "gio " "(see https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694)."
+
 .SH EXIT STATUS
 .TP
 .B 0
