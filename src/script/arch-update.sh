@@ -606,8 +606,13 @@ kernel_reboot() {
 		case "${answer}" in
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 				echo
+
+				restore_cursor() {
+					tput cnorm
+				}
+				trap restore_cursor EXIT
 				for sec in {5..1}; do
-					echo -ne "${blue}==>${color_off}${bold} "$(eval_gettext "Rebooting in ${sec}...\r")"${color_off}"
+					tput civis ; echo -ne "${blue}==>${color_off}${bold} "$(eval_gettext "Rebooting in ${sec}...\r")"${color_off}"
 					sleep 1
 				done
 
