@@ -96,6 +96,9 @@ L'applet systray essaie de lire le fichier `arch-update.desktop` dans les chemin
 
 Dans le cas où vous avez envie/besoin de personnaliser le fichier `arch-update.desktop`, copiez le dans un chemin qui a une priorité plus élevée que le chemin d'installation par défaut et modifier le ici (afin d'assurer que votre ficher `arch-update.desktop` personnalisé remplace celui par défaut et que vos modifications ne soient pas écrasées à chaque mise à jour).
 
+Cela peut être utile pour forcer le fichier `arch-update.desktop` à lancer `Arch-Update` dans un émulateur de terminal spécifique par exemple.  
+**Si cliquer sur l'applet systray ne fait rien**, veuillez lire [ce chapitre](#forcer-le-fichier-desktop-a-se-lancer-avec-un-emulateur-de-terminal-specifique).
+
 ### Le timer systemd
 
 Il existe un service systemd (sous `/usr/lib/systemd/user/arch-update.service` ou `/usr/local/lib/systemd/user/arch-update.service` si vous avez installé `Arch-Update` [depuis la source](#depuis-la-source)) qui exécute la fonction `check` quand il est démarré (voir le chapitre [Documentation](#documentation)).  
@@ -236,6 +239,21 @@ Les unités de temps sont `s` pour secondes, `m` pour minutes, `h` pour heures, 
 Voir <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> pour plus de détails.
 
 Dans le cas où vous voulez qu'`Arch-Update` ne vérifie les nouvelles mises à jour qu'une fois au démarrage du système, vous pouvez simplement supprimer la ligne `OnUnitActiveSec` complètement.
+
+### Forcer le fichier desktop à se lancer avec un émulateur de terminal spécifique
+
+`gio` (qui est utilisé pour lancer le fichier `arch-update.desktop` quand l'applet systray est cliquée) ne supporte actuellement qu'une [liste limitée d'émulateurs de terminal](https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694).  
+Si vous n'avez aucun de ces émulateurs de terminal installé sur votre système, il se peut que vous soyez confronté à un problème où cliquer sur l'applet systray [ne fait rien](https://github.com/Antiz96/arch-update/issues/162) et rapporte l'erreur suivante : `[...] Unable to find terminal required for application`.
+
+En attendant que Gnome implémente une méthode permettant aux utilisateurs d'utiliser l'émulateur de terminal de leur choix avec `gio` (ce qui, espérons-le, [arrivera à un moment ou à un autre](https://gitlab.freedesktop.org/terminal-wg/specifications/-/merge_requests/3)), vous pouvez contourner le problème en copiant le fichier `arch-update.desktop` dans `$HOME/.local/share/applications/arch-update.desktop` (par exemple, voir [ce chapitre](#lapplet-systray) pour plus de détails) et en modifiant la ligne `Exec` pour "forcer" `arch-update` à s'exécuter dans l'émulateur de terminal de votre choix.  
+Par exemple, avec [alacritty](https://alacritty.org/) *(vérifier le manuel de votre émulateur de terminal pour trouver la bonne option à utiliser)* :
+
+```text
+[...]
+Exec=alacritty -e arch-update
+```
+
+Alternativement, vous pouvez créer un lien symbolique de votre émulateur de terminal pointant vers `/usr/bin/xterm`, qui est l'option de "secours" pour `gio` (par exemple, avec [alacritty](https://alacritty.org) : `sudo ln -s /usr/bin/alacritty /usr/bin/xterm`) ou vous pouvez simplement installer un des émulateurs de terminal [connus/supportés](https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694) par `gio`.
 
 ## Contribuer
 
