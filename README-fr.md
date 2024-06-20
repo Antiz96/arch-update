@@ -196,7 +196,7 @@ Les options prises en charge sont :
 - NewsNum=[Num] # Nombre de Arch news à affcher avant la mise à jour et avec l'option `-n/--news` (voir la page de manuel arch-update(1) pour plus de details). La valeur par défaut est 5.
 - KeepOldPackages=[Num] # Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
 - KeepUninstalledPackages=[Num] # Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
-- PrivilegeElevationCommand=[Cmd] # Commande à utiliser pour élever les privilèges. Les options valides sont `sudo`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'odre suivant: `sudo`, `doas` puis `run0`.
+- PrivilegeElevationCommand=[Cmd] # Commande à utiliser pour l'élévation de privilège. Les options valides sont `sudo`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'odre suivant: `sudo`, `doas` puis `run0`.
 
 Les options sont sensibles à la casse, les majuscules doivent donc être respectées.
 ```

@@ -196,7 +196,7 @@ The supported options are:
 - NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the arch-update(1) man page for more details). Defaults to 5.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
-- PrivilegeElevationCommand=[Cmd] # Command to be used to elevate privileges. Valid options are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
+- PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid options are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
 
 Options are case sensitive, so capital letters have to be respected.
 ```
