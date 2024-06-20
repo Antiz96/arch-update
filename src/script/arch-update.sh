@@ -73,6 +73,14 @@ else
 	uninstalled_packages_num="0"
 fi
 
+if grep -Eq '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	su_cmd=$(grep -E '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+	if ! command -v "${su_cmd}" > /dev/null; then
+		error_msg "$(eval_gettext "The \${su_cmd} command set for privilege escalation in the arch-update.conf configuration file is not found\n")" && quit_msg
+		exit 2
+	fi
+fi
+
 # Definition of the colors for the colorized output
 if [ -z "${no_color}" ]; then
 	bold="\e[1m"
@@ -134,16 +142,18 @@ quit_msg() {
 	read -n 1 -r -s -p $"$(info_msg "${msg}")" && echo
 }
 
-# Definition of the elevation method to use (depending on which one is installed on the system)
-if command -v sudo > /dev/null; then
-	su_cmd="sudo"
-elif command -v doas > /dev/null; then
-	su_cmd="doas"
-elif command -v run0 > /dev/null; then
-	su_cmd="run0"
-else
-	error_msg "$(eval_gettext "A privilege elevation method is required (sudo, doas or run0)\n")" && quit_msg
-	exit 2
+# Definition of the elevation command to use (depending on which one is installed on the system and if it's not already defined in arch-update.conf)
+if [ -z "${su_cmd}" ]; then
+	if command -v sudo > /dev/null; then
+		su_cmd="sudo"
+	elif command -v doas > /dev/null; then
+		su_cmd="doas"
+	elif command -v run0 > /dev/null; then
+		su_cmd="run0"
+	else
+		error_msg "$(eval_gettext "A privilege elevation command is required (sudo, doas or run0)\n")" && quit_msg
+		exit 2
+	fi
 fi
 
 # Definition of the AUR helper to use (depending on if/which one is installed on the system) for the optional AUR packages support
