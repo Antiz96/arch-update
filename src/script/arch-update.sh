@@ -139,8 +139,10 @@ if command -v sudo > /dev/null; then
 	su_cmd="sudo"
 elif command -v doas > /dev/null; then
 	su_cmd="doas"
+elif command -v run0 > /dev/null; then
+	su_cmd="run0"
 else
-	error_msg "$(eval_gettext "A privilege elevation method is required\nPlease, install sudo or doas\n")" && quit_msg
+	error_msg "$(eval_gettext "A privilege elevation method is required (sudo, doas or run0)\n")" && quit_msg
 	exit 2
 fi
 

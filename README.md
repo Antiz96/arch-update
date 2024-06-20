@@ -29,7 +29,7 @@ Features:
 - Automatic check for old and/or uninstalled cached packages and offers to remove them.
 - Lists and helps you processing pacnew/pacsave files.
 - Automatic check for pending kernel updates requiring a reboot to be applied and offers to do so if there's one.
-- Support for both `sudo` and `doas`.
+- Support for `sudo`, `doas` & `run0`.
 - Optional support for AUR packages (through `yay` or `paru`).
 - Optional support for Flatpak packages.
 - Optional support for desktop notifications on new available updates.
@@ -166,7 +166,7 @@ Options:
 Exit Codes:
 0  OK
 1  Invalid option
-2  No privilege elevation method (sudo or doas) is installed
+2  No privilege elevation method (sudo, doas or run0) is installed
 3  Error when launching the Arch-Update systray applet
 4  User didn't gave the confirmation to proceed
 5  Error when updating the packages
