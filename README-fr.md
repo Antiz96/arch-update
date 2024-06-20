@@ -166,7 +166,7 @@ Options :
 Codes de sortie :
 0  OK
 1  Option invalide
-2  Aucune méthode d'élévation de privilège (sudo, doas ou run0) n'est installée
+2  Aucune commande d'élévation de privilège (sudo, doas ou run0) n'est installée ou celle définie dans le fichier de configuration `arch-update.conf` n'est pas disponible
 3  Erreur lors du lancement de l'applet systray d'Arch-Update
 4  L'utilisateur n'a pas donné la confirmation de procéder
 5  Erreur lors de la mise à jour des paquets
@@ -196,6 +196,7 @@ Les options prises en charge sont :
 - NewsNum=[Num] # Nombre de Arch news à affcher avant la mise à jour et avec l'option `-n/--news` (voir la page de manuel arch-update(1) pour plus de details). La valeur par défaut est 5.
 - KeepOldPackages=[Num] # Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
 - KeepUninstalledPackages=[Num] # Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
+- PrivilegeElevationCommand=[Cmd] # Commande à utiliser pour l'élévation de privilège. Les options valides sont `sudo`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'odre suivant: `sudo`, `doas` puis `run0`.
 
 Les options sont sensibles à la casse, les majuscules doivent donc être respectées.
 ```

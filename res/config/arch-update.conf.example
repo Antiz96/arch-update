@@ -8,3 +8,4 @@
 #NewsNum=5
 #KeepOldPackages=3
 #KeepUninstalledPackages=0
+#PrivilegeElevationCommand=sudo
