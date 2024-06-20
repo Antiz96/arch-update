@@ -463,10 +463,10 @@ msgstr ""
 msgid "The '${config_file}' configuration file has been generated"
 msgstr ""
 
-#: src/script/arch-update-tray.py:117
+#: src/script/arch-update-tray.py:118
 msgid "Run Arch-Update"
 msgstr ""
 
-#: src/script/arch-update-tray.py:118
+#: src/script/arch-update-tray.py:119
 msgid "Exit"
 msgstr ""

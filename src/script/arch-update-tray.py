@@ -13,6 +13,7 @@ from PyQt6.QtCore import QFileSystemWatcher
 log = logging.getLogger(__name__)
 
 # Find Statefile
+STATE_FILE = None
 if 'XDG_STATE_HOME' in os.environ:
     STATE_FILE = os.path.join(
         os.environ['XDG_STATE_HOME'], 'arch-update', 'current_state')
