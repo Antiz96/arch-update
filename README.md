@@ -159,6 +159,7 @@ Options:
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
 -D, --debug       Display debug traces
 --gen-config      Generate a default/example configuration file (see the arch-update.conf(5) man page for more details)
+--show-config     Display the `arch-update.conf` configuration file currently used (if it exists)
 --tray            Launch the Arch-Update systray applet
 -h, --help        Display this help message and exit
 -V, --version     Display version information and exit
@@ -173,6 +174,7 @@ Exit Codes:
 6  Error when calling the reboot command to apply a pending kernel update
 7  No pending update when using the `-l/--list` option
 8  Error when generating a configuration file with the `--gen-config` option
+9  Error when reading the configuration file with the `--show-config` option
 ```
 
 For more information, see the arch-update(1) man page.  

@@ -61,6 +61,10 @@ Display debug traces.
 .RB "Generate a default/example configuration file (see the " "arch-update.conf(5) " "man page for more details)."
 
 .TP
+.B \-\-show\-config
+.RB "Display the " "arch-update.conf " "configuration file currently used (if it exists)."
+
+.TP
 .B \-\-tray
 .RB "Launch the Arch-Update systray applet (you can alternatively start/enable the associated systemd service like so: " "systemctl \-\-user enable \-\-now arch-update-tray.service").
 
@@ -210,6 +214,10 @@ Error when calling the reboot command to apply a pending kernel update
 .TP
 .B 8
 .RB "Error when generating a configuration file with the " "--gen-config " "option"
+
+.TP
+.B 9
+.RB "Error when reading the configuration file with the " "--show-config " "option"
 
 .SH SEE ALSO
 .BR checkupdates (8),
