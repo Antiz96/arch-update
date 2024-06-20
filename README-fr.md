@@ -29,7 +29,7 @@ Fonctionnalités :
 - Vérification automatique de la présence d'anciens paquets et/ou paquets désinstallés dans le cache et propose de les supprimer.
 - Listing et aide au traitement des fichiers pacnew/pacsave.
 - Vérification automatique des mises à jour du noyau en attente nécessitant un redémarrage et propose de redémarrer s'il y en a une.
-- Support de `sudo` et `doas`.
+- Support de `sudo`, `doas` et `run0`.
 - Prise en charge optionnelle des paquets AUR (via `yay` ou `paru`).
 - Prise en charge optionnelle des paquets Flatpak.
 - Prise en charge optionnelle des notifications de bureau lors de nouvelles mises à jour disponibles.
@@ -166,7 +166,7 @@ Options :
 Codes de sortie :
 0  OK
 1  Option invalide
-2  Aucune méthode d'élévation de privilège (sudo ou doas) n'est installée
+2  Aucune méthode d'élévation de privilège (sudo, doas ou run0) n'est installée
 3  Erreur lors du lancement de l'applet systray d'Arch-Update
 4  L'utilisateur n'a pas donné la confirmation de procéder
 5  Erreur lors de la mise à jour des paquets
