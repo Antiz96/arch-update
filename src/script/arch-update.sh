@@ -719,6 +719,14 @@ case "${option}" in
 			info_msg "$(eval_gettext "The '\${config_file}' configuration file has been generated")"
 		fi
 	;;
+	--show-config)
+		if [ ! -f "${config_file}" ]; then
+			error_msg "$(eval_gettext "No configuration file found")"
+			exit 9
+		else
+			cat "${config_file}" || exit 9
+		fi
+	;;
 	--tray)
 		if [ ! -f "${statedir}/current_state" ]; then
 			state_up_to_date

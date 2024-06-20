@@ -159,6 +159,7 @@ Options :
 -n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
 -D, --debug       Afficher les traces de débogage
 --gen-config      Générer un fichier de configuration par défaut/exemple (voir la page de manuel arch-update.conf(5) pour plus de détails)
+--show-config     Afficher le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe)
 --tray            Lancer l'applet systray d'Arch-Update
 -h, --help        Afficher ce message d'aide et quitter
 -V, --version     Afficher les informations de version et quitter
@@ -173,6 +174,7 @@ Codes de sortie :
 6  Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
 7  Aucune mise à jour en attente durant l'utilisation de l'option `-l/--list`
 8  Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`
+9  Erreur lors de la lecture du fichier de configuration avec l'option `--show-config`
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  

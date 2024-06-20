@@ -470,6 +470,11 @@ msgstr ""
 msgid "The '${config_file}' configuration file has been generated"
 msgstr ""
 
+#: src/script/arch-update.sh:724
+#, sh-format
+msgid "No configuration file found"
+msgstr ""
+
 #: src/script/arch-update-tray.py:118
 msgid "Run Arch-Update"
 msgstr ""
