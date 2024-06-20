@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE.CONF" "5" "March 2024" "Arch-Update 2.0.2" "Arch-Update Manual"
+.TH "ARCH-UPDATE.CONF" "5" "June 2024" "Arch-Update 2.0.2" "Arch-Update Manual"
 
 .SH NAME
 arch-update.conf \- arch-update configuration file.
@@ -42,6 +42,10 @@ Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 .TP
 .B KeepUninstalledPackages=[Num]
 Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
+
+.TP
+.B PrivilegeElevationCommand=[Cmd]
+Command to be used for privilege elevation. Valid options are sudo, doas or run0. If this option is not set, Arch-Update will use the first available command in the following order: sudo, doas then run0.
 
 .SH SEE ALSO
 .BR arch-update (1)
