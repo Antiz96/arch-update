@@ -75,10 +75,6 @@ fi
 
 if grep -Eq '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	su_cmd=$(grep -E '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
-	if ! command -v "${su_cmd}" > /dev/null; then
-		error_msg "$(eval_gettext "The \${su_cmd} command set for privilege escalation in the arch-update.conf configuration file is not found\n")" && quit_msg
-		exit 2
-	fi
 fi
 
 # Definition of the colors for the colorized output
@@ -152,6 +148,11 @@ if [ -z "${su_cmd}" ]; then
 		su_cmd="run0"
 	else
 		error_msg "$(eval_gettext "A privilege elevation command is required (sudo, doas or run0)\n")" && quit_msg
+		exit 2
+	fi
+else
+	if ! command -v "${su_cmd}" > /dev/null; then
+		error_msg "$(eval_gettext "The \${su_cmd} command set for privilege escalation in the arch-update.conf configuration file is not found\n")" && quit_msg
 		exit 2
 	fi
 fi
