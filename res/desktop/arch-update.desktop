@@ -4,3 +4,4 @@ Terminal=true
 Name=Arch-Update
 Icon=arch-update
 Exec=arch-update
+Categories=Utility
