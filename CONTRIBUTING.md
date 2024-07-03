@@ -75,7 +75,7 @@ Here are a few examples of the expected commit format:
 ```text
 feat(systray): Add a right click menu to the systray applet
 
-Add a right click menu to the systray applet containing two entries: 
+Add a right click menu to the systray applet containing two entries:
 One to run Arch-Update and one to "exit" (close) the systray applet
 
 Closes https://github.com/Antiz96/arch-update/issues/163
