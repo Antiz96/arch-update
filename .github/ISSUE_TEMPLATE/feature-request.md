@@ -1,8 +1,10 @@
 ---
-Name: Feature request
-About: Suggest an idea or a new feature
-Labels: 'feature/request'
-Assignees: 'Antiz96'
+name: Feature Request
+about: Suggest an idea or a new feature
+title: ''
+labels: feature/request
+assignees: Antiz96
+
 ---
 
 <!-- Please, read the contributing guidelines before opening an issue: https://github.com/Antiz96/arch-update/blob/main/CONTRIBUTING.md -->
