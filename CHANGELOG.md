@@ -2,28 +2,6 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
-
-### Fixes
-
-- Add a category to the desktop file ([#179](https://github.com/Antiz96/arch-update/pull/179)) - ([5bbb86e](https://github.com/Antiz96/arch-update/commit/5bbb86e6c8b8d029e25fef8ebf71c5a8dfb82a8c)) by @max276
-
-### Styling
-
-- *(changelog)* Fix bare URL syntax - ([79e23bf](https://github.com/Antiz96/arch-update/commit/79e23bff9d9ae259c7bc000b1d98429a152c190a))
-- *(changelog)* Fix syntax in changelog - ([a9f1470](https://github.com/Antiz96/arch-update/commit/a9f147050e19b67402d005c114fb525e8df26cb5))
-
-### Miscellaneous
-
-- *(CONTRIBUTING)* Update contributing guidelines ([#189](https://github.com/Antiz96/arch-update/pull/189)) - ([7bf057d](https://github.com/Antiz96/arch-update/commit/7bf057d7a2ed8ec952f8a236fc41b29088ce50f6)) by @Antiz96
-- *(changelog)* Add a changelog file - ([8288610](https://github.com/Antiz96/arch-update/commit/828861004b2ded2b0784dc376035b66b466a725e))
-- *(ci)* Exclude rule MD024 from mdl check - ([bdba120](https://github.com/Antiz96/arch-update/commit/bdba1206b70197c0ac1bcd4d8a4b1642816f8522))
-- Add contributing guidelines (CONTRIBUTING.md) ([#188](https://github.com/Antiz96/arch-update/pull/188)) - ([9307079](https://github.com/Antiz96/arch-update/commit/930707987b401ec200fac1778d5faea97f07428f)) by @Antiz96
-- Add a link to sponsor page ([#187](https://github.com/Antiz96/arch-update/pull/187)) - ([8ebab0a](https://github.com/Antiz96/arch-update/commit/8ebab0a74018a3926cdfa076495b94ba9f3fcc88)) by @Antiz96
-- Add a config for issue templates ([#186](https://github.com/Antiz96/arch-update/pull/186)) - ([2062fdd](https://github.com/Antiz96/arch-update/commit/2062fdd58ae6951051b2677d1635a82a2bb1bc86)) by @Antiz96
-- Update issue templates ([#185](https://github.com/Antiz96/arch-update/pull/185)) - ([658a3ae](https://github.com/Antiz96/arch-update/commit/658a3aebd0fa0de1cd786668aae972b7be7ac669)) by @Antiz96
-- Add templates for issues and pull requests ([#184](https://github.com/Antiz96/arch-update/pull/184)) - ([7cf1245](https://github.com/Antiz96/arch-update/commit/7cf1245a305db8b1b00c9d2f8441b5cfb3b29455)) by @Antiz96
-
 ## [2.1.0](https://github.com/Antiz96/arch-update/releases/tag/v2.1.0) - 2024-06-20
 
 ### Features
