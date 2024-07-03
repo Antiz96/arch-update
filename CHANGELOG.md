@@ -312,7 +312,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.5.3](https://github.com/Antiz96/arch-update/releases/tag/v1.5.3) - 2023-04-04
 
-- Revert the required fix for the 'checkupdate' issue when using yay (implemented in #22) as it has been fixed/reverted by upstream (https://github.com/Antiz96/arch-update/pull/23)
+- Revert the required fix for the 'checkupdate' issue when using yay (implemented in #22) as it has been fixed/reverted by upstream (<https://github.com/Antiz96/arch-update/pull/23>)
 
 ## [1.5.2](https://github.com/Antiz96/arch-update/releases/tag/v1.5.2) - 2023-04-03
 
