@@ -34,7 +34,8 @@ Providing as much details as possible in your issue will ease its processing.
 
 ## Open a pull request
 
-Read the following sub-chapter before opening a pull request and make sure to provide the information requested in the [pull request template](https://github.com/Antiz96/arch-update/blob/main/.github/PULL_REQUEST_TEMPLATE.md).
+Read the following sub-chapters before opening a pull request.  
+Make sure to create your merge request from a dedicated branch (do not use the `main` branch) and to provide the information requested in the [pull request template](https://github.com/Antiz96/arch-update/blob/main/.github/PULL_REQUEST_TEMPLATE.md).
 
 ### Open an issue first
 
