@@ -21,7 +21,7 @@ git-cliff -up CHANGELOG.md
 sed -i "s|\[unreleased\]|\[v${TAG}\](https://github.com/Antiz96/arch-update/releases/tag/v${TAG})\ -\ $(date '+%Y-%m-%d')|g" CHANGELOG.md
 ```
 
-- Commit, sign and push changes directly to the **main branch**. *We want the tagged commit to be signed with the [OpenPGP Key](https://keyserver.ubuntu.com/pks/lookup?search=D33FAA16B937F3B2&fingerprint=on&op=index) listed in [MAINTAINERS.md](https://github.com/Antiz96/arch-update/blob/main/MAINTAINERS.md) (and not with the GitHub signature key automatically used when merging a pull request); this implies **temporarily** allowing administrators to bypass branch protections rules*:
+- Commit, sign and push changes directly to the **main branch** *(we want the tagged commit to be signed with the [OpenPGP Key](https://keyserver.ubuntu.com/pks/lookup?search=D33FAA16B937F3B2&fingerprint=on&op=index) listed in [MAINTAINERS.md](https://github.com/Antiz96/arch-update/blob/main/MAINTAINERS.md) and not with the GitHub signature key automatically used when merging a pull request; this implies **temporarily** allowing administrators to bypass branch protections rules)*:
 
 ```bash
 git add .
