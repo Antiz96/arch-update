@@ -47,7 +47,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.1](https://github.com/Antiz96/arch-update/releases/tag/v2.0.1) - 2024-05-13
 
-
 ### Improvements/Fixes
 
 - Fix a typo in the FR documentation by @Antiz96 in https://github.com/Antiz96/arch-update/pull/155
@@ -70,9 +69,9 @@ All notable changes to this project will be documented in this file.
 
 - People running Wayland additionally need the `qt6-wayland` package for the systray applet to work properly.
 - For people using the Arch-Update AUR package :
-    - The following error is expected when using `arch-update` to update from v1.X.X to v2.X.X: `cp: cannot stat '/usr/share/icons/arch-update/arch-update_up-to-date.svg': No such file or directory`. It will only happen once during the switch from v1 to v2 and will not happen again after that :)
+        The following error is expected when using `arch-update` to update from v1.X.X to v2.X.X: `cp: cannot stat '/usr/share/icons/arch-update/arch-update_up-to-date.svg': No such file or directory`. It will only happen once during the switch from v1 to v2 and will not happen again after that :)
 - For people installing Arch-Update [from source](https://github.com/Antiz96/arch-update?tab=readme-ov-file#from-source):
-    - First uninstall the current version running on your system (via `sudo make uninstall`) before downloading this release's archive (or pulling the repo locally) and re-installing Arch-Update (via `sudo make install`), otherwise you'll keep unnecessary residues of the previous version on your system. Also make sure to install the newly required dependencies listed in the installation instructions.
+        First uninstall the current version running on your system (via `sudo make uninstall`) before downloading this release's archive (or pulling the repo locally) and re-installing Arch-Update (via `sudo make install`), otherwise you'll keep unnecessary residues of the previous version on your system. Also make sure to install the newly required dependencies listed in the installation instructions.
 
 ## [1.15.0](https://github.com/Antiz96/arch-update/releases/tag/v1.15.0) - 2024-05-01
 
@@ -126,7 +125,7 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
--  Add the new `-d/--devel` option to include AUR development packages updates by @derethil in https://github.com/Antiz96/arch-update/pull/125
+- Add the new `-d/--devel` option to include AUR development packages updates by @derethil in https://github.com/Antiz96/arch-update/pull/125
 
 ### Improvements/Fixes
 
@@ -221,16 +220,17 @@ All notable changes to this project will be documented in this file.
 - Add missing documentation for the old cached packages handling and pending kernel update processing features in the help message by @Antiz96 in https://github.com/Antiz96/arch-update/pull/88
 
 ### Other
+
 - [Release Prep] v1.10.0 by @Antiz96 in https://github.com/Antiz96/arch-update/pull/90
 - Improve readability of documentation in README by @Antiz96 in https://github.com/Antiz96/arch-update/pull/91
 
 ## [1.9.1](https://github.com/Antiz96/arch-update/releases/tag/v1.9.1) - 2023-12-04
 
-### Fixes: 
+### Fixes
 
 - Fix false positive 'pending kernel update' messages on EndeavourOS with systemd-boot by @Antiz96 in https://github.com/Antiz96/arch-update/pull/75
 
-### Other: 
+### Other
 
 - [Release Prep] Bump the script to v1.9.1 by @Antiz96 in https://github.com/Antiz96/arch-update/pull/76
 
@@ -310,7 +310,6 @@ All notable changes to this project will be documented in this file.
 - Switch from hq to htmlq to print Arch news during the update operation by @Antiz96 in https://github.com/Antiz96/arch-update/pull/29
 - Bump the script to v1.5.4 by @Antiz96 in https://github.com/Antiz96/arch-update/pull/30
 
-
 ## [1.5.3](https://github.com/Antiz96/arch-update/releases/tag/v1.5.3) - 2023-04-04
 
 - Revert the required fix for the 'checkupdate' issue when using yay (implemented in #22) as it has been fixed/reverted by upstream (https://github.com/Antiz96/arch-update/pull/23)
@@ -368,7 +367,7 @@ All notable changes to this project will be documented in this file.
 ### Code changes
 
 - Messages printed by Arch-Update that relates to errors are now printed in the error output (2) instead of the standard output (which is more conventional).
-- The install/update script has been completely re-written in a more elegant way. It now checks the integrity of the Arch-Update archive when performing an install or an update (based on its sha256 sum). 
+- The install/update script has been completely re-written in a more elegant way. It now checks the integrity of the Arch-Update archive when performing an install or an update (based on its sha256 sum).
 - The uninstall script has been completely re-written in a more elegant way.
 - Miscellaneous little changes and fixes to the main Arch-Update script.
 
