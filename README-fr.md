@@ -14,6 +14,7 @@
 - [Documentation](#documentation)
 - [Trucs et astuces](#trucs-et-astuces)
 - [Contribuer](#contribuer)
+- [Licence](#licence)
 
 ## Description
 
@@ -260,5 +261,8 @@ Alternativement, vous pouvez créer un lien symbolique de votre émulateur de te
 
 ## Contribuer
 
-Vous pouvez soulever vos problèmes, commentaires et suggestions dans l'onglet [Issues](https://github.com/Antiz96/arch-update/issues).  
-Les [Pull requests](https://github.com/Antiz96/arch-update/pulls) sont également les bienvenues !
+Veuillez lire le [guide de contribution](https://github.com/Antiz96/arch-update/blob/main/CONTRIBUTING.md).
+
+## Licence
+
+Arch-Update est sous [licence GPL-3.0](https://github.com/Antiz96/arch-update/blob/main/LICENSE) (ou toute version ultérieure de cette licence).
