@@ -14,6 +14,7 @@
 - [Documentation](#documentation)
 - [Tips and tricks](#tips-and-tricks)
 - [Contributing](#contributing)
+- [License](#license)
 
 ## Description
 
@@ -260,5 +261,8 @@ Alternatively, you can create a symlink for your terminal emulator that points t
 
 ## Contributing
 
-You can raise your issues, feedbacks and suggestions in the [issues tab](https://github.com/Antiz96/arch-update/issues).  
-[Pull requests](https://github.com/Antiz96/arch-update/pulls) are welcomed as well!
+Please, read the [contributing guidelines](https://github.com/Antiz96/arch-update/blob/main/CONTRIBUTING.md).
+
+## License
+
+Arch-Update is licensed under the [GPL-3.0 license](https://github.com/Antiz96/arch-update/blob/main/LICENSE) (or any later version of that license).
