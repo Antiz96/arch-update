@@ -27,7 +27,7 @@ body = """
 {% endmacro -%}
 
 {% if version %}\
-    ## [{{ version | trim_start_matches(pat="v") }}]\
+    ## [{{ version }}]\
     ({{ self::remote_url() }}/releases/tag/{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
 {% else %}\
     ## [unreleased]
