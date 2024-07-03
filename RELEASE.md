@@ -47,4 +47,8 @@ gpg --local-user D33FAA16B937F3B2 --armor --detach-sign arch-update-${TAG}.tar.g
 rm -f arch-update-${TAG}.tar.gz
 ```
 
-- Upload the 3 produced files as assets in the release and re-enable the branch protection rules on the main branch for administrators.
+- Upload the 3 produced files as assets in the release, re-enable the branch protection rules on the main branch for administrators and unset the `TAG` variable:
+
+```bash
+unset TAG
+```
