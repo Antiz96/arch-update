@@ -1,9 +1,9 @@
 # git-cliff ~ default configuration file
 # https://git-cliff.org/docs/configuration
-#
-# Lines starting with "#" are comments.
-# Configuration options are organized into tables and keys.
-# See documentation for more information on available options.
+
+[remote.github]
+owner = "Antiz96"
+repo = "arch-update"
 
 [changelog]
 # template for the changelog footer
@@ -23,6 +23,7 @@ body = """
         {% if commit.breaking %}[**breaking**] {% endif %}\
         {{ commit.message | upper_first }} - \
         ([{{ commit.id | truncate(length=7, end="") }}]({{ self::remote_url() }}/commit/{{ commit.id }}))\
+        {% if commit.github.username %} by @{{ commit.github.username }}{%- endif -%}
 {% endmacro -%}
 
 {% if version %}\
@@ -55,7 +56,7 @@ footer = """
 trim = true
 # postprocessors
 postprocessors = [
-  # { pattern = '<REPO>', replace = "https://github.com/orhun/git-cliff" }, # replace repository URL
+  { pattern = '<REPO>', replace = "https://github.com/Antiz96/arch-update" }, # replace repository URL
 ]
 
 [git]
@@ -67,11 +68,7 @@ filter_unconventional = false
 split_commits = false
 # regex for preprocessing the commit messages
 commit_preprocessors = [
-  # Replace issue numbers
-  #{ pattern = '\((\w+\s)?#([0-9]+)\)', replace = "([#${2}](<REPO>/issues/${2}))"},
-  # Check spelling of the commit with https://github.com/crate-ci/typos
-  # If the spelling is incorrect, it will be automatically fixed.
-  #{ pattern = '.*', replace_command = 'typos --write-changes -' },
+  { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "([#${2}](<REPO>/pull/${2}))" },
 ]
 # regex for parsing and grouping commits
 commit_parsers = [
