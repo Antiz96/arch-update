@@ -1,8 +1,10 @@
 ---
-Name: Bug report
-About: Report a bug
-Labels: 'bug'
-Assignees: 'Antiz96'
+name: Bug Report
+about: Report a bug
+title: ''
+labels: bug
+assignees: Antiz96
+
 ---
 
 <!-- Please, read the contributing guidelines before opening an issue: https://github.com/Antiz96/arch-update/blob/main/CONTRIBUTING.md -->
