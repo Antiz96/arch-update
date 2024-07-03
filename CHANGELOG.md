@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.1.0](https://github.com/Antiz96/arch-update/releases/tag/v2.1.0) - 2024-06-20
+## [v2.1.0](https://github.com/Antiz96/arch-update/releases/tag/v2.1.0) - 2024-06-20
 
 ### Features
 
@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 
 - Assign the STATE_FILE var before it is accessed in arch-update-tray.py script by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/174>
 
-## [2.0.2](https://github.com/Antiz96/arch-update/releases/tag/v2.0.2) - 2024-05-19
+## [v2.0.2](https://github.com/Antiz96/arch-update/releases/tag/v2.0.2) - 2024-05-19
 
 ### Features
 
@@ -30,14 +30,14 @@ All notable changes to this project will be documented in this file.
 - Fix wording in Makefile by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/158>
 - Fix typos in READMEs by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/161>
 
-## [2.0.1](https://github.com/Antiz96/arch-update/releases/tag/v2.0.1) - 2024-05-13
+## [v2.0.1](https://github.com/Antiz96/arch-update/releases/tag/v2.0.1) - 2024-05-13
 
 ### Improvements/Fixes
 
 - Fix a typo in the FR documentation by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/155>
 - Make systray applet also searching in XDG_DATA_HOME & XDG_DATA_DIRS when looking for the .desktop file by @Antiz96 and @trigg in <https://github.com/Antiz96/arch-update/pull/156>
 
-## [2.0.0](https://github.com/Antiz96/arch-update/releases/tag/v2.0.0) - 2024-05-10
+## [v2.0.0](https://github.com/Antiz96/arch-update/releases/tag/v2.0.0) - 2024-05-10
 
 ### Features
 
@@ -58,25 +58,25 @@ All notable changes to this project will be documented in this file.
 - For people installing Arch-Update [from source](https://github.com/Antiz96/arch-update?tab=readme-ov-file#from-source):
         First uninstall the current version running on your system (via `sudo make uninstall`) before downloading this release's archive (or pulling the repo locally) and re-installing Arch-Update (via `sudo make install`), otherwise you'll keep unnecessary residues of the previous version on your system. Also make sure to install the newly required dependencies listed in the installation instructions.
 
-## [1.15.0](https://github.com/Antiz96/arch-update/releases/tag/v1.15.0) - 2024-05-01
+## [v1.15.0](https://github.com/Antiz96/arch-update/releases/tag/v1.15.0) - 2024-05-01
 
 ### Features
 
 - Introduce the `--gen-config` option that allows to generate an example configuration file by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/143>
 
-## [1.14.4](https://github.com/Antiz96/arch-update/releases/tag/v1.14.4) - 2024-04-18
+## [v1.14.4](https://github.com/Antiz96/arch-update/releases/tag/v1.14.4) - 2024-04-18
 
 ### Improvements
 
 - Add an explicit message that the script is looking for updates by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/141>
 
-## [1.14.3](https://github.com/Antiz96/arch-update/releases/tag/v1.14.3) - 2024-04-14
+## [v1.14.3](https://github.com/Antiz96/arch-update/releases/tag/v1.14.3) - 2024-04-14
 
 ### Improvements/Fixes
 
 - Explicitly set color option of wrapped tools in the main script by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/140>
 
-## [1.14.2](https://github.com/Antiz96/arch-update/releases/tag/v1.14.2) - 2024-04-13
+## [v1.14.2](https://github.com/Antiz96/arch-update/releases/tag/v1.14.2) - 2024-04-13
 
 ### Improvements
 
@@ -86,7 +86,7 @@ All notable changes to this project will be documented in this file.
 
 - Fix a typo in ZSH completions by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/139>
 
-## [1.14.1](https://github.com/Antiz96/arch-update/releases/tag/v1.14.1) - 2024-03-24
+## [v1.14.1](https://github.com/Antiz96/arch-update/releases/tag/v1.14.1) - 2024-03-24
 
 ### Improvement
 
@@ -96,7 +96,7 @@ All notable changes to this project will be documented in this file.
 
 - [Release Prep] v1.14.1 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/135>
 
-## [1.14.0](https://github.com/Antiz96/arch-update/releases/tag/v1.14.0) - 2024-03-22
+## [v1.14.0](https://github.com/Antiz96/arch-update/releases/tag/v1.14.0) - 2024-03-22
 
 ### Features
 
@@ -106,7 +106,7 @@ All notable changes to this project will be documented in this file.
 
 - [Release Prep] v1.14.0 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/132>
 
-## [1.13.0](https://github.com/Antiz96/arch-update/releases/tag/v1.13.0) - 2024-03-21
+## [v1.13.0](https://github.com/Antiz96/arch-update/releases/tag/v1.13.0) - 2024-03-21
 
 ### Features
 
@@ -122,7 +122,7 @@ All notable changes to this project will be documented in this file.
 
 - [Release Prep] v1.13.0 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/130>
 
-## [1.12.2](https://github.com/Antiz96/arch-update/releases/tag/v1.12.2) - 2024-03-12
+## [v1.12.2](https://github.com/Antiz96/arch-update/releases/tag/v1.12.2) - 2024-03-12
 
 ### Features
 
@@ -132,7 +132,7 @@ All notable changes to this project will be documented in this file.
 
 - [Release Prep] v1.12.2 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/124>
 
-## [1.12.1](https://github.com/Antiz96/arch-update/releases/tag/v1.12.1) - 2024-02-29
+## [v1.12.1](https://github.com/Antiz96/arch-update/releases/tag/v1.12.1) - 2024-02-29
 
 ### Features
 
@@ -142,7 +142,7 @@ All notable changes to this project will be documented in this file.
 
 - [Release Prep] v1.12.1 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/120>
 
-## [1.12.0](https://github.com/Antiz96/arch-update/releases/tag/v1.12.0) - 2024-02-25
+## [v1.12.0](https://github.com/Antiz96/arch-update/releases/tag/v1.12.0) - 2024-02-25
 
 ### Features
 
@@ -158,7 +158,7 @@ All notable changes to this project will be documented in this file.
 
 - [Release Prep] v1.12.0 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/117>
 
-## [1.11.0](https://github.com/Antiz96/arch-update/releases/tag/v1.11.0) - 2024-02-09
+## [v1.11.0](https://github.com/Antiz96/arch-update/releases/tag/v1.11.0) - 2024-02-09
 
 ### Features
 
@@ -175,7 +175,7 @@ All notable changes to this project will be documented in this file.
 - Licensing: Precise that Arch-Update is licensed under GPL3+ by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/105>
 - [Release Prep] v1.11.0 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/108>
 
-## [1.10.1](https://github.com/Antiz96/arch-update/releases/tag/v1.10.1) - 2024-01-14
+## [v1.10.1](https://github.com/Antiz96/arch-update/releases/tag/v1.10.1) - 2024-01-14
 
 ### Fixes
 
@@ -187,7 +187,7 @@ All notable changes to this project will be documented in this file.
 - Harmonize name as 'Arch-Update' everywhere by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/94>
 - [Release Prep] v1.10.1 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/99>
 
-## [1.10.0](https://github.com/Antiz96/arch-update/releases/tag/v1.10.0) - 2024-01-06
+## [v1.10.0](https://github.com/Antiz96/arch-update/releases/tag/v1.10.0) - 2024-01-06
 
 ### Features
 
@@ -209,7 +209,7 @@ All notable changes to this project will be documented in this file.
 - [Release Prep] v1.10.0 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/90>
 - Improve readability of documentation in README by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/91>
 
-## [1.9.1](https://github.com/Antiz96/arch-update/releases/tag/v1.9.1) - 2023-12-04
+## [v1.9.1](https://github.com/Antiz96/arch-update/releases/tag/v1.9.1) - 2023-12-04
 
 ### Fixes
 
@@ -219,7 +219,7 @@ All notable changes to this project will be documented in this file.
 
 - [Release Prep] Bump the script to v1.9.1 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/76>
 
-## [1.9.0](https://github.com/Antiz96/arch-update/releases/tag/v1.9.0) - 2023-12-03
+## [v1.9.0](https://github.com/Antiz96/arch-update/releases/tag/v1.9.0) - 2023-12-03
 
 ### Features
 
@@ -233,7 +233,7 @@ All notable changes to this project will be documented in this file.
 
 - [Release Prep] Bump the script to v1.9.0 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/73>
 
-## [1.8.0](https://github.com/Antiz96/arch-update/releases/tag/v1.8.0) - 2023-12-01
+## [v1.8.0](https://github.com/Antiz96/arch-update/releases/tag/v1.8.0) - 2023-12-01
 
 ### Features
 
@@ -250,42 +250,42 @@ All notable changes to this project will be documented in this file.
 - Restructuring the functions' calls in the script to make it more readable and easier to evolve/work with by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/68>
 - [Release Prep] Bump the script to v1.8.0 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/69>
 
-## [1.7.0](https://github.com/Antiz96/arch-update/releases/tag/v1.7.0) - 2023-11-24
+## [v1.7.0](https://github.com/Antiz96/arch-update/releases/tag/v1.7.0) - 2023-11-24
 
 - Only send desktop notification if the list of available updates differs from the last check by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/61>
 
-## [1.6.2](https://github.com/Antiz96/arch-update/releases/tag/v1.6.2) - 2023-11-21
+## [v1.6.2](https://github.com/Antiz96/arch-update/releases/tag/v1.6.2) - 2023-11-21
 
 - Make showing the version changes the default behaviour when listing available updates by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/58>
 - Make vim an optional dependency by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/59>
 
-## [1.6.1](https://github.com/Antiz96/arch-update/releases/tag/v1.6.1) - 2023-11-10
+## [v1.6.1](https://github.com/Antiz96/arch-update/releases/tag/v1.6.1) - 2023-11-10
 
 - Bugfix: Only print "No Flatpak unused package found" if flatpak is actually installed by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/57>
 
-## [1.6.0](https://github.com/Antiz96/arch-update/releases/tag/v1.6.0) - 2023-11-10
+## [v1.6.0](https://github.com/Antiz96/arch-update/releases/tag/v1.6.0) - 2023-11-10
 
 - Add Flatpak packages support (both for update and remove unused packages) by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/54>
 - Add styling to differentiate each steps of the main script more easily by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/55>
 
-## [1.5.7](https://github.com/Antiz96/arch-update/releases/tag/v1.5.7) - 2023-07-16
+## [v1.5.7](https://github.com/Antiz96/arch-update/releases/tag/v1.5.7) - 2023-07-16
 
 - Show more relevant info in a more readable way during the print of a news by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/39>
 - Add a '[NEW]' tag to each Arch news that are newer than 15 days by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/40>
 - Update documentation with the recently added features by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/42>
 - Bump the main script's version by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/43>
 
-## [1.5.6](https://github.com/Antiz96/arch-update/releases/tag/v1.5.6) - 2023-06-24
+## [v1.5.6](https://github.com/Antiz96/arch-update/releases/tag/v1.5.6) - 2023-06-24
 
 - Add codespell to the test suite ran by GH action by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/33>
 - Typo fixes by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/34>
 - Bump the main script version by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/35>
 
-## [1.5.5](https://github.com/Antiz96/arch-update/releases/tag/v1.5.5) - 2023-06-14
+## [v1.5.5](https://github.com/Antiz96/arch-update/releases/tag/v1.5.5) - 2023-06-14
 
 - Filter all special characters/symbols when parsing the Arch news urls to avoid ending with a wrong url by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/32>
 
-## [1.5.4](https://github.com/Antiz96/arch-update/releases/tag/v1.5.4) - 2023-06-13
+## [v1.5.4](https://github.com/Antiz96/arch-update/releases/tag/v1.5.4) - 2023-06-13
 
 - Add a GitHub action to run shellcheck on pull requests by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/24>
 - Add basic but useful information at the top of the main script by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/25>
@@ -295,19 +295,19 @@ All notable changes to this project will be documented in this file.
 - Switch from hq to htmlq to print Arch news during the update operation by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/29>
 - Bump the script to v1.5.4 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/30>
 
-## [1.5.3](https://github.com/Antiz96/arch-update/releases/tag/v1.5.3) - 2023-04-04
+## [v1.5.3](https://github.com/Antiz96/arch-update/releases/tag/v1.5.3) - 2023-04-04
 
 - Revert the required fix for the 'checkupdate' issue when using yay (implemented in #22) as it has been fixed/reverted by upstream (<https://github.com/Antiz96/arch-update/pull/23>)
 
-## [1.5.2](https://github.com/Antiz96/arch-update/releases/tag/v1.5.2) - 2023-04-03
+## [v1.5.2](https://github.com/Antiz96/arch-update/releases/tag/v1.5.2) - 2023-04-03
 
 - Fix the 'checkupdate' issue when using yay by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/22>
 
-## [1.5.1](https://github.com/Antiz96/arch-update/releases/tag/v1.5.1) - 2023-02-10
+## [v1.5.1](https://github.com/Antiz96/arch-update/releases/tag/v1.5.1) - 2023-02-10
 
 - Make use of pacdiff to search for pacnew files by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/20>
 
-## [1.5.0](https://github.com/Antiz96/arch-update/releases/tag/v1.5.0) - 2023-02-09
+## [v1.5.0](https://github.com/Antiz96/arch-update/releases/tag/v1.5.0) - 2023-02-09
 
 - Add removing orphan packages support by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/15>
 - Make searching and processing orphan packages and pacnew files independent from updates by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/16>
@@ -315,21 +315,21 @@ All notable changes to this project will be documented in this file.
 - Various improvements/optimisation to the main script, the README and the documentation by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/18>
 - Bump the script to v1.5.0 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/19>
 
-## [1.4.2](https://github.com/Antiz96/arch-update/releases/tag/v1.4.2) - 2022-11-30
+## [v1.4.2](https://github.com/Antiz96/arch-update/releases/tag/v1.4.2) - 2022-11-30
 
 - Bump the script's version to v1.4.2 by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/14>
 
-## [1.4.1](https://github.com/Antiz96/arch-update/releases/tag/v1.4.1) - 2022-11-28
+## [v1.4.1](https://github.com/Antiz96/arch-update/releases/tag/v1.4.1) - 2022-11-28
 
 - Corrected the arch-update.svg default icon by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/13>
 
-## [1.4.0](https://github.com/Antiz96/arch-update/releases/tag/v1.4.0) - 2022-11-26
+## [v1.4.0](https://github.com/Antiz96/arch-update/releases/tag/v1.4.0) - 2022-11-26
 
 - Add support for doas by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/10>
 - Add support for pacdiff to be able to process pacnew/pacsave files after an update by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/11>
 - Add a feature to read the latest Arch Linux news before updating the system by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/12>
 
-## [1.3.2](https://github.com/Antiz96/arch-update/releases/tag/v1.3.2) - 2022-09-15
+## [v1.3.2](https://github.com/Antiz96/arch-update/releases/tag/v1.3.2) - 2022-09-15
 
 - The repo has been restructured to better suit best practices.
 - New install/uninstall method: The install.sh and uninstall.sh scripts have been removed in favor of a Makefile; which is cleaner, more standard and way easier to maintain.
@@ -337,12 +337,12 @@ All notable changes to this project will be documented in this file.
 - The "dependencies" (and overall) documentation has been improved.
 - A LICENSE file has been added to the repo (GLP3).
 
-## [1.3.1](https://github.com/Antiz96/arch-update/releases/tag/v1.3.1) - 2022-06-29
+## [v1.3.1](https://github.com/Antiz96/arch-update/releases/tag/v1.3.1) - 2022-06-29
 
 - Added some information to the man page/documentation.
 - Typo fixes.
 
-## [1.3.0](https://github.com/Antiz96/arch-update/releases/tag/v1.3.0) - 2022-06-27
+## [v1.3.0](https://github.com/Antiz96/arch-update/releases/tag/v1.3.0) - 2022-06-27
 
 ### New features
 
@@ -362,23 +362,23 @@ All notable changes to this project will be documented in this file.
 - The man page is now zipped during the installation process (automatically done by pacman for the [AUR package](https://aur.archlinux.org/packages/arch-update)) instead of being already zipped in the archive.
 - The versions number now follows the [semantic versioning principles](https://semver.org/).
 
-## [1.2.4](https://github.com/Antiz96/arch-update/releases/tag/v1.2.4) - 2022-04-29
+## [v1.2.4](https://github.com/Antiz96/arch-update/releases/tag/v1.2.4) - 2022-04-29
 
 - Minor fixes
 
-## [1.2.3](https://github.com/Antiz96/arch-update/releases/tag/v1.2.3) - 2022-04-21
+## [v1.2.3](https://github.com/Antiz96/arch-update/releases/tag/v1.2.3) - 2022-04-21
 
 - Minor fixes
 
-## [1.2.2](https://github.com/Antiz96/arch-update/releases/tag/v1.2.2) - 2022-03-31
+## [v1.2.2](https://github.com/Antiz96/arch-update/releases/tag/v1.2.2) - 2022-03-31
 
 - Corrected and added some info in the man page
 
-## [1.2.1](https://github.com/Antiz96/arch-update/releases/tag/v1.2.1) - 2022-03-31
+## [v1.2.1](https://github.com/Antiz96/arch-update/releases/tag/v1.2.1) - 2022-03-31
 
 - Corrected and added some info in the man page
 
-## [1.2](https://github.com/Antiz96/arch-update/releases/tag/v1.2) - 2022-03-30
+## [v1.2](https://github.com/Antiz96/arch-update/releases/tag/v1.2) - 2022-03-30
 
 - Added correlation between "pkgver" and "source" in the PKGBUILD
 - The archive is now uploaded as a release and not directly in the git repo
