@@ -138,8 +138,12 @@ msgstr "  --gen-config      Générer un fichier de configuration par défaut/ex
 
 #: src/script/arch-update.sh:192
 #, sh-format
-msgid "  --tray            Launch the Arch-Update systray applet"
-msgstr "  --tray            Lancer l'applet systray d'Arch-Update"
+msgid ""
+"  --tray            Launch the Arch-Update systray applet, you can "
+"optionally add the '--enable' argument to start it automatically at boot"
+msgstr ""
+"  --tray            Lancer l'applet systray d'Arch-Update, vous pouvez "
+"optionnellement ajouter l'argument '--enable' pour la démarrer automatiquement au démarrage du système"
 
 #: src/script/arch-update.sh:193
 #, sh-format
@@ -520,6 +524,29 @@ msgstr "Le fichier de configuration '${config_file}' a été généré"
 #, sh-format
 msgid "No configuration file found"
 msgstr "Aucun fichier de configuration n'a été trouvé"
+
+#: src/script/arch-update.sh:743
+#, sh-format
+msgid "Arch-Update tray desktop file not found"
+msgstr "Le fichier Arch-Update tray desktop n'a pas été trouvé"
+
+#: src/script/arch-update.sh:750
+#, sh-format
+msgid "The '${tray_desktop_file_autostart}' file already exists"
+msgstr "Le fichier '${tray_desktop_file_autostart}' existe déjà"
+
+#: src/script/arch-update.sh:755
+#, sh-format
+msgid ""
+"The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
+"systray applet will be automatically started at your next log on\\nTo start "
+"it right now, you can launch the \"Arch-Update Systray Applet\" application "
+"from your app menu"
+msgstr ""
+"Le fichier '${tray_desktop_file_autostart}' a été créé, l'applet systray d'Arch-Update "
+"sera automatiquement démarré à votre prochain connexion\\nPour la démarrer "
+"immédiatement, vous pouvez lancer l'application \"Arch-Update Systray Applet\" "
+"depuis votre menu d'application"
 
 #: src/script/arch-update-tray.py:118
 msgid "Run Arch-Update"

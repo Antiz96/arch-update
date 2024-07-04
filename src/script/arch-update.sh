@@ -189,7 +189,7 @@ $(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
 $(eval_gettext "  -D, --debug       Display debug traces")
 $(eval_gettext "  --gen-config      Generate a default/example configuration file")
-$(eval_gettext "  --tray            Launch the Arch-Update systray applet")
+$(eval_gettext "  --tray            Launch the Arch-Update systray applet, you can optionally add the '--enable' argument to start it automatically at boot")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")
 
@@ -728,11 +728,39 @@ case "${option}" in
 		fi
 	;;
 	--tray)
-		if [ ! -f "${statedir}/current_state" ]; then
-			state_up_to_date
-		fi
+		if [ "${2}" == "--enable" ]; then
+			if [ -f "${XDG_DATA_HOME}/applications/${name}-tray.desktop" ]; then
+				tray_desktop_file="${XDG_DATA_HOME}/applications/${name}-tray.desktop"
+			elif [ -f "${HOME}/.local/share/applications/${name}-tray.desktop" ]; then
+				tray_desktop_file="${HOME}/.local/share/applications/${name}-tray.desktop"
+			elif [ -f "${XDG_DATA_DIRS}/applications/${name}-tray.desktop" ]; then
+				tray_desktop_file="${XDG_DATA_DIRS}/applications/${name}-tray.desktop"
+			elif [ -f "/usr/local/share/applications/${name}-tray.desktop" ]; then
+				tray_desktop_file="/usr/local/share/applications/${name}-tray.desktop"
+			elif [ -f "/usr/share/applications/${name}-tray.desktop" ]; then
+				tray_desktop_file="/usr/share/applications/${name}-tray.desktop"
+			else
+				error_msg "$(eval_gettext "Arch-Update tray desktop file not found")"
+				exit 10
+			fi
 
-		arch-update-tray || exit 3
+			tray_desktop_file_autostart="${XDG_CONFIG_HOME:-${HOME}/.config}/autostart/arch-update-tray.desktop"
+
+			if [ -f "${tray_desktop_file_autostart}" ]; then
+				error_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file already exists")"
+				exit 10
+			else
+				mkdir -p "${XDG_CONFIG_HOME:-${HOME}/.config}/autostart/"
+				cp "${tray_desktop_file}" "${tray_desktop_file_autostart}" || exit 10
+				info_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file has been created, the Arch-Update systray applet will be automatically started at your next log on\nTo start it right now, you can launch the \"Arch-Update Systray Applet\" application from your app menu")"
+			fi
+		else
+			if [ ! -f "${statedir}/current_state" ]; then
+				state_up_to_date
+			fi
+
+			arch-update-tray || exit 3
+		fi
 	;;
 	-h|--help)
 		help

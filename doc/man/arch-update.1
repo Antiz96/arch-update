@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "June 2024" "Arch-Update 2.1.0" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "July 2024" "Arch-Update 2.1.0" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
@@ -66,7 +66,9 @@ Display debug traces.
 
 .TP
 .B \-\-tray
-.RB "Launch the Arch-Update systray applet (you can alternatively start/enable the associated systemd service like so: " "systemctl \-\-user enable \-\-now arch-update-tray.service").
+Start the Arch-Update systray applet.
+.RB "To start it automatically at boot, you can either run the " "arch-update --tray --enable " "command (this is the preferred method on some specific desktop environment, like XFCE for instance) or start/enable the associated systemd service like so: " "systemctl \-\-user enable \-\-now arch-update-tray.service").
+.RB "If you use a window manager/Wayland compositor, you can add the " "arch-update --tray " "command to your configuration file instead."
 
 .TP
 .B \-v, \-\-version
@@ -218,6 +220,10 @@ Error when calling the reboot command to apply a pending kernel update
 .TP
 .B 9
 .RB "Error when reading the configuration file with the " "--show-config " "option"
+
+.TP
+.B 10
+.RB "Error when creating the autostart desktop file for the systray applet with the " "--tray --enable " "option"
 
 .SH SEE ALSO
 .BR checkupdates (8),

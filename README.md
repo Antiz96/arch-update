@@ -79,11 +79,14 @@ The usage consist of starting [the systray applet](#the-systray-applet) and enab
 
 ### The systray applet
 
-To start the systray applet automatically at boot, add the `arch-update --tray` command to your auto-start commands/WM config or start/enable the associated systemd service like so:
+To start the systray applet, launch the "Arch-Update Systray Applet" application from your app menu.  
+To start it automatically at boot, either run the `arch-update --tray --enable` command (preferred method on some specific desktop environment, like XFCE for instance) or start/enable the associated systemd service like so:
 
 ```bash
 systemctl --user enable --now arch-update-tray.service
 ```
+
+*If you use a window manager/Wayland compositor, you can add the `arch-update --tray` command to your configuration file instead.*
 
 The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.
 
@@ -161,7 +164,7 @@ Options:
 -D, --debug       Display debug traces
 --gen-config      Generate a default/example configuration file (see the arch-update.conf(5) man page for more details)
 --show-config     Display the `arch-update.conf` configuration file currently used (if it exists)
---tray            Launch the Arch-Update systray applet
+--tray            Launch the Arch-Update systray applet, you can optionally add the `--enable` argument to start it automatically at boot.
 -h, --help        Display this help message and exit
 -V, --version     Display version information and exit
 
@@ -176,6 +179,7 @@ Exit Codes:
 7  No pending update when using the `-l/--list` option
 8  Error when generating a configuration file with the `--gen-config` option
 9  Error when reading the configuration file with the `--show-config` option
+10 Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option
 ```
 
 For more information, see the arch-update(1) man page.  

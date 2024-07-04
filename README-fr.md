@@ -79,11 +79,14 @@ L'utilisation consiste à démarrer [l'applet systray](#lapplet-systray) et à a
 
 ### L'applet systray
 
-Pour démarrer l'applet systray automatiquement au démarrage du système, ajoutez la commande `arch-update --tray` a vos commandes 'auto-start'/configuration de votre WM ou démarrez/activez le service systemd associé comme ceci :
+Pour démarrer l'applet systray, lancez l'application "Arch-Update Systray Applet" depuis votre menu d'application.  
+Pour la démarrer automatiquement au démarrage du système, vous pouvez soit lancer la commande `arch-update --tray --enable` c'est la méthode privilégiée pour certains environnement de bureau spécifiques, comme XFCE par exemple) ou vous pouvez démarrer/activer le service systemd associé comme ceci :
 
 ```bash
 systemctl --user enable --now arch-update-tray.service
 ```
+
+*Si vous utilisez un gestionnaire de fenêtre/compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vôtre fichier de configuration.*
 
 L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, il lance `arch-update` via le fichier [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
 
@@ -161,7 +164,7 @@ Options :
 -D, --debug       Afficher les traces de débogage
 --gen-config      Générer un fichier de configuration par défaut/exemple (voir la page de manuel arch-update.conf(5) pour plus de détails)
 --show-config     Afficher le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe)
---tray            Lancer l'applet systray d'Arch-Update
+--tray            Lancer l'applet systray d'Arch-Update, vous pouvez optionnellement ajouter l'argument `--enable` pour la démarrer automatiquement au démarrage du système.
 -h, --help        Afficher ce message d'aide et quitter
 -V, --version     Afficher les informations de version et quitter
 
@@ -176,6 +179,7 @@ Codes de sortie :
 7  Aucune mise à jour en attente durant l'utilisation de l'option `-l/--list`
 8  Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`
 9  Erreur lors de la lecture du fichier de configuration avec l'option `--show-config`
+10  Erreur lors de la creation du fichier desktop autostart pour l'applet systray avec l'option `--tray --enable`
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
