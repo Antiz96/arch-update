@@ -544,7 +544,7 @@ msgid ""
 "from your app menu"
 msgstr ""
 "Le fichier '${tray_desktop_file_autostart}' a été créé, l'applet systray d'Arch-Update "
-"sera automatiquement démarré à votre prochain connexion\\nPour la démarrer "
+"sera automatiquement démarré à votre prochaine connexion\\nPour la démarrer "
 "immédiatement, vous pouvez lancer l'application \"Arch-Update Systray Applet\" "
 "depuis votre menu d'application"
 
