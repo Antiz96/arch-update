@@ -23,7 +23,7 @@ Prise en charge optionnelle des paquets AUR/Flatpak et des notifications de bure
 
 Fonctionnalités :
 
-- Inclut une applet systray cliquable qui change dynamiquemnt pour agir comme un notificateur/applicateur de mise à jour. Facile à intégrer avec n'importe quel panneau sur n'importe quel DE/WM.  
+- Inclut une applet systray cliquable qui change dynamiquement pour agir comme un notificateur/applicateur de mise à jour. Facile à intégrer avec n'importe quel panneau sur n'importe quel DE/WM.  
 - Vérification et listing automatiques de tous les paquets disponibles pour la mise à jour.
 - Propose d'afficher les news récentes d'Arch Linux avant d'appliquer les mises à jour.
 - Vérification et listing automatiques des paquets orphelins et propose de les supprimer.
@@ -44,7 +44,7 @@ Consultez également [la liste des dépendances optionnelles](https://aur.archli
 
 ### Depuis la source
 
-Installez les dépendancese requises :
+Installez les dépendances requises :
 
 ```bash
 sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
@@ -59,7 +59,7 @@ Dépendances optionnelles supplémentaires dont vous pourriez avoir besoin ou qu
 - [vim](https://archlinux.org/packages/extra/x86_64/vim/): Programme de fusion par défaut pour pacdiff
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/): Support de l'applet systray sur Wayland
 
-Téléchargez l'archive de la [dernière version stable](https://github.com/Antiz96/arch-update/releases/latest) et extrayez-la *(vous pouvez également cloner ce référentiel via `git clone`)*.
+Téléchargez l'archive de la [dernière version stable](https://github.com/Antiz96/arch-update/releases/latest) et extrayez la *(vous pouvez également cloner ce référentiel via `git clone`)*.
 
 Pour installer `arch-update`, allez dans le répertoire extrait/cloné et exécutez la commande suivante :
 
@@ -79,7 +79,7 @@ L'utilisation consiste à démarrer [l'applet systray](#lapplet-systray) et à a
 
 ### L'applet systray
 
-Pour démarrer l'applet systray automatiquement au démarrage du système, ajoutez la command `arch-update --tray` a vos commandes 'auto-start'/configuration de votre WM ou démarrez/activez le service systemd associé comme ceci :
+Pour démarrer l'applet systray automatiquement au démarrage du système, ajoutez la commande `arch-update --tray` a vos commandes 'auto-start'/configuration de votre WM ou démarrez/activez le service systemd associé comme ceci :
 
 ```bash
 systemctl --user enable --now arch-update-tray.service

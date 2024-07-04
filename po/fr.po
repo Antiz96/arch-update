@@ -37,7 +37,7 @@ msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
 msgstr ""
-"La command ${su_cmd} définie pour l'élévation de privilège dans le fichier "
+"La commande ${su_cmd} définie pour l'élévation de privilège dans le fichier "
 "de configuration arch-update.conf n'est pas disponible\\n"
 
 #: src/script/arch-update.sh:178
@@ -113,7 +113,7 @@ msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
-"  -n, --news [Num]  Afficher les dernières Arch news, vous pouvez optionellement spécifier le "
+"  -n, --news [Num]  Afficher les dernières Arch news, vous pouvez optionnellement spécifier le "
 "nombre de Arch news à afficher avec '--news [Num]' (e.g. '--news 10')"
 
 #: src/script/arch-update.sh:190
