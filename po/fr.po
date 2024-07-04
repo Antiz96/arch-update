@@ -548,6 +548,11 @@ msgstr ""
 "immédiatement, vous pouvez lancer l'application \"Arch-Update Systray Applet\" "
 "depuis votre menu d'application"
 
+#: src/script/arch-update.sh:763
+#, sh-format
+msgid "There's already a running instance of the Arch-Update systray applet"
+msgstr "Il y a déjà une instance de l'applet systray d'Arch-Update en cours d'exécution"
+
 #: src/script/arch-update-tray.py:118
 msgid "Run Arch-Update"
 msgstr "Lancer Arch-Update"

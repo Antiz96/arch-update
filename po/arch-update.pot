@@ -506,6 +506,11 @@ msgid ""
 "from your app menu"
 msgstr ""
 
+#: src/script/arch-update.sh:763
+#, sh-format
+msgid "There's already a running instance of the Arch-Update systray applet"
+msgstr ""
+
 #: src/script/arch-update-tray.py:118
 msgid "Run Arch-Update"
 msgstr ""
