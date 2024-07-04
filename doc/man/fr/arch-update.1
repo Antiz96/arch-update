@@ -50,7 +50,7 @@ Inclure les mises à jour des paquets de développement AUR.
 .B \-n, \-\-news
 Afficher les dernières Arch news.
 .br
-.RB "Vous pouvez optionellement spécifier combien de Arch news afficher en tant qu'argument, comme ceci : " "arch-update --news 10" ". La valeur par défaut est 5."
+.RB "Vous pouvez optionnellement spécifier combien de Arch news afficher en tant qu'argument, comme ceci : " "arch-update --news 10" ". La valeur par défaut est 5."
 
 .TP
 .B \-D, \-\-debug
@@ -122,7 +122,7 @@ Voir https://github.com/morganamilo/paru et https://aur.archlinux.org/packages/p
 
 .TP
 .B Prise en charge de Flatpak
-.RB "Arch-Update prend en charge la mise à jour des paquets Flatpak lors de la vérification et de l'installation des mises à jour (ainsi que de la suppression des packages Flatpak inutilisés) si " "flatpak " "est installé."
+.RB "Arch-Update prend en charge la mise à jour des paquets Flatpak lors de la vérification et de l'installation des mises à jour (ainsi que de la suppression des paquets Flatpak inutilisés) si " "flatpak " "est installé."
 .br
 Voir https://www.flatpak.org/ et https://archlinux.org/packages/extra/x86_64/flatpak/
 
@@ -168,7 +168,7 @@ Voir https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#P
 .br
 .RB "En attendant que Gnome implémente une méthode permettant aux utilisateurs d'utiliser l'émulateur de terminal de leur choix avec " "gio" ",vous pouvez contourner le problème en copiant le fichier " "arch-update.desktop " "dans " "$HOME/.local/share/applications/arch-update.desktop " "(par exemple, voir le chapitre " "'L'applet systray' "  "pour plus de détails) et en modifiant la ligne " "Exec " "pour 'forcer' " "arch-update " "à s'exécuter dans l'émulateur de terminal de votre choix."
 .br
-.RB "Par exmeple, avec " "alacritty " "(vérifier le manuel de votre émulateur de terminal pour trouver la bonne option à utiliser) :"
+.RB "Par exemple, avec " "alacritty " "(vérifier le manuel de votre émulateur de terminal pour trouver la bonne option à utiliser) :"
 
 .br
 [...]
