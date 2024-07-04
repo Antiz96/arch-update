@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "Juin 2024" "Arch-Update 2.1.0" "Manuel de Arch-Update"
+.TH "ARCH-UPDATE" "1" "Juillet 2024" "Arch-Update 2.1.0" "Manuel de Arch-Update"
 
 .SH NAME
 arch-update \- Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant/après mise à jour.
@@ -66,7 +66,11 @@ Afficher les traces de débogage.
 
 .TP
 .B \-\-tray
-.RB "Lancer l'applet systray d'Arch-Update (alternativement, vous pouvez démarrer/activer le service systemd associé comme ceci : " "systemctl \-\-user enable \-\-now arch-update-tray.service").
+Démarrer l'applet systray d'Arch-Update.
+.br
+.RB "Pour la démarrer automatiquement au démarrage du système, vous pouvez soit exécuter la commande " "arch-update --tray --enable " "(c'est la méthode privilégiée pour certains environnements de bureau spécifiques, comme XFCE par exemple) ou vous pouvez démarrer/activer le service systemd associé comme ceci : " "systemctl \-\-user enable \-\-now arch-update-tray.service".
+.br
+.RB "Si vous utilisez un gestionnaire de fenêtres/un compositeur Wayland, vous pouvez plutôt ajouter la commande " "arch-update --tray " "à votre fichier de configuration."
 
 .TP
 .B \-v, \-\-version
@@ -218,6 +222,10 @@ Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du 
 .TP
 .B 9
 .RB "Erreur lors de la lecture du fichier de configuration avec l'option " "--show-config"
+
+.TP
+.B 10
+.RB "Erreur lors de la création du fichier desktop autostart pour l'applet systray avec l'option " "--tray --enable"
 
 .SH VOIR AUSSI
 .BR checkupdates (8),
