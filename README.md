@@ -80,7 +80,7 @@ The usage consist of starting [the systray applet](#the-systray-applet) and enab
 ### The systray applet
 
 To start the systray applet, launch the "Arch-Update Systray Applet" application from your app menu.  
-To start it automatically at boot, either run the `arch-update --tray --enable` command (preferred method on some specific desktop environment, like XFCE for instance) or start/enable the associated systemd service like so:
+To start it automatically at boot, either run the `arch-update --tray --enable` command (this is the preferred method on some specific desktop environments, like XFCE for instance) or start/enable the associated systemd service like so:
 
 ```bash
 systemctl --user enable --now arch-update-tray.service

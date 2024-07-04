@@ -80,7 +80,7 @@ L'utilisation consiste à démarrer [l'applet systray](#lapplet-systray) et à a
 ### L'applet systray
 
 Pour démarrer l'applet systray, lancez l'application "Arch-Update Systray Applet" depuis votre menu d'application.  
-Pour la démarrer automatiquement au démarrage du système, vous pouvez soit lancer la commande `arch-update --tray --enable` c'est la méthode privilégiée pour certains environnement de bureau spécifiques, comme XFCE par exemple) ou vous pouvez démarrer/activer le service systemd associé comme ceci :
+Pour la démarrer automatiquement au démarrage du système, vous pouvez soit lancer la commande `arch-update --tray --enable` (c'est la méthode privilégiée pour certains environnements de bureau spécifiques, comme XFCE par exemple) ou vous pouvez démarrer/activer le service systemd associé comme ceci :
 
 ```bash
 systemctl --user enable --now arch-update-tray.service
