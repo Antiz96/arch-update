@@ -117,13 +117,13 @@ ask_msg() {
 # Definition of the warning_msg function: Display a message as a warning message
 warning_msg() {
 	msg="${1}"
-	echo -e "${yellow}==> WARNING:${color_off}${bold} ${msg}${color_off}"
+	echo -e "${yellow}==> $(eval_gettext "WARNING"):${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the error_msg function: Display a message as an error message
 error_msg() {
 	msg="${1}"
-	echo -e >&2 "${red}==> ERROR:${color_off}${bold} ${msg}${color_off}"
+	echo -e >&2 "${red}==> $(eval_gettext "ERROR"):${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the continue_msg function: Display the continue message
