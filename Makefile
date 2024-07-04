@@ -16,8 +16,9 @@ install:
 	install -Dm 664 "src/icons/${pkgname}.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
 	install -Dm 664 "src/icons/${pkgname}_updates-available.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available.svg"
 
-	# Install the .desktop file
+	# Install .desktop files
 	install -Dm 644 "res/desktop/${pkgname}.desktop" "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
+	install -Dm 644 "res/desktop/${pkgname}-tray.desktop" "${DESTDIR}${PREFIX}/share/applications/${pkgname}-tray.desktop"
 
 	# Install systemd units
 	install -Dm 644 "res/systemd/${pkgname}.service" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
@@ -63,8 +64,9 @@ uninstall:
 	rm -rf "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
 	rm -rf "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available.svg"
 
-	# Delete the .desktop file
+	# Delete .desktop files
 	rm -f "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
+	rm -f "${DESTDIR}${PREFIX}/share/applications/${pkgname}-tray.desktop"
 
 	# Delete systemd units
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"

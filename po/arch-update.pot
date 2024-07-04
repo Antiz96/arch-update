@@ -123,7 +123,9 @@ msgstr ""
 
 #: src/script/arch-update.sh:192
 #, sh-format
-msgid "  --tray            Launch the Arch-Update systray applet"
+msgid ""
+"  --tray            Launch the Arch-Update systray applet, you can "
+"optionally add the '--enable' argument to start it automatically at boot"
 msgstr ""
 
 #: src/script/arch-update.sh:193
@@ -483,6 +485,25 @@ msgstr ""
 #: src/script/arch-update.sh:724
 #, sh-format
 msgid "No configuration file found"
+msgstr ""
+
+#: src/script/arch-update.sh:743
+#, sh-format
+msgid "Arch-Update tray desktop file not found"
+msgstr ""
+
+#: src/script/arch-update.sh:750
+#, sh-format
+msgid "The '${tray_desktop_file_autostart}' file already exists"
+msgstr ""
+
+#: src/script/arch-update.sh:755
+#, sh-format
+msgid ""
+"The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
+"systray applet will be automatically started at your next log on\\nTo start "
+"it right now, you can launch the \"Arch-Update Systray Applet\" application "
+"from your app menu"
 msgstr ""
 
 #: src/script/arch-update-tray.py:118
