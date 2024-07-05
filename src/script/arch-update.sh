@@ -114,6 +114,12 @@ ask_msg() {
 	read -rp $"$(echo -e "${blue}->${color_off}${bold} ${msg}${color_off} ")" answer
 }
 
+# Definition of the ask_msg_array function: Display a message as an interactive question with multiple possible answers 
+ask_msg_array() {
+	msg="${1}"
+	read -rp $"$(echo -e "${blue}->${color_off}${bold} ${msg}${color_off} ")" -a answer_array
+}
+
 # Definition of the warning_msg function: Display a message as a warning message
 warning_msg() {
 	msg="${1}"
@@ -345,37 +351,45 @@ list_news() {
 	fi
 
 	if [ -n "${show_news}" ]; then
-		redo="y"
+		news=$(curl -Ls https://www.archlinux.org/news)
+		news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -"${news_num}")
+		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -"${news_num}" | xargs -I{} date -d "{}" "+%s")
 
-		while [ "${redo}" = "y" ]; do
-			news=$(curl -Ls https://www.archlinux.org/news)
-			news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -"${news_num}")
-			mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -"${news_num}" | xargs -I{} date -d "{}" "+%s")
+		echo
+		main_msg "$(eval_gettext "Arch News:")"
 
-			echo
-			main_msg "$(eval_gettext "Arch News:")"
-
-			i=1
-			while IFS= read -r line; do
-				if [ -z "${news_option}" ] && [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(cat "${statedir}/last_update_run" 2> /dev/null)" +%s)" ]; then
-					new_tag="$(eval_gettext "[NEW]")"
-					echo -e "${i} - ${line} ${green}${new_tag}${color_off}"
-				else
-					echo "${i} - ${line}"
-				fi
-				((i=i+1))
-			done < <(printf '%s\n' "${news_titles}")
-
-			echo
-
-			if [ -n "${news_option}" ]; then
-				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to quit):")"
+		i=1
+		while IFS= read -r line; do
+			if [ -z "${news_option}" ] && [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(cat "${statedir}/last_update_run" 2> /dev/null)" +%s)" ]; then
+				new_tag="$(eval_gettext "[NEW]")"
+				echo -e "${i} - ${line} ${green}${new_tag}${color_off}"
 			else
-				ask_msg "$(eval_gettext "Select the news to read (or just press \"enter\" to proceed with update):")"
+				echo "${i} - ${line}"
 			fi
+			((i=i+1))
+		done < <(printf '%s\n' "${news_titles}")
 
-			if [ "${answer}" -le "${news_num}" ] 2> /dev/null && [ "${answer}" -gt "0" ]; then
-				news_selected=$(sed -n "${answer}"p <<< "${news_titles}")
+		echo
+
+		if [ -n "${news_option}" ]; then
+			ask_msg_array "$(eval_gettext "Select the news to read (e.g. 1 3 5), select 0 to read them all or press \"enter\" to quit:")"
+		else
+			ask_msg_array "$(eval_gettext "Select the news to read (e.g. 1 3 5), select 0 to read them all or press \"enter\" to proceed with update:")"
+		fi
+
+		if [ "${answer_array[0]}" -eq 0 ] 2> /dev/null; then
+			answer_array=()
+			for ((i=1; i<=news_num; i++)); do
+				answer_array+=("${i}")
+			done
+		else
+			answer_array=$(printf "%s\n" "${answer_array[@]}")
+			answer_array=($(echo "${answer_array}" | awk '!seen[$0]++'))
+		fi
+
+		for num in "${answer_array[@]}"; do
+			if [ "${num}" -le "${news_num}" ] 2> /dev/null && [ "${num}" -gt "0" ]; then
+				news_selected=$(sed -n "${num}"p <<< "${news_titles}")
 				news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
 				news_url="https://www.archlinux.org/news/${news_path}"
 				news_content=$(curl -Ls "${news_url}")
@@ -386,9 +400,12 @@ list_news() {
 				author_tag="$(eval_gettext "Author:")"
 				publication_date_tag="$(eval_gettext "Publication date:")"
 				url_tag="$(eval_gettext "URL:")"
-				echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}\n" && continue_msg
-			else
-				redo="n"
+				echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}"
+
+				if [ -z "${news_option}" ]; then
+					echo
+					continue_msg
+				fi
 			fi
 		done
 	fi
