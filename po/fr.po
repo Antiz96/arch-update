@@ -254,7 +254,7 @@ msgid ""
 "\"enter\" to quit:"
 msgstr ""
 "Sélectionnez les news à lire (par exemple: 1 3 5), sélectionnez 0 pour toutes les lire "
-"ou appuyez sur "entrée" pour quitter"
+"ou appuyez sur \"entrée\" pour quitter"
 
 #: src/script/arch-update.sh:377
 #, sh-format
@@ -263,7 +263,7 @@ msgid ""
 "\"enter\" to proceed with update:"
 msgstr ""
 "Sélectionnez les news à lire (par exemple: 1 3 5), sélectionnez 0 pour toutes les lire "
-"ou appuyez sur "entrée" pour procéder à la mise à jour"
+"ou appuyez sur \"entrée\" pour procéder à la mise à jour"
 
 #: src/script/arch-update.sh:399
 #, sh-format
