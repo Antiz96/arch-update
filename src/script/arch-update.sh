@@ -384,7 +384,7 @@ list_news() {
 			done
 		else
 			array_to_string=$(printf "%s\n" "${answer_array[@]}")
-			answer_array=($(echo "${array_to_string}" | awk '!seen[$0]++'))
+			mapfile -t answer_array < <(echo "${array_to_string}" | awk '!seen[$0]++')
 		fi
 
 		for num in "${answer_array[@]}"; do
