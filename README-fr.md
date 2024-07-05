@@ -132,7 +132,7 @@ Quand l'applet systray est cliquée, elle affiche la liste des paquets disponibl
 Par défaut, si au moins une news Arch Linux a été publiée depuis la dernière exécution, `Arch-Update` vous proposera de lire les dernières news Arch Linux directement depuis votre fenêtre de terminal.  
 Les news publiées depuis la dernière exécution sont tagguées comme `[NOUVEAU]` :
 
-![listing_news-FR]((https://github.com/Antiz96/arch-update/assets/53110319/ec4032f3-835e-418c-b19a-b7bd089d6bd9)
+![listing_news-FR](https://github.com/Antiz96/arch-update/assets/53110319/ec4032f3-835e-418c-b19a-b7bd089d6bd9)
 
 Quand la liste des news récentes est affichée, vous pouvez sélectionner les news à lire (par exemple: 1 3 5), sélectionner 0 pour toutes les lire ou appuyer sur "entrée" pour procéder à la mise à jour.  
 Si aucune news n'a été publiée depuis la dernière exécution, `Arch-Update` procédera directement à la mise à jour après que vous ayez donné votre confirmation.
