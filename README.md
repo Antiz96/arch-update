@@ -134,7 +134,7 @@ The news published since the last run are tagged as `[NEW]`:
 
 ![listing_news](https://github.com/Antiz96/arch-update/assets/53110319/ec4032f3-835e-418c-b19a-b7bd089d6bd9)
 
-When recent news gets listed, you can select the news to read (e.g. 1 3 5), select 0 to read them all or press "enter" to proceed with update.  
+When recent news get listed, you can select the news to read (e.g. 1 3 5), select 0 to read them all or press "enter" to proceed with update.  
 If no news has been published since the last run, `Arch-Update` will directly proceed to the update after you gave your confirmation.
 
 In both cases, from there, you just have to let `Arch-Update` guide you through the various steps required for a complete and proper update of your system! :smile:
