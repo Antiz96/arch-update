@@ -401,10 +401,11 @@ list_news() {
 				publication_date_tag="$(eval_gettext "Publication date:")"
 				url_tag="$(eval_gettext "URL:")"
 				echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}"
+				printed_news="y"
 			fi
 		done
 
-		if [ -z "${news_option}" ]; then
+		if [ -z "${news_option}" ] && [ -n "${printed_news}" ]; then
 			echo
 			continue_msg
 		fi
