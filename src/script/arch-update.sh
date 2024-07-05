@@ -383,8 +383,8 @@ list_news() {
 				answer_array+=("${i}")
 			done
 		else
-			answer_array=$(printf "%s\n" "${answer_array[@]}")
-			answer_array=($(echo "${answer_array}" | awk '!seen[$0]++'))
+			array_to_string=$(printf "%s\n" "${answer_array[@]}")
+			answer_array=($(echo "${array_to_string}" | awk '!seen[$0]++'))
 		fi
 
 		for num in "${answer_array[@]}"; do
