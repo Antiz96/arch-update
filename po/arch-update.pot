@@ -16,64 +16,64 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/script/arch-update.sh:120
+#: src/script/arch-update.sh:126
 #, sh-format
 msgid "WARNING"
 msgstr ""
 
-#: src/script/arch-update.sh:126
+#: src/script/arch-update.sh:132
 #, sh-format
 msgid "ERROR"
 msgstr ""
 
-#: src/script/arch-update.sh:131
+#: src/script/arch-update.sh:137
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr ""
 
-#: src/script/arch-update.sh:137
+#: src/script/arch-update.sh:143
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr ""
 
-#: src/script/arch-update.sh:150
+#: src/script/arch-update.sh:156
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:155
+#: src/script/arch-update.sh:161
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:178
+#: src/script/arch-update.sh:184
 #, sh-format
 msgid ""
 "An update notifier/applier for Arch Linux that assists you with important "
 "pre/post update tasks."
 msgstr ""
 
-#: src/script/arch-update.sh:180
+#: src/script/arch-update.sh:186
 #, sh-format
 msgid "Run ${name} to perform the main 'update' function:"
 msgstr ""
 
-#: src/script/arch-update.sh:181
+#: src/script/arch-update.sh:187
 #, sh-format
 msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
 
-#: src/script/arch-update.sh:182
+#: src/script/arch-update.sh:188
 #, sh-format
 msgid ""
 "Before performing the update, offer to display the latest Arch Linux news."
 msgstr ""
 
-#: src/script/arch-update.sh:183
+#: src/script/arch-update.sh:189
 #, sh-format
 msgid ""
 "Post update, check for orphan/unused packages, old cached packages, pacnew/"
@@ -81,12 +81,12 @@ msgid ""
 "them."
 msgstr ""
 
-#: src/script/arch-update.sh:185
+#: src/script/arch-update.sh:191
 #, sh-format
 msgid "Options:"
 msgstr ""
 
-#: src/script/arch-update.sh:186
+#: src/script/arch-update.sh:192
 #, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
@@ -94,410 +94,413 @@ msgid ""
 "there are new available updates compared to the last check)"
 msgstr ""
 
-#: src/script/arch-update.sh:187
+#: src/script/arch-update.sh:193
 #, sh-format
 msgid "  -l, --list        Display the list of pending updates"
 msgstr ""
 
-#: src/script/arch-update.sh:188
+#: src/script/arch-update.sh:194
 #, sh-format
 msgid "  -d, --devel       Include AUR development packages updates"
 msgstr ""
 
-#: src/script/arch-update.sh:189
+#: src/script/arch-update.sh:195
 #, sh-format
 msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
 
-#: src/script/arch-update.sh:190
+#: src/script/arch-update.sh:196
 #, sh-format
 msgid "  -D, --debug       Display debug traces"
 msgstr ""
 
-#: src/script/arch-update.sh:191
+#: src/script/arch-update.sh:197
 #, sh-format
 msgid "  --gen-config      Generate a default/example configuration file"
 msgstr ""
 
-#: src/script/arch-update.sh:192
+#: src/script/arch-update.sh:198
 #, sh-format
 msgid ""
 "  --tray            Launch the Arch-Update systray applet, you can "
 "optionally add the '--enable' argument to start it automatically at boot"
 msgstr ""
 
-#: src/script/arch-update.sh:193
+#: src/script/arch-update.sh:199
 #, sh-format
 msgid "  -h, --help        Display this help message and exit"
 msgstr ""
 
-#: src/script/arch-update.sh:194
+#: src/script/arch-update.sh:200
 #, sh-format
 msgid "  -V, --version     Display version information and exit"
 msgstr ""
 
-#: src/script/arch-update.sh:196
+#: src/script/arch-update.sh:202
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
 msgstr ""
 
-#: src/script/arch-update.sh:197
+#: src/script/arch-update.sh:203
 #, sh-format
 msgid ""
 "Certain options can be enabled/disabled or modified via the ${name}.conf "
 "configuration file, see the ${name}.conf(5) man page."
 msgstr ""
 
-#: src/script/arch-update.sh:208
+#: src/script/arch-update.sh:214
 #, sh-format
 msgid ""
 "${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
 "information."
 msgstr ""
 
-#: src/script/arch-update.sh:248 src/script/arch-update.sh:250
+#: src/script/arch-update.sh:254 src/script/arch-update.sh:256
 #, sh-format
 msgid "${update_number} update available"
 msgstr ""
 
-#: src/script/arch-update.sh:255 src/script/arch-update.sh:257
+#: src/script/arch-update.sh:261 src/script/arch-update.sh:263
 #, sh-format
 msgid "${update_number} updates available"
 msgstr ""
 
-#: src/script/arch-update.sh:273
+#: src/script/arch-update.sh:279
 #, sh-format
 msgid "Looking for updates...\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:294
+#: src/script/arch-update.sh:300
 #, sh-format
 msgid "Packages:"
 msgstr ""
 
-#: src/script/arch-update.sh:299
+#: src/script/arch-update.sh:305
 #, sh-format
 msgid "AUR Packages:"
 msgstr ""
 
-#: src/script/arch-update.sh:304
+#: src/script/arch-update.sh:310
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr ""
 
-#: src/script/arch-update.sh:311
+#: src/script/arch-update.sh:317
 #, sh-format
 msgid "No update available\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:318
+#: src/script/arch-update.sh:324
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr ""
 
-#: src/script/arch-update.sh:321 src/script/arch-update.sh:458
-#: src/script/arch-update.sh:491 src/script/arch-update.sh:533
-#: src/script/arch-update.sh:600 src/script/arch-update.sh:626
+#: src/script/arch-update.sh:327 src/script/arch-update.sh:476
+#: src/script/arch-update.sh:509 src/script/arch-update.sh:551
+#: src/script/arch-update.sh:618 src/script/arch-update.sh:644
 #, sh-format
 msgid "Y"
 msgstr ""
 
-#: src/script/arch-update.sh:321 src/script/arch-update.sh:458
-#: src/script/arch-update.sh:491 src/script/arch-update.sh:533
-#: src/script/arch-update.sh:600 src/script/arch-update.sh:626
+#: src/script/arch-update.sh:327 src/script/arch-update.sh:476
+#: src/script/arch-update.sh:509 src/script/arch-update.sh:551
+#: src/script/arch-update.sh:618 src/script/arch-update.sh:644
 #, sh-format
 msgid "y"
 msgstr ""
 
-#: src/script/arch-update.sh:325
+#: src/script/arch-update.sh:331
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:356
+#: src/script/arch-update.sh:359
 #, sh-format
 msgid "Arch News:"
 msgstr ""
 
-#: src/script/arch-update.sh:361
+#: src/script/arch-update.sh:364
 #, sh-format
 msgid "[NEW]"
 msgstr ""
 
-#: src/script/arch-update.sh:372
-#, sh-format
-msgid "Select the news to read (or just press \"enter\" to quit):"
-msgstr ""
-
-#: src/script/arch-update.sh:374
+#: src/script/arch-update.sh:375
 #, sh-format
 msgid ""
-"Select the news to read (or just press \"enter\" to proceed with update):"
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to quit:"
 msgstr ""
 
-#: src/script/arch-update.sh:385
+#: src/script/arch-update.sh:377
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to proceed with update:"
+msgstr ""
+
+#: src/script/arch-update.sh:399
 #, sh-format
 msgid "Title:"
 msgstr ""
 
-#: src/script/arch-update.sh:386
+#: src/script/arch-update.sh:400
 #, sh-format
 msgid "Author:"
 msgstr ""
 
-#: src/script/arch-update.sh:387
+#: src/script/arch-update.sh:401
 #, sh-format
 msgid "Publication date:"
 msgstr ""
 
-#: src/script/arch-update.sh:388
+#: src/script/arch-update.sh:402
 #, sh-format
 msgid "URL:"
 msgstr ""
 
-#: src/script/arch-update.sh:401
+#: src/script/arch-update.sh:419
 #, sh-format
 msgid "Updating Packages...\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:406 src/script/arch-update.sh:418
-#: src/script/arch-update.sh:429
+#: src/script/arch-update.sh:424 src/script/arch-update.sh:436
+#: src/script/arch-update.sh:447
 #, sh-format
 msgid ""
 "An error has occurred during the update process\\nThe update has been "
 "aborted\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:413
+#: src/script/arch-update.sh:431
 #, sh-format
 msgid "Updating AUR Packages...\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:425
+#: src/script/arch-update.sh:443
 #, sh-format
 msgid "Updating Flatpak Packages...\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:436
+#: src/script/arch-update.sh:454
 #, sh-format
 msgid "The update has been applied\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:448
+#: src/script/arch-update.sh:466
 #, sh-format
 msgid "Orphan Packages:"
 msgstr ""
 
-#: src/script/arch-update.sh:452
+#: src/script/arch-update.sh:470
 #, sh-format
 msgid ""
 "Would you like to remove this orphan package (and its potential "
 "dependencies) now? [y/N]"
 msgstr ""
 
-#: src/script/arch-update.sh:454
+#: src/script/arch-update.sh:472
 #, sh-format
 msgid ""
 "Would you like to remove these orphan packages (and their potential "
 "dependencies) now? [y/N]"
 msgstr ""
 
-#: src/script/arch-update.sh:460
+#: src/script/arch-update.sh:478
 #, sh-format
 msgid "Removing Orphan Packages...\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:464 src/script/arch-update.sh:497
-#: src/script/arch-update.sh:540 src/script/arch-update.sh:550
-#: src/script/arch-update.sh:560 src/script/arch-update.sh:569
+#: src/script/arch-update.sh:482 src/script/arch-update.sh:515
+#: src/script/arch-update.sh:558 src/script/arch-update.sh:568
+#: src/script/arch-update.sh:578 src/script/arch-update.sh:587
 #, sh-format
 msgid ""
 "An error has occurred during the removal process\\nThe removal has been "
 "aborted\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:467 src/script/arch-update.sh:500
+#: src/script/arch-update.sh:485 src/script/arch-update.sh:518
 #, sh-format
 msgid "The removal has been applied\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:472 src/script/arch-update.sh:504
-#: src/script/arch-update.sh:577
+#: src/script/arch-update.sh:490 src/script/arch-update.sh:522
+#: src/script/arch-update.sh:595
 #, sh-format
 msgid "The removal hasn't been applied\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:476
+#: src/script/arch-update.sh:494
 #, sh-format
 msgid "No orphan package found\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:481
+#: src/script/arch-update.sh:499
 #, sh-format
 msgid "Flatpak Unused Packages:"
 msgstr ""
 
-#: src/script/arch-update.sh:485
+#: src/script/arch-update.sh:503
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
 msgstr ""
 
-#: src/script/arch-update.sh:487
+#: src/script/arch-update.sh:505
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr ""
 
-#: src/script/arch-update.sh:493
+#: src/script/arch-update.sh:511
 #, sh-format
 msgid "Removing Flatpak Unused Packages..."
 msgstr ""
 
-#: src/script/arch-update.sh:508
+#: src/script/arch-update.sh:526
 #, sh-format
 msgid "No Flatpak unused package found\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:525
+#: src/script/arch-update.sh:543
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:526
+#: src/script/arch-update.sh:544
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr ""
 
-#: src/script/arch-update.sh:528
+#: src/script/arch-update.sh:546
 #, sh-format
 msgid "Cached Packages:\\nThere are old and/or uninstalled cached packages\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:529
+#: src/script/arch-update.sh:547
 #, sh-format
 msgid "Would you like to remove them from the cache now? [Y/n]"
 msgstr ""
 
-#: src/script/arch-update.sh:536 src/script/arch-update.sh:556
+#: src/script/arch-update.sh:554 src/script/arch-update.sh:574
 #, sh-format
 msgid "Removing old cached packages..."
 msgstr ""
 
-#: src/script/arch-update.sh:546 src/script/arch-update.sh:565
+#: src/script/arch-update.sh:564 src/script/arch-update.sh:583
 #, sh-format
 msgid "Removing uninstalled cached packages..."
 msgstr ""
 
-#: src/script/arch-update.sh:581
+#: src/script/arch-update.sh:599
 #, sh-format
 msgid "No old or uninstalled cached package found\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:590
+#: src/script/arch-update.sh:608
 #, sh-format
 msgid "Pacnew Files:"
 msgstr ""
 
-#: src/script/arch-update.sh:594
+#: src/script/arch-update.sh:612
 #, sh-format
 msgid "Would you like to process this file now? [Y/n]"
 msgstr ""
 
-#: src/script/arch-update.sh:596
+#: src/script/arch-update.sh:614
 #, sh-format
 msgid "Would you like to process these files now? [Y/n]"
 msgstr ""
 
-#: src/script/arch-update.sh:602
+#: src/script/arch-update.sh:620
 #, sh-format
 msgid "Processing Pacnew Files...\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:606
+#: src/script/arch-update.sh:624
 #, sh-format
 msgid "The pacnew file(s) processing has been applied\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:609
+#: src/script/arch-update.sh:627
 #, sh-format
 msgid "The pacnew file(s) processing hasn't been applied\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:613
+#: src/script/arch-update.sh:631
 #, sh-format
 msgid "No pacnew file found\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:622
+#: src/script/arch-update.sh:640
 #, sh-format
 msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:623
+#: src/script/arch-update.sh:641
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
 msgstr ""
 
-#: src/script/arch-update.sh:636
+#: src/script/arch-update.sh:654
 #, sh-format
 msgid "Rebooting in ${sec}...\\r"
 msgstr ""
 
-#: src/script/arch-update.sh:642
+#: src/script/arch-update.sh:660
 #, sh-format
 msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
 "aborted\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:650
+#: src/script/arch-update.sh:668
 #, sh-format
 msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
 "the pending kernel update\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:654
+#: src/script/arch-update.sh:672
 #, sh-format
 msgid "No pending kernel update found\\n"
 msgstr ""
 
-#: src/script/arch-update.sh:709
+#: src/script/arch-update.sh:727
 #, sh-format
 msgid "Example configuration file not found"
 msgstr ""
 
-#: src/script/arch-update.sh:714
+#: src/script/arch-update.sh:732
 #, sh-format
 msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
 "before generating a new one"
 msgstr ""
 
-#: src/script/arch-update.sh:719
+#: src/script/arch-update.sh:737
 #, sh-format
 msgid "The '${config_file}' configuration file has been generated"
 msgstr ""
 
-#: src/script/arch-update.sh:724
+#: src/script/arch-update.sh:742
 #, sh-format
 msgid "No configuration file found"
 msgstr ""
 
-#: src/script/arch-update.sh:743
+#: src/script/arch-update.sh:761
 #, sh-format
 msgid "Arch-Update tray desktop file not found"
 msgstr ""
 
-#: src/script/arch-update.sh:750
+#: src/script/arch-update.sh:768
 #, sh-format
 msgid "The '${tray_desktop_file_autostart}' file already exists"
 msgstr ""
 
-#: src/script/arch-update.sh:755
+#: src/script/arch-update.sh:773
 #, sh-format
 msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
@@ -506,7 +509,7 @@ msgid ""
 "from your app menu"
 msgstr ""
 
-#: src/script/arch-update.sh:763
+#: src/script/arch-update.sh:781
 #, sh-format
 msgid "There's already a running instance of the Arch-Update systray applet"
 msgstr ""
