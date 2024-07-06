@@ -691,7 +691,6 @@ restart_services() {
 					exit 11
 				fi
 			else
-				echo
 				warning_msg "$(eval_gettext "The service(s) restart hasn't been performed\nPlease, consider restarting services that have been updated to fully apply the upgrade\n")"
 			fi
 		fi
