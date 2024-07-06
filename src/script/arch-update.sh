@@ -677,7 +677,7 @@ restart_services() {
 
 			if [ -z "${service_fail}" ]; then
 				echo
-				info_msg "$(eval_gettext "Service(s) restarted succesfully\n")"
+				info_msg "$(eval_gettext "Service(s) restarted successfully\n")"
 			else
 				echo
 				error_msg "$(eval_gettext "An error occurred during the service(s) restart\nPlease, verify the status of the above service(s)\n")" && quit_msg
