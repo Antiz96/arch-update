@@ -29,6 +29,7 @@ Features:
 - Automatic check and listing of orphan packages and offers to remove them.
 - Automatic check for old and/or uninstalled cached packages and offers to remove them.
 - Lists and helps you processing pacnew/pacsave files.
+- Automatic check for services requiring a post update restart and offers to do so if there are.
 - Automatic check for pending kernel updates requiring a reboot to be applied and offers to do so if there's one.
 - Support for `sudo`, `doas` & `run0`.
 - Optional support for AUR packages (through `yay` or `paru`).
@@ -40,14 +41,14 @@ Features:
 ### AUR
 
 Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package") AUR package.  
-Also check [the list of optional dependencies](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=arch-update#n11) you might need or want.
+See also the list of optional dependencies (available in the ["from source"](#from-source) section below) you may need.
 
 ### From Source
 
 Install required dependencies:
 
 ```bash
-sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
+sudo pacman -S --needed pacman-contrib archlinux-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
 ```
 
 Additional optional dependencies you might need or want:
@@ -180,6 +181,7 @@ Exit Codes:
 8  Error when generating a configuration file with the `--gen-config` option
 9  Error when reading the configuration file with the `--show-config` option
 10 Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option
+11 Error when restarting services that require a post upgrade restart
 ```
 
 For more information, see the arch-update(1) man page.  

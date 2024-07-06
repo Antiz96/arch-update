@@ -632,6 +632,66 @@ pacnew_files() {
 	fi
 }
 
+# Definition of the restart_services function: Verify if any services require a post update restart
+restart_services() {
+	services=$(yes No | sudo checkservices -FP 2> /dev/null | grep ".service" | grep -v -e "dbus-broker.service" -e "systemd-logind.service" | cut -f2 -d "'")
+	services_num=$(echo "${services}" | wc -l)
+
+	if [ -n "${services}" ]; then
+		if [ "${services_num}" -eq 1 ]; then
+			main_msg "$(eval_gettext "Services:\nThe following service requires a post upgrade restart\n")"
+		else
+			main_msg "$(eval_gettext "Services:\nThe following services require a post upgrade restart\n")"
+		fi
+
+		i=1
+		while IFS= read -r line; do
+			echo "${i} - ${line}"
+			((i=i+1))
+		done < <(printf '%s\n' "${services}")
+
+		ask_msg_array "$(eval_gettext "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all or press \"enter\" to continue without restarting the service(s):")"
+
+		if [ "${answer_array[0]}" -eq 0 ] 2> /dev/null; then
+			if ! "${su_cmd}" systemctl restart ${services}; then
+				error_msg "$(eval_gettext "An error has occurred during service(s) restart\nPlease, verify the above service(s) status\n")" && quit_msg
+				exit 11
+			fi
+		else
+			array_to_string=$(printf "%s\n" "${answer_array[@]}")
+			mapfile -t answer_array < <(echo "${array_to_string}" | awk '!seen[$0]++')
+
+			for num in "${answer_array[@]}"; do
+				if [ "${num}" -le "${services_num}" ] 2> /dev/null && [ "${num}" -gt "0" ]; then
+					service_restarted="y"
+					service_selected=$(sed -n "${num}"p <<< "${services}")
+
+					if "${su_cmd}" systemctl restart "${service_selected}"; then
+						info_msg "$(eval_gettext "The \${service_selected} service has been successfully restarted")"
+					else
+						error_msg "$(eval_gettext "An error occurred during the restart of the \${service_selected} service")"
+						service_fail="y"
+					fi
+				fi
+			done
+
+			if [ -z "${service_fail}" ]; then
+				echo
+				info_msg "$(eval_gettext "Service(s) restarted succesfully\n")"
+			else
+				echo
+				error_msg "$(eval_gettext "An error occurred during the service(s) restart\nPlease, verify the status of the above service(s)\n")" && quit_msg
+				exit 11
+			fi
+
+			if [ -z "${service_restarted}" ]; then
+				warning_msg "$(eval_gettext "The service(s) restart hasn't been performed\nPlease, consider restarting services that have been updated to fully apply the upgrade\n")"
+			fi
+		fi
+	else
+		info_msg "$(eval_gettext "No service requiring a post upgrade restart found\n")"
+	fi
+}
 # Definition of the kernel_reboot function: Verify if there's a kernel update waiting for a reboot to be applied
 kernel_reboot() {
 	kernel_compare=$(file /boot/vmlinuz* /usr/lib/modules/*/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
@@ -684,6 +744,7 @@ full_upgrade() {
 	orphan_packages
 	packages_cache
 	pacnew_files
+	restart_services
 	kernel_reboot
 	quit_msg
 }
