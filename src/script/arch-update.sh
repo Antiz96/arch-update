@@ -650,10 +650,17 @@ restart_services() {
 			((i=i+1))
 		done < <(printf '%s\n' "${services}")
 
+		echo
 		ask_msg_array "$(eval_gettext "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all or press \"enter\" to continue without restarting the service(s):")"
 
 		if [ "${answer_array[0]}" -eq 0 ] 2> /dev/null; then
-			if ! "${su_cmd}" systemctl restart ${services}; then
+			# shellcheck disable=SC2086
+			if "${su_cmd}" systemctl restart ${services}; then
+				echo
+				info_msg "$(eval_gettext "Service(s) restarted successfully\n")"
+
+			else
+				echo
 				error_msg "$(eval_gettext "An error has occurred during service(s) restart\nPlease, verify the above service(s) status\n")" && quit_msg
 				exit 11
 			fi
@@ -667,24 +674,26 @@ restart_services() {
 					service_selected=$(sed -n "${num}"p <<< "${services}")
 
 					if "${su_cmd}" systemctl restart "${service_selected}"; then
+						echo
 						info_msg "$(eval_gettext "The \${service_selected} service has been successfully restarted")"
 					else
+						echo
 						error_msg "$(eval_gettext "An error occurred during the restart of the \${service_selected} service")"
 						service_fail="y"
 					fi
 				fi
 			done
 
-			if [ -z "${service_fail}" ]; then
-				echo
-				info_msg "$(eval_gettext "Service(s) restarted successfully\n")"
+			if [ -n "${service_restarted}" ]; then
+				if [ -z "${service_fail}" ]; then
+					echo
+					info_msg "$(eval_gettext "Service(s) restarted successfully\n")"
+				else
+					echo
+					error_msg "$(eval_gettext "An error occurred during the service(s) restart\nPlease, verify the status of the above service(s)\n")" && quit_msg
+					exit 11
+				fi
 			else
-				echo
-				error_msg "$(eval_gettext "An error occurred during the service(s) restart\nPlease, verify the status of the above service(s)\n")" && quit_msg
-				exit 11
-			fi
-
-			if [ -z "${service_restarted}" ]; then
 				warning_msg "$(eval_gettext "The service(s) restart hasn't been performed\nPlease, consider restarting services that have been updated to fully apply the upgrade\n")"
 			fi
 		fi
