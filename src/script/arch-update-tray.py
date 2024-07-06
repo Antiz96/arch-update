@@ -104,7 +104,7 @@ class ArchUpdateQt6:
         self.watcher = None
 
         # Application
-        app = QApplication([])
+        app = QApplication(["Arch-Update"])
         app.setQuitOnLastWindowClosed(False)
 
         # Icon
