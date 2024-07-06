@@ -639,7 +639,7 @@ pacnew_files() {
 # Definition of the restart_services function: Verify if any services require a post update restart
 restart_services() {
 	if [ -n "${packages_updated}" ]; then
-		services=$(yes No | sudo checkservices -FP 2> /dev/null | grep ".service" | grep -v -e "dbus-broker.service" -e "systemd-logind.service" | cut -f2 -d "'")
+		services=$(yes No | sudo checkservices -FP 2> /dev/null | grep ".service" | grep -v -e "dbus-broker.service" -e "systemd-logind.service" -e "gdm.service" -e "sddm.service" -e "lightdm.service" -e "lxdm.service" -e "slim.service" -e "xdm.service" -e "greetd.service" -e "nodm.service" -e "ly.service" -e "lemurs.service" | cut -f2 -d "'")
 		services_num=$(echo "${services}" | wc -l)
 	
 		if [ -n "${services}" ]; then
