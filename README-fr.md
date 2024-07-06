@@ -29,7 +29,7 @@ Fonctionnalités :
 - Vérification et listing automatiques des paquets orphelins et propose de les supprimer.
 - Vérification automatique de la présence d'anciens paquets et/ou paquets désinstallés dans le cache et propose de les supprimer.
 - Listing et aide au traitement des fichiers pacnew/pacsave.
-- Vérification automatique des services nécessitant un redémarrage d'après mise à jour et propose de les redémarrer s'il y en a.
+- Vérification automatique des services nécessitant un redémarrage après mise à jour et propose de les redémarrer s'il y en a.
 - Vérification automatique des mises à jour du noyau en attente nécessitant un redémarrage et propose de redémarrer s'il y en a une.
 - Support de `sudo`, `doas` et `run0`.
 - Prise en charge optionnelle des paquets AUR (via `yay` ou `paru`).
