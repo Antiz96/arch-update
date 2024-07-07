@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.2.0](https://github.com/Antiz96/arch-update/releases/tag/v2.2.0) - 2024-07-07
+
+### Features
+
+- Check for services that require a post upgrade restart on packages upgrade ([#203](https://github.com/Antiz96/arch-update/pull/203)) - ([d2af4a8](https://github.com/Antiz96/arch-update/commit/d2af4a8a843b25227dc329522dd9880660666a9c)) by @Antiz96
+- Allow to read multiple news at once ([#200](https://github.com/Antiz96/arch-update/pull/200)) - ([8cb822a](https://github.com/Antiz96/arch-update/commit/8cb822a8375960dd85cbd79e38dee0561cabaf03)) by @Antiz96
+- Add the `--tray --enable` option to automatically set the systray applet in autostart apps ([#197](https://github.com/Antiz96/arch-update/pull/197)) - ([2b3857f](https://github.com/Antiz96/arch-update/commit/2b3857f74df9b36a75a2bab02dfe7092c53c4bf7)) by @Antiz96
+
+### Fixes
+
+- *(systray)* Prevent multiple instances of the systray applet to be able to run at the same time ([#199](https://github.com/Antiz96/arch-update/pull/199)) - ([fa92a61](https://github.com/Antiz96/arch-update/commit/fa92a617f0438a80bf0422cacff28bf1a68054f9)) by @Antiz96
+- *(translation)* Add missing translations for WARNING and ERROR ([#194](https://github.com/Antiz96/arch-update/pull/194)) - ([3e5c8f6](https://github.com/Antiz96/arch-update/commit/3e5c8f6116db38797e806e78a2bdf1d0e4c043f7)) by @Antiz96
+- *(systray)* Set QApplication class in systray's python script - ([3683b4a](https://github.com/Antiz96/arch-update/commit/3683b4a143f4d92abac8f056d73b4977a48c68d5)) by @starscaledragon
+- Add a category to the desktop file ([#179](https://github.com/Antiz96/arch-update/pull/179)) - ([5bbb86e](https://github.com/Antiz96/arch-update/commit/5bbb86e6c8b8d029e25fef8ebf71c5a8dfb82a8c)) by @max276
+
+### Styling
+
+- Typo fixes in french resources ([#193](https://github.com/Antiz96/arch-update/pull/193)) - ([a1d264e](https://github.com/Antiz96/arch-update/commit/a1d264e8889f255da3aff2d990c45cc94407b1bb)) by @Antiz96
+
+### Miscellaneous
+
+- *(CONTRIBUTING)* Update contributing guidelines ([#189](https://github.com/Antiz96/arch-update/pull/189)) - ([7bf057d](https://github.com/Antiz96/arch-update/commit/7bf057d7a2ed8ec952f8a236fc41b29088ce50f6)) by @Antiz96
+- *(changelog)* Add a changelog file ([#190](https://github.com/Antiz96/arch-update/pull/190)) - ([f55bbbf](https://github.com/Antiz96/arch-update/commit/f55bbbfb9fce07feb3f91476cfee5f6ca5c67e90)) by @Antiz96
+- *(main script)* Add a proper SPDX license header ([#195](https://github.com/Antiz96/arch-update/pull/195)) - ([8531c29](https://github.com/Antiz96/arch-update/commit/8531c291808524f7988c655d5b8f47c4c67df844)) by @Antiz96
+- *(release)* Update RELEASE.md ([#192](https://github.com/Antiz96/arch-update/pull/192)) - ([6fb7dc2](https://github.com/Antiz96/arch-update/commit/6fb7dc2e10aa0992eb049d7c41707313272de49d)) by @Antiz96
+- *(release)* Add release steps ([#191](https://github.com/Antiz96/arch-update/pull/191)) - ([1cb2427](https://github.com/Antiz96/arch-update/commit/1cb2427276d4dc66d04151ddd109b5f2f07162ef)) by @Antiz96
+- Add contributing guidelines (CONTRIBUTING.md) ([#188](https://github.com/Antiz96/arch-update/pull/188)) - ([9307079](https://github.com/Antiz96/arch-update/commit/930707987b401ec200fac1778d5faea97f07428f)) by @Antiz96
+- Add a link to sponsor page ([#187](https://github.com/Antiz96/arch-update/pull/187)) - ([8ebab0a](https://github.com/Antiz96/arch-update/commit/8ebab0a74018a3926cdfa076495b94ba9f3fcc88)) by @Antiz96
+- Add a config for issue templates ([#186](https://github.com/Antiz96/arch-update/pull/186)) - ([2062fdd](https://github.com/Antiz96/arch-update/commit/2062fdd58ae6951051b2677d1635a82a2bb1bc86)) by @Antiz96
+- Update issue templates ([#185](https://github.com/Antiz96/arch-update/pull/185)) - ([658a3ae](https://github.com/Antiz96/arch-update/commit/658a3aebd0fa0de1cd786668aae972b7be7ac669)) by @Antiz96
+- Add templates for issues and pull requests ([#184](https://github.com/Antiz96/arch-update/pull/184)) - ([7cf1245](https://github.com/Antiz96/arch-update/commit/7cf1245a305db8b1b00c9d2f8441b5cfb3b29455)) by @Antiz96
+
 ## [v2.1.0](https://github.com/Antiz96/arch-update/releases/tag/v2.1.0) - 2024-06-20
 
 ### Features

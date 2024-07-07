@@ -7,7 +7,7 @@
 # General variables
 name="arch-update"
 _name="Arch-Update"
-version="2.1.0"
+version="2.2.0"
 option="${1}"
 
 # Display debug traces if the -D/--debug argument is passed
