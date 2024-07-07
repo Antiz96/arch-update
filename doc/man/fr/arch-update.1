@@ -20,7 +20,7 @@ Si aucune option n'est passée, lance la série de fonctions adéquates pour eff
 .br
 Avant d'effectuer la mise à jour, propose d'afficher les dernières Arch news à l'utilisateur. Par défaut, les Arch news sont seulement affichées si au moins une nouvelle news a été publiée depuis la dernière exécution. Les Arch news publiées depuis la dernière exécution ou à la même date sont étiquetées comme '[NOUVEAU]'.
 .br
-Arch-Update vérifie aussi la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter.
+Arch-Update vérifie aussi la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, de fichiers pacnew/pacsave, de services nécessitant un redémarrage après mise à jour, ainsi que les mises à jour du noyau en attente et, s'il y en a, propose de les traiter.
 .br
 Ces fonctions sont lancées quand vous cliquez sur l'applet systray.
 
@@ -226,6 +226,10 @@ Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du 
 .TP
 .B 10
 .RB "Erreur lors de la création du fichier desktop autostart pour l'applet systray avec l'option " "--tray --enable"
+
+.TP
+.B 11
+Erreur lors du redémarrage des services nécessitant un redémarrage après mise à jour
 
 .SH VOIR AUSSI
 .BR checkupdates (8),

@@ -29,6 +29,7 @@ Fonctionnalités :
 - Vérification et listing automatiques des paquets orphelins et propose de les supprimer.
 - Vérification automatique de la présence d'anciens paquets et/ou paquets désinstallés dans le cache et propose de les supprimer.
 - Listing et aide au traitement des fichiers pacnew/pacsave.
+- Vérification automatique des services nécessitant un redémarrage après mise à jour et propose de les redémarrer s'il y en a.
 - Vérification automatique des mises à jour du noyau en attente nécessitant un redémarrage et propose de redémarrer s'il y en a une.
 - Support de `sudo`, `doas` et `run0`.
 - Prise en charge optionnelle des paquets AUR (via `yay` ou `paru`).
@@ -40,14 +41,14 @@ Fonctionnalités :
 ### AUR
 
 Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package").  
-Consultez également [la liste des dépendances optionnelles](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=arch-update#n11) dont vous pourriez avoir besoin.
+Consultez également la liste des dépendances optionnelles (disponible dans la section ["depuis la source"](#depuis-la-source) ci-dessous) dont vous pourriez avoir besoin.
 
 ### Depuis la source
 
 Installez les dépendances requises :
 
 ```bash
-sudo pacman -S --needed pacman-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
+sudo pacman -S --needed pacman-contrib archlinux-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
 ```
 
 Dépendances optionnelles supplémentaires dont vous pourriez avoir besoin ou que vous pourriez souhaiter :
@@ -179,7 +180,8 @@ Codes de sortie :
 7  Aucune mise à jour en attente durant l'utilisation de l'option `-l/--list`
 8  Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`
 9  Erreur lors de la lecture du fichier de configuration avec l'option `--show-config`
-10  Erreur lors de la creation du fichier desktop autostart pour l'applet systray avec l'option `--tray --enable`
+10 Erreur lors de la creation du fichier desktop autostart pour l'applet systray avec l'option `--tray --enable`
+11 Erreur lors du redémarrage des services nécessitant un redémarrage après mise à jour
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
