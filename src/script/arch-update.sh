@@ -665,7 +665,7 @@ restart_services() {
 					info_msg "$(eval_gettext "Service(s) restarted successfully\n")"
 	
 				else
-					error_msg "$(eval_gettext "An error has occurred during service(s) restart\nPlease, verify the above service(s) status\n")" && quit_msg
+					error_msg "$(eval_gettext "An error has occurred during the service(s) restart\nPlease, verify the above service(s) status\n")" && quit_msg
 					exit 11
 				fi
 			else
@@ -680,7 +680,7 @@ restart_services() {
 						if "${su_cmd}" systemctl restart "${service_selected}"; then
 							info_msg "$(eval_gettext "The \${service_selected} service has been successfully restarted")"
 						else
-							error_msg "$(eval_gettext "An error occurred during the restart of the \${service_selected} service")"
+							error_msg "$(eval_gettext "An error has occurred during the restart of the \${service_selected} service")"
 							service_fail="y"
 						fi
 					fi
@@ -692,7 +692,7 @@ restart_services() {
 						info_msg "$(eval_gettext "Service(s) restarted successfully\n")"
 					else
 						echo
-						error_msg "$(eval_gettext "An error occurred during the service(s) restart\nPlease, verify the status of the above service(s)\n")" && quit_msg
+						error_msg "$(eval_gettext "An error has occurred during the service(s) restart\nPlease, verify the above service(s) status\n")" && quit_msg
 						exit 11
 					fi
 				else
