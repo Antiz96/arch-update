@@ -466,7 +466,7 @@ msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
 msgstr ""
-msgstr "Le traitement des fichiers pacnew n'a pas été appliqué\\nVeuillez considérer "
+"Le traitement des fichiers pacnew n'a pas été appliqué\\nVeuillez considérer "
 "les traiter promptement\\n"
 
 #: src/script/arch-update.sh:654
