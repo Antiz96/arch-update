@@ -16,7 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-
 #: src/script/arch-update.sh:130
 #, sh-format
 msgid "WARNING"
@@ -80,7 +79,7 @@ msgstr ""
 msgid ""
 "Post update, it checks for orphan/unused packages, old cached packages, "
 "pacnew/pacsave files, services requiring a post upgrade restart as well as "
-"pending kernel update and, if there are, it offers to process them."
+"pending kernel update and, if there are, offers to process them."
 msgstr ""
 
 #: src/script/arch-update.sh:204
