@@ -165,6 +165,7 @@ Options :
 -D, --debug       Afficher les traces de débogage
 --gen-config      Générer un fichier de configuration par défaut/exemple (voir la page de manuel arch-update.conf(5) pour plus de détails)
 --show-config     Afficher le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe)
+--edit-config     Editer le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe)
 --tray            Lancer l'applet systray d'Arch-Update, vous pouvez optionnellement ajouter l'argument `--enable` pour la démarrer automatiquement au démarrage du système.
 -h, --help        Afficher ce message d'aide et quitter
 -V, --version     Afficher les informations de version et quitter
@@ -183,6 +184,7 @@ Codes de sortie :
 10 Erreur lors de la creation du fichier desktop autostart pour l'applet systray avec l'option `--tray --enable`
 11 Erreur lors du redémarrage des services nécessitant un redémarrage après mise à jour
 12 Erreur lors du traitement des fichiers pacnew
+13 Erreur lors de l'édition du fichier de configuration avec l'option `--edit-config`
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  

@@ -208,6 +208,7 @@ $(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
 $(eval_gettext "  -D, --debug       Display debug traces")
 $(eval_gettext "  --gen-config      Generate a default/example configuration file")
+$(eval_gettext "  --edit-config     Edit the 'arch-update.conf' configuration file currently used (if it exists)")
 $(eval_gettext "  --tray            Launch the Arch-Update systray applet, you can optionally add the '--enable' argument to start it automatically at boot")
 $(eval_gettext "  -h, --help        Display this help message and exit")
 $(eval_gettext "  -V, --version     Display version information and exit")
@@ -831,10 +832,21 @@ case "${option}" in
 	;;
 	--show-config)
 		if [ ! -f "${config_file}" ]; then
-			error_msg "$(eval_gettext "No configuration file found")"
+			error_msg "$(eval_gettext "No configuration file found\nYou can generate one with \"arch-update --gen-config\"")"
 			exit 9
 		else
 			cat "${config_file}" || exit 9
+		fi
+	;;
+	--edit-config)
+		if [ ! -f "${config_file}" ]; then
+			error_msg "$(eval_gettext "No configuration file found\nYou can generate one with \"arch-update --gen-config\"")"
+			exit 13
+		else
+			if ! "${EDITOR:-nano}" "${config_file}" 2> /dev/null; then
+				error_msg "$(eval_gettext "Unable to determine the editor to use\nThe \"EDITOR\" environment variable is not set and \"nano\" (fallback option) is not installed")"
+				exit 13
+			fi
 		fi
 	;;
 	--tray)

@@ -8,6 +8,7 @@ _arch-update() {
 	       -D --debug
 	       --gen-config
 	       --show-config
+	       --edit-config
 	       --tray
 	       -h --help
 	       -V --version')

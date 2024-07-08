@@ -65,6 +65,10 @@ Display debug traces.
 .RB "Display the " "arch-update.conf " "configuration file currently used (if it exists)."
 
 .TP
+.B \-\-edit\-config
+.RB "Edit the " "arch-update.conf " "configuration file currently used (if it exists)."
+
+.TP
 .B \-\-tray
 Start the Arch-Update systray applet.
 .br
@@ -234,6 +238,10 @@ Error when restarting services that require a post upgrade restart
 .TP
 .B 12
  Error during the pacnew files processing
+
+.TP
+.B 13
+.RB "Error when editing the configuration file with the " "--edit-config " "option"
 
 .SH SEE ALSO
 .BR checkupdates (8),
