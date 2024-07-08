@@ -615,10 +615,10 @@ msgstr ""
 #: src/script/arch-update.sh:847
 #, sh-format
 msgid ""
-"Unable to determine the editor to use\\nThe $EDITOR environment variable is "
-"not set and \"nano\" (fallback option) is not installed"
+"Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
+"is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"Impossible de déterminer l'éditeur à utiliser\\n La variable d'environnement $EDITOR "
+"Impossible de déterminer l'éditeur à utiliser\\n La variable d'environnement \"EDITOR\" "
 "n'est pas paramétrée et \"nano\" (option de secours) n'est pas installé"
 
 #: src/script/arch-update.sh:865
