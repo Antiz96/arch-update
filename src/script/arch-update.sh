@@ -842,7 +842,7 @@ case "${option}" in
 			error_msg "$(eval_gettext "No configuration file found\nYou can generate one with \"arch-update --gen-config\"")"
 			exit 13
 		else
-			if ! "${EDITOR}:-nano}" "${config_file}"; then
+			if ! "${EDITOR:-nano}" "${config_file}"; then
 				error_msg "$(eval_gettext "Unable to determine the editor to use\nThe \$EDITOR environment variable is not set and \"nano\" (fallback option) is not installed")"
 				exit 13
 			fi
