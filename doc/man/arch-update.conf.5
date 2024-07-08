@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE.CONF" "5" "June 2024" "Arch-Update 2.2.0" "Arch-Update Manual"
+.TH "ARCH-UPDATE.CONF" "5" "July 2024" "Arch-Update 2.2.0" "Arch-Update Manual"
 
 .SH NAME
 arch-update.conf \- arch-update configuration file.
@@ -46,6 +46,10 @@ Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 
 .TP
 .B PrivilegeElevationCommand=[Cmd]
 Command to be used for privilege elevation. Valid options are sudo, doas or run0. If this option is not set, Arch-Update will use the first available command in the following order: sudo, doas then run0.
+
+.TP
+.B DiffProg=[Editor]
+.RB "Editor to use to visualize/edit differences during the pacnew files processing. Defaults to the " "$DIFFPROG " "environment variable's value (or " "vimdiff " "if " "$DIFFPROG " "isn't set). Note that, due to the lack of option to preserve environment variable in " "doas " ", this option will be ignored when using " "doas " " as the privilege elevation method."
 
 .SH SEE ALSO
 .BR arch-update (1)
