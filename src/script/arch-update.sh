@@ -646,7 +646,8 @@ pacnew_files() {
 				fi
 			;;
 			*)
-				info_msg "$(eval_gettext "The pacnew file(s) processing hasn't been applied\n")"
+				echo
+				warning_msg "$(eval_gettext "The pacnew file(s) processing hasn't been applied\nPlease, consider processing them promptly\n")"
 			;;
 		esac
 	else
