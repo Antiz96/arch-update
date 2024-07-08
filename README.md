@@ -163,7 +163,7 @@ Options:
 -d, --devel       Include AUR development packages updates
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
 -D, --debug       Display debug traces
---gen-config      Generate a default/example configuration file (see the arch-update.conf(5) man page for more details)
+--gen-config      Generate a default/example `arch-update.conf` configuration file (see the arch-update.conf(5) man page for more details)
 --show-config     Display the `arch-update.conf` configuration file currently used (if it exists)
 --edit-config     Edit the `arch-update.conf` configuration file currently used (if it exists)
 --tray            Launch the Arch-Update systray applet, you can optionally add the `--enable` argument to start it automatically at boot.
