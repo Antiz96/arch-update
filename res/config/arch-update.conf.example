@@ -9,3 +9,4 @@
 #KeepOldPackages=3
 #KeepUninstalledPackages=0
 #PrivilegeElevationCommand=sudo
+#DiffProg=$DIFFPROG

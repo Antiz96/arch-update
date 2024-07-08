@@ -77,6 +77,10 @@ if grep -Eq '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sud
 	su_cmd=$(grep -E '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 fi
 
+if grep -Eq '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	diff_prog=$(grep -E '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+fi
+
 # Definition of the colors for the colorized output
 if [ -z "${no_color}" ]; then
 	bold="\e[1m"
@@ -160,6 +164,15 @@ else
 	if ! command -v "${su_cmd}" > /dev/null; then
 		error_msg "$(eval_gettext "The \${su_cmd} command set for privilege escalation in the arch-update.conf configuration file is not found\n")" && quit_msg
 		exit 2
+	fi
+fi
+
+# Definition of the diff program to use (if it is set in the arch-update.conf configuration file)
+if [ -n "${diff_prog}" ]; then
+	if [ "${su_cmd}" == "sudo" ]; then
+		diff_prog_opt=("DIFFPROG=${diff_prog}")
+	elif [ "${su_cmd}" == "run0" ]; then
+		diff_prog_opt+=("--setenv=DIFFPROG=${diff_prog}")
 	fi
 fi
 
@@ -623,12 +636,18 @@ pacnew_files() {
 				echo
 				main_msg "$(eval_gettext "Processing Pacnew Files...\n")"
 
-				"${su_cmd}" pacdiff "${contrib_color_opt[@]}"
-				echo
-				info_msg "$(eval_gettext "The pacnew file(s) processing has been applied\n")"
+				if "${su_cmd}" "${diff_prog_opt[@]}" pacdiff "${contrib_color_opt[@]}"; then
+					echo
+					info_msg "$(eval_gettext "The pacnew file(s) processing has been applied\n")"
+				else
+					echo
+					error_msg "$(eval_gettext "An error occurred during the pacnew file(s) processing\n")" && quit_msg
+					exit 12
+				fi
 			;;
 			*)
-				info_msg "$(eval_gettext "The pacnew file(s) processing hasn't been applied\n")"
+				echo
+				warning_msg "$(eval_gettext "The pacnew file(s) processing hasn't been applied\nPlease, consider processing them promptly\n")"
 			;;
 		esac
 	else
