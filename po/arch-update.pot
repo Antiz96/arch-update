@@ -544,22 +544,31 @@ msgstr ""
 msgid "The '${config_file}' configuration file has been generated"
 msgstr ""
 
-#: src/script/arch-update.sh:834
+#: src/script/arch-update.sh:834 src/script/arch-update.sh:842
 #, sh-format
-msgid "No configuration file found"
+msgid ""
+"No configuration file found\\nYou can generate one with \"arch-update --gen-"
+"config\""
 msgstr ""
 
-#: src/script/arch-update.sh:853
+#: src/script/arch-update.sh:846
+#, sh-format
+msgid ""
+"Unable to determine the editor to use\\nThe $EDITOR environment variable is "
+"not set and \"nano\" (fallback option) is not installed"
+msgstr ""
+
+#: src/script/arch-update.sh:864
 #, sh-format
 msgid "Arch-Update tray desktop file not found"
 msgstr ""
 
-#: src/script/arch-update.sh:860
+#: src/script/arch-update.sh:871
 #, sh-format
 msgid "The '${tray_desktop_file_autostart}' file already exists"
 msgstr ""
 
-#: src/script/arch-update.sh:865
+#: src/script/arch-update.sh:876
 #, sh-format
 msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
@@ -568,7 +577,7 @@ msgid ""
 "from your app menu"
 msgstr ""
 
-#: src/script/arch-update.sh:873
+#: src/script/arch-update.sh:884
 #, sh-format
 msgid "There's already a running instance of the Arch-Update systray applet"
 msgstr ""

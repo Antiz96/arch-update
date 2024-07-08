@@ -831,10 +831,21 @@ case "${option}" in
 	;;
 	--show-config)
 		if [ ! -f "${config_file}" ]; then
-			error_msg "$(eval_gettext "No configuration file found")"
+			error_msg "$(eval_gettext "No configuration file found\nYou can generate one with \"arch-update --gen-config\"")"
 			exit 9
 		else
 			cat "${config_file}" || exit 9
+		fi
+	;;
+	--edit-config)
+		if [ ! -f "${config_file}" ]; then
+			error_msg "$(eval_gettext "No configuration file found\nYou can generate one with \"arch-update --gen-config\"")"
+			exit 13
+		else
+			if ! "${EDITOR}:-nano}" "${config_file}"; then
+				error_msg "$(eval_gettext "Unable to determine the editor to use\nThe \$EDITOR environment variable is not set and \"nano\" (fallback option) is not installed")"
+				exit 13
+			fi
 		fi
 	;;
 	--tray)
