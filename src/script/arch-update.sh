@@ -641,7 +641,7 @@ pacnew_files() {
 					info_msg "$(eval_gettext "The pacnew file(s) processing has been applied\n")"
 				else
 					echo
-					error_msg "$(eval_gettext "An error occured during the pacnew file(s) processing\n")" && quit_msg
+					error_msg "$(eval_gettext "An error occurred during the pacnew file(s) processing\n")" && quit_msg
 					exit 12
 				fi
 			;;
