@@ -636,7 +636,7 @@ pacnew_files() {
 				echo
 				main_msg "$(eval_gettext "Processing Pacnew Files...\n")"
 
-				if "${su_cmd}" "${diff_prog_opt[@]}" pacdiff "${contrib_color_opt[@]}"
+				if "${su_cmd}" "${diff_prog_opt[@]}" pacdiff "${contrib_color_opt[@]}"; then
 					echo
 					info_msg "$(eval_gettext "The pacnew file(s) processing has been applied\n")"
 				else
