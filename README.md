@@ -182,6 +182,7 @@ Exit Codes:
 9  Error when reading the configuration file with the `--show-config` option
 10 Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option
 11 Error when restarting services that require a post upgrade restart
+12 Error when during the pacnew files processing
 ```
 
 For more information, see the arch-update(1) man page.  
@@ -206,6 +207,7 @@ The supported options are:
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
 - PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid options are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
+- DiffProg=[Editor] # Editor to use as `DIFFPROG` program, for instance to visualize/edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set). Note that, due to the lack of option to preserve environment variable in `doas`, this option will be ignored when using `doas` as the privilege elevation method.
 
 Options are case sensitive, so capital letters have to be respected.
 ```
