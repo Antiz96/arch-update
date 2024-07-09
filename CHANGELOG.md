@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.3.0](https://github.com/Antiz96/arch-update/releases/tag/v2.3.0) - 2024-07-09
+
+### Features
+
+- Add the `--edit-config` option to edit the `arch-update.conf` configuration file ([#209](https://github.com/Antiz96/arch-update/pull/209)) - ([988ad2d](https://github.com/Antiz96/arch-update/commit/988ad2d51b4bec7ce03ed67f383a59314bc5196f)) by @Antiz96
+- Add the "DiffProg" option in arch-update.conf ([#207](https://github.com/Antiz96/arch-update/pull/207)) - ([7c56d33](https://github.com/Antiz96/arch-update/commit/7c56d33809ee2b93f5fdf3eb9814ea40c3081864)) by @Antiz96
+
+### Fixes
+
+- Optimize the "News" function and avoid unexpected behaviors ([#213](https://github.com/Antiz96/arch-update/pull/213)) - ([a16a160](https://github.com/Antiz96/arch-update/commit/a16a160f3fe53567cc83f5d6a697c0a3eebcb69d)) by @Antiz96
+- Fix exit status code 7 for the --list option ([#212](https://github.com/Antiz96/arch-update/pull/212)) - ([814c489](https://github.com/Antiz96/arch-update/commit/814c4896e5a7dab26d56b0d76551842b4ae6c2e8)) by @Antiz96
+
+### Documentation
+
+- Various documentation improvements ([#210](https://github.com/Antiz96/arch-update/pull/210)) - ([7a4eb4a](https://github.com/Antiz96/arch-update/commit/7a4eb4aaa63a8535e2461fc1c2151314f7353b86)) by @Antiz96
+- Add the exit status 12 documentation in man pages ([#208](https://github.com/Antiz96/arch-update/pull/208)) - ([3df5849](https://github.com/Antiz96/arch-update/commit/3df5849e7b8a8e86fc9e71006895fd12fec145b3)) by @Antiz96
+
 ## [v2.2.0](https://github.com/Antiz96/arch-update/releases/tag/v2.2.0) - 2024-07-07
 
 ### Features
