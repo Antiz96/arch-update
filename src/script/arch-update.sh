@@ -328,9 +328,9 @@ list_packages() {
 
 	if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
 		state_up_to_date
-		if [ -z "${list_option}" ]; then
-			info_msg "$(eval_gettext "No update available\n")"
-		else
+		info_msg "$(eval_gettext "No update available\n")"
+
+		if [ -n "${list_option}" ]; then
 			exit 7
 		fi
 	else
@@ -796,7 +796,7 @@ case "${option}" in
 	;;
 	-l|--list)
 		list_option="y"
-		list_packages | sed '${/^$/d;}'
+		list_packages
 	;;
 	-n|--news)
 		show_news="y"
