@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# arch-update-tray: A systray applet for Arch-Update
+# https://github.com/Antiz96/arch-update
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 """Arch-Update System Tray."""
 import gettext
 import logging
