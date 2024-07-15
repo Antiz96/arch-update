@@ -625,10 +625,10 @@ msgstr ""
 msgid "There's already a running instance of the Arch-Update systray applet"
 msgstr ""
 
-#: src/script/arch-update-tray.py:118
+#: src/script/arch-update-tray.py:123
 msgid "Run Arch-Update"
 msgstr ""
 
-#: src/script/arch-update-tray.py:119
+#: src/script/arch-update-tray.py:124
 msgid "Exit"
 msgstr ""
