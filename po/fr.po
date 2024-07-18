@@ -269,12 +269,12 @@ msgstr "Recherche des Arch News récentes..."
 #: src/script/arch-update.sh:362
 #, sh-format
 msgid ""
-"Unable to retrieve recent Arch News within a reasonable time (possibly "
-"because of a slow or faulty network connection)\\nPlease, look for any "
-"recent news at https://archlinux.org before updating your system"
+"Unable to retrieve recent Arch News within a reasonable time (request "
+"timeout)\\nPlease, look for any recent news at https://archlinux.org before "
+"updating your system"
 msgstr ""
-"Impossible de récupérer les Arch News récentes dans un délai raisonnable (possiblement "
-"à cause d'une connexion réseau lente ou défectueuse)\\nVeuillez consultez les dernières "
+"Impossible de récupérer les Arch News récentes dans un délai raisonnable (délai "
+"d'attente de la demande dépassé)\\nVeuillez consultez les dernières "
 "news à l'adresse suivante avant de mettre à jour votre système : https://archlinux.org"
 
 #: src/script/arch-update.sh:371
