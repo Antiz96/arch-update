@@ -359,7 +359,7 @@ list_news() {
 
 	if [ "${news}" == "timeout" ]; then
 		echo
-		warning_msg "$(eval_gettext "Unable to retrieve recent Arch News within a reasonable time (possibly because of a slow or faulty network connection)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
+		warning_msg "$(eval_gettext "Unable to retrieve recent Arch News within a reasonable time (request timeout)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
 	else
 		if [ -z "${show_news}" ]; then
 			echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -1 > "${statedir}/current_news_check"
