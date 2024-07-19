@@ -385,7 +385,7 @@ list_news() {
 	
 			i=1
 			while IFS= read -r line; do
-				if [ -z "${news_option}" ] && [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(cat "${statedir}/last_update_run" 2> /dev/null)" +%s)" ]; then
+				if [ -z "${news_option}" ] && [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(cat "${statedir}/last_update_run" 2> /dev/null)" +%s)" ] 2> /dev/null; then
 					new_tag="$(eval_gettext "[NEW]")"
 					echo -e "${i} - ${line} ${green}${new_tag}${color_off}"
 				else
