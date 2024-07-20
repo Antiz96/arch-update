@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.3.1](https://github.com/Antiz96/arch-update/releases/tag/v2.3.1) - 2024-07-20
+
+### Fixes
+
+- *(news)* Make curl fail on http server errors responses when checking for recent news ([#220](https://github.com/Antiz96/arch-update/pull/220)) - ([384b6bc](https://github.com/Antiz96/arch-update/commit/384b6bcac90cb82bf7082f9ae1e2691fbf0b4e43)) by @Antiz96
+- *(news)* Avoid undesired error message if the last_update_run file is incorrect during news check ([#218](https://github.com/Antiz96/arch-update/pull/218)) - ([408078e](https://github.com/Antiz96/arch-update/commit/408078e969815b4cfed35fbcbea1fc345bf5468a)) by @Antiz96
+
+### Miscellaneous
+
+- *(checkservices)* Update the checkservices command that parses the list of services to restart ([#219](https://github.com/Antiz96/arch-update/pull/219)) - ([4a0b4df](https://github.com/Antiz96/arch-update/commit/4a0b4df0f37e6a1be7ad139de6d5bf33d599d7e6)) by @Antiz96
+- *(news)* Simplify warning message in case of request timeout ([#217](https://github.com/Antiz96/arch-update/pull/217)) - ([da04ba1](https://github.com/Antiz96/arch-update/commit/da04ba1345a4c6584f87eed4f74eaf313ba20099)) by @Antiz96
+- Update the news var value in case of error ([#221](https://github.com/Antiz96/arch-update/pull/221)) - ([e123290](https://github.com/Antiz96/arch-update/commit/e1232908910d9d19608a6b583d52a30fba6b4372)) by @Antiz96
+- Add SPDX license identifier header to the tray script ([#216](https://github.com/Antiz96/arch-update/pull/216)) - ([278237f](https://github.com/Antiz96/arch-update/commit/278237faf22f5aa2763b224598ff65682c066fe1)) by @Antiz96
+
 ## [v2.3.0](https://github.com/Antiz96/arch-update/releases/tag/v2.3.0) - 2024-07-09
 
 ### Features
