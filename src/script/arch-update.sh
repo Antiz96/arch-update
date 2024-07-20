@@ -355,9 +355,9 @@ list_packages() {
 # Definition of the list_news function: Display the latest Arch news and offers to read them
 list_news() {
 	info_msg "$(eval_gettext "Looking for recent Arch News...")"
-	news=$(curl -m 30 -Lfs https://www.archlinux.org/news || echo "timeout")
+	news=$(curl -m 30 -Lfs https://www.archlinux.org/news || echo "error")
 
-	if [ "${news}" == "timeout" ]; then
+	if [ "${news}" == "error" ]; then
 		echo
 		warning_msg "$(eval_gettext "Unable to retrieve recent Arch News (HTTP error response or request timeout)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
 	else
@@ -418,9 +418,9 @@ list_news() {
 					news_selected=$(sed -n "${num}"p <<< "${news_titles}")
 					news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
 					news_url="https://www.archlinux.org/news/${news_path}"
-					news_content=$(curl -m 30 -Lfs "${news_url}" || echo "timeout")
+					news_content=$(curl -m 30 -Lfs "${news_url}" || echo "error")
 
-					if [ "${news_content}" == "timeout" ]; then
+					if [ "${news_content}" == "error" ]; then
 						echo
 						warning_msg "$(eval_gettext "Unable to retrieve the selected Arch News (HTTP error response or request timeout)\nPlease, read the selected Arch News at \${news_url} before updating your system")"
 					else
