@@ -355,7 +355,7 @@ list_packages() {
 # Definition of the list_news function: Display the latest Arch news and offers to read them
 list_news() {
 	info_msg "$(eval_gettext "Looking for recent Arch News...")"
-	news=$(curl -m 30 -Ls https://www.archlinux.org/news || echo "timeout")
+	news=$(curl -m 30 -Lfs https://www.archlinux.org/news || echo "timeout")
 
 	if [ "${news}" == "timeout" ]; then
 		echo
@@ -418,7 +418,7 @@ list_news() {
 					news_selected=$(sed -n "${num}"p <<< "${news_titles}")
 					news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
 					news_url="https://www.archlinux.org/news/${news_path}"
-					news_content=$(curl -m 30 -Ls "${news_url}" || echo "timeout")
+					news_content=$(curl -m 30 -Lfs "${news_url}" || echo "timeout")
 
 					if [ "${news_content}" == "timeout" ]; then
 						echo
