@@ -359,7 +359,7 @@ list_news() {
 
 	if [ "${news}" == "timeout" ]; then
 		echo
-		warning_msg "$(eval_gettext "Unable to retrieve recent Arch News within a reasonable time (request timeout)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
+		warning_msg "$(eval_gettext "Unable to retrieve recent Arch News (HTTP error response or request timeout)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
 	else
 		if [ -z "${show_news}" ]; then
 			echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -1 > "${statedir}/current_news_check"
@@ -422,7 +422,7 @@ list_news() {
 
 					if [ "${news_content}" == "timeout" ]; then
 						echo
-						warning_msg "$(eval_gettext "Unable to retrieve the selected Arch News within a reasonable time (possibly because of a slow or faulty network connection)\nPlease, read the selected Arch News at \${news_url} before updating your system")"
+						warning_msg "$(eval_gettext "Unable to retrieve the selected Arch News (HTTP error response or request timeout)\nPlease, read the selected Arch News at \${news_url} before updating your system")"
 					else
 						news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
 						news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
