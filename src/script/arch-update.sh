@@ -355,11 +355,11 @@ list_packages() {
 # Definition of the list_news function: Display the latest Arch news and offers to read them
 list_news() {
 	info_msg "$(eval_gettext "Looking for recent Arch News...")"
-	news=$(curl -m 30 -Ls https://www.archlinux.org/news || echo "timeout")
+	news=$(curl -m 30 -Lfs https://www.archlinux.org/news || echo "timeout")
 
 	if [ "${news}" == "timeout" ]; then
 		echo
-		warning_msg "$(eval_gettext "Unable to retrieve recent Arch News within a reasonable time (request timeout)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
+		warning_msg "$(eval_gettext "Unable to retrieve recent Arch News (HTTP error response or request timeout)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
 	else
 		if [ -z "${show_news}" ]; then
 			echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -1 > "${statedir}/current_news_check"
@@ -418,11 +418,11 @@ list_news() {
 					news_selected=$(sed -n "${num}"p <<< "${news_titles}")
 					news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
 					news_url="https://www.archlinux.org/news/${news_path}"
-					news_content=$(curl -m 30 -Ls "${news_url}" || echo "timeout")
+					news_content=$(curl -m 30 -Lfs "${news_url}" || echo "timeout")
 
 					if [ "${news_content}" == "timeout" ]; then
 						echo
-						warning_msg "$(eval_gettext "Unable to retrieve the selected Arch News within a reasonable time (possibly because of a slow or faulty network connection)\nPlease, read the selected Arch News at \${news_url} before updating your system")"
+						warning_msg "$(eval_gettext "Unable to retrieve the selected Arch News (HTTP error response or request timeout)\nPlease, read the selected Arch News at \${news_url} before updating your system")"
 					else
 						news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
 						news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
