@@ -794,8 +794,8 @@ full_upgrade() {
 	orphan_packages
 	packages_cache
 	pacnew_files
-	restart_services
 	kernel_reboot
+	restart_services
 	quit_msg
 }
 
