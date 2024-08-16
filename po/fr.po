@@ -86,12 +86,12 @@ msgstr ""
 #, sh-format
 msgid ""
 "Post update, it checks for orphan/unused packages, old cached packages, "
-"pacnew/pacsave files, services requiring a post upgrade restart as well as "
-"pending kernel update and, if there are, offers to process them."
+"pacnew/pacsave files, pending kernel update as well as services requiring a "
+"post upgrade restart and, if there are, offers to process them."
 msgstr ""
 "Après la mise à jour, elle vérifie la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache, "
-"de fichiers pacnew/pacsave, de services nécessitant un redémarrage après mise à jour ainsi que "
-"les mises à jour du noyau en attente et, s'il y en a, propose de les traiter."
+"de fichiers pacnew/pacsave, les mises à jour du noyau en attente, ainsi que les services nécessitant un "
+"redémarrage d'après mise à jour et, s'il y en a, propose de les traiter."
 
 #: src/script/arch-update.sh:204
 #, sh-format

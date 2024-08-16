@@ -29,8 +29,8 @@ Features:
 - Automatic check and listing of orphan packages and offers to remove them.
 - Automatic check for old and/or uninstalled cached packages and offers to remove them.
 - Lists and helps you processing pacnew/pacsave files.
-- Automatic check for services requiring a post upgrade restart and offers to do so if there are.
 - Automatic check for pending kernel updates requiring a reboot to be applied and offers to do so if there's one.
+- Automatic check for services requiring a post upgrade restart and offers to do so if there are.
 - Support for `sudo`, `doas` & `run0`.
 - Optional support for AUR packages (through `yay` or `paru`).
 - Optional support for Flatpak packages.
@@ -154,8 +154,9 @@ Run arch-update to perform the main "update" function:
 Display the list of packages available for update, then ask for the user's confirmation
 to proceed with the installation.
 Before performing the update, offer to display the latest Arch Linux news.
-Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files
-and pending kernel update and, if there are, offers to process them.
+Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files,
+pending kernel update, as well as services requiring a post upgrade restart and, if there are,
+offers to process them.
 
 Options:
 -c, --check       Check for available updates, change the systray icon and send a desktop notification containing the number of available updates (if there are new available updates compared to the last check)

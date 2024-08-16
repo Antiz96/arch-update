@@ -78,8 +78,8 @@ msgstr ""
 #, sh-format
 msgid ""
 "Post update, it checks for orphan/unused packages, old cached packages, "
-"pacnew/pacsave files, services requiring a post upgrade restart as well as "
-"pending kernel update and, if there are, offers to process them."
+"pacnew/pacsave files, pending kernel update as well as services requiring a "
+"post upgrade restart and, if there are, offers to process them."
 msgstr ""
 
 #: src/script/arch-update.sh:204
