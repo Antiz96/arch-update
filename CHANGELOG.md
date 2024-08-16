@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.3.2](https://github.com/Antiz96/arch-update/releases/tag/v2.3.2) - 2024-08-16
+
+### Features
+
+- Check for pending kernel update before checking for services to restart ([#225](https://github.com/Antiz96/arch-update/pull/225)) - ([b416969](https://github.com/Antiz96/arch-update/commit/b4169695c5659d17d1e3abd14fb22a712c120e2b)) by @Temet79
+
 ## [v2.3.1](https://github.com/Antiz96/arch-update/releases/tag/v2.3.1) - 2024-07-20
 
 ### Fixes
