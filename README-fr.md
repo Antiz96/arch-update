@@ -29,8 +29,8 @@ Fonctionnalités :
 - Vérification et listing automatiques des paquets orphelins et propose de les supprimer.
 - Vérification automatique de la présence d'anciens paquets et/ou paquets désinstallés dans le cache et propose de les supprimer.
 - Listing et aide au traitement des fichiers pacnew/pacsave.
-- Vérification automatique des services nécessitant un redémarrage après mise à jour et propose de les redémarrer s'il y en a.
 - Vérification automatique des mises à jour du noyau en attente nécessitant un redémarrage et propose de redémarrer s'il y en a une.
+- Vérification automatique des services nécessitant un redémarrage après mise à jour et propose de les redémarrer s'il y en a.
 - Support de `sudo`, `doas` et `run0`.
 - Prise en charge optionnelle des paquets AUR (via `yay` ou `paru`).
 - Prise en charge optionnelle des paquets Flatpak.
@@ -155,7 +155,8 @@ Afficher la liste des paquets disponibles pour mise à jour, puis demander la co
 pour procéder à l'installation.
 Avant d'effectuer la mise à jour, propose d'afficher les dernières Arch news.
 Après la mise à jour, vérification de la présence de paquets orphelins/inutilisés, d'anciens paquets mis en cache,
-de fichiers pacnew/pacsave et de mise à jour du noyau en attente et, s'il y en a, propose de les traiter.
+de fichiers pacnew/pacsave, de mise à jour du noyau en attente ainsi que des services nécessitant un redémarrage après mise à jour
+et, s'il y en a, propose de les traiter.
 
 Options :
 -c, --check       Vérifier les mises à jour disponibles, changer l'icône systray et envoyer une notification de bureau contenant le nombre de mises à jour disponibles (s'il y a des nouvelles mises à jour disponibles depuis le dernier check)
