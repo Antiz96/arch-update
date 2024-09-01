@@ -2,9 +2,9 @@
 
 Thank you for considering contributing to [Arch-Update](https://github.com/Antiz96/arch-update)!
 
-With the exception of the [general rules](#general-rules), which **must** be acknowledged and applied in any contribution/interaction in this project, these guidelines represents an ideal target & standards that I would like this project to follow but may not all be **strictly** enforced (depending on the situation).
+With the exception of the [general rules](#general-rules) (which **must** be acknowledged and applied in any contribution/interaction in this project), these guidelines represents an ideal target & standards that I would like this project to follow but may not all be **strictly** enforced (depending on the situation).
 
-Please, don't refrain yourself from contributing if you feel that your contribution may not entirely follow these guidelines (or if you're struggling applying some of them). I value your contribution more than the strict application of these guidelines!
+Please, don't refrain yourself from contributing if you feel that your contribution may not entirely follow these guidelines (or if you're struggling applying some of them). I value your contributions much more than the strict application of these guidelines!
 
 ## Table of contents
 
@@ -43,7 +43,7 @@ Apart from trivial changes (like simple typo fixes), it is advised to first [ope
 
 ### Coding style
 
-When submitting code changes, try to respect the coding style and the overall way things work as much as possible.  
+When submitting code changes, try to respect the coding style and the overall way things work, as much as possible.  
 For instance, for the main bash script:
 
 - Stick to bash syntax
@@ -68,7 +68,8 @@ This project uses the following commit types:
 - doc: for documentation only changes
 - style: For changes that do not affect the meaning of the code (white-space, formatting, typo fixes, etc...)
 
-An optional scope can be provided to the commit type if relevant (for instance when a change is specific to precise part of the project), like so: `type(scope): commit message`.  
+An optional scope can be provided to the commit type if relevant (for instance when a change is specific to a precise part of the project), like so: `type(scope): commit message`.
+
 If a commit introduces a breaking change, its type must contain a `!` (e.g. `feat!: commit message`) and/or a `BREAKING CHANGE:` mention should be added at the end of your commit message (e.g. `BREAKING CHANGE: description of the breaking change`).
 
 Here are a few examples of the expected commit format:
@@ -107,7 +108,7 @@ By contributing to this project, you agree that your contributions will be licen
 
 ## Donations
 
-You can also support this project development (and my work in general) by making a small donation via my [GitHub sponsor page](https://github.com/sponsors/Antiz96).
+You can also support this project development (and my work in general) by making a donation via my [GitHub sponsor page](https://github.com/sponsors/Antiz96).
 
 ## Thank you
 
