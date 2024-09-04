@@ -21,7 +21,7 @@
 An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any DE/WM.  
 Optional support for AUR/Flatpak packages and desktop notifications.
 
-Arch-Update is designed to follow usual system maintenance steps, as reported in the [Arch Wiki](https://wiki.archlinux.org/title/System_maintenance).
+Arch-Update is designed to follow usual system maintenance steps, as described in the [Arch Wiki](https://wiki.archlinux.org/title/System_maintenance).
 
 Features:
 
