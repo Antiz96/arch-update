@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.3.3](https://github.com/Antiz96/arch-update/releases/tag/v2.3.3) - 2024-09-15
+
+### Fixes
+
+- Fix dates parsing on news listing/displaying ([#229](https://github.com/Antiz96/arch-update/pull/229)) - ([ffce839](https://github.com/Antiz96/arch-update/commit/ffce839c682e2286dc846a16ec2f2fa39cfb7ead)) by @Antiz96
+
+### Documentation
+
+- Add that Arch-Update follows usual system maintenance steps (as described in the Arch Wiki) in documentation ([#228](https://github.com/Antiz96/arch-update/pull/228)) - ([0238738](https://github.com/Antiz96/arch-update/commit/023873897fc5655a3abcd01e2391f57fb507e7b8)) by @Antiz96
+
+### Styling
+
+- *(CONTRIBUTING)* Improve wording in contributing guidelines ([#226](https://github.com/Antiz96/arch-update/pull/226)) - ([24c4230](https://github.com/Antiz96/arch-update/commit/24c4230c3e39e107efe560a8fefffae13b7b1068)) by @Antiz96
+
 ## [v2.3.2](https://github.com/Antiz96/arch-update/releases/tag/v2.3.2) - 2024-08-16
 
 ### Features
