@@ -70,6 +70,12 @@ Pour installer `arch-update`, allez dans le répertoire extrait/cloné et exécu
 sudo make install
 ```
 
+Si vous voulez exécuter des tests unitaires simples, vous pouvez exécuter la commande suivante (requiert [bats](https://archlinux.org/packages/extra/any/bats/)) :
+
+```bash
+make test
+```
+
 Pour désinstaller `arch-update`, allez dans le répertoire extrait/cloné et exécutez la commande suivante :
 
 ```bash

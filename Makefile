@@ -3,7 +3,7 @@ _pkgname=Arch-Update
 
 PREFIX ?= /usr/local
 
-.PHONY: all install uninstall
+.PHONY: all install test uninstall
 
 all:
 
@@ -95,5 +95,5 @@ uninstall:
 	rm -rf "${DESTDIR}${PREFIX}/share/doc/${pkgname}/"
 
 test:
-	# Run the help function of the main script as a simple test
-	"src/script/${pkgname}.sh" --help
+	# Run some simple unit tests on basic functions
+	bats test/case/basic_functions.bats
