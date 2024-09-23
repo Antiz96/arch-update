@@ -11,16 +11,16 @@ version="2.3.3"
 option="${1}"
 
 # Define the directory containing libraries
-if [ -d "${XDG_DATA_HOME}/${_name}/lib" ]; then
-        libdir="${XDG_DATA_HOME}/${_name}/lib"
-elif [ -d "${HOME}/.local/share/${_name}/lib" ]; then
-        libdir="${HOME}/.local/share/${_name}/lib"
-elif [ -d "${XDG_DATA_DIRS}/${_name}/lib" ]; then
-        libdir="${XDG_DATA_DIRS}/${_name}/lib"
-elif [ -d "/usr/local/share/${_name}/lib" ]; then
-        libdir="/usr/local/share/${_name}/lib"
-elif [ -d "/usr/share/${_name}/lib" ]; then
-        libdir="/usr/share/${_name}/lib"
+if [ -d "${XDG_DATA_HOME}/${name}/lib" ]; then
+        libdir="${XDG_DATA_HOME}/${name}/lib"
+elif [ -d "${HOME}/.local/share/${name}/lib" ]; then
+        libdir="${HOME}/.local/share/${name}/lib"
+elif [ -d "${XDG_DATA_DIRS}/${name}/lib" ]; then
+        libdir="${XDG_DATA_DIRS}/${name}/lib"
+elif [ -d "/usr/local/share/${name}/lib" ]; then
+        libdir="/usr/local/share/${name}/lib"
+elif [ -d "/usr/share/${name}/lib" ]; then
+        libdir="/usr/share/${name}/lib"
 else
 	echo -e >&2 "ERROR: Libraries directory not found"
 	exit 14

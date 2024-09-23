@@ -15,8 +15,8 @@ if [ -n "${proceed_with_update}" ]; then
 	source "${libdir}/list_news.sh"
 
 	# Source the "update" library which updates packages
-	# shellcheck source=src/lib/list_update.sh
-	source "${libdir}/list_update.sh"
+	# shellcheck source=src/lib/update.sh
+	source "${libdir}/update.sh"
 
 	# Record the date of the last successful update (used by other stages) 
 	date +%Y-%m-%d > "${statedir}/last_update_run"
