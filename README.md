@@ -188,6 +188,7 @@ Exit Codes:
 11 Error when restarting services that require a post upgrade restart
 12 Error during the pacnew files processing
 13 Error when editing the configuration file with the `--edit-config` option
+14 Libraries directory not found
 ```
 
 For more information, see the arch-update(1) man page.  
