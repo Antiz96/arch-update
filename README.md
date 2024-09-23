@@ -214,7 +214,7 @@ The supported options are:
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
 - PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid options are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
 - DiffProg=[Editor] # Editor to use to visualize/edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set). Note that, due to the lack of option to preserve environment variable in `doas`, this option will be ignored when using `doas` as the privilege elevation method.
-- AURHelper=[AUR Helper] # AUR helper to be used for AUR packages support. Valid options are `paru` or `yay`. If this option is not set, Arch-Update will use the first available AUR Helper in the following order: `paru` then `yay` (in case none of them is installed, Arch-Update will not take AUR packages into account).
+- AURHelper=[AUR Helper] # AUR helper to be used for AUR packages support. Valid options are `paru` or `yay`. If this option is not set, Arch-Update will use the first available AUR helper in the following order: `paru` then `yay` (in case none of them is installed, Arch-Update will not take AUR packages into account).
 
 Options are case sensitive, so capital letters have to be respected.
 ```
