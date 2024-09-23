@@ -10,7 +10,7 @@ source "${libdir}/list_packages.sh"
 
 # If the user gave the confirmation to proceed to apply updates
 if [ -n "${proceed_with_update}" ]; then
-	# Source the "list_news" library which displays the lastest Arch news and offers to read them
+	# Source the "list_news" library which displays the latest Arch news and offers to read them
 	# shellcheck source=src/lib/list_news.sh
 	source "${libdir}/list_news.sh"
 
@@ -18,7 +18,7 @@ if [ -n "${proceed_with_update}" ]; then
 	# shellcheck source=src/lib/list_update.sh
 	source "${libdir}/list_update.sh"
 
-	# Record the date of the last succesful update (used by other stages) 
+	# Record the date of the last successful update (used by other stages) 
 	date +%Y-%m-%d > "${statedir}/last_update_run"
 fi
 
@@ -42,5 +42,5 @@ source "${libdir}/kernel_reboot.sh"
 # shellcheck source=src/lib/restart_services.sh
 source "${libdir}/restart_services.sh"
 
-# Display the "quit" message on succesful full upgrade
+# Display the "quit" message on successful full upgrade
 quit_msg

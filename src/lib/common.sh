@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# common.sh: Set variables and functions commonly used accross Arch-Update stages
+# common.sh: Set variables and functions commonly used across Arch-Update stages
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 

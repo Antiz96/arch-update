@@ -30,7 +30,7 @@ fi
 # shellcheck source=src/lib/config.sh
 source "${libdir}/config.sh"
 
-# Source the "common" library which contains variables and functions commonly used accross Arch-Update stages
+# Source the "common" library which contains variables and functions commonly used across Arch-Update stages
 # shellcheck source=src/lib/common.sh
 source "${libdir}/common.sh"
 
@@ -72,7 +72,7 @@ case "${option}" in
 			news_num="${2}"
 		fi
 
-		# Source the "list_news" library which displays the lastest Arch news and offers to read them
+		# Source the "list_news" library which displays the latest Arch news and offers to read them
 		# shellcheck source=src/lib/list_news.sh
 		source "${libdir}/list_news.sh"
 	;;
