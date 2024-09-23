@@ -62,7 +62,7 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}"
 
 	# Delete data folder (which stores libraries)
-	rm -f "${DESTDIR}${PREFIX}/share/${pkgname}"
+	rm -rf "${DESTDIR}${PREFIX}/share/${pkgname}"
 
 	# Delete icons
 	rm -rf "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
