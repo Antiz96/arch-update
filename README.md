@@ -50,7 +50,7 @@ See also the list of optional dependencies (available in the ["from source"](#fr
 Install required dependencies:
 
 ```bash
-sudo pacman -S --needed pacman-contrib archlinux-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
+sudo pacman -S --needed pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
 ```
 
 Additional optional dependencies you might need or want:
