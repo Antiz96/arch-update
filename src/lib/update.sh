@@ -28,6 +28,7 @@ if [ -n "${aur_packages}" ]; then
 		error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 		exit 5
 	else
+		# shellcheck disable=SC2034
 		packages_updated="y"
 	fi
 fi
