@@ -4,32 +4,6 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-# Definition of the AUR helper to use (depending on if/which one is installed on the system) for the optional AUR packages support
-if command -v paru > /dev/null; then
-	# shellcheck disable=SC2034
-	aur_helper="paru"
-elif command -v yay > /dev/null; then
-	# shellcheck disable=SC2034
-	aur_helper="yay"
-fi
-
-# Check if flatpak is installed for the optional Flatpak support
-# shellcheck disable=SC2034
-flatpak=$(command -v flatpak)
-
-# Check if notify-send is installed for the optional desktop notification support
-# shellcheck disable=SC2034
-notif=$(command -v notify-send)
-
-# Definition of the diff program to use (if it is set in the arch-update.conf configuration file)
-if [ -n "${diff_prog}" ]; then
-	if [ "${su_cmd}" == "sudo" ]; then
-		diff_prog_opt=("DIFFPROG=${diff_prog}")
-	elif [ "${su_cmd}" == "run0" ]; then
-		diff_prog_opt+=("--setenv=DIFFPROG=${diff_prog}")
-	fi
-fi
-
 # Definition of the colors for the colorized output
 if [ -z "${no_color}" ]; then
 	bold="\e[1m"
@@ -96,6 +70,31 @@ quit_msg() {
 	read -n 1 -r -s -p $"$(info_msg "${msg}")" && echo
 }
 
+# Definition of the AUR helper to use (depending on if/which one is installed on the system and if it's not already defined in arch-update.conf) for the optional AUR packages support
+# shellcheck disable=SC2034
+if [ -z "${aur_helper}" ]; then
+	if command -v paru > /dev/null; then
+		# shellcheck disable=SC2034
+		aur_helper="paru"
+	elif command -v yay > /dev/null; then
+		# shellcheck disable=SC2034
+		aur_helper="yay"
+	fi
+else
+	if ! command -v "${aur_helper}" > /dev/null; then
+		warning_msg "$(eval_gettext "The \${aur_helper} AUR helper set for AUR packages support in the arch-update.conf configuration file is not found\n")"
+		unset aur_helper
+	fi
+fi
+
+# Check if flatpak is installed for the optional Flatpak support
+# shellcheck disable=SC2034
+flatpak=$(command -v flatpak)
+
+# Check if notify-send is installed for the optional desktop notification support
+# shellcheck disable=SC2034
+notif=$(command -v notify-send)
+
 # Definition of the elevation command to use (depending on which one is installed on the system and if it's not already defined in arch-update.conf)
 if [ -z "${su_cmd}" ]; then
 	if command -v sudo > /dev/null; then
@@ -112,6 +111,15 @@ else
 	if ! command -v "${su_cmd}" > /dev/null; then
 		error_msg "$(eval_gettext "The \${su_cmd} command set for privilege escalation in the arch-update.conf configuration file is not found\n")" && quit_msg
 		exit 2
+	fi
+fi
+
+# Definition of the diff program to use (if it is set in the arch-update.conf configuration file)
+if [ -n "${diff_prog}" ]; then
+	if [ "${su_cmd}" == "sudo" ]; then
+		diff_prog_opt=("DIFFPROG=${diff_prog}")
+	elif [ "${su_cmd}" == "run0" ]; then
+		diff_prog_opt+=("--setenv=DIFFPROG=${diff_prog}")
 	fi
 fi
 
