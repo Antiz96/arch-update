@@ -11,7 +11,9 @@ version="2.3.3"
 option="${1}"
 
 # Define the directory containing libraries
-if [ -d "${XDG_DATA_HOME}/${name}/lib" ]; then
+if [ -n "${TEST_LIBDIR}" ]; then # Used in bats test cases for `make test`
+	libdir="${TEST_LIBDIR}"
+elif [ -d "${XDG_DATA_HOME}/${name}/lib" ]; then
         libdir="${XDG_DATA_HOME}/${name}/lib"
 elif [ -d "${HOME}/.local/share/${name}/lib" ]; then
         libdir="${HOME}/.local/share/${name}/lib"
