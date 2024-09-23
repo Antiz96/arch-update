@@ -188,6 +188,7 @@ Codes de sortie :
 11 Erreur lors du redémarrage des services nécessitant un redémarrage après mise à jour
 12 Erreur lors du traitement des fichiers pacnew
 13 Erreur lors de l'édition du fichier de configuration avec l'option `--edit-config`
+14 Le dossier de librairies n'a pas été trouvé
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
