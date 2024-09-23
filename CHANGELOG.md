@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.0.1](https://github.com/Antiz96/arch-update/releases/tag/v3.0.1) - 2024-09-24
+
+### Fixes
+
+- Add the missing french translation on the "AUR helper not found" warning ([#239](https://github.com/Antiz96/arch-update/pull/239)) - ([c4a86ad](https://github.com/Antiz96/arch-update/commit/c4a86ad987a6d10f9bd6a05e7889baae9c69ff3c)) by @Antiz96
+
 ## [v3.0.0](https://github.com/Antiz96/arch-update/releases/tag/v3.0.0) - 2024-09-24
 
 ### Features
