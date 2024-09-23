@@ -58,7 +58,7 @@ else
 		# shellcheck disable=SC2154
 		case "${answer}" in
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
-				# shellcheck disable=SC2154
+				# shellcheck disable=SC2034,SC2154
 				proceed_with_update="y"
 				echo
 			;;
