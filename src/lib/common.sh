@@ -9,6 +9,7 @@ if command -v paru > /dev/null; then
 	# shellcheck disable=SC2034
 	aur_helper="paru"
 elif command -v yay > /dev/null; then
+	# shellcheck disable=SC2034
 	aur_helper="yay"
 fi
 
@@ -40,6 +41,7 @@ if [ -z "${no_color}" ]; then
 	# shellcheck disable=SC2034
 	pacman_color_opt="always"
 else
+	# shellcheck disable=SC2034
 	pacman_color_opt="never"
 	contrib_color_opt+=("--nocolor")
 fi

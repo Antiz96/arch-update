@@ -16,6 +16,7 @@ if [ -n "${pacnew_files}" ]; then
 		ask_msg "$(eval_gettext "Would you like to process these files now? [Y/n]")"
 	fi
 
+	# shellcheck disable=SC2154
 	case "${answer}" in
 		"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 			echo

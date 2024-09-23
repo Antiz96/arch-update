@@ -7,15 +7,19 @@
 info_msg "$(eval_gettext "Looking for updates...\n")"
 
 if [ -z "${no_version}" ]; then
+	# shellcheck disable=SC2154
 	packages=$(checkupdates "${contrib_color_opt[@]}")
 else
+	# shellcheck disable=SC2154
 	packages=$(checkupdates "${contrib_color_opt[@]}" | awk '{print $1}')
 fi
 
 if [ -n "${aur_helper}" ]; then
 	if [ -z "${no_version}" ]; then
+		# shellcheck disable=SC2154
 		aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua)
 	else
+		# shellcheck disable=SC2154
 		aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua | awk '{print $1}')
 	fi
 fi
@@ -51,8 +55,10 @@ else
 	if [ -z "${list_option}" ]; then
 		ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
 
+		# shellcheck disable=SC2154
 		case "${answer}" in
 			"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
+				# shellcheck disable=SC2154
 				proceed_with_update="y"
 				echo
 			;;
