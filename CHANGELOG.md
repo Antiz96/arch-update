@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.0.0](https://github.com/Antiz96/arch-update/releases/tag/v3.0.0) - 2024-09-24
+
+### Features
+
+- Add the "AURHelper" option in arch-update.conf ([#233](https://github.com/Antiz96/arch-update/pull/233)) - ([a1a5c07](https://github.com/Antiz96/arch-update/commit/a1a5c07e500b789547d9d944c4fd07d48643b818)) by @Antiz96
+
+### Fixes
+
+- Add fakeroot as an explicit dependency ([#237](https://github.com/Antiz96/arch-update/pull/237)) - ([d2e01bf](https://github.com/Antiz96/arch-update/commit/d2e01bf0be663497fc6e4d3b45dad0cd3d229898)) by @Antiz96
+
+### Miscellaneous
+
+- Add simple unit tests to check basic functions with `make test` ([#236](https://github.com/Antiz96/arch-update/pull/236)) - ([4978f98](https://github.com/Antiz96/arch-update/commit/4978f987ce8162f562b86731b3439dca6151e986)) by @Antiz96
+- Chore!(code structure): Split the script functions into separate libraries ([#232](https://github.com/Antiz96/arch-update/pull/232)) - ([c89c0dc](https://github.com/Antiz96/arch-update/commit/c89c0dcb241c9b9d7dd3b4b94443d9ef1da4ae1c)) by @Antiz96
+
 ## [v2.3.3](https://github.com/Antiz96/arch-update/releases/tag/v2.3.3) - 2024-09-15
 
 ### Fixes

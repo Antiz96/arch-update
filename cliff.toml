@@ -23,7 +23,7 @@ body = """
         {% if commit.breaking %}[**breaking**] {% endif %}\
         {{ commit.message | upper_first }} - \
         ([{{ commit.id | truncate(length=7, end="") }}]({{ self::remote_url() }}/commit/{{ commit.id }}))\
-        {% if commit.github.username %} by @{{ commit.github.username }}{%- endif -%}
+        {% if commit.remote.username %} by @{{ commit.remote.username }}{%- endif -%}
 {% endmacro -%}
 
 {% if version %}\
