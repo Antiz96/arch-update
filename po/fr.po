@@ -52,7 +52,7 @@ msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-update."
 "conf configuration file is not found\\n"
 msgstr ""
-"Le AUR helper ${aur_helper} définie pour le support des paquets AUR dans le fichier de configuration "
+"Le AUR helper ${aur_helper} défini pour le support des paquets AUR dans le fichier de configuration "
 "arch-update.conf n'est pas disponible\\n"
 
 #: src/lib/common.sh:107
