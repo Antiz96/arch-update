@@ -11,7 +11,7 @@ export TAG="X.Y.Z"
 - Bump version in where necessary:
 
 ```bash
-sed -i "s/$(arch-update -V | cut -f2 -d " ")/${TAG}/g" doc/man/arch-update.* doc/man/fr/arch-update.* po/* src/script/arch-update.sh
+sed -i "s/$(arch-update -V | cut -f2 -d " ")/${TAG}/g" doc/man/arch-update.* doc/man/fr/arch-update.* po/* src/arch-update.sh
 ```
 
 - Update changelog:

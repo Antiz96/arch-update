@@ -8,9 +8,11 @@ PREFIX ?= /usr/local
 all:
 
 install:
-	# Install scripts
-	install -Dm 755 "src/script/${pkgname}.sh" "${DESTDIR}${PREFIX}/bin/${pkgname}"
-	install -Dm 755 "src/script/${pkgname}-tray.py" "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
+	# Install main script
+	install -Dm 755 "src/${pkgname}.sh" "${DESTDIR}${PREFIX}/bin/${pkgname}"
+
+	# Install libraries
+	install -Dm 755 src/lib/* -t "${DESTDIR}${PREFIX}/share/${pkgname}/lib/"
 
 	# Install icons
 	install -Dm 664 "src/icons/${pkgname}.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
@@ -56,9 +58,11 @@ install:
 	install -Dm 644 "res/config/${pkgname}.conf.example" "${DESTDIR}${PREFIX}/share/doc/${pkgname}/${pkgname}.conf.example"
 
 uninstall:
-	# Delete scripts
+	# Delete main script
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}"
-	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}-tray"
+
+	# Delete data folder (which stores libraries)
+	rm -rf "${DESTDIR}${PREFIX}/share/${pkgname}"
 
 	# Delete icons
 	rm -rf "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"

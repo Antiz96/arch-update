@@ -44,12 +44,13 @@ Apart from trivial changes (like simple typo fixes), it is advised to first [ope
 ### Coding style
 
 When submitting code changes, try to respect the coding style and the overall way things work, as much as possible.  
-For instance, for the main bash script:
+For instance:
 
 - Stick to bash syntax
 - Variables should use the `"${var}"` format
 - Use the `{main,info,ask,warning,error}_msg` functions to print messages
 - Use `"$(eval_gettext "string")"` for any string chain that should be included in translations
+- The main `arch-update.sh` script should only be used as a wrapper around "libraries" stored in `src/lib/`
 - [...]
 
 Bash code is checked with [shellcheck](https://www.shellcheck.net/).  
@@ -100,6 +101,17 @@ The recently introduced -l/--list option was missing from the man page
 
 ```text
 style: Typo fixes in README and man pages
+```
+
+```text
+chore!(code structure): Split the script functions into separate libraries
+
+Split the functions inside the main script into their own separate libraries scripts to improve readability and ease the overall maintenance and contribution processes.
+
+Closes https://github.com/Antiz96/arch-update/issues/230
+
+BREAKING CHANGE: The python script for the systray applet is now sourced as a library by the main script (and not executed from `"installation_prefix"/bin/` anymore).  
+People that installed Arch-Update from source will have to either uninstall it (with `make uninstall`) **before** pulling and installing the new version (with `make install`), or they will have to manually remove the `arch-update-tray` file from their system (which is under `/usr/local/bin/` if the default installation prefix was used) after upgrading from `v2.x.x` to `v3.x.x`. Otherwise, the `arch-update-tray` file will remain un-tracked on the system.
 ```
 
 ### License
