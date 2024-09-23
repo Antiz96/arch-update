@@ -16,42 +16,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:31 src/lib/check.sh:33
+#: src/lib/check.sh:34 src/lib/check.sh:37
 #, sh-format
 msgid "${update_number} update available"
 msgstr "${update_number} mise à jour disponible"
 
-#: src/lib/check.sh:38 src/lib/check.sh:40
+#: src/lib/check.sh:42 src/lib/check.sh:44
 #, sh-format
 msgid "${update_number} updates available"
 msgstr "${update_number} mises à jour disponibles"
 
-#: src/lib/common.sh:70
+#: src/lib/common.sh:78
 #, sh-format
 msgid "WARNING"
 msgstr "AVERTISSEMENT"
 
-#: src/lib/common.sh:76
+#: src/lib/common.sh:84
 #, sh-format
 msgid "ERROR"
 msgstr "ERREUR"
 
-#: src/lib/common.sh:81
+#: src/lib/common.sh:89
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Appuyez sur \"entrée\" pour continuer "
 
-#: src/lib/common.sh:87
+#: src/lib/common.sh:95
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Appuyez sur \"entrée\" pour quitter "
 
-#: src/lib/common.sh:100
+#: src/lib/common.sh:108
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "Une commande d'élévation de privilège est requise (sudo, doas ou run0)\\n"
 
-#: src/lib/common.sh:105
+#: src/lib/common.sh:113
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
@@ -60,7 +60,7 @@ msgstr ""
 "La commande ${su_cmd} définie pour l'élévation de privilège dans le fichier "
 "de configuration arch-update.conf n'est pas disponible\\n"
 
-#: src/lib/edit-config.sh:8 src/lib/show-config.sh:8
+#: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
 msgid ""
 "No configuration file found\\nYou can generate one with \"arch-update --gen-"
@@ -69,7 +69,7 @@ msgstr ""
 "Aucun fichier de configuration n'a été trouvé\\nVous pouvez en générer un avec \"arch-update --gen-"
 "config\""
 
-#: src/lib/edit-config.sh:12
+#: src/lib/edit-config.sh:13
 #, sh-format
 msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
@@ -78,12 +78,12 @@ msgstr ""
 "Impossible de déterminer l'éditeur à utiliser\\n La variable d'environnement \"EDITOR\" "
 "n'est pas paramétrée et \"nano\" (option de secours) n'est pas installé"
 
-#: src/lib/gen-config.sh:18
+#: src/lib/gen-config.sh:19
 #, sh-format
 msgid "Example configuration file not found"
 msgstr "Fichier de configuration exemple non trouvé"
 
-#: src/lib/gen-config.sh:23
+#: src/lib/gen-config.sh:25
 #, sh-format
 msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
@@ -92,12 +92,12 @@ msgstr ""
 "Le fichier de configuration '${config_file}' existe déjà.\\nVeuillez le supprimer "
 "avant d'en générer un nouveau"
 
-#: src/lib/gen-config.sh:28
+#: src/lib/gen-config.sh:30
 #, sh-format
 msgid "The '${config_file}' configuration file has been generated"
 msgstr "Le fichier de configuration '${config_file}' a été généré"
 
-#: src/lib/help.sh:10
+#: src/lib/help.sh:8
 #, sh-format
 msgid ""
 "An update notifier/applier for Arch Linux that assists you with important "
@@ -106,12 +106,12 @@ msgstr ""
 "Un notificateur/applicateur de mises à jour pour Arch Linux qui vous assiste dans les "
 "tâches importantes d'avant/après mise à jour."
 
-#: src/lib/help.sh:12
+#: src/lib/help.sh:10
 #, sh-format
 msgid "Run ${name} to perform the main 'update' function:"
 msgstr "Lancez ${name} pour exécuter la fonction principale 'update' :"
 
-#: src/lib/help.sh:13
+#: src/lib/help.sh:11
 #, sh-format
 msgid ""
 "Display the list of packages available for update, then ask for the user's "
@@ -120,7 +120,7 @@ msgstr ""
 "Afficher la liste des paquets disponibles pour mise à jour, puis demander la confirmation de l'utilisateur "
 "pour procéder à l'installation."
 
-#: src/lib/help.sh:14
+#: src/lib/help.sh:12
 #, sh-format
 msgid ""
 "Before performing the update, it offers to display the latest Arch Linux "
@@ -129,7 +129,7 @@ msgstr ""
 "Avant d'effectuer la mise à jour, elle propose d'afficher les dernières news "
 "d'Arch Linux."
 
-#: src/lib/help.sh:15
+#: src/lib/help.sh:13
 #, sh-format
 msgid ""
 "Post update, it checks for orphan/unused packages, old cached packages, "
@@ -140,12 +140,12 @@ msgstr ""
 "de fichiers pacnew/pacsave, les mises à jour du noyau en attente, ainsi que les services nécessitant un "
 "redémarrage d'après mise à jour et, s'il y en a, propose de les traiter."
 
-#: src/lib/help.sh:17
+#: src/lib/help.sh:15
 #, sh-format
 msgid "Options:"
 msgstr "Options :"
 
-#: src/lib/help.sh:18
+#: src/lib/help.sh:16
 #, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
@@ -156,17 +156,17 @@ msgstr ""
 "envoie une notification de bureau contenant le nombre de mises à jour disponibles (s'"
 "il y a des nouvelles mises à jour depuis le dernier check)"
 
-#: src/lib/help.sh:19
+#: src/lib/help.sh:17
 #, sh-format
 msgid "  -l, --list        Display the list of pending updates"
 msgstr "  -l, --list        Afficher les mises à jours en attente"
 
-#: src/lib/help.sh:20
+#: src/lib/help.sh:18
 #, sh-format
 msgid "  -d, --devel       Include AUR development packages updates"
 msgstr "  -d, --devel       Inclure les mises à jour des paquets de développement AUR"
 
-#: src/lib/help.sh:21
+#: src/lib/help.sh:19
 #, sh-format
 msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
@@ -175,12 +175,12 @@ msgstr ""
 "  -n, --news [Num]  Afficher les dernières Arch news, vous pouvez optionnellement spécifier le "
 "nombre de Arch news à afficher avec '--news [Num]' (e.g. '--news 10')"
 
-#: src/lib/help.sh:22
+#: src/lib/help.sh:20
 #, sh-format
 msgid "  -D, --debug       Display debug traces"
 msgstr "  -D, --debug       Afficher les traces de débogage"
 
-#: src/lib/help.sh:23
+#: src/lib/help.sh:21
 #, sh-format
 msgid ""
 "  --gen-config      Generate a default/example 'arch-update.conf' "
@@ -189,7 +189,7 @@ msgstr ""
 "  --gen-config      Générer un fichier de configuration 'arch-update.conf' "
 "par défaut/exemple"
 
-#: src/lib/help.sh:24
+#: src/lib/help.sh:22
 #, sh-format
 msgid ""
 "  --show-config     Display the 'arch-update.conf' configuration file "
@@ -198,7 +198,7 @@ msgstr ""
 "  --show-config     Afficher le fichier de configuration 'arch-update.conf' "
 "actuellement utilisé (s'il existe)"
 
-#: src/lib/help.sh:25
+#: src/lib/help.sh:23
 #, sh-format
 msgid ""
 "  --edit-config     Edit the 'arch-update.conf' configuration file currently "
@@ -207,7 +207,7 @@ msgstr ""
 "  --edit-config     Editer le fichier de configuration 'arch-update.conf' actuellement "
 "utilisé (s'il existe)"
 
-#: src/lib/help.sh:26
+#: src/lib/help.sh:24
 #, sh-format
 msgid ""
 "  --tray            Launch the Arch-Update systray applet, you can "
@@ -216,22 +216,22 @@ msgstr ""
 "  --tray            Lancer l'applet systray d'Arch-Update, vous pouvez "
 "optionnellement ajouter l'argument '--enable' pour la démarrer automatiquement au démarrage du système"
 
-#: src/lib/help.sh:27
+#: src/lib/help.sh:25
 #, sh-format
 msgid "  -h, --help        Display this help message and exit"
 msgstr "  -h, --help        Afficher ce message d'aide et quitter"
 
-#: src/lib/help.sh:28
+#: src/lib/help.sh:26
 #, sh-format
 msgid "  -V, --version     Display version information and exit"
 msgstr "  -V, --version     Afficher les informations de version et quitter"
 
-#: src/lib/help.sh:30
+#: src/lib/help.sh:28
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
 msgstr "Pour plus d'informations, consultez la page de manuel ${name}(1)."
 
-#: src/lib/help.sh:31
+#: src/lib/help.sh:29
 #, sh-format
 msgid ""
 "Certain options can be enabled/disabled or modified via the ${name}.conf "
@@ -263,26 +263,26 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Voulez-vous redémarrer votre système maintenant ? [o/N]"
 
-#: src/lib/kernel_reboot.sh:14 src/lib/list_packages.sh:55
-#: src/lib/orphan_packages.sh:24 src/lib/orphan_packages.sh:57
-#: src/lib/packages_cache.sh:25 src/lib/pacnew_files.sh:20
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:60
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "O"
 
-#: src/lib/kernel_reboot.sh:14 src/lib/list_packages.sh:55
-#: src/lib/orphan_packages.sh:24 src/lib/orphan_packages.sh:57
-#: src/lib/packages_cache.sh:25 src/lib/pacnew_files.sh:20
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:60
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
 msgstr "o"
 
-#: src/lib/kernel_reboot.sh:25
+#: src/lib/kernel_reboot.sh:27
 #, sh-format
 msgid "Rebooting in ${sec}...\\r"
 msgstr "Redémarrage dans ${sec}...\\r"
 
-#: src/lib/kernel_reboot.sh:31
+#: src/lib/kernel_reboot.sh:33
 #, sh-format
 msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
@@ -291,7 +291,7 @@ msgstr ""
 "Une erreur est survenue pendant le processus de redémarrage\\nLe redémarrage a été "
 "abandonné\\n"
 
-#: src/lib/kernel_reboot.sh:39
+#: src/lib/kernel_reboot.sh:41
 #, sh-format
 msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
@@ -300,7 +300,7 @@ msgstr ""
 "Le redémarrage n'a pas été effectué\\nVeuillez considérer redémarrer votre système pour finaliser "
 "la mise à jour du noyau en attente\\n"
 
-#: src/lib/kernel_reboot.sh:43
+#: src/lib/kernel_reboot.sh:45
 #, sh-format
 msgid "No pending kernel update found\\n"
 msgstr "Aucune mise à jour du noyau en attente n'a été trouvée\\n"
@@ -321,22 +321,22 @@ msgstr ""
 "d'attente de la demande dépassé)\\nVeuillez consultez les dernières "
 "news à l'adresse suivante avant de mettre à jour votre système : https://archlinux.org"
 
-#: src/lib/list_news.sh:21
+#: src/lib/list_news.sh:22
 #, sh-format
 msgid "No recent Arch News found"
 msgstr "Aucune Arch News récente trouvée"
 
-#: src/lib/list_news.sh:34
+#: src/lib/list_news.sh:36
 #, sh-format
 msgid "Arch News:"
 msgstr "Arch News :"
 
-#: src/lib/list_news.sh:39
+#: src/lib/list_news.sh:41
 #, sh-format
 msgid "[NEW]"
 msgstr "[NOUVEAU]"
 
-#: src/lib/list_news.sh:50
+#: src/lib/list_news.sh:53
 #, sh-format
 msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
@@ -345,7 +345,7 @@ msgstr ""
 "Sélectionnez les news à lire (par exemple: 1 3 5), sélectionnez 0 pour toutes les lire "
 "ou appuyez sur \"entrée\" pour quitter :"
 
-#: src/lib/list_news.sh:52
+#: src/lib/list_news.sh:55
 #, sh-format
 msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
@@ -354,7 +354,7 @@ msgstr ""
 "Sélectionnez les news à lire (par exemple: 1 3 5), sélectionnez 0 pour toutes les lire "
 "ou appuyez sur \"entrée\" pour procéder à la mise à jour :"
 
-#: src/lib/list_news.sh:75
+#: src/lib/list_news.sh:78
 #, sh-format
 msgid ""
 "Unable to retrieve the selected Arch News (HTTP error response or request "
@@ -365,22 +365,22 @@ msgstr ""
 "de la demande dépassé)\\nVeuillez consultez la news sélectionnée "
 "à l'adresse suivante avant de mettre à jour votre système : ${news_url}"
 
-#: src/lib/list_news.sh:80
+#: src/lib/list_news.sh:83
 #, sh-format
 msgid "Title:"
 msgstr "Titre :"
 
-#: src/lib/list_news.sh:81
+#: src/lib/list_news.sh:84
 #, sh-format
 msgid "Author:"
 msgstr "Auteur :"
 
-#: src/lib/list_news.sh:82
+#: src/lib/list_news.sh:85
 #, sh-format
 msgid "Publication date:"
 msgstr "Date de publication :"
 
-#: src/lib/list_news.sh:83
+#: src/lib/list_news.sh:86
 #, sh-format
 msgid "URL:"
 msgstr "URL :"
@@ -390,32 +390,32 @@ msgstr "URL :"
 msgid "Looking for updates...\\n"
 msgstr "Recherche de mises à jour...\\n"
 
-#: src/lib/list_packages.sh:28
+#: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Packages:"
 msgstr "Paquets :"
 
-#: src/lib/list_packages.sh:33
+#: src/lib/list_packages.sh:37
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Paquets AUR :"
 
-#: src/lib/list_packages.sh:38
+#: src/lib/list_packages.sh:42
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Paquets Flatpak :"
 
-#: src/lib/list_packages.sh:44
+#: src/lib/list_packages.sh:48
 #, sh-format
 msgid "No update available\\n"
 msgstr "Aucune mise à jour disponible\\n"
 
-#: src/lib/list_packages.sh:52
+#: src/lib/list_packages.sh:56
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Procéder à la mise à jour ? [O/n]"
 
-#: src/lib/list_packages.sh:60
+#: src/lib/list_packages.sh:66
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "La mise à jour a été abandonnée\\n"
@@ -443,14 +443,14 @@ msgstr ""
 "Voulez-vous supprimer ces paquets orphelins (et leurs potentielles "
 "dépendances) maintenant ? [o/N]"
 
-#: src/lib/orphan_packages.sh:26
+#: src/lib/orphan_packages.sh:27
 #, sh-format
 msgid "Removing Orphan Packages...\\n"
 msgstr "Suppression des paquets orphelins...\\n"
 
-#: src/lib/orphan_packages.sh:30 src/lib/orphan_packages.sh:63
-#: src/lib/packages_cache.sh:32 src/lib/packages_cache.sh:42
-#: src/lib/packages_cache.sh:52 src/lib/packages_cache.sh:61
+#: src/lib/orphan_packages.sh:32 src/lib/orphan_packages.sh:65
+#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
 #, sh-format
 msgid ""
 "An error has occurred during the removal process\\nThe removal has been "
@@ -459,78 +459,78 @@ msgstr ""
 "Une erreur est survenue pendant le processus de suppression\\nLa suppression a été "
 "abandonnée\\n"
 
-#: src/lib/orphan_packages.sh:33 src/lib/orphan_packages.sh:66
+#: src/lib/orphan_packages.sh:35 src/lib/orphan_packages.sh:68
 #, sh-format
 msgid "The removal has been applied\\n"
 msgstr "La suppression a été appliquée\\n"
 
-#: src/lib/orphan_packages.sh:38 src/lib/orphan_packages.sh:70
-#: src/lib/packages_cache.sh:69
+#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:72
+#: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
 msgstr "La suppression n'a pas été appliquée\\n"
 
-#: src/lib/orphan_packages.sh:42
+#: src/lib/orphan_packages.sh:44
 #, sh-format
 msgid "No orphan package found\\n"
 msgstr "Aucun paquet orphelin n'a été trouvé\\n"
 
-#: src/lib/orphan_packages.sh:47
+#: src/lib/orphan_packages.sh:49
 #, sh-format
 msgid "Flatpak Unused Packages:"
 msgstr "Paquets Flatpak inutilisés :"
 
-#: src/lib/orphan_packages.sh:51
+#: src/lib/orphan_packages.sh:53
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
 msgstr "Voulez-vous supprimer ce paquet Flatpak inutilisé maintenant ? [o/N]"
 
-#: src/lib/orphan_packages.sh:53
+#: src/lib/orphan_packages.sh:55
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Voulez-vous supprimer ces paquets Flatpak inutilisés maintenant ? [o/N]"
 
-#: src/lib/orphan_packages.sh:59
+#: src/lib/orphan_packages.sh:61
 #, sh-format
 msgid "Removing Flatpak Unused Packages..."
 msgstr "Suppression des paquets Flatpak inutilisés..."
 
-#: src/lib/orphan_packages.sh:74
+#: src/lib/orphan_packages.sh:76
 #, sh-format
 msgid "No Flatpak unused package found\\n"
 msgstr "Aucun paquet Flatpak inutilisé n'a été trouvé\\n"
 
-#: src/lib/packages_cache.sh:17
+#: src/lib/packages_cache.sh:21
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
 msgstr "Paquets mis en cache :\\nIl y a un paquet ancien ou désinstallé mis en cache\\n"
 
-#: src/lib/packages_cache.sh:18
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Voulez-vous le supprimer du cache maintenant ? [O/n]"
 
-#: src/lib/packages_cache.sh:20
+#: src/lib/packages_cache.sh:24
 #, sh-format
 msgid "Cached Packages:\\nThere are old and/or uninstalled cached packages\\n"
 msgstr "Paquets mis en cache :\\nIl y a plusieurs paquets anciens ou désinstallés mis en cache\\n"
 
-#: src/lib/packages_cache.sh:21
+#: src/lib/packages_cache.sh:25
 #, sh-format
 msgid "Would you like to remove them from the cache now? [Y/n]"
 msgstr "Voulez-vous les supprimer du cache maintenant ? [O/n]"
 
-#: src/lib/packages_cache.sh:28 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
 msgid "Removing old cached packages..."
 msgstr "Suppression des anciens paquets mis en cache..."
 
-#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:57
+#: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
 #, sh-format
 msgid "Removing uninstalled cached packages..."
 msgstr "Suppression des paquets désinstallés mis en cache..."
 
-#: src/lib/packages_cache.sh:73
+#: src/lib/packages_cache.sh:79
 #, sh-format
 msgid "No old or uninstalled cached package found\\n"
 msgstr "Aucun paquet ancien ou désinstallé mis en cache n'a été trouvé\\n"
@@ -550,22 +550,22 @@ msgstr "Voulez-vous traiter ce fichier maintenant ? [O/n]"
 msgid "Would you like to process these files now? [Y/n]"
 msgstr "Voulez-vous traiter ces fichiers maintenant ? [O/n]"
 
-#: src/lib/pacnew_files.sh:22
+#: src/lib/pacnew_files.sh:23
 #, sh-format
 msgid "Processing Pacnew Files...\\n"
 msgstr "Traitement des fichiers pacnew...\\n"
 
-#: src/lib/pacnew_files.sh:26
+#: src/lib/pacnew_files.sh:28
 #, sh-format
 msgid "The pacnew file(s) processing has been applied\\n"
 msgstr "Le traitement des fichiers pacnew a été appliqué\\n"
 
-#: src/lib/pacnew_files.sh:29
+#: src/lib/pacnew_files.sh:31
 #, sh-format
 msgid "An error occurred during the pacnew file(s) processing\\n"
 msgstr "Une erreur est survenue durant le traitement du/des fichier(s) pacnew\\n"
 
-#: src/lib/pacnew_files.sh:35
+#: src/lib/pacnew_files.sh:37
 #, sh-format
 msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
@@ -574,7 +574,7 @@ msgstr ""
 "Le traitement des fichiers pacnew n'a pas été appliqué\\nVeuillez considérer "
 "les traiter promptement\\n"
 
-#: src/lib/pacnew_files.sh:39
+#: src/lib/pacnew_files.sh:41
 #, sh-format
 msgid "No pacnew file found\\n"
 msgstr "Aucun fichier pacnew n'a été trouvé\\n"
@@ -646,17 +646,17 @@ msgstr "Lancer Arch-Update"
 msgid "Exit"
 msgstr "Quitter"
 
-#: src/lib/tray.sh:19
+#: src/lib/tray.sh:20
 #, sh-format
 msgid "Arch-Update tray desktop file not found"
 msgstr "Le fichier Arch-Update tray desktop n'a pas été trouvé"
 
-#: src/lib/tray.sh:26
+#: src/lib/tray.sh:27
 #, sh-format
 msgid "The '${tray_desktop_file_autostart}' file already exists"
 msgstr "Le fichier '${tray_desktop_file_autostart}' existe déjà"
 
-#: src/lib/tray.sh:31
+#: src/lib/tray.sh:32
 #, sh-format
 msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
@@ -669,7 +669,7 @@ msgstr ""
 "immédiatement, vous pouvez lancer l'application \"Arch-Update Systray Applet\" "
 "depuis votre menu d'application"
 
-#: src/lib/tray.sh:39
+#: src/lib/tray.sh:42
 #, sh-format
 msgid "There's already a running instance of the Arch-Update systray applet"
 msgstr "Il y a déjà une instance de l'applet systray d'Arch-Update en cours d'exécution"
@@ -679,7 +679,7 @@ msgstr "Il y a déjà une instance de l'applet systray d'Arch-Update en cours d'
 msgid "Updating Packages...\\n"
 msgstr "Mise à jour des paquets...\\n"
 
-#: src/lib/update.sh:14 src/lib/update.sh:28 src/lib/update.sh:41
+#: src/lib/update.sh:15 src/lib/update.sh:30 src/lib/update.sh:44
 #, sh-format
 msgid ""
 "An error has occurred during the update process\\nThe update has been "
@@ -688,17 +688,17 @@ msgstr ""
 "Une erreur est survenue pendant le processus de mise à jour\\nLa mise à jour a été "
 "abandonnée\\n"
 
-#: src/lib/update.sh:23
+#: src/lib/update.sh:24
 #, sh-format
 msgid "Updating AUR Packages...\\n"
 msgstr "Mise à jour des paquets AUR...\\n"
 
-#: src/lib/update.sh:37
+#: src/lib/update.sh:40
 #, sh-format
 msgid "Updating Flatpak Packages...\\n"
 msgstr "Mise à jour des paquets Flatpak...\\n"
 
-#: src/lib/update.sh:48
+#: src/lib/update.sh:51
 #, sh-format
 msgid "The update has been applied\\n"
 msgstr "La mise à jour a été appliquée\\n"
