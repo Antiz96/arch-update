@@ -5,8 +5,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 cat <<EOF
-${name} v${version}
-
 $(eval_gettext "An update notifier/applier for Arch Linux that assists you with important pre/post update tasks.")
 
 $(eval_gettext "Run \${name} to perform the main 'update' function:")

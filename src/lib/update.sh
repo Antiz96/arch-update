@@ -8,6 +8,7 @@ if [ -n "${packages}" ]; then
 	echo
 	main_msg "$(eval_gettext "Updating Packages...\n")"
 
+	# shellcheck disable=SC2154
 	if ! "${su_cmd}" pacman --color "${pacman_color_opt}" -Syu; then
 		state_updates_available
 		echo
@@ -22,6 +23,7 @@ if [ -n "${aur_packages}" ]; then
 	echo
 	main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
+	# shellcheck disable=SC2154
 	if ! "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Syu; then
 		state_updates_available
 		echo

@@ -12,6 +12,7 @@ if [ "${news}" == "error" ]; then
 	warning_msg "$(eval_gettext "Unable to retrieve recent Arch News (HTTP error response or request timeout)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
 else
 	if [ -z "${show_news}" ]; then
+		# shellcheck disable=SC2154
 		echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -1 > "${statedir}/current_news_check"
 
 		if ! diff "${statedir}/current_news_check" "${statedir}/last_news_check" &> /dev/null; then
@@ -27,6 +28,7 @@ else
 	fi
 
 	if [ -n "${show_news}" ]; then
+		# shellcheck disable=SC2154
 		news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -"${news_num}")
 		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | sed "s/\.//g" | head -"${news_num}" | xargs -I{} date -d "{}" "+%s")
 
@@ -37,6 +39,7 @@ else
 		while IFS= read -r line; do
 			if [ -z "${news_option}" ] && [ "${news_dates["${i}-1"]}" -ge "$(date -d "$(cat "${statedir}/last_update_run" 2> /dev/null)" +%s)" ] 2> /dev/null; then
 				new_tag="$(eval_gettext "[NEW]")"
+				# shellcheck disable=SC2154
 				echo -e "${i} - ${line} ${green}${new_tag}${color_off}"
 			else
 				echo "${i} - ${line}"
@@ -81,6 +84,7 @@ else
 					author_tag="$(eval_gettext "Author:")"
 					publication_date_tag="$(eval_gettext "Publication date:")"
 					url_tag="$(eval_gettext "URL:")"
+					# shellcheck disable=SC2154
 					echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}"
 				fi
 			fi

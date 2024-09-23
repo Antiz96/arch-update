@@ -10,6 +10,7 @@ if [ -z "${kernel_compare}" ]; then
 	main_msg "$(eval_gettext "Reboot required:\nThere's a pending kernel update on your system requiring a reboot to be applied\n")"
 	ask_msg "$(eval_gettext "Would you like to reboot now? [y/N]")"
 
+	# shellcheck disable=SC2154
 	case "${answer}" in
 		"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 			echo
@@ -22,6 +23,7 @@ if [ -z "${kernel_compare}" ]; then
 
 			# shellcheck disable=SC2034
 			for sec in {5..1}; do
+				# shellcheck disable=SC2154
 				tput civis ; echo -ne "${blue}==>${color_off}${bold} $(eval_gettext "Rebooting in \${sec}...\r")${color_off}"
 				sleep 1
 			done

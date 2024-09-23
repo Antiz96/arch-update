@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # Source the "list_packages" library which displays the list of packages available for updates
-# shellcheck source=src/lib/list_packages.sh
+# shellcheck source=src/lib/list_packages.sh disable=SC2154
 source "${libdir}/list_packages.sh"
 
 # If the user gave the confirmation to proceed to apply updates

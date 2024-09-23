@@ -7,7 +7,9 @@
 pacman_cache_old=$(paccache -dk"${old_packages_num}" | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
 pacman_cache_uninstalled=$(paccache -duk"${uninstalled_packages_num}" | sed -n 's/.*: \([0-9]*\) candidate.*/\1/p')
 
+# shellcheck disable=SC2154
 [ -z "${pacman_cache_old}" ] && pacman_cache_old="0"
+# shellcheck disable=SC2154
 [ -z "${pacman_cache_uninstalled}" ] && pacman_cache_uninstalled="0"
 pacman_cache_total=$(("${pacman_cache_old}+${pacman_cache_uninstalled}"))
 
@@ -21,12 +23,14 @@ if [ "${pacman_cache_total}" -gt 0 ]; then
 		ask_msg "$(eval_gettext "Would you like to remove them from the cache now? [Y/n]")"
 	fi
 
+	# shellcheck disable=SC2154
 	case "${answer}" in
 		"$(eval_gettext "Y")"|"$(eval_gettext "y")"|"")
 			if [ "${pacman_cache_old}" -gt 0 ] && [ "${pacman_cache_uninstalled}" -eq 0 ]; then
 				echo
 				main_msg "$(eval_gettext "Removing old cached packages...")"
 
+				# shellcheck disable=SC2154
 				if ! "${su_cmd}" paccache "${contrib_color_opt[@]}" -rk"${old_packages_num}"; then
 					echo
 					error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"

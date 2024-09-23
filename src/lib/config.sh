@@ -14,6 +14,7 @@ for arg in "${@}"; do
 done
 
 # Reset the option var if it is equal to -D/--debug (to avoid false negative "invalid option" error)
+# shellcheck disable=SC2154
 case "${option}" in
 	-D|--debug)
 		unset option
@@ -21,6 +22,7 @@ case "${option}" in
 esac
 
 # Create state and tmp dirs if they don't exist
+# shellcheck disable=SC2154
 statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
 tmpdir="${TMPDIR:-/tmp}/${name}-${UID}"
 mkdir -p "${statedir}" "${tmpdir}"
@@ -28,6 +30,7 @@ mkdir -p "${statedir}" "${tmpdir}"
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
 . gettext.sh
+# shellcheck disable=SC2154
 export TEXTDOMAIN="${_name}" # Using "Arch-Update" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
 if [ -f "${XDG_DATA_HOME}/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
 	export TEXTDOMAINDIR="${XDG_DATA_HOME}/locale"

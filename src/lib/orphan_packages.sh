@@ -20,11 +20,13 @@ if [ -n "${orphan_packages}" ]; then
 		ask_msg "$(eval_gettext "Would you like to remove these orphan packages (and their potential dependencies) now? [y/N]")"
 	fi
 
+	# shellcheck disable=SC2154
 	case "${answer}" in
 		"$(eval_gettext "Y")"|"$(eval_gettext "y")")
 			echo
 			main_msg "$(eval_gettext "Removing Orphan Packages...\n")"
 
+			# shellcheck disable=SC2154
 			if ! pacman -Qtdq | "${su_cmd}" pacman --color "${pacman_color_opt}" -Rns -; then
 				echo
 				error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"

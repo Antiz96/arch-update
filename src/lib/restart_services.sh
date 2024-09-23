@@ -26,7 +26,7 @@ if [ -n "${packages_updated}" ]; then
 		echo
 
 		if [ "${answer_array[0]}" -eq 0 ] 2> /dev/null; then
-			# shellcheck disable=SC2086
+			# shellcheck disable=SC2086,SC2154
 			if "${su_cmd}" systemctl restart ${services}; then
 				info_msg "$(eval_gettext "Service(s) restarted successfully\n")"
 
