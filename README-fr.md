@@ -50,7 +50,7 @@ Consultez également la liste des dépendances optionnelles (disponible dans la 
 Installez les dépendances requises :
 
 ```bash
-sudo pacman -S --needed pacman-contrib archlinux-contrib curl htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
+sudo pacman -S --needed pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
 ```
 
 Dépendances optionnelles supplémentaires dont vous pourriez avoir besoin ou que vous pourriez souhaiter :
