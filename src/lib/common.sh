@@ -83,6 +83,7 @@ if [ -z "${aur_helper}" ]; then
 else
 	if ! command -v "${aur_helper}" > /dev/null; then
 		warning_msg "$(eval_gettext "The \${aur_helper} AUR helper set for AUR packages support in the arch-update.conf configuration file is not found\n")"
+		unset aur_helper
 	fi
 fi
 
