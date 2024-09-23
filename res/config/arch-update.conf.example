@@ -10,3 +10,4 @@
 #KeepUninstalledPackages=0
 #PrivilegeElevationCommand=sudo
 #DiffProg=$DIFFPROG
+#AURHelper=paru
