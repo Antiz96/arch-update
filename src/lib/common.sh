@@ -6,15 +6,18 @@
 
 # Definition of the AUR helper to use (depending on if/which one is installed on the system) for the optional AUR packages support
 if command -v paru > /dev/null; then
+	# shellcheck disable=SC2034
 	aur_helper="paru"
 elif command -v yay > /dev/null; then
 	aur_helper="yay"
 fi
 
 # Check if flatpak is installed for the optional Flatpak support
+# shellcheck disable=SC2034
 flatpak=$(command -v flatpak)
 
 # Check if notify-send is installed for the optional desktop notification support
+# shellcheck disable=SC2034
 notif=$(command -v notify-send)
 
 # Definition of the diff program to use (if it is set in the arch-update.conf configuration file)
@@ -34,6 +37,7 @@ if [ -z "${no_color}" ]; then
 	yellow="${bold}\e[33m"
 	red="${bold}\e[31m"
 	color_off="\e[0m"
+	# shellcheck disable=SC2034
 	pacman_color_opt="always"
 else
 	pacman_color_opt="never"
@@ -55,12 +59,14 @@ info_msg() {
 # Definition of the ask_msg function: Display a message as an interactive question
 ask_msg() {
 	msg="${1}"
+	# shellcheck disable=SC2034
 	read -rp $"$(echo -e "${blue}->${color_off}${bold} ${msg}${color_off} ")" answer
 }
 
 # Definition of the ask_msg_array function: Display a message as an interactive question with multiple possible answers 
 ask_msg_array() {
 	msg="${1}"
+	# shellcheck disable=SC2034
 	read -rp $"$(echo -e "${blue}->${color_off}${bold} ${msg}${color_off} ")" -a answer_array
 }
 
@@ -109,6 +115,7 @@ fi
 
 # Definition of the state_updates_available function: Change state to "updates-available"
 state_updates_available() {
+	# shellcheck disable=SC2154
 	echo "${name}_updates-available" > "${statedir}/current_state"
 }
 

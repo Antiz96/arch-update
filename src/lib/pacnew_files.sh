@@ -21,6 +21,7 @@ if [ -n "${pacnew_files}" ]; then
 			echo
 			main_msg "$(eval_gettext "Processing Pacnew Files...\n")"
 
+			# shellcheck disable=SC2154
 			if "${su_cmd}" "${diff_prog_opt[@]}" pacdiff "${contrib_color_opt[@]}"; then
 				echo
 				info_msg "$(eval_gettext "The pacnew file(s) processing has been applied\n")"

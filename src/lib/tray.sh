@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 if [ "${2}" == "--enable" ]; then
+	# shellcheck disable=SC2154
 	if [ -f "${XDG_DATA_HOME}/applications/${name}-tray.desktop" ]; then
 		tray_desktop_file="${XDG_DATA_HOME}/applications/${name}-tray.desktop"
 	elif [ -f "${HOME}/.local/share/applications/${name}-tray.desktop" ]; then
@@ -31,6 +32,7 @@ if [ "${2}" == "--enable" ]; then
 		info_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file has been created, the Arch-Update systray applet will be automatically started at your next log on\nTo start it right now, you can launch the \"Arch-Update Systray Applet\" application from your app menu")"
 	fi
 else
+	# shellcheck disable=SC2154
 	if [ ! -f "${statedir}/current_state" ]; then
 		state_up_to_date
 	fi
@@ -40,5 +42,6 @@ else
 		exit 3
 	fi
 
+	# shellcheck disable=SC2154
 	"${libdir}/tray.py" || exit 3
 fi
