@@ -70,7 +70,7 @@ To install `arch-update`, go into the extracted/cloned directory and run the fol
 sudo make install
 ```
 
-If you want to run simple unit tests, you can run the following command (requires [bats](https://archlinux.org/packages/extra/any/bats/) to be installed):
+If you want to run simple unit tests, you can run the following command (requires [bats](https://archlinux.org/packages/extra/any/bats/)):
 
 ```bash
 make test
