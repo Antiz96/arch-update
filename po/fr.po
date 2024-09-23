@@ -16,11 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/arch-update.sh:25
-#, sh-format
-msgid "ERROR: Libraries directory not found"
-msgstr "ERREUR: Le dossier de librairies n'a pas été trouvé"
-
 #: src/lib/check.sh:31 src/lib/check.sh:33
 #, sh-format
 msgid "${update_number} update available"

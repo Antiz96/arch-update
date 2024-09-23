@@ -22,7 +22,7 @@ elif [ -d "/usr/local/share/${_name}/lib" ]; then
 elif [ -d "/usr/share/${_name}/lib" ]; then
         libdir="/usr/share/${_name}/lib"
 else
-	echo -e >&2 "$(eval_gettext "ERROR: Libraries directory not found")"
+	echo -e >&2 "ERROR: Libraries directory not found"
 	exit 14
 fi
 
