@@ -33,8 +33,8 @@ if [ "${2}" == "--enable" ]; then
 	fi
 else
 	# shellcheck disable=SC2154
-	if [ ! -f "${statedir}/current_state" ]; then
-		state_up_to_date
+	if [ ! -f "${statedir}/tray_icon" ]; then
+		icon_up-to-date
 	fi
 
 	# shellcheck disable=SC2154

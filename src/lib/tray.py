@@ -17,16 +17,16 @@ from PyQt6.QtCore import QFileSystemWatcher
 # Create logger
 log = logging.getLogger(__name__)
 
-# Find Statefile
-STATE_FILE = None
+# Find Icon file
+ICON_FILE = None
 if 'XDG_STATE_HOME' in os.environ:
-    STATE_FILE = os.path.join(
-        os.environ['XDG_STATE_HOME'], 'arch-update', 'current_state')
+    ICON_FILE = os.path.join(
+        os.environ['XDG_STATE_HOME'], 'arch-update', 'tray_icon')
 elif 'HOME' in os.environ:
-    STATE_FILE = os.path.join(
-        os.environ['HOME'], '.local', 'state', 'arch-update', 'current_state')
-if not os.path.isfile(STATE_FILE):
-    log.error("Statefile does not exist: %s", STATE_FILE)
+    ICON_FILE = os.path.join(
+        os.environ['HOME'], '.local', 'state', 'arch-update', 'tray_icon')
+if not os.path.isfile(ICON_FILE):
+    log.error("Statefile does not exist: %s", ICON_FILE)
     sys.exit(1)
 
 # Find translations
@@ -79,13 +79,13 @@ class ArchUpdateQt6:
     """ System Tray using QT6 library """
 
     def file_changed(self):
-        """ Called when statefile contents change """
+        """ Called when icon file content changes """
 
         contents = ""
-        if self.watcher and not self.statefile in self.watcher.files():
-            self.watcher.addPath(self.statefile)
+        if self.watcher and not self.iconfile in self.watcher.files():
+            self.watcher.addPath(self.iconfile)
         try:
-            with open(self.statefile, encoding="utf-8") as f:
+            with open(self.iconfile, encoding="utf-8") as f:
                 contents = f.readline().strip()
         except FileNotFoundError:
             log.error("Statefile Missing")
@@ -102,10 +102,10 @@ class ArchUpdateQt6:
         """ Close systray process """
         sys.exit(0)
 
-    def __init__(self, statefile):
+    def __init__(self, iconfile):
         """ Start Qt6 System Tray """
 
-        self.statefile = statefile
+        self.iconfile = iconfile
         self.watcher = None
 
         # Application
@@ -131,11 +131,11 @@ class ArchUpdateQt6:
         self.tray.setContextMenu(menu)
 
         # File Watcher
-        self.watcher = QFileSystemWatcher([self.statefile])
+        self.watcher = QFileSystemWatcher([self.iconfile])
         self.watcher.fileChanged.connect(self.file_changed)
 
         app.exec()
 
 
 if __name__ == "__main__":
-    ArchUpdateQt6(STATE_FILE)
+    ArchUpdateQt6(ICON_FILE)

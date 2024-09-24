@@ -21,7 +21,7 @@ if [ -n "${notif}" ]; then
 fi
 
 if [ -n "${update_available}" ]; then
-	state_updates_available
+	icon_updates-available
 
 	if [ -n "${notif}" ]; then
 		if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
@@ -47,7 +47,7 @@ if [ -n "${update_available}" ]; then
 		fi
 	fi
 else
-	state_up_to_date
+	icon_up-to-date
 fi
 
 if [ -f "${statedir}/current_updates_check" ]; then
