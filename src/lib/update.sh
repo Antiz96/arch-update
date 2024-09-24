@@ -10,7 +10,7 @@ if [ -n "${packages}" ]; then
 
 	# shellcheck disable=SC2154
 	if ! "${su_cmd}" pacman --color "${pacman_color_opt}" -Syu; then
-		state_updates_available
+		icon_updates-available
 		echo
 		error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 		exit 5
@@ -25,7 +25,7 @@ if [ -n "${aur_packages}" ]; then
 
 	# shellcheck disable=SC2154
 	if ! "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Syu; then
-		state_updates_available
+		icon_updates-available
 		echo
 		error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 		exit 5
@@ -40,12 +40,12 @@ if [ -n "${flatpak_packages}" ]; then
 	main_msg "$(eval_gettext "Updating Flatpak Packages...\n")"
 
 	if ! flatpak update; then
-		state_updates_available
+		icon_updates-available
 		error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 		exit 5
 	fi
 fi
 
-state_up_to_date
+icon_up-to-date
 echo
 info_msg "$(eval_gettext "The update has been applied\n")"

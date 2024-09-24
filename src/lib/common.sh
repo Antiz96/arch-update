@@ -123,13 +123,14 @@ if [ -n "${diff_prog}" ]; then
 	fi
 fi
 
-# Definition of the state_updates_available function: Change state to "updates-available"
-state_updates_available() {
+# Definition of the icon_up-to-date function: Change icon to "up to date"
+icon_up-to-date() {
 	# shellcheck disable=SC2154
-	echo "${name}_updates-available" > "${statedir}/current_state"
+	echo "${name}" > "${statedir}/tray_icon"
 }
 
-# Definition of the state_up_to_date function: Change state to "up to date"
-state_up_to_date() {
-	echo "${name}" > "${statedir}/current_state"
+# Definition of the icon_updates-available function: Change tray icon to "updates available"
+icon_updates-available() {
+	# shellcheck disable=SC2154
+	echo "${name}_updates-available" > "${statedir}/tray_icon"
 }
