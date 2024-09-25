@@ -40,14 +40,14 @@ if [ -n "${packages_updated}" ]; then
 
 			for num in "${answer_array[@]}"; do
 				if [ "${num}" -le "${services_num}" ] 2> /dev/null && [ "${num}" -gt "0" ]; then
-					service_restarted="y"
+					service_restarted="true"
 					service_selected=$(sed -n "${num}"p <<< "${services}")
 
 					if "${su_cmd}" systemctl restart "${service_selected}"; then
 						info_msg "$(eval_gettext "The \${service_selected} service has been successfully restarted")"
 					else
 						error_msg "$(eval_gettext "An error has occurred during the restart of the \${service_selected} service")"
-						service_fail="y"
+						service_fail="true"
 					fi
 				fi
 			done

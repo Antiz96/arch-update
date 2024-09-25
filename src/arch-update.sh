@@ -58,7 +58,7 @@ case "${option}" in
 	;;
 	-l|--list)
 		# Set that the "-l/--list" option is used (required for the "list_packages" library to only print the list of packages available for update without asking for the user confirmation to apply them)
-		list_option="y"
+		list_option="true"
 
 		# Source the "list_packages" library which displays the list of packages available for updates
 		# shellcheck source=src/lib/list_packages.sh
@@ -66,8 +66,8 @@ case "${option}" in
 	;;
 	-n|--news)
 		# Set that news should be shown and that the "-n/--news" option is used (required for the "list_news" library to only print the list of recent Arch news without looking to continue with the update process)
-		show_news="y"
-		news_option="y"
+		show_news="true"
+		news_option="true"
 
 		# Check if the user specified a specific number of news to display
 		if [ "${2}" -gt 0 ] 2> /dev/null; then
