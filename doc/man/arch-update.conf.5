@@ -55,6 +55,10 @@ Command to be used for privilege elevation. Valid options are sudo, doas or run0
 .B AURHelper=[AUR Helper]
 AUR helper to be used for AUR packages support. Valid options are paru or yay. If this option is not set, Arch-Update will use the first installed AUR helper in the following order: paru then yay (in case none of them is installed, Arch-Update will not take AUR packages into account).
 
+.TP
+.B TrayIconStyle=[Style/Color]
+Style to be used for the systray applet icon. Valid options are the available style/color variant for the icon set, listed in https://github.com/Antiz96/arch-update/tree/main/src/icons. Defaults to "light".
+
 .SH SEE ALSO
 .BR arch-update (1)
 

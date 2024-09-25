@@ -221,6 +221,7 @@ Les options prises en charge sont :
 - PrivilegeElevationCommand=[Cmd] # Commande à utiliser pour l'élévation de privilège. Les options valides sont `sudo`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'odre suivant : `sudo`, `doas` puis `run0`.
 - DiffProg=[Editeur] # Editeur à utiliser pour visualiser/editer les différences durant le traitement des fichiers pacnew. La valeur par défaut est la valeur de la variable d'environnement `$DIFFPROG` (ou `vimdiff` si `$DIFFPROG` n'est pas paramétrée). Notez qu'en raison de l'absence d'option pour préserver les variables d'environnement dans `doas`, cette option sera ignorée lors de l'utilisation de `doas` comme méthode d'élévation de privilèges.
 - AURHelper=[AUR Helper] # AUR helper à utiliser pour la prise en charge des paquets AUR. Les options valides sont `paru` ou `yay`. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : `paru` puis `yay` (si aucun des deux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
+- TrayIconStyle=[Style/Color] # Style à utiliser pour l'icône de l'applet systray. Les options valides sont les variantes de style/couleur disponibles pour le set d'icône, listées ici : https://github.com/Antiz96/arch-update/tree/main/src/icons. La valeur par défaut est "light".
 
 Les options sont sensibles à la casse, les majuscules doivent donc être respectées.
 ```
