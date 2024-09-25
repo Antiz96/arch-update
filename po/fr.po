@@ -105,10 +105,10 @@ msgstr "Fichier de configuration exemple non trouvé"
 #, sh-format
 msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
-"before generating a new one"
+"before generating a new one (or use --force to overwrite it)"
 msgstr ""
 "Le fichier de configuration '${config_file}' existe déjà.\\nVeuillez le supprimer "
-"avant d'en générer un nouveau"
+"avant d'en générer un nouveau (ou utilisez --force pour l'écraser)"
 
 #: src/lib/gen-config.sh:30
 #, sh-format
@@ -202,10 +202,12 @@ msgstr "  -D, --debug       Afficher les traces de débogage"
 #, sh-format
 msgid ""
 "  --gen-config      Generate a default/example 'arch-update.conf' "
-"configuration file"
+"configuration file, you can optionally pass the '--force' argument to "
+"overwrite any existing 'arch-update.conf' configuration file"
 msgstr ""
 "  --gen-config      Générer un fichier de configuration 'arch-update.conf' "
-"par défaut/exemple"
+"par défaut/exemple, vous pouvez optionnellement passer l'argument '--force' pour "
+"écraser un fichier de configuration 'arch-update.conf' existant"
 
 #: src/lib/help.sh:22
 #, sh-format

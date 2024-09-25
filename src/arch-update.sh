@@ -79,6 +79,11 @@ case "${option}" in
 		source "${libdir}/list_news.sh"
 	;;
 	--gen-config)
+		# Check if the user specified to overwrite any existing "arch-update.conf" configuration file
+		if [ "${2}" == "--force" ]; then
+			overwrite_config_file="true"
+		fi
+
 		# Source the "gen-config" library which generates a default "arch-update.conf" configuration file (if it doesn't exists yet)
 		# shellcheck source=src/lib/gen-config.sh
 		source "${libdir}/gen-config.sh"
