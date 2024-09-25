@@ -52,16 +52,18 @@ install:
 	rm -f "doc/man/fr/${pkgname}.1.gz"
 	rm -f "doc/man/fr/${pkgname}.conf.5.gz"
 
-	# Install documentation and examples
+	# Install documentation
 	install -Dm 644 README.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/README.md"
 	install -Dm 644 README-fr.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/fr/README.md"
-	install -Dm 644 "res/config/${pkgname}.conf.example" "${DESTDIR}${PREFIX}/share/doc/${pkgname}/${pkgname}.conf.example"
+
+	# Install example config
+	install -Dm 644 "res/config/${pkgname}.conf.example" "${DESTDIR}${PREFIX}/share/${pkgname}/config/${pkgname}.conf.example"
 
 uninstall:
 	# Delete main script
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}"
 
-	# Delete data folder (which stores libraries)
+	# Delete data folder (which stores libraries and example config)
 	rm -rf "${DESTDIR}${PREFIX}/share/${pkgname}/"
 
 	# Delete icons
@@ -91,7 +93,7 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1.gz"
 	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5.gz"
 
-	# Delete documentation and examples
+	# Delete documentation folder
 	rm -rf "${DESTDIR}${PREFIX}/share/doc/${pkgname}/"
 
 test:
