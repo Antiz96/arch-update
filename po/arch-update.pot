@@ -26,43 +26,50 @@ msgstr ""
 msgid "${update_number} updates available"
 msgstr ""
 
-#: src/lib/common.sh:52
+#: src/lib/common.sh:90
 #, sh-format
 msgid "WARNING"
 msgstr ""
 
-#: src/lib/common.sh:58
+#: src/lib/common.sh:96
 #, sh-format
 msgid "ERROR"
 msgstr ""
 
-#: src/lib/common.sh:63
+#: src/lib/common.sh:101
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr ""
 
-#: src/lib/common.sh:69
+#: src/lib/common.sh:107
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr ""
 
-#: src/lib/common.sh:85
+#: src/lib/common.sh:123
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-update."
 "conf configuration file is not found\\n"
 msgstr ""
 
-#: src/lib/common.sh:107
+#: src/lib/common.sh:145
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr ""
 
-#: src/lib/common.sh:112
+#: src/lib/common.sh:150
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
+msgstr ""
+
+#: src/lib/common.sh:158
+#, sh-format
+msgid ""
+"The ${diff_prog} editor set for visualizing/editing differences of pacnew "
+"files in the arch-update.conf configuration file is not found\\n"
 msgstr ""
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9

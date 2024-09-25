@@ -26,27 +26,27 @@ msgstr "${update_number} mise à jour disponible"
 msgid "${update_number} updates available"
 msgstr "${update_number} mises à jour disponibles"
 
-#: src/lib/common.sh:52
+#: src/lib/common.sh:90
 #, sh-format
 msgid "WARNING"
 msgstr "AVERTISSEMENT"
 
-#: src/lib/common.sh:58
+#: src/lib/common.sh:96
 #, sh-format
 msgid "ERROR"
 msgstr "ERREUR"
 
-#: src/lib/common.sh:63
+#: src/lib/common.sh:101
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Appuyez sur \"entrée\" pour continuer "
 
-#: src/lib/common.sh:69
+#: src/lib/common.sh:107
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Appuyez sur \"entrée\" pour quitter "
 
-#: src/lib/common.sh:85
+#: src/lib/common.sh:123
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-update."
@@ -55,12 +55,12 @@ msgstr ""
 "Le AUR helper ${aur_helper} défini pour le support des paquets AUR dans le fichier de configuration "
 "arch-update.conf n'est pas disponible\\n"
 
-#: src/lib/common.sh:107
+#: src/lib/common.sh:145
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "Une commande d'élévation de privilège est requise (sudo, doas ou run0)\\n"
 
-#: src/lib/common.sh:112
+#: src/lib/common.sh:150
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
@@ -68,6 +68,15 @@ msgid ""
 msgstr ""
 "La commande ${su_cmd} définie pour l'élévation de privilège dans le fichier "
 "de configuration arch-update.conf n'est pas disponible\\n"
+
+#: src/lib/common.sh:158
+#, sh-format
+msgid ""
+"The ${diff_prog} editor set for visualizing/editing differences of pacnew "
+"files in the arch-update.conf configuration file is not found\\n"
+msgstr ""
+"L'éditeur ${diff_prog} défini pour la visualisation/l'édition des différences des fichiers pacnew "
+"dans le fichier de configuration arch-update.conf n'est pas disponible\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
