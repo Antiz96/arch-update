@@ -124,7 +124,7 @@ if [ -n "${diff_prog}" ]; then
 fi
 
 # Definition of the tray icon style to use (default to "light" if it isn't set in the arch-update.conf configuration file)
-if [ -z ${tray_icon_style} ]; then
+if [ -z "${tray_icon_style}" ]; then
 	tray_icon_style="light"
 fi
 
