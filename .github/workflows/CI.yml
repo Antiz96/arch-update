@@ -25,3 +25,6 @@ jobs:
 
       - name: Run pylint
         run: find . -name '*.py' -exec pylint -d E0611,E0401,C0103  --output-format=colorized {} +
+
+      - name: Run make test
+        run: make test
