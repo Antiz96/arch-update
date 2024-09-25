@@ -1,113 +1,58 @@
 #!/bin/bash
 
-# config.sh: Set configuration parameters, pre-steps and pre-verifications required for Arch-Update to work properly
+# config.sh: Check options set in the arch-update.conf configuration file
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-# Display debug traces if the -D/--debug argument is passed
-for arg in "${@}"; do
-	case "${arg}" in
-		-D|--debug)
-			set -x
-		;;
-	esac
-done
-
-# Reset the option var if it is equal to -D/--debug (to avoid false negative "invalid option" error)
-# shellcheck disable=SC2154
-case "${option}" in
-	-D|--debug)
-		unset option
-	;;
-esac
-
-# Create state and tmp dirs if they don't exist
-# shellcheck disable=SC2154
-statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
-tmpdir="${TMPDIR:-/tmp}/${name}-${UID}"
-mkdir -p "${statedir}" "${tmpdir}"
-
-# Declare necessary parameters for translations
-# shellcheck disable=SC1091
-. gettext.sh
-# shellcheck disable=SC2154
-export TEXTDOMAIN="${_name}" # Using "Arch-Update" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
-if [ -f "${XDG_DATA_HOME}/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
-	export TEXTDOMAINDIR="${XDG_DATA_HOME}/locale"
-elif [ -f "${HOME}/.local/share/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
-	export TEXTDOMAINDIR="${HOME}/.local/share/locale"
-elif [ -f "${XDG_DATA_DIRS}/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
-	export TEXTDOMAINDIR="${XDG_DATA_DIRS}/locale"
-elif [ -f "/usr/local/share/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
-	export TEXTDOMAINDIR="/usr/local/share/locale"
-fi
-
 # Define the path to the arch-update.conf configuration file
+# shellcheck disable=SC2154
 config_file="${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf"
 
-# Check the "NoColor" option in arch-update.conf
-if grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${config_file}" 2> /dev/null; then
+# Check options in the arch-update.conf configuration file if it exists
+if [ -f "${config_file}" ]; then
+	# Check the "NoColor" option in arch-update.conf
 	# shellcheck disable=SC2034
-	no_color="y"
-fi
+	no_color=$(grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${config_file}" 2> /dev/null && echo "y")
 
-# Check the "NoVersion" option in arch-update.conf
-if grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# Check the "NoVersion" option in arch-update.conf
 	# shellcheck disable=SC2034
-	no_version="y"
-fi
+	no_version=$(grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${config_file}" 2> /dev/null && echo "y")
 
-# Check the "AlwaysShowNews" option in arch-update.conf
-if grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# Check the "AlwaysShowNews" option in arch-update.conf
 	# shellcheck disable=SC2034
-	show_news="y"
-fi
+	show_news=$(grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${config_file}" 2> /dev/null && echo "y")
 
-# Check the "NewsNum" option in arch-update.conf
-if grep -Eq '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# Check the "NewsNum" option in arch-update.conf
 	# shellcheck disable=SC2034
 	news_num=$(grep -E '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
-else
-	# shellcheck disable=SC2034
-	news_num="5"
-fi
 
-# Check the "AURHelper" option in arch-update.conf
-if grep -Eq '^[[:space:]]*AURHelper[[:space:]]*=[[:space:]]*(paru|yay)[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# Check the "AURHelper" option in arch-update.conf
 	# shellcheck disable=SC2034
 	aur_helper=$(grep -E '^[[:space:]]*AURHelper[[:space:]]*=[[:space:]]*(paru|yay)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
-fi
 
-# Check the "PrivilegeElevationCommand" option in arch-update.conf
-if grep -Eq '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# Check the "PrivilegeElevationCommand" option in arch-update.conf
 	# shellcheck disable=SC2034
 	su_cmd=$(grep -E '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
-fi
 
-# Check the "KeepOldPackages" option in arch-update.conf
-if grep -Eq '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# Check the "KeepOldPackages" option in arch-update.conf
+	# shellcheck disable=SC2034
 	old_packages_num=$(grep -E '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
-else
-	# shellcheck disable=SC2034
-	old_packages_num="3"
-fi
 
-# Check the "KeepUninstalledPackages" option in arch-update.conf
-if grep -Eq '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# Check the "KeepUninstalledPackages" option in arch-update.conf
+	# shellcheck disable=SC2034
 	uninstalled_packages_num=$(grep -E '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
-else
-	# shellcheck disable=SC2034
-	uninstalled_packages_num="0"
-fi
 
-# Check the "DiffProg" option in arch-update.conf
-if grep -Eq '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# Check the "DiffProg" option in arch-update.conf
 	# shellcheck disable=SC2034
 	diff_prog=$(grep -E '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
-fi
 
-# Check the "TrayIconStyle" option in arch-update.conf
-if grep -Eq '^[[:space:]]*TrayIconStyle[[:space:]]*=[[:space:]]*(light|dark|blue)[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# Check the "TrayIconStyle" option in arch-update.conf
 	# shellcheck disable=SC2034
 	tray_icon_style=$(grep -E '^[[:space:]]*TrayIconStyle[[:space:]]*=[[:space:]]*(light|dark|blue)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 fi
+
+# Set the default/fallback value for options that require it (if the arch-update.conf configuration file doesn't exists, if the concerned option is commented or if the set value is invalid) 
+[ -z "${news_num}" ] && news_num="5"
+[ -z "${old_packages_num}" ] && old_packages_num="3"
+[ -z "${uninstalled_packages_num}" ] && uninstalled_packages_num="0"
+[ -z "${tray_icon_style}" ] && tray_icon_style="light"
