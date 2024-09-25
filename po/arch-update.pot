@@ -95,7 +95,7 @@ msgstr ""
 #, sh-format
 msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
-"before generating a new one"
+"before generating a new one (or use --force to overwrite it)"
 msgstr ""
 
 #: src/lib/gen-config.sh:30
@@ -176,7 +176,8 @@ msgstr ""
 #, sh-format
 msgid ""
 "  --gen-config      Generate a default/example 'arch-update.conf' "
-"configuration file"
+"configuration file, you can optionally pass the '--force' argument to "
+"overwrite any existing 'arch-update.conf' configuration file"
 msgstr ""
 
 #: src/lib/help.sh:22
