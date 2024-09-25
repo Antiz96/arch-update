@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.1.0](https://github.com/Antiz96/arch-update/releases/tag/v3.1.0) - 2024-09-25
+
+### Features
+
+- Add the `--force` argument to `arch-update --gen-config` to allow overwriting any existing `arch-update.conf` ([#251](https://github.com/Antiz96/arch-update/pull/251)) - ([8e136c0](https://github.com/Antiz96/arch-update/commit/8e136c02813d85b5c3094b9f02eff04108091000)) by @Antiz96
+- Add dark and blue variants to the systray icon set and add the "TrayIconStyle" option in arch-update.conf ([#242](https://github.com/Antiz96/arch-update/pull/242)) - ([7be96c7](https://github.com/Antiz96/arch-update/commit/7be96c72f4c54afa044f9ee9cd94ba75f4c76dbf)) by @hunabku94
+
+### Fixes
+
+- Exit if the diff prog editor set in arch-update.conf isn't found ([#250](https://github.com/Antiz96/arch-update/pull/250)) - ([b6c5eca](https://github.com/Antiz96/arch-update/commit/b6c5eca8c940daf66b40858cb26a1f7fe5053319)) by @Antiz96
+
+### Styling
+
+- Improve wording in documentation ([#248](https://github.com/Antiz96/arch-update/pull/248)) - ([6cd2ddd](https://github.com/Antiz96/arch-update/commit/6cd2ddddcb9339e509b66a3d77a02ce83f967ab7)) by @Antiz96
+
+### Miscellaneous
+
+- Use "true" instead of "y" when setting variables ([#249](https://github.com/Antiz96/arch-update/pull/249)) - ([d18742e](https://github.com/Antiz96/arch-update/commit/d18742e5e98fccafb65b42e22045560e0dc8df68)) by @Antiz96
+- Streamline option checking in arch-update.conf ([#247](https://github.com/Antiz96/arch-update/pull/247)) - ([0bd5ee7](https://github.com/Antiz96/arch-update/commit/0bd5ee76e8b25341642359212bbd5636158173c7)) by @Antiz96
+- Add `make test` to the CI ([#246](https://github.com/Antiz96/arch-update/pull/246)) - ([7d43e0a](https://github.com/Antiz96/arch-update/commit/7d43e0a934c23659c4d1841c35313df2024dd738)) by @Antiz96
+- Move example config to the XDG DATA directory ([#245](https://github.com/Antiz96/arch-update/pull/245)) - ([1b76e1c](https://github.com/Antiz96/arch-update/commit/1b76e1cea50a90d06f90854958e338880a01f1f4)) by @Antiz96
+- Update the options order in arch-update.conf ([#244](https://github.com/Antiz96/arch-update/pull/244)) - ([f9781c1](https://github.com/Antiz96/arch-update/commit/f9781c13bdce4e3efd8b085f12d57e9a8c3262ea)) by @Antiz96
+- Make icon installations more dynamic in the Makefile ([#243](https://github.com/Antiz96/arch-update/pull/243)) - ([d9ba070](https://github.com/Antiz96/arch-update/commit/d9ba070174f08c4ef402c786b1cb835bfd12f08b)) by @Antiz96
+- Rename "state" functions & file to "(tray) icon" ([#241](https://github.com/Antiz96/arch-update/pull/241)) - ([90e1f0a](https://github.com/Antiz96/arch-update/commit/90e1f0a8ca0c56348185aa5ffe1390013f192fd6)) by @Antiz96
+
 ## [v3.0.1](https://github.com/Antiz96/arch-update/releases/tag/v3.0.1) - 2024-09-24
 
 ### Fixes
