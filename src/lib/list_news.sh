@@ -16,7 +16,7 @@ else
 		echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -1 > "${statedir}/current_news_check"
 
 		if ! diff "${statedir}/current_news_check" "${statedir}/last_news_check" &> /dev/null; then
-			show_news="y"
+			show_news="true"
 		else
 			echo
 			info_msg "$(eval_gettext "No recent Arch News found")"
@@ -67,7 +67,7 @@ else
 
 		for num in "${answer_array[@]}"; do
 			if [ "${num}" -le "${news_num}" ] 2> /dev/null && [ "${num}" -gt "0" ]; then
-				printed_news="y"
+				printed_news="true"
 				news_selected=$(sed -n "${num}"p <<< "${news_titles}")
 				news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
 				news_url="https://www.archlinux.org/news/${news_path}"

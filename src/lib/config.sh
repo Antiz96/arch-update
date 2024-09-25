@@ -12,15 +12,15 @@ config_file="${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf"
 if [ -f "${config_file}" ]; then
 	# Check the "NoColor" option in arch-update.conf
 	# shellcheck disable=SC2034
-	no_color=$(grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${config_file}" 2> /dev/null && echo "y")
+	no_color=$(grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
 
 	# Check the "NoVersion" option in arch-update.conf
 	# shellcheck disable=SC2034
-	no_version=$(grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${config_file}" 2> /dev/null && echo "y")
+	no_version=$(grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
 
 	# Check the "AlwaysShowNews" option in arch-update.conf
 	# shellcheck disable=SC2034
-	show_news=$(grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${config_file}" 2> /dev/null && echo "y")
+	show_news=$(grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
 
 	# Check the "NewsNum" option in arch-update.conf
 	# shellcheck disable=SC2034
