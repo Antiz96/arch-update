@@ -21,7 +21,7 @@ else
 fi
 
 # shellcheck disable=SC2154
-if [ -f "${config_file}" && -z "${overwrite_config_file}" ]; then
+if [ -f "${config_file}" ] && [ -z "${overwrite_config_file}" ]; then
 	error_msg "$(eval_gettext "The '\${config_file}' configuration file already exists\nPlease, remove it before generating a new one (or use --force to overwrite it)")"
 	exit 8
 else
