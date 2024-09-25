@@ -195,6 +195,7 @@ Exit Codes:
 12 Error during the pacnew files processing
 13 Error when editing the configuration file with the `--edit-config` option
 14 Libraries directory not found
+15 The diff prog editor set in the `arch-update.conf` configuration file isn't found
 ```
 
 For more information, see the arch-update(1) man page.  

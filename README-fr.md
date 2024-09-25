@@ -195,6 +195,7 @@ Codes de sortie :
 12 Erreur lors du traitement des fichiers pacnew
 13 Erreur lors de l'édition du fichier de configuration avec l'option `--edit-config`
 14 Le dossier de librairies n'a pas été trouvé
+15 L'éditeur "diff prog" défini dans le fichier de configuration `arch-update.conf` n'est pas disponible
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
