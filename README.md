@@ -216,11 +216,11 @@ The supported options are:
 - NoVersion # Do not show versions changes for packages when listing pending updates (including when using the `-l/--list` option).
 - AlwaysShowNews # Always display Arch news before updating, regardless of whether there's a new one since the last run or not.
 - NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the arch-update(1) man page for more details). Defaults to 5.
+- AURHelper=[AUR Helper] # AUR helper to be used for AUR packages support. Valid options are `paru` or `yay`. If this option is not set, Arch-Update will use the first available AUR helper in the following order: `paru` then `yay` (in case none of them is installed, Arch-Update will not take AUR packages into account).
+- PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid options are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
-- PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid options are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
 - DiffProg=[Editor] # Editor to use to visualize/edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set). Note that, due to the lack of option to preserve environment variable in `doas`, this option will be ignored when using `doas` as the privilege elevation method.
-- AURHelper=[AUR Helper] # AUR helper to be used for AUR packages support. Valid options are `paru` or `yay`. If this option is not set, Arch-Update will use the first available AUR helper in the following order: `paru` then `yay` (in case none of them is installed, Arch-Update will not take AUR packages into account).
 - TrayIconStyle=[Style/Color] # Style to be used for the systray applet icon. Valid options are the available style/color variants for the icon set, listed in https://github.com/Antiz96/arch-update/tree/main/src/icons. Defaults to "light".
 
 Options are case sensitive, so capital letters have to be respected.

@@ -36,6 +36,14 @@ Toujours afficher les Arch news avant de mettre à jour, peu importe s'il y en a
 .RB "Nombre de Arch news à afficher avant la mise à jour et avec l'option " "-n/--news " "(voir la page de man " "arch-update(1) " "pour plus de détails). La valeur par défaut est 5."
 
 .TP
+.B AURHelper=[AUR Helper]
+AUR helper à utiliser pour la prise en charge des paquets AUR. Les options valides sont paru ou yay. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : paru puis yay (si aucun des deux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
+
+.TP
+.B PrivilegeElevationCommand=[Cmd]
+Commande à utiliser pour l'élévation de privilège. Les options valides sont sudo, doas ou run0. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'ordre suivant: sudo, doas puis run0.
+
+.TP
 .B KeepOldPackages=[Num]
 Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
 
@@ -44,16 +52,8 @@ Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La 
 Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
 
 .TP
-.B PrivilegeElevationCommand=[Cmd]
-Commande à utiliser pour l'élévation de privilège. Les options valides sont sudo, doas ou run0. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'ordre suivant: sudo, doas puis run0.
-
-.TP
 .B DiffProg=[Editeur]
 .RB "Editeur à utiliser pour visualiser/editer les différences durant le traitement des fichiers pacnew. La valeur par défaut est la valeur de la variable d'environnement " "$DIFFPROG " "(ou " "vimdiff " "si " "$DIFFPROG " "n'est pas paramétrée). Notez qu'en raison de l'absence d'option pour préserver les variables d'environnement dans " "doas " ", cette option sera ignorée lors de l'utilisation de " "doas " "comme méthode d'élévation de privilèges."
-
-.TP
-.B AURHelper=[AUR Helper]
-AUR helper à utiliser pour la prise en charge des paquets AUR. Les options valides sont paru ou yay. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : paru puis yay (si aucun des deux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
 
 .TP
 .B TrayIconStyle=[Style/Color]
