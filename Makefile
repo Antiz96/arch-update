@@ -15,8 +15,8 @@ install:
 	install -Dm 755 src/lib/* -t "${DESTDIR}${PREFIX}/share/${pkgname}/lib/"
 
 	# Install icons
-	install -Dm 664 "src/icons/${pkgname}.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
-	install -Dm 664 "src/icons/${pkgname}_updates-available.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available.svg"
+	install -Dm 664 "src/icons/${pkgname}*.svg" -t "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/"
+	install -Dm 664 "src/icons/${pkgname}_updates-available*.svg" -t "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/"
 
 	# Install .desktop files
 	install -Dm 644 "res/desktop/${pkgname}.desktop" "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
@@ -62,11 +62,11 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}"
 
 	# Delete data folder (which stores libraries)
-	rm -rf "${DESTDIR}${PREFIX}/share/${pkgname}"
+	rm -rf "${DESTDIR}${PREFIX}/share/${pkgname}/"
 
 	# Delete icons
-	rm -rf "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}.svg"
-	rm -rf "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}*.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available*.svg"
 
 	# Delete .desktop files
 	rm -f "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
