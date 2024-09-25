@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # Define the path to the arch-update.conf configuration file
+# shellcheck disable=SC2154
 config_file="${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf"
 
 # Check options in the arch-update.conf configuration file if it exists
