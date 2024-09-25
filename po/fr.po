@@ -107,7 +107,7 @@ msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
 "before generating a new one (or use --force to overwrite it)"
 msgstr ""
-"Le fichier de configuration '${config_file}' existe déjà.\\nVeuillez le supprimer "
+"Le fichier de configuration '${config_file}' existe déjà\\nVeuillez le supprimer "
 "avant d'en générer un nouveau (ou utilisez --force pour l'écraser)"
 
 #: src/lib/gen-config.sh:30
