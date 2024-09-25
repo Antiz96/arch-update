@@ -5,16 +5,16 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # shellcheck disable=SC2154
-if [ -f "${XDG_DATA_HOME}/doc/${name}/${name}.conf.example" ]; then
-	example_config_file="${XDG_DATA_HOME}/doc/${name}/${name}.conf.example"
-elif [ -f "${HOME}/.local/share/doc/${name}/${name}.conf.example" ]; then
-	example_config_file="${HOME}/.local/share/doc/${name}/${name}.conf.example"
-elif [ -f "${XDG_DATA_DIRS}/doc/${name}/${name}.conf.example" ]; then
-	example_config_file="${XDG_DATA_DIRS}/doc/${name}/${name}.conf.example"
-elif [ -f "/usr/local/share/doc/${name}/${name}.conf.example" ]; then
-	example_config_file="/usr/local/share/doc/${name}/${name}.conf.example"
-elif [ -f "/usr/share/doc/${name}/${name}.conf.example" ]; then
-	example_config_file="/usr/share/doc/${name}/${name}.conf.example"
+if [ -f "${XDG_DATA_HOME}/${name}/config/${name}.conf.example" ]; then
+	example_config_file="${XDG_DATA_HOME}/${name}/config/${name}.conf.example"
+elif [ -f "${HOME}/.local/share/${name}/config/${name}.conf.example" ]; then
+	example_config_file="${HOME}/.local/share/${name}/config/${name}.conf.example"
+elif [ -f "${XDG_DATA_DIRS}/${name}/config/${name}.conf.example" ]; then
+	example_config_file="${XDG_DATA_DIRS}/${name}/config/${name}.conf.example"
+elif [ -f "/usr/local/share/${name}/config/${name}.conf.example" ]; then
+	example_config_file="/usr/local/share/${name}/config/${name}.conf.example"
+elif [ -f "/usr/share/${name}/config/${name}.conf.example" ]; then
+	example_config_file="/usr/share/${name}/config/${name}.conf.example"
 else
 	error_msg "$(eval_gettext "Example configuration file not found")"
 	exit 8
