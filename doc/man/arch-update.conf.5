@@ -37,11 +37,11 @@ Always display Arch news before updating, regardless of whether there's a new on
 
 .TP
 .B AURHelper=[AUR Helper]
-AUR helper to be used for AUR packages support. Valid options are paru or yay. If this option is not set, Arch-Update will use the first installed AUR helper in the following order: paru then yay (in case none of them is installed, Arch-Update will not take AUR packages into account).
+AUR helper to be used for AUR packages support. Valid values are paru or yay. If this option is not set, Arch-Update will use the first installed AUR helper in the following order: paru then yay (in case none of them is installed, Arch-Update will not take AUR packages into account).
 
 .TP
 .B PrivilegeElevationCommand=[Cmd]
-Command to be used for privilege elevation. Valid options are sudo, doas or run0. If this option is not set, Arch-Update will use the first available command in the following order: sudo, doas then run0.
+Command to be used for privilege elevation. Valid values are sudo, doas or run0. If this option is not set, Arch-Update will use the first available command in the following order: sudo, doas then run0.
 
 .TP
 .B KeepOldPackages=[Num]
@@ -57,7 +57,7 @@ Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 
 
 .TP
 .B TrayIconStyle=[Style/Color]
-Style to be used for the systray applet icon. Valid options are the available style/color variants for the icon set, listed in https://github.com/Antiz96/arch-update/tree/main/src/icons. Defaults to "light".
+Style to be used for the systray applet icon. Valid values are the available style/color variants for the icon set, listed in https://github.com/Antiz96/arch-update/tree/main/src/icons. Defaults to "light".
 
 .SH SEE ALSO
 .BR arch-update (1)
