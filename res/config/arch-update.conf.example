@@ -11,3 +11,4 @@
 #PrivilegeElevationCommand=sudo
 #DiffProg=$DIFFPROG
 #AURHelper=paru
+#TrayIconStyle=light

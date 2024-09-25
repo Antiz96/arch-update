@@ -123,14 +123,19 @@ if [ -n "${diff_prog}" ]; then
 	fi
 fi
 
+# Definition of the tray icon style to use (default to "light" if it isn't set in the arch-update.conf configuration file)
+if [ -z "${tray_icon_style}" ]; then
+	tray_icon_style="light"
+fi
+
 # Definition of the icon_up-to-date function: Change icon to "up to date"
 icon_up-to-date() {
 	# shellcheck disable=SC2154
-	echo "${name}" > "${statedir}/tray_icon"
+	echo "${name}-${tray_icon_style}" > "${statedir}/tray_icon"
 }
 
 # Definition of the icon_updates-available function: Change tray icon to "updates available"
 icon_updates-available() {
 	# shellcheck disable=SC2154
-	echo "${name}_updates-available" > "${statedir}/tray_icon"
+	echo "${name}_updates-available-${tray_icon_style}" > "${statedir}/tray_icon"
 }
