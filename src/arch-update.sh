@@ -28,11 +28,11 @@ else
 	exit 14
 fi
 
-# Source the "config" library which contains every configuration parameters, pre-steps and pre-verifications required for Arch-Update to work properly
+# Source the "config" library which checks options set in the arch-update.conf configuration file
 # shellcheck source=src/lib/config.sh
 source "${libdir}/config.sh"
 
-# Source the "common" library which contains variables and functions commonly used across Arch-Update stages
+# Source the "common" library which sets variables, functions and parameters commonly used across the various Arch-Update stages
 # shellcheck source=src/lib/common.sh
 source "${libdir}/common.sh"
 

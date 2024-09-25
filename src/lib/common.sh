@@ -1,8 +1,46 @@
 #!/bin/bash
 
-# common.sh: Set variables and functions commonly used across Arch-Update stages
+# common.sh: Set variables, functions and parameters commonly used across the various Arch-Update stages
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
+
+# Display debug traces if the -D/--debug argument is passed
+for arg in "${@}"; do
+	case "${arg}" in
+		-D|--debug)
+			set -x
+		;;
+	esac
+done
+
+# Reset the option var if it is equal to -D/--debug (to avoid false negative "invalid option" error)
+# shellcheck disable=SC2154
+case "${option}" in
+	-D|--debug)
+		unset option
+	;;
+esac
+
+# Create state and tmp dirs if they don't exist
+# shellcheck disable=SC2154
+statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
+tmpdir="${TMPDIR:-/tmp}/${name}-${UID}"
+mkdir -p "${statedir}" "${tmpdir}"
+
+# Declare necessary parameters for translations
+# shellcheck disable=SC1091
+. gettext.sh
+# shellcheck disable=SC2154
+export TEXTDOMAIN="${_name}" # Using "Arch-Update" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
+if [ -f "${XDG_DATA_HOME}/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
+	export TEXTDOMAINDIR="${XDG_DATA_HOME}/locale"
+elif [ -f "${HOME}/.local/share/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
+	export TEXTDOMAINDIR="${HOME}/.local/share/locale"
+elif [ -f "${XDG_DATA_DIRS}/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
+	export TEXTDOMAINDIR="${XDG_DATA_DIRS}/locale"
+elif [ -f "/usr/local/share/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
+	export TEXTDOMAINDIR="/usr/local/share/locale"
+fi
 
 # Definition of the colors for the colorized output
 if [ -z "${no_color}" ]; then
@@ -123,12 +161,7 @@ if [ -n "${diff_prog}" ]; then
 	fi
 fi
 
-# Definition of the tray icon style to use (default to "light" if it isn't set in the arch-update.conf configuration file)
-if [ -z "${tray_icon_style}" ]; then
-	tray_icon_style="light"
-fi
-
-# Definition of the icon_up-to-date function: Change icon to "up to date"
+# Definition of the icon_up-to-date function: Change tray icon to "up to date"
 icon_up-to-date() {
 	# shellcheck disable=SC2154
 	echo "${name}-${tray_icon_style}" > "${statedir}/tray_icon"
