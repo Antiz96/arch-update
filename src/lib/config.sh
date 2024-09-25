@@ -42,24 +42,28 @@ elif [ -f "/usr/local/share/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
 	export TEXTDOMAINDIR="/usr/local/share/locale"
 fi
 
-# Checking options in arch-update.conf
+# Define the path to the arch-update.conf configuration file
 config_file="${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf"
 
+# Check the "NoColor" option in arch-update.conf
 if grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	# shellcheck disable=SC2034
 	no_color="y"
 fi
 
+# Check the "NoVersion" option in arch-update.conf
 if grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	# shellcheck disable=SC2034
 	no_version="y"
 fi
 
+# Check the "AlwaysShowNews" option in arch-update.conf
 if grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	# shellcheck disable=SC2034
 	show_news="y"
 fi
 
+# Check the "NewsNum" option in arch-update.conf
 if grep -Eq '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	# shellcheck disable=SC2034
 	news_num=$(grep -E '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
@@ -68,6 +72,19 @@ else
 	news_num="5"
 fi
 
+# Check the "AURHelper" option in arch-update.conf
+if grep -Eq '^[[:space:]]*AURHelper[[:space:]]*=[[:space:]]*(paru|yay)[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# shellcheck disable=SC2034
+	aur_helper=$(grep -E '^[[:space:]]*AURHelper[[:space:]]*=[[:space:]]*(paru|yay)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+fi
+
+# Check the "PrivilegeElevationCommand" option in arch-update.conf
+if grep -Eq '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null; then
+	# shellcheck disable=SC2034
+	su_cmd=$(grep -E '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+fi
+
+# Check the "KeepOldPackages" option in arch-update.conf
 if grep -Eq '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	old_packages_num=$(grep -E '^[[:space:]]*KeepOldPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 else
@@ -75,6 +92,7 @@ else
 	old_packages_num="3"
 fi
 
+# Check the "KeepUninstalledPackages" option in arch-update.conf
 if grep -Eq '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	uninstalled_packages_num=$(grep -E '^[[:space:]]*KeepUninstalledPackages[[:space:]]*=[[:space:]]*[0-9]+[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 else
@@ -82,21 +100,13 @@ else
 	uninstalled_packages_num="0"
 fi
 
-if grep -Eq '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null; then
-	# shellcheck disable=SC2034
-	su_cmd=$(grep -E '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
-fi
-
+# Check the "DiffProg" option in arch-update.conf
 if grep -Eq '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	# shellcheck disable=SC2034
 	diff_prog=$(grep -E '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 fi
 
-if grep -Eq '^[[:space:]]*AURHelper[[:space:]]*=[[:space:]]*(paru|yay)[[:space:]]*$' "${config_file}" 2> /dev/null; then
-	# shellcheck disable=SC2034
-	aur_helper=$(grep -E '^[[:space:]]*AURHelper[[:space:]]*=[[:space:]]*(paru|yay)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
-fi
-
+# Check the "TrayIconStyle" option in arch-update.conf
 if grep -Eq '^[[:space:]]*TrayIconStyle[[:space:]]*=[[:space:]]*(light|dark|blue)[[:space:]]*$' "${config_file}" 2> /dev/null; then
 	# shellcheck disable=SC2034
 	tray_icon_style=$(grep -E '^[[:space:]]*TrayIconStyle[[:space:]]*=[[:space:]]*(light|dark|blue)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')

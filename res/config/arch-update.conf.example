@@ -6,9 +6,9 @@
 #NoVersion
 #AlwaysShowNews
 #NewsNum=5
+#AURHelper=paru
+#PrivilegeElevationCommand=sudo
 #KeepOldPackages=3
 #KeepUninstalledPackages=0
-#PrivilegeElevationCommand=sudo
 #DiffProg=$DIFFPROG
-#AURHelper=paru
 #TrayIconStyle=light
