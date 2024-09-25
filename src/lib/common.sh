@@ -123,12 +123,7 @@ if [ -n "${diff_prog}" ]; then
 	fi
 fi
 
-# Definition of the tray icon style to use (default to "light" if it isn't set in the arch-update.conf configuration file)
-if [ -z "${tray_icon_style}" ]; then
-	tray_icon_style="light"
-fi
-
-# Definition of the icon_up-to-date function: Change icon to "up to date"
+# Definition of the icon_up-to-date function: Change tray icon to "up to date"
 icon_up-to-date() {
 	# shellcheck disable=SC2154
 	echo "${name}-${tray_icon_style}" > "${statedir}/tray_icon"
