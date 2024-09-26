@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.1.1](https://github.com/Antiz96/arch-update/releases/tag/v3.1.1) - 2024-09-26
+
+### Fixes
+
+- Fix missing icon on desktop notifications ([#253](https://github.com/Antiz96/arch-update/pull/253)) - ([04913bd](https://github.com/Antiz96/arch-update/commit/04913bd115d21d106524254fc33416c3b26d31f7)) by @Antiz96
+
+### Documentation
+
+- Improve documentation about starting the systray applet at boot ([#252](https://github.com/Antiz96/arch-update/pull/252)) - ([1349ad5](https://github.com/Antiz96/arch-update/commit/1349ad5a70962f5106980abf730d4c618fa825ff)) by @Antiz96
+
 ## [v3.1.0](https://github.com/Antiz96/arch-update/releases/tag/v3.1.0) - 2024-09-25
 
 ### Features
