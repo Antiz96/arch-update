@@ -76,9 +76,9 @@ Display debug traces.
 .B \-\-tray
 Start the Arch-Update systray applet.
 .br
-.RB "To start it automatically at boot, you can either run the " "arch-update --tray --enable " "command (this is the preferred method on some specific desktop environments, like XFCE for instance) or start/enable the associated systemd service like so: " "systemctl \-\-user enable \-\-now arch-update-tray.service".
+.RB "To start it automatically at boot, you can either run the " "arch-update --tray --enable " "command (preferred method for most Desktop Environments, uses XDG Autostart) or enable the associated systemd service (in case your Desktop Environment doesn't support XDG Autostart) by running " "systemctl \-\-user enable \-\-now arch-update-tray.service".
 .br
-.RB "If you use a window manager/Wayland compositor, you can add the " "arch-update --tray " "command to your configuration file instead."
+.RB "If you use a window manager or a Wayland compositor, you can add the " "arch-update --tray " "command to your configuration file instead."
 
 .TP
 .B \-v, \-\-version
