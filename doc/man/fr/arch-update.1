@@ -76,9 +76,9 @@ Afficher les traces de débogage.
 .B \-\-tray
 Démarrer l'applet systray d'Arch-Update.
 .br
-.RB "Pour la démarrer automatiquement au démarrage du système, vous pouvez soit exécuter la commande " "arch-update --tray --enable " "(c'est la méthode privilégiée pour certains environnements de bureau spécifiques, comme XFCE par exemple) ou vous pouvez démarrer/activer le service systemd associé comme ceci : " "systemctl \-\-user enable \-\-now arch-update-tray.service".
+.RB "Pour la démarrer automatiquement au démarrage du système, vous pouvez soit exécuter la commande " "arch-update --tray --enable " "(méthode recommandée pour la plupart des environnements de bureau, utilise XDG Autostart) ou vous pouvez activer le service systemd associé (dans le cas où vôtre environnement de bureau ne supporte pas XDG Autostart) en exécutant " "systemctl \-\-user enable \-\-now arch-update-tray.service".
 .br
-.RB "Si vous utilisez un gestionnaire de fenêtres/un compositeur Wayland, vous pouvez plutôt ajouter la commande " "arch-update --tray " "à votre fichier de configuration."
+.RB "Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, vous pouvez plutôt ajouter la commande " "arch-update --tray " "à votre fichier de configuration."
 
 .TP
 .B \-v, \-\-version
