@@ -88,14 +88,23 @@ The usage consist of starting [the systray applet](#the-systray-applet) and enab
 
 ### The systray applet
 
-To start the systray applet, launch the "Arch-Update Systray Applet" application from your app menu.  
-To start it automatically at boot, either run the `arch-update --tray --enable` command (this is the preferred method on some specific desktop environments, like XFCE for instance) or start/enable the associated systemd service like so:
+To start the systray applet, launch the "Arch-Update Systray Applet" application from your app menu.
+
+To start it automatically at boot, you can either:
+
+- Run the following command (preferred method for most Desktop Environments, uses [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)):
+
+```bash
+arch-update --tray --enable
+```
+
+- Enable the associated systemd service (in case your Desktop Environment doesn't support [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)):
 
 ```bash
 systemctl --user enable --now arch-update-tray.service
 ```
 
-*If you use a window manager/Wayland compositor, you can add the `arch-update --tray` command to your configuration file instead.*
+If you use a Window Manager or a Wayland Compositor, you can add the `arch-update --tray` command to your configuration file instead.
 
 The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.
 
@@ -109,7 +118,7 @@ The systray applet attempts to read the `arch-update.desktop` file at the below 
 
 In case you want/need to customize the `arch-update.desktop` file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom `arch-update.desktop` file supersedes the default one and that your modifications are not being overwritten on updates).
 
-This can be useful to force the `arch-update.desktop` file to launch `Arch-Update` with a specific terminal emulator for instance.  
+This can be useful to force `Arch-Update` to launch with a specific terminal emulator when clicking the systray applet for instance.  
 **If clicking the systray applet does nothing**, please read [this chapter](#force-the-desktop-file-to-run-with-a-specific-terminal-emulator).
 
 ### The systemd timer

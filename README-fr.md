@@ -88,14 +88,23 @@ L'utilisation consiste à démarrer [l'applet systray](#lapplet-systray) et à a
 
 ### L'applet systray
 
-Pour démarrer l'applet systray, lancez l'application "Arch-Update Systray Applet" depuis votre menu d'application.  
-Pour la démarrer automatiquement au démarrage du système, vous pouvez soit lancer la commande `arch-update --tray --enable` (c'est la méthode privilégiée pour certains environnements de bureau spécifiques, comme XFCE par exemple) ou vous pouvez démarrer/activer le service systemd associé comme ceci :
+Pour démarrer l'applet systray, lancez l'application "Arch-Update Systray Applet" depuis votre menu d'application.
+
+Pour la démarrer automatiquement au démarrage du système, utilisez l'une des options suivantes :
+
+- Lancer la commande suivante (méthode recommandée pour la plupart des environnements de bureau, utilise [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)):
+
+```bash
+arch-update --tray --enable
+```
+
+- Activer le service systemd associé (dans le cas où votre environnement de bureau ne supporte pas [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)):
 
 ```bash
 systemctl --user enable --now arch-update-tray.service
 ```
 
-*Si vous utilisez un gestionnaire de fenêtre/compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vôtre fichier de configuration.*
+Si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vôtre fichier de configuration.
 
 L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, il lance `arch-update` via le fichier [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
 
@@ -109,7 +118,7 @@ L'applet systray essaie de lire le fichier `arch-update.desktop` dans les chemin
 
 Dans le cas où vous avez envie/besoin de personnaliser le fichier `arch-update.desktop`, copiez le dans un chemin qui a une priorité plus élevée que le chemin d'installation par défaut et modifier le ici (afin d'assurer que votre ficher `arch-update.desktop` personnalisé remplace celui par défaut et que vos modifications ne soient pas écrasées à chaque mise à jour).
 
-Cela peut être utile pour forcer le fichier `arch-update.desktop` à lancer `Arch-Update` avec un émulateur de terminal spécifique par exemple.  
+Cela peut être utile pour forcer `Arch-Update` à se lancer avec un émulateur de terminal spécifique lorsque l'on clique sur l'applet systray.  
 **Si cliquer sur l'applet systray ne fait rien**, veuillez lire [ce chapitre](#forcer-le-fichier-desktop-à-se-lancer-avec-un-émulateur-de-terminal-spécifique).
 
 ### Le timer systemd
