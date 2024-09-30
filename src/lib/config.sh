@@ -51,7 +51,7 @@ if [ -f "${config_file}" ]; then
 	tray_icon_style=$(grep -E '^[[:space:]]*TrayIconStyle[[:space:]]*=[[:space:]]*(light|dark|blue)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 fi
 
-# Set the default/fallback value for options that require it (if the arch-update.conf configuration file doesn't exists, if the concerned option is commented or if the set value is invalid) 
+# Set the default / fallback value for options that require it (if the arch-update.conf configuration file doesn't exists, if the concerned option is commented or if the set value is invalid) 
 [ -z "${news_num}" ] && news_num="5"
 [ -z "${old_packages_num}" ] && old_packages_num="3"
 [ -z "${uninstalled_packages_num}" ] && uninstalled_packages_num="0"

@@ -1,14 +1,14 @@
 .TH "ARCH-UPDATE" "1" "September 2024" "Arch-Update 3.1.1" "Arch-Update Manual"
 
 .SH NAME
-arch-update \- An update notifier/applier for Arch Linux that assists you with important pre/post update tasks. 
+arch-update \- An update notifier & applier for Arch Linux that assists you with important pre / post update tasks.
 
 .SH SYNOPSIS
 .B arch-update
 [\fI\,OPTION\/\fR]
 
 .SH DESCRIPTION
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any DE/WM.
+An update notifier & applier for Arch Linux that assists you with important pre / post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any Desktop Environment / Window Manager.
 .br
 .RB "Optional support for AUR packages update (through " "yay " "or " "paru" "), Flatpak packages update (through " "flatpak" ") and desktop notifications (through " "libnotify" ")."
 .br
@@ -22,7 +22,7 @@ If no option is passed, launch the relevant series of functions to perform a com
 .br
 Before performing the update, it offers to display the latest Arch Linux news to the user. By default, Arch news are only displayed if at least a new one has been published since the last run. Arch news published since the last run or at the same date are tagged as '[NEW]'.
 .br
-Arch-Update also checks for orphan packages, unused Flatpak packages, old and/or uninstalled cached packages in pacman's cache, pacnew/pacsave files, pending kernel update requiring a reboot to be applied as well as services requiring a post upgrade restart and, if there are, offers to process them.
+Arch-Update also checks for orphan packages, unused Flatpak packages, old and / or uninstalled cached packages in pacman's cache, pacnew & pacsave files, pending kernel update requiring a reboot to be applied as well as services requiring a post upgrade restart and, if there are, offers to process them.
 .br
 Those functions are launched when you click on the systray applet.
 
@@ -60,7 +60,7 @@ Display debug traces.
 
 .TP
 .B \-\-gen\-config
-.RB "Generate a default/example " "arch-update.conf " "configuration file (see the " "arch-update.conf(5) " "man page for more details)."
+.RB "Generate a default / example " "arch-update.conf " "configuration file (see the " "arch-update.conf(5) " "man page for more details)."
 .br
 .RB "You can optionally pass the " "--force " "argument to overwrite any existing " "arch-update.conf " "configuration file."
 
@@ -89,7 +89,7 @@ Display version information.
 Display the help message.
 
 .TP
-.RB "Certain options can be enabled/disabled or modified via the " "arch-update.conf " "configuration file, see the " "arch-update.conf(5) " "man page."
+.RB "Certain options can be enabled, disabled or modified via the " "arch-update.conf " "configuration file, see the " "arch-update.conf(5) " "man page."
 
 .SH USAGE
 .TP
@@ -110,7 +110,7 @@ Display the help message.
 .br
 \- /usr/share/applications/arch-update.desktop <-- Default installation path when installing Arch-Update from the AUR
 
-.RB "In case you want/need to customize the " "arch-update.desktop " "file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom " "arch-update.desktop " "file supersedes the default one and that your modifications are not being overwritten on updates)."
+.RB "In case you want (or need) to customize the " "arch-update.desktop " "file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom " "arch-update.desktop " "file supersedes the default one and that your modifications are not being overwritten on updates)."
 
 .br
 .RB "This can be useful to force the " "arch-update.desktop " "file to launch " "Arch-Update " "within a specific terminal emulator for instance."
@@ -173,7 +173,7 @@ See https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Pa
 
 .TP
 .B Force the desktop file to run with a specific terminal emulator
-.BR "gio " "(which is used to launch the " "arch-update.desktop " "file when the systray applet is clicked) currently supports a limited list of terminal emulators (see https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694).
+.BR "gio " "(which is used to launch the " "arch-update.desktop " "file when the systray applet is clicked) currently supports a limited list of terminal emulators (see https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2701).
 .br
 .RB "If you don't have any of these terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing and reports the following error: " "[...] Unable to find terminal required for application".
 
@@ -188,7 +188,7 @@ See https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Pa
 .RB "Exec=" "alacritty -e " "arch-update"
 
 .br
-.RB "Alternatively, you can create a symlink for your terminal emulator that points to " "/usr/bin/xterm" ", which is the fallback option for " "gio " "(for instance, with " "alacritty" ": " "sudo ln -s /usr/bin/alacritty /usr/bin/xterm" ") or you can simply install one of the terminal emulators known/supported by " "gio " "(see https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694)."
+.RB "Alternatively, you can create a symlink for your terminal emulator that points to " "/usr/bin/xterm" ", which is the fallback option for " "gio " "(for instance, with " "alacritty" ": " "sudo ln -s /usr/bin/alacritty /usr/bin/xterm" ") or you can simply install one of the terminal emulators supported by " "gio " "(see https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2701)."
 
 .SH EXIT STATUS
 .TP
@@ -221,7 +221,7 @@ Error when calling the reboot command to apply a pending kernel update
 
 .TP
 .B 7
-.RB "No pending update when using the " "-l/--list " "option"
+.RB "No pending update when using the " "-l / --list " "option"
 
 .TP
 .B 8

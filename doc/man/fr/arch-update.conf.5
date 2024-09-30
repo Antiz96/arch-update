@@ -11,7 +11,7 @@ $XDG_CONFIG_HOME/arch-update/arch-update.conf, $HOME/.config/arch-update/arch-up
 
 .RB "Arch-Update tente d'abord de lire le fichier sous " "$XDG_CONFIG_HOME/arch-update/arch-update.conf " "puis sous " "$HOME/.config/arch-update/arch-update.conf " "si " "$XDG_CONFIG_HOME " "n'est pas paramétré, ou que le fichier n'existe pas."
 .br
-.RB "Un fichier de configuration par défaut/exemple peut être généré en exécutant : " "arch-update --gen-config"
+.RB "Un fichier de configuration par défaut / exemple peut être généré en exécutant : " "arch-update --gen-config"
 
 .SH OPTIONS
 .PP
@@ -25,7 +25,7 @@ Ne pas coloriser la sortie.
 
 .TP
 .B NoVersion
-.RB "Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option " "-l/--list" ", voir la page de man " "arch-update(1) " "pour plus de détails)."
+.RB "Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option " "-l / --list" ", voir la page de man " "arch-update(1) " "pour plus de détails)."
 
 .TP
 .B AlwaysShowNews
@@ -33,7 +33,7 @@ Toujours afficher les Arch news avant de mettre à jour, peu importe s'il y en a
 
 .TP
 .B NewsNum=[Num]
-.RB "Nombre de Arch news à afficher avant la mise à jour et avec l'option " "-n/--news " "(voir la page de man " "arch-update(1) " "pour plus de détails). La valeur par défaut est 5."
+.RB "Nombre de Arch news à afficher avant la mise à jour et avec l'option " "-n / --news " "(voir la page de man " "arch-update(1) " "pour plus de détails). La valeur par défaut est 5."
 
 .TP
 .B AURHelper=[AUR Helper]
@@ -53,11 +53,11 @@ Nombre de versions de paquets désinstallés à conserver dans le cache de pacma
 
 .TP
 .B DiffProg=[Editeur]
-.RB "Editeur à utiliser pour visualiser/editer les différences durant le traitement des fichiers pacnew. La valeur par défaut est la valeur de la variable d'environnement " "$DIFFPROG " "(ou " "vimdiff " "si " "$DIFFPROG " "n'est pas paramétrée). Notez qu'en raison de l'absence d'option pour préserver les variables d'environnement dans " "doas " ", cette option sera ignorée lors de l'utilisation de " "doas " "comme méthode d'élévation de privilèges."
+.RB "Editeur à utiliser pour visualiser / editer les différences durant le traitement des fichiers pacnew. La valeur par défaut est la valeur de la variable d'environnement " "$DIFFPROG " "(ou " "vimdiff " "si " "$DIFFPROG " "n'est pas paramétrée). Notez qu'en raison de l'absence d'option pour préserver les variables d'environnement dans " "doas " ", cette option sera ignorée lors de l'utilisation de " "doas " "comme méthode d'élévation de privilèges."
 
 .TP
-.B TrayIconStyle=[Style/Color]
-Style à utiliser pour l'icône de l'applet systray. Les valeurs valides sont les variantes de style/couleur disponibles pour le set d'icône, listées ici : https://github.com/Antiz96/arch-update/tree/main/src/icons. La valeur par défaut est "light".
+.B TrayIconStyle=[Style / Color]
+Style à utiliser pour l'icône de l'applet systray. Les valeurs valides sont les variantes de style / couleur disponibles pour le set d'icône, listées ici : https://github.com/Antiz96/arch-update/tree/main/res/icons. La valeur par défaut est "light".
 
 .SH VOIR AUSSI
 .BR arch-update (1)

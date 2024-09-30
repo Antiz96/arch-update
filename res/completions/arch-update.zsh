@@ -7,7 +7,7 @@ opts=(
     {-d,--devel}'[Include AUR development packages updates]'
     {-n,--news}'[Display latest Arch news]'
     {-D,--debug}'[Display debug traces]'
-    {--gen-config}'[Generate a default/example configuration file]'
+    {--gen-config}'[Generate a default / example configuration file]'
     {--show-config}'[Display the current configuration file]'
     {--edit-config}'[Edit the current configuration file]'
     {--tray}'[Launch the Arch-Update systray applet]'

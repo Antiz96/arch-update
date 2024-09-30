@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# arch-update: An update notifier/applier for Arch Linux that assists you with important pre/post update tasks
+# arch-update: An update notifier & applier for Arch Linux that assists you with important pre / post update tasks
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -39,15 +39,15 @@ source "${libdir}/common.sh"
 # Source the different libraries depending on the option(s) passed
 case "${option}" in
 	"")
-		# Source the "full_upgrade" library which executes the series of relevant functions/libraries to perform a complete and proper update of the system
+		# Source the "full_upgrade" library which executes the series of relevant functions / libraries to perform a complete and proper update of the system
 		# shellcheck source=src/lib/full_upgrade.sh
 		source "${libdir}/full_upgrade.sh"
 	;;
 	-d|--devel)
-		# Set the "--devel" flag for AUR helpers (yay/paru)
+		# Set the "--devel" flag for AUR helpers (yay / paru)
 		devel_flag+=("--devel")
 
-		# Source the "full_upgrade" library which executes the series of relevant functions/libraries to perform a complete and proper update of the system
+		# Source the "full_upgrade" library which executes the series of relevant functions / libraries to perform a complete and proper update of the system
 		# shellcheck source=src/lib/full_upgrade.sh
 		source "${libdir}/full_upgrade.sh"
 	;;
@@ -57,7 +57,7 @@ case "${option}" in
 		source "${libdir}/check.sh"
 	;;
 	-l|--list)
-		# Set that the "-l/--list" option is used (required for the "list_packages" library to only print the list of packages available for update without asking for the user confirmation to apply them)
+		# Set that the "-l / --list" option is used (required for the "list_packages" library to only print the list of packages available for update without asking for the user confirmation to apply them)
 		list_option="true"
 
 		# Source the "list_packages" library which displays the list of packages available for updates
@@ -65,7 +65,7 @@ case "${option}" in
 		source "${libdir}/list_packages.sh"
 	;;
 	-n|--news)
-		# Set that news should be shown and that the "-n/--news" option is used (required for the "list_news" library to only print the list of recent Arch news without looking to continue with the update process)
+		# Set that news should be shown and that the "-n / --news" option is used (required for the "list_news" library to only print the list of recent Arch news without looking to continue with the update process)
 		show_news="true"
 		news_option="true"
 
