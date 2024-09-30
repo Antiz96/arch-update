@@ -4,7 +4,7 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-# Display debug traces if the -D/--debug argument is passed
+# Display debug traces if the -D / --debug argument is passed
 for arg in "${@}"; do
 	case "${arg}" in
 		-D|--debug)
@@ -13,7 +13,7 @@ for arg in "${@}"; do
 	esac
 done
 
-# Reset the option var if it is equal to -D/--debug (to avoid false negative "invalid option" error)
+# Reset the option var if it is equal to -D / --debug (to avoid false negative "invalid option" error)
 # shellcheck disable=SC2154
 case "${option}" in
 	-D|--debug)
@@ -108,7 +108,7 @@ quit_msg() {
 	read -n 1 -r -s -p $"$(info_msg "${msg}")" && echo
 }
 
-# Definition of the AUR helper to use (depending on if/which one is installed on the system and if it's not already defined in arch-update.conf) for the optional AUR packages support
+# Definition of the AUR helper to use (depending on if / which one is installed on the system and if it's not already defined in arch-update.conf) for the optional AUR packages support
 # shellcheck disable=SC2034
 if [ -z "${aur_helper}" ]; then
 	if command -v paru > /dev/null; then
@@ -155,7 +155,7 @@ fi
 # Definition of the diff program to use (if it is set in the arch-update.conf configuration file)
 if [ -n "${diff_prog}" ]; then
 	if ! command -v "${diff_prog}" > /dev/null; then
-		error_msg "$(eval_gettext "The \${diff_prog} editor set for visualizing/editing differences of pacnew files in the arch-update.conf configuration file is not found\n")" && quit_msg
+		error_msg "$(eval_gettext "The \${diff_prog} editor set for visualizing / editing differences of pacnew files in the arch-update.conf configuration file is not found\n")" && quit_msg
 		exit 15
 	else
 		if [ "${su_cmd}" == "sudo" ]; then

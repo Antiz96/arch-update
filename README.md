@@ -18,19 +18,19 @@
 
 ## Description
 
-An update notifier/applier for Arch Linux that assists you with important pre/post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any DE/WM.  
-Optional support for AUR/Flatpak packages and desktop notifications.
+An update notifier & applier for Arch Linux that assists you with important pre / post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any Desktop Environment / Window Manager.  
+Optional support for AUR / Flatpak packages and desktop notifications.
 
 Arch-Update is designed to follow usual system maintenance steps, as described in the [Arch Wiki](https://wiki.archlinux.org/title/System_maintenance).
 
 Features:
 
-- Includes a clickeable systray applet that dynamically changes to act as an update notifier/applier. Easy to integrate with any panel on any DE/WM.
+- Includes a clickeable systray applet that dynamically changes to act as an update notifier & applier. Easy to integrate with any panel on any Desktop Environment & Window Manager.
 - Automatic check and listing of every packages available for update.
 - Offers to display the latest Arch Linux news before applying updates.
 - Automatic check and listing of orphan packages and offers to remove them.
-- Automatic check for old and/or uninstalled cached packages and offers to remove them.
-- Lists and helps you processing pacnew/pacsave files.
+- Automatic check for old and / or uninstalled cached packages and offers to remove them.
+- Lists and helps you processing pacnew & pacsave files.
 - Automatic check for pending kernel updates requiring a reboot to be applied and offers to do so if there's one.
 - Automatic check for services requiring a post upgrade restart and offers to do so if there are.
 - Support for `sudo`, `doas` & `run0`.
@@ -64,7 +64,7 @@ Additional optional dependencies you might need or want:
 
 Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git clone`)*.
 
-To install `arch-update`, go into the extracted/cloned directory and run the following command:
+To install `arch-update`, go into the extracted / cloned directory and run the following command:
 
 ```bash
 sudo make install
@@ -76,7 +76,7 @@ If you want to run simple unit tests, you can run the following command (require
 make test
 ```
 
-To uninstall `arch-update`, go into the extracted/cloned directory and run the following command:
+To uninstall `arch-update`, go into the extracted / cloned directory and run the following command:
 
 ```bash
 sudo make uninstall
@@ -116,7 +116,7 @@ The systray applet attempts to read the `arch-update.desktop` file at the below 
 - `/usr/local/share/applications/arch-update.desktop` <-- Default installation path when installing Arch-Update [from source](#from-source)
 - `/usr/share/applications/arch-update.desktop` <-- Default installation path when installing Arch-Update [from the AUR](#AUR)
 
-In case you want/need to customize the `arch-update.desktop` file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom `arch-update.desktop` file supersedes the default one and that your modifications are not being overwritten on updates).
+In case you want (or need) to customize the `arch-update.desktop` file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom `arch-update.desktop` file supersedes the default one and that your modifications are not being overwritten on updates).
 
 This can be useful to force `Arch-Update` to launch with a specific terminal emulator when clicking the systray applet for instance.  
 **If clicking the systray applet does nothing**, please read [this chapter](#force-the-desktop-file-to-run-with-a-specific-terminal-emulator).
@@ -157,21 +157,21 @@ If no news has been published since the last run, `Arch-Update` will directly pr
 
 In both cases, from there, you just have to let `Arch-Update` guide you through the various steps required for a complete and proper update of your system! :smile:
 
-Certain options can be enabled/disabled or modified via the `arch-update.conf` configuration file. See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.
+Certain options can be enabled, disabled or modified via the `arch-update.conf` configuration file. See the [arch-update.conf documentation chapter](#arch-update-configuration-file) for more details.
 
 ## Documentation
 
 ### arch-update
 
 ```text
-An update notifier/applier for Arch Linux that assists you with
-important pre/post update tasks.
+An update notifier & applier for Arch Linux that assists you with
+important pre / post update tasks.
 
 Run arch-update to perform the main "update" function:
 Display the list of packages available for update, then ask for the user's confirmation
 to proceed with the installation.
 Before performing the update, offer to display the latest Arch Linux news.
-Post update, check for orphan/unused packages, old cached packages, pacnew/pacsave files,
+Post update, check for orphan & unused packages, old cached packages, pacnew & pacsave files,
 pending kernel update, as well as services requiring a post upgrade restart and, if there are,
 offers to process them.
 
@@ -181,7 +181,7 @@ Options:
 -d, --devel       Include AUR development packages updates
 -n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
 -D, --debug       Display debug traces
---gen-config      Generate a default/example `arch-update.conf` configuration file (see the arch-update.conf(5) man page for more details), you can optionally pass the `--force` argument to overwrite any existing `arch-update.conf` configuration file
+--gen-config      Generate a default / example `arch-update.conf` configuration file (see the arch-update.conf(5) man page for more details), you can optionally pass the `--force` argument to overwrite any existing `arch-update.conf` configuration file
 --show-config     Display the `arch-update.conf` configuration file currently used (if it exists)
 --edit-config     Edit the `arch-update.conf` configuration file currently used (if it exists)
 --tray            Launch the Arch-Update systray applet, you can optionally add the `--enable` argument to start it automatically at boot.
@@ -196,7 +196,7 @@ Exit Codes:
 4  User didn't gave the confirmation to proceed
 5  Error when updating the packages
 6  Error when calling the reboot command to apply a pending kernel update
-7  No pending update when using the `-l/--list` option
+7  No pending update when using the `-l / --list` option
 8  Error when generating a configuration file with the `--gen-config` option
 9  Error when reading the configuration file with the `--show-config` option
 10 Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option
@@ -208,30 +208,30 @@ Exit Codes:
 ```
 
 For more information, see the arch-update(1) man page.  
-Certain options can be enabled/disabled or modified via the arch-update.conf configuration file, see the arch-update.conf(5) man page.
+Certain options can be enabled, disabled or modified via the arch-update.conf configuration file, see the arch-update.conf(5) man page.
 
 ### arch-update configuration file
 
 ```text
-The arch-update.conf file is an optional configuration file for arch-update to enable/disable
+The arch-update.conf file is an optional configuration file for arch-update to enable, disable
 or modify certain options within the script.
 
 This configuration file has to be located in "${XDG_CONFIG_HOME}/arch-update/arch-update.conf"
 or "${HOME}/.config/arch-update/arch-update.conf".
-A default/example configuration file can be generated by running: `arch-update --gen-config`
+A default / example configuration file can be generated by running: `arch-update --gen-config`
 
 The supported options are:
 
 - NoColor # Do not colorize output.
-- NoVersion # Do not show versions changes for packages when listing pending updates (including when using the `-l/--list` option).
+- NoVersion # Do not show versions changes for packages when listing pending updates (including when using the `-l / --list` option).
 - AlwaysShowNews # Always display Arch news before updating, regardless of whether there's a new one since the last run or not.
-- NewsNum=[Num] # Number of Arch news to display before updating and with the `-n/--news` option (see the arch-update(1) man page for more details). Defaults to 5.
+- NewsNum=[Num] # Number of Arch news to display before updating and with the `-n / --news` option (see the arch-update(1) man page for more details). Defaults to 5.
 - AURHelper=[AUR Helper] # AUR helper to be used for AUR packages support. Valid values are `paru` or `yay`. If this option is not set, Arch-Update will use the first available AUR helper in the following order: `paru` then `yay` (in case none of them is installed, Arch-Update will not take AUR packages into account).
 - PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid values are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
-- DiffProg=[Editor] # Editor to use to visualize/edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set). Note that, due to the lack of option to preserve environment variable in `doas`, this option will be ignored when using `doas` as the privilege elevation method.
-- TrayIconStyle=[Style/Color] # Style to be used for the systray applet icon. Valid values are the available style/color variants for the icon set, listed in https://github.com/Antiz96/arch-update/tree/main/src/icons. Defaults to "light".
+- DiffProg=[Editor] # Editor to use to visualize / edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set). Note that, due to the lack of option to preserve environment variable in `doas`, this option will be ignored when using `doas` as the privilege elevation method.
+- TrayIconStyle=[Style / Color] # Style to be used for the systray applet icon. Valid values are the available style / color variants for the icon set, listed in https://github.com/Antiz96/arch-update/tree/main/res/icons. Defaults to "light".
 
 Options are case sensitive, so capital letters have to be respected.
 ```
@@ -289,7 +289,7 @@ For instance, with [alacritty](https://alacritty.org/) *(check your terminal emu
 Exec=alacritty -e arch-update
 ```
 
-Alternatively, you can create a symlink for your terminal emulator that points to `/usr/bin/xterm`, which is the fallback option for `gio` (for instance, with [alacritty](https://alacritty.org): `sudo ln -s /usr/bin/alacritty /usr/bin/xterm`) or you can simply install one of the terminal emulators [known/supported](https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2694) by `gio`.
+Alternatively, you can create a symlink for your terminal emulator that points to `/usr/bin/xterm`, which is the fallback option for `gio` (for instance, with [alacritty](https://alacritty.org): `sudo ln -s /usr/bin/alacritty /usr/bin/xterm`) or you can simply install one of the terminal emulators [supported](https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2701) by `gio`.
 
 ## Contributing
 
