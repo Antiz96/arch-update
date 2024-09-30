@@ -18,14 +18,14 @@
 
 ## Description
 
-Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour et qui inclut une applet systray cliquable pour une intégration facile avec n'importe quel panneau sur n'importe quel environnements de bureau / gestionnaire de fenêtres.  
+Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour et qui inclut une applet systray cliquable pour une intégration facile avec n'importe quel panneau sur n'importe quel environnement de bureau / gestionnaire de fenêtres.  
 Prise en charge optionnelle des paquets AUR / Flatpak et des notifications de bureau.
 
 Arch-Update est conçu pour suivre les étapes usuelles de maintenance du système, telles que décrites dans le [Arch Wiki](https://wiki.archlinux.org/title/System_maintenance).
 
 Fonctionnalités :
 
-- Inclut une applet systray cliquable qui change dynamiquement pour agir comme un notificateur & applicateur de mise à jour. Facile à intégrer avec n'importe quel panneau sur n'importe quel environnements de bureau & gestionnaire de fenêtres.
+- Inclut une applet systray cliquable qui change dynamiquement pour agir comme un notificateur & applicateur de mise à jour. Facile à intégrer avec n'importe quel panneau sur n'importe quel environnement de bureau & gestionnaire de fenêtres.
 - Vérification et listing automatiques de tous les paquets disponibles pour la mise à jour.
 - Propose d'afficher les news récentes d'Arch Linux avant d'appliquer les mises à jour.
 - Vérification et listing automatiques des paquets orphelins et propose de les supprimer.
@@ -218,7 +218,7 @@ d'activer, désactiver ou modifier certaines options dans le script.
 
 Ce fichier de configuration doit se trouver dans "${XDG_CONFIG_HOME}/arch-update/arch-update.conf"
 ou "${HOME}/.config/arch-update/arch-update.conf".
-Un fichier de configuration par défauti / exemple peut être généré en exécutant : `arch-update --gen-config`
+Un fichier de configuration par défaut / exemple peut être généré en exécutant : `arch-update --gen-config`
 
 Les options prises en charge sont :
 
