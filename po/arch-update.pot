@@ -68,7 +68,7 @@ msgstr ""
 #: src/lib/common.sh:158
 #, sh-format
 msgid ""
-"The ${diff_prog} editor set for visualizing/editing differences of pacnew "
+"The ${diff_prog} editor set for visualizing / editing differences of pacnew "
 "files in the arch-update.conf configuration file is not found\\n"
 msgstr ""
 
@@ -106,8 +106,8 @@ msgstr ""
 #: src/lib/help.sh:8
 #, sh-format
 msgid ""
-"An update notifier/applier for Arch Linux that assists you with important "
-"pre/post update tasks."
+"An update notifier & applier for Arch Linux that assists you with important "
+"pre / post update tasks."
 msgstr ""
 
 #: src/lib/help.sh:10
@@ -132,9 +132,9 @@ msgstr ""
 #: src/lib/help.sh:13
 #, sh-format
 msgid ""
-"Post update, it checks for orphan/unused packages, old cached packages, "
-"pacnew/pacsave files, pending kernel update as well as services requiring a "
-"post upgrade restart and, if there are, offers to process them."
+"Post update, it checks for orphan & unused packages, old cached packages, "
+"pacnew & pacsave files, pending kernel update as well as services requiring "
+"a post upgrade restart and, if there are, offers to process them."
 msgstr ""
 
 #: src/lib/help.sh:15
@@ -175,7 +175,7 @@ msgstr ""
 #: src/lib/help.sh:21
 #, sh-format
 msgid ""
-"  --gen-config      Generate a default/example 'arch-update.conf' "
+"  --gen-config      Generate a default / example 'arch-update.conf' "
 "configuration file, you can optionally pass the '--force' argument to "
 "overwrite any existing 'arch-update.conf' configuration file"
 msgstr ""
@@ -219,7 +219,7 @@ msgstr ""
 #: src/lib/help.sh:29
 #, sh-format
 msgid ""
-"Certain options can be enabled/disabled or modified via the ${name}.conf "
+"Certain options can be enabled, disabled or modified via the ${name}.conf "
 "configuration file, see the ${name}.conf(5) man page."
 msgstr ""
 
