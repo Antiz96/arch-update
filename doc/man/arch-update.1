@@ -94,7 +94,15 @@ Display the help message.
 .SH USAGE
 .TP
 .B The systray applet
-.RB "To start the systray applet automatically at boot, add the " "arch-update --tray " "command to your auto-start commands/WM config or start/enable the associated systemd service like so: " "systemctl \-\-user enable \-\-now arch-update-tray.service"
+.RB "To start the systray applet, launch the " "Arch-Update Systray Applet " "application from your app menu."
+.br
+To start it automatically at boot, you can either:
+.br
+.RB "- Run the following command (preferred method for most Desktop Environments, uses XDG Autostart): " "arch-update \-\-tray \-\-enable"
+.br
+.RB "- Enable the associated systemd service (in case your Desktop Environment doesn't support XDG Autostart): " "systemctl \-\-user enable \-\-now arch-update-tray.service"
+.br
+.RB "If you use a Window Manager or a Wayland Compositor, you can add the " "arch-update \-\-tray " "command to your configuration file instead."
 .br
 .RB "The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). When clicked, it launches " "arch-update " "via the " "arch-update.desktop " file.
 
@@ -119,7 +127,7 @@ Display the help message.
 
 .TP
 .B The systemd timer
-.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "(or in " "/etc/systemd/user/arch-update.service " "if you installed arch-update from source) that executes the " "\-\-check " "function when launched. To launch it automatically " "at boot and then once every hour " "enable the associated systemd timer (the auto-check cycle can be modified to your liking. See the TIPS AND TRICKS chapter below):"
+.RB "There is a systemd service in " "/usr/lib/systemd/user/arch-update.service " "(or in " "/etc/systemd/user/arch-update.service " "if you installed arch-update from source) that executes the " "\-\-check " "function when launched. To start it automatically " "at boot and then once every hour " "enable the associated systemd timer (the auto-check cycle can be modified to your liking. See the TIPS AND TRICKS chapter below):"
 .br
 .B systemctl \-\-user enable \-\-now arch-update.timer
 
