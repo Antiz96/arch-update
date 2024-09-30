@@ -15,8 +15,8 @@ install:
 	install -Dm 755 src/lib/* -t "${DESTDIR}${PREFIX}/share/${pkgname}/lib/"
 
 	# Install icons
-	install -Dm 664 src/icons/"${pkgname}"*.svg -t "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/"
-	install -Dm 664 src/icons/"${pkgname}"_updates-available*.svg -t "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/"
+	install -Dm 664 res/icons/"${pkgname}"*.svg -t "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/"
+	install -Dm 664 res/icons/"${pkgname}"_updates-available*.svg -t "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/"
 
 	# Install .desktop files
 	install -Dm 644 "res/desktop/${pkgname}.desktop" "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
