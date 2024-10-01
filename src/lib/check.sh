@@ -14,6 +14,10 @@ else
 	update_available=$(checkupdates)
 fi
 
+if [ -z "${no_version}" ]; then
+	update_available=$(echo "${update_available}" | awk '{print $1}')
+fi
+
 if [ -n "${notif}" ]; then
 	# shellcheck disable=SC2154
 	echo "${update_available}" > "${statedir}/current_updates_check"
