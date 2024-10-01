@@ -141,7 +141,7 @@ With [the system timer](#the-systemd-timer) enabled, `Arch-Update` automatically
 
 ![check_for_updates](https://github.com/user-attachments/assets/fc1e1dc4-9b42-4560-beeb-7cb44186364d)
 
-If there are new available updates, the systray icon will show a red circle. You can then see the list of available updates by hovering your mose over the icon:
+If there are new available updates, the systray icon will show a red circle. You can then see the list of available updates by hovering your mouse over the icon:
 
 ![tooltip](https://github.com/user-attachments/assets/59237e42-b989-4222-9be7-1d6a88eef790)
 
