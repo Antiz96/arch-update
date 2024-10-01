@@ -100,7 +100,7 @@ class ArchUpdateQt6:
 
     def check(self):
         """ Check for updates """
-        subprocess.run(["arch-update", "--check"])
+        subprocess.run(["arch-update", "--check"], check=False)
 
     def exit(self):
         """ Close systray process """
