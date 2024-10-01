@@ -10,6 +10,7 @@ import logging
 import os
 import sys
 import subprocess
+import re
 from PyQt6.QtGui import QIcon, QAction
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QFileSystemWatcher
@@ -26,8 +27,19 @@ elif 'HOME' in os.environ:
     ICON_FILE = os.path.join(
         os.environ['HOME'], '.local', 'state', 'arch-update', 'tray_icon')
 if not os.path.isfile(ICON_FILE):
-    log.error("Statefile does not exist: %s", ICON_FILE)
+    log.error("State icon file does not exist: %s", ICON_FILE)
     sys.exit(1)
+
+# Find Updates file
+UPDATES_FILE = None
+if 'XDG_STATE_HOME' in os.environ:
+    UPDATES_FILE = os.path.join(
+        os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check')
+elif 'HOME' in os.environ:
+    UPDATES_FILE = os.path.join(
+        os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check')
+if not os.path.isfile(UPDATES_FILE):
+    log.error("State updates file does not exist: %s", UPDATES_FILE)
 
 # Find translations
 paths = []
@@ -79,20 +91,66 @@ class ArchUpdateQt6:
     """ System Tray using QT6 library """
 
     def file_changed(self):
-        """ Called when icon file content changes """
+        """ Update icon and tooltip on state file content changes """
+        self.update_icon()
+        self.update_tooltip()
 
-        contents = ""
+    def update_icon(self):
+        """ Update the tray icon based on the icon state file content """
         if self.watcher and not self.iconfile in self.watcher.files():
             self.watcher.addPath(self.iconfile)
+
         try:
             with open(self.iconfile, encoding="utf-8") as f:
                 contents = f.readline().strip()
         except FileNotFoundError:
             log.error("Statefile Missing")
             sys.exit(1)
+
         if contents.startswith("arch-update"):
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
+
+    def update_tooltip(self):
+        """ Update the tooltip with the number / list of pending updates """
+        if self.watcher and not self.updatesfile in self.watcher.files():
+            self.watcher.addPath(self.updatesfile)
+
+        try:
+            with open(self.updatesfile, encoding="utf-8") as f:
+                updates_list = f.readlines()
+        except FileNotFoundError:
+            log.error("State updates file missing")
+            tooltip = _("Arch-Update: 'updates' state file isn't found")
+            self.tray.setToolTip(tooltip)
+            return
+
+        # Define a regex pattern to match ANSI escape / color codes
+        ansi_escape_pattern = re.compile(r'\x1B\[[0-?9;]*[mK]')
+
+        # Remove ANSI escape / color codes and any empty lines, then strip whitespaces
+        updates_list = [
+            ansi_escape_pattern.sub('', update).strip()
+            for update in updates_list
+            if update.strip()
+        ]
+
+        updates_count = len(updates_list)
+
+        if updates_count == 0:
+            tooltip = _("Arch-Update: System is up to date")
+        elif updates_count == 1:
+            update_list = "".join(updates_list)
+            tooltip = _("Arch-Update: 1 update available\n\n{update_list}").format(
+                update_list=update_list
+            )
+        else:
+            update_list = "\n".join(updates_list)
+            tooltip = _("Arch-Update: {updates} updates available\n\n{update_list}").format(
+                updates=updates_count, update_list=update_list
+            )
+
+        self.tray.setToolTip(tooltip)
 
     def run(self):
         """ Start arch-update """
@@ -110,6 +168,7 @@ class ArchUpdateQt6:
         """ Start Qt6 System Tray """
 
         self.iconfile = iconfile
+        self.updatesfile = UPDATES_FILE
         self.watcher = None
 
         # Application
@@ -138,7 +197,7 @@ class ArchUpdateQt6:
         self.tray.setContextMenu(menu)
 
         # File Watcher
-        self.watcher = QFileSystemWatcher([self.iconfile])
+        self.watcher = QFileSystemWatcher([self.iconfile, self.updatesfile])
         self.watcher.fileChanged.connect(self.file_changed)
 
         app.exec()
