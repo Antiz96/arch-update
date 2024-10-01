@@ -137,7 +137,7 @@ C'est l'icône à droite de celle du wifi dans la capture d'écran ci-dessous:
 
 ![systray-icon](https://github.com/Antiz96/arch-update/assets/53110319/fe032e68-3582-470a-9e6d-b51a9ea8c1ba)
 
-Avec [le systemd timer](#le-timer-systemd) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check` ou en faisant un clic droit sur l'applet systray puis en cliquant sur l'entrée "Vérifier les mises à jour" depuis le menu :
+Avec [le systemd timer](#le-timer-systemd) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check` ou en faisant un clic droit sur l'applet systray puis en cliquant sur l'entrée `Vérifier les mises à jour` depuis le menu :
 
 ![check_menu_fr](https://github.com/user-attachments/assets/e16a3fc1-bce6-4509-8aeb-a85784354783)
 
@@ -147,7 +147,7 @@ Si de nouvelles mises à jour sont disponibles, l'icône systray affichera un ce
 
 De plus, une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée s'il y a de nouvelles mises à jour depuis le dernier check (nécessite [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") et un serveur de notification en cours d'exécution) :
 
-![check_menu_fr](https://github.com/user-attachments/assets/e16a3fc1-bce6-4509-8aeb-a85784354783)
+![notif_fr](https://github.com/user-attachments/assets/16090810-157d-466b-86d4-70b5ed8091b5)
 
 Quand l'applet systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal et demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
 
