@@ -658,11 +658,15 @@ msgstr ""
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "Aucun service nécessitant un redémarrage suite à la mise à jour n'a été trouvé\\n"
 
-#: src/lib/tray.py:123
+#: src/lib/tray.py:127
 msgid "Run Arch-Update"
 msgstr "Lancer Arch-Update"
 
-#: src/lib/tray.py:124
+#: src/lib/tray.py:128
+msgid "Check for updates"
+msgstr "Vérifier les mises à jour"
+
+#: src/lib/tray.py:129
 msgid "Exit"
 msgstr "Quitter"
 
