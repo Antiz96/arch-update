@@ -14,7 +14,7 @@ else
 	update_available=$(checkupdates)
 fi
 
-if [ -z "${no_version}" ]; then
+if [ -n "${no_version}" ]; then
 	update_available=$(echo "${update_available}" | awk '{print $1}')
 fi
 
