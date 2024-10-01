@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.2.0](https://github.com/Antiz96/arch-update/releases/tag/v3.2.0) - 2024-10-01
+
+### Features
+
+- Show the number and the list of pending updates in systray's tooltip ([#257](https://github.com/Antiz96/arch-update/pull/257)) - ([c4d8015](https://github.com/Antiz96/arch-update/commit/c4d80155f302595a9fa9f21e14eb704d53f12955)) by @Antiz96
+- Add a right click menu entry to trigger a check for updates in the systray applet ([#258](https://github.com/Antiz96/arch-update/pull/258)) - ([0f89ad2](https://github.com/Antiz96/arch-update/commit/0f89ad2600750a915878fc3fba01c5e28cc511d5)) by @Antiz96
+
+### Documentation
+
+- Update screenshots with the new systray applet features in READMEs ([#259](https://github.com/Antiz96/arch-update/pull/259)) - ([6f793a4](https://github.com/Antiz96/arch-update/commit/6f793a48aca4c95f9e1fe0e39f1bae285a6ec4f2)) by @Antiz96
+- Update man pages about how to start the systray applet at boot ([#256](https://github.com/Antiz96/arch-update/pull/256)) - ([33f8bf1](https://github.com/Antiz96/arch-update/commit/33f8bf1e6f236766eede638fc669f8104ce6c47d)) by @Antiz96
+
+### Styling
+
+- Improve style in documentation, scripts and resources ([#255](https://github.com/Antiz96/arch-update/pull/255)) - ([d598a7a](https://github.com/Antiz96/arch-update/commit/d598a7ad14efa68b12ee1e1ae8370c043969b241)) by @Antiz96
+
+### Miscellaneous
+
+- *(icons)* Move icons from the `src` to the `res` directory ([#254](https://github.com/Antiz96/arch-update/pull/254)) - ([6495b29](https://github.com/Antiz96/arch-update/commit/6495b29ce52646e466e793220aed9a6684a19ef7)) by @Antiz96
+
 ## [v3.1.1](https://github.com/Antiz96/arch-update/releases/tag/v3.1.1) - 2024-09-26
 
 ### Fixes
