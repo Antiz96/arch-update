@@ -137,11 +137,17 @@ C'est l'icône à droite de celle du wifi dans la capture d'écran ci-dessous:
 
 ![systray-icon](https://github.com/Antiz96/arch-update/assets/53110319/fe032e68-3582-470a-9e6d-b51a9ea8c1ba)
 
-Avec [le systemd timer](#le-timer-systemd) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check`.
+Avec [le systemd timer](#le-timer-systemd) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check` ou en faisant un clic droit sur l'applet systray puis en cliquant sur l'entrée "Vérifier les mises à jour" depuis le menu :
 
-Si de nouvelles mises à jour sont disponibles, l'icône systray affichera un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée s'il y a de nouvelles mises à jour depuis le dernier check (nécessite [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") et un serveur de notification en cours d'exécution) :
+![check_menu_fr](https://github.com/user-attachments/assets/e16a3fc1-bce6-4509-8aeb-a85784354783)
 
-![notification-FR](https://github.com/Antiz96/arch-update/assets/53110319/28f0b95a-5b8a-43a5-bc3c-df42cd40d87b)
+Si de nouvelles mises à jour sont disponibles, l'icône systray affichera un cercle rouge. Vous pouvez alors voir la liste des mises à jour disponibles en passant votre souris sur l'icône de l'applet systray :
+
+![tooltip_fr](https://github.com/user-attachments/assets/ccad758a-bf3a-4e1d-aa9c-17470488f761)
+
+De plus, une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée s'il y a de nouvelles mises à jour depuis le dernier check (nécessite [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") et un serveur de notification en cours d'exécution) :
+
+![check_menu_fr](https://github.com/user-attachments/assets/e16a3fc1-bce6-4509-8aeb-a85784354783)
 
 Quand l'applet systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal et demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
 
