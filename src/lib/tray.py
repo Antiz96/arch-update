@@ -98,6 +98,10 @@ class ArchUpdateQt6:
         """ Start arch-update """
         arch_update()
 
+    def check(self):
+        """ Check for updates """
+        subprocess.run(["arch-update", "--check"], check=False)
+
     def exit(self):
         """ Close systray process """
         sys.exit(0)
@@ -121,11 +125,14 @@ class ArchUpdateQt6:
         # Menu
         menu = QMenu()
         menu_launch = QAction(_("Run Arch-Update"))
+        menu_check = QAction(_("Check for updates"))
         menu_exit = QAction(_("Exit"))
         menu.addAction(menu_launch)
+        menu.addAction(menu_check)
         menu.addAction(menu_exit)
 
         menu_launch.triggered.connect(self.run)
+        menu_check.triggered.connect(self.check)
         menu_exit.triggered.connect(self.exit)
 
         self.tray.setContextMenu(menu)
