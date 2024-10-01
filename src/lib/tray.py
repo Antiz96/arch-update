@@ -128,6 +128,7 @@ class ArchUpdateQt6:
         menu_check = QAction(_("Check for updates"))
         menu_exit = QAction(_("Exit"))
         menu.addAction(menu_launch)
+        menu.addAction(menu_check)
         menu.addAction(menu_exit)
 
         menu_launch.triggered.connect(self.run)
