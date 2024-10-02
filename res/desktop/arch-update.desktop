@@ -1,7 +1,9 @@
 [Desktop Entry]
+Name=Arch-Update
+Comment[fr]=Un notificateur & applicateur de mises à jour pour Arch Linux
+Comment=An update notifier & applier for Arch Linux
+Icon=arch-update-light
 Type=Application
 Terminal=true
-Name=Arch-Update
-Icon=arch-update-light
 Exec=arch-update
 Categories=Utility
