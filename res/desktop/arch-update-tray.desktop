@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Arch-Update Systray Applet
-Icon=arch-update_updates-available
+Icon=arch-update_updates-available-light
 Exec=arch-update --tray
 Categories=Utility
