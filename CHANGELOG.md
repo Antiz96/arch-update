@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.2.1](https://github.com/Antiz96/arch-update/releases/tag/v3.2.1) - 2024-10-02
+
+### Features
+
+- Add a description to desktop files ([#264](https://github.com/Antiz96/arch-update/pull/264)) - ([0f23547](https://github.com/Antiz96/arch-update/commit/0f235471d57790037a284741f1c3a7378861b199)) by @Antiz96
+
+### Fixes
+
+- Fix icons name in desktop files ([#263](https://github.com/Antiz96/arch-update/pull/263)) - ([da1db14](https://github.com/Antiz96/arch-update/commit/da1db14ecdc23a41807a37db9d8ba4c2a628c0f5)) by @Antiz96
+
 ## [v3.2.0](https://github.com/Antiz96/arch-update/releases/tag/v3.2.0) - 2024-10-01
 
 ### Features
