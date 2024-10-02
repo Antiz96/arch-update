@@ -2,6 +2,6 @@
 Type=Application
 Terminal=true
 Name=Arch-Update
-Icon=arch-update
+Icon=arch-update-light
 Exec=arch-update
 Categories=Utility
