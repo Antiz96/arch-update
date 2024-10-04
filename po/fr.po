@@ -664,7 +664,7 @@ msgstr "Arch-Update : fichier d'état 'updates' non trouvé"
 
 #: src/lib/tray.py:141
 msgid "Arch-Update: System is up to date"
-msgstr "Arch-Update : Le système à jour"
+msgstr "Arch-Update : Le système est à jour"
 
 #: src/lib/tray.py:144
 #, python-brace-format
