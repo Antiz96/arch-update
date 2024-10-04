@@ -28,6 +28,7 @@ if [ -n "${flatpak}" ]; then
 	flatpak_packages=$(flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 fi
 
+# shellcheck disable=SC2154
 true > "${statedir}/last_updates_check"
 
 if [ -n "${packages}" ]; then
