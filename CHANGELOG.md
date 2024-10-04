@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.2.2](https://github.com/Antiz96/arch-update/releases/tag/v3.2.2) - 2024-10-04
+
+### Fixes
+
+- Fix french translation in the systray applet toolip ([#266](https://github.com/Antiz96/arch-update/pull/266)) - ([3dd3681](https://github.com/Antiz96/arch-update/commit/3dd36818305ea28957df449fbcf52d8eb65c1eb4)) by @Delor3an91
+
 ## [v3.2.1](https://github.com/Antiz96/arch-update/releases/tag/v3.2.1) - 2024-10-02
 
 ### Features
