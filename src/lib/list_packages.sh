@@ -28,20 +28,28 @@ if [ -n "${flatpak}" ]; then
 	flatpak_packages=$(flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 fi
 
+# shellcheck disable=SC2154
+true > "${statedir}/last_updates_check"
+
 if [ -n "${packages}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
 	echo -e "${packages}\n"
+	echo "${packages}" >> "${statedir}/last_updates_check"
 fi
 
 if [ -n "${aur_packages}" ]; then
 	main_msg "$(eval_gettext "AUR Packages:")"
 	echo -e "${aur_packages}\n"
+	echo "${aur_packages}" >> "${statedir}/last_updates_check"
 fi
 
 if [ -n "${flatpak_packages}" ]; then
 	main_msg "$(eval_gettext "Flatpak Packages:")"
 	echo -e "${flatpak_packages}\n"
+	echo "${flatpak_packages}" >> "${statedir}/last_updates_check"
 fi
+
+sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/last_updates_check"
 
 if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
 	icon_up-to-date
