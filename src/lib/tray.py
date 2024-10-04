@@ -124,6 +124,13 @@ class ArchUpdateQt6:
             self.tray.setToolTip(tooltip)
             return
 
+        # Remove empty lines
+        updates_list = [
+            update.strip()
+            for update in updates_list
+            if update.strip()
+        ]
+
         updates_count = len(updates_list)
 
         if updates_count == 0:
