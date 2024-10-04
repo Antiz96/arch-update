@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.2.3](https://github.com/Antiz96/arch-update/releases/tag/v3.2.3) - 2024-10-05
+
+### Fixes
+
+- Update the "updates" state file on package listing ([#268](https://github.com/Antiz96/arch-update/pull/268)) - ([a1686d9](https://github.com/Antiz96/arch-update/commit/a1686d9e29f878e58b81343abfd0ead5de8068d4)) by @Antiz96
+
 ## [v3.2.2](https://github.com/Antiz96/arch-update/releases/tag/v3.2.2) - 2024-10-04
 
 ### Fixes
