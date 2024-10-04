@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:38 src/lib/check.sh:41
+#: src/lib/check.sh:39 src/lib/check.sh:42
 #, sh-format
 msgid "${update_number} update available"
 msgstr "${update_number} mise à jour disponible"
 
-#: src/lib/check.sh:46 src/lib/check.sh:48
+#: src/lib/check.sh:47 src/lib/check.sh:49
 #, sh-format
 msgid "${update_number} updates available"
 msgstr "${update_number} mises à jour disponibles"
@@ -283,14 +283,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Voulez-vous redémarrer votre système maintenant ? [o/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:60
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:68
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "O"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:60
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:68
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -410,32 +410,32 @@ msgstr "URL :"
 msgid "Looking for updates...\\n"
 msgstr "Recherche de mises à jour...\\n"
 
-#: src/lib/list_packages.sh:32
+#: src/lib/list_packages.sh:35
 #, sh-format
 msgid "Packages:"
 msgstr "Paquets :"
 
-#: src/lib/list_packages.sh:37
+#: src/lib/list_packages.sh:41
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Paquets AUR :"
 
-#: src/lib/list_packages.sh:42
+#: src/lib/list_packages.sh:47
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Paquets Flatpak :"
 
-#: src/lib/list_packages.sh:48
+#: src/lib/list_packages.sh:56
 #, sh-format
 msgid "No update available\\n"
 msgstr "Aucune mise à jour disponible\\n"
 
-#: src/lib/list_packages.sh:56
+#: src/lib/list_packages.sh:64
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Procéder à la mise à jour ? [O/n]"
 
-#: src/lib/list_packages.sh:66
+#: src/lib/list_packages.sh:74
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "La mise à jour a été abandonnée\\n"
@@ -658,15 +658,15 @@ msgstr ""
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "Aucun service nécessitant un redémarrage suite à la mise à jour n'a été trouvé\\n"
 
-#: src/lib/tray.py:124
+#: src/lib/tray.py:123
 msgid "Arch-Update: 'updates' state file isn't found"
 msgstr "Arch-Update : fichier d'état 'updates' non trouvé"
 
-#: src/lib/tray.py:141
+#: src/lib/tray.py:137
 msgid "Arch-Update: System is up to date"
 msgstr "Arch-Update : Le système est à jour"
 
-#: src/lib/tray.py:144
+#: src/lib/tray.py:140
 #, python-brace-format
 msgid ""
 "Arch-Update: 1 update available\n"
@@ -677,7 +677,7 @@ msgstr ""
 "\n"
 "{update_list}"
 
-#: src/lib/tray.py:149
+#: src/lib/tray.py:145
 #, python-brace-format
 msgid ""
 "Arch-Update: {updates} updates available\n"
@@ -688,15 +688,15 @@ msgstr ""
 "\n"
 "{update_list}"
 
-#: src/lib/tray.py:186
+#: src/lib/tray.py:182
 msgid "Run Arch-Update"
 msgstr "Lancer Arch-Update"
 
-#: src/lib/tray.py:187
+#: src/lib/tray.py:183
 msgid "Check for updates"
 msgstr "Vérifier les mises à jour"
 
-#: src/lib/tray.py:188
+#: src/lib/tray.py:184
 msgid "Exit"
 msgstr "Quitter"
 
