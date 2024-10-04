@@ -49,6 +49,8 @@ if [ -n "${flatpak_packages}" ]; then
 	echo "${flatpak_packages}" >> "${statedir}/last_updates_check"
 fi
 
+sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/last_updates_check"
+
 if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
 	icon_up-to-date
 	info_msg "$(eval_gettext "No update available\n")"

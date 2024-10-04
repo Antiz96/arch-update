@@ -22,6 +22,7 @@ if [ -n "${notif}" ]; then
 	# shellcheck disable=SC2154
 	echo "${update_available}" > "${statedir}/current_updates_check"
 	sed -i '/^\s*$/d' "${statedir}/current_updates_check"
+	sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/current_updates_check"
 fi
 
 if [ -n "${update_available}" ]; then
@@ -57,5 +58,3 @@ fi
 if [ -f "${statedir}/current_updates_check" ]; then
 	mv -f "${statedir}/current_updates_check" "${statedir}/last_updates_check"
 fi
-
-
