@@ -10,7 +10,6 @@ import logging
 import os
 import sys
 import subprocess
-import re
 from PyQt6.QtGui import QIcon, QAction
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QFileSystemWatcher
@@ -125,12 +124,9 @@ class ArchUpdateQt6:
             self.tray.setToolTip(tooltip)
             return
 
-        # Define a regex pattern to match ANSI escape / color codes
-        ansi_escape_pattern = re.compile(r'\x1B\[[0-?9;]*[mK]')
-
-        # Remove ANSI escape / color codes and any empty lines, then strip whitespaces
+        # Remove empty lines
         updates_list = [
-            ansi_escape_pattern.sub('', update).strip()
+            update.strip()
             for update in updates_list
             if update.strip()
         ]
