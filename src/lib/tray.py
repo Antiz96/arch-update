@@ -125,16 +125,6 @@ class ArchUpdateQt6:
             self.tray.setToolTip(tooltip)
             return
 
-        # Define a regex pattern to match ANSI escape / color codes
-        ansi_escape_pattern = re.compile(r'\x1B\[[0-?9;]*[mK]')
-
-        # Remove ANSI escape / color codes and any empty lines, then strip whitespaces
-        updates_list = [
-            ansi_escape_pattern.sub('', update).strip()
-            for update in updates_list
-            if update.strip()
-        ]
-
         updates_count = len(updates_list)
 
         if updates_count == 0:
