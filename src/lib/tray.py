@@ -10,7 +10,6 @@ import logging
 import os
 import sys
 import subprocess
-import re
 from PyQt6.QtGui import QIcon, QAction
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QFileSystemWatcher
