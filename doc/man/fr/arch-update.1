@@ -162,16 +162,16 @@ Voir https://wiki.archlinux.org/title/Desktop_notifications
 .RB "Si l'applet systray ne démarre pas malgré tout, cela peut être le résultat d'une " "situation de compétition".
 .RB "Dans ce cas, il peut être utile de légèrement retarder le démarrage de l'applet systray en utilisant une déclaration " "sleep " "au préalable:"
 
-.RB \- "Si vous avez utilisé " "arch-update --tray --enable" ", modifiez la ligne " "Exec= " "dans le fichier " "arch-update-tray.desktop " "(qui se trouve sous " "~/.config/autostart/ " "par défaut), comme ceci :"
+.RB "\- Si vous avez utilisé " "arch-update --tray --enable" ", modifiez la ligne " "Exec= " "dans le fichier " "arch-update-tray.desktop " "(qui se trouve sous " "~/.config/autostart/ " "par défaut), comme ceci :"
 .br
 Exec=sh -c "sleep 3 && arch-update --tray"
 
-.RB \- "Si vous avez utilisé le service systemd " "arch-update-tray.service" ", exécutez " "systemctl --user edit --full arch-update-tray.service " "et modifiez la ligne " "ExecStart=" ", comme ceci :"
+.RB "\- Si vous avez utilisé le service systemd " "arch-update-tray.service" ", exécutez " "systemctl --user edit --full arch-update-tray.service " "et modifiez la ligne " "ExecStart=" ", comme ceci :"
 .br
 ExecStart=sh -c "sleep 3 && arch-update --tray"
 
-.RB \- "Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, ajoutez une déclaration " "sleep " "avant la commande " "arch-update --tray " "à vos applications auto-start dans votre fichier de configuration, comme ceci :"
-
+.RB "\- Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, ajoutez une déclaration " "sleep " "avant la commande " "arch-update --tray " "à vos applications auto-start dans votre fichier de configuration, comme ceci :"
+.br
 "sleep 3 && arch-update --tray"
 
 .RB "Si l'applet systray ne démarre toujours au démarrage du système, essayez de graduellement augmenter la valeur du " "sleep".

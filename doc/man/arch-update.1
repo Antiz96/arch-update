@@ -161,15 +161,15 @@ See https://wiki.archlinux.org/title/Desktop_notifications
 .RB "If the systray applet doesn't start regardless, this could be the result of a " "race condition".
 .RB "In such case, it might be useful to slightly delay the startup of the systray applet by using a " "sleep " "statement beforehand:"
 
-.RB \- "If you used " "arch-update --tray --enable" ", modify the " "Exec= " "line in the " "arch-update-tray.desktop " "file (which is under " "~/.config/autostart/ " "by default), like so::"
+.RB "\- If you used " "arch-update --tray --enable" ", modify the " "Exec= " "line in the " "arch-update-tray.desktop " "file (which is under " "~/.config/autostart/ " "by default), like so::"
 .br
 Exec=sh -c "sleep 3 && arch-update --tray"
 
-.RB \- "If you used the " "arch-update-tray.service " "systemd service, run " "systemctl --user edit --full arch-update-tray.service " "and modify the " "ExecStart= " "line, like so:"
+.RB "\- If you used the " "arch-update-tray.service " "systemd service, run " "systemctl --user edit --full arch-update-tray.service " "and modify the " "ExecStart= " "line, like so:"
 .br
 ExecStart=sh -c "sleep 3 && arch-update --tray"
 
-.RB \- "If you're using a standalone Window Manager or a Wayland Compositor, add a " "sleep " "statement before the " "arch-update --tray " "command in your auto-start apps in your configuration file, like so:"
+.RB "\- If you're using a standalone Window Manager or a Wayland Compositor, add a " "sleep " "statement before the " "arch-update --tray " "command in your auto-start apps in your configuration file, like so:"
 .br
 sleep 3 && arch-update --tray
 
