@@ -673,7 +673,7 @@ msgid ""
 "\n"
 "{update_list}"
 msgstr ""
-"Arch-Update : 1 mise à jour disponible\n"
+"1 mise à jour disponible\n"
 "\n"
 "{update_list}"
 
