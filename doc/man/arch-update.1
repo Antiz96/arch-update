@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "September 2024" "Arch-Update 3.2.3" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "October 2024" "Arch-Update 3.2.3" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- An update notifier & applier for Arch Linux that assists you with important pre / post update tasks.
@@ -78,7 +78,7 @@ Start the Arch-Update systray applet.
 .br
 .RB "To start it automatically at boot, you can either run the " "arch-update --tray --enable " "command (preferred method for most Desktop Environments, uses XDG Autostart) or enable the associated systemd service (in case your Desktop Environment doesn't support XDG Autostart) by running " "systemctl \-\-user enable \-\-now arch-update-tray.service".
 .br
-.RB "If you use a window manager or a Wayland compositor, you can add the " "arch-update --tray " "command to your configuration file instead."
+.RB "If you use a window manager or a Wayland compositor, you can add the " "arch-update --tray " "command to your auto-start apps in your configuration file instead."
 
 .TP
 .B \-v, \-\-version
@@ -102,7 +102,9 @@ To start it automatically at boot, you can either:
 .br
 .RB "- Enable the associated systemd service (in case your Desktop Environment doesn't support XDG Autostart): " "systemctl \-\-user enable \-\-now arch-update-tray.service"
 
-.RB "If you use a Window Manager or a Wayland Compositor, you can add the " "arch-update \-\-tray " "command to your configuration file instead."
+.RB "If you use a Window Manager or a Wayland Compositor, you can add the " "arch-update \-\-tray " "command to your auto-start apps in your configuration file instead."
+
+.BR "If the systray applet doesn't start at boot regardless" ", please read the " "'The systray applet does not start at boot' " "chapter in the " "Tips and Tricks " "section below."
 
 .RB "The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). When clicked, it launches " "arch-update " "via the " "arch-update.desktop " file.
 
@@ -151,6 +153,27 @@ See https://www.flatpak.org/ and https://archlinux.org/packages/extra/x86_64/fla
 .RB "Arch-Update supports desktop notifications when performing the " "--check " "function if " "libnotify (notify-send) " "is installed."
 .br
 See https://wiki.archlinux.org/title/Desktop_notifications
+
+.TP
+.B The systray applet does not start at boot
+.RB "Make sure you followed instructions of the " "'The systray applet' " "chapter in the " "Usage " "section above."
+
+.RB "If the systray applet doesn't start regardless, this could be the result of a " "race condition".
+.RB "In such case, it might be useful to slightly delay the startup of the systray applet by using a " "sleep " "statement beforehand:"
+
+.RB "\- If you used " "arch-update --tray --enable" ", modify the " "Exec= " "line in the " "arch-update-tray.desktop " "file (which is under " "~/.config/autostart/ " "by default), like so:"
+.br
+Exec=sh -c "sleep 3 && arch-update --tray"
+
+.RB "\- If you used the " "arch-update-tray.service " "systemd service, run " "systemctl --user edit --full arch-update-tray.service " "and modify the " "ExecStart= " "line, like so:"
+.br
+ExecStart=sh -c "sleep 3 && arch-update --tray"
+
+.RB "\- If you're using a standalone Window Manager or a Wayland Compositor, add a " "sleep " "statement before the " "arch-update --tray " "command in your auto-start apps in your configuration file, like so:"
+.br
+sleep 3 && arch-update --tray
+
+.RB "If the systray applet still does not start at boot, try to gradually increase the value of the " "sleep".
 
 .TP
 .B Modify the auto-check cycle

@@ -104,7 +104,9 @@ arch-update --tray --enable
 systemctl --user enable --now arch-update-tray.service
 ```
 
-Si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vôtre fichier de configuration.
+Si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vos applications "auto-start" dans votre fichier de configuration.
+
+**Si l'applet systray ne démarre pas au démarrage du système malgré tout**, veuillez lire [ce chapitre](#lapplet-systray-ne-démarre-pas-au-démarrage-du-système).
 
 L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, elle lance `arch-update` via le fichier [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
 
@@ -261,6 +263,27 @@ Voir <https://www.flatpak.org/> et <https://archlinux.org/packages/extra/x86_64/
 
 Arch-Update prend en charge les notifications de bureau lors de l'exécution de la fonction `--check` si **libnotify** est installé (et qu'un serveur de notification est en cours d'exécution) :  
 Voir <https://wiki.archlinux.org/title/Desktop_notifications>
+
+### L'applet systray ne démarre pas au démarrage du système
+
+Assurez vous d'avoir suivi les instructions de [ce chapitre](#lapplet-systray).
+
+Si l'applet systray ne démarre pas malgré tout, cela peut être le résultat d'une [situation de compétition](https://fr.wikipedia.org/wiki/Situation_de_comp%C3%A9tition).  
+Dans ce cas, il peut être utile de légèrement retarder le démarrage de l'applet systray en utilisant une déclaration `sleep` au préalable :
+
+- Si vous avez utilisé `arch-update --tray --enable`, modifiez la ligne `Exec=` dans le fichier `arch-update-tray.desktop` (qui se trouve sous `~/.config/autostart/` par défaut), comme ceci :
+
+> Exec=sh -c "sleep 3 && arch-update --tray"
+
+- Si vous avez utilisé le service systemd `arch-update-tray.service`, exécutez `systemctl --user edit --full arch-update-tray.service` et modifiez la ligne `ExecStart=`, comme ceci :
+
+> ExecStart=sh -c "sleep 3 && arch-update --tray"
+
+- Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, ajoutez une déclaration `sleep` avant la commande `arch-update --tray` dans vos applications "auto-start" dans votre fichier de configuration, comme ceci :
+
+> `sleep 3 && arch-update --tray`
+
+Si l'applet systray ne démarre toujours au démarrage du système, essayez de graduellement augmenter la valeur du `sleep`.
 
 ### Modifier le cycle de vérification automatique
 
