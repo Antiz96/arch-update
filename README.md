@@ -271,7 +271,7 @@ Make sure you followed instructions of [this chapter](#the-systray-applet).
 If the systray applet doesn't start regardless, this could be the result of a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software).  
 In such case, it might be useful to slightly delay the startup of the systray applet by using a `sleep` statement beforehand:
 
-- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` (which is under `~/.config/autostart/` by default), like so:
+- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default), like so:
 
 > Exec=sh -c "sleep 3 && arch-update --tray"
 
