@@ -104,7 +104,9 @@ arch-update --tray --enable
 systemctl --user enable --now arch-update-tray.service
 ```
 
-If you use a Window Manager or a Wayland Compositor, you can add the `arch-update --tray` command to your configuration file instead.
+If you use a Window Manager or a Wayland Compositor, you can add the `arch-update --tray` command to your "auto-start" apps in your configuration file instead.
+
+**If the systray applet doesn't start at boot regardless**, please read [this chapter](#the-systray-applet-does-not-start-at-boot).
 
 The systray icon will automatically change depending on the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.
 
@@ -261,6 +263,27 @@ See <https://www.flatpak.org/> and <https://archlinux.org/packages/extra/x86_64/
 
 Arch-Update supports desktop notifications when performing the `--check` function if **libnotify** is installed (and a notification server is running):  
 See <https://wiki.archlinux.org/title/Desktop_notifications>
+
+### The systray applet does not start at boot
+
+Make sure you followed instructions of [this chapter](#the-systray-applet).
+
+If the systray applet doesn't start regardless, this could be the result of a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software).  
+In such case, it might be useful to slightly delay the startup of the systray applet by using a `sleep` statement beforehand:
+
+- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default), like so:
+
+> Exec=sh -c "sleep 3 && arch-update --tray"
+
+- If you used the `arch-update-tray.service` systemd service, run `systemctl --user edit --full arch-update-tray.service` and modify the `ExecStart=` line, like so:
+
+> ExecStart=sh -c "sleep 3 && arch-update --tray"
+
+- If you're using a standalone Window Manager or a Wayland Compositor, add a `sleep` statement before the `arch-update --tray` command in your "auto-start" apps in your configuration file, like so:
+
+> `sleep 3 && arch-update --tray`
+
+If the systray applet still does not start at boot, try to gradually increase the value of the `sleep`.
 
 ### Modify the auto-check cycle
 
