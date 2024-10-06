@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "Septembre 2024" "Arch-Update 3.2.3" "Manuel de Arch-Update"
+.TH "ARCH-UPDATE" "1" "Octobre 2024" "Arch-Update 3.2.3" "Manuel de Arch-Update"
 
 .SH NAME
 arch-update \- Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour.
@@ -78,7 +78,7 @@ Démarrer l'applet systray d'Arch-Update.
 .br
 .RB "Pour la démarrer automatiquement au démarrage du système, vous pouvez soit exécuter la commande " "arch-update --tray --enable " "(méthode recommandée pour la plupart des environnements de bureau, utilise XDG Autostart) ou vous pouvez activer le service systemd associé (dans le cas où vôtre environnement de bureau ne supporte pas XDG Autostart) en exécutant " "systemctl \-\-user enable \-\-now arch-update-tray.service".
 .br
-.RB "Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, vous pouvez plutôt ajouter la commande " "arch-update --tray " "à votre fichier de configuration."
+.RB "Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, vous pouvez plutôt ajouter la commande " "arch-update --tray " "à vos applications auto-start dans votre fichier de configuration."
 
 .TP
 .B \-v, \-\-version
@@ -102,7 +102,9 @@ Pour la démarrer automatiquement au démarrage du système, utilisez l'une des 
 .br
 .RB "- Activer le service systemd associé (dans le cas où votre environnement de bureau ne supporte pas XDG Autostart) : " "systemctl \-\-user enable \-\-now arch-update-tray.service"
 
-.RB "Si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland, vous pouvez plutôt ajouter la commande " "arch-update \-\-tray " "à vôtre fichier de configuration."
+.RB "Si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland, vous pouvez plutôt ajouter la commande " "arch-update \-\-tray " "à vos applications auto-start dans votre fichier de configuration."
+
+.RB "Si l'applet systray ne démarre pas au démarrage du système malgré tout" ", veuillez lire le chapitre " "'l'applet systray ne démarre pas au démarrage du système' "dans la section " "Trucs et Astuces " "ci-dessous."
 
 .RB "L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, elle lance " "arch-update " "via le fichier " "arch-update.desktop".
 
@@ -151,6 +153,28 @@ Voir https://www.flatpak.org/ et https://archlinux.org/packages/extra/x86_64/fla
 .RB "Arch-Update prend en charge les notifications de bureau lors de l'exécution de la fonction " "--check " "si " "libnotify (notify-send) " "est installé."
 .br
 Voir https://wiki.archlinux.org/title/Desktop_notifications
+
+.TP
+.B L'applet systray ne démarre pas au démarrage du système
+
+.RB "Assurez vous d'avoir suivi les instructions du chapitre " "l'applet systray " "dans la section " "Utilisation " "ci-dessus."
+
+.RB "Si l'applet systray ne démarre pas malgré tout, cela peut être le résultat d'une " "situation de compétition".
+.RB "Dans ce cas, il peut être utile de légèrement retarder le démarrage de l'applet systray en utilisant une déclaration " "sleep " "au préalable:"
+
+.RB \- "Si vous avez utilisé " "arch-update --tray --enable" ", modifiez la ligne " "Exec= " "dans le fichier " "arch-update-tray.desktop " "(qui se trouve sous " "~/.config/autostart/ " "par défaut), comme ceci :"
+.br
+Exec=sh -c "sleep 3 && arch-update --tray"
+
+.RB \- "Si vous avez utilisé le service systemd " "arch-update-tray.service" ", exécutez " "systemctl --user edit --full arch-update-tray.service " "et modifiez la ligne " "ExecStart=" ", comme ceci :"
+.br
+ExecStart=sh -c "sleep 3 && arch-update --tray"
+
+.RB \- "Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, ajoutez une déclaration " "sleep " "avant la commande " "arch-update --tray " "à vos applications auto-start dans votre fichier de configuration, comme ceci :"
+
+"sleep 3 && arch-update --tray"
+
+.RB "Si l'applet systray ne démarre toujours au démarrage du système, essayez de graduellement augmenter la valeur du " "sleep".
 
 .TP
 .B Modifier le cycle de vérification automatique
