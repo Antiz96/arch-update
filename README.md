@@ -139,19 +139,23 @@ It is the icon at the right of the 'wifi' one in the screenshot below:
 
 ![systray-icon](https://github.com/Antiz96/arch-update/assets/53110319/fe032e68-3582-470a-9e6d-b51a9ea8c1ba)
 
-With [the system timer](#the-systemd-timer) enabled, `Arch-Update` automatically checks for updates at boot and then once every hour. The check can be manually triggered by running the `arch-update --check` command or by right clicking the systray applet and then clicking on the `Check for updates` menu entry:
+With [the system timer](#the-systemd-timer) enabled, `Arch-Update` automatically checks for updates at boot and then once every hour. The check can be manually triggered by running the `arch-update --check` command or by right-clicking the systray icon and then clicking on the `Check for updates` menu entry:
 
-![check_for_updates](https://github.com/user-attachments/assets/fc1e1dc4-9b42-4560-beeb-7cb44186364d)
+![check_for_updates](https://github.com/user-attachments/assets/86c3107d-d7aa-4ced-b9aa-69668c2e3c2a)
 
-If there are new available updates, the systray icon will show a red circle. You can then see the list of available updates by hovering your mouse over the icon:
+If there are new available updates, the systray icon will show a red circle and a desktop notification indicating the number of available updates will be sent (requires [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") and a running notification server):
 
-![tooltip](https://github.com/user-attachments/assets/59237e42-b989-4222-9be7-1d6a88eef790)
+![notif](https://github.com/user-attachments/assets/55301470-fab6-463f-af2e-ebe4e3d65af7)
 
-Additionally, a desktop notification indicating the number of available updates will be sent if there are new available updates compared to the last check (requires [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "libnotify package") and a running notification server):
+You can then see the list of available updates in the systray icon's tooltip by hovering your mouse over it:
 
-![notif](https://github.com/user-attachments/assets/16518dc4-d883-420f-b8a3-097f85177bb1)
+![tooltip](https://github.com/user-attachments/assets/52ee0608-a8a2-4be9-ba9b-badeb8720ba1)
 
-When the systray applet is left clicked, it prints the list of packages available for updates inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages support).
+Alternatively, you can see the list of available updates in the dropdown menu entry when right-clicking the systray icon:
+
+![dropdown_menu](https://github.com/user-attachments/assets/4621d7d2-a9e4-40c3-851f-ee1687e6cf1e)
+
+When the systray icon is left-clicked, it prints the list of packages available for updates inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages support).
 
 ![listing_packages](https://github.com/Antiz96/arch-update/assets/53110319/ed552414-0dff-4cff-84d2-6ff13340259d)
 
