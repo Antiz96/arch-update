@@ -151,7 +151,7 @@ You can then see the list of available updates in the systray icon's tooltip by 
 
 ![tooltip](https://github.com/user-attachments/assets/52ee0608-a8a2-4be9-ba9b-badeb8720ba1)
 
-Alternatively, you can see the list of available updates in the dropdown menu entry when right-clicking the systray icon:
+Alternatively, you can see the list of available updates in the dropdown menu entry by right-clicking the systray icon:
 
 ![dropdown_menu](https://github.com/user-attachments/assets/4621d7d2-a9e4-40c3-851f-ee1687e6cf1e)
 
