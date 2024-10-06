@@ -269,7 +269,7 @@ Voir <https://wiki.archlinux.org/title/Desktop_notifications>
 Assurez vous d'avoir suivi les instructions de [ce chapitre](#lapplet-systray).
 
 Si l'applet systray ne démarre pas malgré tout, cela peut être le résultat d'une [situation de compétition](https://fr.wikipedia.org/wiki/Situation_de_comp%C3%A9tition).  
-Dans ce cas, il peut être utile de légèrement retarder le démarrage de l'applet systray en utilisant une déclaration `sleep` au préalable:
+Dans ce cas, il peut être utile de légèrement retarder le démarrage de l'applet systray en utilisant une déclaration `sleep` au préalable :
 
 - Si vous avez utilisé `arch-update --tray --enable`, modifiez la ligne `Exec=` dans le fichier `arch-update-tray.desktop` (qui se trouve sous `~/.config/autostart/` par défaut), comme ceci :
 
@@ -279,7 +279,7 @@ Dans ce cas, il peut être utile de légèrement retarder le démarrage de l'app
 
 > ExecStart=sh -c "sleep 3 && arch-update --tray"
 
-- Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, ajoutez une déclaration `sleep` avant la commande `arch-update --tray` à vos applications "auto-start" dans votre fichier de configuration, comme ceci :
+- Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, ajoutez une déclaration `sleep` avant la commande `arch-update --tray` dans vos applications "auto-start" dans votre fichier de configuration, comme ceci :
 
 > `sleep 3 && arch-update --tray`
 
