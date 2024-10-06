@@ -90,9 +90,9 @@ class ArchUpdateQt6:
     """ System Tray using QT6 library """
 
     def file_changed(self):
-        """ Update icon and tooltip on state file content changes """
+        """ Update icon, tooltip and dropdown menu on state file content changes """
         self.update_icon()
-        self.update_tooltip()
+        self.update_tooltip_and_dropdown_menu()
 
     def update_icon(self):
         """ Update the tray icon based on the icon state file content """
@@ -110,7 +110,7 @@ class ArchUpdateQt6:
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
-    def update_tooltip(self):
+    def update_tooltip_and_dropdown_menu(self):
         """ Update the tooltip with the number / list of pending updates """
         if self.watcher and not self.updatesfile in self.watcher.files():
             self.watcher.addPath(self.updatesfile)
@@ -120,33 +120,38 @@ class ArchUpdateQt6:
                 updates_list = f.readlines()
         except FileNotFoundError:
             log.error("State updates file missing")
-            tooltip = _("Arch-Update: 'updates' state file isn't found")
+            tooltip = _("'updates' state file isn't found")
             self.tray.setToolTip(tooltip)
+            self.dropdown_menu.setTitle(_("'updates' state file isn't found"))
+            self.dropdown_menu.setEnabled(False)
             return
 
         # Remove empty lines
-        updates_list = [
-            update.strip()
-            for update in updates_list
-            if update.strip()
-        ]
+        updates_list = [update.strip() for update in updates_list if update.strip()]
 
         updates_count = len(updates_list)
 
         if updates_count == 0:
-            tooltip = _("Arch-Update: System is up to date")
+            tooltip = _("System is up to date")
+            self.dropdown_menu.setTitle(_("System is up to date"))
+            self.dropdown_menu.setEnabled(False)
         elif updates_count == 1:
             update_list = "".join(updates_list)
-            tooltip = _("Arch-Update: 1 update available\n\n{update_list}").format(
-                update_list=update_list
-            )
+            tooltip = _("1 update available\n\n{update_list}").format(update_list=update_list)
+            self.dropdown_menu.setTitle(_("1 update available"))
+            self.dropdown_menu.setEnabled(True)
         else:
             update_list = "\n".join(updates_list)
-            tooltip = _("Arch-Update: {updates} updates available\n\n{update_list}").format(
-                updates=updates_count, update_list=update_list
-            )
+            tooltip = _("{updates} updates available\n\n{update_list}").format(updates=updates_count, update_list=update_list)
+            self.dropdown_menu.setTitle(_("{updates} updates available").format(updates=updates_count))
+            self.dropdown_menu.setEnabled(True)
 
+        # Update tooltip and dropdown menu accordingly
         self.tray.setToolTip(tooltip)
+        self.dropdown_menu.clear()
+        if updates_list:
+            for update in updates_list:
+                self.dropdown_menu.addAction(update)
 
     def run(self):
         """ Start arch-update """
@@ -173,7 +178,6 @@ class ArchUpdateQt6:
 
         # Icon
         self.tray = QSystemTrayIcon()
-        self.file_changed()
         self.tray.setVisible(True)
         self.tray.activated.connect(self.run)
 
@@ -182,6 +186,13 @@ class ArchUpdateQt6:
         menu_launch = QAction(_("Run Arch-Update"))
         menu_check = QAction(_("Check for updates"))
         menu_exit = QAction(_("Exit"))
+
+        # Dynamic dropdown menu to show the update list
+        self.dropdown_menu = QMenu(_("Checking for updates..."))
+
+        # Add actions to the menu
+        menu.addMenu(self.dropdown_menu)
+        menu.addSeparator()
         menu.addAction(menu_launch)
         menu.addAction(menu_check)
         menu.addAction(menu_exit)
@@ -196,8 +207,10 @@ class ArchUpdateQt6:
         self.watcher = QFileSystemWatcher([self.iconfile, self.updatesfile])
         self.watcher.fileChanged.connect(self.file_changed)
 
-        app.exec()
+        # Initial file check to set the right icon, tooltip and dropdown menu text
+        self.file_changed()
 
+        app.exec()
 
 if __name__ == "__main__":
     ArchUpdateQt6(ICON_FILE)
