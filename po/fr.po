@@ -170,7 +170,7 @@ msgid ""
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check)"
 msgstr ""
-"  -c, --check       Vérifier les mises à jour disponibles, change l'icône systray et "
+"  -c, --check       Vérifier les mises à jour disponibles, change l'icône du systray et "
 "envoie une notification de bureau contenant le nombre de mises à jour disponibles (s'"
 "il y a des nouvelles mises à jour depuis le dernier check)"
 
