@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.3.0](https://github.com/Antiz96/arch-update/releases/tag/v3.3.0) - 2024-10-06
+
+### Features
+
+- Add a dynamic dropdown menu entry to the systray applet menu containing the list of available updates ([#272](https://github.com/Antiz96/arch-update/pull/272)) - ([af51378](https://github.com/Antiz96/arch-update/commit/af51378cf4e0e7c67722ca9d90be44c26f6f27cc)) by @Antiz96
+
+### Documentation
+
+- Update screenshots in the READMEs with the new systray's dropdown menu ([#273](https://github.com/Antiz96/arch-update/pull/273)) - ([d79ed9b](https://github.com/Antiz96/arch-update/commit/d79ed9b93324add9e926b059be98d38345bbc8ef)) by @Antiz96
+- Document the workaround for the race condition potentially happening when starting the systray applet at boot ([#271](https://github.com/Antiz96/arch-update/pull/271)) - ([64378f1](https://github.com/Antiz96/arch-update/commit/64378f1de372d7768cb53cbb76887babe50170f1)) by @Antiz96
+
 ## [v3.2.3](https://github.com/Antiz96/arch-update/releases/tag/v3.2.3) - 2024-10-05
 
 ### Fixes
