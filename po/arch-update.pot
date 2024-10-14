@@ -471,7 +471,8 @@ msgstr ""
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
-msgid "Cached Packages:\\nThere are old and/or uninstalled cached packages\\n"
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
 
 #: src/lib/packages_cache.sh:25
