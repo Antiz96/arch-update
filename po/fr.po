@@ -532,8 +532,10 @@ msgstr "Voulez-vous le supprimer du cache maintenant ? [O/n]"
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
-msgid "Cached Packages:\\nThere are old and/or uninstalled cached packages\\n"
-msgstr "Paquets mis en cache :\\nIl y a plusieurs paquets anciens ou désinstallés mis en cache\\n"
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Paquets mis en cache :\\nIl y a plusieurs paquets anciens et / ou désinstallés mis en cache\\n"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
