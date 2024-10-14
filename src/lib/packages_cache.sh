@@ -21,7 +21,7 @@ if [ "${pacman_cache_total}" -gt 0 ]; then
 		main_msg "$(eval_gettext "Cached Packages:\nThere's an old or uninstalled cached package\n")"
 		ask_msg "$(eval_gettext "Would you like to remove it from the cache now? [Y/n]")"
 	else
-		main_msg "$(eval_gettext "Cached Packages:\nThere are old and/or uninstalled cached packages\n")"
+		main_msg "$(eval_gettext "Cached Packages:\nThere are old and / or uninstalled cached packages\n")"
 		ask_msg "$(eval_gettext "Would you like to remove them from the cache now? [Y/n]")"
 	fi
 
