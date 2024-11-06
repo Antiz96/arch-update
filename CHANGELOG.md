@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.4.0](https://github.com/Antiz96/arch-update/releases/tag/v3.4.0) - 2024-11-06
+
+### Features
+
+- Add support for pikaur ([#276](https://github.com/Antiz96/arch-update/pull/276)) - ([7b5d08b](https://github.com/Antiz96/arch-update/commit/7b5d08b1aa7870850fe8cfdcfd23ead3b01e9cd3)) by @Antiz96
+
+### Styling
+
+- Update lines numbers in po files ([#277](https://github.com/Antiz96/arch-update/pull/277)) - ([33f2377](https://github.com/Antiz96/arch-update/commit/33f23773f3e3eab47ceeaf2c3273e669af0e0c76)) by @Antiz96
+- Add spacing to improve wording style ([#274](https://github.com/Antiz96/arch-update/pull/274)) - ([a8cfb27](https://github.com/Antiz96/arch-update/commit/a8cfb2713f7e1ede517b37fe836147bb5b5073ef)) by @Antiz96
+
+### Miscellaneous
+
+- Improve style / wording in internal documentation ([#278](https://github.com/Antiz96/arch-update/pull/278)) - ([d58dcee](https://github.com/Antiz96/arch-update/commit/d58dceef286894f0265bff9e7f3ead66a84f79db)) by @Antiz96
+
 ## [v3.3.0](https://github.com/Antiz96/arch-update/releases/tag/v3.3.0) - 2024-10-06
 
 ### Features
