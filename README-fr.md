@@ -34,7 +34,7 @@ Fonctionnalités :
 - Vérification automatique des mises à jour du noyau en attente nécessitant un redémarrage et propose de redémarrer s'il y en a une.
 - Vérification automatique des services nécessitant un redémarrage après mise à jour et propose de les redémarrer s'il y en a.
 - Support de `sudo`, `doas` et `run0`.
-- Prise en charge optionnelle des paquets AUR (via `yay` ou `paru`).
+- Prise en charge optionnelle des paquets AUR (via `paru`, `yay` ou `pikaur`).
 - Prise en charge optionnelle des paquets Flatpak.
 - Prise en charge optionnelle des notifications de bureau lors de nouvelles mises à jour disponibles.
 
@@ -55,12 +55,13 @@ sudo pacman -S --needed pacman-contrib archlinux-contrib curl fakeroot htmlq dif
 
 Dépendances optionnelles supplémentaires dont vous pourriez avoir besoin ou que vous pourriez souhaiter :
 
-- [yay](https://aur.archlinux.org/packages/yay): Support des paquets AUR
-- [paru](https://aur.archlinux.org/packages/paru): Support des paquets AUR
-- [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/): Support des paquets Flatpak
-- [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/): Support des notifications de bureau lors de nouvelles mises à jour disponibles (voir <https://wiki.archlinux.org/title/Desktop_notifications>)
-- [vim](https://archlinux.org/packages/extra/x86_64/vim/): Programme de fusion par défaut pour pacdiff
-- [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/): Support de l'applet systray sur Wayland
+- [paru](https://aur.archlinux.org/packages/paru) : Support des paquets AUR
+- [yay](https://aur.archlinux.org/packages/yay) : Support des paquets AUR
+- [pikaur](https://aur.archlinux.org/packages/pikaur) : Support des paquets AUR
+- [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) : Support des paquets Flatpak
+- [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/) : Support des notifications de bureau lors de nouvelles mises à jour disponibles (voir <https://wiki.archlinux.org/title/Desktop_notifications>)
+- [vim](https://archlinux.org/packages/extra/x86_64/vim/) : Programme de fusion par défaut pour pacdiff
+- [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/) : Support de l'applet systray sur Wayland
 
 Téléchargez l'archive de la [dernière version stable](https://github.com/Antiz96/arch-update/releases/latest) et extrayez la *(vous pouvez également cloner ce référentiel via `git clone`)*.
 
@@ -155,7 +156,7 @@ Alternativement, vous pouvez voir la liste des mises à jour disponible dans le 
 
 ![dropdown_menu_fr](https://github.com/user-attachments/assets/60c3c0d8-8091-4047-b8da-ce8f8bc72476)
 
-Quand l'icône du systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal et demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
+Quand l'icône du systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal et demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [paru](https://aur.archlinux.org/packages/paru "paru"), [yay](https://aur.archlinux.org/packages/yay "yay") ou [pikaur](https://aur.archlinux.org/packages/pikaur "pikaur") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
 
 ![listing_packages-FR](https://github.com/Antiz96/arch-update/assets/53110319/60547cde-f327-46f8-907c-61bf9bbee6c5)
 
@@ -238,7 +239,7 @@ Les options prises en charge sont :
 - NoVersion # Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option `-l / --list`).
 - AlwaysShowNews # Toujours afficher les Arch news avant de mettre à jour, peu importe s'il y en a une nouvelle depuis la dernière exécution ou non.
 - NewsNum=[Num] # Nombre de Arch news à affcher avant la mise à jour et avec l'option `-n / --news` (voir la page de manuel arch-update(1) pour plus de details). La valeur par défaut est 5.
-- AURHelper=[AUR Helper] # AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont `paru` ou `yay`. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : `paru` puis `yay` (si aucun des deux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
+- AURHelper=[AUR Helper] # AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont `paru`, `yay` ou `pikaur`. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : `paru` puis `yay` puis `pikaur` (si aucun d'eux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
 - PrivilegeElevationCommand=[Cmd] # Commande à utiliser pour l'élévation de privilège. Les valeurs valides sont `sudo`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'odre suivant : `sudo`, `doas` puis `run0`.
 - KeepOldPackages=[Num] # Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
 - KeepUninstalledPackages=[Num] # Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
@@ -254,9 +255,10 @@ Pour plus d'informations, consultez la page de manuel arch-update.conf(5).
 
 ### Support du AUR
 
-Arch-Update prend en charge les paquets AUR si **yay** ou **paru** est installé :  
+Arch-Update prend en charge les paquets AUR si **paru**, **yay** ou **pikaur** est installé :  
+Voir <https://github.com/morganamilo/paru> et <https://aur.archlinux.org/packages/paru>  
 Voir <https://github.com/Jguer/yay> et <https://aur.archlinux.org/packages/yay>  
-Voir <https://github.com/morganamilo/paru> et <https://aur.archlinux.org/packages/paru>
+Voir <https://github.com/actionless/pikaur> et <https://aur.archlinux.org/packages/pikaur>
 
 ### Support de Flatpak
 

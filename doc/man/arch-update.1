@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE" "1" "October 2024" "Arch-Update 3.3.0" "Arch-Update Manual"
+.TH "ARCH-UPDATE" "1" "November 2024" "Arch-Update 3.3.0" "Arch-Update Manual"
 
 .SH NAME
 arch-update \- An update notifier & applier for Arch Linux that assists you with important pre / post update tasks.
@@ -10,7 +10,7 @@ arch-update \- An update notifier & applier for Arch Linux that assists you with
 .SH DESCRIPTION
 An update notifier & applier for Arch Linux that assists you with important pre / post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any Desktop Environment / Window Manager.
 .br
-.RB "Optional support for AUR packages update (through " "yay " "or " "paru" "), Flatpak packages update (through " "flatpak" ") and desktop notifications (through " "libnotify" ")."
+.RB "Optional support for AUR packages update (through " "paru" ", " "yay " "or " "pikaur" "), Flatpak packages update (through " "flatpak" ") and desktop notifications (through " "libnotify" ")."
 .br
 Arch-Update is designed to follow usual system maintenance steps, as described in the Arch Wiki at https://wiki.archlinux.org/title/System_maintenance.
 
@@ -18,7 +18,7 @@ Arch-Update is designed to follow usual system maintenance steps, as described i
 .PP
 If no option is passed, launch the relevant series of functions to perform a complete and proper update starting by displaying the list of packages available for update, then ask for the user's confirmation to proceed with the installation.
 .br
-.RB "It also supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
+.RB "It also supports AUR packages update (if " "paru" ", " "yay " "or " "pikaur " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
 .br
 Before performing the update, it offers to display the latest Arch Linux news to the user. By default, Arch news are only displayed if at least a new one has been published since the last run. Arch news published since the last run or at the same date are tagged as '[NEW]'.
 .br
@@ -34,7 +34,7 @@ Check for available updates.
 .br
 It changes the systray icon and sends a desktop notification containing the number of available updates (if there are new available updates compared to the last check).
 .br
-.RB "It supports AUR packages update (if " "yay " "or " "paru " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
+.RB "It supports AUR packages update (if " "paru" ", " "yay " "or " "pikaur " "is installed) and Flatpak packages update (if " "flatpak " "is installed)."
 .br
 .RB "The " "\-\-check " "option is automatically launched at boot and then every hour if you enabled the associated " "systemd.timer " "with the following command:"
 .br
@@ -136,11 +136,13 @@ To start it automatically at boot, you can either:
 .SH TIPS AND TRICKS 
 .TP
 .B AUR Support
-.RB "Arch-Update supports AUR packages update when checking and installing updates if " "yay " "or " "paru " "is installed."
+.RB "Arch-Update supports AUR packages update when checking and installing updates if " "paru" ", " "yay " "or " "pikaur " "is installed."
+.br
+See https://github.com/morganamilo/paru and https://aur.archlinux.org/packages/paru
 .br
 See https://github.com/Jguer/yay and https://aur.archlinux.org/packages/yay
 .br
-See https://github.com/morganamilo/paru and https://aur.archlinux.org/packages/paru
+See https://github.com/actionless/pikaur and https://aur.archlinux.org/packages/pikaur
 
 .TP
 .B Flatpak Support
@@ -291,8 +293,9 @@ The diff prog editor set in the arch-update.conf configuration file isn't found
 .BR pacman (8),
 .BR pacdiff (8),
 .BR paccache (8),
-.BR yay (8),
 .BR paru (8),
+.BR yay (8),
+.BR pikaur (1),
 .BR flatpak (1),
 .BR arch-update.conf (5)
 

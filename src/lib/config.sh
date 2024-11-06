@@ -28,7 +28,7 @@ if [ -f "${config_file}" ]; then
 
 	# Check the "AURHelper" option in arch-update.conf
 	# shellcheck disable=SC2034
-	aur_helper=$(grep -E '^[[:space:]]*AURHelper[[:space:]]*=[[:space:]]*(paru|yay)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+	aur_helper=$(grep -E '^[[:space:]]*AURHelper[[:space:]]*=[[:space:]]*(paru|yay|pikaur)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 
 	# Check the "PrivilegeElevationCommand" option in arch-update.conf
 	# shellcheck disable=SC2034

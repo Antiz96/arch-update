@@ -117,6 +117,9 @@ if [ -z "${aur_helper}" ]; then
 	elif command -v yay > /dev/null; then
 		# shellcheck disable=SC2034
 		aur_helper="yay"
+	elif command -v pikaur > /dev/null; then
+		# shellcheck disable=SC2034
+		aur_helper="pikaur"
 	fi
 else
 	if ! command -v "${aur_helper}" > /dev/null; then
