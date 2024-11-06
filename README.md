@@ -34,7 +34,7 @@ Features:
 - Automatic check for pending kernel updates requiring a reboot to be applied and offers to do so if there's one.
 - Automatic check for services requiring a post upgrade restart and offers to do so if there are.
 - Support for `sudo`, `doas` & `run0`.
-- Optional support for AUR packages (through `yay` or `paru`).
+- Optional support for AUR packages (through `paru`, `yay` or `pikaur`).
 - Optional support for Flatpak packages.
 - Optional support for desktop notifications on new available updates.
 
@@ -55,8 +55,9 @@ sudo pacman -S --needed pacman-contrib archlinux-contrib curl fakeroot htmlq dif
 
 Additional optional dependencies you might need or want:
 
-- [yay](https://aur.archlinux.org/packages/yay): AUR Packages support
 - [paru](https://aur.archlinux.org/packages/paru): AUR Packages support
+- [yay](https://aur.archlinux.org/packages/yay): AUR Packages support
+- [pikaur](https://aur.archlinux.org/packages/pikaur): AUR Packages support
 - [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/): Flatpak Packages support
 - [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/): Desktop notifications support on new available updates (see <https://wiki.archlinux.org/title/Desktop_notifications>)
 - [vim](https://archlinux.org/packages/extra/x86_64/vim/): Default merge program for pacdiff
@@ -155,7 +156,7 @@ Alternatively, you can see the list of available updates in the dropdown menu en
 
 ![dropdown_menu](https://github.com/user-attachments/assets/4621d7d2-a9e4-40c3-851f-ee1687e6cf1e)
 
-When the systray icon is left-clicked, it prints the list of packages available for updates inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [yay](https://aur.archlinux.org/packages/yay "yay") or [paru](https://aur.archlinux.org/packages/paru "paru") for AUR packages support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages support).
+When the systray icon is left-clicked, it prints the list of packages available for updates inside a terminal window and asks for the user's confirmation to proceed with the installation (it can also be launched by running the `arch-update` command, requires [paru](https://aur.archlinux.org/packages/paru "paru"), [yay](https://aur.archlinux.org/packages/yay "yay") or [pikaur](https://aur.archlinux.org/packages/pikaur "pikaur") for AUR packages support and [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) for Flatpak packages support).
 
 ![listing_packages](https://github.com/Antiz96/arch-update/assets/53110319/ed552414-0dff-4cff-84d2-6ff13340259d)
 
@@ -238,7 +239,7 @@ The supported options are:
 - NoVersion # Do not show versions changes for packages when listing pending updates (including when using the `-l / --list` option).
 - AlwaysShowNews # Always display Arch news before updating, regardless of whether there's a new one since the last run or not.
 - NewsNum=[Num] # Number of Arch news to display before updating and with the `-n / --news` option (see the arch-update(1) man page for more details). Defaults to 5.
-- AURHelper=[AUR Helper] # AUR helper to be used for AUR packages support. Valid values are `paru` or `yay`. If this option is not set, Arch-Update will use the first available AUR helper in the following order: `paru` then `yay` (in case none of them is installed, Arch-Update will not take AUR packages into account).
+- AURHelper=[AUR Helper] # AUR helper to be used for AUR packages support. Valid values are `paru`, `yay` or `pikaur`. If this option is not set, Arch-Update will use the first available AUR helper in the following order: `paru` then `yay` then `pikaur` (in case none of them is installed, Arch-Update will not take AUR packages into account).
 - PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid values are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
@@ -254,9 +255,10 @@ For more information, see the arch-update.conf(5) man page.
 
 ### AUR support
 
-Arch-Update supports AUR packages if **yay** or **paru** is installed:  
+Arch-Update supports AUR packages if **paru**, **yay** or **pikaur** is installed:  
+See <https://github.com/morganamilo/paru> and <https://aur.archlinux.org/packages/paru>  
 See <https://github.com/Jguer/yay> and <https://aur.archlinux.org/packages/yay>  
-See <https://github.com/morganamilo/paru> and <https://aur.archlinux.org/packages/paru>
+See <https://github.com/actionless/pikaur> and <https://aur.archlinux.org/packages/pikaur>
 
 ### Flatpak support
 

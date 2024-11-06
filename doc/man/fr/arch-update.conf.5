@@ -1,4 +1,4 @@
-.TH "ARCH-UPDATE.CONF" "5" "Octobre 2024" "Arch-Update 3.3.0" "Manuel de Arch-Update"
+.TH "ARCH-UPDATE.CONF" "5" "Novembre 2024" "Arch-Update 3.3.0" "Manuel de Arch-Update"
 
 .SH NAME
 arch-update.conf \- fichier de configuration pour arch-update.
@@ -37,7 +37,7 @@ Toujours afficher les Arch news avant de mettre à jour, peu importe s'il y en a
 
 .TP
 .B AURHelper=[AUR Helper]
-AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont paru ou yay. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : paru puis yay (si aucun des deux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
+AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont paru, yay ou pikaur. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : paru puis yay puis pikaur (si aucun des deux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
 
 .TP
 .B PrivilegeElevationCommand=[Cmd]
