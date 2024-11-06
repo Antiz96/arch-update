@@ -2,7 +2,7 @@
 
 Thank you for considering contributing to [Arch-Update](https://github.com/Antiz96/arch-update)!
 
-With the exception of the [general rules](#general-rules) (which **must** be acknowledged and applied in any contribution/interaction in this project), these guidelines represents an ideal target & standards that I would like this project to follow but may not all be **strictly** enforced (depending on the situation).
+With the exception of the [general rules](#general-rules) (which **must** be acknowledged and applied in any contribution / interaction in this project), these guidelines represents an ideal target & standards that I would like this project to follow but may not all be **strictly** enforced (depending on the situation).
 
 Please, don't refrain yourself from contributing if you feel that your contribution may not entirely follow these guidelines (or if you're struggling applying some of them). I value your contributions much more than the strict application of these guidelines!
 
@@ -18,7 +18,7 @@ Please, don't refrain yourself from contributing if you feel that your contribut
 
 These general rules apply to **every** contributions (whatever the type). They should **always** be acknowledged and **strictly** followed in any circumstances:
 
-Basic common sense applies to every contributions & discussions: stay polite and respectful, no flaming/trolling/spamming or any kind of discrimination/harassment, avoid controversial topics *(specifically if it has nothing to do with this project whatsoever)*, etc...
+Basic common sense applies to every contributions & discussions: stay polite and respectful, no flaming / trolling / spamming or any kind of discrimination / harassment, avoid controversial topics *(specifically if it has nothing to do with this project whatsoever)*, etc...
 
 Use English as much as possible for contributions & discussions. If required, I can also speak French, but it's important that contributions & discussions remain intelligible to most people.
 
@@ -39,7 +39,7 @@ Make sure to create your merge request from a dedicated branch (do not use the `
 
 ### Open an issue first
 
-Apart from trivial changes (like simple typo fixes), it is advised to first [open an issue](#open-an-issue) to expose and discuss your changes, verify its feasibility/necessity and agree on the specifications.
+Apart from trivial changes (like simple typo fixes), it is advised to first [open an issue](#open-an-issue) to expose and discuss your changes, verify its feasibility / necessity and agree on the specifications.
 
 ### Coding style
 
@@ -63,15 +63,15 @@ Commits must follow the [conventional commits](https://www.conventionalcommits.o
 
 This project uses the following commit types:
 
-- chore: for internal/miscellaneous changes
-- feat: for new features (or improvements/additions to existing features)
+- chore: for internal / miscellaneous changes
+- feat: for new features (or improvements / additions to existing features)
 - fix: for bug fixes
 - doc: for documentation only changes
 - style: For changes that do not affect the meaning of the code (white-space, formatting, typo fixes, etc...)
 
 An optional scope can be provided to the commit type if relevant (for instance when a change is specific to a precise part of the project), like so: `type(scope): commit message`.
 
-If a commit introduces a breaking change, its type must contain a `!` (e.g. `feat!: commit message`) and/or a `BREAKING CHANGE:` mention should be added at the end of your commit message (e.g. `BREAKING CHANGE: description of the breaking change`).
+If a commit introduces a breaking change, its type must contain a `!` (e.g. `feat!: commit message`) and / or a `BREAKING CHANGE:` mention should be added at the end of your commit message (e.g. `BREAKING CHANGE: description of the breaking change`).
 
 Here are a few examples of the expected commit format:
 
@@ -94,9 +94,9 @@ Fixes https://github.com/Antiz96/arch-update/issues/103
 ```
 
 ```text
-doc(man): Add the -l/--list option to man pages
+doc(man): Add the -l / --list option to man pages
 
-The recently introduced -l/--list option was missing from the man page
+The recently introduced -l / --list option was missing from the man page
 ```
 
 ```text

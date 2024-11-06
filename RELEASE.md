@@ -8,7 +8,7 @@
 export TAG="X.Y.Z"
 ```
 
-- Bump version in where necessary:
+- Bump version where necessary:
 
 ```bash
 sed -i "s/$(arch-update -V | cut -f2 -d " ")/${TAG}/g" doc/man/arch-update.* doc/man/fr/arch-update.* po/* src/arch-update.sh
@@ -36,7 +36,7 @@ git tag v${TAG} -u D33FAA16B937F3B2 -m "v${TAG}"
 git push origin v${TAG}
 ```
 
-- Create a release on GitHub, copy/paste release notes from the changelog and sign the auto-generated source tarball:
+- Create a release on GitHub, copy / paste release notes from the changelog and sign the auto-generated source tarball:
 
 ```bash
 cd ~/Downloads
