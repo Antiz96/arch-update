@@ -2,7 +2,7 @@
 
 Thank you for considering contributing to [Arch-Update](https://github.com/Antiz96/arch-update)!
 
-With the exception of the [general rules](#general-rules) (which **must** be acknowledged and applied in any contribution / interaction in this project), these guidelines represents an ideal target & standards that I would like this project to follow but may not all be **strictly** enforced (depending on the situation).
+With the exception of the [general rules](#general-rules) (which **must** be acknowledged and applied in any contribution / interaction in this project), these guidelines represent an ideal target & standards that I would like this project to follow but may not all be **strictly** enforced (depending on the situation).
 
 Please, don't refrain yourself from contributing if you feel that your contribution may not entirely follow these guidelines (or if you're struggling applying some of them). I value your contributions much more than the strict application of these guidelines!
 
@@ -22,7 +22,7 @@ Basic common sense applies to every contributions & discussions: stay polite and
 
 Use English as much as possible for contributions & discussions. If required, I can also speak French, but it's important that contributions & discussions remain intelligible to most people.
 
-Arch-Update is developed and tested specifically with *vanilla* Arch Linux in mind. That doesn't mean that Arch-Update won't work with other Arch based distributions (e.g. EndeavourOS,  CachyOS, Garuda...), but keep in mind that such distributions are supported at a "best effort" level. In other words, I'll try my best to keep Arch-Update compatible with derivatives distributions, but there's no guarantee that Arch-Update (or parts of it) will continuously work properly on said distributions.
+Arch-Update is developed and tested specifically with *vanilla* Arch Linux in mind. That doesn't mean that Arch-Update won't work with other Arch based distributions (e.g. EndeavourOS,  CachyOS, Garuda...), but keep in mind that such distributions are supported at a "best effort" level. In other words, I'll try my best to keep Arch-Update compatible with derivatives distributions, but there's no guarantee that Arch-Update (or parts of it) will *continuously* work properly on such distributions.
 
 ## Open an issue
 
