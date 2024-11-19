@@ -1,0 +1,782 @@
+# Arch-Update translation template
+# Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
+# This file is distributed under the same license as the Arch-Update package.
+#
+# Translators:
+# Luna Jernberg <droidbittin@gmail.com>, 2024
+msgid ""
+msgstr ""
+"Project-Id-Version: Arch-Update 3.4.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
+"POT-Creation-Date: 2024-03-17 16:22+0100\n"
+"PO-Revision-Date: 2024-11-19 12:22+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: src/lib/check.sh:39 src/lib/check.sh:42
+#, sh-format
+msgid "${update_number} update available"
+msgstr "${update_number} uppdatering är tillgänglig"
+
+#: src/lib/check.sh:47 src/lib/check.sh:49
+#, sh-format
+msgid "${update_number} updates available"
+msgstr "${update_number} uppdateringar är tillgängliga"
+
+#: src/lib/common.sh:90
+#, sh-format
+msgid "WARNING"
+msgstr "VARNING"
+
+#: src/lib/common.sh:96
+#, sh-format
+msgid "ERROR"
+msgstr "FEL"
+
+#: src/lib/common.sh:101
+#, sh-format
+msgid "Press \"enter\" to continue "
+msgstr "Tryck på \"enter\" för att fortsätta "
+
+#: src/lib/common.sh:107
+#, sh-format
+msgid "Press \"enter\" to quit "
+msgstr "Tryck på \"enter\" för att avsluta "
+
+#: src/lib/common.sh:126
+#, sh-format
+msgid ""
+"The ${aur_helper} AUR helper set for AUR packages support in the arch-update."
+"conf configuration file is not found\\n"
+msgstr ""
+"${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
+"konfigurationsfilen arch-update.conf hittades inte\\n"
+
+#: src/lib/common.sh:148
+#, sh-format
+msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
+msgstr "Ett kommando för behörighetshöjning krävs (sudo, doas eller run0)\\n"
+
+#: src/lib/common.sh:153
+#, sh-format
+msgid ""
+"The ${su_cmd} command set for privilege escalation in the arch-update.conf "
+"configuration file is not found\\n"
+msgstr ""
+"${su_cmd}-kommandot inställt för privilegieskalering i arch-update.conf-"
+"konfigurationsfilen hittades inte\\n"
+
+#: src/lib/common.sh:161
+#, sh-format
+msgid ""
+"The ${diff_prog} editor set for visualizing / editing differences of pacnew "
+"files in the arch-update.conf configuration file is not found\\n"
+msgstr ""
+"${diff_prog}-redigeraren som är inställd för att visualisera/redigera "
+"skillnader mellan pacnew-filer i konfigurationsfilen arch-update.conf "
+"hittades inte\\n"
+
+#: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
+#, sh-format
+msgid ""
+"No configuration file found\\nYou can generate one with \"arch-update --gen-"
+"config\""
+msgstr ""
+"Ingen konfigurationsfil hittades\\nDu kan skapa en med \"arch-update --gen-"
+"config\""
+
+#: src/lib/edit-config.sh:13
+#, sh-format
+msgid ""
+"Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
+"is not set and \"nano\" (fallback option) is not installed"
+msgstr ""
+"Det går inte att avgöra vilken redigerare som ska användas\\n\"EDITOR\"-"
+"miljövariabeln är inte inställd och \"nano\" (reservalternativ) är inte "
+"installerat"
+
+#: src/lib/gen-config.sh:19
+#, sh-format
+msgid "Example configuration file not found"
+msgstr "Exempelkonfigurationsfilen hittades inte"
+
+#: src/lib/gen-config.sh:25
+#, sh-format
+msgid ""
+"The '${config_file}' configuration file already exists\\nPlease, remove it "
+"before generating a new one (or use --force to overwrite it)"
+msgstr ""
+"Konfigurationsfilen '${config_file}' finns redan\\nTa bort den innan du "
+"genererar en ny (eller använd --force för att skriva över den)"
+
+#: src/lib/gen-config.sh:30
+#, sh-format
+msgid "The '${config_file}' configuration file has been generated"
+msgstr "Konfigurationsfilen '${config_file}' har genererats"
+
+#: src/lib/help.sh:8
+#, sh-format
+msgid ""
+"An update notifier & applier for Arch Linux that assists you with important "
+"pre / post update tasks."
+msgstr ""
+"En uppdateringsnotifierare och applicerare för Arch Linux som hjälper dig "
+"med viktiga före/efter uppdaterings uppgifter."
+
+#: src/lib/help.sh:10
+#, sh-format
+msgid "Run ${name} to perform the main 'update' function:"
+msgstr ""
+"Kör ${name} för att utföra den huvudsakliga \"uppdaterings\"-funktionen:"
+
+#: src/lib/help.sh:11
+#, sh-format
+msgid ""
+"Display the list of packages available for update, then ask for the user's "
+"confirmation to proceed with the installation."
+msgstr ""
+"Visa listan över paket som är tillgängliga för uppdatering och be sedan om "
+"användarens bekräftelse för att fortsätta med installationen."
+
+#: src/lib/help.sh:12
+#, sh-format
+msgid ""
+"Before performing the update, it offers to display the latest Arch Linux "
+"news."
+msgstr ""
+"Innan uppdateringen utförs, erbjuder den att visa de senaste Arch Linux-"
+"nyheterna."
+
+#: src/lib/help.sh:13
+#, sh-format
+msgid ""
+"Post update, it checks for orphan & unused packages, old cached packages, "
+"pacnew & pacsave files, pending kernel update as well as services requiring "
+"a post upgrade restart and, if there are, offers to process them."
+msgstr ""
+"Efter uppdatering söker den efter föräldralösa och oanvända paket, gamla "
+"cachade paket, pacnew och pacsave-filer, väntande kärnuppdatering samt "
+"tjänster som kräver omstart efter uppgraderingen och, om det finns, "
+"erbjudanden om att bearbeta dem."
+
+#: src/lib/help.sh:15
+#, sh-format
+msgid "Options:"
+msgstr "Alternativ:"
+
+#: src/lib/help.sh:16
+#, sh-format
+msgid ""
+"  -c, --check       Check for available updates, change the systray icon and "
+"send a desktop notification containing the number of available updates (if "
+"there are new available updates compared to the last check)"
+msgstr ""
+"  -c, --check       Sök efter tillgängliga uppdateringar, ändra systemfält-"
+"ikonen och skicka en skrivbordsavisering som innehåller antalet tillgängliga "
+"uppdateringar (om det finns nya tillgängliga uppdateringar jämfört med den "
+"senaste kontrollen)"
+
+#: src/lib/help.sh:17
+#, sh-format
+msgid "  -l, --list        Display the list of pending updates"
+msgstr "  -l, --list        Visa en lista över väntande uppdateringar"
+
+#: src/lib/help.sh:18
+#, sh-format
+msgid "  -d, --devel       Include AUR development packages updates"
+msgstr "  -d, --devel       Inkludera uppdateringar av AUR-utvecklingspaket"
+
+#: src/lib/help.sh:19
+#, sh-format
+msgid ""
+"  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
+"number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
+msgstr ""
+"  -n, --news [Num]  Visa senaste Arch-nyheterna, du kan valfritt ange "
+"antalet Arch-nyheter som ska visas med '--news [Num]' (t.ex. '--news 10')"
+
+#: src/lib/help.sh:20
+#, sh-format
+msgid "  -D, --debug       Display debug traces"
+msgstr "  -D, --debug       Visa felsökningsspår"
+
+#: src/lib/help.sh:21
+#, sh-format
+msgid ""
+"  --gen-config      Generate a default / example 'arch-update.conf' "
+"configuration file, you can optionally pass the '--force' argument to "
+"overwrite any existing 'arch-update.conf' configuration file"
+msgstr ""
+"  --gen-config      Generera en standard/exempel konfigurationsfil för 'arch-"
+"update.conf', du kan skicka valfritt argumentet '--force' för att skriva "
+"över alla befintliga konfigurationsfiler för 'arch-update.conf'"
+
+#: src/lib/help.sh:22
+#, sh-format
+msgid ""
+"  --show-config     Display the 'arch-update.conf' configuration file "
+"currently used (if it exists)"
+msgstr ""
+"  --show-config     Visa \"arch-update.conf\"-konfigurationsfilen som "
+"används för närvarande (om den finns)"
+
+#: src/lib/help.sh:23
+#, sh-format
+msgid ""
+"  --edit-config     Edit the 'arch-update.conf' configuration file currently "
+"used (if it exists)"
+msgstr ""
+"  --edit-config     Redigera \"arch-update.conf\"-konfigurationsfilen som "
+"används för närvarande (om den finns)"
+
+#: src/lib/help.sh:24
+#, sh-format
+msgid ""
+"  --tray            Launch the Arch-Update systray applet, you can "
+"optionally add the '--enable' argument to start it automatically at boot"
+msgstr ""
+"  --tray            Starta Arch-Update systemfält-appleten, du kan valfritt "
+"lägga till argumentet '--enable' för att starta den automatiskt vid uppstart"
+
+#: src/lib/help.sh:25
+#, sh-format
+msgid "  -h, --help        Display this help message and exit"
+msgstr "  -h, --help        Visa detta hjälpmeddelande och avsluta"
+
+#: src/lib/help.sh:26
+#, sh-format
+msgid "  -V, --version     Display version information and exit"
+msgstr "  -V, --version     Visa versionsinformation och avsluta"
+
+#: src/lib/help.sh:28
+#, sh-format
+msgid "For more information, see the ${name}(1) man page."
+msgstr "För mer information, se ${name}(1) man-sidan."
+
+#: src/lib/help.sh:29
+#, sh-format
+msgid ""
+"Certain options can be enabled, disabled or modified via the ${name}.conf "
+"configuration file, see the ${name}.conf(5) man page."
+msgstr ""
+"Vissa alternativ kan aktiveras, inaktiveras eller modifieras via ${name}."
+"conf-konfigurationsfilen, se ${name}.conf(5) man-sidan."
+
+#: src/lib/invalid_option.sh:7
+#, sh-format
+msgid ""
+"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
+"information."
+msgstr ""
+"${name}: ogiltigt alternativ -- '${option}'\\nTesta '${name} --help' för mer "
+"information."
+
+#: src/lib/kernel_reboot.sh:10
+#, sh-format
+msgid ""
+"Reboot required:\\nThere's a pending kernel update on your system requiring "
+"a reboot to be applied\\n"
+msgstr ""
+"Omstart krävs:\\nDet finns en väntande kärnuppdatering på ditt system som "
+"kräver en omstart\\n"
+
+#: src/lib/kernel_reboot.sh:11
+#, sh-format
+msgid "Would you like to reboot now? [y/N]"
+msgstr "Vill du starta om nu? [j/N]"
+
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:68
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "Y"
+msgstr "J"
+
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:68
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "y"
+msgstr "j"
+
+#: src/lib/kernel_reboot.sh:27
+#, sh-format
+msgid "Rebooting in ${sec}...\\r"
+msgstr "Startar om om ${sec}...\\r"
+
+#: src/lib/kernel_reboot.sh:33
+#, sh-format
+msgid ""
+"An error has occurred during the reboot process\\nThe reboot has been "
+"aborted\\n"
+msgstr ""
+"Ett fel har uppstått under omstartsprocessen\\nOmstarten har avbrutits\\n"
+
+#: src/lib/kernel_reboot.sh:41
+#, sh-format
+msgid ""
+"The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
+"the pending kernel update\\n"
+msgstr ""
+"Omstarten har inte utförts\\nVänligen överväg att starta om för att slutföra "
+"den väntande kärnuppdateringen\\n"
+
+#: src/lib/kernel_reboot.sh:45
+#, sh-format
+msgid "No pending kernel update found\\n"
+msgstr "Ingen väntande kärnuppdatering hittades\\n"
+
+#: src/lib/list_news.sh:7
+#, sh-format
+msgid "Looking for recent Arch News..."
+msgstr "Letar du efter de senaste Arch-nyheterna..."
+
+#: src/lib/list_news.sh:12
+#, sh-format
+msgid ""
+"Unable to retrieve recent Arch News (HTTP error response or request "
+"timeout)\\nPlease, look for any recent news at https://archlinux.org before "
+"updating your system"
+msgstr ""
+"Det gick inte att hämta de senaste Arch-nyheterna (HTTP-felsvar eller "
+"timeout för begäran)\\nVänligen leta efter några av det senaste nyheterna på "
+"https://archlinux.org innan du uppdaterar ditt system"
+
+#: src/lib/list_news.sh:22
+#, sh-format
+msgid "No recent Arch News found"
+msgstr "Inga nya Arch-nyheter hittades"
+
+#: src/lib/list_news.sh:36
+#, sh-format
+msgid "Arch News:"
+msgstr "Arch-nyheter:"
+
+#: src/lib/list_news.sh:41
+#, sh-format
+msgid "[NEW]"
+msgstr "[NY]"
+
+#: src/lib/list_news.sh:53
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to quit:"
+msgstr ""
+"Välj nyheterna att läsa (t.ex. 1 3 5), välj 0 för att läsa dem alla eller "
+"tryck på \"enter\" för att avsluta:"
+
+#: src/lib/list_news.sh:55
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to proceed with update:"
+msgstr ""
+"Välj nyheterna att läsa (t.ex. 1 3 5), välj 0 för att läsa dem alla eller "
+"tryck på \"enter\" för att fortsätta med uppdateringen:"
+
+#: src/lib/list_news.sh:78
+#, sh-format
+msgid ""
+"Unable to retrieve the selected Arch News (HTTP error response or request "
+"timeout)\\nPlease, read the selected Arch News at ${news_url} before "
+"updating your system"
+msgstr ""
+"Det gick inte att hämta de valda Arch-nyheterna (HTTP-felsvar eller begäran "
+"om timeout)\\nVänligen läs de valda Arch-nyheterna på ${news_url} innan du "
+"uppdaterar ditt system"
+
+#: src/lib/list_news.sh:83
+#, sh-format
+msgid "Title:"
+msgstr "Titel:"
+
+#: src/lib/list_news.sh:84
+#, sh-format
+msgid "Author:"
+msgstr "Författare:"
+
+#: src/lib/list_news.sh:85
+#, sh-format
+msgid "Publication date:"
+msgstr "Publiceringsdatum:"
+
+#: src/lib/list_news.sh:86
+#, sh-format
+msgid "URL:"
+msgstr "Webbadress:"
+
+#: src/lib/list_packages.sh:7
+#, sh-format
+msgid "Looking for updates...\\n"
+msgstr "Letar efter uppdateringar...\\n"
+
+#: src/lib/list_packages.sh:35
+#, sh-format
+msgid "Packages:"
+msgstr "Paket:"
+
+#: src/lib/list_packages.sh:41
+#, sh-format
+msgid "AUR Packages:"
+msgstr "AUR-paket:"
+
+#: src/lib/list_packages.sh:47
+#, sh-format
+msgid "Flatpak Packages:"
+msgstr "Flatpak paket:"
+
+#: src/lib/list_packages.sh:56
+#, sh-format
+msgid "No update available\\n"
+msgstr "Ingen uppdatering tillgänglig\\n"
+
+#: src/lib/list_packages.sh:64
+#, sh-format
+msgid "Proceed with update? [Y/n]"
+msgstr "Fortsätt med uppdatering? [J/n]"
+
+#: src/lib/list_packages.sh:74
+#, sh-format
+msgid "The update has been aborted\\n"
+msgstr "Uppdatering har avbrutits\\n"
+
+#: src/lib/orphan_packages.sh:14
+#, sh-format
+msgid "Orphan Packages:"
+msgstr "Föräldralösa paket:"
+
+#: src/lib/orphan_packages.sh:18
+#, sh-format
+msgid ""
+"Would you like to remove this orphan package (and its potential "
+"dependencies) now? [y/N]"
+msgstr ""
+"Vill du ta bort detta föräldralösa paket (och dess potentiella beroenden) "
+"nu? [j/N]"
+
+#: src/lib/orphan_packages.sh:20
+#, sh-format
+msgid ""
+"Would you like to remove these orphan packages (and their potential "
+"dependencies) now? [y/N]"
+msgstr ""
+"Vill du ta bort dessa föräldralösa paket (och deras potentiella beroenden) "
+"nu? [j/N]"
+
+#: src/lib/orphan_packages.sh:27
+#, sh-format
+msgid "Removing Orphan Packages...\\n"
+msgstr "Tar bort föräldralösa paket...\\n"
+
+#: src/lib/orphan_packages.sh:32 src/lib/orphan_packages.sh:65
+#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
+#, sh-format
+msgid ""
+"An error has occurred during the removal process\\nThe removal has been "
+"aborted\\n"
+msgstr ""
+"Ett fel har uppstått under borttagningsprocessen\\nBorttagningen har "
+"avbrutits\\n"
+
+#: src/lib/orphan_packages.sh:35 src/lib/orphan_packages.sh:68
+#, sh-format
+msgid "The removal has been applied\\n"
+msgstr "Borttagningen har tillämpats\\n"
+
+#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:72
+#: src/lib/packages_cache.sh:75
+#, sh-format
+msgid "The removal hasn't been applied\\n"
+msgstr "Borttagningen har inte tillämpats\\n"
+
+#: src/lib/orphan_packages.sh:44
+#, sh-format
+msgid "No orphan package found\\n"
+msgstr "Inget föräldralöst paket hittades\\n"
+
+#: src/lib/orphan_packages.sh:49
+#, sh-format
+msgid "Flatpak Unused Packages:"
+msgstr "Flatpak oanvända paket:"
+
+#: src/lib/orphan_packages.sh:53
+#, sh-format
+msgid "Would you like to remove this Flatpak unused package now? [y/N]"
+msgstr "Vill du ta bort detta oanvända Flatpak-paket nu? [j/N]"
+
+#: src/lib/orphan_packages.sh:55
+#, sh-format
+msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
+msgstr "Vill du ta bort dessa Flatpak oanvända paket nu? [j/N]"
+
+#: src/lib/orphan_packages.sh:61
+#, sh-format
+msgid "Removing Flatpak Unused Packages..."
+msgstr "Tar bort Flatpak oanvända paket..."
+
+#: src/lib/orphan_packages.sh:76
+#, sh-format
+msgid "No Flatpak unused package found\\n"
+msgstr "Inget oanvänt Flatpak-paket hittades\\n"
+
+#: src/lib/packages_cache.sh:21
+#, sh-format
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Cachade paket:\\nDet finns ett gammalt eller avinstallerat cachat paket\\n"
+
+#: src/lib/packages_cache.sh:22
+#, sh-format
+msgid "Would you like to remove it from the cache now? [Y/n]"
+msgstr "Vill du ta bort det från cachen nu? [J/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Cachade paket:\\nDet finns gamla och/eller avinstallerade cachade paket\\n"
+
+#: src/lib/packages_cache.sh:25
+#, sh-format
+msgid "Would you like to remove them from the cache now? [Y/n]"
+msgstr "Vill du ta bort dem från cachen nu? [J/n]"
+
+#: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
+#, sh-format
+msgid "Removing old cached packages..."
+msgstr "Tar bort gamla cachade paket..."
+
+#: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
+#, sh-format
+msgid "Removing uninstalled cached packages..."
+msgstr "Tar bort avinstallerade cachade paket..."
+
+#: src/lib/packages_cache.sh:79
+#, sh-format
+msgid "No old or uninstalled cached package found\\n"
+msgstr "Inget gammalt eller avinstallerat cachat paket hittades\\n"
+
+#: src/lib/pacnew_files.sh:10
+#, sh-format
+msgid "Pacnew Files:"
+msgstr "Pacnew filer:"
+
+#: src/lib/pacnew_files.sh:14
+#, sh-format
+msgid "Would you like to process this file now? [Y/n]"
+msgstr "Vill du bearbeta den här filen nu? [J/n]"
+
+#: src/lib/pacnew_files.sh:16
+#, sh-format
+msgid "Would you like to process these files now? [Y/n]"
+msgstr "Vill du bearbeta dessa filer nu? [J/n]"
+
+#: src/lib/pacnew_files.sh:23
+#, sh-format
+msgid "Processing Pacnew Files...\\n"
+msgstr "Bearbetar Pacnew-filer...\\n"
+
+#: src/lib/pacnew_files.sh:28
+#, sh-format
+msgid "The pacnew file(s) processing has been applied\\n"
+msgstr "Bearbetningen av pacnew-fil(er) har tillämpats\\n"
+
+#: src/lib/pacnew_files.sh:31
+#, sh-format
+msgid "An error occurred during the pacnew file(s) processing\\n"
+msgstr "Ett fel uppstod under bearbetningen av pacnew-fil(er)\\n"
+
+#: src/lib/pacnew_files.sh:37
+#, sh-format
+msgid ""
+"The pacnew file(s) processing hasn't been applied\\nPlease, consider "
+"processing them promptly\\n"
+msgstr ""
+"Bearbetningen av pacnew-fil(er) har inte tillämpats\\nSnälla, överväg att "
+"bearbeta dem omgående\\n"
+
+#: src/lib/pacnew_files.sh:41
+#, sh-format
+msgid "No pacnew file found\\n"
+msgstr "Inga pacnew filer hittades\\n"
+
+#: src/lib/restart_services.sh:13
+#, sh-format
+msgid "Services:\\nThe following service requires a post upgrade restart\\n"
+msgstr "Tjänster:\\nFöljande tjänst kräver en omstart efter uppgraderingen\\n"
+
+#: src/lib/restart_services.sh:15
+#, sh-format
+msgid "Services:\\nThe following services require a post upgrade restart\\n"
+msgstr ""
+"Tjänster:\\nFöljande tjänster kräver en omstart efter uppgraderingen\\n"
+
+#: src/lib/restart_services.sh:25
+#, sh-format
+msgid ""
+"Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
+"or press \"enter\" to continue without restarting the service(s):"
+msgstr ""
+"Välj tjänsten/tjänsterna som ska startas om (t.ex. 1 3 5), välj 0 för att "
+"starta om alla eller tryck på \"enter\" för att fortsätta utan att starta om "
+"tjänsten/tjänsterna:"
+
+#: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
+#, sh-format
+msgid "Service(s) restarted successfully\\n"
+msgstr "Tjänsten/tjänsterna har startats om\\n"
+
+#: src/lib/restart_services.sh:34 src/lib/restart_services.sh:61
+#, sh-format
+msgid ""
+"An error has occurred during the service(s) restart\\nPlease, verify the "
+"above service(s) status\\n"
+msgstr ""
+"Ett fel har inträffat under omstarten av tjänsten/tjänsterna\\nKontrollera "
+"tjänsten/tjänsternas status ovan\\n"
+
+#: src/lib/restart_services.sh:47
+#, sh-format
+msgid "The ${service_selected} service has been successfully restarted"
+msgstr "Tjänsten ${service_selected} har startats om"
+
+#: src/lib/restart_services.sh:49
+#, sh-format
+msgid ""
+"An error has occurred during the restart of the ${service_selected} service"
+msgstr "Ett fel har inträffat under omstarten av ${service_selected}-tjänsten"
+
+#: src/lib/restart_services.sh:65
+#, sh-format
+msgid ""
+"The service(s) restart hasn't been performed\\nPlease, consider restarting "
+"services that have been updated to fully apply the upgrade\\n"
+msgstr ""
+"Omstarten av tjänsten/tjänsterna har inte utförts\\nVar vänlig överväg att "
+"starta om tjänster som har uppdaterats för att tillämpa uppgraderingen "
+"helt\\n"
+
+#: src/lib/restart_services.sh:69
+#, sh-format
+msgid "No service requiring a post upgrade restart found\\n"
+msgstr "Ingen tjänst som kräver omstart efter uppgradering hittades\\n"
+
+#: src/lib/tray.py:123 src/lib/tray.py:125
+msgid "'updates' state file isn't found"
+msgstr "\"Updates\"-tillståndsfilen hittades inte"
+
+#: src/lib/tray.py:135 src/lib/tray.py:136
+msgid "System is up to date"
+msgstr "Systemet är uppdaterat"
+
+#: src/lib/tray.py:140
+#, python-brace-format
+msgid ""
+"1 update available\n"
+"\n"
+"{update_list}"
+msgstr ""
+"1 uppdatering tillgänglig\n"
+"\n"
+"{update_list}"
+
+#: src/lib/tray.py:141
+msgid "1 update available"
+msgstr "1 uppdatering tillgänglig"
+
+#: src/lib/tray.py:145
+#, python-brace-format
+msgid ""
+"{updates} updates available\n"
+"\n"
+"{update_list}"
+msgstr ""
+"{updates} uppdateringar tillgängliga\n"
+"\n"
+"{update_list}"
+
+#: src/lib/tray.py:146
+#, python-brace-format
+msgid "{updates} updates available"
+msgstr "{updates} uppdateringar tillgängliga"
+
+#: src/lib/tray.py:186
+msgid "Run Arch-Update"
+msgstr "Kör Arch-Update"
+
+#: src/lib/tray.py:187
+msgid "Check for updates"
+msgstr "Sök efter uppdateringar"
+
+#: src/lib/tray.py:188
+msgid "Exit"
+msgstr "Avsluta"
+
+#: src/lib/tray.py:191
+msgid "Checking for updates..."
+msgstr "Söker efter uppdateringar..."
+
+#: src/lib/tray.sh:20
+#, sh-format
+msgid "Arch-Update tray desktop file not found"
+msgstr "Arch-Update skrivbordsfält skrivbordsfil hittades inte"
+
+#: src/lib/tray.sh:27
+#, sh-format
+msgid "The '${tray_desktop_file_autostart}' file already exists"
+msgstr "Filen '${tray_desktop_file_autostart}' existerar redan"
+
+#: src/lib/tray.sh:32
+#, sh-format
+msgid ""
+"The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
+"systray applet will be automatically started at your next log on\\nTo start "
+"it right now, you can launch the \"Arch-Update Systray Applet\" application "
+"from your app menu"
+msgstr ""
+"Filen '${tray_desktop_file_autostart}' har skapats, Arch-Update systemfält-"
+"appleten startas automatiskt vid din nästa inloggning\\nFör att starta den "
+"direkt kan du starta programmet \"Arch-Update Systray Applet\" från din "
+"program meny"
+
+#: src/lib/tray.sh:42
+#, sh-format
+msgid "There's already a running instance of the Arch-Update systray applet"
+msgstr "Det finns redan en körande instans av Arch-Update systemfält-appleten"
+
+#: src/lib/update.sh:9
+#, sh-format
+msgid "Updating Packages...\\n"
+msgstr "Uppdaterar paket...\\n"
+
+#: src/lib/update.sh:15 src/lib/update.sh:30 src/lib/update.sh:44
+#, sh-format
+msgid ""
+"An error has occurred during the update process\\nThe update has been "
+"aborted\\n"
+msgstr ""
+"Ett fel har uppstått under uppdateringsprocessen\\nUppdateringen har "
+"avbrutits\\n"
+
+#: src/lib/update.sh:24
+#, sh-format
+msgid "Updating AUR Packages...\\n"
+msgstr "Uppdaterar AUR-paket...\\n"
+
+#: src/lib/update.sh:40
+#, sh-format
+msgid "Updating Flatpak Packages...\\n"
+msgstr "Uppdaterar Flatpak paket...\\n"
+
+#: src/lib/update.sh:51
+#, sh-format
+msgid "The update has been applied\\n"
+msgstr "Uppdateringen har applicerats\\n"
