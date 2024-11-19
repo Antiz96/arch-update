@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# AUTHOR <EMAIL@ADDRESS>, YEAR
+# Luna Jernberg <droidbittin@gmail.com>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 3.4.0\n"
