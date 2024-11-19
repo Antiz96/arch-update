@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.4.1](https://github.com/Antiz96/arch-update/releases/tag/v3.4.1) - 2024-11-19
+
+### Features
+
+- Add Swedish translation ([#280](https://github.com/Antiz96/arch-update/pull/280)) - ([bad989a](https://github.com/Antiz96/arch-update/commit/bad989aaf5729da28f754f44e8814cdc2d891b01)) by @bittin
+
+### Styling
+
+- *(CONTRIBUTING.md)* Typo fixes ([#279](https://github.com/Antiz96/arch-update/pull/279)) - ([e8f11a0](https://github.com/Antiz96/arch-update/commit/e8f11a0fada1bef8a570dd2a07d9b9785df63d5d)) by @Antiz96
+
 ## [v3.4.0](https://github.com/Antiz96/arch-update/releases/tag/v3.4.0) - 2024-11-06
 
 ### Features
