@@ -10,9 +10,12 @@ source "${libdir}/list_packages.sh"
 
 # If the user gave the confirmation to proceed to apply updates
 if [ -n "${proceed_with_update}" ]; then
-	# Source the "list_news" library which displays the latest Arch news and offers to read them
-	# shellcheck source=src/lib/list_news.sh
-	source "${libdir}/list_news.sh"
+	# If the user hasn't disabled news, proceed to show the news
+	if [ -z "${no_news}" ]; then
+		# Source the "list_news" library which displays the latest Arch news and offers to read them
+		# shellcheck source=src/lib/list_news.sh
+		source "${libdir}/list_news.sh"
+  	fi
 
 	# Source the "update" library which updates packages
 	# shellcheck source=src/lib/update.sh
