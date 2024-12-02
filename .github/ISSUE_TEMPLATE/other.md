@@ -2,7 +2,7 @@
 name: Other
 about: Ask a general question or provide a feedback
 title: ''
-labels: ''
+labels: 'question/feedback'
 assignees: Antiz96
 
 ---
