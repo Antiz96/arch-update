@@ -125,4 +125,4 @@ You can also support this project development (and my work in general) by making
 ## Thank you
 
 Once again, thank you for considering contributing to Arch-Update!  
-I'd also like to thank everyone that already opened issues, feature requests, pull requests or contributed to Arch-Update in any other way! :heart:
+I'd also like to sincerely thank everyone that gave Arch-Update a star, opened issues, feature requests, pull requests or contributed to this project in any other way! :heart:
