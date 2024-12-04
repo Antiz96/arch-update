@@ -7,7 +7,7 @@
 orphan_packages=$(pacman -Qtdq)
 
 if [ -n "${flatpak}" ]; then
-	flatpak_unused=$(flatpak remove --unused | awk '{print $2}' | grep -v '^$' | sed '$d')
+	flatpak_unused=$(flatpak remove --unused | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 fi
 
 if [ -n "${orphan_packages}" ]; then
