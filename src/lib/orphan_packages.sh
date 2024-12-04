@@ -7,7 +7,7 @@
 orphan_packages=$(pacman -Qtdq)
 
 if [ -n "${flatpak}" ]; then
-	flatpak_unused=$(flatpak remove --unused | awk '{print $2}' | grep -v '^$' | sed '$d')
+	flatpak_unused=$(flatpak uninstall --unused | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 fi
 
 if [ -n "${orphan_packages}" ]; then
@@ -60,7 +60,7 @@ if [ -n "${flatpak}" ]; then
 				echo
 				main_msg "$(eval_gettext "Removing Flatpak Unused Packages...")"
 
-				if ! flatpak remove --unused; then
+				if ! flatpak uninstall --unused; then
 					echo
 					error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 				else
