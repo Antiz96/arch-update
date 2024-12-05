@@ -18,10 +18,6 @@ if [ -f "${config_file}" ]; then
 	# shellcheck disable=SC2034
 	no_version=$(grep -Eq '^[[:space:]]*NoVersion[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
 
-	# Check the "AlwaysShowNews" option in arch-update.conf
-	# shellcheck disable=SC2034
-	show_news=$(grep -Eq '^[[:space:]]*AlwaysShowNews[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
-
 	# Check the "NewsNum" option in arch-update.conf
 	# shellcheck disable=SC2034
 	news_num=$(grep -E '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')

@@ -4,7 +4,6 @@
 
 #NoColor
 #NoVersion
-#AlwaysShowNews
 #NewsNum=5
 #AURHelper=paru
 #PrivilegeElevationCommand=sudo
