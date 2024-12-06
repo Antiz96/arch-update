@@ -237,7 +237,6 @@ Les options prises en charge sont :
 
 - NoColor # Ne pas coloriser la sortie.
 - NoVersion # Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option `-l / --list`).
-- AlwaysShowNews # Toujours afficher les Arch news avant de mettre à jour, peu importe s'il y en a une nouvelle depuis la dernière exécution ou non.
 - NewsNum=[Num] # Nombre de Arch news à affcher avant la mise à jour et avec l'option `-n / --news` (voir la page de manuel arch-update(1) pour plus de details). La valeur par défaut est 5.
 - AURHelper=[AUR Helper] # AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont `paru`, `yay` ou `pikaur`. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : `paru` puis `yay` puis `pikaur` (si aucun d'eux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
 - PrivilegeElevationCommand=[Cmd] # Commande à utiliser pour l'élévation de privilège. Les valeurs valides sont `sudo`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'odre suivant : `sudo`, `doas` puis `run0`.
