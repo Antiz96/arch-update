@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.4.2](https://github.com/Antiz96/arch-update/releases/tag/v3.4.2) - 2024-12-06
+
+### Fixes
+
+- Avoid false positive on unused runtimes for Flatpak with pinned runtimes - ([2dae27b](https://github.com/Antiz96/arch-update/commit/2dae27bca96ecd0d03fa7f578a01af57f5c4ce31)) by @RayJW
+
+### Miscellaneous
+
+- *(CONTRIBUTING.md)* Expand the "Thank you" section ([#287](https://github.com/Antiz96/arch-update/pull/287)) - ([7ea5325](https://github.com/Antiz96/arch-update/commit/7ea5325bcebd8e964aefdc57bc973919788ad6ba)) by @Antiz96
+- *(issues)* Add a dedicated label to the 'Other' issue type ([#283](https://github.com/Antiz96/arch-update/pull/283)) - ([ff81590](https://github.com/Antiz96/arch-update/commit/ff815908a0e54f1cdff5e032ac68c0b060647f26)) by @Antiz96
+- Remove the AlwaysShowNews option ([#288](https://github.com/Antiz96/arch-update/pull/288)) - ([8f5fdee](https://github.com/Antiz96/arch-update/commit/8f5fdeee9477a5a774b4ff95c1a424e09d602567)) by @leyyce
+
 ## [v3.4.1](https://github.com/Antiz96/arch-update/releases/tag/v3.4.1) - 2024-11-19
 
 ### Features
