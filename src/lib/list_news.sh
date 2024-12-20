@@ -69,7 +69,7 @@ else
 			if [ "${num}" -le "${news_num}" ] 2> /dev/null && [ "${num}" -gt "0" ]; then
 				printed_news="true"
 				news_selected=$(sed -n "${num}"p <<< "${news_titles}")
-				news_path=$(echo "${news_selected}" | sed s/\ -//g | sed s/\ /-/g | sed s/[.]//g | sed s/=//g | sed s/\>//g | sed s/\<//g | sed s/\`//g | sed s/://g | sed s/+//g | sed s/[[]//g | sed s/]//g | sed s/,//g | sed s/\(//g | sed s/\)//g | sed s/[/]//g | sed s/@//g | sed s/\'//g | sed s/--/-/g | awk '{print tolower($0)}')
+				news_path=$(echo "${news_selected}" | sed -e s/\ -//g -e s/\ /-/g -e s/[.]//g -e s/=//g -e s/\>//g -e s/\<//g -e s/\`//g -e s/://g -e s/+//g -e s/[[]//g -e s/]//g -e s/,//g -e s/\(//g -e s/\)//g -e s/[/]//g -e s/@//g -e s/\'//g -e s/--/-/g | awk '{print tolower($0)}')
 				news_url="https://www.archlinux.org/news/${news_path}"
 				news_content=$(curl -m 30 -Lfs "${news_url}" || echo "error")
 
