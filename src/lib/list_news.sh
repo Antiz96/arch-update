@@ -30,7 +30,7 @@ else
 	if [ -n "${show_news}" ]; then
 		# shellcheck disable=SC2154
 		news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -"${news_num}")
-		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | sed "s/\.//g" | head -"${news_num}" | xargs -I{} date -d "{}" "+%s")
+		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -"${news_num}" | xargs -I{} date -d "{}" "+%s")
 
 		echo
 		main_msg "$(eval_gettext "Arch News:")"
@@ -77,8 +77,8 @@ else
 					echo
 					warning_msg "$(eval_gettext "Unable to retrieve the selected Arch News (HTTP error response or request timeout)\nPlease, read the selected Arch News at \${news_url} before updating your system")"
 				else
-					news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f5- -d " ")
-					news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1,2,3 -d " ")
+					news_author=$(echo "${news_content}" | htmlq -t .article-info | cut -f3- -d " ")
+					news_date=$(echo "${news_content}" | htmlq -t .article-info | cut -f1 -d " ")
 					news_article=$(echo "${news_content}" | htmlq -t .article-content)
 					title_tag="$(eval_gettext "Title:")"
 					author_tag="$(eval_gettext "Author:")"
