@@ -36,11 +36,10 @@ git tag v${TAG} -u D33FAA16B937F3B2 -m "v${TAG}"
 git push origin v${TAG}
 ```
 
-- Create a release on GitHub, copy / paste release notes from the changelog and sign the auto-generated source tarball:
+- Create a release on GitHub, download and sign the auto-generated source tarball:
 
 ```bash
 cd ~/Downloads
-curl https://github.com/Antiz96/arch-update/archive/refs/tags/v${TAG}.tar.gz -o arch-update-${TAG}.tar.gz
 gpg --local-user D33FAA16B937F3B2 --armor --detach-sign arch-update-${TAG}.tar.gz
 sha256sum arch-update-${TAG}.tar.gz > arch-update-${TAG}.tar.gz.sha256
 gpg --local-user D33FAA16B937F3B2 --armor --detach-sign arch-update-${TAG}.tar.gz.sha256
