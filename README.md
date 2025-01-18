@@ -242,7 +242,7 @@ The supported options are:
 - PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid values are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
-- DiffProg=[Editor] # Editor to use to visualize / edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set). Note that, due to the lack of option to preserve environment variable in `doas`, this option will be ignored when using `doas` as the privilege elevation method.
+- DiffProg=[Editor] # Editor to use to visualize / edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set).
 - TrayIconStyle=[Style / Color] # Style to be used for the systray applet icon. Valid values are the available style / color variants for the icon set, listed in https://github.com/Antiz96/arch-update/tree/main/res/icons. Defaults to "light".
 
 Options are case sensitive, so capital letters have to be respected.

@@ -163,6 +163,8 @@ if [ -n "${diff_prog}" ]; then
 	else
 		if [ "${su_cmd}" == "sudo" ]; then
 			diff_prog_opt=("DIFFPROG=${diff_prog}")
+		elif [ "${su_cmd}" == "doas" ]; then
+			diff_prog_opt=("env" "DIFFPROG=${diff_prog}")
 		elif [ "${su_cmd}" == "run0" ]; then
 			diff_prog_opt+=("--setenv=DIFFPROG=${diff_prog}")
 		fi
