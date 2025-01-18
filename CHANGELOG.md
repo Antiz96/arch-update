@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.5.0](https://github.com/Antiz96/arch-update/releases/tag/v3.5.0) - 2025-01-18
+
+### Features
+
+- Add support for the DiffProg option when using doas ([#295](https://github.com/Antiz96/arch-update/pull/295)) - ([0fa90ec](https://github.com/Antiz96/arch-update/commit/0fa90ecb8c56157025edbfaed589c92047335ac1)) by @l-pt
+
+### Miscellaneous
+
+- Update release workflow ([#294](https://github.com/Antiz96/arch-update/pull/294)) - ([ee4867b](https://github.com/Antiz96/arch-update/commit/ee4867bc2e427502fc092c65cebab6cc53766cb1)) by @Antiz96
+
 ## [v3.4.3](https://github.com/Antiz96/arch-update/releases/tag/v3.4.3) - 2025-01-17
 
 ### Fixes
