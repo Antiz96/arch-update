@@ -1,7 +1,8 @@
-.TH "ARCH-UPDATE.CONF" "5" "Novembre 2024" "Arch-Update 3.5.0" "Manuel de Arch-Update"
+arch-update.conf(5) - v3.5.0
 
-.SH NAME
-arch-update.conf \- fichier de configuration pour arch-update.
+# NAME
+
+arch-update.conf - Arch-Update configuration file.
 
 .SH SYNOPSIS
 $XDG_CONFIG_HOME/arch-update/arch-update.conf, $HOME/.config/arch-update/arch-update.conf

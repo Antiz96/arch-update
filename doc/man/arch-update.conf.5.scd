@@ -2,7 +2,7 @@ arch-update.conf(5) - v3.5.0
 
 # NAME
 
-arch-update.conf - arch-update configuration file.
+arch-update.conf - Arch-Update configuration file.
 
 # SYNOPSIS
 
