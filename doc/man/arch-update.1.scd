@@ -13,11 +13,11 @@ Arch-Update - An update notifier & applier for Arch Linux that assists you with 
 An update notifier & applier for Arch Linux that assists you with important pre / post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any Desktop Environment / Window Manager.
 
 Optional support for:
-- AUR package updates (via `paru`, `yay`, or `pikaur`).
-- Flatpak updates (via `flatpak`).
+- AUR packages (via `paru`, `yay` or `pikaur`).
+- Flatpak packages (via `flatpak`).
 - Desktop notifications (via `libnotify`).
 
-Arch-Update is designed to follow usual system maintenance steps, as described in the [Arch Wiki](https://wiki.archlinux.org/title/System_maintenance).
+Arch-Update is designed to follow usual system maintenance steps, as described in the Arch Wiki at https://wiki.archlinux.org/title/System_maintenance.
 
 # OPTIONS
 
@@ -108,7 +108,7 @@ If clicking the systray applet does nothing, please read the *"Force the desktop
 
 ## The systemd timer
 
-There is a systemd service in `/usr/lib/systemd/user/arch-update.service` _(or in `/usr/local/lib/systemd/user/arch-update.service` if you installed arch-update from source)_ that executes the `--check` function when started. To start it automatically at boot and then once every hour, enable the associated systemd timer (the auto-check cycle can be modified to your liking. See the *"TIPS AND TRICKS"* chapter below):" `systemctl --user enable --now arch-update.timer`
+There is a systemd service in `/usr/lib/systemd/user/arch-update.service` _(or in `/usr/local/lib/systemd/user/arch-update.service` if you installed `arch-update` from source)_ that executes the `--check` function when started. To start it automatically at boot and then once every hour, enable the associated systemd timer (the auto-check cycle can be modified to your liking. See the *"TIPS AND TRICKS"* chapter below):" `systemctl --user enable --now arch-update.timer`
 
 # TIPS AND TRICKS 
 
@@ -155,7 +155,7 @@ For instance, if you want `Arch-Update` to check for new updates every 10 minute
 [...]
 [Timer]
 OnStartupSec=15
-OnUnitActiveSec= 10m
+OnUnitActiveSec=10m
 [...]
 ```
 
