@@ -33,7 +33,7 @@ Those functions are launched when the systray applet is clicked.
 
 *`-c`, `--check`*
 	Check for available updates. If there are, send a desktop notification and update the systray icon.
-	The `--check` option is ran automatically at boot and then every hour if you enabled the associated systemd timer with the following command: `systemctl --user enable --now arch-update.timer`
+	The `--check` option is ran automatically at boot and then every hour if you enabled the associated systemd timer with the following command: `systemctl --user enable --now arch-update.timer`.
 
 *`-l`, `--list`*
 	Display the list of pending updates.
@@ -184,52 +184,52 @@ Alternatively, you can create a symlink for your terminal emulator that points t
 # EXIT STATUS
 
 *0*
-	OK
+	OK.
 
 *1*
-	Invalid option
+	Invalid option.
 
 *2*
-	No privilege elevation command (`sudo`, `doas` or `run0`) is installed or the one set in the `arch-update.conf` configuration file isn't found
+	No privilege elevation command (`sudo`, `doas` or `run0`) is installed or the one set in the `arch-update.conf` configuration file isn't found.
 
 *3*
-	Error when launching the Arch-Update systray applet
+	Error when launching the Arch-Update systray applet.
 
 *4*
-	User didn't gave the confirmation to proceed
+	User didn't gave the confirmation to proceed.
 
 *5*
-	Error when updating the packages
+	Error when updating the packages.
 
 *6*
-	Error when calling the reboot command to apply a pending kernel update
+	Error when calling the reboot command to apply a pending kernel update.
 
 *7*
-	No pending update when using the `-l / --list` option
+	No pending update when using the `-l / --list` option.
 
 *8*
-	Error when generating a configuration file with the `--gen-config` option
+	Error when generating a configuration file with the `--gen-config` option.
 
 *9*
-	Error when reading the configuration file with the `--show-config` option
+	Error when reading the configuration file with the `--show-config` option.
 
 *10*
-	Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option
+	Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option.
 
 *11*
-	Error when restarting services that require a post upgrade restart
+	Error when restarting services that require a post upgrade restart.
 
 *12*
-	Error during the pacnew files processing
+	Error during the pacnew files processing.
 
 *13*
-	Error when editing the configuration file with the `--edit-config` option
+	Error when editing the configuration file with the `--edit-config` option.
 
 *14*
-	Libraries directory not found
+	Libraries directory not found.
 
 *15*
-	The diff prog editor set in the `arch-update.conf` configuration file isn't found
+	The diff prog editor set in the `arch-update.conf` configuration file isn't found.
 
 # SEE ALSO
 

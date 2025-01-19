@@ -34,7 +34,7 @@ Ces fonctions sont lancées quand vous cliquez sur l'applet systray.
 
 *`-c`, `--check`*
 	Vérifier les mises à jour disponibles. S'il y en a, envoie une notification de bureau et met à jour l'icône de l'applet systray.
-	L'option `--check` est automatiquement lancée au démarrage du système puis une fois chaque heure si vous avez activé le systemd timer associé avec la commande suivante : `systemctl --user enable --now arch-update.timer`
+	L'option `--check` est automatiquement lancée au démarrage du système puis une fois chaque heure si vous avez activé le systemd timer associé avec la commande suivante : `systemctl --user enable --now arch-update.timer`.
 
 *`-l`, `--list`*
 	Afficher la liste des mises à jour en attente.
@@ -185,52 +185,52 @@ Alternativement, vous pouvez créer un lien symbolique de votre émulateur de te
 # EXIT STATUS
 
 *0*
-	OK
+	OK.
 
 *1*
-	Option invalide
+	Option invalide.
 
 *2*
-	Aucune commande d'élévation de privilège (`sudo`, `doas` ou `run0`) n'est installée ou celle définie dans le fichier de configuration `arch-update.conf` n'est pas disponible
+	Aucune commande d'élévation de privilège (`sudo`, `doas` ou `run0`) n'est installée ou celle définie dans le fichier de configuration `arch-update.conf` n'est pas disponible.
 
 *3*
-	Erreur lors du lancement de l'applet systray d'Arch-update
+	Erreur lors du lancement de l'applet systray d'Arch-update.
 
 *4*
-	L'utilisateur n'a pas donné la confirmation de procéder
+	L'utilisateur n'a pas donné la confirmation de procéder.
 
 *5*
-	Erreur lors de la mise à jour des paquets
+	Erreur lors de la mise à jour des paquets.
 
 *6*
-	Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
+	Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente.
 
 *7*
-	Aucune mise à jour en attente durant l'utilisation de l'option `-l/--list`
+	Aucune mise à jour en attente durant l'utilisation de l'option `-l/--list`.
 
 *6*
-	Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`
+	Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`.
 
 *9*
-	Erreur lors de la lecture du fichier de configuration avec l'option `--show-config`
+	Erreur lors de la lecture du fichier de configuration avec l'option `--show-config`.
 
 *10*
-	Erreur lors de la création du fichier desktop autostart pour l'applet systray avec l'option `--tray --enable`
+	Erreur lors de la création du fichier desktop autostart pour l'applet systray avec l'option `--tray --enable`.
 
 *11*
-	Erreur lors du redémarrage des services nécessitant un redémarrage après mise à jour
+	Erreur lors du redémarrage des services nécessitant un redémarrage après mise à jour.
 
 *12*
-	Erreur lors du traitement des fichiers pacnew
+	Erreur lors du traitement des fichiers pacnew.
 
 *13*
-	Erreur lors de l'édition du fichier de configuration avec l'optionu `--edit-config`
+	Erreur lors de l'édition du fichier de configuration avec l'optionu `--edit-config`.
 
 *14*
-	Le dossier de librairies n'a pas été trouvé
+	Le dossier de librairies n'a pas été trouvé.
 
 *15*
-	L'éditeur "diff prog" défini dans le fichier de configuration `arch-update.conf` n'a pas été trouvé
+	L'éditeur "diff prog" défini dans le fichier de configuration `arch-update.conf` n'a pas été trouvé.
 
 # VOIR AUSSI
 

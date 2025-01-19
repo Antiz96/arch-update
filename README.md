@@ -197,35 +197,35 @@ pending kernel update, as well as services requiring a post upgrade restart and,
 offers to process them.
 
 Options:
--c, --check       Check for available updates, change the systray icon and send a desktop notification containing the number of available updates (if there are new available updates compared to the last check)
--l, --list        Display the list of pending updates
--d, --devel       Include AUR development packages updates
--n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
--D, --debug       Display debug traces
---gen-config      Generate a default / example `arch-update.conf` configuration file (see the arch-update.conf(5) man page for more details), you can optionally pass the `--force` argument to overwrite any existing `arch-update.conf` configuration file
---show-config     Display the `arch-update.conf` configuration file currently used (if it exists)
---edit-config     Edit the `arch-update.conf` configuration file currently used (if it exists)
---tray            Launch the Arch-Update systray applet, you can optionally add the `--enable` argument to start it automatically at boot.
--h, --help        Display this help message and exit
--V, --version     Display version information and exit
+-c, --check       Check for available updates, change the systray icon and send a desktop notification containing the number of available updates (if there are new available updates compared to the last check).
+-l, --list        Display the list of pending updates.
+-d, --devel       Include AUR development packages updates.
+-n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`).
+-D, --debug       Display debug traces.
+--gen-config      Generate a default / example `arch-update.conf` configuration file (see the arch-update.conf(5) man page for more details), you can optionally pass the `--force` argument to overwrite any existing `arch-update.conf` configuration file.
+--show-config     Display the `arch-update.conf` configuration file currently used (if it exists).
+--edit-config     Edit the `arch-update.conf` configuration file currently used (if it exists).
+--tray            Launch the Arch-Update systray applet, you can optionally add the `--enable` argument to start it automatically at boot..
+-h, --help        Display this help message and exit.
+-V, --version     Display version information and exit.
 
 Exit Codes:
-0  OK
-1  Invalid option
-2  No privilege elevation command (sudo, doas or run0) is installed or the one set in the `arch-update.conf` configuration file isn't found
-3  Error when launching the Arch-Update systray applet
-4  User didn't gave the confirmation to proceed
-5  Error when updating the packages
-6  Error when calling the reboot command to apply a pending kernel update
-7  No pending update when using the `-l / --list` option
-8  Error when generating a configuration file with the `--gen-config` option
-9  Error when reading the configuration file with the `--show-config` option
-10 Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option
-11 Error when restarting services that require a post upgrade restart
-12 Error during the pacnew files processing
-13 Error when editing the configuration file with the `--edit-config` option
-14 Libraries directory not found
-15 The diff prog editor set in the `arch-update.conf` configuration file isn't found
+0  OK.
+1  Invalid option.
+2  No privilege elevation command (sudo, doas or run0) is installed or the one set in the `arch-update.conf` configuration file isn't found.
+3  Error when launching the Arch-Update systray applet.
+4  User didn't gave the confirmation to proceed.
+5  Error when updating the packages.
+6  Error when calling the reboot command to apply a pending kernel update.
+7  No pending update when using the `-l / --list` option.
+8  Error when generating a configuration file with the `--gen-config` option.
+9  Error when reading the configuration file with the `--show-config` option.
+10 Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option.
+11 Error when restarting services that require a post upgrade restart.
+12 Error during the pacnew files processing.
+13 Error when editing the configuration file with the `--edit-config` option.
+14 Libraries directory not found.
+15 The diff prog editor set in the `arch-update.conf` configuration file isn't found.
 ```
 
 For more information, see the arch-update(1) man page.  
