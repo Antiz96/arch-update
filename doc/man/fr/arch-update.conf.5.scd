@@ -2,65 +2,59 @@ arch-update.conf(5) - v3.5.0
 
 # NAME
 
-arch-update.conf - Arch-Update configuration file.
+arch-update.conf - Fichier de configuration pour Arch-Update.
 
-.SH SYNOPSIS
-$XDG_CONFIG_HOME/arch-update/arch-update.conf, $HOME/.config/arch-update/arch-update.conf
+# SYNOPSIS
 
-.SH DESCRIPTION
-.RI "Fichier de configuration " "optionnel " "pour Arch-Update."
+*$XDG_CONFIG_HOME/arch-update/arch-update.conf*, *$HOME/.config/arch-update/arch-update.conf*
 
-.RB "Arch-Update tente d'abord de lire le fichier sous " "$XDG_CONFIG_HOME/arch-update/arch-update.conf " "puis sous " "$HOME/.config/arch-update/arch-update.conf " "si " "$XDG_CONFIG_HOME " "n'est pas paramétré, ou que le fichier n'existe pas."
-.br
-.RB "Un fichier de configuration par défaut / exemple peut être généré en exécutant : " "arch-update --gen-config"
+# DESCRIPTION
 
-.SH OPTIONS
-.PP
+Fichier de configuration _optionnel_ pour Arch-Update.
+
+Arch-Update tente d'abord de lire le fichier sous `$XDG_CONFIG_HOME/arch-update/arch-update.conf` puis sous `$HOME/.config/arch-update/arch-update.conf` si `$XDG_CONFIG_HOME` n'est pas paramétré, ou que le fichier n'existe pas.
+
+Un fichier de configuration par défaut / exemple peut être généré en exécutant : `arch-update --gen-config`
+
+# OPTIONS
+
 Les options sont sensibles à la casse, les majuscules doivent donc être respectées.
 
-.PP
+*NoColor*
+	Ne pas coloriser la sortie.
 
-.TP
-.B NoColor
-Ne pas coloriser la sortie.
+*NoVersion*
+	Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option `-l / --list`, voir la page de manuel *arch-update(1)* pour plus de détails).
 
-.TP
-.B NoVersion
-.RB "Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option " "-l / --list" ", voir la page de man " "arch-update(1) " "pour plus de détails)."
+*NewsNum=[Num]*
+	Nombre de Arch news à afficher avant la mise à jour et avec l'option `-n / --news` (voir la page de manuel *arch-update(1)* pour plus de détails). La valeur par défaut est 5.
 
-.TP
-.B NewsNum=[Num]
-.RB "Nombre de Arch news à afficher avant la mise à jour et avec l'option " "-n / --news " "(voir la page de man " "arch-update(1) " "pour plus de détails). La valeur par défaut est 5."
+*AURHelper=[AUR Helper]*
+	AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont `paru`, `yay` ou `pikaur`. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : `paru` puis `yay` puis `pikaur` (si aucun d'eux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
 
-.TP
-.B AURHelper=[AUR Helper]
-AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont paru, yay ou pikaur. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : paru puis yay puis pikaur (si aucun d'eux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
+*PrivilegeElevationCommand=[Cmd]*
+	Commande à utiliser pour l'élévation de privilège. Les valeurs valides sont `sudo`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'ordre suivant: `sudo`, `doas` puis `run0`.
 
-.TP
-.B PrivilegeElevationCommand=[Cmd]
-Commande à utiliser pour l'élévation de privilège. Les valeurs valides sont sudo, doas ou run0. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'ordre suivant: sudo, doas puis run0.
+*KeepOldPackages=[Num]*
+	Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
 
-.TP
-.B KeepOldPackages=[Num]
-Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
+*KeepUninstalledPackages=[Num]*
+	Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
 
-.TP
-.B KeepUninstalledPackages=[Num]
-Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
+*DiffProg=[Editeur]*
+	Editeur à utiliser pour visualiser / editer les différences durant le traitement des fichiers pacnew. La valeur par défaut est la valeur de la variable d'environnement `$DIFFPROG` (ou `vimdiff` si `$DIFFPROG` n'est pas paramétrée).
 
-.TP
-.B DiffProg=[Editeur]
-.RB "Editeur à utiliser pour visualiser / editer les différences durant le traitement des fichiers pacnew. La valeur par défaut est la valeur de la variable d'environnement " "$DIFFPROG " "(ou " "vimdiff " "si " "$DIFFPROG " "n'est pas paramétrée)."
+*TrayIconStyle=[Style / Couleur]*
+	Style à utiliser pour l'icône de l'applet systray. Les valeurs valides sont les variantes de style / couleur disponibles pour le set d'icône, listées ici : https://github.com/Antiz96/arch-update/tree/main/res/icons. La valeur par défaut est "light".
 
-.TP
-.B TrayIconStyle=[Style / Color]
-Style à utiliser pour l'icône de l'applet systray. Les valeurs valides sont les variantes de style / couleur disponibles pour le set d'icône, listées ici : https://github.com/Antiz96/arch-update/tree/main/res/icons. La valeur par défaut est "light".
+# VOIR AUSSI
 
-.SH VOIR AUSSI
-.BR arch-update (1)
+*arch-update (1)*
 
-.SH BUGS
+# BUGS
+
 Signalez les bugs sur la page GitHub : https://github.com/Antiz96/arch-update/issues
 
-.SH AUTEUR
+# AUTEUR
+
 Robin Candau <robincandau@protonmail.com>
