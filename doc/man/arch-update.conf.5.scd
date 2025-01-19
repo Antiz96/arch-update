@@ -6,7 +6,7 @@ arch-update.conf - arch-update configuration file.
 
 # SYNOPSIS
 
-`$XDG_CONFIG_HOME/arch-update/arch-update.conf`, `$HOME/.config/arch-update/arch-update.conf`
+*$XDG_CONFIG_HOME/arch-update/arch-update.conf*, *$HOME/.config/arch-update/arch-update.conf*
 
 # DESCRIPTION
 

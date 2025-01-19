@@ -6,7 +6,7 @@ Arch-Update - An update notifier & applier for Arch Linux that assists you with 
 
 # SYNOPSIS
 
-arch-update [OPTION]
+*arch-update* [OPTION]
 
 # DESCRIPTION
 
