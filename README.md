@@ -63,18 +63,26 @@ Additional optional dependencies you might need or want:
 - [vim](https://archlinux.org/packages/extra/x86_64/vim/): Default merge program for pacdiff
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/): Systray applet support on Wayland
 
-Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git clone`)*.
-
-To install `arch-update`, go into the extracted / cloned directory and run the following command:
+Install required build dependencies:
 
 ```bash
+sudo pacman -S --asdeps make scdoc bats
+```
+
+Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git clone`)*.
+
+To install `arch-update`, go into the extracted / cloned directory and run the following commands:
+
+```bash
+sudo make
+sudo make test
 sudo make install
 ```
 
-If you want to run simple unit tests, you can run the following command (requires [bats](https://archlinux.org/packages/extra/any/bats/)):
+Once the installation is complete, you may optionally clean up the directory of files generated during installation by running the following command:
 
 ```bash
-make test
+sudo make clean
 ```
 
 To uninstall `arch-update`, go into the extracted / cloned directory and run the following command:
