@@ -183,69 +183,53 @@ Alternatively, you can create a symlink for your terminal emulator that points t
 
 # EXIT STATUS
 
-## 0
+*0*
+	OK
 
-OK
+*1*
+	Invalid option
 
-## 1
+*2*
+	No privilege elevation command (`sudo`, `doas` or `run0`) is installed or the one set in the `arch-update.conf` configuration file isn't found
 
-Invalid option
+*3*
+	Error when launching the Arch-Update systray applet
 
-## 2
+*4*
+	User didn't gave the confirmation to proceed
 
-No privilege elevation command (`sudo`, `doas` or `run0`) is installed or the one set in the `arch-update.conf` configuration file isn't found
+*5*
+	Error when updating the packages
 
-## 3
+*6*
+	Error when calling the reboot command to apply a pending kernel update
 
-Error when launching the Arch-Update systray applet
+*7*
+	No pending update when using the `-l / --list` option
 
-## 4
+*8*
+	Error when generating a configuration file with the `--gen-config` option
 
-User didn't gave the confirmation to proceed
+*9*
+	Error when reading the configuration file with the `--show-config` option
 
-## 5
+*10*
+	Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option
 
-Error when updating the packages
+*11*
+	Error when restarting services that require a post upgrade restart
 
-## 6
+*12*
+	Error during the pacnew files processing
 
-Error when calling the reboot command to apply a pending kernel update
+*13*
+	Error when editing the configuration file with the `--edit-config` option
 
-## 7
+*14*
+	Libraries directory not found
 
-No pending update when using the `-l / --list` option
-
-## 8
-
-Error when generating a configuration file with the `--gen-config` option
-
-## 9
-
-Error when reading the configuration file with the `--show-config` option
-
-## 10
-
-Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option
-
-## 11
-
-Error when restarting services that require a post upgrade restart
-
-## 12
-
-Error during the pacnew files processing
-
-## 13
-
-Error when editing the configuration file with the `--edit-config` option
-
-## 14
-
-Libraries directory not found
-
-## 15
-
-The diff prog editor set in the `arch-update.conf` configuration file isn't found
+*15*
+	The diff prog editor set in the `arch-update.conf` configuration file isn't found
 
 # SEE ALSO
 
