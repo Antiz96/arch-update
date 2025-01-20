@@ -63,18 +63,26 @@ Dépendances optionnelles supplémentaires dont vous pourriez avoir besoin ou qu
 - [vim](https://archlinux.org/packages/extra/x86_64/vim/) : Programme de fusion par défaut pour pacdiff
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/) : Support de l'applet systray sur Wayland
 
-Téléchargez l'archive de la [dernière version stable](https://github.com/Antiz96/arch-update/releases/latest) et extrayez la *(vous pouvez également cloner ce référentiel via `git clone`)*.
-
-Pour installer `arch-update`, allez dans le répertoire extrait / cloné et exécutez la commande suivante :
+Installez les dépendances de compilation requises :
 
 ```bash
+sudo pacman -S --asdeps make scdoc bats
+```
+
+Téléchargez l'archive de la [dernière version stable](https://github.com/Antiz96/arch-update/releases/latest) et extrayez la *(vous pouvez également cloner ce référentiel via `git clone`)*.
+
+Pour installer `arch-update`, allez dans le répertoire extrait / cloné et exécutez les commandes suivantes :
+
+```bash
+sudo make
+sudo make test
 sudo make install
 ```
 
-Si vous voulez exécuter des tests unitaires simples, vous pouvez exécuter la commande suivante (requiert [bats](https://archlinux.org/packages/extra/any/bats/)) :
+Une fois l'installation terminée, vous pouvez optionnellement nettoyer le répertoire des fichiers générés durant l'installation en exécutant cette commande :
 
 ```bash
-make test
+sudo make clean
 ```
 
 Pour désinstaller `arch-update`, allez dans le répertoire extrait / cloné et exécutez la commande suivante :
@@ -189,35 +197,35 @@ de fichiers pacnew & pacsave, de mise à jour du noyau en attente ainsi que des 
 et, s'il y en a, propose de les traiter.
 
 Options :
--c, --check       Vérifier les mises à jour disponibles, changer l'icône du systray et envoyer une notification de bureau contenant le nombre de mises à jour disponibles (s'il y a des nouvelles mises à jour disponibles depuis le dernier check)
--l, --list        Afficher la liste des mises à jour en attente
--d, --devel       Inclure les mises à jour des paquets de développement AUR
--n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
--D, --debug       Afficher les traces de débogage
---gen-config      Générer un fichier de configuration `arch-update.conf` par défaut / exemple (voir la page de manuel arch-update.conf(5) pour plus de détails), vous pouvez optionnellement passer l'argument `--force` pour écraser un fichier de configuration `arch-update.conf` existant
---show-config     Afficher le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe)
---edit-config     Editer le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe)
---tray            Lancer l'applet systray d'Arch-Update, vous pouvez optionnellement ajouter l'argument `--enable` pour la démarrer automatiquement au démarrage du système.
--h, --help        Afficher ce message d'aide et quitter
--V, --version     Afficher les informations de version et quitter
+-c, --check       Vérifier les mises à jour disponibles, changer l'icône du systray et envoyer une notification de bureau contenant le nombre de mises à jour disponibles (s'il y a des nouvelles mises à jour disponibles depuis le dernier check).
+-l, --list        Afficher la liste des mises à jour en attente.
+-d, --devel       Inclure les mises à jour des paquets de développement AUR.
+-n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`).
+-D, --debug       Afficher les traces de débogage.
+--gen-config      Générer un fichier de configuration `arch-update.conf` par défaut / exemple (voir la page de manuel arch-update.conf(5) pour plus de détails), vous pouvez optionnellement passer l'argument `--force` pour écraser un fichier de configuration `arch-update.conf` existant.
+--show-config     Afficher le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe).
+--edit-config     Editer le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe).
+--tray            Lancer l'applet systray d'Arch-Update, vous pouvez optionnellement ajouter l'argument `--enable` pour la démarrer automatiquement au démarrage du système..
+-h, --help        Afficher ce message d'aide et quitter.
+-V, --version     Afficher les informations de version et quitter.
 
 Codes de sortie :
-0  OK
-1  Option invalide
-2  Aucune commande d'élévation de privilège (sudo, doas ou run0) n'est installée ou celle définie dans le fichier de configuration `arch-update.conf` n'est pas disponible
-3  Erreur lors du lancement de l'applet systray d'Arch-Update
-4  L'utilisateur n'a pas donné la confirmation de procéder
-5  Erreur lors de la mise à jour des paquets
-6  Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente
-7  Aucune mise à jour en attente durant l'utilisation de l'option `-l / --list`
-8  Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`
-9  Erreur lors de la lecture du fichier de configuration avec l'option `--show-config`
-10 Erreur lors de la creation du fichier desktop autostart pour l'applet systray avec l'option `--tray --enable`
-11 Erreur lors du redémarrage des services nécessitant un redémarrage après mise à jour
-12 Erreur lors du traitement des fichiers pacnew
-13 Erreur lors de l'édition du fichier de configuration avec l'option `--edit-config`
-14 Le dossier de librairies n'a pas été trouvé
-15 L'éditeur "diff prog" défini dans le fichier de configuration `arch-update.conf` n'est pas disponible
+0  OK.
+1  Option invalide.
+2  Aucune commande d'élévation de privilège (sudo, doas ou run0) n'est installée ou celle définie dans le fichier de configuration `arch-update.conf` n'est pas disponible.
+3  Erreur lors du lancement de l'applet systray d'Arch-Update.
+4  L'utilisateur n'a pas donné la confirmation de procéder.
+5  Erreur lors de la mise à jour des paquets.
+6  Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente.
+7  Aucune mise à jour en attente durant l'utilisation de l'option `-l / --list`.
+8  Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`.
+9  Erreur lors de la lecture du fichier de configuration avec l'option `--show-config`.
+10 Erreur lors de la creation du fichier desktop autostart pour l'applet systray avec l'option `--tray --enable`.
+11 Erreur lors du redémarrage des services nécessitant un redémarrage après mise à jour.
+12 Erreur lors du traitement des fichiers pacnew.
+13 Erreur lors de l'édition du fichier de configuration avec l'option `--edit-config`.
+14 Le dossier de librairies n'a pas été trouvé.
+15 L'éditeur "diff prog" défini dans le fichier de configuration `arch-update.conf` n'est pas disponible.
 ```
 
 Pour plus d'informations, consultez la page de manuel arch-update(1).  
