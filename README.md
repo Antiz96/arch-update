@@ -63,18 +63,26 @@ Additional optional dependencies you might need or want:
 - [vim](https://archlinux.org/packages/extra/x86_64/vim/): Default merge program for pacdiff
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/): Systray applet support on Wayland
 
-Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git clone`)*.
-
-To install `arch-update`, go into the extracted / cloned directory and run the following command:
+Install required build dependencies:
 
 ```bash
+sudo pacman -S --asdeps make scdoc bats
+```
+
+Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it *(alternatively, you can clone this repository via `git clone`)*.
+
+To install `arch-update`, go into the extracted / cloned directory and run the following commands:
+
+```bash
+sudo make
+sudo make test
 sudo make install
 ```
 
-If you want to run simple unit tests, you can run the following command (requires [bats](https://archlinux.org/packages/extra/any/bats/)):
+Once the installation is complete, you may optionally clean up the directory of files generated during installation by running the following command:
 
 ```bash
-make test
+sudo make clean
 ```
 
 To uninstall `arch-update`, go into the extracted / cloned directory and run the following command:
@@ -189,35 +197,35 @@ pending kernel update, as well as services requiring a post upgrade restart and,
 offers to process them.
 
 Options:
--c, --check       Check for available updates, change the systray icon and send a desktop notification containing the number of available updates (if there are new available updates compared to the last check)
--l, --list        Display the list of pending updates
--d, --devel       Include AUR development packages updates
--n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`)
--D, --debug       Display debug traces
---gen-config      Generate a default / example `arch-update.conf` configuration file (see the arch-update.conf(5) man page for more details), you can optionally pass the `--force` argument to overwrite any existing `arch-update.conf` configuration file
---show-config     Display the `arch-update.conf` configuration file currently used (if it exists)
---edit-config     Edit the `arch-update.conf` configuration file currently used (if it exists)
---tray            Launch the Arch-Update systray applet, you can optionally add the `--enable` argument to start it automatically at boot.
--h, --help        Display this help message and exit
--V, --version     Display version information and exit
+-c, --check       Check for available updates, change the systray icon and send a desktop notification containing the number of available updates (if there are new available updates compared to the last check).
+-l, --list        Display the list of pending updates.
+-d, --devel       Include AUR development packages updates.
+-n, --news [Num]  Display latest Arch News, you can optionally specify the number of Arch news to display with `--news [Num]` (e.g. `--news 10`).
+-D, --debug       Display debug traces.
+--gen-config      Generate a default / example `arch-update.conf` configuration file (see the arch-update.conf(5) man page for more details), you can optionally pass the `--force` argument to overwrite any existing `arch-update.conf` configuration file.
+--show-config     Display the `arch-update.conf` configuration file currently used (if it exists).
+--edit-config     Edit the `arch-update.conf` configuration file currently used (if it exists).
+--tray            Launch the Arch-Update systray applet, you can optionally add the `--enable` argument to start it automatically at boot..
+-h, --help        Display this help message and exit.
+-V, --version     Display version information and exit.
 
 Exit Codes:
-0  OK
-1  Invalid option
-2  No privilege elevation command (sudo, doas or run0) is installed or the one set in the `arch-update.conf` configuration file isn't found
-3  Error when launching the Arch-Update systray applet
-4  User didn't gave the confirmation to proceed
-5  Error when updating the packages
-6  Error when calling the reboot command to apply a pending kernel update
-7  No pending update when using the `-l / --list` option
-8  Error when generating a configuration file with the `--gen-config` option
-9  Error when reading the configuration file with the `--show-config` option
-10 Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option
-11 Error when restarting services that require a post upgrade restart
-12 Error during the pacnew files processing
-13 Error when editing the configuration file with the `--edit-config` option
-14 Libraries directory not found
-15 The diff prog editor set in the `arch-update.conf` configuration file isn't found
+0  OK.
+1  Invalid option.
+2  No privilege elevation command (sudo, doas or run0) is installed or the one set in the `arch-update.conf` configuration file isn't found.
+3  Error when launching the Arch-Update systray applet.
+4  User didn't gave the confirmation to proceed.
+5  Error when updating the packages.
+6  Error when calling the reboot command to apply a pending kernel update.
+7  No pending update when using the `-l / --list` option.
+8  Error when generating a configuration file with the `--gen-config` option.
+9  Error when reading the configuration file with the `--show-config` option.
+10 Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option.
+11 Error when restarting services that require a post upgrade restart.
+12 Error during the pacnew files processing.
+13 Error when editing the configuration file with the `--edit-config` option.
+14 Libraries directory not found.
+15 The diff prog editor set in the `arch-update.conf` configuration file isn't found.
 ```
 
 For more information, see the arch-update(1) man page.  
@@ -238,8 +246,8 @@ The supported options are:
 - NoColor # Do not colorize output.
 - NoVersion # Do not show versions changes for packages when listing pending updates (including when using the `-l / --list` option).
 - NewsNum=[Num] # Number of Arch news to display before updating and with the `-n / --news` option (see the arch-update(1) man page for more details). Defaults to 5.
-- AURHelper=[AUR Helper] # AUR helper to be used for AUR packages support. Valid values are `paru`, `yay` or `pikaur`. If this option is not set, Arch-Update will use the first available AUR helper in the following order: `paru` then `yay` then `pikaur` (in case none of them is installed, Arch-Update will not take AUR packages into account).
-- PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid values are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first available command in the following order: `sudo`, `doas` then `run0`.
+- AURHelper=[AUR Helper] # AUR helper to be used for AUR packages support. Valid values are `paru`, `yay` or `pikaur`. If this option is not set, Arch-Update will use the first AUR helper available in the following order: `paru` then `yay` then `pikaur` (in case none of them is installed, Arch-Update will not take AUR packages into account).
+- PrivilegeElevationCommand=[Cmd] # Command to be used for privilege elevation. Valid values are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first command available in the following order: `sudo`, `doas` then `run0`.
 - KeepOldPackages=[Num] # Number of old packages' versions to keep in pacman's cache. Defaults to 3.
 - KeepUninstalledPackages=[Num] # Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
 - DiffProg=[Editor] # Editor to use to visualize / edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set).
