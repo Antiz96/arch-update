@@ -1,6 +1,6 @@
 arch-update.conf(5) - v3.5.0
 
-# NAME
+# NOM
 
 arch-update.conf - Fichier de configuration pour Arch-Update.
 

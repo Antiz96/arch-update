@@ -1,6 +1,6 @@
 arch-update(1) - v3.5.0
 
-# NAME
+# NOM
 
 Arch-Update - Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour.
 
