@@ -85,26 +85,11 @@ To start it automatically at boot, you can either:
 
 If you use a Window Manager or a Wayland Compositor, you can add the `arch-update --tray` command to your auto-start apps in your configuration file instead.
 
-If the systray applet doesn't start at boot regardless, please read the *"The systray applet does not start at boot"* chapter in the *"Tips and Tricks"* section below.
+*If the systray applet doesn't start at boot regardless*, please read the *"The systray applet does not start at boot"* chapter in the *"Tips and Tricks"* section below.
 
-The systray icon will automatically change depending on the current state of your system ("up to date" or "updates available"). When clicked, it launches `arch-update` via the `arch-update.desktop` file.
+The systray icon will automatically change depending on the current state of your system ("up to date" or "updates available"). When clicked, it launches `arch-update` in a terminal window via the `arch-update.desktop` file.
 
-The systray applet attempts to read the `arch-update.desktop` file at the below paths and in the following order:
-
-- `$XDG_DATA_HOME/applications/arch-update.desktop`
-
-- `$HOME/.local/share/applications/arch-update.desktop`
-
-- `$XDG_DATA_DIRS/applications/arch-update.desktop`
-
-- `/usr/local/share/applications/arch-update.desktop` <-- Default installation path when installing Arch-Update from source
-
-- `/usr/share/applications/arch-update.desktop` <-- Default installation path when installing Arch-Update from the AUR
-
-In case you want (or need) to customize the `arch-update.desktop` file, copy it in a path that has a higher priority than the default installation path and modify it there (to ensure that your custom `arch-update.desktop` file supersedes the default one and that your modifications are not being overwritten on updates).
-This can be useful to force the `arch-update.desktop` file to launch `Arch-Update` within a specific terminal emulator for instance.
-
-If clicking the systray applet does nothing, please read the *"Force the desktop file to run with a specific terminal emulator"* chapter in the *"Tips and Tricks"* section below.
+*If clicking the systray applet does nothing*, please read the *"Run Arch-Update in a specific terminal emulator"* chapter in the *"Tips and Tricks"* section below.
 
 ## The systemd timer
 
@@ -182,23 +167,14 @@ See https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Pa
 
 In case you want `Arch-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
 
-## Force the desktop file to run with a specific terminal emulator
+## Run Arch-Update in a specific terminal emulator
 
-"gio" (which is used to launch the `arch-update.desktop` file when the systray applet is clicked) currently supports a limited list of terminal emulators (see https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2701).
+"gio" (used to launch the `arch-update` terminal application via the `arch-update.desktop` file when the systray applet is clicked) currently has a default limited list of known terminal emulators.  
+As such, if you don't have any of these "known" terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing (as `gio` couldn't find a terminal emulator from the said list). Incidentally, you might have multiple terminal emulators installed on your system. In both cases, you can specify which terminal emulator to use.
 
-If you don't have any of these terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing and reports the following error: "[...] Unable to find terminal required for application".
+To do so, install the `xdg-terminal-exec` AUR package (https://aur.archlinux.org/packages/xdg-terminal-exec), create the `~/.config/xdg-terminals.list` file and add the name of the `.desktop` file of your terminal emulator of choice in it (e.g. `Alacritty.desktop`).
 
-While waiting for Gnome to implement a way to allow people using their terminal emulator of choice with `gio`, you can workaround this issue by copying the `arch-update.desktop` file to `$HOME/.local/share/applications/arch-update.desktop` (for instance, see *"The systray applet"* chapter for more details) and modifying the `Exec=` line in it to 'force' `arch-update` to run with your terminal emulator of choice.
-
-For instance, with "alacritty" (check your terminal emulator's manual to find the correct option to use):
-
-```
-[...]
-Exec=alacritty -e arch-update
-[...]
-```
-
-Alternatively, you can create a symlink for your terminal emulator that points to `/usr/bin/xterm`, which is the fallback option for `gio` (for instance, with "alacritty": `sudo ln -s /usr/bin/alacritty /usr/bin/xterm`) or you can simply install one of the terminal emulators supported by `gio` (see https://gitlab.gnome.org/GNOME/glib/-/blob/main/gio/gdesktopappinfo.c#L2701).
+See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configuration for more details.
 
 # EXIT STATUS
 
