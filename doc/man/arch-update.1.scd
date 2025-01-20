@@ -27,7 +27,7 @@ It also supports AUR packages update (if `paru`, `yay` or `pikaur` is installed)
 
 Before performing the update, it offers to display the latest Arch Linux news to the user. By default, Arch news are only displayed if at least a new one has been published since the last run. Arch news published since the last run are tagged as *[NEW]*.
 
-Arch-Update also checks for orphan packages, unused Flatpak packages, as well as old and / or uninstalled packages in `pacman`'s cache. It also offers to proccess pacnew & pacsave files, pending kernel update requiring a reboot to be applied, as well as services requiring a post upgrade restart.
+Arch-Update also checks for orphan packages, unused Flatpak packages, as well as old and / or uninstalled packages in `pacman`'s cache. It also offers to process pacnew & pacsave files, pending kernel update requiring a reboot to be applied, as well as services requiring a post upgrade restart.
 
 Those functions are launched when the systray applet is clicked.
 
