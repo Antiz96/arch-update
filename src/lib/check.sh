@@ -18,17 +18,15 @@ if [ -n "${no_version}" ]; then
 	update_available=$(echo "${update_available}" | awk '{print $1}')
 fi
 
-if [ -n "${notif}" ]; then
-	# shellcheck disable=SC2154
-	echo "${update_available}" > "${statedir}/current_updates_check"
-	sed -i '/^\s*$/d' "${statedir}/current_updates_check"
-	sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/current_updates_check"
-fi
+# shellcheck disable=SC2154
+echo "${update_available}" > "${statedir}/current_updates_check"
+sed -i '/^\s*$/d' "${statedir}/current_updates_check"
+sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/current_updates_check"
 
 if [ -n "${update_available}" ]; then
 	icon_updates-available
 
-	if [ -n "${notif}" ]; then
+	if [ -n "${notif}" ] && [ -z "${no_notification}" ]; then
 		if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
 			update_number=$(wc -l "${statedir}/current_updates_check" | awk '{print $1}')
 			# shellcheck disable=SC2154
