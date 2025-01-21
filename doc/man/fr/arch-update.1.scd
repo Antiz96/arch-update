@@ -10,31 +10,35 @@ Arch-Update - Un notificateur & applicateur de mises à jour pour Arch Linux qui
 
 # DESCRIPTION
 
-Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour et qui inclut une applet systray cliquable pour une intégration facile avec n'importe quel panneau sur n'importe quel environnement de bureau ou gestionnaire de fenêtres.
-
-Support optionnel pour:
-
-- Les paquets AUR (via `paru`, `yay` ou `pikaur`)
-- Les paquets Flatpak (via `flatpak`).
-- Les notifications de bureau (via `libnotify`).
+Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour.
+Inclut une applet systray dynamique & cliquable pour une intégration facile avec n'importe quel environnement de bureau / gestionnaire de fenêtres.
 
 Arch-Update est conçu pour suivre les étapes usuelles de maintenance du système, telles que décrites dans le Arch Wiki à https://wiki.archlinux.org/title/System_maintenance.
 
+Fonctionnalités :
+
+- Vérification et listing automatiques des mises à jour disponibles.
+- Vérification des Arch Linux news récentes (et propose de les afficher s'il y en a).
+- Vérification des paquets orphelins (et propose de les supprimer s'il y en a).
+- Vérification d'anciens paquets & paquets désinstallés dans le cache (et propose de les supprimer s'il y en a).
+- Vérification des fichiers pacnew & pacsave (et propose de les traiters s'il y en a).
+- Vérification des mises à jour du noyau en attente nécessitant un redémarrage (et propose de le faire s'il y en a une).
+- Vérification des services nécessitant un redémarrage après mise à jour (et propose de le faire s'il y en a).
+- Support de `sudo`, `doas` et `run0`.
+
+Support optionnel pour :
+
+- Les paquets AUR (via `paru`, `yay` ou `pikaur`).
+- Les paquets Flatpak (via `flatpak`).
+- Les notifications de bureau (via `libnotify`).
+
 # OPTIONS
 
-Si aucune option n'est passée, lance la série de fonctions adéquates pour effectuer une mise à jour complète et correcte, en commençant par afficher la liste des paquets disponibles pour la mise à jour et en demandant la confirmation de l'utilisateur pour procéder à l'installation.
-
-Arch-Update supporte les mises à jour des paquets AUR (si `paru`, `yay` ou `pikaur` est installé) et des paquets Flatpak (si `flatpak` est installé).
-
-Avant d'effectuer la mise à jour, Arch-Update propose d'afficher les dernières Arch news à l'utilisateur. Par défaut, les Arch news sont seulement affichées si au moins une nouvelle news a été publiée depuis la dernière exécution. Les Arch news publiées depuis la dernière exécution sont étiquetées comme *[NOUVEAU]*.
-
-Arch-Update vérifie aussi la présence de paquets orphelins, des paquets Flatpak inutilisés, ainsi que des anciens paquets mis en cache par pacman. Il propose également de traiter les fichiers pacnew & pacsave, les mises à jour du noyau en attente ainsi que les services nécessitant un redémarrage après mise à jour.
-
-Ces fonctions sont lancées quand vous cliquez sur l'applet systray.
+Si aucune option n'est passée, lance la série de fonctions adéquates pour effectuer une mise à jour complète et appropriée du système (peut également être déclenché en cliquant sur l'applet systray). 
 
 *-c, --check*
 	Vérifier les mises à jour disponibles. S'il y en a, envoie une notification de bureau et met à jour l'icône de l'applet systray.
-	L'option `--check` est automatiquement lancée au démarrage du système puis une fois chaque heure si vous avez activé le systemd timer associé avec la commande suivante : `systemctl --user enable --now arch-update.timer`.
+	Pour exécuter l'option `--check` automatiquement et périodiquement, voir le chapitre *"Le timer systemd"* dans la section *"UTILISATION"* ci-dessous.
 
 *-l, --list*
 	Afficher la liste des mises à jour en attente.
@@ -61,8 +65,7 @@ Ces fonctions sont lancées quand vous cliquez sur l'applet systray.
 
 *--tray*
 	Démarrer l'applet systray d'Arch-Update.
-	Pour la démarrer automatiquement au démarrage du système, vous pouvez soit exécuter la commande `arch-update --tray --enable` (méthode recommandée pour la plupart des environnements de bureau, utilise XDG Autostart) ou vous pouvez activer le service systemd associé (dans le cas où vôtre environnement de bureau ne supporte pas XDG Autostart) en exécutant `systemctl --user enable --now arch-update-tray.service`.
-	Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vos applications auto-start dans votre fichier de configuration.
+	Pour la démarrer automatiquement au démarrage du système, voir le chapitre *"L'applet systray"* dans la section *"UTILISATION"* ci dessous.
 
 *-V, --version*
 	Afficher les informations de version.
@@ -74,53 +77,56 @@ Certaines options peuvent être activées, désactivées ou modifiées via le fi
 
 # UTILISATION
 
+L'utilisation consiste à démarrer l'applet systray et à activer le timer systemd.
+
 ## L'applet systray
 
 Pour démarrer l'applet systray, lancez l'application *Arch-Update Systray Applet* depuis votre menu d'application.
 
 Pour la démarrer automatiquement au démarrage du système, utilisez l'une des options suivantes :
 
-- Lancer la commande suivante (méthode recommandée pour la plupart des environnements de bureau, utilise XDG Autostart) : `arch-update --tray --enable`
+- Lancer la commande suivante (méthode recommandée pour la plupart des environnements de bureau, utilise XDG Autostart) : 
 
-- Activer le service systemd associé (dans le cas où votre environnement de bureau ne supporte pas XDG Autostart) : `systemctl --user enable --now arch-update-tray.service`
+```
+arch-update --tray --enable
+```
 
-Si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vos applications auto-start dans votre fichier de configuration.
+- Activer le service systemd associé (dans le cas où votre environnement de bureau ne supporte pas XDG Autostart) : 
 
-*Si l'applet systray ne démarre pas au démarrage du système malgré tout*, veuillez lire le chapitre *"l'applet systray ne démarre pas au démarrage du système"* dans la section *"Trucs et Astuces"* ci-dessous.
+```
+systemctl --user enable --now arch-update-tray.service
+```
 
-L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ("à jour" ou "mises à jour disponibles"). Lorsque vous cliquez dessus, elle lance `arch-update` dans une fenêtre de terminal via le fichier `arch-update.desktop`.
+- Ajouter la commande suivante à vos applications "auto-start" / votre fichier de configuration (si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland) :
 
-*Si cliquer sur l'applet systray ne fait rien*, veuillez lire le chapitre *"Lancer Arch-Update dans un émulateur de terminal spécifique"* dans la section *"Trucs et Astuces"* ci-dessous.
+```
+arch-update --tray
+```
+
+*Si l'applet systray ne démarre pas au démarrage du système malgré tout*, veuillez lire le chapitre *"L'applet systray ne démarre pas au démarrage du système"* dans la section *"TRUCS ET ASTUCES"* ci-dessous.
+
+L'icône du systray change dynamiquement pour indiquer l'état actuel de votre système ("à jour" ou "mises à jour disponibles"). Lorsque vous cliquez dessus, elle lance `arch-update` dans une fenêtre de terminal via le fichier `arch-update.desktop`.
+
+*Si cliquer sur l'applet systray ne fait rien*, veuillez lire le chapitre *"Lancer Arch-Update dans un émulateur de terminal spécifique"* dans la section *"TRUCS ET ASTUCES"* ci-dessous.
 
 ## Le timer systemd
 
-Il existe un service systemd dans `/usr/lib/systemd/user/arch-update.service` (ou dans `/usr/local/lib/systemd/user/arch-update.service` si vous avez installé `arch-update` depuis la source) qui exécute la fonction `--check` quand il est démarré. Pour le démarrer automatiquement au démarrage du système puis une fois toutes les heures, activez le timer systemd associé (vous pouvez modifier le cycle de vérification automatique à votre guise, voir le chapitre *"Trucs et Astuces"* ci-dessous) : `systemctl --user enable --now arch-update.timer`
+Pour effectuer des vérifications automatiques et périodiques des mises à jour disponibles, activez le timer systemd associé :
+
+```
+systemctl --user enable --now arch-update.timer
+```
+
+Par défaut, une vérification est effectuée *au démarrage du système puis une fois toutes les heures*. Le cycle de vérification peut être personnalisé, voir le chapitre *"Modifier le cycle de vérification automatique"* dans la section *"TRUC ET ASTUCES"* ci-dessous.
 
 # TRUCS ET ASTUCES
 
-## Prise en charge du AUR
-
-Arch-Update prend en charge les paquets AUR si `paru`, `yay` ou `pikaur` est installé:++
-Voir https://github.com/morganamilo/paru et https://aur.archlinux.org/packages/paru++
-Voir https://github.com/Jguer/yay et https://aur.archlinux.org/packages/yay++
-Voir https://github.com/actionless/pikaur et https://aur.archlinux.org/packages/pikaur
-
-## Prise en charge de Flatpak
-
-Arch-Update prend en charge les paquets Flatpak si `flatpak` est installé:++
-Voir https://www.flatpak.org/ et https://archlinux.org/packages/extra/x86_64/flatpak/
-
-## Notifications de bureau
-
-Arch-Update prend en charge les notifications de bureau lors de l'exécution de la fonction `--check` si `libnotify` est installé.++
-Voir https://wiki.archlinux.org/title/Desktop_notifications
-
 ## L'applet systray ne démarre pas au démarrage du système
 
-Assurez vous d'avoir suivi les instructions du chapitre *"l'applet systray"* dans la section *"Utilisation"* ci-dessus.
+Assurez vous d'avoir suivi les instructions du chapitre *"L'applet systray"* dans la section *"UTILISATION"* ci-dessus.
 
 Si l'applet systray ne démarre pas malgré tout, cela peut être due à une *situation de compétition*.
-Dans ce cas, il peut être utile de légèrement retarder le démarrage de l'applet systray en utilisant une déclaration `sleep` au préalable :
+Pour éviter ceci, vous pouvez ajouter un léger délai au démarrage de l'applet systray en utilisant la commande `sleep` :
 
 - Si vous avez utilisé `arch-update --tray --enable`, modifiez la ligne `Exec=` dans le fichier `arch-update-tray.desktop` (qui se trouve sous `~/.config/autostart/` par défaut), comme ceci :
 
@@ -138,7 +144,7 @@ ExecStart=sh -c "sleep 3 && arch-update --tray"
 [...]
 ```
 
-- Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, ajoutez une déclaration `sleep` avant la commande `arch-update --tray` à vos applications auto-start dans votre fichier de configuration, comme ceci :
+- Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, modifiez la commande dans vos applications "auto-start" / vôtre fichier de configuration, comme ceci :
 
 ```
 [...]
@@ -146,13 +152,13 @@ sleep 3 && arch-update --tray
 [...]
 ```
 
-Si l'applet systray ne démarre toujours au démarrage du système, essayez de graduellement augmenter la valeur du `sleep`.
+Si l'applet systray ne démarre toujours pas au démarrage du système, essayez de graduellement augmenter la valeur du `sleep`.
 
 ## Modifier le cycle de vérification automatique
 
-Si vous avez activé le systemd timer, l'option `--check` est automatiquement lancée au démarrage du système puis une fois par heure.
+Si vous avez activé le timer systemd, une vérification des mises à jour disponible est lancée au démarrage du système puis une fois par heure.
 
-Si vous souhaitez modifier le cycle de vérification, exécutez la commande `systemctl --user edit --full arch-update.timer` et modifiez la valeur `OnUnitActiveSec` à votre convenance.
+Si vous souhaitez personnaliser le cycle de vérification, exécutez la commande `systemctl --user edit --full arch-update.timer` et modifiez la valeur `OnUnitActiveSec` à votre convenance.
 Par exemple, si vous voulez qu'`Arch-Update` vérifie plutôt les mises à jour toutes les 10 minutes :"
 
 ```
@@ -171,7 +177,7 @@ Dans le cas où vous voulez qu'`Arch-Update` ne vérifie les nouvelles mises à 
 ## Lancer Arch-Update dans un émulateur de terminal spécifique
 
 "gio" (utilisé pour lancer l'application `arch-update` dans un terminal via le fichier `arch-update.desktop` lorsque l'applet systray est cliquée) a actuellement une liste limitée d'émulateurs de terminal connus par défaut.  
-Ainsi, si aucun de ces émulateurs de terminal "connus" n'est installé sur votre système, vous pourriez être confronté à un problème où le fait de cliquer sur l'applet du systray ne fait rien (car `gio` n'a pas pu trouver un émulateur de terminal dans la liste en question). Par ailleurs, vous pouvez avoir plusieurs émulateurs de terminal installés sur votre système. Dans les deux cas, vous pouvez spécifier quel émulateur de terminal utiliser.
+Ainsi, si aucun de ces émulateurs de terminal "connus" n'est installé sur votre système, vous pourriez être confronté à un problème où le fait de cliquer sur l'applet du systray ne fait rien (car `gio` n'a pas pu trouver un émulateur de terminal dans la liste en question). Par ailleurs, vous pouvez avoir plusieurs émulateurs de terminal installés sur votre système. Dans les deux cas, vous pouvez spécifier l'émulateur de terminal à utiliser.
 
 Pour ce faire, installez le paquet AUR `xdg-terminal-exec` (https://aur.archlinux.org/packages/xdg-terminal-exec), créez le fichier `~/.config/xdg-terminals.list` et ajoutez-y le nom du fichier `.desktop` de l'émulateur de terminal de votre choix (par exemple `Alacritty.desktop`).
 
@@ -219,7 +225,7 @@ Voir https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#config
 	Erreur lors du traitement des fichiers pacnew.
 
 *13*
-	Erreur lors de l'édition du fichier de configuration avec l'optionu `--edit-config`.
+	Erreur lors de l'édition du fichier de configuration avec l'option `--edit-config`.
 
 *14*
 	Le dossier de librairies n'a pas été trouvé.

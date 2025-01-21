@@ -45,7 +45,7 @@ Les options sont sensibles à la casse, les majuscules doivent donc être respec
 	Editeur à utiliser pour visualiser / editer les différences durant le traitement des fichiers pacnew. La valeur par défaut est la valeur de la variable d'environnement `$DIFFPROG` (ou `vimdiff` si `$DIFFPROG` n'est pas paramétrée).
 
 *TrayIconStyle=[Style / Couleur]*
-	Style à utiliser pour l'icône de l'applet systray. Les valeurs valides sont les variantes de style / couleur disponibles pour le set d'icône, listées ici : https://github.com/Antiz96/arch-update/tree/main/res/icons. La valeur par défaut est "light".
+	Style à utiliser pour l'icône de l'applet systray. Les valeurs valides sont les variantes de style / couleur disponibles pour le set d'icône, listées ici : https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md. La valeur par défaut est "light".
 
 # VOIR AUSSI
 
