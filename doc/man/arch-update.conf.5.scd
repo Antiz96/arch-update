@@ -26,6 +26,9 @@ Options are case sensitive, so capital letters have to be respected.
 *NoVersion*
 	Do not show versions changes for packages when listing pending updates (including when using the `-l / --list` option, see the *arch-update*(1) man page for more details).
 
+*NoNotification*
+	Do not send desktop notifications.
+
 *NewsNum=[Num]*
 	Number of Arch news to display before updating and with the `-n / --news` option (see the *arch-update*(1) man page for more details). Defaults to 5.
 

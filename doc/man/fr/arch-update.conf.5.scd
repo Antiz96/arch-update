@@ -26,6 +26,9 @@ Les options sont sensibles à la casse, les majuscules doivent donc être respec
 *NoVersion*
 	Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option `-l / --list`, voir la page de manuel *arch-update*(1) pour plus de détails).
 
+*NoNotification*
+	Ne pas envoyer de notifications de bureau.
+
 *NewsNum=[Num]*
 	Nombre de Arch news à afficher avant la mise à jour et avec l'option `-n / --news` (voir la page de manuel *arch-update*(1) pour plus de détails). La valeur par défaut est 5.
 
