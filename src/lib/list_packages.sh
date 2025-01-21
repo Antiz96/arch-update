@@ -24,7 +24,7 @@ if [ -n "${aur_helper}" ]; then
 	fi
 fi
 
-if [ -n "${flatpak}" ]; then
+if [ -n "${flatpak_support}" ]; then
 	flatpak_packages=$(flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 fi
 
