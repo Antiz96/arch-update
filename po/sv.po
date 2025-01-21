@@ -6,7 +6,7 @@
 # Luna Jernberg <droidbittin@gmail.com>, 2024
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.5.0\n"
+"Project-Id-Version: Arch-Update 3.6.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2024-11-19 12:22+0100\n"
@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5.0\n"
+"X-Generator: Poedit 3.6.0\n"
 
 #: src/lib/check.sh:39 src/lib/check.sh:42
 #, sh-format
