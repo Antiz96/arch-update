@@ -10,30 +10,35 @@ Arch-Update - An update notifier & applier for Arch Linux that assists you with 
 
 # DESCRIPTION
 
-An update notifier & applier for Arch Linux that assists you with important pre / post update tasks and that includes a clickeable systray applet for an easy integration with any panel on any Desktop Environment / Window Manager.
+An update notifier & applier for Arch Linux that assists you with important pre / post update tasks.
+Includes a dynamic & clickeable systray applet for an easy integration with any Desktop Environment / Window Manager.
+
+Arch-Update is designed to follow usual system maintenance steps, as described in the Arch Wiki at https://wiki.archlinux.org/title/System_maintenance.
+
+Features:
+
+- Automatic check and listing of available updates.
+- Check for recent Arch Linux news (and offers to display them if there are).
+- Check for orphan packages (and offers to remove them if there are).
+- Check for old & uninstalled packages in cache (and offers to remove them if there are).
+- Check for pacnew & pacsave files (and offers to process them if there are).
+- Check for pending kernel update requiring a reboot (and offers to do so if there's one).
+- Check for services requiring a post upgrade restart (and offers to do so if there are).
+- Support for `sudo`, `doas` & `run0`.
 
 Optional support for:
+
 - AUR packages (via `paru`, `yay` or `pikaur`).
 - Flatpak packages (via `flatpak`).
 - Desktop notifications (via `libnotify`).
 
-Arch-Update is designed to follow usual system maintenance steps, as described in the Arch Wiki at https://wiki.archlinux.org/title/System_maintenance.
-
 # OPTIONS
 
-If no option is passed, launch the relevant series of functions to perform a complete and proper update, starting by displaying the list of packages available for update and asking for the user's confirmation to proceed with the installation.
-
-It also supports AUR packages update (if `paru`, `yay` or `pikaur` is installed) and Flatpak packages update (if `flatpak` is installed).
-
-Before performing the update, it offers to display the latest Arch Linux news to the user. By default, Arch news are only displayed if at least a new one has been published since the last run. Arch news published since the last run are tagged as *[NEW]*.
-
-Arch-Update also checks for orphan packages, unused Flatpak packages, as well as old and / or uninstalled packages in pacman cache. It also offers to process pacnew & pacsave files, pending kernel update requiring a reboot to be applied, as well as services requiring a post upgrade restart.
-
-Those functions are launched when the systray applet is clicked.
+If no option is passed, launch the relevant series of functions to perform a complete and proper system update (can also be triggered by clicking the systray applet).
 
 *-c, --check*
 	Check for available updates. If there are, send a desktop notification and update the systray icon.
-	The `--check` option is ran automatically at boot and then every hour if you enabled the associated systemd timer with the following command: `systemctl --user enable --now arch-update.timer`.
+	To run the `--check` option automatically and periodically, see the *"The systemd timer"* chapter in the *"USAGE"* section below.
 
 *-l, --list*
 	Display the list of pending updates.
@@ -60,8 +65,7 @@ Those functions are launched when the systray applet is clicked.
 
 *--tray*
 	Start the Arch-Update systray applet.
-	To start it automatically at boot, you can either run the `arch-update --tray --enable` command (preferred method for most Desktop Environments, uses XDG Autostart) or enable the associated systemd service (in case your Desktop Environment doesn't support XDG Autostart) by running `systemctl --user enable --now arch-update-tray.service`.
-	If you use a window manager or a Wayland compositor, you can add the `arch-update --tray` command to your auto-start apps in your configuration file instead.
+	To start it automatically at boot, see the *"The systray applet"* chapter in the *"USAGE"* section below.
 
 *-V, --version*
 	Display version information.
@@ -73,53 +77,56 @@ Certain options can be enabled, disabled or modified via the `arch-update.conf` 
 
 # USAGE
 
+The usage consist of starting the systray applet and enabling the systemd timer.
+
 ## The systray applet
 
 To start the systray applet, launch the *Arch-Update Systray Applet* application from your app menu.
 
 To start it automatically at boot, you can either:
 
-- Run the following command (preferred method for most Desktop Environments, uses XDG Autostart): `arch-update --tray --enable`
+- Run the following command (preferred method for most Desktop Environments, uses XDG Autostart): 
 
-- Enable the associated systemd service (in case your Desktop Environment doesn't support XDG Autostart): `systemctl --user enable --now arch-update-tray.service`
+```
+arch-update --tray --enable
+```
 
-If you use a Window Manager or a Wayland Compositor, you can add the `arch-update --tray` command to your auto-start apps in your configuration file instead.
+- Enable the associated systemd service (in case your Desktop Environment doesn't support XDG Autostart): 
 
-*If the systray applet doesn't start at boot regardless*, please read the *"The systray applet does not start at boot"* chapter in the *"Tips and Tricks"* section below.
+```
+systemctl --user enable --now arch-update-tray.service
+```
 
-The systray icon will automatically change depending on the current state of your system ("up to date" or "updates available"). When clicked, it launches `arch-update` in a terminal window via the `arch-update.desktop` file.
+- Add the following command to your "auto-start" apps / configuration file (in case you use a Window Manager or a Wayland Compositor):
 
-*If clicking the systray applet does nothing*, please read the *"Run Arch-Update in a specific terminal emulator"* chapter in the *"Tips and Tricks"* section below.
+```
+arch-update --tray
+```
+
+*If the systray applet doesn't start at boot regardless*, please read the *"The systray applet does not start at boot"* chapter in the *"TIPS AND TRICKS"* section below.
+
+The systray icon dynamically changes to indicate the current state of your system ("up to date" or "updates available"). When clicked, it launches `arch-update` in a terminal window via the `arch-update.desktop` file.
+
+*If clicking the systray applet does nothing*, please read the *"Run Arch-Update in a specific terminal emulator"* chapter in the *"TIPS AND TRICKS"* section below.
 
 ## The systemd timer
 
-There is a systemd service in `/usr/lib/systemd/user/arch-update.service` (or in `/usr/local/lib/systemd/user/arch-update.service` if you installed `arch-update` from source) that executes the `--check` function when started. To start it automatically at boot and then once every hour, enable the associated systemd timer (the auto-check cycle can be modified to your liking. See the *"Tips and Tricks"* chapter below): `systemctl --user enable --now arch-update.timer`
+To perform automatic and periodic checks for available updates, enable the associated systemd timer:
+
+```
+systemctl --user enable --now arch-update.timer
+```
+
+By default, a check is performed at *boot and then once every hour*. The check cycle can be customized, see the *"Modify the check cycle"* chapter in the *"TIPS AND TRICKS"* section below.
 
 # TIPS AND TRICKS 
 
-## AUR Support
-
-Arch-Update supports AUR packages if `paru`, `yay` or `pikaur` is installed:++
-See https://github.com/morganamilo/paru and https://aur.archlinux.org/packages/paru++
-See https://github.com/Jguer/yay and https://aur.archlinux.org/packages/yay++
-See https://github.com/actionless/pikaur and https://aur.archlinux.org/packages/pikaur
-
-## Flatpak Support
-
-Arch-Update supports Flatpak packages if `flatpak` is installed:++
-See https://www.flatpak.org/ and https://archlinux.org/packages/extra/x86_64/flatpak/
-
-## Desktop notifications Support
-
-Arch-Update supports desktop notifications when performing the `--check` function if `libnotify` is installed:++
-See https://wiki.archlinux.org/title/Desktop_notifications
-
 ## The systray applet does not start at boot
 
-Make sure you followed instructions of the *"The systray applet"* chapter in the *"Usage"* section above.
+Make sure you followed instructions of the *"The systray applet"* chapter in the *"USAGE"* section above.
 
 If the systray applet doesn't start regardless, this could be the result of a *race condition*.
-In such case, it might be useful to slightly delay the startup of the systray applet by using a `sleep` statement beforehand:
+To prevent that, you can add a small delay to the systray applet startup using the `sleep` command:
 
 - If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default), like so: 
 
@@ -137,7 +144,7 @@ ExecStart=sh -c "sleep 3 && arch-update --tray"
 [...]
 ```
 
-- If you're using a standalone Window Manager or a Wayland Compositor, add a `sleep` statement before the `arch-update --tray` command in your auto-start apps in your configuration file, like so:
+- If you're using a standalone Window Manager or a Wayland Compositor, modify the command in your "auto-start" apps / your configuration file, like so:
 
 ```
 [...]
@@ -145,13 +152,13 @@ sleep 3 && arch-update --tray
 [...]
 ```
 
-If the systray applet still does not start at boot, try to gradually increase the value of the `sleep`.
+If the systray applet still does not start at boot, try to gradually increase the `sleep` value.
 
-## Modify the auto-check cycle
+## Modify the check cycle
 
-If you enabled the systemd timer, the `--check` function is automatically launched at boot and then once per hour.
+If you enabled the systemd timer, a check for available updates is automatically launched at boot and then once per hour.
 
-If you want to change the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.
+If you want to customize the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.
 For instance, if you want `Arch-Update` to check for new updates every 10 minutes instead:
 
 ```
@@ -194,7 +201,7 @@ See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configu
 	User didn't gave the confirmation to proceed.
 
 *5*
-	Error when updating the packages.
+	Error when updating packages.
 
 *6*
 	Error when calling the reboot command to apply a pending kernel update.
@@ -224,7 +231,7 @@ See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configu
 	Libraries directory not found.
 
 *15*
-	The diff prog editor set in the `arch-update.conf` configuration file isn't found.
+	The "diff prog" editor set in the `arch-update.conf` configuration file isn't found.
 
 # SEE ALSO
 
