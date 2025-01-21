@@ -6,7 +6,7 @@
 
 orphan_packages=$(pacman -Qtdq)
 
-if [ -n "${flatpak}" ]; then
+if [ -n "${flatpak_support}" ]; then
 	flatpak_unused=$(flatpak uninstall --unused | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 fi
 
@@ -44,7 +44,7 @@ else
 	info_msg "$(eval_gettext "No orphan package found\n")"
 fi
 
-if [ -n "${flatpak}" ]; then
+if [ -n "${flatpak_support}" ]; then
 	if [ -n "${flatpak_unused}" ]; then
 		main_msg "$(eval_gettext "Flatpak Unused Packages:")"
 		echo -e "${flatpak_unused}\n"

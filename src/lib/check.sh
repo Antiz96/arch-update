@@ -4,11 +4,11 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-if [ -n "${aur_helper}" ] && [ -n "${flatpak}" ]; then
+if [ -n "${aur_helper}" ] && [ -n "${flatpak_support}" ]; then
 	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
-elif [ -n "${aur_helper}" ] && [ -z "${flatpak}" ]; then
+elif [ -n "${aur_helper}" ] && [ -z "${flatpak_support}" ]; then
 	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g')
-elif [ -z "${aur_helper}" ] && [ -n "${flatpak}" ]; then
+elif [ -z "${aur_helper}" ] && [ -n "${flatpak_support}" ]; then
 	update_available=$(checkupdates ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 else
 	update_available=$(checkupdates)
@@ -26,7 +26,7 @@ sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/current_updates_check"
 if [ -n "${update_available}" ]; then
 	icon_updates-available
 
-	if [ -n "${notif}" ] && [ -z "${no_notification}" ]; then
+	if [ -n "${notification_support}" ] && [ -z "${no_notification}" ]; then
 		if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
 			update_number=$(wc -l "${statedir}/current_updates_check" | awk '{print $1}')
 			# shellcheck disable=SC2154
