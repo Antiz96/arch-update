@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.6.0](https://github.com/Antiz96/arch-update/releases/tag/v3.6.0) - 2025-01-21
+
+### Features
+
+- Add the `NoNotification` option to `arch-update.conf` ([#302](https://github.com/Antiz96/arch-update/pull/302)) - ([39b0efc](https://github.com/Antiz96/arch-update/commit/39b0efc5dfb3aa3eea9f77104d27f00e384446ec)) by @Antiz96
+
+### Documentation
+
+- General rework & simplification of the documentation ([#301](https://github.com/Antiz96/arch-update/pull/301)) - ([c6ed5d8](https://github.com/Antiz96/arch-update/commit/c6ed5d8f334fd7488e409fb61d3b9cb0414836e5)) by @Antiz96
+- Document the usage of `xdg-terminal-exec` to run Arch-Update in a specific terminal emulator ([#300](https://github.com/Antiz96/arch-update/pull/300)) - ([f568955](https://github.com/Antiz96/arch-update/commit/f5689558be3c44a7c39ac4434e7635c623a3ab7f)) by @Antiz96
+- Use `scdoc` to write and generate man pages ([#299](https://github.com/Antiz96/arch-update/pull/299)) - ([6749a94](https://github.com/Antiz96/arch-update/commit/6749a9400819330dbc11819c7d6bfad059cace8d)) by @Antiz96
+
+### Miscellaneous
+
+- Use more specific names for 'notif' and 'flatpak' variables ([#303](https://github.com/Antiz96/arch-update/pull/303)) - ([d021523](https://github.com/Antiz96/arch-update/commit/d021523844d100a06a1f7d0b67163cb526ebd3ca)) by @Antiz96
+
 ## [v3.5.0](https://github.com/Antiz96/arch-update/releases/tag/v3.5.0) - 2025-01-18
 
 ### Features
