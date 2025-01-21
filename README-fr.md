@@ -18,32 +18,33 @@
 
 ## Description
 
-Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour et qui inclut une applet systray cliquable pour une intégration facile avec n'importe quel panneau sur n'importe quel environnement de bureau / gestionnaire de fenêtres.  
-Prise en charge optionnelle des paquets AUR / Flatpak et des notifications de bureau.
+Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour.  
+Inclut une applet systray dynamique & cliquable pour une intégration facile avec n'importe quel environnement de bureau / gestionnaire de fenêtres.
 
 Arch-Update est conçu pour suivre les étapes usuelles de maintenance du système, telles que décrites dans le [Arch Wiki](https://wiki.archlinux.org/title/System_maintenance).
 
 Fonctionnalités :
 
-- Inclut une applet systray cliquable qui change dynamiquement pour agir comme un notificateur & applicateur de mise à jour. Facile à intégrer avec n'importe quel panneau sur n'importe quel environnement de bureau & gestionnaire de fenêtres.
-- Vérification et listing automatiques de tous les paquets disponibles pour la mise à jour.
-- Propose d'afficher les news récentes d'Arch Linux avant d'appliquer les mises à jour.
-- Vérification et listing automatiques des paquets orphelins et propose de les supprimer.
-- Vérification automatique de la présence d'anciens paquets et / ou paquets désinstallés dans le cache et propose de les supprimer.
-- Listing et aide au traitement des fichiers pacnew / pacsave.
-- Vérification automatique des mises à jour du noyau en attente nécessitant un redémarrage et propose de redémarrer s'il y en a une.
-- Vérification automatique des services nécessitant un redémarrage après mise à jour et propose de les redémarrer s'il y en a.
+- Vérification et listing automatiques des mises à jour disponibles.
+- Vérification des Arch Linux news récentes (et propose de les afficher s'il y en a).
+- Vérification des paquets orphelins (et propose de les supprimer s'il y en a).
+- Vérification d'anciens paquets & paquets désinstallés dans le cache (et propose de les supprimer s'il y en a).
+- Vérification des fichiers pacnew & pacsave (et propose de les traiters s'il y en a).
+- Vérification des mises à jour du noyau en attente nécessitant un redémarrage (et propose de le faire s'il y en a une).
+- Vérification des services nécessitant un redémarrage après mise à jour (et propose de le faire s'il y en a).
 - Support de `sudo`, `doas` et `run0`.
-- Prise en charge optionnelle des paquets AUR (via `paru`, `yay` ou `pikaur`).
-- Prise en charge optionnelle des paquets Flatpak.
-- Prise en charge optionnelle des notifications de bureau lors de nouvelles mises à jour disponibles.
+
+Support optionnel pour :
+
+- Les paquets AUR (via `paru`, `yay` ou `pikaur`).
+- Les paquets Flatpak (via `flatpak`).
+- Les notifications de bureau (via `libnotify`).
 
 ## Installation
 
 ### AUR
 
-Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package").  
-Consultez également la liste des dépendances optionnelles (disponible dans la section ["depuis la source"](#depuis-la-source) ci-dessous) dont vous pourriez avoir besoin.
+Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package") (consultez également la liste des dépendances optionnelles dont vous pourriez avoir envie ou besoin).
 
 ### Depuis la source
 
@@ -53,7 +54,7 @@ Installez les dépendances requises :
 sudo pacman -S --needed pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
 ```
 
-Dépendances optionnelles supplémentaires dont vous pourriez avoir besoin ou que vous pourriez souhaiter :
+Dépendances optionnelles supplémentaires dont vous pourriez avoir envie ou besoin :
 
 - [paru](https://aur.archlinux.org/packages/paru) : Support des paquets AUR
 - [yay](https://aur.archlinux.org/packages/yay) : Support des paquets AUR
@@ -69,7 +70,7 @@ Installez les dépendances de compilation requises :
 sudo pacman -S --asdeps make scdoc bats
 ```
 
-Téléchargez l'archive de la [dernière version stable](https://github.com/Antiz96/arch-update/releases/latest) et extrayez la *(vous pouvez également cloner ce référentiel via `git clone`)*.
+Téléchargez l'archive de la [dernière version stable](https://github.com/Antiz96/arch-update/releases/latest) et extrayez la (vous pouvez également cloner ce référentiel avec `git`).
 
 Pour installer `arch-update`, allez dans le répertoire extrait / cloné et exécutez les commandes suivantes :
 
@@ -113,22 +114,27 @@ arch-update --tray --enable
 systemctl --user enable --now arch-update-tray.service
 ```
 
-Si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vos applications "auto-start" dans votre fichier de configuration.
+- Ajouter la commande suivante à vos applications "auto-start" / votre fichier de configuration (si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland) :
+
+```bash
+arch-update --tray
+```
 
 **Si l'applet systray ne démarre pas au démarrage du système malgré tout**, veuillez lire [ce chapitre](#lapplet-systray-ne-démarre-pas-au-démarrage-du-système).
 
-L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, elle lance `arch-update` dans une fenêtre de terminal via le fichier [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
+L'icône du systray change dynamiquement pour indiquer l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, elle lance `arch-update` dans une fenêtre de terminal via le fichier [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
 
 **Si cliquer sur l'applet systray ne fait rien**, veuillez lire [ce chapitre](#lancer-arch-update-dans-un-émulateur-de-terminal-spécifique).
 
 ### Le timer systemd
 
-Il existe un service systemd (sous `/usr/lib/systemd/user/arch-update.service` ou `/usr/local/lib/systemd/user/arch-update.service` si vous avez installé `Arch-Update` [depuis la source](#depuis-la-source)) qui exécute la fonction `check` quand il est démarré (voir le chapitre [Documentation](#documentation)).  
-Pour le démarrer automatiquement **au démarrage du système puis une fois toutes les heures**, activez le timer systemd associé (vous pouvez modifier le cycle de vérification automatique à votre guise, voir les [Trucs et astuces - Modifier le cycle de vérification automatique](#modifier-le-cycle-de-vérification-automatique)) :
+Pour effectuer des vérifications automatiques et périodiques des mises à jour disponibles, activez le timer systemd associé :
 
 ```bash
 systemctl --user enable --now arch-update.timer
 ```
+
+Par défaut, une vérification est effectuée **au démarrage du système puis une fois toutes les heures**. Le cycle de vérification peut être personnalisé, voir [ce chapitre](#modifier-le-cycle-de-vérification).
 
 ### Captures d'écran
 
@@ -137,11 +143,11 @@ C'est l'icône à droite de celle du wifi dans la capture d'écran ci-dessous:
 
 ![systray-icon](https://github.com/Antiz96/arch-update/assets/53110319/fe032e68-3582-470a-9e6d-b51a9ea8c1ba)
 
-Avec [le systemd timer](#le-timer-systemd) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check` ou en faisant un clic droit sur l'icône du systray puis en cliquant sur l'entrée `Vérifier les mises à jour` depuis le menu :
+Avec [le timer systemd](#le-timer-systemd) activé, les vérifications des mises à jour sont effectuées automatiqument et périodiquement, mais vous pouvez en déclencher une manuellement depuise l'applet systray en faisant un clic droit dessus puis en cliquant sur l'entrée `Vérifier les mises à jour` depuis le menu :
 
 ![check_menu_fr](https://github.com/user-attachments/assets/b0b7730b-0196-4973-ac90-bceb8a74845e)
 
-Si de nouvelles mises à jour sont disponibles, l'icône du systray affichera un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée (nécessite [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") et un serveur de notification en cours d'exécution) :
+Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée :
 
 ![notif_fr](https://github.com/user-attachments/assets/56d72147-bde4-492b-8ad1-20caed9f22a9)
 
@@ -149,149 +155,69 @@ Vous pouvez alors voir la liste des mises à jour disponibles dans l'infobulle d
 
 ![tooltip_fr](https://github.com/user-attachments/assets/8bc3d339-f7ab-4c8b-aa3f-2b88ea68af42)
 
-Alternativement, vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray :
+Autrement, vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray :
 
 ![dropdown_menu_fr](https://github.com/user-attachments/assets/60c3c0d8-8091-4047-b8da-ce8f8bc72476)
 
-Quand l'icône du systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal et demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [paru](https://aur.archlinux.org/packages/paru "paru"), [yay](https://aur.archlinux.org/packages/yay "yay") ou [pikaur](https://aur.archlinux.org/packages/pikaur "pikaur") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
+Quand l'icône du systray est cliquée, elle lance `arch-update` dans une fenêtre de terminal :
 
 ![listing_packages-FR](https://github.com/Antiz96/arch-update/assets/53110319/60547cde-f327-46f8-907c-61bf9bbee6c5)
 
-Par défaut, si au moins une news Arch Linux a été publiée depuis la dernière exécution, `Arch-Update` vous proposera de lire les dernières news Arch Linux directement depuis votre fenêtre de terminal.  
-Les news publiées depuis la dernière exécution sont tagguées comme `[NOUVEAU]` :
+Si au moins une news Arch Linux a été publiée depuis la dernière exécution, `Arch-Update` vous proposera de lire les dernières news Arch Linux directement depuis la fenêtre de terminal.  
+Les news publiées depuis la dernière exécution sont labellisées comme `[NOUVEAU]` :
 
-![listing_news-FR](https://github.com/Antiz96/arch-update/assets/53110319/ec4032f3-835e-418c-b19a-b7bd089d6bd9)
+![listing_news-FR](https://github.com/Antiz96/arch-update/assets/53110319/72819197-d4f7-4c50-af21-0aac1c60ba41)
 
-Quand la liste des news récentes est affichée, vous pouvez sélectionner les news à lire (par exemple: 1 3 5), sélectionner 0 pour toutes les lire ou appuyer sur "entrée" pour procéder à la mise à jour.  
-Si aucune news n'a été publiée depuis la dernière exécution, `Arch-Update` procédera directement à la mise à jour après que vous ayez donné votre confirmation.
+Si aucune news n'a été publiée depuis la dernière exécution, `Arch-Update` demande directement votre confirmation pour procéder à la mise à jour.
 
-Dans les deux cas, à partir de là, vous avez simplement à laisser `Arch-Update` vous guider à travers les différentes étapes requises pour une mise à jour complète et appropriée de votre système ! :smile:
+À partir de là, laissez simplement `Arch-Update` vous guider à travers les différentes étapes requises pour une mise à jour complète et appropriée de votre système ! :smile:
 
-Certaines options peuvent être activées, désactivées ou modifiées via le fichier de configuration `arch-update.conf`. Voir le [chapitre de documentation arch-update.conf](#fichier-de-configuration-arch-update) pour plus de détails.
+Certaines options peuvent être activées, désactivées ou modifiées via le fichier de configuration `arch-update.conf`. Voir la [page de manuel arch-update.conf(5)](https://github.com/Antiz96/arch-update/blob/main/doc/man/fr/arch-update.conf.5.scd) pour plus de détails.
 
 ## Documentation
 
 ### arch-update
 
-```text
-Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les
-tâches importantes d'avant / après mise à jour.
-
-Lancez arch-update pour exécuter la fonction principale « update » :
-Afficher la liste des paquets disponibles pour mise à jour, puis demander la confirmation de l'utilisateur
-pour procéder à l'installation.
-Avant d'effectuer la mise à jour, propose d'afficher les dernières Arch news.
-Après la mise à jour, vérification de la présence de paquets orphelins & inutilisés, d'anciens paquets mis en cache,
-de fichiers pacnew & pacsave, de mise à jour du noyau en attente ainsi que des services nécessitant un redémarrage après mise à jour
-et, s'il y en a, propose de les traiter.
-
-Options :
--c, --check       Vérifier les mises à jour disponibles, changer l'icône du systray et envoyer une notification de bureau contenant le nombre de mises à jour disponibles (s'il y a des nouvelles mises à jour disponibles depuis le dernier check).
--l, --list        Afficher la liste des mises à jour en attente.
--d, --devel       Inclure les mises à jour des paquets de développement AUR.
--n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`).
--D, --debug       Afficher les traces de débogage.
---gen-config      Générer un fichier de configuration `arch-update.conf` par défaut / exemple (voir la page de manuel arch-update.conf(5) pour plus de détails), vous pouvez optionnellement passer l'argument `--force` pour écraser un fichier de configuration `arch-update.conf` existant.
---show-config     Afficher le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe).
---edit-config     Editer le fichier de configuration `arch-update.conf` actuellement utilisé (s'il existe).
---tray            Lancer l'applet systray d'Arch-Update, vous pouvez optionnellement ajouter l'argument `--enable` pour la démarrer automatiquement au démarrage du système..
--h, --help        Afficher ce message d'aide et quitter.
--V, --version     Afficher les informations de version et quitter.
-
-Codes de sortie :
-0  OK.
-1  Option invalide.
-2  Aucune commande d'élévation de privilège (sudo, doas ou run0) n'est installée ou celle définie dans le fichier de configuration `arch-update.conf` n'est pas disponible.
-3  Erreur lors du lancement de l'applet systray d'Arch-Update.
-4  L'utilisateur n'a pas donné la confirmation de procéder.
-5  Erreur lors de la mise à jour des paquets.
-6  Erreur lors de l'appel de la commande reboot pour appliquer une mise à jour du noyau en attente.
-7  Aucune mise à jour en attente durant l'utilisation de l'option `-l / --list`.
-8  Erreur lors de la génération d'un fichier de configuration avec l'option `--gen-config`.
-9  Erreur lors de la lecture du fichier de configuration avec l'option `--show-config`.
-10 Erreur lors de la creation du fichier desktop autostart pour l'applet systray avec l'option `--tray --enable`.
-11 Erreur lors du redémarrage des services nécessitant un redémarrage après mise à jour.
-12 Erreur lors du traitement des fichiers pacnew.
-13 Erreur lors de l'édition du fichier de configuration avec l'option `--edit-config`.
-14 Le dossier de librairies n'a pas été trouvé.
-15 L'éditeur "diff prog" défini dans le fichier de configuration `arch-update.conf` n'est pas disponible.
-```
-
-Pour plus d'informations, consultez la page de manuel arch-update(1).  
-Certaines options peuvent être activées, désactivées ou modifiées via le fichier de configuration arch-update.conf, voir la page de manuel arch-update.conf(5).
+Voir `arch-update --help` et la [page de manuel arch-update(1)](https://github.com/Antiz96/arch-update/blob/main/doc/man/fr/arch-update.1.scd).
 
 ### Fichier de configuration arch-update
 
-```text
-Le fichier arch-update.conf est un fichier de configuration facultatif pour arch-update permettant
-d'activer, désactiver ou modifier certaines options dans le script.
-
-Ce fichier de configuration doit se trouver dans "${XDG_CONFIG_HOME}/arch-update/arch-update.conf"
-ou "${HOME}/.config/arch-update/arch-update.conf".
-Un fichier de configuration par défaut / exemple peut être généré en exécutant : `arch-update --gen-config`
-
-Les options prises en charge sont :
-
-- NoColor # Ne pas coloriser la sortie.
-- NoVersion # Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option `-l / --list`).
-- NewsNum=[Num] # Nombre de Arch news à affcher avant la mise à jour et avec l'option `-n / --news` (voir la page de manuel arch-update(1) pour plus de details). La valeur par défaut est 5.
-- AURHelper=[AUR Helper] # AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont `paru`, `yay` ou `pikaur`. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : `paru` puis `yay` puis `pikaur` (si aucun d'eux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
-- PrivilegeElevationCommand=[Cmd] # Commande à utiliser pour l'élévation de privilège. Les valeurs valides sont `sudo`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'odre suivant : `sudo`, `doas` puis `run0`.
-- KeepOldPackages=[Num] # Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.
-- KeepUninstalledPackages=[Num] # Nombre de versions de paquets désinstallés à conserver dans le cache de pacman. La valeur par défaut est 0.
-- DiffProg=[Editeur] # Editeur à utiliser pour visualiser / editer les différences durant le traitement des fichiers pacnew. La valeur par défaut est la valeur de la variable d'environnement `$DIFFPROG` (ou `vimdiff` si `$DIFFPROG` n'est pas paramétrée).
-- TrayIconStyle=[Style / Color] # Style à utiliser pour l'icône de l'applet systray. Les valeurs valides sont les variantes de style / couleur disponibles pour le set d'icône, listées ici : https://github.com/Antiz96/arch-update/tree/main/res/icons. La valeur par défaut est "light".
-
-Les options sont sensibles à la casse, les majuscules doivent donc être respectées.
-```
-
-Pour plus d'informations, consultez la page de manuel arch-update.conf(5).
+Voir la [page de manuel arch-update.conf(5)](https://github.com/Antiz96/arch-update/blob/main/doc/man/fr/arch-update.conf.5.scd).
 
 ## Trucs et astuces
-
-### Support du AUR
-
-Arch-Update prend en charge les paquets AUR si **paru**, **yay** ou **pikaur** est installé :  
-Voir <https://github.com/morganamilo/paru> et <https://aur.archlinux.org/packages/paru>  
-Voir <https://github.com/Jguer/yay> et <https://aur.archlinux.org/packages/yay>  
-Voir <https://github.com/actionless/pikaur> et <https://aur.archlinux.org/packages/pikaur>
-
-### Support de Flatpak
-
-Arch-Update prend en charge les paquets Flatpak si **flatpak** est installé :  
-Voir <https://www.flatpak.org/> et <https://archlinux.org/packages/extra/x86_64/flatpak/>
-
-### Support des notifications de bureau
-
-Arch-Update prend en charge les notifications de bureau lors de l'exécution de la fonction `--check` si **libnotify** est installé (et qu'un serveur de notification est en cours d'exécution) :  
-Voir <https://wiki.archlinux.org/title/Desktop_notifications>
 
 ### L'applet systray ne démarre pas au démarrage du système
 
 Assurez vous d'avoir suivi les instructions de [ce chapitre](#lapplet-systray).
 
 Si l'applet systray ne démarre pas malgré tout, cela peut être le résultat d'une [situation de compétition](https://fr.wikipedia.org/wiki/Situation_de_comp%C3%A9tition).  
-Dans ce cas, il peut être utile de légèrement retarder le démarrage de l'applet systray en utilisant une déclaration `sleep` au préalable :
+Pour éviter ceci, vous pouvez ajouter un léger délai au démarrage de l'applet systray en utilisant la commande `sleep` :
 
 - Si vous avez utilisé `arch-update --tray --enable`, modifiez la ligne `Exec=` dans le fichier `arch-update-tray.desktop` (qui se trouve sous `~/.config/autostart/` par défaut), comme ceci :
 
-> Exec=sh -c "sleep 3 && arch-update --tray"
+```text
+Exec=sh -c "sleep 3 && arch-update --tray"
+```
 
 - Si vous avez utilisé le service systemd `arch-update-tray.service`, exécutez `systemctl --user edit --full arch-update-tray.service` et modifiez la ligne `ExecStart=`, comme ceci :
 
-> ExecStart=sh -c "sleep 3 && arch-update --tray"
+```text
+ExecStart=sh -c "sleep 3 && arch-update --tray"
+```
 
-- Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, ajoutez une déclaration `sleep` avant la commande `arch-update --tray` dans vos applications "auto-start" dans votre fichier de configuration, comme ceci :
+- Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, modifiez la commande dans vos applications "auto-start" / vôtre fichier de configuration, comme ceci :
 
-> `sleep 3 && arch-update --tray`
+```text
+sleep 3 && arch-update --tray
+```
 
-Si l'applet systray ne démarre toujours au démarrage du système, essayez de graduellement augmenter la valeur du `sleep`.
+Si l'applet systray ne démarre toujours pas au démarrage du système, essayez de graduellement augmenter la valeur du `sleep`.
 
-### Modifier le cycle de vérification automatique
+### Modifier le cycle de vérification
 
-Si vous avez activé le [timer systemd](#le-timer-systemd), l'option `--check` est automatiquement lancée au démarrage du système puis une fois par heure.
+Si vous avez activé le [timer systemd](#le-timer-systemd), une vérification des mises à jour disponible est lancée au démarrage du système puis une fois par heure.
 
-Si vous souhaitez modifier le cycle de vérification, exécutez la commande `systemctl --user edit --full arch-update.timer` et modifiez la valeur `OnUnitActiveSec` à votre convenance.  
+Si vous souhaitez personnaliser le cycle de vérification, exécutez la commande `systemctl --user edit --full arch-update.timer` et modifiez la valeur `OnUnitActiveSec` à votre convenance.  
 Par exemple, si vous voulez qu'`Arch-Update` vérifie plutôt les nouvelles mises à jour toutes les 10 minutes :
 
 ```text
@@ -310,14 +236,14 @@ Dans le cas où vous voulez qu'`Arch-Update` ne vérifie les nouvelles mises à 
 ### Lancer Arch-Update dans un émulateur de terminal spécifique
 
 `gio` (utilisé pour lancer l'application `arch-update` dans un terminal via le fichier `arch-update.desktop` lorsque l'applet systray est cliquée) a actuellement une liste limitée d'émulateurs de terminal connus par défaut.  
-Ainsi, si aucun de ces émulateurs de terminal "connus" n'est installé sur votre système, vous pourriez être confronté à un problème où le fait de cliquer sur l'applet du systray ne fait rien (car `gio` n'a pas pu trouver un émulateur de terminal dans la liste en question). Par ailleurs, vous pouvez avoir plusieurs émulateurs de terminal installés sur votre système. Dans les deux cas, vous pouvez spécifier quel émulateur de terminal utiliser.
+Ainsi, si aucun de ces émulateurs de terminal "connus" n'est installé sur votre système, vous pourriez être confronté à un problème où le fait de cliquer sur l'applet du systray ne fait rien (car `gio` n'a pas pu trouver un émulateur de terminal dans la liste en question). Par ailleurs, vous pouvez avoir plusieurs émulateurs de terminal installés sur votre système. Dans les deux cas, vous pouvez spécifier l'émulateur de terminal à utiliser.
 
 Pour ce faire, installez le paquet AUR [xdg-terminal-exec](https://aur.archlinux.org/packages/xdg-terminal-exec), créez le fichier `~/.config/xdg-terminals.list` et ajoutez-y le nom du fichier `.desktop` de l'émulateur de terminal de votre choix (par exemple `Alacritty.desktop`).  
 Voir <https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configuration> pour plus de détails.
 
 ## Contribuer
 
-Veuillez lire le [guide de contribution](https://github.com/Antiz96/arch-update/blob/main/CONTRIBUTING.md).
+Voir le [guide de contribution](https://github.com/Antiz96/arch-update/blob/main/CONTRIBUTING.md).
 
 ## Licence
 
