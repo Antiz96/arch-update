@@ -17,10 +17,10 @@ fi
 if [ -n "${aur_helper}" ]; then
 	if [ -z "${no_version}" ]; then
 		# shellcheck disable=SC2154
-		aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g')
+		aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 	else
 		# shellcheck disable=SC2154
-		aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | awk '{print $1}')
+		aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" | awk '{print $1}')
 	fi
 fi
 
