@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.6.1](https://github.com/Antiz96/arch-update/releases/tag/v3.6.1) - 2025-01-22
+
+### Fixes
+
+- Filter out ignored packages when checking for AUR packages update with paru ([#305](https://github.com/Antiz96/arch-update/pull/305)) - ([8252253](https://github.com/Antiz96/arch-update/commit/8252253c8048b501b42363ddbe5b324dce8a4cf9)) by @Antiz96
+
+### Miscellaneous
+
+- Update translations files ([#306](https://github.com/Antiz96/arch-update/pull/306)) - ([bb7a435](https://github.com/Antiz96/arch-update/commit/bb7a4359e34fdaac265e963600e8c44df056e410)) by @Antiz96
+
 ## [v3.6.0](https://github.com/Antiz96/arch-update/releases/tag/v3.6.0) - 2025-01-21
 
 ### Features
