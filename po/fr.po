@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:39 src/lib/check.sh:42
+#: src/lib/check.sh:37 src/lib/check.sh:40
 #, sh-format
 msgid "${update_number} update available"
 msgstr "${update_number} mise à jour disponible"
 
-#: src/lib/check.sh:47 src/lib/check.sh:49
+#: src/lib/check.sh:45 src/lib/check.sh:47
 #, sh-format
 msgid "${update_number} updates available"
 msgstr "${update_number} mises à jour disponibles"
@@ -49,8 +49,8 @@ msgstr "Appuyez sur \"entrée\" pour quitter "
 #: src/lib/common.sh:126
 #, sh-format
 msgid ""
-"The ${aur_helper} AUR helper set for AUR packages support in the arch-update."
-"conf configuration file is not found\\n"
+"The ${aur_helper} AUR helper set for AUR packages support in the arch-"
+"update.conf configuration file is not found\\n"
 msgstr ""
 "Le AUR helper ${aur_helper} défini pour le support des paquets AUR dans le fichier de configuration "
 "arch-update.conf n'est pas disponible\\n"
@@ -333,9 +333,9 @@ msgstr "Recherche des Arch News récentes..."
 #: src/lib/list_news.sh:12
 #, sh-format
 msgid ""
-"Unable to retrieve recent Arch News (HTTP error response or request "
-"timeout)\\nPlease, look for any recent news at https://archlinux.org before "
-"updating your system"
+"Unable to retrieve recent Arch News (HTTP error response or request timeout)"
+"\\nPlease, look for any recent news at https://archlinux.org before updating "
+"your system"
 msgstr ""
 "Impossible de récupérer les Arch News récentes (réponse HTTP en erreur ou délai "
 "d'attente de la demande dépassé)\\nVeuillez consultez les dernières "
