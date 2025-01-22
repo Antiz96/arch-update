@@ -5,9 +5,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 if [ -n "${aur_helper}" ] && [ -n "${flatpak_support}" ]; then
-	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
+	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 elif [ -n "${aur_helper}" ] && [ -z "${flatpak_support}" ]; then
-	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g')
+	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 elif [ -z "${aur_helper}" ] && [ -n "${flatpak_support}" ]; then
 	update_available=$(checkupdates ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 else
