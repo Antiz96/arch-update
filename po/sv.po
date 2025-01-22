@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.6.0\n"
 
-#: src/lib/check.sh:39 src/lib/check.sh:42
+#: src/lib/check.sh:37 src/lib/check.sh:40
 #, sh-format
 msgid "${update_number} update available"
 msgstr "${update_number} uppdatering är tillgänglig"
 
-#: src/lib/check.sh:47 src/lib/check.sh:49
+#: src/lib/check.sh:45 src/lib/check.sh:47
 #, sh-format
 msgid "${update_number} updates available"
 msgstr "${update_number} uppdateringar är tillgängliga"
@@ -51,8 +51,8 @@ msgstr "Tryck på \"enter\" för att avsluta "
 #: src/lib/common.sh:126
 #, sh-format
 msgid ""
-"The ${aur_helper} AUR helper set for AUR packages support in the arch-update."
-"conf configuration file is not found\\n"
+"The ${aur_helper} AUR helper set for AUR packages support in the arch-"
+"update.conf configuration file is not found\\n"
 msgstr ""
 "${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
 "konfigurationsfilen arch-update.conf hittades inte\\n"
@@ -339,9 +339,9 @@ msgstr "Letar du efter de senaste Arch-nyheterna..."
 #: src/lib/list_news.sh:12
 #, sh-format
 msgid ""
-"Unable to retrieve recent Arch News (HTTP error response or request "
-"timeout)\\nPlease, look for any recent news at https://archlinux.org before "
-"updating your system"
+"Unable to retrieve recent Arch News (HTTP error response or request timeout)"
+"\\nPlease, look for any recent news at https://archlinux.org before updating "
+"your system"
 msgstr ""
 "Det gick inte att hämta de senaste Arch-nyheterna (HTTP-felsvar eller "
 "timeout för begäran)\\nVänligen leta efter några av det senaste nyheterna på "
