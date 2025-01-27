@@ -48,7 +48,7 @@ msgstr "Tryck på \"enter\" för att fortsätta "
 msgid "Press \"enter\" to quit "
 msgstr "Tryck på \"enter\" för att avsluta "
 
-#: src/lib/common.sh:126
+#: src/lib/common.sh:127
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
@@ -57,12 +57,12 @@ msgstr ""
 "${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
 "konfigurationsfilen arch-update.conf hittades inte\\n"
 
-#: src/lib/common.sh:148
+#: src/lib/common.sh:154
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "Ett kommando för behörighetshöjning krävs (sudo, doas eller run0)\\n"
 
-#: src/lib/common.sh:153
+#: src/lib/common.sh:159
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
@@ -71,7 +71,7 @@ msgstr ""
 "${su_cmd}-kommandot inställt för privilegieskalering i arch-update.conf-"
 "konfigurationsfilen hittades inte\\n"
 
-#: src/lib/common.sh:161
+#: src/lib/common.sh:167
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
