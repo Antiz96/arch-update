@@ -4,6 +4,7 @@
 
 #NoColor
 #NoVersion
+#NoAUR
 #NoFlatpak
 #NoNotification
 #NewsNum=5

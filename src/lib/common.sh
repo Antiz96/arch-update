@@ -109,22 +109,24 @@ quit_msg() {
 }
 
 # Definition of the AUR helper to use (depending on if / which one is installed on the system and if it's not already defined in arch-update.conf) for the optional AUR packages support
-# shellcheck disable=SC2034
-if [ -z "${aur_helper}" ]; then
-	if command -v paru > /dev/null; then
-		# shellcheck disable=SC2034
-		aur_helper="paru"
-	elif command -v yay > /dev/null; then
-		# shellcheck disable=SC2034
-		aur_helper="yay"
-	elif command -v pikaur > /dev/null; then
-		# shellcheck disable=SC2034
-		aur_helper="pikaur"
-	fi
-else
-	if ! command -v "${aur_helper}" > /dev/null; then
-		warning_msg "$(eval_gettext "The \${aur_helper} AUR helper set for AUR packages support in the arch-update.conf configuration file is not found\n")"
-		unset aur_helper
+if [ -z "${no_aur}" ]; then
+	# shellcheck disable=SC2034
+	if [ -z "${aur_helper}" ]; then
+		if command -v paru > /dev/null; then
+			# shellcheck disable=SC2034
+			aur_helper="paru"
+		elif command -v yay > /dev/null; then
+			# shellcheck disable=SC2034
+			aur_helper="yay"
+		elif command -v pikaur > /dev/null; then
+			# shellcheck disable=SC2034
+			aur_helper="pikaur"
+		fi
+	else
+		if ! command -v "${aur_helper}" > /dev/null; then
+			warning_msg "$(eval_gettext "The \${aur_helper} AUR helper set for AUR packages support in the arch-update.conf configuration file is not found\n")"
+			unset aur_helper
+		fi
 	fi
 fi
 
