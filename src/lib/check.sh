@@ -26,7 +26,7 @@ sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/current_updates_check"
 if [ -n "${update_available}" ]; then
 	icon_updates-available
 
-	if [ -n "${notification_support}" ] && [ -z "${no_notification}" ]; then
+	if [ -n "${notification_support}" ]; then
 		if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
 			update_number=$(wc -l "${statedir}/current_updates_check" | awk '{print $1}')
 			# shellcheck disable=SC2154
