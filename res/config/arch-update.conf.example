@@ -4,6 +4,7 @@
 
 #NoColor
 #NoVersion
+#NoFlatpak
 #NoNotification
 #NewsNum=5
 #AURHelper=paru

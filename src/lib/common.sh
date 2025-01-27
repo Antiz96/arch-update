@@ -129,8 +129,10 @@ else
 fi
 
 # Check if flatpak is installed for the optional Flatpak support
-# shellcheck disable=SC2034
-flatpak_support=$(command -v flatpak)
+if [ -z "${no_flatpak}" ]; then
+	# shellcheck disable=SC2034
+	flatpak_support=$(command -v flatpak)
+fi
 
 # Check if notify-send is installed for the optional desktop notification support
 if [ -z "${no_notification}" ]; then
