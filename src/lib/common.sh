@@ -133,8 +133,10 @@ fi
 flatpak_support=$(command -v flatpak)
 
 # Check if notify-send is installed for the optional desktop notification support
-# shellcheck disable=SC2034
-notification_support=$(command -v notify-send)
+if [ -z "${no_notification}" ]; then
+	# shellcheck disable=SC2034
+	notification_support=$(command -v notify-send)
+fi
 
 # Definition of the elevation command to use (depending on which one is installed on the system and if it's not already defined in arch-update.conf)
 if [ -z "${su_cmd}" ]; then
