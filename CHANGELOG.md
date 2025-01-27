@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.7.0](https://github.com/Antiz96/arch-update/releases/tag/v3.7.0) - 2025-01-27
+
+### Features
+
+- Add the `NoAUR` option to `arch-update.conf` ([#309](https://github.com/Antiz96/arch-update/pull/309)) - ([c90b05e](https://github.com/Antiz96/arch-update/commit/c90b05e92e38ea5e2ea46dc4c7d3901890623fdf)) by @Antiz96
+- Add the `NoFlatpak` option to `arch-update.conf` ([#308](https://github.com/Antiz96/arch-update/pull/308)) - ([c56a084](https://github.com/Antiz96/arch-update/commit/c56a084ab382530d8f9da109f317ee6f63574c42)) by @Antiz96
+
+### Miscellaneous
+
+- Update translation files ([#310](https://github.com/Antiz96/arch-update/pull/310)) - ([98362d1](https://github.com/Antiz96/arch-update/commit/98362d113e9236f5162376b3dbf933243dd3dd8d)) by @Antiz96
+- Improve logic for the 'NoNotification' option ([#307](https://github.com/Antiz96/arch-update/pull/307)) - ([daa9d7a](https://github.com/Antiz96/arch-update/commit/daa9d7a18e2cea52c842942f59f82a24435d1bbb)) by @Antiz96
+
 ## [v3.6.1](https://github.com/Antiz96/arch-update/releases/tag/v3.6.1) - 2025-01-22
 
 ### Fixes
