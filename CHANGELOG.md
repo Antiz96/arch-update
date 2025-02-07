@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.7.1](https://github.com/Antiz96/arch-update/releases/tag/v3.7.1) - 2025-02-07
+
+### Documentation
+
+- Update man page link in default / example configuration file ([#312](https://github.com/Antiz96/arch-update/pull/312)) - ([65e24bc](https://github.com/Antiz96/arch-update/commit/65e24bcce95ec6e568cc3d466498cf218ddcacd7)) by @Antiz96
+
+### Miscellaneous
+
+- Get rid of gzip timestamps during build to make Arch-Update reproducible ([#314](https://github.com/Antiz96/arch-update/pull/314)) - ([905f641](https://github.com/Antiz96/arch-update/commit/905f6413ba629db527a931a866e9f6f55bb211c3)) by @Antiz96
+
 ## [v3.7.0](https://github.com/Antiz96/arch-update/releases/tag/v3.7.0) - 2025-01-27
 
 ### Features
