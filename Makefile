@@ -13,10 +13,10 @@ build:
 	scdoc < "doc/man/fr/${pkgname}.conf.5.scd" > "doc/man/fr/${pkgname}.conf.5"
 
 	# Archive man pages
-	gzip -c "doc/man/${pkgname}.1" > "doc/man/${pkgname}.1.gz"
-	gzip -c "doc/man/${pkgname}.conf.5" > "doc/man/${pkgname}.conf.5.gz"
-	gzip -c "doc/man/fr/${pkgname}.1" > "doc/man/fr/${pkgname}.1.gz"
-	gzip -c "doc/man/fr/${pkgname}.conf.5" > "doc/man/fr/${pkgname}.conf.5.gz"
+	gzip -nc "doc/man/${pkgname}.1" > "doc/man/${pkgname}.1.gz"
+	gzip -nc "doc/man/${pkgname}.conf.5" > "doc/man/${pkgname}.conf.5.gz"
+	gzip -nc "doc/man/fr/${pkgname}.1" > "doc/man/fr/${pkgname}.1.gz"
+	gzip -nc "doc/man/fr/${pkgname}.conf.5" > "doc/man/fr/${pkgname}.conf.5.gz"
 
 	# Generate translations files
 	msgfmt po/fr.po -o po/fr.mo
