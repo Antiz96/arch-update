@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.7.2](https://github.com/Antiz96/arch-update/releases/tag/v3.7.2) - 2025-02-17
+
+### Styling
+
+- Remove unconventional dots from output ([#318](https://github.com/Antiz96/arch-update/pull/318)) - ([1201252](https://github.com/Antiz96/arch-update/commit/12012527b4da0b70e584d9eb13be48e968609a29)) by @Antiz96
+
+### Miscellaneous
+
+- *(man)* Don't compress man pages during build ([#317](https://github.com/Antiz96/arch-update/pull/317)) - ([b60600e](https://github.com/Antiz96/arch-update/commit/b60600e6c3fd17de4f37c8f5855d6dca744ac0c6)) by @Antiz96
+
 ## [v3.7.1](https://github.com/Antiz96/arch-update/releases/tag/v3.7.1) - 2025-02-07
 
 ### Documentation
