@@ -12,12 +12,6 @@ build:
 	scdoc < "doc/man/fr/${pkgname}.1.scd" > "doc/man/fr/${pkgname}.1"
 	scdoc < "doc/man/fr/${pkgname}.conf.5.scd" > "doc/man/fr/${pkgname}.conf.5"
 
-	# Archive man pages
-	gzip -nc "doc/man/${pkgname}.1" > "doc/man/${pkgname}.1.gz"
-	gzip -nc "doc/man/${pkgname}.conf.5" > "doc/man/${pkgname}.conf.5.gz"
-	gzip -nc "doc/man/fr/${pkgname}.1" > "doc/man/fr/${pkgname}.1.gz"
-	gzip -nc "doc/man/fr/${pkgname}.conf.5" > "doc/man/fr/${pkgname}.conf.5.gz"
-
 	# Generate translations files
 	msgfmt po/fr.po -o po/fr.mo
 	msgfmt po/sv.po -o po/sv.mo
@@ -52,10 +46,10 @@ install:
 	install -Dm 644 "res/completions/${pkgname}.fish" "${DESTDIR}${PREFIX}/share/fish/vendor_completions.d/${pkgname}.fish"
 
 	# Install man pages
-	install -Dm 644 "doc/man/${pkgname}.1.gz" "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1.gz"
-	install -Dm 644 "doc/man/${pkgname}.conf.5.gz" "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5.gz"
-	install -Dm 644 "doc/man/fr/${pkgname}.1.gz" "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1.gz"
-	install -Dm 644 "doc/man/fr/${pkgname}.conf.5.gz" "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5.gz"
+	install -Dm 644 "doc/man/${pkgname}.1" "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1"
+	install -Dm 644 "doc/man/${pkgname}.conf.5" "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5"
+	install -Dm 644 "doc/man/fr/${pkgname}.1" "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1"
+	install -Dm 644 "doc/man/fr/${pkgname}.conf.5" "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5"
 
 	# Install translations files
 	# Translations files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
@@ -71,10 +65,10 @@ install:
 
 clean:
 	# Delete generated and archived man pages
-	rm -f "doc/man/${pkgname}.1"{,.gz}
-	rm -f "doc/man/${pkgname}.conf.5"{,.gz}
-	rm -f "doc/man/fr/${pkgname}.1"{,.gz}
-	rm -f "doc/man/fr/${pkgname}.conf.5"{,.gz}
+	rm -f "doc/man/${pkgname}.1"
+	rm -f "doc/man/${pkgname}.conf.5"
+	rm -f "doc/man/fr/${pkgname}.1"
+	rm -f "doc/man/fr/${pkgname}.conf.5"
 
 	# Delete generated translations files
 	rm -f po/fr.mo
@@ -109,10 +103,10 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/share/fish/vendor_completions.d/${pkgname}.fish"
 
 	# Delete man pages
-	rm -f "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1.gz"
-	rm -f "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5.gz"
-	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1.gz"
-	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5.gz"
+	rm -f "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1"
+	rm -f "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5"
+	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1"
+	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5"
 
 	# Delete documentation folder
 	rm -rf "${DESTDIR}${PREFIX}/share/doc/${pkgname}/"
