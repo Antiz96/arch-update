@@ -4,7 +4,7 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-"""Arch-Update System Tray."""
+"""Arch-Update System Tray"""
 import gettext
 import logging
 import os
