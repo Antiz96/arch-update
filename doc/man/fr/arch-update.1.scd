@@ -233,6 +233,9 @@ Voir https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#config
 *15*
 	L'éditeur "diff prog" défini dans le fichier de configuration `arch-update.conf` n'a pas été trouvé.
 
+*16*
+	Erreur lors de la création des répertoires `statedir` et / ou `tmpdir`.
+
 # VOIR AUSSI
 
 *checkupdates*(8),
