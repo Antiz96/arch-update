@@ -151,11 +151,7 @@ Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un c
 
 ![notif_fr](https://github.com/user-attachments/assets/56d72147-bde4-492b-8ad1-20caed9f22a9)
 
-Vous pouvez alors voir la liste des mises à jour disponibles dans l'infobulle de l'icône du systray en passant votre souris dessus :
-
-![tooltip_fr](https://github.com/user-attachments/assets/8bc3d339-f7ab-4c8b-aa3f-2b88ea68af42)
-
-Autrement, vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray :
+Vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray :
 
 ![dropdown_menu_fr](https://github.com/user-attachments/assets/60c3c0d8-8091-4047-b8da-ce8f8bc72476)
 
