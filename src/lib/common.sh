@@ -25,7 +25,7 @@ esac
 # shellcheck disable=SC2154
 statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
 tmpdir="${TMPDIR:-/tmp}/${name}-${UID}"
-mkdir -p "${statedir}" "${tmpdir}"
+mkdir -p "${statedir}" "${tmpdir}" || exit 16
 
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
