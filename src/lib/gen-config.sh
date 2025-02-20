@@ -25,7 +25,7 @@ if [ -f "${config_file}" ] && [ -z "${overwrite_config_file}" ]; then
 	error_msg "$(eval_gettext "The '\${config_file}' configuration file already exists\nPlease, remove it before generating a new one (or use --force to overwrite it)")"
 	exit 8
 else
-	mkdir -p "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/"
+	mkdir -p "${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/" || exit 8
 	cp -f "${example_config_file}" "${config_file}" || exit 8
 	info_msg "$(eval_gettext "The '\${config_file}' configuration file has been generated")"
 fi
