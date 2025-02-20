@@ -4,7 +4,7 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-""" Arch-Update System Tray """
+"""Arch-Update System Tray"""
 import gettext
 import logging
 import os
@@ -76,8 +76,9 @@ if not _:
     _ = t.gettext
     log.error("No translations found")
 
-# Launch arch-update with desktopfile
+# Launch arch-update with desktop file
 def arch_update():
+    """Launch with desktop file"""
     DESKTOP_FILE = None
     if 'XDG_DATA_HOME' in os.environ:
         DESKTOP_FILE = os.path.join(
@@ -98,15 +99,17 @@ def arch_update():
 
 # User Interface
 class ArchUpdateQt6:
-    """ System Tray using QT6 library """
+    """System Tray using QT6 library"""
 
     # Definition of functions to update the icon and the dropdown menu when their respective state files change
     def file_changed(self):
+        """Update icon and dropdown menu"""
         self.update_icon()
         self.update_dropdown_menu()
 
     # Update the icon based on the 'try_icon' statefile content
     def update_icon(self):
+        """Update icon"""
         if self.watcher and not self.iconfile in self.watcher.files():
             self.watcher.addPath(self.iconfile)
 
@@ -123,6 +126,7 @@ class ArchUpdateQt6:
 
     # Update the dropdown menu based on the 'last_updates_check' statefile content (including the number and the list of pending updates)
     def update_dropdown_menu(self):
+        """Update dropdown menu"""
         if self.watcher and not self.updatesfile in self.watcher.files():
             self.watcher.addPath(self.updatesfile)
 
@@ -157,21 +161,24 @@ class ArchUpdateQt6:
             for update in updates_list:
                 self.dropdown_menu.addAction(update)
 
-    # Action to run the arch_update
+    # Action to run the arch_update function
     def run(self):
+        """Run arch-update"""
         arch_update()
 
     # Action to run `arch-update --check`
     def check(self):
+        """Run check for updates"""
         subprocess.run(["arch-update", "--check"], check=False)
 
     # Action to xxit the systray
     def exit(self):
+        """Exit systray"""
         sys.exit(0)
 
     # Start the systray
     def __init__(self, iconfile):
-        """ Start Qt6 System Tray """
+        """Start Qt6 System Tray"""
 
 	# Variables definition
         self.iconfile = iconfile
