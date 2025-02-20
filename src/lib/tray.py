@@ -101,13 +101,13 @@ def arch_update():
 class ArchUpdateQt6:
     """System Tray using QT6 library"""
 
-    # Definition of functions to update the icon and the dropdown menu when their respective state files change
+    # Definition of functions to update the icon and the dropdown menu when their respective state files content change
     def file_changed(self):
         """Update icon and dropdown menu"""
         self.update_icon()
         self.update_dropdown_menu()
 
-    # Update the icon based on the 'try_icon' statefile content
+    # Update the icon based on the 'tray_icon' statefile content
     def update_icon(self):
         """Update icon"""
         if self.watcher and not self.iconfile in self.watcher.files():
@@ -142,9 +142,10 @@ class ArchUpdateQt6:
         # Remove empty lines
         updates_list = [update.strip() for update in updates_list if update.strip()]
 
-	# Count the number of pending updates (according to the number of lines of the 'last_updates_check' statefile
+	# Count the number of pending updates (according to the number of lines of the 'last_updates_check' statefile)
         updates_count = len(updates_list)
 
+        # Update the dropdown menu title accordingly
         if updates_count == 0:
             self.dropdown_menu.setTitle(_("System is up to date"))
             self.dropdown_menu.setEnabled(False)
@@ -171,7 +172,7 @@ class ArchUpdateQt6:
         """Run check for updates"""
         subprocess.run(["arch-update", "--check"], check=False)
 
-    # Action to xxit the systray
+    # Action to exit the systray
     def exit(self):
         """Exit systray"""
         sys.exit(0)
