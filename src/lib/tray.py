@@ -17,44 +17,56 @@ from PyQt6.QtCore import QFileSystemWatcher
 # Create logger
 log = logging.getLogger(__name__)
 
-# Find Icon file
-ICON_FILE = None
+# Find Icon statefile
+ICON_STATEFILE = None
+
 if 'XDG_STATE_HOME' in os.environ:
-    ICON_FILE = os.path.join(
+    ICON_STATEFILE = os.path.join(
         os.environ['XDG_STATE_HOME'], 'arch-update', 'tray_icon')
 elif 'HOME' in os.environ:
-    ICON_FILE = os.path.join(
+    ICON_STATEFILE = os.path.join(
         os.environ['HOME'], '.local', 'state', 'arch-update', 'tray_icon')
-if not os.path.isfile(ICON_FILE):
-    log.error("State icon file does not exist: %s", ICON_FILE)
+if not os.path.isfile(ICON_STATEFILE):
+    log.error("State icon file does not exist: %s", ICON_STATEFILE)
     sys.exit(1)
 
-# Find Updates file
-UPDATES_FILE = None
+# Find Updates statefile
+UPDATES_STATEFILE = None
+
 if 'XDG_STATE_HOME' in os.environ:
-    UPDATES_FILE = os.path.join(
+    UPDATES_STATEFILE = os.path.join(
         os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check')
 elif 'HOME' in os.environ:
-    UPDATES_FILE = os.path.join(
+    UPDATES_STATEFILE = os.path.join(
         os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check')
-if not os.path.isfile(UPDATES_FILE):
-    log.error("State updates file does not exist: %s", UPDATES_FILE)
+if not os.path.isfile(UPDATES_STATEFILE):
+    log.error("State updates file does not exist: %s", UPDATES_STATEFILE)
 
-# Find translations
-paths = []
+# Find translations paths
+i18n_paths = []
+
 if 'XDG_DATA_DIRS' in os.environ:
-    paths.extend(os.environ['XDG_DATA_DIRS'].split(":"))
+    i18n_paths.extend(os.environ['XDG_DATA_DIRS'].split(":"))
 if 'XDG_DATA_HOME' in os.environ:
-    paths.extend(os.environ['XDG_DATA_HOME'].split(":"))
+    i18n_paths.extend(os.environ['XDG_DATA_HOME'].split(":"))
 if 'HOME' in os.environ:
-    paths.append(os.path.join(
+    i18n_paths.append(os.path.join(
         os.environ['HOME'], '.local', 'share'))
-paths.extend(['/usr/share', '/usr/local/share'])
+i18n_paths.extend(['/usr/share', '/usr/local/share'])
 _ = None
-for path in paths:
+
+# Check for transatlation paths based on system language (fallback to default english)
+for path in i18n_paths:
     french_translation_file = os.path.join(
         path, "locale", "fr", "LC_MESSAGES", "Arch-Update.mo")
     if os.path.isfile(french_translation_file):
+        path = os.path.join(path, 'locale')
+        t = gettext.translation('Arch-Update', localedir=path, fallback=True)
+        _ = t.gettext
+        break
+    swedish_translation_file = os.path.join(
+        path, "locale", "sv", "LC_MESSAGES", "Arch-Update.mo")
+    if os.path.isfile(swedish_translation_file):
         path = os.path.join(path, 'locale')
         t = gettext.translation('Arch-Update', localedir=path, fallback=True)
         _ = t.gettext
@@ -64,9 +76,9 @@ if not _:
     _ = t.gettext
     log.error("No translations found")
 
-
+# Launch arch-update with desktop file
 def arch_update():
-    """ Launch with desktop file """
+    """Launch with desktop file"""
     DESKTOP_FILE = None
     if 'XDG_DATA_HOME' in os.environ:
         DESKTOP_FILE = os.path.join(
@@ -85,17 +97,19 @@ def arch_update():
         DESKTOP_FILE = "/usr/share/applications/arch-update.desktop"
     subprocess.run(["gio", "launch", DESKTOP_FILE], check=False)
 
-
+# User Interface
 class ArchUpdateQt6:
-    """ System Tray using QT6 library """
+    """System Tray using QT6 library"""
 
+    # Definition of functions to update the icon and the dropdown menu when their respective state files change
     def file_changed(self):
-        """ Update icon and dropdown menu on state file content changes """
+        """Update icon and dropdown menu"""
         self.update_icon()
         self.update_dropdown_menu()
 
+    # Update the icon based on the 'try_icon' statefile content
     def update_icon(self):
-        """ Update the tray icon based on the icon state file content """
+        """Update icon"""
         if self.watcher and not self.iconfile in self.watcher.files():
             self.watcher.addPath(self.iconfile)
 
@@ -110,8 +124,9 @@ class ArchUpdateQt6:
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
+    # Update the dropdown menu based on the 'last_updates_check' statefile content (including the number and the list of pending updates)
     def update_dropdown_menu(self):
-        """ Update the dropdown with the number / list of pending updates """
+        """Update dropdown menu"""
         if self.watcher and not self.updatesfile in self.watcher.files():
             self.watcher.addPath(self.updatesfile)
 
@@ -127,6 +142,7 @@ class ArchUpdateQt6:
         # Remove empty lines
         updates_list = [update.strip() for update in updates_list if update.strip()]
 
+	# Count the number of pending updates (according to the number of lines of the 'last_updates_check' statefile
         updates_count = len(updates_list)
 
         if updates_count == 0:
@@ -139,32 +155,37 @@ class ArchUpdateQt6:
             self.dropdown_menu.setTitle(_("{updates} updates available").format(updates=updates_count))
             self.dropdown_menu.setEnabled(True)
 
-        # Update dropdown menu accordingly
+        # Add the list on pending updates to the dropdown menu
         self.dropdown_menu.clear()
         if updates_list:
             for update in updates_list:
                 self.dropdown_menu.addAction(update)
 
+    # Action to run the arch_update function
     def run(self):
-        """ Start arch-update """
+        """Run arch-update"""
         arch_update()
 
+    # Action to run `arch-update --check`
     def check(self):
-        """ Check for updates """
+        """Run check for updates"""
         subprocess.run(["arch-update", "--check"], check=False)
 
+    # Action to xxit the systray
     def exit(self):
-        """ Close systray process """
+        """Exit systray"""
         sys.exit(0)
 
+    # Start the systray
     def __init__(self, iconfile):
-        """ Start Qt6 System Tray """
+        """Start Qt6 System Tray"""
 
+	# Variables definition
         self.iconfile = iconfile
-        self.updatesfile = UPDATES_FILE
+        self.updatesfile = UPDATES_STATEFILE
         self.watcher = None
 
-        # Application
+        # General application parameters
         app = QApplication(["Arch-Update"])
         app.setQuitOnLastWindowClosed(False)
 
@@ -177,16 +198,16 @@ class ArchUpdateQt6:
         tooltip = _("Arch-Update")
         self.tray.setToolTip(tooltip)
 
-        # Menu
+        # Definition of menus titles
         menu = QMenu()
         menu_launch = QAction(_("Run Arch-Update"))
         menu_check = QAction(_("Check for updates"))
         menu_exit = QAction(_("Exit"))
 
-        # Dynamic dropdown menu to show the update list
+        # Initialisation of the dynamic dropdown menu
         self.dropdown_menu = QMenu(_("Checking for updates..."))
 
-        # Add actions to the menu
+        # Link actions to the menu
         menu.addMenu(self.dropdown_menu)
         menu.addSeparator()
         menu.addAction(menu_launch)
@@ -199,7 +220,7 @@ class ArchUpdateQt6:
 
         self.tray.setContextMenu(menu)
 
-        # File Watcher
+        # File Watcher (watches for statefiles content changes)
         self.watcher = QFileSystemWatcher([self.iconfile, self.updatesfile])
         self.watcher.fileChanged.connect(self.file_changed)
 
@@ -209,4 +230,4 @@ class ArchUpdateQt6:
         app.exec()
 
 if __name__ == "__main__":
-    ArchUpdateQt6(ICON_FILE)
+    ArchUpdateQt6(ICON_STATEFILE)
