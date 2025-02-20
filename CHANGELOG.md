@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.7.3](https://github.com/Antiz96/arch-update/releases/tag/v3.7.3) - 2025-02-20
+
+### Styling
+
+- Fix typos in systray python script ([#323](https://github.com/Antiz96/arch-update/pull/323)) - ([d322020](https://github.com/Antiz96/arch-update/commit/d3220209537a26327af55c961f18079fd16cf6e6)) by @Antiz96
+
+### Miscellaneous
+
+- Little rework of the systray applet python script ([#322](https://github.com/Antiz96/arch-update/pull/322)) - ([169e00e](https://github.com/Antiz96/arch-update/commit/169e00e262d8b3782d33aeaaae22e8772c44a715)) by @Antiz96
+- Remove the list of pending updates from the systray's tooltip ([#321](https://github.com/Antiz96/arch-update/pull/321)) - ([f51cf89](https://github.com/Antiz96/arch-update/commit/f51cf897774bd82fec939b7733e15fc9161ff47f)) by @Antiz96
+- Make scripts more robust when using `mkdir` ([#320](https://github.com/Antiz96/arch-update/pull/320)) - ([b2af443](https://github.com/Antiz96/arch-update/commit/b2af443f59de987d43114efb86dc1537219e6210)) by @Antiz96
+
 ## [v3.7.2](https://github.com/Antiz96/arch-update/releases/tag/v3.7.2) - 2025-02-17
 
 ### Styling
