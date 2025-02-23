@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.7.4](https://github.com/Antiz96/arch-update/releases/tag/v3.7.4) - 2025-02-23
+
+### Documentation
+
+- Enhance documentation about race condition ([#326](https://github.com/Antiz96/arch-update/pull/326)) - ([ab028d1](https://github.com/Antiz96/arch-update/commit/ab028d107368136ac842dc9b2ad17e00492d1d96)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update po files ([#325](https://github.com/Antiz96/arch-update/pull/325)) - ([6c1b665](https://github.com/Antiz96/arch-update/commit/6c1b665e9bb628cf4113fb309b22000297b792fd)) by @Antiz96
+
 ## [v3.7.3](https://github.com/Antiz96/arch-update/releases/tag/v3.7.3) - 2025-02-20
 
 ### Styling
