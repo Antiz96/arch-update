@@ -103,7 +103,7 @@ systemctl --user enable --now arch-update-tray.service
 arch-update --tray
 ```
 
-*If the systray applet doesn't start at boot regardless*, please read the *"The systray applet does not start at boot"* chapter in the *"TIPS AND TRICKS"* section below.
+*If the systray applet doesn't start at boot regardless or if it doesn't work as expected* (e.g. the icon is missing or the click actions do not act as they should), please read the *"The systray applet does not start at boot or does not work as expected"* chapter in the *"TIPS AND TRICKS"* section below.
 
 The systray icon dynamically changes to indicate the current state of your system ("up to date" or "updates available"). When clicked, it launches `arch-update` in a terminal window via the `arch-update.desktop` file.
 
@@ -121,11 +121,12 @@ By default, a check is performed at *boot and then once every hour*. The check c
 
 # TIPS AND TRICKS 
 
-## The systray applet does not start at boot
+## The systray applet does not start at boot or does not work as expected
 
 Make sure you followed instructions of the *"The systray applet"* chapter in the *"USAGE"* section above.
 
-If the systray applet doesn't start regardless, this could be the result of a *race condition*.
+If the systray applet doesn't start at boot regardless or if it doesn't work as expected (e.g. the icon is missing or the click actions do not act as they should), this could be the result of a *race condition*.
+
 To prevent that, you can add a small delay to the systray applet startup using the `sleep` command:
 
 - If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default), like so: 

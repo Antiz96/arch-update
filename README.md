@@ -120,7 +120,7 @@ systemctl --user enable --now arch-update-tray.service
 arch-update --tray
 ```
 
-**If the systray applet doesn't start at boot regardless**, please read [this chapter](#the-systray-applet-does-not-start-at-boot).
+**If the systray applet doesn't start at boot regardless or if it doesn't work as expected** (e.g the icon is missing or the click actions do not act as they should), please read [this chapter](#the-systray-applet-does-not-start-at-boot-or-does-not-work-as-expected).
 
 The systray icon dynamically changes to indicate the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` in a terminal window via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.
 
@@ -182,11 +182,12 @@ See the [arch-update.conf(5) man page](https://github.com/Antiz96/arch-update/bl
 
 ## Tips and tricks
 
-### The systray applet does not start at boot
+### The systray applet does not start at boot or does not work as expected
 
 Make sure you followed instructions of [this chapter](#the-systray-applet).
 
-If the systray applet doesn't start regardless, this could be the result of a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software).  
+If the systray applet doesn't start at boot regardless or if it doesn't work as expected (e.g the icon is missing or the click actions do not act as they should), this could be the result of a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software).
+
 To prevent that, you can add a small delay to the systray applet startup using the `sleep` command:
 
 - If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default), like so:

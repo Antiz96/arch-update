@@ -120,7 +120,7 @@ systemctl --user enable --now arch-update-tray.service
 arch-update --tray
 ```
 
-**Si l'applet systray ne démarre pas au démarrage du système malgré tout**, veuillez lire [ce chapitre](#lapplet-systray-ne-démarre-pas-au-démarrage-du-système).
+**Si l'applet systray ne démarre pas au démarrage du système malgré tout ou si elle ne marche pas comme prévu** (par exemple si l'icône est manquante ou que les actions de cliques ne fonctionnent pas comme elles devraient), veuillez lire [ce chapitre](#lapplet-systray-ne-démarre-pas-au-démarrage-du-système-ou-ne-marche-pas-comme-prévu).
 
 L'icône du systray change dynamiquement pour indiquer l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, elle lance `arch-update` dans une fenêtre de terminal via le fichier [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
 
@@ -182,11 +182,12 @@ Voir la [page de manuel arch-update.conf(5)](https://github.com/Antiz96/arch-upd
 
 ## Trucs et astuces
 
-### L'applet systray ne démarre pas au démarrage du système
+### L'applet systray ne démarre pas au démarrage du système ou ne marche pas comme prévu
 
 Assurez vous d'avoir suivi les instructions de [ce chapitre](#lapplet-systray).
 
-Si l'applet systray ne démarre pas malgré tout, cela peut être le résultat d'une [situation de compétition](https://fr.wikipedia.org/wiki/Situation_de_comp%C3%A9tition).  
+Si l'applet systray ne démarre pas au démarrage du système malgré tout ou si elle ne marche pas comme prévu (par exemple si l'icône est manquante ou que les actions de cliques ne fonctionnent pas comme elles devraient), cela peut être le résultat d'une [situation de compétition](https://fr.wikipedia.org/wiki/Situation_de_comp%C3%A9tition).
+
 Pour éviter ceci, vous pouvez ajouter un léger délai au démarrage de l'applet systray en utilisant la commande `sleep` :
 
 - Si vous avez utilisé `arch-update --tray --enable`, modifiez la ligne `Exec=` dans le fichier `arch-update-tray.desktop` (qui se trouve sous `~/.config/autostart/` par défaut), comme ceci :
