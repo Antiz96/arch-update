@@ -103,7 +103,7 @@ systemctl --user enable --now arch-update-tray.service
 arch-update --tray
 ```
 
-*Si l'applet systray ne démarre pas au démarrage du système malgré tout*, veuillez lire le chapitre *"L'applet systray ne démarre pas au démarrage du système"* dans la section *"TRUCS ET ASTUCES"* ci-dessous.
+*Si l'applet systray ne démarre pas au démarrage du système malgré tout ou si elle ne marche pas comme prévu* (par exemple si l'icône est manquante ou que les actions de cliques ne fonctionnent pas comme elles devraient), veuillez lire le chapitre *"L'applet systray ne démarre pas au démarrage du système ou ne marche pas comme prévu"* dans la section *"TRUCS ET ASTUCES"* ci-dessous.
 
 L'icône du systray change dynamiquement pour indiquer l'état actuel de votre système ("à jour" ou "mises à jour disponibles"). Lorsque vous cliquez dessus, elle lance `arch-update` dans une fenêtre de terminal via le fichier `arch-update.desktop`.
 
@@ -121,11 +121,12 @@ Par défaut, une vérification est effectuée *au démarrage du système puis un
 
 # TRUCS ET ASTUCES
 
-## L'applet systray ne démarre pas au démarrage du système
+## L'applet systray ne démarre pas au démarrage du système ou ne marche pas comme prévu
 
 Assurez vous d'avoir suivi les instructions du chapitre *"L'applet systray"* dans la section *"UTILISATION"* ci-dessus.
 
-Si l'applet systray ne démarre pas malgré tout, cela peut être due à une *situation de compétition*.
+Si l'applet systray ne démarre pas au démarrage du sytème malgré tout ou si elle ne marche pas comme prévu (par exemple si l'icône est manquante ou que les actions de cliques ne fonctionnent pas comme elles devraient), cela peut être due à une *situation de compétition*.
+
 Pour éviter ceci, vous pouvez ajouter un léger délai au démarrage de l'applet systray en utilisant la commande `sleep` :
 
 - Si vous avez utilisé `arch-update --tray --enable`, modifiez la ligne `Exec=` dans le fichier `arch-update-tray.desktop` (qui se trouve sous `~/.config/autostart/` par défaut), comme ceci :
