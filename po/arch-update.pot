@@ -227,7 +227,7 @@ msgstr ""
 #, sh-format
 msgid ""
 "${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
-"information."
+"information"
 msgstr ""
 
 #: src/lib/kernel_reboot.sh:10
@@ -589,52 +589,40 @@ msgstr ""
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr ""
 
-#: src/lib/tray.py:123 src/lib/tray.py:125
+#: src/lib/tray.py:138
 msgid "'updates' state file isn't found"
 msgstr ""
 
-#: src/lib/tray.py:135 src/lib/tray.py:136
+#: src/lib/tray.py:150
 msgid "System is up to date"
 msgstr ""
 
-#: src/lib/tray.py:140
-#, python-brace-format
-msgid ""
-"1 update available\n"
-"\n"
-"{update_list}"
-msgstr ""
-
-#: src/lib/tray.py:141
+#: src/lib/tray.py:153
 msgid "1 update available"
 msgstr ""
 
-#: src/lib/tray.py:145
-#, python-brace-format
-msgid ""
-"{updates} updates available\n"
-"\n"
-"{update_list}"
-msgstr ""
-
-#: src/lib/tray.py:146
+#: src/lib/tray.py:156
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr ""
 
-#: src/lib/tray.py:186
+#: src/lib/tray.py:199
+msgid "Arch-Update"
+msgstr ""
+
+#: src/lib/tray.py:204
 msgid "Run Arch-Update"
 msgstr ""
 
-#: src/lib/tray.py:187
+#: src/lib/tray.py:205
 msgid "Check for updates"
 msgstr ""
 
-#: src/lib/tray.py:188
+#: src/lib/tray.py:206
 msgid "Exit"
 msgstr ""
 
-#: src/lib/tray.py:191
+#: src/lib/tray.py:209
 msgid "Checking for updates..."
 msgstr ""
 
