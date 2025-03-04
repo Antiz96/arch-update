@@ -31,11 +31,11 @@ source "${libdir}/orphan_packages.sh"
 # shellcheck source=src/lib/packages_cache.sh
 source "${libdir}/packages_cache.sh"
 
-# Source the "pacnew_files" library which display pacnew files and offers to process them 
+# Source the "pacnew_files" library which displays pacnew files and offers to process them 
 # shellcheck source=src/lib/pacnew_files.sh
 source "${libdir}/pacnew_files.sh"
 
-# Source the "kernel_reboot" library which check if there's a pending kernel update requiring a reboot to be applied (unless running from WSL)
+# Source the "kernel_reboot" library which checks if there's a pending kernel update requiring a reboot to be applied (unless running from WSL)
 if [ -z "${WSL_DISTRO_NAME}" ]; then
 	# shellcheck source=src/lib/kernel_reboot.sh
 	source "${libdir}/kernel_reboot.sh"
