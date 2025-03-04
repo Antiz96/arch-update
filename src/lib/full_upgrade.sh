@@ -35,9 +35,11 @@ source "${libdir}/packages_cache.sh"
 # shellcheck source=src/lib/pacnew_files.sh
 source "${libdir}/pacnew_files.sh"
 
-# Source the "kernel_reboot" library which check if there's a pending kernel update requiring a reboot to be applied
-# shellcheck source=src/lib/kernel_reboot.sh
-source "${libdir}/kernel_reboot.sh"
+# Source the "kernel_reboot" library which check if there's a pending kernel update requiring a reboot to be applied (unless running from WSL)
+if [ -z "${WSL_DISTRO_NAME}" ]; then
+	# shellcheck source=src/lib/kernel_reboot.sh
+	source "${libdir}/kernel_reboot.sh"
+fi
 
 # Source the "restart_services" library which displays services requiring a post update restart and offers to restart them
 # shellcheck source=src/lib/restart_services.sh
