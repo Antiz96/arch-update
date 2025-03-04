@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.7.5](https://github.com/Antiz96/arch-update/releases/tag/v3.7.5) - 2025-03-04
+
+### Fixes
+
+- *(kernel_reboot)* Don't source the kernel_reboot lib in WSL ([#328](https://github.com/Antiz96/arch-update/pull/328)) - ([06910e1](https://github.com/Antiz96/arch-update/commit/06910e14ac031295d3473699c517258fc2f6b290)) by @Antiz96
+
+### Styling
+
+- Fix typos in comments ([#329](https://github.com/Antiz96/arch-update/pull/329)) - ([d97b98e](https://github.com/Antiz96/arch-update/commit/d97b98e40e36f9d69f038628338b2a4aa5753633)) by @Antiz96
+
 ## [v3.7.4](https://github.com/Antiz96/arch-update/releases/tag/v3.7.4) - 2025-02-23
 
 ### Documentation
