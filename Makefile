@@ -15,6 +15,7 @@ build:
 	# Generate translations files
 	msgfmt po/fr.po -o po/fr.mo
 	msgfmt po/sv.po -o po/sv.mo
+	msgfmt po/zh_CN.po -o po/zh_CN.mo
 
 test:
 	# Run some simple unit tests on basic functions
@@ -55,6 +56,7 @@ install:
 	# Translations files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
 	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
 	install -Dm 644 po/sv.mo "${DESTDIR}${PREFIX}/share/locale/sv/LC_MESSAGES/${_pkgname}.mo"
+	install -Dm 644 po/zh_CN.mo "${DESTDIR}${PREFIX}/share/locale/zh_CN/LC_MESSAGES/${_pkgname}.mo"
 
 	# Install documentation
 	install -Dm 644 README.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/README.md"
@@ -73,6 +75,7 @@ clean:
 	# Delete generated translations files
 	rm -f po/fr.mo
 	rm -f po/sv.mo
+	rm -f po/zh_CN.mo
 
 uninstall:
 	# Delete main script
@@ -96,6 +99,7 @@ uninstall:
 
 	# Delete .mo files
 	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
+	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/zh_CN/LC_MESSAGES/${_pkgname}.mo"
 
 	# Delete shell completions
 	rm -f "${DESTDIR}${PREFIX}/share/bash-completion/completions/${pkgname}"
