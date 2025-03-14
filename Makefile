@@ -98,8 +98,9 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}-tray.service"
 
 	# Delete .mo files
-	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/usr/share/locale/zh_CN/LC_MESSAGES/${_pkgname}.mo"
+	rm -f "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
+	rm -f "${DESTDIR}${PREFIX}/share/locale/sv/LC_MESSAGES/${_pkgname}.mo"
+	rm -f "${DESTDIR}${PREFIX}/share/locale/zh_CN/LC_MESSAGES/${_pkgname}.mo"
 
 	# Delete shell completions
 	rm -f "${DESTDIR}${PREFIX}/share/bash-completion/completions/${pkgname}"
