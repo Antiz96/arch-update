@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.7.6](https://github.com/Antiz96/arch-update/releases/tag/v3.7.6) - 2025-03-14
+
+### Features
+
+- *(i18n)* Add zh_CN - Chinese (simplified) translation ([#330](https://github.com/Antiz96/arch-update/pull/330)) - ([4c75406](https://github.com/Antiz96/arch-update/commit/4c754061911550174dfe426410337ec87e23fd05)) by @Carlson24
+
+### Fixes
+
+- *(Makefile)* Fix incorrect paths in uninstall target and add the missing Swedish translation files ([#332](https://github.com/Antiz96/arch-update/pull/332)) - ([aea604a](https://github.com/Antiz96/arch-update/commit/aea604a34c5bb5022e0fdda889794b8f69132e72)) by @Cardiacman13
+
 ## [v3.7.5](https://github.com/Antiz96/arch-update/releases/tag/v3.7.5) - 2025-03-04
 
 ### Fixes
