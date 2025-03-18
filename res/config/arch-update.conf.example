@@ -8,6 +8,7 @@
 #NoFlatpak
 #NoNotification
 #NewsNum=5
+#NewsTimeout=10
 #AURHelper=paru
 #PrivilegeElevationCommand=sudo
 #KeepOldPackages=3
