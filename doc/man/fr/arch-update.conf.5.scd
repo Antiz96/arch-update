@@ -38,6 +38,9 @@ Les options sont sensibles à la casse, les majuscules doivent donc être respec
 *NewsNum=[Num]*
 	Nombre de Arch news à afficher avant la mise à jour et avec l'option `-n / --news` (voir la page de manuel *arch-update*(1) pour plus de détails). La valeur par défaut est 5.
 
+*NewsTimeout=[Num]*
+	Délai d'attente (timeout) pour les requêtes de vérification des Arch news. La valeur est exprimée en secondes et doit être un nombre entier. Si cette option est paramétrée à "0", il n'y a aucun délai d'attente (pas de limite de temps pour la complétion des requêtes). La valeur par défaut est 10.
+
 *AURHelper=[AUR Helper]*
 	AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont `paru`, `yay` ou `pikaur`. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : `paru` puis `yay` puis `pikaur` (si aucun d'eux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
 

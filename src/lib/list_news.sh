@@ -5,7 +5,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 info_msg "$(eval_gettext "Looking for recent Arch News...")"
-news=$(curl -m 30 -Lfs https://www.archlinux.org/news || echo "error")
+# shellcheck disable=SC2154
+news=$(curl -m "${news_timeout}" -Lfs https://www.archlinux.org/news || echo "error")
 
 if [ "${news}" == "error" ]; then
 	echo
@@ -71,7 +72,8 @@ else
 				news_selected=$(sed -n "${num}"p <<< "${news_titles}")
 				news_path=$(echo "${news_selected}" | sed -e s/\ -//g -e s/\ /-/g -e s/[.]//g -e s/=//g -e s/\>//g -e s/\<//g -e s/\`//g -e s/://g -e s/+//g -e s/[[]//g -e s/]//g -e s/,//g -e s/\(//g -e s/\)//g -e s/[/]//g -e s/@//g -e s/\'//g -e s/--/-/g | awk '{print tolower($0)}')
 				news_url="https://www.archlinux.org/news/${news_path}"
-				news_content=$(curl -m 30 -Lfs "${news_url}" || echo "error")
+				# shellcheck disable=SC2154
+				news_content=$(curl -m "${news_timeout}" -Lfs "${news_url}" || echo "error")
 
 				if [ "${news_content}" == "error" ]; then
 					echo
