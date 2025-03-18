@@ -81,7 +81,7 @@ for path in i18n_paths:
 if not _:
     t = gettext.translation('Arch-Update', fallback=True)
     _ = t.gettext
-    log.error("No translations found")
+    log.error("No translation found")
 
 # Launch arch-update with desktop file
 def arch_update():
