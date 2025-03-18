@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.8.0](https://github.com/Antiz96/arch-update/releases/tag/v3.8.0) - 2025-03-18
+
+### Features
+
+- *(news)* Set a more reasonable default for Arch news requests timeout and allow to customize it via the NewsTimeout option in the config file ([#335](https://github.com/Antiz96/arch-update/pull/335)) - ([666575c](https://github.com/Antiz96/arch-update/commit/666575c2619c11ae31c6c0478ebc26bb161f09fd)) by @Antiz96
+
+### Styling
+
+- Fix some typos and outdated comments in Makefile ([#338](https://github.com/Antiz96/arch-update/pull/338)) - ([02eff54](https://github.com/Antiz96/arch-update/commit/02eff54952803e960fe9e1119dfd6d1fc2d9df66)) by @Antiz96
+- Slight style improvements in man page ([#336](https://github.com/Antiz96/arch-update/pull/336)) - ([ca3ae12](https://github.com/Antiz96/arch-update/commit/ca3ae120ea3c06979c07fad8131b30253934c927)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update lines in translation files ([#337](https://github.com/Antiz96/arch-update/pull/337)) - ([e6ef2cf](https://github.com/Antiz96/arch-update/commit/e6ef2cfd3b5fde4f11c7c061b1c3f5a29ffa7c25)) by @Antiz96
+- Add .gitignore ([#339](https://github.com/Antiz96/arch-update/pull/339)) - ([1ce8ca5](https://github.com/Antiz96/arch-update/commit/1ce8ca531c02bf99540a2e952f5ec0e8708dad17)) by @Antiz96
+
 ## [v3.7.6](https://github.com/Antiz96/arch-update/releases/tag/v3.7.6) - 2025-03-14
 
 ### Features
