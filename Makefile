@@ -12,7 +12,7 @@ build:
 	scdoc < "doc/man/fr/${pkgname}.1.scd" > "doc/man/fr/${pkgname}.1"
 	scdoc < "doc/man/fr/${pkgname}.conf.5.scd" > "doc/man/fr/${pkgname}.conf.5"
 
-	# Generate translations files
+	# Generate translation files
 	msgfmt po/fr.po -o po/fr.mo
 	msgfmt po/sv.po -o po/sv.mo
 	msgfmt po/zh_CN.po -o po/zh_CN.mo
@@ -52,8 +52,8 @@ install:
 	install -Dm 644 "doc/man/fr/${pkgname}.1" "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1"
 	install -Dm 644 "doc/man/fr/${pkgname}.conf.5" "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5"
 
-	# Install translations files
-	# Translations files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
+	# Install translation files
+	# Translation files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
 	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
 	install -Dm 644 po/sv.mo "${DESTDIR}${PREFIX}/share/locale/sv/LC_MESSAGES/${_pkgname}.mo"
 	install -Dm 644 po/zh_CN.mo "${DESTDIR}${PREFIX}/share/locale/zh_CN/LC_MESSAGES/${_pkgname}.mo"
@@ -66,13 +66,13 @@ install:
 	install -Dm 644 "res/config/${pkgname}.conf.example" "${DESTDIR}${PREFIX}/share/${pkgname}/config/${pkgname}.conf.example"
 
 clean:
-	# Delete generated and archived man pages
+	# Delete generated man pages
 	rm -f "doc/man/${pkgname}.1"
 	rm -f "doc/man/${pkgname}.conf.5"
 	rm -f "doc/man/fr/${pkgname}.1"
 	rm -f "doc/man/fr/${pkgname}.conf.5"
 
-	# Delete generated translations files
+	# Delete generated translation files
 	rm -f po/fr.mo
 	rm -f po/sv.mo
 	rm -f po/zh_CN.mo
