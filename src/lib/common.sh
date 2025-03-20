@@ -30,8 +30,10 @@ mkdir -p "${statedir}" "${tmpdir}" || exit 16
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
 . gettext.sh
+# Using "Arch-Update" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the "Arch Linux Updates Indicator" Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
 # shellcheck disable=SC2154
-export TEXTDOMAIN="${_name}" # Using "Arch-Update" as TEXTDOMAIN to avoid conflicting with the "arch-update" TEXTDOMAIN used by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
+export TEXTDOMAIN="${_name}"
+# Check where the translation files are installed (depending on the PREFIX used during the installation) to see if the default TEXTDOMAINDIR path (/usr/share/locale) should be superseded
 if [ -f "${XDG_DATA_HOME}/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
 	export TEXTDOMAINDIR="${XDG_DATA_HOME}/locale"
 elif [ -f "${HOME}/.local/share/locale/fr/LC_MESSAGES/${_name}.mo" ]; then
