@@ -26,46 +26,46 @@ msgstr ""
 msgid "${update_number} updates available"
 msgstr ""
 
-#: src/lib/common.sh:90
+#: src/lib/common.sh:92
 #, sh-format
 msgid "WARNING"
 msgstr ""
 
-#: src/lib/common.sh:96
+#: src/lib/common.sh:98
 #, sh-format
 msgid "ERROR"
 msgstr ""
 
-#: src/lib/common.sh:101
+#: src/lib/common.sh:103
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr ""
 
-#: src/lib/common.sh:107
+#: src/lib/common.sh:109
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr ""
 
-#: src/lib/common.sh:127
+#: src/lib/common.sh:129
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
 "update.conf configuration file is not found\\n"
 msgstr ""
 
-#: src/lib/common.sh:154
+#: src/lib/common.sh:156
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr ""
 
-#: src/lib/common.sh:159
+#: src/lib/common.sh:161
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
 msgstr ""
 
-#: src/lib/common.sh:167
+#: src/lib/common.sh:169
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -589,40 +589,40 @@ msgstr ""
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr ""
 
-#: src/lib/tray.py:145
+#: src/lib/tray.py:130
 msgid "'updates' state file isn't found"
 msgstr ""
 
-#: src/lib/tray.py:157
+#: src/lib/tray.py:142
 msgid "System is up to date"
 msgstr ""
 
-#: src/lib/tray.py:160
+#: src/lib/tray.py:145
 msgid "1 update available"
 msgstr ""
 
-#: src/lib/tray.py:163
+#: src/lib/tray.py:148
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr ""
 
-#: src/lib/tray.py:206
+#: src/lib/tray.py:191
 msgid "Arch-Update"
 msgstr ""
 
-#: src/lib/tray.py:211
+#: src/lib/tray.py:196
 msgid "Run Arch-Update"
 msgstr ""
 
-#: src/lib/tray.py:212
+#: src/lib/tray.py:197
 msgid "Check for updates"
 msgstr ""
 
-#: src/lib/tray.py:213
+#: src/lib/tray.py:198
 msgid "Exit"
 msgstr ""
 
-#: src/lib/tray.py:216
+#: src/lib/tray.py:201
 msgid "Checking for updates..."
 msgstr ""
 

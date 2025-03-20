@@ -42,45 +42,23 @@ elif 'HOME' in os.environ:
 if not os.path.isfile(UPDATES_STATEFILE):
     log.error("State updates file does not exist: %s", UPDATES_STATEFILE)
 
-# Find translations paths
+# Check where the translation files are installed (depending on the PREFIX used during the installation) to set the localedir
 i18n_paths = []
 
-if 'XDG_DATA_DIRS' in os.environ:
-    i18n_paths.extend(os.environ['XDG_DATA_DIRS'].split(":"))
 if 'XDG_DATA_HOME' in os.environ:
     i18n_paths.extend(os.environ['XDG_DATA_HOME'].split(":"))
 if 'HOME' in os.environ:
     i18n_paths.append(os.path.join(
         os.environ['HOME'], '.local', 'share'))
-i18n_paths.extend(['/usr/share', '/usr/local/share'])
+if 'XDG_DATA_DIRS' in os.environ:
+    i18n_paths.extend(os.environ['XDG_DATA_DIRS'].split(":"))
+i18n_paths.extend(['/usr/local/share', '/usr/share'])
 _ = None
 
-# Check for transatlation paths based on system language (fallback to default english)
 for path in i18n_paths:
-    french_translation_file = os.path.join(
+    translation_file = os.path.join(
         path, "locale", "fr", "LC_MESSAGES", "Arch-Update.mo")
-    if os.path.isfile(french_translation_file):
-        path = os.path.join(path, 'locale')
-        t = gettext.translation('Arch-Update', localedir=path, fallback=True)
-        _ = t.gettext
-        break
-    swedish_translation_file = os.path.join(
-        path, "locale", "sv", "LC_MESSAGES", "Arch-Update.mo")
-    if os.path.isfile(swedish_translation_file):
-        path = os.path.join(path, 'locale')
-        t = gettext.translation('Arch-Update', localedir=path, fallback=True)
-        _ = t.gettext
-        break
-    chinese_translation_file = os.path.join(
-        path, "locale", "zh_CN", "LC_MESSAGES", "Arch-Update.mo")
-    if os.path.isfile(chinese_translation_file):
-        path = os.path.join(path, 'locale')
-        t = gettext.translation('Arch-Update', localedir=path, fallback=True)
-        _ = t.gettext
-        break
-    hungarian_translation_file = os.path.join(
-        path, "locale", "hu", "LC_MESSAGES", "Arch-Update.mo")
-    if os.path.isfile(hungarian_translation_file):
+    if os.path.isfile(translation_file):
         path = os.path.join(path, 'locale')
         t = gettext.translation('Arch-Update', localedir=path, fallback=True)
         _ = t.gettext
