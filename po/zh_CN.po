@@ -1,4 +1,4 @@
-# Arch-Update translation template
+# Arch-Update Chinese (simplified) translation
 # Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
 # This file is distributed under the same license as the Arch-Update package.
 #
@@ -26,46 +26,46 @@ msgstr "${update_number} 个更新可用"
 msgid "${update_number} updates available"
 msgstr "${update_number} 个更新可用"
 
-#: src/lib/common.sh:90
+#: src/lib/common.sh:92
 #, sh-format
 msgid "WARNING"
 msgstr "警告"
 
-#: src/lib/common.sh:96
+#: src/lib/common.sh:98
 #, sh-format
 msgid "ERROR"
 msgstr "错误"
 
-#: src/lib/common.sh:101
+#: src/lib/common.sh:103
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "按下 \"enter\" 继续"
 
-#: src/lib/common.sh:107
+#: src/lib/common.sh:109
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "按下 \"enter\" 退出"
 
-#: src/lib/common.sh:127
+#: src/lib/common.sh:129
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
 "update.conf configuration file is not found\\n"
 msgstr "AUR 帮助程序 ${aur_helper} 在 arch-update.conf 配置文件中未找到\\n"
 
-#: src/lib/common.sh:154
+#: src/lib/common.sh:156
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "需要特权提升命令（sudo、doas 或 run0）\\n"
 
-#: src/lib/common.sh:159
+#: src/lib/common.sh:161
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
 msgstr "特权提升命令 ${su_cmd} 在 arch-update.conf 配置文件中未找到\\n"
 
-#: src/lib/common.sh:167
+#: src/lib/common.sh:169
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -603,40 +603,40 @@ msgstr "一个或多个服务重启失败，请考虑重启已更新的服务以
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "没有需要在升级后重启的服务\\n"
 
-#: src/lib/tray.py:145
+#: src/lib/tray.py:130
 msgid "'updates' state file isn't found"
 msgstr "'updates' 状态文件未找到"
 
-#: src/lib/tray.py:157
+#: src/lib/tray.py:142
 msgid "System is up to date"
 msgstr "系统已更新到最新版本"
 
-#: src/lib/tray.py:160
+#: src/lib/tray.py:145
 msgid "1 update available"
 msgstr "1 更新可用"
 
-#: src/lib/tray.py:163
+#: src/lib/tray.py:148
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr "{updates} 更新可用"
 
-#: src/lib/tray.py:206
+#: src/lib/tray.py:191
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
-#: src/lib/tray.py:211
+#: src/lib/tray.py:196
 msgid "Run Arch-Update"
 msgstr "运行 Arch-Update"
 
-#: src/lib/tray.py:212
+#: src/lib/tray.py:197
 msgid "Check for updates"
 msgstr "检查更新"
 
-#: src/lib/tray.py:213
+#: src/lib/tray.py:198
 msgid "Exit"
 msgstr "退出"
 
-#: src/lib/tray.py:216
+#: src/lib/tray.py:201
 msgid "Checking for updates..."
 msgstr "正在检查更新..."
 

@@ -26,27 +26,27 @@ msgstr "${update_number} mise à jour disponible"
 msgid "${update_number} updates available"
 msgstr "${update_number} mises à jour disponibles"
 
-#: src/lib/common.sh:90
+#: src/lib/common.sh:92
 #, sh-format
 msgid "WARNING"
 msgstr "AVERTISSEMENT"
 
-#: src/lib/common.sh:96
+#: src/lib/common.sh:98
 #, sh-format
 msgid "ERROR"
 msgstr "ERREUR"
 
-#: src/lib/common.sh:101
+#: src/lib/common.sh:103
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Appuyez sur \"entrée\" pour continuer "
 
-#: src/lib/common.sh:107
+#: src/lib/common.sh:109
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Appuyez sur \"entrée\" pour quitter "
 
-#: src/lib/common.sh:127
+#: src/lib/common.sh:129
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
@@ -55,12 +55,12 @@ msgstr ""
 "Le AUR helper ${aur_helper} défini pour le support des paquets AUR dans le fichier de configuration "
 "arch-update.conf n'est pas disponible\\n"
 
-#: src/lib/common.sh:154
+#: src/lib/common.sh:156
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "Une commande d'élévation de privilège est requise (sudo, doas ou run0)\\n"
 
-#: src/lib/common.sh:159
+#: src/lib/common.sh:161
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
@@ -69,7 +69,7 @@ msgstr ""
 "La commande ${su_cmd} définie pour l'élévation de privilège dans le fichier "
 "de configuration arch-update.conf n'est pas disponible\\n"
 
-#: src/lib/common.sh:167
+#: src/lib/common.sh:169
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -660,40 +660,40 @@ msgstr ""
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "Aucun service nécessitant un redémarrage suite à la mise à jour n'a été trouvé\\n"
 
-#: src/lib/tray.py:145
+#: src/lib/tray.py:130
 msgid "'updates' state file isn't found"
 msgstr "fichier d'état 'updates' non trouvé"
 
-#: src/lib/tray.py:157
+#: src/lib/tray.py:142
 msgid "System is up to date"
 msgstr "Le système est à jour"
 
-#: src/lib/tray.py:160
+#: src/lib/tray.py:145
 msgid "1 update available"
 msgstr "1 mise à jour disponible"
 
-#: src/lib/tray.py:163
+#: src/lib/tray.py:148
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr "{updates} mises à jour disponibles"
 
-#: src/lib/tray.py:206
+#: src/lib/tray.py:191
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
-#: src/lib/tray.py:211
+#: src/lib/tray.py:196
 msgid "Run Arch-Update"
 msgstr "Lancer Arch-Update"
 
-#: src/lib/tray.py:212
+#: src/lib/tray.py:197
 msgid "Check for updates"
 msgstr "Vérifier les mises à jour"
 
-#: src/lib/tray.py:213
+#: src/lib/tray.py:198
 msgid "Exit"
 msgstr "Quitter"
 
-#: src/lib/tray.py:216
+#: src/lib/tray.py:201
 msgid "Checking for updates..."
 msgstr "Vérification des mises à jour..."
 
