@@ -78,6 +78,13 @@ for path in i18n_paths:
         t = gettext.translation('Arch-Update', localedir=path, fallback=True)
         _ = t.gettext
         break
+    hungarian_translation_file = os.path.join(
+        path, "locale", "hu", "LC_MESSAGES", "Arch-Update.mo")
+    if os.path.isfile(hungarian_translation_file):
+        path = os.path.join(path, 'locale')
+        t = gettext.translation('Arch-Update', localedir=path, fallback=True)
+        _ = t.gettext
+        break
 if not _:
     t = gettext.translation('Arch-Update', fallback=True)
     _ = t.gettext
