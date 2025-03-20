@@ -26,27 +26,27 @@ msgstr "${update_number} frissítés érhető el"
 msgid "${update_number} updates available"
 msgstr "${update_number} frissítés érhető el"
 
-#: src/lib/common.sh:90
+#: src/lib/common.sh:92
 #, sh-format
 msgid "WARNING"
 msgstr "FIGYELMEZTETÉS"
 
-#: src/lib/common.sh:96
+#: src/lib/common.sh:98
 #, sh-format
 msgid "ERROR"
 msgstr "HIBA"
 
-#: src/lib/common.sh:101
+#: src/lib/common.sh:103
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Nyomja meg az \"enter\" gombot a folytatáshoz "
 
-#: src/lib/common.sh:107
+#: src/lib/common.sh:109
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Nyomja meg az \"enter\" gombot a kilépéshez "
 
-#: src/lib/common.sh:127
+#: src/lib/common.sh:129
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
@@ -55,12 +55,12 @@ msgstr ""
 "Az ${aur_helper} AUR csomagok AUR segédkészletének támogatása nem található az arch-"
 "update.conf konfigurációs fájlban\\n"
 
-#: src/lib/common.sh:154
+#: src/lib/common.sh:156
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "Jogosultságszint-emelési parancs szükséges (sudo, doas vagy run0)\\n"
 
-#: src/lib/common.sh:159
+#: src/lib/common.sh:161
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
@@ -69,7 +69,7 @@ msgstr ""
 "Az ${su_cmd} arch-update.conf konfigurációs fájlban, a jogosultságok kiterjesztéséhez "
 "beállított parancs nem található meg\\n"
 
-#: src/lib/common.sh:167
+#: src/lib/common.sh:169
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -660,40 +660,40 @@ msgstr ""
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "Nem található frissítés utáni újraindítást igénylő szolgáltatás\\n"
 
-#: src/lib/tray.py:145
+#: src/lib/tray.py:130
 msgid "'updates' state file isn't found"
 msgstr "'frissítések' állapotfájlja nem található"
 
-#: src/lib/tray.py:157
+#: src/lib/tray.py:142
 msgid "System is up to date"
 msgstr "A rendszer naprakész"
 
-#: src/lib/tray.py:160
+#: src/lib/tray.py:145
 msgid "1 update available"
 msgstr "1 frissítés érhető el"
 
-#: src/lib/tray.py:163
+#: src/lib/tray.py:148
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr "{updates} frissítés érhető el"
 
-#: src/lib/tray.py:206
+#: src/lib/tray.py:191
 msgid "Arch-Update"
 msgstr "Arch-Frissítő"
 
-#: src/lib/tray.py:211
+#: src/lib/tray.py:196
 msgid "Run Arch-Update"
 msgstr "Arch-Frissítő Futtatása"
 
-#: src/lib/tray.py:212
+#: src/lib/tray.py:197
 msgid "Check for updates"
 msgstr "Frissítések keresése"
 
-#: src/lib/tray.py:213
+#: src/lib/tray.py:198
 msgid "Exit"
 msgstr "Kilépés"
 
-#: src/lib/tray.py:216
+#: src/lib/tray.py:201
 msgid "Checking for updates..."
 msgstr "Frissítések keresése..."
 
