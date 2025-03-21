@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# AUTHOR <EMAIL@ADDRESS>, YEAR
+# DenalB <denalb@mailbox.org>, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 3.8.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
-"POT-Creation-Date: 2024-03-17 16:22+0100\n"
+"POT-Creation-Date: 2024-03-21 10:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: \n"
+"Last-Translator: DenalB <denalb@mailbox.org>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,32 +19,32 @@ msgstr ""
 #: src/lib/check.sh:37 src/lib/check.sh:40
 #, sh-format
 msgid "${update_number} update available"
-msgstr ""
+msgstr "${update_number} Update verfügbar"
 
 #: src/lib/check.sh:45 src/lib/check.sh:47
 #, sh-format
 msgid "${update_number} updates available"
-msgstr ""
+msgstr "${update_number} Updates verfügbar"
 
 #: src/lib/common.sh:92
 #, sh-format
 msgid "WARNING"
-msgstr ""
+msgstr "WARNUNG"
 
 #: src/lib/common.sh:98
 #, sh-format
 msgid "ERROR"
-msgstr ""
+msgstr "FEHLER"
 
 #: src/lib/common.sh:103
 #, sh-format
 msgid "Press \"enter\" to continue "
-msgstr ""
+msgstr "Zum Fortfahren \"enter\" drücken "
 
 #: src/lib/common.sh:109
 #, sh-format
 msgid "Press \"enter\" to quit "
-msgstr ""
+msgstr "Zum Beenden \"enter\" drücken "
 
 #: src/lib/common.sh:129
 #, sh-format
@@ -52,11 +52,13 @@ msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
 "update.conf configuration file is not found\\n"
 msgstr ""
+"Der ${aur_helper} AUR-Helper für den Support von AUR-Paketen in der arch-"
+"update.conf Konfigurationsdatei wurde nicht gefunden\\n"
 
 #: src/lib/common.sh:156
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
-msgstr ""
+msgstr "Ein Befehl zur Erhöhung der Rechte ist erforderlich (sudo, doas oder run0)\\n"
 
 #: src/lib/common.sh:161
 #, sh-format
@@ -64,6 +66,8 @@ msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
 msgstr ""
+"Der ${su_cmd} Befehl für die Rechteerhöhung in der arch-update.conf "
+"Konfigurationsdatei wurde nicht gefunden\\n"
 
 #: src/lib/common.sh:169
 #, sh-format
@@ -71,6 +75,8 @@ msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
 "files in the arch-update.conf configuration file is not found\\n"
 msgstr ""
+"Der ${diff_prog} Editor zur Anzeige / zum Bearbeiten der Unterschiede von pacnew "
+"Dateien in der arch-update.conf Konfigurationsdatei wurde nicht gefunden\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
@@ -78,6 +84,8 @@ msgid ""
 "No configuration file found\\nYou can generate one with \"arch-update --gen-"
 "config\""
 msgstr ""
+"Keine Konfigurationsdatei gefunden\\nSie kann generiert werden durch \"arch-update --gen-"
+"config\""
 
 #: src/lib/edit-config.sh:13
 #, sh-format
