@@ -93,11 +93,13 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
+"Zu verwendender Editor kann nicht ermittel werden\\nDie \"EDITOR\" Umgebungsvariable "
+"ist nicht gesetzt und \"nano\" (Fallback-Option) ist nicht installiert"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
 msgid "Example configuration file not found"
-msgstr ""
+msgstr "Beispielkonfigurationsdatei nicht gefunden"
 
 #: src/lib/gen-config.sh:25
 #, sh-format
@@ -105,11 +107,13 @@ msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
 "before generating a new one (or use --force to overwrite it)"
 msgstr ""
+"Die '${config_file}' Konfigurationsdatei existiert bereits\\nBitte entfernen, "
+"bevor eine neue Datei generiert wird (oder --force zum Überschreiben benutzen)"
 
 #: src/lib/gen-config.sh:30
 #, sh-format
 msgid "The '${config_file}' configuration file has been generated"
-msgstr ""
+msgstr "Die '${config_file}' Konfigurationsdatei wurde generiert"
 
 #: src/lib/help.sh:8
 #, sh-format
@@ -117,11 +121,13 @@ msgid ""
 "An update notifier & applier for Arch Linux that assists you with important "
 "pre / post update tasks."
 msgstr ""
+"Eine App zum Benachrichtigen bei und Ausführen von Updates für Arch Linux, die wichtige "
+"Aufgaben vor und nach Updates ausführt."
 
 #: src/lib/help.sh:10
 #, sh-format
 msgid "Run ${name} to perform the main 'update' function:"
-msgstr ""
+msgstr "Starte ${name} zum Durchführen der Haupt-Update-Funktion:"
 
 #: src/lib/help.sh:11
 #, sh-format
@@ -129,6 +135,8 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
+"Die Liste der Pakete anzeigen, die zur Verfügug stehen und nach Bestätigung des Benutzers "
+"fragen, um mit der Installation fortzufahren."
 
 #: src/lib/help.sh:12
 #, sh-format
@@ -136,6 +144,8 @@ msgid ""
 "Before performing the update, it offers to display the latest Arch Linux "
 "news."
 msgstr ""
+"Vor Durchführung des Updates bietet sie das Anzeigen der aktuellen Arch Linux-"
+"Neuigkeiten an."
 
 #: src/lib/help.sh:13
 #, sh-format
@@ -144,11 +154,14 @@ msgid ""
 "pacnew & pacsave files, pending kernel update as well as services requiring "
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
+"Nach der Aktualisierung wird auf verwaiste und unbenutzte Pakete, alte zwischengespeicherte Pakete, "
+"pacnew- und pacsave-Dateien, ausstehende Kernel-Aktualisierungen sowie Dienste, "
+"die einen Neustart erfordern, geprüft und eine Verarbeitung wird gegebenenfalls angeboten. "
 
 #: src/lib/help.sh:15
 #, sh-format
 msgid "Options:"
-msgstr ""
+msgstr "Optionen"
 
 #: src/lib/help.sh:16
 #, sh-format
