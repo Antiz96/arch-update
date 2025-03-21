@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.8.1](https://github.com/Antiz96/arch-update/releases/tag/v3.8.1) - 2025-03-21
+
+### Features
+
+-  feat(i18n): add Hungarian translation ([#340](https://github.com/Antiz96/arch-update/pull/340)) - ([a297dfd](https://github.com/Antiz96/arch-update/commit/a297dfdfe696f31f8f5bb6878b2998d45038cea3)) by @Impostor0729
+
+### Miscellaneous
+
+- *(i18n)* Update the logic to set the path to translation files ([#342](https://github.com/Antiz96/arch-update/pull/342)) - ([b0c301a](https://github.com/Antiz96/arch-update/commit/b0c301ae9d5451514fc64636d05aa7cc28f219ba)) by @Antiz96
+
 ## [v3.8.0](https://github.com/Antiz96/arch-update/releases/tag/v3.8.0) - 2025-03-18
 
 ### Features
