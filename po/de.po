@@ -144,8 +144,8 @@ msgid ""
 "Before performing the update, it offers to display the latest Arch Linux "
 "news."
 msgstr ""
-"Vor Durchführung des Updates bietet sie das Anzeigen der aktuellen Arch Linux-"
-"Neuigkeiten an."
+"Vor Durchführung des Updates werden die aktuellen Arch Linux-Neuigkeiten zur "
+"Ansicht angeboten."
 
 #: src/lib/help.sh:13
 #, sh-format
@@ -156,7 +156,7 @@ msgid ""
 msgstr ""
 "Nach der Aktualisierung wird auf verwaiste und unbenutzte Pakete, alte zwischengespeicherte Pakete, "
 "pacnew- und pacsave-Dateien, ausstehende Kernel-Aktualisierungen sowie Dienste, "
-"die einen Neustart erfordern, geprüft und eine Verarbeitung wird gegebenenfalls angeboten. "
+"die einen Neustart erfordern, geprüft und eine Verarbeitung gegebenenfalls angeboten. "
 
 #: src/lib/help.sh:15
 #, sh-format
@@ -170,16 +170,19 @@ msgid ""
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check)"
 msgstr ""
+"  -c, --check       Prüfung auf vorhandene Updates, Ändern des Systray Icons und "
+"Senden einer Desktop-Benachrichtigung mit der Anzahl der vorhandenen Updates (falls "
+"verglichen zur letzten Prüfung neue Updates verfügbar sind)"
 
 #: src/lib/help.sh:17
 #, sh-format
 msgid "  -l, --list        Display the list of pending updates"
-msgstr ""
+msgstr "  -l, --list        Liste der ausstehenden Updates anzeigen"
 
 #: src/lib/help.sh:18
 #, sh-format
 msgid "  -d, --devel       Include AUR development packages updates"
-msgstr ""
+msgstr "  -d, --devel       Einbeziehen von Updates für AUR-Entwicklungspakete"
 
 #: src/lib/help.sh:19
 #, sh-format
@@ -187,11 +190,13 @@ msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
+"  -n, --news [Num]  Aktuelle Arch-Neuigkeiten anzeigen, optionale Angabe für die Anzahl der "
+"anzuzeigenden Arch-Neuigkeiten mit '--news [Num]' (z.B. '--news 10')"
 
 #: src/lib/help.sh:20
 #, sh-format
 msgid "  -D, --debug       Display debug traces"
-msgstr ""
+msgstr "  -D, --debug       Debug-Traces anzeigen"
 
 #: src/lib/help.sh:21
 #, sh-format
@@ -200,6 +205,9 @@ msgid ""
 "configuration file, you can optionally pass the '--force' argument to "
 "overwrite any existing 'arch-update.conf' configuration file"
 msgstr ""
+"  --gen-config      Erstellen einer 'arch-update.conf' Konfigurationsdatei "
+"mit vorgegebenen Werten, optional mit Angabe von '--force' zum "
+"Überschreiben einer vorhandenen 'arch-update.conf' Konfigurationsdatei"
 
 #: src/lib/help.sh:22
 #, sh-format
@@ -207,6 +215,8 @@ msgid ""
 "  --show-config     Display the 'arch-update.conf' configuration file "
 "currently used (if it exists)"
 msgstr ""
+"  --show-config     Anzeige der aktuell genutzten 'arch-update.conf' "
+"Konfigurationsdatei (falls sie existiert)"
 
 #: src/lib/help.sh:23
 #, sh-format
@@ -214,6 +224,8 @@ msgid ""
 "  --edit-config     Edit the 'arch-update.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
+"  --edit-config     Bearbeiten der aktuell genutzten 'arch-update.conf' "
+"Konfigurationsdatei (falls sie existiert)"
 
 #: src/lib/help.sh:24
 #, sh-format
@@ -221,21 +233,23 @@ msgid ""
 "  --tray            Launch the Arch-Update systray applet, you can "
 "optionally add the '--enable' argument to start it automatically at boot"
 msgstr ""
+"  --tray            Starten des Systray-Applets von Arch-Update, optional "
+"mit Angabe von '--enable' zum automatischen Starten beim Hochfahren des Systems"
 
 #: src/lib/help.sh:25
 #, sh-format
 msgid "  -h, --help        Display this help message and exit"
-msgstr ""
+msgstr "  -h, --help        Hilfe-Text anzeigen und beenden"
 
 #: src/lib/help.sh:26
 #, sh-format
 msgid "  -V, --version     Display version information and exit"
-msgstr ""
+msgstr "  -V, --version     Versionsinformation anzeigen und beenden"
 
 #: src/lib/help.sh:28
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
-msgstr ""
+msgstr "Weitere Informationen gibt es auf der ${name}(1) Manpage."
 
 #: src/lib/help.sh:29
 #, sh-format
@@ -243,6 +257,8 @@ msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf "
 "configuration file, see the ${name}.conf(5) man page."
 msgstr ""
+"Bestimmte Optionen können über die ${name}.conf Konfigurationsdatei aktiviert, deaktiviert oder "
+"geändert werden, siehe die ${name}.conf(5) Manpage."
 
 #: src/lib/invalid_option.sh:7
 #, sh-format
@@ -250,6 +266,8 @@ msgid ""
 "${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
 "information"
 msgstr ""
+"${name}: Unzulässige Option -- '${option}'\\n'${name} --help' für weitere Informationen "
+"aufrufen"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
@@ -257,30 +275,32 @@ msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
+"Neustart erforderlich:\\nAuf dem System steht ein Kernel-Update an, das einen Neustart erfordert, "
+"um angewendet zu werden\\n"
 
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr ""
+msgstr "Neustart jetzt durchführen? [j/N]"
 
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:68
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
-msgstr ""
+msgstr "J"
 
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:68
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
-msgstr ""
+msgstr "J"
 
 #: src/lib/kernel_reboot.sh:27
 #, sh-format
 msgid "Rebooting in ${sec}...\\r"
-msgstr ""
+msgstr "Neustart in ${sec}...\\r"
 
 #: src/lib/kernel_reboot.sh:33
 #, sh-format
@@ -288,6 +308,8 @@ msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
 "aborted\\n"
 msgstr ""
+"Während des Neustartvorgangs ist ein Fehler aufgetreten\\nDer Neustart wurde "
+"abgebrochen\\n"
 
 #: src/lib/kernel_reboot.sh:41
 #, sh-format
@@ -295,16 +317,18 @@ msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
 "the pending kernel update\\n"
 msgstr ""
+"Ein Neustart ist noch nicht erfolgt.\\nZum Abschließen des Kernel-Updates 
+"bitte einen Neustart durchführen\\n"
 
 #: src/lib/kernel_reboot.sh:45
 #, sh-format
 msgid "No pending kernel update found\\n"
-msgstr ""
+msgstr "Kein anstehendes Kernel-Update gefunden\\n"
 
 #: src/lib/list_news.sh:7
 #, sh-format
 msgid "Looking for recent Arch News..."
-msgstr ""
+msgstr "Suche nach aktuellen Arch-Neuigkeiten..."
 
 #: src/lib/list_news.sh:13
 #, sh-format
