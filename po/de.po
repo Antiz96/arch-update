@@ -381,66 +381,69 @@ msgid ""
 "timeout)\\nPlease, read the selected Arch News at ${news_url} before "
 "updating your system"
 msgstr ""
+"Ausgewählte Arch-Neugkeiten können nicht abgerufen werden (HTTP-Fehlerantwort oder "
+"Zeitüberschreitung der Anfrage)\\nBitte die ausgewählten Arch-Neuigkeiten unter ${news_url} lesen, "
+"bevor das System aktualisiert wird"
 
 #: src/lib/list_news.sh:85
 #, sh-format
 msgid "Title:"
-msgstr ""
+msgstr "Titel:"
 
 #: src/lib/list_news.sh:86
 #, sh-format
 msgid "Author:"
-msgstr ""
+msgstr "Autor:"
 
 #: src/lib/list_news.sh:87
 #, sh-format
 msgid "Publication date:"
-msgstr ""
+msgstr "Veröffentlichungsdatum:"
 
 #: src/lib/list_news.sh:88
 #, sh-format
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: src/lib/list_packages.sh:7
 #, sh-format
 msgid "Looking for updates...\\n"
-msgstr ""
+msgstr "Suche nach Updates...\\n"
 
 #: src/lib/list_packages.sh:35
 #, sh-format
 msgid "Packages:"
-msgstr ""
+msgstr "Pakete:"
 
 #: src/lib/list_packages.sh:41
 #, sh-format
 msgid "AUR Packages:"
-msgstr ""
+msgstr "AUR-Pakete:"
 
 #: src/lib/list_packages.sh:47
 #, sh-format
 msgid "Flatpak Packages:"
-msgstr ""
+msgstr "Flatpak-Pakete:"
 
 #: src/lib/list_packages.sh:56
 #, sh-format
 msgid "No update available\\n"
-msgstr ""
+msgstr "Kein Update verfügbar\\n"
 
 #: src/lib/list_packages.sh:64
 #, sh-format
 msgid "Proceed with update? [Y/n]"
-msgstr ""
+msgstr "Mit der Aktualisierung fortfahren? [J/n]"
 
 #: src/lib/list_packages.sh:74
 #, sh-format
 msgid "The update has been aborted\\n"
-msgstr ""
+msgstr "Die Aktualisierung wurde abgebrochen\\n"
 
 #: src/lib/orphan_packages.sh:14
 #, sh-format
 msgid "Orphan Packages:"
-msgstr ""
+msgstr "Verwaiste Pakete:"
 
 #: src/lib/orphan_packages.sh:18
 #, sh-format
@@ -448,6 +451,8 @@ msgid ""
 "Would you like to remove this orphan package (and its potential "
 "dependencies) now? [y/N]"
 msgstr ""
+"Soll dieses verwaiste Paket (und seine möglichen Abhängigkeiten) jetzt "
+"entfernt werden? [j/N]"
 
 #: src/lib/orphan_packages.sh:20
 #, sh-format
@@ -455,11 +460,13 @@ msgid ""
 "Would you like to remove these orphan packages (and their potential "
 "dependencies) now? [y/N]"
 msgstr ""
+"Sollen diese verwaisten Pakete (und ihre möglichen Abhängigkeiten) jetzt "
+"entfernt werden? [j/N]"
 
 #: src/lib/orphan_packages.sh:27
 #, sh-format
 msgid "Removing Orphan Packages...\\n"
-msgstr ""
+msgstr "Lösche verwaiste Pakete...\\n"
 
 #: src/lib/orphan_packages.sh:32 src/lib/orphan_packages.sh:65
 #: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
@@ -469,113 +476,116 @@ msgid ""
 "An error has occurred during the removal process\\nThe removal has been "
 "aborted\\n"
 msgstr ""
+"Während des Löschvorgangs ist ein Fehler aufgetreten\\nDas Löschen wurde "
+"abgebrochen\\n"
 
 #: src/lib/orphan_packages.sh:35 src/lib/orphan_packages.sh:68
 #, sh-format
 msgid "The removal has been applied\\n"
-msgstr ""
+msgstr "Das Löschen wurde durchgeführt\\n"
 
 #: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:72
 #: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
-msgstr ""
+msgstr "Das Löschen wurde nicht durchgeführt\\"
 
 #: src/lib/orphan_packages.sh:44
 #, sh-format
 msgid "No orphan package found\\n"
-msgstr ""
+msgstr "Keine verwaisten Pakete gefunden\\n"
 
 #: src/lib/orphan_packages.sh:49
 #, sh-format
 msgid "Flatpak Unused Packages:"
-msgstr ""
+msgstr "Unbenutzte Flatpak-Pakete:"
 
 #: src/lib/orphan_packages.sh:53
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
-msgstr ""
+msgstr "Soll dieses unbenutzte Flatpak-Paket jetzt entfernt werden? [j/N]"
 
 #: src/lib/orphan_packages.sh:55
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
-msgstr ""
+msgstr "Sollen diese unbenutzten Flatpak-Pakete jetzt entfernt werden? [j/N]"
 
 #: src/lib/orphan_packages.sh:61
 #, sh-format
 msgid "Removing Flatpak Unused Packages..."
-msgstr ""
+msgstr "Lösche unbenutzte Flatpak-Pakete..."
 
 #: src/lib/orphan_packages.sh:76
 #, sh-format
 msgid "No Flatpak unused package found\\n"
-msgstr ""
+msgstr "Keine unbenutzten Flatpak-Pakete gefunden\\n""
 
 #: src/lib/packages_cache.sh:21
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr ""
+msgstr "Im Cache gespeicherte Pakete:\\nEs gibt ein altes oder deinstalliertes Paket\\n"
 
 #: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr ""
+msgstr "Soll es jetzt aus dem Cache gelöscht werden? [J/n]"
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
 msgid ""
 "Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
+"Im Cache gespeicherte Pakete:\\nEs gibt alte und / oder deinstallierte Pakete\\n"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
 msgid "Would you like to remove them from the cache now? [Y/n]"
-msgstr ""
+msgstr "Sollen sie jetzt aus dem Cache gelöscht werden? [J/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
 msgid "Removing old cached packages..."
-msgstr ""
+msgstr "Lösche alte Pakete aus dem Cache..."
 
 #: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
 #, sh-format
 msgid "Removing uninstalled cached packages..."
-msgstr ""
+msgstr "Lösche deinstallierte Pakete aus dem Cache..."
 
 #: src/lib/packages_cache.sh:79
 #, sh-format
 msgid "No old or uninstalled cached package found\\n"
-msgstr ""
+msgstr "Keine alten oder deinstallierte Pakete im Cache gefunden\\n"
 
 #: src/lib/pacnew_files.sh:10
 #, sh-format
 msgid "Pacnew Files:"
-msgstr ""
+msgstr "Pacnew-Dateien:"
 
 #: src/lib/pacnew_files.sh:14
 #, sh-format
 msgid "Would you like to process this file now? [Y/n]"
-msgstr ""
+msgstr "Soll die Datei jetzt verarbeitet werden? [J/n]"
 
 #: src/lib/pacnew_files.sh:16
 #, sh-format
 msgid "Would you like to process these files now? [Y/n]"
-msgstr ""
+msgstr "Sollen die Dateien jetzt verarbeitet werden? [J/n]"
 
 #: src/lib/pacnew_files.sh:23
 #, sh-format
 msgid "Processing Pacnew Files...\\n"
-msgstr ""
+msgstr "Verarbeite Pacnew-Dateien...\\n"
 
 #: src/lib/pacnew_files.sh:28
 #, sh-format
 msgid "The pacnew file(s) processing has been applied\\n"
-msgstr ""
+msgstr "Verarbeitung der Pacnew-Datei(en) durchgeführt\\n"
 
 #: src/lib/pacnew_files.sh:31
 #, sh-format
 msgid "An error occurred during the pacnew file(s) processing\\n"
-msgstr ""
+msgstr "Bei der Verarbeitung der Pacnew-Datei(en) ist ein Fehler aufgetreten\\n"
 
 #: src/lib/pacnew_files.sh:37
 #, sh-format
@@ -583,21 +593,23 @@ msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
 msgstr ""
+"Verarbeitung der Pacnew-Datei(en) nicht durchgeführt\\nBiite die Verarbeitung "
+"zeitnah durchführen\\n"
 
 #: src/lib/pacnew_files.sh:41
 #, sh-format
 msgid "No pacnew file found\\n"
-msgstr ""
+msgstr "Keine Pacnew-Dateien gefunden\\n""
 
 #: src/lib/restart_services.sh:13
 #, sh-format
 msgid "Services:\\nThe following service requires a post upgrade restart\\n"
-msgstr ""
+msgstr "Dienste:\\nDer folgende Dienst erfordert einen Neustart\\n"
 
 #: src/lib/restart_services.sh:15
 #, sh-format
 msgid "Services:\\nThe following services require a post upgrade restart\\n"
-msgstr ""
+msgstr "Dienste:\\nDie folgenden Dienste erfordern einen Neustart"
 
 #: src/lib/restart_services.sh:25
 #, sh-format
@@ -605,11 +617,13 @@ msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
+"Dienst(e) zum Neustarten auswählen (z.B. 1 3 5), 0 wählen, um alle neu zu starten oder \"enter\" drücken, "
+"um ohne Neustart fortzufahren:
 
 #: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
 #, sh-format
 msgid "Service(s) restarted successfully\\n"
-msgstr ""
+msgstr "Dienst(e) erfolgreich neu gestartet"
 
 #: src/lib/restart_services.sh:34 src/lib/restart_services.sh:61
 #, sh-format
@@ -617,6 +631,8 @@ msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
 "above service(s) status\\n"
 msgstr ""
+"Beim Neustart des/der Dienste(s) ist ein Fehler aufgetreten\\nBitte den Status "
+"des/der oben genannten Dienste(s) prüfen\\n"
 
 #: src/lib/restart_services.sh:47
 #, sh-format
