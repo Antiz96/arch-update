@@ -239,7 +239,7 @@ msgstr ""
 #: src/lib/help.sh:25
 #, sh-format
 msgid "  -h, --help        Display this help message and exit"
-msgstr "  -h, --help        Hilfe-Text anzeigen und beenden"
+msgstr "  -h, --help        Hilfe anzeigen und beenden"
 
 #: src/lib/help.sh:26
 #, sh-format
@@ -337,21 +337,24 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
+"Arch-Neugkeiten können nicht abgerufen werden (HTTP-Fehlerantwort oder Zeitüberschreitung der Anfrage)"
+"\\nBitte unter https://archlinux.org über die neuesten Nachrichten informieren, bevor das System "
+"aktualisiert wird"
 
 #: src/lib/list_news.sh:23
 #, sh-format
 msgid "No recent Arch News found"
-msgstr ""
+msgstr "Keine aktuellen Arch-Neugikeiten gefunden"
 
 #: src/lib/list_news.sh:37
 #, sh-format
 msgid "Arch News:"
-msgstr ""
+msgstr "Arch-Neuigkeiten"
 
 #: src/lib/list_news.sh:42
 #, sh-format
 msgid "[NEW]"
-msgstr ""
+msgstr "[NEU]"
 
 #: src/lib/list_news.sh:54
 #, sh-format
@@ -359,6 +362,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
+"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen oder zum "
+"Beenden \"enter\" drücken:"
 
 #: src/lib/list_news.sh:56
 #, sh-format
@@ -366,6 +371,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
+"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen oder \"enter\" drücken, "
+"um mit der Aktualisierung fortzufahren:"
 
 #: src/lib/list_news.sh:80
 #, sh-format
