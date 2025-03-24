@@ -363,7 +363,7 @@ msgid ""
 "\"enter\" to quit:"
 msgstr ""
 "Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen oder zum "
-"Beenden \"enter\" drücken:"
+"Beenden \"ENTER\" drücken:"
 
 #: src/lib/list_news.sh:56
 #, sh-format
@@ -371,7 +371,7 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
-"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen oder \"enter\" drücken, "
+"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen oder \"ENTER\" drücken, "
 "um mit der Aktualisierung fortzufahren:"
 
 #: src/lib/list_news.sh:80
@@ -617,7 +617,7 @@ msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
-"Dienst(e) zum Neustarten auswählen (z.B. 1 3 5), 0 wählen, um alle neu zu starten oder \"enter\" drücken, "
+"Dienst(e) zum Neustarten auswählen (z.B. 1 3 5), 0 wählen, um alle neu zu starten oder \"ENTER\" drücken, "
 "um ohne Neustart fortzufahren:"
 
 #: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
