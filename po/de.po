@@ -555,7 +555,7 @@ msgstr "Lösche deinstallierte Pakete aus dem Cache..."
 #: src/lib/packages_cache.sh:79
 #, sh-format
 msgid "No old or uninstalled cached package found\\n"
-msgstr "Keine alten oder deinstallierte Pakete im Cache gefunden\\n"
+msgstr "Keine alten oder deinstallierten Pakete im Cache gefunden\\n"
 
 #: src/lib/pacnew_files.sh:10
 #, sh-format
