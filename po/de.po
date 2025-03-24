@@ -623,7 +623,7 @@ msgstr ""
 #: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
 #, sh-format
 msgid "Service(s) restarted successfully\\n"
-msgstr "Dienst(e) erfolgreich neu gestartet"
+msgstr "Dienst(e) erfolgreich neu gestartet\\n"
 
 #: src/lib/restart_services.sh:34 src/lib/restart_services.sh:61
 #, sh-format
