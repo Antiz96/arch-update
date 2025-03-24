@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# DenalB <denalb@mailbox.org>, 2025
+# DeN-AlB <denalb@mailbox.org>, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 3.8.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-21 10:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: DenalB <denalb@mailbox.org>\n"
+"Last-Translator: DeN-AlB <denalb@mailbox.org>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -644,7 +644,7 @@ msgstr "Der ${service_selected} Dienst wurde erfolgreich neu gestartet"
 msgid ""
 "An error has occurred during the restart of the ${service_selected} service"
 msgstr ""
-"Beim Neustart des ${service_selected} Dienste ist ein Fehler aufgetreten"
+"Beim Neustart des ${service_selected} Dienstes ist ein Fehler aufgetreten"
 
 #: src/lib/restart_services.sh:65
 #, sh-format
@@ -652,58 +652,60 @@ msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
 "services that have been updated to fully apply the upgrade\\n"
 msgstr ""
+"Der Neustart des/der Dienste(s) wurde nicht durchgeführt\\nBitte die aktualisierten Dienste "
+"neu starten, um die Aktualisierung vollständig durchzuführen\\n"
 
 #: src/lib/restart_services.sh:69
 #, sh-format
 msgid "No service requiring a post upgrade restart found\\n"
-msgstr ""
+msgstr "Kein Dienst gefunden, der einen Neustart erfordert\\n"
 
 #: src/lib/tray.py:130
 msgid "'updates' state file isn't found"
-msgstr ""
+msgstr "'updates' Statusdatei nicht gefunden"
 
 #: src/lib/tray.py:142
 msgid "System is up to date"
-msgstr ""
+msgstr "System ist auf dem aktuellen Stand"
 
 #: src/lib/tray.py:145
 msgid "1 update available"
-msgstr ""
+msgstr "1 Update verfügbar"
 
 #: src/lib/tray.py:148
 #, python-brace-format
 msgid "{updates} updates available"
-msgstr ""
+msgstr "{updates} Updates verfügbar"
 
 #: src/lib/tray.py:191
 msgid "Arch-Update"
-msgstr ""
+msgstr "Arch-Update"
 
 #: src/lib/tray.py:196
 msgid "Run Arch-Update"
-msgstr ""
+msgstr "Arch-Update ausführen"
 
 #: src/lib/tray.py:197
 msgid "Check for updates"
-msgstr ""
+msgstr "Nach Updates suchen"
 
 #: src/lib/tray.py:198
 msgid "Exit"
-msgstr ""
+msgstr "Beenden"
 
 #: src/lib/tray.py:201
 msgid "Checking for updates..."
-msgstr ""
+msgstr "Suche nach Updates..."
 
 #: src/lib/tray.sh:20
 #, sh-format
 msgid "Arch-Update tray desktop file not found"
-msgstr ""
+msgstr "Arch-Update Tray-Desktop-Datei nicht gefunden"
 
 #: src/lib/tray.sh:27
 #, sh-format
 msgid "The '${tray_desktop_file_autostart}' file already exists"
-msgstr ""
+msgstr "Die '${tray_desktop_file_autostart}' Datei existiert bereits"
 
 #: src/lib/tray.sh:32
 #, sh-format
@@ -713,16 +715,20 @@ msgid ""
 "it right now, you can launch the \"Arch-Update Systray Applet\" application "
 "from your app menu"
 msgstr ""
+"Die '${tray_desktop_file_autostart}' Datei wurde erstellt, das Arch-Update "
+"Systray-Applet wird bei der nächsten Anmeldung automatisch gestartet\\nUm es jetzt "
+"zu starten, einfach die Anwendung \"Arch-Update Systray Applet\" aus dem "
+"Anwendungsmenü aufrufen"
 
 #: src/lib/tray.sh:42
 #, sh-format
 msgid "There's already a running instance of the Arch-Update systray applet"
-msgstr ""
+msgstr "Es gibt bereits eine laufende Instanz des Arch-Update Systray-Applets"
 
 #: src/lib/update.sh:9
 #, sh-format
 msgid "Updating Packages...\\n"
-msgstr ""
+msgstr "Aktualisiere Pakete...\\n"
 
 #: src/lib/update.sh:15 src/lib/update.sh:30 src/lib/update.sh:44
 #, sh-format
@@ -730,18 +736,20 @@ msgid ""
 "An error has occurred during the update process\\nThe update has been "
 "aborted\\n"
 msgstr ""
+"Während der Aktualisierung ist ein Fehler aufgetreten\\nDie Aktualisierung wurde "
+"abgebrochen\\n"
 
 #: src/lib/update.sh:24
 #, sh-format
 msgid "Updating AUR Packages...\\n"
-msgstr ""
+msgstr "Aktualisiere AUR-Pakete...\\n"
 
 #: src/lib/update.sh:40
 #, sh-format
 msgid "Updating Flatpak Packages...\\n"
-msgstr ""
+msgstr "Aktualisiere Flatpak-Pakete...\\n"
 
 #: src/lib/update.sh:51
 #, sh-format
 msgid "The update has been applied\\n"
-msgstr ""
+msgstr "Die Aktualisierung wurde durchgeführt\\n"
