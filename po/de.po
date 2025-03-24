@@ -161,7 +161,7 @@ msgstr ""
 #: src/lib/help.sh:15
 #, sh-format
 msgid "Options:"
-msgstr "Optionen"
+msgstr "Optionen:"
 
 #: src/lib/help.sh:16
 #, sh-format
