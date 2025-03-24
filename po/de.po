@@ -317,7 +317,7 @@ msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
 "the pending kernel update\\n"
 msgstr ""
-"Ein Neustart ist noch nicht erfolgt.\\nZum Abschließen des Kernel-Updates 
+"Ein Neustart ist noch nicht erfolgt.\\nZum Abschließen des Kernel-Updates "
 "bitte einen Neustart durchführen\\n"
 
 #: src/lib/kernel_reboot.sh:45
@@ -518,7 +518,7 @@ msgstr "Lösche unbenutzte Flatpak-Pakete..."
 #: src/lib/orphan_packages.sh:76
 #, sh-format
 msgid "No Flatpak unused package found\\n"
-msgstr "Keine unbenutzten Flatpak-Pakete gefunden\\n""
+msgstr "Keine unbenutzten Flatpak-Pakete gefunden\\n"
 
 #: src/lib/packages_cache.sh:21
 #, sh-format
@@ -599,7 +599,7 @@ msgstr ""
 #: src/lib/pacnew_files.sh:41
 #, sh-format
 msgid "No pacnew file found\\n"
-msgstr "Keine Pacnew-Dateien gefunden\\n""
+msgstr "Keine Pacnew-Dateien gefunden\\n"
 
 #: src/lib/restart_services.sh:13
 #, sh-format
@@ -618,7 +618,7 @@ msgid ""
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
 "Dienst(e) zum Neustarten auswählen (z.B. 1 3 5), 0 wählen, um alle neu zu starten oder \"enter\" drücken, "
-"um ohne Neustart fortzufahren:
+"um ohne Neustart fortzufahren:"
 
 #: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
 #, sh-format
