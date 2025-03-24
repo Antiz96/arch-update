@@ -637,13 +637,14 @@ msgstr ""
 #: src/lib/restart_services.sh:47
 #, sh-format
 msgid "The ${service_selected} service has been successfully restarted"
-msgstr ""
+msgstr "Der ${service_selected} Dienst wurde erfolgreich neu gestartet"
 
 #: src/lib/restart_services.sh:49
 #, sh-format
 msgid ""
 "An error has occurred during the restart of the ${service_selected} service"
 msgstr ""
+"Beim Neustart des ${service_selected} Dienste ist ein Fehler aufgetreten"
 
 #: src/lib/restart_services.sh:65
 #, sh-format
