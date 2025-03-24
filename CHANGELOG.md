@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
--  feat(i18n): add Hungarian translation ([#340](https://github.com/Antiz96/arch-update/pull/340)) - ([a297dfd](https://github.com/Antiz96/arch-update/commit/a297dfdfe696f31f8f5bb6878b2998d45038cea3)) by @Impostor0729
+- feat(i18n): add Hungarian translation ([#340](https://github.com/Antiz96/arch-update/pull/340)) - ([a297dfd](https://github.com/Antiz96/arch-update/commit/a297dfdfe696f31f8f5bb6878b2998d45038cea3)) by @Impostor0729
 
 ### Miscellaneous
 
