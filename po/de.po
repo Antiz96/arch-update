@@ -39,12 +39,12 @@ msgstr "FEHLER"
 #: src/lib/common.sh:103
 #, sh-format
 msgid "Press \"enter\" to continue "
-msgstr "Zum Fortfahren \"enter\" drücken "
+msgstr "Zum Fortfahren \"ENTER\" drücken "
 
 #: src/lib/common.sh:109
 #, sh-format
 msgid "Press \"enter\" to quit "
-msgstr "Zum Beenden \"enter\" drücken "
+msgstr "Zum Beenden \"ENTER\" drücken "
 
 #: src/lib/common.sh:129
 #, sh-format
@@ -275,7 +275,7 @@ msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
-"Neustart erforderlich:\\nAuf dem System steht ein Kernel-Update an, das einen Neustart erfordert, "
+"Neustart erforderlich:\\nAuf dem System steht ein Kernel-Update aus, das einen Neustart erfordert, "
 "um angewendet zu werden\\n"
 
 #: src/lib/kernel_reboot.sh:11
@@ -323,7 +323,7 @@ msgstr ""
 #: src/lib/kernel_reboot.sh:45
 #, sh-format
 msgid "No pending kernel update found\\n"
-msgstr "Kein anstehendes Kernel-Update gefunden\\n"
+msgstr "Kein ausstehendes Kernel-Update gefunden\\n"
 
 #: src/lib/list_news.sh:7
 #, sh-format
@@ -523,7 +523,7 @@ msgstr "Keine unbenutzten Flatpak-Pakete gefunden\\n"
 #: src/lib/packages_cache.sh:21
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr "Im Cache gespeicherte Pakete:\\nEs gibt ein altes oder deinstalliertes Paket\\n"
+msgstr "Zwischengespeicherte Pakete:\\nEs gibt ein altes oder deinstalliertes Paket\\n"
 
 #: src/lib/packages_cache.sh:22
 #, sh-format
@@ -535,7 +535,7 @@ msgstr "Soll es jetzt aus dem Cache gelöscht werden? [J/n]"
 msgid ""
 "Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
-"Im Cache gespeicherte Pakete:\\nEs gibt alte und / oder deinstallierte Pakete\\n"
+"Zwischengespeicherte Pakete:\\nEs gibt alte und / oder deinstallierte Pakete\\n"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
