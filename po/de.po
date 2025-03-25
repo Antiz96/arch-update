@@ -438,7 +438,7 @@ msgstr "Mit der Aktualisierung fortfahren? [J/n]"
 #: src/lib/list_packages.sh:74
 #, sh-format
 msgid "The update has been aborted\\n"
-msgstr "Die Aktualisierung wurde abgebrochen\\n"
+msgstr "Aktualisierung wurde abgebrochen\\n"
 
 #: src/lib/orphan_packages.sh:14
 #, sh-format
@@ -736,7 +736,7 @@ msgid ""
 "An error has occurred during the update process\\nThe update has been "
 "aborted\\n"
 msgstr ""
-"Während der Aktualisierung ist ein Fehler aufgetreten\\nDie Aktualisierung wurde "
+"Während der Aktualisierung ist ein Fehler aufgetreten\\nAktualisierung wurde "
 "abgebrochen\\n"
 
 #: src/lib/update.sh:24
@@ -752,4 +752,4 @@ msgstr "Aktualisiere Flatpak-Pakete...\\n"
 #: src/lib/update.sh:51
 #, sh-format
 msgid "The update has been applied\\n"
-msgstr "Die Aktualisierung wurde durchgeführt\\n"
+msgstr "Aktualisierung wurde durchgeführt\\n"
