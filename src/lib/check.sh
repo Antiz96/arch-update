@@ -4,15 +4,22 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-if [ -n "${aur_helper}" ] && [ -n "${flatpak_support}" ]; then
-	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
-elif [ -n "${aur_helper}" ] && [ -z "${flatpak_support}" ]; then
-	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
-elif [ -z "${aur_helper}" ] && [ -n "${flatpak_support}" ]; then
-	update_available=$(checkupdates ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
-else
-	update_available=$(checkupdates)
+# shellcheck disable=SC2154
+packages=$(checkupdates)
+echo "${packages}" > "${statedir}/last_updates_check_packages"
+
+if [ -n "${aur_helper}" ]; then
+	# shellcheck disable=SC2154
+	aur_packages=$("${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
+	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
 fi
+
+if [ -n "${flatpak_support}" ]; then
+	flatpak_packages=$(flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
+	echo "${flatpak_packages}" > "${statedir}/last_updates_check_flatpak"
+fi
+
+update_available=$(cat "${statedir}/last_updates_check_"{packages,aur,flatpak})
 
 if [ -n "${no_version}" ]; then
 	update_available=$(echo "${update_available}" | awk '{print $1}')
