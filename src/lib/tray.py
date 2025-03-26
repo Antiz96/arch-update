@@ -201,36 +201,36 @@ class ArchUpdateQt6:
             self.dropdown_menu.setEnabled(True)
 
         # Add & update submenus (if needed)
-        self.dropdown_menu.addMenu(submenu_all)
-        submenu_all.setTitle(_("All {updates}").format(updates=updates_count))
-        submenu_all.setEnabled(True)
-        submenu_all.clear()
+        self.dropdown_menu.addMenu(self.submenu_all)
+        self.submenu_all.setTitle(_("All {updates}").format(updates=updates_count))
+        self.submenu_all.setEnabled(True)
+        self.submenu_all.clear()
         for update in updates_list:
-            submenu_all.addAction(update)
+            self.submenu_all.addAction(update)
 
         if updates_count_pkg >= 1:
-            self.dropdown_menu.addMenu(submenu_pkg)
-            submenu_pkg.setTitle(_("Packages {updates}").format(updates=updates_count_pkg))
-            submenu_pkg.setEnabled(True)
-            submenu_pkg.clear()
+            self.dropdown_menu.addMenu(self.submenu_pkg)
+            self.submenu_pkg.setTitle(_("Packages {updates}").format(updates=updates_count_pkg))
+            self.submenu_pkg.setEnabled(True)
+            self.submenu_pkg.clear()
             for update in updates_list_pkg:
-                submenu_pkg.addAction(update)
+                self.submenu_pkg.addAction(update)
 
         if updates_count_aur >= 1:
-            self.dropdown_menu.addMenu(submenu_aur)
-            submenu_aur.setTitle(_("Packages {updates}").format(updates=updates_count_aur))
-            submenu_aur.setEnabled(True)
-            submenu_aur.clear()
+            self.dropdown_menu.addMenu(self.submenu_aur)
+            self.submenu_aur.setTitle(_("Packages {updates}").format(updates=updates_count_aur))
+            self.submenu_aur.setEnabled(True)
+            self.submenu_aur.clear()
             for update in updates_list_aur:
-                submenu_aur.addAction(update)
+                self.submenu_aur.addAction(update)
 
         if updates_count_flatpak >= 1:
-            self.dropdown_menu.addMenu(submenu_flatpak)
-            submenu_flatpak.setTitle(_("Packages {updates}").format(updates=updates_count_flatpak))
-            submenu_flatpak.setEnabled(True)
-            submenu_flatpak.clear()
+            self.dropdown_menu.addMenu(self.submenu_flatpak)
+            self.submenu_flatpak.setTitle(_("Packages {updates}").format(updates=updates_count_flatpak))
+            self.submenu_flatpak.setEnabled(True)
+            self.submenu_flatpak.clear()
             for update in updates_list_flatpak:
-                submenu_flatpak.addAction(update)
+                self.submenu_flatpak.addAction(update)
 
     # Action to run the arch_update function
     def run(self):
@@ -280,10 +280,10 @@ class ArchUpdateQt6:
 
         # Initialisation of the dynamic dropdown menu
         self.dropdown_menu = QMenu(_("Checking for updates..."))
-        submenu_all = QMenu(_("All"))
-        submenu_pkg = QMenu(_("Package"))
-        submenu_aur = QMenu(_("AUR"))
-        submenu_flatpak = QMenu(_("Flatpak"))
+        self.submenu_all = QMenu(_("All"))
+        self.submenu_pkg = QMenu(_("Package"))
+        self.submenu_aur = QMenu(_("AUR"))
+        self.submenu_flatpak = QMenu(_("Flatpak"))
 
         # Link actions to the menu
         menu.addMenu(self.dropdown_menu)
