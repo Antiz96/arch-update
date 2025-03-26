@@ -131,7 +131,7 @@ class ArchUpdateQt6:
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
-    # Update the dropdown menu based on the 'last_updates_check' statefile content (including the number and the list of pending updates)
+    # Update the dropdown menu based on the state files content
     def update_dropdown_menu(self):
         """Update dropdown menu"""
     # Check presence of state files
