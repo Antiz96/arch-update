@@ -200,13 +200,16 @@ class ArchUpdateQt6:
             self.dropdown_menu.setTitle(_("{updates} updates available").format(updates=updates_count))
             self.dropdown_menu.setEnabled(True)
 
-        # Add & update submenus (if needed)
-        self.dropdown_menu.addMenu(self.submenu_all)
-        self.submenu_all.setTitle(_("All ({updates})").format(updates=updates_count))
-        self.submenu_all.setEnabled(True)
-        self.submenu_all.clear()
-        for update in updates_list:
-            self.submenu_all.addAction(update)
+        # Add / update submenus if at least one available update, remove it otherwise
+        if updates_count >= 1:
+            self.dropdown_menu.addMenu(self.submenu_all)
+            self.submenu_all.setTitle(_("All ({updates})").format(updates=updates_count))
+            self.submenu_all.setEnabled(True)
+            self.submenu_all.clear()
+            for update in updates_list:
+                self.submenu_all.addAction(update)
+        else:
+            self.dropdown_menu.removeAction(self.submenu_all.menuAction())
 
         if updates_count_pkg >= 1:
             self.dropdown_menu.addMenu(self.submenu_pkg)
@@ -215,6 +218,8 @@ class ArchUpdateQt6:
             self.submenu_pkg.clear()
             for update in updates_list_pkg:
                 self.submenu_pkg.addAction(update)
+        else:
+            self.dropdown_menu.removeAction(self.submenu_pkg.menuAction())
 
         if updates_count_aur >= 1:
             self.dropdown_menu.addMenu(self.submenu_aur)
@@ -223,6 +228,8 @@ class ArchUpdateQt6:
             self.submenu_aur.clear()
             for update in updates_list_aur:
                 self.submenu_aur.addAction(update)
+        else:
+            self.dropdown_menu.removeAction(self.submenu_aur.menuAction())
 
         if updates_count_flatpak >= 1:
             self.dropdown_menu.addMenu(self.submenu_flatpak)
@@ -231,6 +238,8 @@ class ArchUpdateQt6:
             self.submenu_flatpak.clear()
             for update in updates_list_flatpak:
                 self.submenu_flatpak.addAction(update)
+        else:
+            self.dropdown_menu.removeAction(self.submenu_flatpak.menuAction())
 
     # Action to run the arch_update function
     def run(self):
