@@ -280,7 +280,7 @@ class ArchUpdateQt6:
 
         # Initialisation of the dynamic dropdown menu
         self.dropdown_menu = QMenu(_("Checking for updates..."))
-	submenu_all = QMenu(_("All"))
+        submenu_all = QMenu(_("All"))
         submenu_pkg = QMenu(_("Package"))
         submenu_aur = QMenu(_("AUR"))
         submenu_flatpak = QMenu(_("Flatpak"))
