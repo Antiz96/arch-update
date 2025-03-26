@@ -202,7 +202,7 @@ class ArchUpdateQt6:
 
         # Add & update submenus (if needed)
         self.dropdown_menu.addMenu(self.submenu_all)
-        self.submenu_all.setTitle(_("All {updates}").format(updates=updates_count))
+        self.submenu_all.setTitle(_("All ({updates})").format(updates=updates_count))
         self.submenu_all.setEnabled(True)
         self.submenu_all.clear()
         for update in updates_list:
@@ -210,7 +210,7 @@ class ArchUpdateQt6:
 
         if updates_count_pkg >= 1:
             self.dropdown_menu.addMenu(self.submenu_pkg)
-            self.submenu_pkg.setTitle(_("Packages {updates}").format(updates=updates_count_pkg))
+            self.submenu_pkg.setTitle(_("Packages ({updates})").format(updates=updates_count_pkg))
             self.submenu_pkg.setEnabled(True)
             self.submenu_pkg.clear()
             for update in updates_list_pkg:
@@ -218,7 +218,7 @@ class ArchUpdateQt6:
 
         if updates_count_aur >= 1:
             self.dropdown_menu.addMenu(self.submenu_aur)
-            self.submenu_aur.setTitle(_("AUR {updates}").format(updates=updates_count_aur))
+            self.submenu_aur.setTitle(_("AUR ({updates})").format(updates=updates_count_aur))
             self.submenu_aur.setEnabled(True)
             self.submenu_aur.clear()
             for update in updates_list_aur:
@@ -226,7 +226,7 @@ class ArchUpdateQt6:
 
         if updates_count_flatpak >= 1:
             self.dropdown_menu.addMenu(self.submenu_flatpak)
-            self.submenu_flatpak.setTitle(_("Flatpak {updates}").format(updates=updates_count_flatpak))
+            self.submenu_flatpak.setTitle(_("Flatpak ({updates})").format(updates=updates_count_flatpak))
             self.submenu_flatpak.setEnabled(True)
             self.submenu_flatpak.clear()
             for update in updates_list_flatpak:
