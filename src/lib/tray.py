@@ -201,7 +201,7 @@ class ArchUpdateQt6:
             self.dropdown_menu.setEnabled(True)
 
         # Add / update submenus if at least one available update, remove it otherwise
-        if updates_count >= 1:
+        if (updates_count_pkg >= 1) + (updates_count_aur >=1) + (updates_count_flatpak >=1) >= 2:
             self.dropdown_menu.addMenu(self.submenu_all)
             self.submenu_all.setTitle(_("All ({updates})").format(updates=updates_count))
             self.submenu_all.setEnabled(True)
