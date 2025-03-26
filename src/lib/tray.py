@@ -30,15 +30,30 @@ if not os.path.isfile(ICON_STATEFILE):
     log.error("State icon file does not exist: %s", ICON_STATEFILE)
     sys.exit(1)
 
-# Find Updates statefile
+# Find Updates statefiles
 UPDATES_STATEFILE = None
+UPDATES_STATEFILE_PACKAGE = None
+UPDATES_STATEFILE_AUR = None
+UPDATES_STATEFILE_FLATPAK = None
 
 if 'XDG_STATE_HOME' in os.environ:
     UPDATES_STATEFILE = os.path.join(
         os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check')
+    UPDATES_STATEFILE_PACKAGES = os.path.join(
+        os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check_packages')
+    UPDATES_STATEFILE_AUR = os.path.join(
+        os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check_aur')
+    UPDATES_STATEFILE_FLATPAK = os.path.join(
+        os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check_flatpak')
 elif 'HOME' in os.environ:
     UPDATES_STATEFILE = os.path.join(
         os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check')
+    UPDATES_STATEFILE_PACKAGES = os.path.join(
+        os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check_packages')
+    UPDATES_STATEFILE_AUR = os.path.join(
+        os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check_aur')
+    UPDATES_STATEFILE_FLATPAK = os.path.join(
+        os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check_flatpak')
 if not os.path.isfile(UPDATES_STATEFILE):
     log.error("State updates file does not exist: %s", UPDATES_STATEFILE)
 
