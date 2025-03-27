@@ -19,7 +19,7 @@ if [ -n "${flatpak_support}" ]; then
 	echo "${flatpak_packages}" > "${statedir}/last_updates_check_flatpak"
 fi
 
-update_available=$(cat "${statedir}/last_updates_check_"{packages,aur,flatpak})
+update_available=$(cat "${statedir}"/last_updates_check_{packages,aur,flatpak})
 
 if [ -n "${no_version}" ]; then
 	update_available=$(echo "${update_available}" | awk '{print $1}')
