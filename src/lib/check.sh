@@ -27,8 +27,8 @@ if [ -n "${flatpak_support}" ]; then
 	flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d' > "${statedir}/last_updates_check_flatpak"
 fi
 
-sed -i '/^\s*$/d' "${statedir}"/last_updates_check_{_packages,_aur,_flatpak}
-sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}"/last_updates_check_{_packages,_aur,_flatpak}
+sed -i '/^\s*$/d' "${statedir}"/last_updates_check_{packages,aur,flatpak}
+sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}"/last_updates_check_{packages,aur,flatpak}
 update_available=$(cat "${statedir}"/last_updates_check_{packages,aur,flatpak})
 
 # shellcheck disable=SC2154
