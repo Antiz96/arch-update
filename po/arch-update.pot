@@ -651,7 +651,7 @@ msgid "All"
 msgstr ""
 
 #: src/lib/tray.py:293
-msgid "Package"
+msgid "Packages"
 msgstr ""
 
 #: src/lib/tray.py:294
