@@ -32,12 +32,12 @@ if [ -n "${flatpak_support}" ]; then
 	echo "${flatpak_packages}" > "${statedir}/last_updates_check_flatpak"
 fi
 
+sed -i '/^\s*$/d' "${statedir}"/last_updates_check_{_packages,_aur,_flatpak}
+sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}"/last_updates_check_{_packages,_aur,_flatpak}
 update_available=$(cat "${statedir}"/last_updates_check_{packages,aur,flatpak})
 
 # shellcheck disable=SC2154
 echo "${update_available}" > "${statedir}/current_updates_check"
-sed -i '/^\s*$/d' "${statedir}/current_updates_check"
-sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/current_updates_check"
 
 if [ -n "${update_available}" ]; then
 	icon_updates-available
