@@ -5,12 +5,25 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # shellcheck disable=SC2154
-packages=$(checkupdates)
+if [ -z "${no_version}" ]; then
+	# shellcheck disable=SC2154
+	packages=$(checkupdates)
+else
+	# shellcheck disable=SC2154
+	packages=$(checkupdates | awk '{print $1}')
+fi
+
 echo "${packages}" > "${statedir}/last_updates_check_packages"
 
 if [ -n "${aur_helper}" ]; then
-	# shellcheck disable=SC2154
-	aur_packages=$("${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
+	if [ -z "${no_version}" ]; then
+		# shellcheck disable=SC2154
+		aur_packages=$("${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
+	else
+		# shellcheck disable=SC2154
+		aur_packages=$("${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" | awk '{print $1}')
+	fi
+
 	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
 fi
 
@@ -20,10 +33,6 @@ if [ -n "${flatpak_support}" ]; then
 fi
 
 update_available=$(cat "${statedir}"/last_updates_check_{packages,aur,flatpak})
-
-if [ -n "${no_version}" ]; then
-	update_available=$(echo "${update_available}" | awk '{print $1}')
-fi
 
 # shellcheck disable=SC2154
 echo "${update_available}" > "${statedir}/current_updates_check"
