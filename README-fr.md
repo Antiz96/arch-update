@@ -149,11 +149,17 @@ Avec [le timer systemd](#le-timer-systemd) activé, les vérifications des mises
 
 Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée :
 
-![notif_fr](https://github.com/user-attachments/assets/56d72147-bde4-492b-8ad1-20caed9f22a9)
+![notif_fr](https://github.com/user-attachments/assets/1ffd0b47-ecc9-462b-aa18-0e88b726da77)
 
-Vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray :
+Vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray.  
+Un sous-menu contenant le nombre et la liste des mises à jour disponibles est dynamiquement créé pour chaque sources qui en possède (Paquets, AUR, Flatpak).  
+Un sous-menu "Tous" affichant le nombre et la liste des mises à jour en attente pour toutes les sources est créé dynamiquement si au moins 2 sources différentes ont des mises à jour en attente :
 
-![dropdown_menu_fr](https://github.com/user-attachments/assets/60c3c0d8-8091-4047-b8da-ce8f8bc72476)
+![dropdown_menu_fr](https://github.com/user-attachments/assets/5517ae1b-eb42-443f-901a-0b480841071b)
+
+![sub_menu_fr1](https://github.com/user-attachments/assets/139e864f-94c1-4c28-8999-a28cb678bea3)
+
+![sub_menu_fr2](https://github.com/user-attachments/assets/73571b5c-1307-47d2-8cd5-9ef197ed3e88)
 
 Quand l'icône du systray est cliquée, elle lance `arch-update` dans une fenêtre de terminal :
 
