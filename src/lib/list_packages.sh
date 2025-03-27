@@ -30,26 +30,32 @@ fi
 
 # shellcheck disable=SC2154
 true > "${statedir}/last_updates_check"
+true > "${statedir}/last_updates_check_packages"
+true > "${statedir}/last_updates_check_aur"
+true > "${statedir}/last_updates_check_flatpak"
 
 if [ -n "${packages}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
 	echo -e "${packages}\n"
 	echo "${packages}" >> "${statedir}/last_updates_check"
+	echo "${packages}" > "${statedir}/last_updates_check_packages"
 fi
 
 if [ -n "${aur_packages}" ]; then
 	main_msg "$(eval_gettext "AUR Packages:")"
 	echo -e "${aur_packages}\n"
 	echo "${aur_packages}" >> "${statedir}/last_updates_check"
+	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
 fi
 
 if [ -n "${flatpak_packages}" ]; then
 	main_msg "$(eval_gettext "Flatpak Packages:")"
 	echo -e "${flatpak_packages}\n"
 	echo "${flatpak_packages}" >> "${statedir}/last_updates_check"
+	echo "${flatpak_packages}" > "${statedir}/last_updates_check_flatpak"
 fi
 
-sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/last_updates_check"
+sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}"/last_updates_check{,_packages,_aur,_flatpak}
 
 if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
 	icon_up-to-date
