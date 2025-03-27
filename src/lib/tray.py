@@ -30,15 +30,30 @@ if not os.path.isfile(ICON_STATEFILE):
     log.error("State icon file does not exist: %s", ICON_STATEFILE)
     sys.exit(1)
 
-# Find Updates statefile
+# Find Updates statefiles
 UPDATES_STATEFILE = None
+UPDATES_STATEFILE_PACKAGES = None
+UPDATES_STATEFILE_AUR = None
+UPDATES_STATEFILE_FLATPAK = None
 
 if 'XDG_STATE_HOME' in os.environ:
     UPDATES_STATEFILE = os.path.join(
         os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check')
+    UPDATES_STATEFILE_PACKAGES = os.path.join(
+        os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check_packages')
+    UPDATES_STATEFILE_AUR = os.path.join(
+        os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check_aur')
+    UPDATES_STATEFILE_FLATPAK = os.path.join(
+        os.environ['XDG_STATE_HOME'], 'arch-update', 'last_updates_check_flatpak')
 elif 'HOME' in os.environ:
     UPDATES_STATEFILE = os.path.join(
         os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check')
+    UPDATES_STATEFILE_PACKAGES = os.path.join(
+        os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check_packages')
+    UPDATES_STATEFILE_AUR = os.path.join(
+        os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check_aur')
+    UPDATES_STATEFILE_FLATPAK = os.path.join(
+        os.environ['HOME'], '.local', 'state', 'arch-update', 'last_updates_check_flatpak')
 if not os.path.isfile(UPDATES_STATEFILE):
     log.error("State updates file does not exist: %s", UPDATES_STATEFILE)
 
@@ -116,9 +131,10 @@ class ArchUpdateQt6:
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
-    # Update the dropdown menu based on the 'last_updates_check' statefile content (including the number and the list of pending updates)
+    # Update the dropdown menu based on the state files content
     def update_dropdown_menu(self):
         """Update dropdown menu"""
+    # Check presence of state files
         if self.watcher and not self.updatesfile in self.watcher.files():
             self.watcher.addPath(self.updatesfile)
 
@@ -131,13 +147,49 @@ class ArchUpdateQt6:
             self.dropdown_menu.setEnabled(False)
             return
 
-        # Remove empty lines
+        if self.watcher and not self.updatesfilepkg in self.watcher.files():
+            self.watcher.addPath(self.updatesfilepkg)
+
+        try:
+            with open(self.updatesfilepkg, encoding="utf-8") as f:
+                updates_list_pkg = f.readlines()
+        except FileNotFoundError:
+            log.error("State updatespkg file missing")
+            return
+
+        if self.watcher and not self.updatesfileaur in self.watcher.files():
+            self.watcher.addPath(self.updatesfileaur)
+
+        try:
+            with open(self.updatesfileaur, encoding="utf-8") as f:
+                updates_list_aur = f.readlines()
+        except FileNotFoundError:
+            log.error("State updatesaur file missing")
+            return
+
+        if self.watcher and not self.updatesfileflatpak in self.watcher.files():
+            self.watcher.addPath(self.updatesfileflatpak)
+
+        try:
+            with open(self.updatesfileflatpak, encoding="utf-8") as f:
+                updates_list_flatpak = f.readlines()
+        except FileNotFoundError:
+            log.error("State updatesflatpak file missing")
+            return
+
+        # Remove empty lines from statefiles
         updates_list = [update.strip() for update in updates_list if update.strip()]
+        updates_list_pkg = [update.strip() for update in updates_list_pkg if update.strip()]
+        updates_list_aur = [update.strip() for update in updates_list_aur if update.strip()]
+        updates_list_flatpak = [update.strip() for update in updates_list_flatpak if update.strip()]
 
-	# Count the number of pending updates (according to the number of lines of the 'last_updates_check' statefile)
+	# Count the number of pending updates (according to the number of lines of statefiles)
         updates_count = len(updates_list)
+        updates_count_pkg = len(updates_list_pkg)
+        updates_count_aur = len(updates_list_aur)
+        updates_count_flatpak = len(updates_list_flatpak)
 
-        # Update the dropdown menu title accordingly
+        # Update the main dropdown menu title accordingly
         if updates_count == 0:
             self.dropdown_menu.setTitle(_("System is up to date"))
             self.dropdown_menu.setEnabled(False)
@@ -148,11 +200,46 @@ class ArchUpdateQt6:
             self.dropdown_menu.setTitle(_("{updates} updates available").format(updates=updates_count))
             self.dropdown_menu.setEnabled(True)
 
-        # Add the list on pending updates to the dropdown menu
-        self.dropdown_menu.clear()
-        if updates_list:
+        # Add / update submenus if at least one available update, remove it otherwise
+        if (updates_count_pkg >= 1) + (updates_count_aur >=1) + (updates_count_flatpak >=1) >= 2:
+            self.dropdown_menu.addMenu(self.submenu_all)
+            self.submenu_all.setTitle(_("All ({updates})").format(updates=updates_count))
+            self.submenu_all.setEnabled(True)
+            self.submenu_all.clear()
             for update in updates_list:
-                self.dropdown_menu.addAction(update)
+                self.submenu_all.addAction(update)
+        else:
+            self.dropdown_menu.removeAction(self.submenu_all.menuAction())
+
+        if updates_count_pkg >= 1:
+            self.dropdown_menu.addMenu(self.submenu_pkg)
+            self.submenu_pkg.setTitle(_("Packages ({updates})").format(updates=updates_count_pkg))
+            self.submenu_pkg.setEnabled(True)
+            self.submenu_pkg.clear()
+            for update in updates_list_pkg:
+                self.submenu_pkg.addAction(update)
+        else:
+            self.dropdown_menu.removeAction(self.submenu_pkg.menuAction())
+
+        if updates_count_aur >= 1:
+            self.dropdown_menu.addMenu(self.submenu_aur)
+            self.submenu_aur.setTitle(_("AUR ({updates})").format(updates=updates_count_aur))
+            self.submenu_aur.setEnabled(True)
+            self.submenu_aur.clear()
+            for update in updates_list_aur:
+                self.submenu_aur.addAction(update)
+        else:
+            self.dropdown_menu.removeAction(self.submenu_aur.menuAction())
+
+        if updates_count_flatpak >= 1:
+            self.dropdown_menu.addMenu(self.submenu_flatpak)
+            self.submenu_flatpak.setTitle(_("Flatpak ({updates})").format(updates=updates_count_flatpak))
+            self.submenu_flatpak.setEnabled(True)
+            self.submenu_flatpak.clear()
+            for update in updates_list_flatpak:
+                self.submenu_flatpak.addAction(update)
+        else:
+            self.dropdown_menu.removeAction(self.submenu_flatpak.menuAction())
 
     # Action to run the arch_update function
     def run(self):
@@ -176,6 +263,9 @@ class ArchUpdateQt6:
 	# Variables definition
         self.iconfile = iconfile
         self.updatesfile = UPDATES_STATEFILE
+        self.updatesfilepkg = UPDATES_STATEFILE_PACKAGES
+        self.updatesfileaur = UPDATES_STATEFILE_AUR
+        self.updatesfileflatpak = UPDATES_STATEFILE_FLATPAK
         self.watcher = None
 
         # General application parameters
@@ -199,6 +289,10 @@ class ArchUpdateQt6:
 
         # Initialisation of the dynamic dropdown menu
         self.dropdown_menu = QMenu(_("Checking for updates..."))
+        self.submenu_all = QMenu(_("All"))
+        self.submenu_pkg = QMenu(_("Package"))
+        self.submenu_aur = QMenu(_("AUR"))
+        self.submenu_flatpak = QMenu(_("Flatpak"))
 
         # Link actions to the menu
         menu.addMenu(self.dropdown_menu)
@@ -214,7 +308,7 @@ class ArchUpdateQt6:
         self.tray.setContextMenu(menu)
 
         # File Watcher (watches for statefiles content changes)
-        self.watcher = QFileSystemWatcher([self.iconfile, self.updatesfile])
+        self.watcher = QFileSystemWatcher([self.iconfile, self.updatesfile, self.updatesfilepkg, self.updatesfileaur, self.updatesfileflatpak])
         self.watcher.fileChanged.connect(self.file_changed)
 
         # Initial file check to set the right icon and dropdown menu text

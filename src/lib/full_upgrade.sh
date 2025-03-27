@@ -18,9 +18,12 @@ if [ -n "${proceed_with_update}" ]; then
 	# shellcheck source=src/lib/update.sh
 	source "${libdir}/update.sh"
 
-	# Record the date of the last successful update (used by other stages) and empty the 'updates' state file (which contains the list of pending updates)
+	# Record the date of the last successful update (used by other stages) and empty the 'updates' state files (which contains the list of pending updates)
 	date +%Y-%m-%d > "${statedir}/last_update_run"
 	true > "${statedir}/last_updates_check"
+	true > "${statedir}/last_updates_check_packages"
+	true > "${statedir}/last_updates_check_aur"
+	true > "${statedir}/last_updates_check_flatpak"
 fi
 
 # Source the "orphan_packages" library which displays orphan packages and offers to remove them
