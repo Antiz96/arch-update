@@ -7,29 +7,24 @@
 # shellcheck disable=SC2154
 if [ -z "${no_version}" ]; then
 	# shellcheck disable=SC2154
-	packages=$(checkupdates)
+	checkupdates > "${statedir}/last_updates_check_packages"
 else
 	# shellcheck disable=SC2154
-	packages=$(checkupdates | awk '{print $1}')
+	checkupdates | awk '{print $1}' > "${statedir}/last_updates_check_packages"
 fi
-
-echo "${packages}" > "${statedir}/last_updates_check_packages"
 
 if [ -n "${aur_helper}" ]; then
 	if [ -z "${no_version}" ]; then
 		# shellcheck disable=SC2154
-		aur_packages=$("${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
+		"${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" > "${statedir}/last_updates_check_aur"
 	else
 		# shellcheck disable=SC2154
-		aur_packages=$("${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" | awk '{print $1}')
+		"${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" | awk '{print $1}' > "${statedir}/last_updates_check_aur"
 	fi
-
-	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
 fi
 
 if [ -n "${flatpak_support}" ]; then
-	flatpak_packages=$(flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
-	echo "${flatpak_packages}" > "${statedir}/last_updates_check_flatpak"
+	flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d' > "${statedir}/last_updates_check_flatpak"
 fi
 
 sed -i '/^\s*$/d' "${statedir}"/last_updates_check_{_packages,_aur,_flatpak}
