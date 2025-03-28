@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:37 src/lib/check.sh:40
+#: src/lib/check.sh:48 src/lib/check.sh:51
 #, sh-format
 msgid "${update_number} update available"
 msgstr ""
 
-#: src/lib/check.sh:45 src/lib/check.sh:47
+#: src/lib/check.sh:56 src/lib/check.sh:58
 #, sh-format
 msgid "${update_number} updates available"
 msgstr ""
@@ -242,14 +242,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr ""
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:68
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:74
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr ""
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:68
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:74
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -355,32 +355,32 @@ msgstr ""
 msgid "Looking for updates...\\n"
 msgstr ""
 
-#: src/lib/list_packages.sh:35
+#: src/lib/list_packages.sh:38
 #, sh-format
 msgid "Packages:"
 msgstr ""
 
-#: src/lib/list_packages.sh:41
+#: src/lib/list_packages.sh:45
 #, sh-format
 msgid "AUR Packages:"
 msgstr ""
 
-#: src/lib/list_packages.sh:47
+#: src/lib/list_packages.sh:52
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr ""
 
-#: src/lib/list_packages.sh:56
+#: src/lib/list_packages.sh:62
 #, sh-format
 msgid "No update available\\n"
 msgstr ""
 
-#: src/lib/list_packages.sh:64
+#: src/lib/list_packages.sh:70
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr ""
 
-#: src/lib/list_packages.sh:74
+#: src/lib/list_packages.sh:80
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr ""
@@ -589,41 +589,77 @@ msgstr ""
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr ""
 
-#: src/lib/tray.py:130
+#: src/lib/tray.py:146
 msgid "'updates' state file isn't found"
 msgstr ""
 
-#: src/lib/tray.py:142
+#: src/lib/tray.py:194
 msgid "System is up to date"
 msgstr ""
 
-#: src/lib/tray.py:145
+#: src/lib/tray.py:197
 msgid "1 update available"
 msgstr ""
 
-#: src/lib/tray.py:148
+#: src/lib/tray.py:200
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr ""
 
-#: src/lib/tray.py:191
+#: src/lib/tray.py:206
+#, python-brace-format
+msgid "All ({updates})"
+msgstr ""
+
+#: src/lib/tray.py:216
+#, python-brace-format
+msgid "Packages ({updates})"
+msgstr ""
+
+#: src/lib/tray.py:226
+#, python-brace-format
+msgid "AUR ({updates})"
+msgstr ""
+
+#: src/lib/tray.py:236
+#, python-brace-format
+msgid "Flatpak ({updates})"
+msgstr ""
+
+#: src/lib/tray.py:281
 msgid "Arch-Update"
 msgstr ""
 
-#: src/lib/tray.py:196
+#: src/lib/tray.py:286
 msgid "Run Arch-Update"
 msgstr ""
 
-#: src/lib/tray.py:197
+#: src/lib/tray.py:287
 msgid "Check for updates"
 msgstr ""
 
-#: src/lib/tray.py:198
+#: src/lib/tray.py:288
 msgid "Exit"
 msgstr ""
 
-#: src/lib/tray.py:201
+#: src/lib/tray.py:291
 msgid "Checking for updates..."
+msgstr ""
+
+#: src/lib/tray.py:292
+msgid "All"
+msgstr ""
+
+#: src/lib/tray.py:293
+msgid "Packages"
+msgstr ""
+
+#: src/lib/tray.py:294
+msgid "AUR"
+msgstr ""
+
+#: src/lib/tray.py:295
+msgid "Flatpak"
 msgstr ""
 
 #: src/lib/tray.sh:20

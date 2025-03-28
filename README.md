@@ -149,11 +149,17 @@ With [the systemd timer](#the-systemd-timer) enabled, checks for updates are aut
 
 If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent:
 
-![notif](https://github.com/user-attachments/assets/55301470-fab6-463f-af2e-ebe4e3d65af7)
+![notif](https://github.com/user-attachments/assets/0df49fe0-2346-424c-b843-081e4ea21b51)
 
-You can see the list of available updates in the dropdown menu entry by right-clicking the systray icon:
+You can see the list of available updates in the dropdown menu entry by right-clicking the systray icon.  
+A sub-menu displaying the number and the list of pending updates is dynamically created for each sources that have some (Packages, AUR, Flatpak).  
+A "All" sub-menu gathering the number and the list of pending updates for all sources is dynamically created if at least 2 different sources have pending updates:
 
-![dropdown_menu](https://github.com/user-attachments/assets/4621d7d2-a9e4-40c3-851f-ee1687e6cf1e)
+![dropdown_menu](https://github.com/user-attachments/assets/282d9226-4787-4d73-b376-d5eb6bb8f400)
+
+![sub_menu1](https://github.com/user-attachments/assets/4b6cd5c6-b23e-4a0d-a2d8-6581adb3593e)
+
+![sub_menu2](https://github.com/user-attachments/assets/d7a427cb-fd88-4e0d-92cb-fd1a2de61b45)
 
 When the systray icon is left-clicked, it runs `arch-update` in a terminal window:
 

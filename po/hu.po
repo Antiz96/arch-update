@@ -662,7 +662,7 @@ msgstr "Nem található frissítés utáni újraindítást igénylő szolgáltat
 
 #: src/lib/tray.py:130
 msgid "'updates' state file isn't found"
-msgstr "'frissítések' állapotfájlja nem található"
+msgstr "'updates' állapotfájlja nem található"
 
 #: src/lib/tray.py:142
 msgid "System is up to date"

@@ -4,24 +4,35 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-if [ -n "${aur_helper}" ] && [ -n "${flatpak_support}" ]; then
-	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
-elif [ -n "${aur_helper}" ] && [ -z "${flatpak_support}" ]; then
-	update_available=$(checkupdates ; "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
-elif [ -z "${aur_helper}" ] && [ -n "${flatpak_support}" ]; then
-	update_available=$(checkupdates ; flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
+# shellcheck disable=SC2154
+if [ -z "${no_version}" ]; then
+	# shellcheck disable=SC2154
+	checkupdates > "${statedir}/last_updates_check_packages"
 else
-	update_available=$(checkupdates)
+	# shellcheck disable=SC2154
+	checkupdates | awk '{print $1}' > "${statedir}/last_updates_check_packages"
 fi
 
-if [ -n "${no_version}" ]; then
-	update_available=$(echo "${update_available}" | awk '{print $1}')
+if [ -n "${aur_helper}" ]; then
+	if [ -z "${no_version}" ]; then
+		# shellcheck disable=SC2154
+		"${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" > "${statedir}/last_updates_check_aur"
+	else
+		# shellcheck disable=SC2154
+		"${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" | awk '{print $1}' > "${statedir}/last_updates_check_aur"
+	fi
 fi
+
+if [ -n "${flatpak_support}" ]; then
+	flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d' > "${statedir}/last_updates_check_flatpak"
+fi
+
+sed -i '/^\s*$/d' "${statedir}"/last_updates_check_{packages,aur,flatpak}
+sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}"/last_updates_check_{packages,aur,flatpak}
+update_available=$(cat "${statedir}"/last_updates_check_{packages,aur,flatpak})
 
 # shellcheck disable=SC2154
 echo "${update_available}" > "${statedir}/current_updates_check"
-sed -i '/^\s*$/d' "${statedir}/current_updates_check"
-sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}/current_updates_check"
 
 if [ -n "${update_available}" ]; then
 	icon_updates-available
