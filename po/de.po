@@ -295,7 +295,7 @@ msgstr "J"
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
-msgstr "J"
+msgstr "j"
 
 #: src/lib/kernel_reboot.sh:27
 #, sh-format
