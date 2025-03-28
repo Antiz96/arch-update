@@ -156,7 +156,7 @@ msgid ""
 msgstr ""
 "Nach der Aktualisierung wird auf verwaiste und unbenutzte Pakete, alte zwischengespeicherte Pakete, "
 "pacnew- und pacsave-Dateien, ausstehende Kernel-Aktualisierungen sowie Dienste, "
-"die einen Neustart erfordern, geprüft und eine Verarbeitung gegebenenfalls angeboten. "
+"die einen Neustart erfordern, geprüft und eine Verarbeitung gegebenenfalls angeboten."
 
 #: src/lib/help.sh:15
 #, sh-format
