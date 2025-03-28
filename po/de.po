@@ -1,4 +1,4 @@
-# Arch-Update translation template
+# Arch-Update German translation
 # Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
 # This file is distributed under the same license as the Arch-Update package.
 #
