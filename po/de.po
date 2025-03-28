@@ -349,7 +349,7 @@ msgstr "Keine aktuellen Arch-Neugikeiten gefunden"
 #: src/lib/list_news.sh:37
 #, sh-format
 msgid "Arch News:"
-msgstr "Arch-Neuigkeiten"
+msgstr "Arch-Neuigkeiten:"
 
 #: src/lib/list_news.sh:42
 #, sh-format
