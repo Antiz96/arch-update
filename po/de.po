@@ -609,7 +609,7 @@ msgstr "Dienste:\\nDer folgende Dienst erfordert einen Neustart\\n"
 #: src/lib/restart_services.sh:15
 #, sh-format
 msgid "Services:\\nThe following services require a post upgrade restart\\n"
-msgstr "Dienste:\\nDie folgenden Dienste erfordern einen Neustart"
+msgstr "Dienste:\\nDie folgenden Dienste erfordern einen Neustart\\n"
 
 #: src/lib/restart_services.sh:25
 #, sh-format
