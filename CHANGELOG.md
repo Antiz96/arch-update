@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.9.0](https://github.com/Antiz96/arch-update/releases/tag/v3.9.0) - 2025-03-29
+
+### Features
+
+- *(i18n)* Add German translation ([#346](https://github.com/Antiz96/arch-update/pull/346)) - ([5224d8a](https://github.com/Antiz96/arch-update/commit/5224d8a3c76811dd44bcec3bbbf84c2f958d66c5)) by @DeN-AlB
+- *(systray)* Add dropdown sub-menus for earch sources of available updates ([#348](https://github.com/Antiz96/arch-update/pull/348)) - ([75e2239](https://github.com/Antiz96/arch-update/commit/75e2239216a12dc2032831e15152653642bbc0d6)) by @Antiz96
+
+### Fixes
+
+- *(check)* Fix state files names ([#349](https://github.com/Antiz96/arch-update/pull/349)) - ([277ba96](https://github.com/Antiz96/arch-update/commit/277ba962c4e439f280ce81b7dffffaf49fbac8d3)) by @Antiz96
+- *(systray)* Fix 'Packages' sub-menu name ([#350](https://github.com/Antiz96/arch-update/pull/350)) - ([68b26f2](https://github.com/Antiz96/arch-update/commit/68b26f2451622ea37c1690763e884f3ab6f469f7)) by @Antiz96
+
+### Documentation
+
+- *(README)* Update screenshots ([#352](https://github.com/Antiz96/arch-update/pull/352)) - ([818d298](https://github.com/Antiz96/arch-update/commit/818d2988efd1eee22155464b384fefcafe09ee39)) by @Antiz96
+
+### Styling
+
+- *(changelog)* Remove unnecessary space ([#345](https://github.com/Antiz96/arch-update/pull/345)) - ([71782fe](https://github.com/Antiz96/arch-update/commit/71782fe08176862c5b97ef37fb3e73ad45cf5843)) by @Antiz96
+- *(i18n)* Fix a word in Hungarian translation ([#344](https://github.com/Antiz96/arch-update/pull/344)) - ([f1aa1bb](https://github.com/Antiz96/arch-update/commit/f1aa1bb7e4f4eaaa4729f990294a34564cdb74de)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translations ([#353](https://github.com/Antiz96/arch-update/pull/353)) - ([4148709](https://github.com/Antiz96/arch-update/commit/414870977cf214359e171b247a22afd536749a42)) by @Antiz96
+- *(i18n)* Update French translation ([#351](https://github.com/Antiz96/arch-update/pull/351)) - ([2a9b104](https://github.com/Antiz96/arch-update/commit/2a9b104aa236bb6ab9d26d7bdf70583459d2a869)) by @Antiz96
+
 ## [v3.8.1](https://github.com/Antiz96/arch-update/releases/tag/v3.8.1) - 2025-03-21
 
 ### Features
