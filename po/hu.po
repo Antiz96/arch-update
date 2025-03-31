@@ -664,72 +664,72 @@ msgstr "Nem található frissítés utáni újraindítást igénylő szolgáltat
 msgid "'updates' state file isn't found"
 msgstr "'updates' állapotfájlja nem található"
 
-#: src/lib/tray.py:194
+#: src/lib/tray.py:193
 msgid "System is up to date"
 msgstr "A rendszer naprakész"
 
-#: src/lib/tray.py:197
+#: src/lib/tray.py:196
 msgid "1 update available"
 msgstr "1 frissítés érhető el"
 
-#: src/lib/tray.py:200
+#: src/lib/tray.py:199
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr "{updates} frissítés érhető el"
 
-#: src/lib/tray.py:206
+#: src/lib/tray.py:208
 #, python-brace-format
 msgid "All ({updates})"
 msgstr "Minden ({updates})"
 
-#: src/lib/tray.py:216
+#: src/lib/tray.py:218
 #, python-brace-format
 msgid "Packages ({updates})"
 msgstr "Csomagok ({updates})"
 
-#: src/lib/tray.py:226
+#: src/lib/tray.py:228
 #, python-brace-format
 msgid "AUR ({updates})"
 msgstr "AUR ({updates})"
 
-#: src/lib/tray.py:236
+#: src/lib/tray.py:238
 #, python-brace-format
 msgid "Flatpak ({updates})"
 msgstr "Flatpak ({updates})"
 
-#: src/lib/tray.py:281
+#: src/lib/tray.py:290
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
-#: src/lib/tray.py:286
-msgid "Run Arch-Update"
-msgstr "Arch-Update Futtatása"
-
-#: src/lib/tray.py:287
-msgid "Check for updates"
-msgstr "Frissítések keresése"
-
-#: src/lib/tray.py:288
-msgid "Exit"
-msgstr "Kilépés"
-
-#: src/lib/tray.py:291
+#: src/lib/tray.py:295
 msgid "Checking for updates..."
 msgstr "Frissítések keresése..."
 
-#: src/lib/tray.py:292
+#: src/lib/tray.py:296
+msgid "Run Arch-Update"
+msgstr "Arch-Update Futtatása"
+
+#: src/lib/tray.py:297
+msgid "Check for updates"
+msgstr "Frissítések keresése"
+
+#: src/lib/tray.py:298
+msgid "Exit"
+msgstr "Kilépés"
+
+#: src/lib/tray.py:301
 msgid "All"
 msgstr "Minden"
 
-#: src/lib/tray.py:293
+#: src/lib/tray.py:302
 msgid "Packages"
 msgstr "Csomagok"
 
-#: src/lib/tray.py:294
+#: src/lib/tray.py:303
 msgid "AUR"
 msgstr "AUR"
 
-#: src/lib/tray.py:295
+#: src/lib/tray.py:304
 msgid "Flatpak"
 msgstr "Flatpak"
 
