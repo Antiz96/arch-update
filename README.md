@@ -151,17 +151,17 @@ If there are new available updates, the systray icon shows a red circle and a de
 
 ![notif](https://github.com/user-attachments/assets/0df49fe0-2346-424c-b843-081e4ea21b51)
 
-You can see the list of available updates in the dropdown menu entry by right-clicking the systray icon.  
-A sub-menu displaying the number and the list of pending updates is dynamically created for each sources that have some (Packages, AUR, Flatpak).  
-A "All" sub-menu gathering the number and the list of pending updates for all sources is dynamically created if at least 2 different sources have pending updates:
+You can see the list of available updates from the menu by right-clicking the systray icon.  
+A dropdown menu displaying the number and the list of pending updates is dynamically created for each sources that have some (Packages, AUR, Flatpak).  
+A "All" dropdown menu gathering the number and the list of pending updates for all sources is dynamically created if at least 2 different sources have pending updates:
 
-![dropdown_menu](https://github.com/user-attachments/assets/282d9226-4787-4d73-b376-d5eb6bb8f400)
+![dropdown_menu1](https://github.com/user-attachments/assets/af671f5d-143a-498f-ab0b-24d6f4fb89f9)
 
-![sub_menu1](https://github.com/user-attachments/assets/4b6cd5c6-b23e-4a0d-a2d8-6581adb3593e)
+![dropdown_menu2](https://github.com/user-attachments/assets/a87f5e95-5852-4429-b2ae-947de3ea9a7e)
 
-![sub_menu2](https://github.com/user-attachments/assets/d7a427cb-fd88-4e0d-92cb-fd1a2de61b45)
+![dropdown_menu3](https://github.com/user-attachments/assets/a39253c4-b195-4a51-ae53-1fbf875ba8d5)
 
-When the systray icon is left-clicked, it runs `arch-update` in a terminal window:
+When the systray icon is left-clicked, `arch-update` is run in a terminal window (alternatively, you can click the "*X* update(s) available" entry or the dedicated "Run Arch-Update" one from the right-click menu):
 
 ![listing_packages](https://github.com/Antiz96/arch-update/assets/53110319/ed552414-0dff-4cff-84d2-6ff13340259d)
 
