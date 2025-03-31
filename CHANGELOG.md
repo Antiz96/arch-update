@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Features
 
 - *(i18n)* Add German translation ([#346](https://github.com/Antiz96/arch-update/pull/346)) - ([5224d8a](https://github.com/Antiz96/arch-update/commit/5224d8a3c76811dd44bcec3bbbf84c2f958d66c5)) by @DeN-AlB
-- *(systray)* Add dropdown sub-menus for earch sources of available updates ([#348](https://github.com/Antiz96/arch-update/pull/348)) - ([75e2239](https://github.com/Antiz96/arch-update/commit/75e2239216a12dc2032831e15152653642bbc0d6)) by @Antiz96
+- *(systray)* Add dropdown sub-menus for each sources of available updates ([#348](https://github.com/Antiz96/arch-update/pull/348)) - ([75e2239](https://github.com/Antiz96/arch-update/commit/75e2239216a12dc2032831e15152653642bbc0d6)) by @Antiz96
 
 ### Fixes
 
