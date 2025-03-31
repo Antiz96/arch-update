@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.9.1](https://github.com/Antiz96/arch-update/releases/tag/v3.9.1) - 2025-03-31
+
+### Features
+
+- *(systray)* Run arch-update when clicking on the "X update(s) available" menu entry ([#357](https://github.com/Antiz96/arch-update/pull/357)) - ([07a3aa2](https://github.com/Antiz96/arch-update/commit/07a3aa2fe67b4efa52e014c00e8b1aa46093d1f1)) by @Antiz96
+
+### Fixes
+
+- *(systray)* Drop sub-menus for update sources in favor of "top level" dropdown menus ([#355](https://github.com/Antiz96/arch-update/pull/355)) - ([532e1f3](https://github.com/Antiz96/arch-update/commit/532e1f35a9d73faf0c6b6b8c8dc6593b7c0b9b87)) by @Antiz96
+
+### Documentation
+
+- *(README)* Update screenshots ([#359](https://github.com/Antiz96/arch-update/pull/359)) - ([d4e9eaa](https://github.com/Antiz96/arch-update/commit/d4e9eaa5bb18c3126cee0c808ca5d59cc574591e)) by @Antiz96
+
+### Styling
+
+- *(CHANGELOG)* Typo fix ([#356](https://github.com/Antiz96/arch-update/pull/356)) - ([d349fa9](https://github.com/Antiz96/arch-update/commit/d349fa92e3db0ab8316658d07ad3cbb91d889e0d)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#358](https://github.com/Antiz96/arch-update/pull/358)) - ([ff5518e](https://github.com/Antiz96/arch-update/commit/ff5518e439a9114d40561cee0327f8a9bb2cbae8)) by @Antiz96
+
 ## [v3.9.0](https://github.com/Antiz96/arch-update/releases/tag/v3.9.0) - 2025-03-29
 
 ### Features
