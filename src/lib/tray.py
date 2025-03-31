@@ -304,11 +304,13 @@ class ArchUpdateQt6:
         self.dropdown_menu_flatpak = QMenu(_("Flatpak"))
 
         # Link actions to the menu
+        self.menu.addAction(self.menu_count)
         self.menu.addSeparator()
         self.menu.addAction(self.menu_launch)
         self.menu.addAction(self.menu_check)
         self.menu.addAction(self.menu_exit)
 
+        self.menu_count.triggered.connect(self.run)
         self.menu_launch.triggered.connect(self.run)
         self.menu_check.triggered.connect(self.check)
         self.menu_exit.triggered.connect(self.exit)
