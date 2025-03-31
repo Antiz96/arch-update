@@ -593,72 +593,72 @@ msgstr ""
 msgid "'updates' state file isn't found"
 msgstr ""
 
-#: src/lib/tray.py:194
+#: src/lib/tray.py:193
 msgid "System is up to date"
 msgstr ""
 
-#: src/lib/tray.py:197
+#: src/lib/tray.py:196
 msgid "1 update available"
 msgstr ""
 
-#: src/lib/tray.py:200
+#: src/lib/tray.py:199
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr ""
 
-#: src/lib/tray.py:206
+#: src/lib/tray.py:208
 #, python-brace-format
 msgid "All ({updates})"
 msgstr ""
 
-#: src/lib/tray.py:216
+#: src/lib/tray.py:218
 #, python-brace-format
 msgid "Packages ({updates})"
 msgstr ""
 
-#: src/lib/tray.py:226
+#: src/lib/tray.py:228
 #, python-brace-format
 msgid "AUR ({updates})"
 msgstr ""
 
-#: src/lib/tray.py:236
+#: src/lib/tray.py:238
 #, python-brace-format
 msgid "Flatpak ({updates})"
 msgstr ""
 
-#: src/lib/tray.py:281
+#: src/lib/tray.py:290
 msgid "Arch-Update"
 msgstr ""
 
-#: src/lib/tray.py:286
-msgid "Run Arch-Update"
-msgstr ""
-
-#: src/lib/tray.py:287
-msgid "Check for updates"
-msgstr ""
-
-#: src/lib/tray.py:288
-msgid "Exit"
-msgstr ""
-
-#: src/lib/tray.py:291
+#: src/lib/tray.py:295
 msgid "Checking for updates..."
 msgstr ""
 
-#: src/lib/tray.py:292
+#: src/lib/tray.py:296
+msgid "Run Arch-Update"
+msgstr ""
+
+#: src/lib/tray.py:297
+msgid "Check for updates"
+msgstr ""
+
+#: src/lib/tray.py:298
+msgid "Exit"
+msgstr ""
+
+#: src/lib/tray.py:301
 msgid "All"
 msgstr ""
 
-#: src/lib/tray.py:293
+#: src/lib/tray.py:302
 msgid "Packages"
 msgstr ""
 
-#: src/lib/tray.py:294
+#: src/lib/tray.py:303
 msgid "AUR"
 msgstr ""
 
-#: src/lib/tray.py:295
+#: src/lib/tray.py:304
 msgid "Flatpak"
 msgstr ""
 
