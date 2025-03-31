@@ -151,17 +151,17 @@ Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un c
 
 ![notif_fr](https://github.com/user-attachments/assets/1ffd0b47-ecc9-462b-aa18-0e88b726da77)
 
-Vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray.  
-Un sous-menu contenant le nombre et la liste des mises à jour disponibles est dynamiquement créé pour chaque sources qui en possède (Paquets, AUR, Flatpak).  
-Un sous-menu "Tous" affichant le nombre et la liste des mises à jour en attente pour toutes les sources est créé dynamiquement si au moins 2 sources différentes ont des mises à jour en attente :
+Vous pouvez voir la liste des mises à jour disponibles depuis le menu en faisant un clic droit sur l'icône du systray.  
+Un menu déroulant contenant le nombre et la liste des mises à jour disponibles est dynamiquement créé pour chaque sources qui en possède (Paquets, AUR, Flatpak).  
+Un menu déroulant "Tous" affichant le nombre et la liste des mises à jour en attente pour toutes les sources est créé dynamiquement si au moins 2 sources différentes ont des mises à jour en attente :
 
-![dropdown_menu_fr](https://github.com/user-attachments/assets/5517ae1b-eb42-443f-901a-0b480841071b)
+![dropdown_menu_fr1](https://github.com/user-attachments/assets/0eaa56f2-c6f7-4583-8664-cad81ab43205)
 
-![sub_menu_fr1](https://github.com/user-attachments/assets/139e864f-94c1-4c28-8999-a28cb678bea3)
+![dropdown_menu_fr2](https://github.com/user-attachments/assets/192ebd22-6398-498a-b824-9ff71770a62b)
 
-![sub_menu_fr2](https://github.com/user-attachments/assets/73571b5c-1307-47d2-8cd5-9ef197ed3e88)
+![dropdown_menu_fr3](https://github.com/user-attachments/assets/48875b7a-a11b-4901-ad6a-53bdd8526a22)
 
-Quand l'icône du systray est cliquée, elle lance `arch-update` dans une fenêtre de terminal :
+Quand l'icône du systray est cliquée, `arch-update` est lancé dans une fenêtre de terminal (vous pouvez également cliquer sur l'entrée "*X* mise(s) à jour disponible(s)" ou l'entrée dédiée "Lancer Arch-Update" depuis le menu) :
 
 ![listing_packages-FR](https://github.com/Antiz96/arch-update/assets/53110319/60547cde-f327-46f8-907c-61bf9bbee6c5)
 
