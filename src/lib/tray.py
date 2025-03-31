@@ -108,11 +108,11 @@ def arch_update():
 class ArchUpdateQt6:
     """System Tray using QT6 library"""
 
-    # Definition of functions to update the icon and the dropdown menu when their respective state files content change
+    # Definition of functions to update the icon and dropdown menus when their respective state files content change
     def file_changed(self):
-        """Update icon and dropdown menu"""
+        """Update icon and dropdown menus"""
         self.update_icon()
-        self.update_dropdown_menu()
+        self.update_dropdown_menus()
 
     # Update the icon based on the 'tray_icon' statefile content
     def update_icon(self):
@@ -131,9 +131,9 @@ class ArchUpdateQt6:
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
-    # Update the dropdown menu based on the state files content
-    def update_dropdown_menu(self):
-        """Update dropdown menu"""
+    # Update dropdown menus based on the state files content
+    def update_dropdown_menus(self):
+        """Update dropdown menus"""
     # Check presence of state files
         if self.watcher and not self.updatesfile in self.watcher.files():
             self.watcher.addPath(self.updatesfile)
@@ -143,8 +143,7 @@ class ArchUpdateQt6:
                 updates_list = f.readlines()
         except FileNotFoundError:
             log.error("State updates file missing")
-            self.dropdown_menu.setTitle(_("'updates' state file isn't found"))
-            self.dropdown_menu.setEnabled(False)
+            self.menu_count.setTitle(_("'updates' state file isn't found"))
             return
 
         if self.watcher and not self.updatesfilepkg in self.watcher.files():
@@ -183,63 +182,73 @@ class ArchUpdateQt6:
         updates_list_aur = [update.strip() for update in updates_list_aur if update.strip()]
         updates_list_flatpak = [update.strip() for update in updates_list_flatpak if update.strip()]
 
-	# Count the number of pending updates (according to the number of lines of statefiles)
+        # Count the number of pending updates (according to the number of lines of statefiles)
         updates_count = len(updates_list)
         updates_count_pkg = len(updates_list_pkg)
         updates_count_aur = len(updates_list_aur)
         updates_count_flatpak = len(updates_list_flatpak)
 
-        # Update the main dropdown menu title accordingly
+        # Update the update main menu title accordingly
         if updates_count == 0:
-            self.dropdown_menu.setTitle(_("System is up to date"))
-            self.dropdown_menu.setEnabled(False)
+            self.menu_count.setText(_("System is up to date"))
+            self.menu_count.setEnabled(False)
         elif updates_count == 1:
-            self.dropdown_menu.setTitle(_("1 update available"))
-            self.dropdown_menu.setEnabled(True)
+            self.menu_count.setText(_("1 update available"))
+            self.menu_count.setEnabled(True)
         else:
-            self.dropdown_menu.setTitle(_("{updates} updates available").format(updates=updates_count))
-            self.dropdown_menu.setEnabled(True)
+            self.menu_count.setText(_("{updates} updates available").format(updates=updates_count))
+            self.menu_count.setEnabled(True)
 
-        # Add / update submenus if at least one available update, remove it otherwise
+        # Clear the menu (to update entries)
+        self.menu.clear()
+        self.menu.addAction(self.menu_count)
+
+        # Add / update dropdown menus if there's at least one available update, remove it otherwise
         if (updates_count_pkg >= 1) + (updates_count_aur >=1) + (updates_count_flatpak >=1) >= 2:
-            self.dropdown_menu.addMenu(self.submenu_all)
-            self.submenu_all.setTitle(_("All ({updates})").format(updates=updates_count))
-            self.submenu_all.setEnabled(True)
-            self.submenu_all.clear()
+            self.dropdown_menu_all.setTitle(_("All ({updates})").format(updates=updates_count))
+            self.dropdown_menu_all.setEnabled(True)
+            self.dropdown_menu_all.clear()
             for update in updates_list:
-                self.submenu_all.addAction(update)
+                self.dropdown_menu_all.addAction(update)
+            self.menu.addMenu(self.dropdown_menu_all)
         else:
-            self.dropdown_menu.removeAction(self.submenu_all.menuAction())
+            self.menu.removeAction(self.dropdown_menu_all.menuAction())
 
         if updates_count_pkg >= 1:
-            self.dropdown_menu.addMenu(self.submenu_pkg)
-            self.submenu_pkg.setTitle(_("Packages ({updates})").format(updates=updates_count_pkg))
-            self.submenu_pkg.setEnabled(True)
-            self.submenu_pkg.clear()
+            self.dropdown_menu_pkg.setTitle(_("Packages ({updates})").format(updates=updates_count_pkg))
+            self.dropdown_menu_pkg.setEnabled(True)
+            self.dropdown_menu_pkg.clear()
             for update in updates_list_pkg:
-                self.submenu_pkg.addAction(update)
+                self.dropdown_menu_pkg.addAction(update)
+            self.menu.addMenu(self.dropdown_menu_pkg)
         else:
-            self.dropdown_menu.removeAction(self.submenu_pkg.menuAction())
+            self.menu.removeAction(self.dropdown_menu_pkg.menuAction())
 
         if updates_count_aur >= 1:
-            self.dropdown_menu.addMenu(self.submenu_aur)
-            self.submenu_aur.setTitle(_("AUR ({updates})").format(updates=updates_count_aur))
-            self.submenu_aur.setEnabled(True)
-            self.submenu_aur.clear()
+            self.dropdown_menu_aur.setTitle(_("AUR ({updates})").format(updates=updates_count_aur))
+            self.dropdown_menu_aur.setEnabled(True)
+            self.dropdown_menu_aur.clear()
             for update in updates_list_aur:
-                self.submenu_aur.addAction(update)
+                self.dropdown_menu_aur.addAction(update)
+            self.menu.addMenu(self.dropdown_menu_aur)
         else:
-            self.dropdown_menu.removeAction(self.submenu_aur.menuAction())
+            self.menu.removeAction(self.dropdown_menu_aur.menuAction())
 
         if updates_count_flatpak >= 1:
-            self.dropdown_menu.addMenu(self.submenu_flatpak)
-            self.submenu_flatpak.setTitle(_("Flatpak ({updates})").format(updates=updates_count_flatpak))
-            self.submenu_flatpak.setEnabled(True)
-            self.submenu_flatpak.clear()
+            self.dropdown_menu_flatpak.setTitle(_("Flatpak ({updates})").format(updates=updates_count_flatpak))
+            self.dropdown_menu_flatpak.setEnabled(True)
+            self.dropdown_menu_flatpak.clear()
             for update in updates_list_flatpak:
-                self.submenu_flatpak.addAction(update)
+                self.dropdown_menu_flatpak.addAction(update)
+            self.menu.addMenu(self.dropdown_menu_flatpak)
         else:
-            self.dropdown_menu.removeAction(self.submenu_flatpak.menuAction())
+            self.menu.removeAction(self.dropdown_menu_flatpak.menuAction())
+
+        # Restore static menu entries (after clearing the menu)
+        self.menu.addSeparator()
+        self.menu.addAction(self.menu_launch)
+        self.menu.addAction(self.menu_check)
+        self.menu.addAction(self.menu_exit)
 
     # Action to run the arch_update function
     def run(self):
@@ -282,36 +291,35 @@ class ArchUpdateQt6:
         self.tray.setToolTip(tooltip)
 
         # Definition of menus titles
-        menu = QMenu()
-        menu_launch = QAction(_("Run Arch-Update"))
-        menu_check = QAction(_("Check for updates"))
-        menu_exit = QAction(_("Exit"))
+        self.menu = QMenu()
+        self.menu_count = QAction(_("Checking for updates..."))
+        self.menu_launch = QAction(_("Run Arch-Update"))
+        self.menu_check = QAction(_("Check for updates"))
+        self.menu_exit = QAction(_("Exit"))
 
-        # Initialisation of the dynamic dropdown menu
-        self.dropdown_menu = QMenu(_("Checking for updates..."))
-        self.submenu_all = QMenu(_("All"))
-        self.submenu_pkg = QMenu(_("Packages"))
-        self.submenu_aur = QMenu(_("AUR"))
-        self.submenu_flatpak = QMenu(_("Flatpak"))
+        # Initialisation of the dynamic dropdown menus
+        self.dropdown_menu_all = QMenu(_("All"))
+        self.dropdown_menu_pkg = QMenu(_("Packages"))
+        self.dropdown_menu_aur = QMenu(_("AUR"))
+        self.dropdown_menu_flatpak = QMenu(_("Flatpak"))
 
         # Link actions to the menu
-        menu.addMenu(self.dropdown_menu)
-        menu.addSeparator()
-        menu.addAction(menu_launch)
-        menu.addAction(menu_check)
-        menu.addAction(menu_exit)
+        self.menu.addSeparator()
+        self.menu.addAction(self.menu_launch)
+        self.menu.addAction(self.menu_check)
+        self.menu.addAction(self.menu_exit)
 
-        menu_launch.triggered.connect(self.run)
-        menu_check.triggered.connect(self.check)
-        menu_exit.triggered.connect(self.exit)
+        self.menu_launch.triggered.connect(self.run)
+        self.menu_check.triggered.connect(self.check)
+        self.menu_exit.triggered.connect(self.exit)
 
-        self.tray.setContextMenu(menu)
+        self.tray.setContextMenu(self.menu)
 
         # File Watcher (watches for statefiles content changes)
         self.watcher = QFileSystemWatcher([self.iconfile, self.updatesfile, self.updatesfilepkg, self.updatesfileaur, self.updatesfileflatpak])
         self.watcher.fileChanged.connect(self.file_changed)
 
-        # Initial file check to set the right icon and dropdown menu text
+        # Initial file check to set the right icon and dynamic menu text
         self.file_changed()
 
         app.exec()
