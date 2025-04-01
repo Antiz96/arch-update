@@ -145,7 +145,7 @@ C'est l'icône à droite de celle du wifi dans la capture d'écran ci-dessous:
 
 Avec [le timer systemd](#le-timer-systemd) activé, les vérifications des mises à jour sont effectuées automatiqument et périodiquement, mais vous pouvez en déclencher une manuellement depuise l'applet systray en faisant un clic droit dessus puis en cliquant sur l'entrée `Vérifier les mises à jour` depuis le menu :
 
-![check_menu_fr](https://github.com/user-attachments/assets/b0b7730b-0196-4973-ac90-bceb8a74845e)
+![check_menu_fr](https://github.com/user-attachments/assets/68fbeb81-2fe3-4167-badd-bec91bab6f5c)
 
 Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée :
 

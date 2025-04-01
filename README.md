@@ -145,7 +145,7 @@ It is the icon at the right of the 'wifi' one in the screenshot below:
 
 With [the systemd timer](#the-systemd-timer) enabled, checks for updates are automatically and periodically performed, but you can manually trigger one from the systray applet icon by right-clicking it and then clicking on the `Check for updates` menu entry:
 
-![check_for_updates](https://github.com/user-attachments/assets/86c3107d-d7aa-4ced-b9aa-69668c2e3c2a)
+![check_for_updates](https://github.com/user-attachments/assets/642db2e4-2e11-47e8-bd2b-6c653d10d02d)
 
 If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent:
 
