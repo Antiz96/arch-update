@@ -143,7 +143,7 @@ class ArchUpdateQt6:
                 updates_list = f.readlines()
         except FileNotFoundError:
             log.error("State updates file missing")
-            self.menu_count.setTitle(_("'updates' state file isn't found"))
+            self.menu_count.setText(_("'updates' state file isn't found"))
             return
 
         if self.watcher and not self.updatesfilepkg in self.watcher.files():
@@ -292,7 +292,7 @@ class ArchUpdateQt6:
 
         # Definition of menus titles
         self.menu = QMenu()
-        self.menu_count = QAction(_("Checking for updates..."))
+        self.menu_count = QAction(_("Arch-Update"))
         self.menu_launch = QAction(_("Run Arch-Update"))
         self.menu_check = QAction(_("Check for updates"))
         self.menu_exit = QAction(_("Exit"))

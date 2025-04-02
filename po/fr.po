@@ -697,13 +697,9 @@ msgstr "AUR ({updates})"
 msgid "Flatpak ({updates})"
 msgstr "Flatpak ({updates})"
 
-#: src/lib/tray.py:290
+#: src/lib/tray.py:290 src/lib/tray.py:295
 msgid "Arch-Update"
 msgstr "Arch-Update"
-
-#: src/lib/tray.py:295
-msgid "Checking for updates..."
-msgstr "Vérification des mises à jour..."
 
 #: src/lib/tray.py:296
 msgid "Run Arch-Update"
@@ -756,7 +752,7 @@ msgstr ""
 "immédiatement, vous pouvez lancer l'application \"Arch-Update Systray Applet\" "
 "depuis votre menu d'application"
 
-#: src/lib/tray.sh:42
+#: src/lib/tray.sh:47
 #, sh-format
 msgid "There's already a running instance of the Arch-Update systray applet"
 msgstr "Il y a déjà une instance de l'applet systray d'Arch-Update en cours d'exécution"
