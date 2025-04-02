@@ -7,7 +7,7 @@
 # General variables
 name="arch-update"
 _name="Arch-Update"
-version="3.9.1"
+version="3.9.2"
 option="${1}"
 
 # Define the directory containing libraries
