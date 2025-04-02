@@ -640,13 +640,9 @@ msgstr "AUR ({updates})"
 msgid "Flatpak ({updates})"
 msgstr "Flatpak ({updates})"
 
-#: src/lib/tray.py:290
+#: src/lib/tray.py:290 src/lib/tray.py:295
 msgid "Arch-Update"
 msgstr "Arch-Update"
-
-#: src/lib/tray.py:295
-msgid "Checking for updates..."
-msgstr "正在检查更新..."
 
 #: src/lib/tray.py:296
 msgid "Run Arch-Update"
@@ -697,7 +693,7 @@ msgstr "${tray_desktop_file_autostart} 文件已创建，"
 "Arch-Update 系统托盘应用程序将在下次登录时自动启动\\n"
 "要立即启动它，您可以从应用菜单中运行 \"Arch-Update Systray Applet\" 应用程序"
 
-#: src/lib/tray.sh:42
+#: src/lib/tray.sh:47
 #, sh-format
 msgid "There's already a running instance of the Arch-Update systray applet"
 msgstr "已经有 Arch-Update 系统托盘应用程序的运行实例"
