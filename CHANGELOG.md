@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.9.2](https://github.com/Antiz96/arch-update/releases/tag/v3.9.2) - 2025-04-02
+
+### Fixes
+
+- *(systray)* Fix crash when the 'updates' state file does not exist ([#361](https://github.com/Antiz96/arch-update/pull/361)) - ([c729881](https://github.com/Antiz96/arch-update/commit/c7298817de247b9fd2dd43cc107bfa54f95e176e)) by @Antiz96
+
+### Documentation
+
+- *(README)* Update screenshots ([#360](https://github.com/Antiz96/arch-update/pull/360)) - ([6841213](https://github.com/Antiz96/arch-update/commit/684121362794b17d8659aaa7a11cc15507563384)) by @Antiz96
+
 ## [v3.9.1](https://github.com/Antiz96/arch-update/releases/tag/v3.9.1) - 2025-03-31
 
 ### Features
