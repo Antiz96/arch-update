@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.10.0](https://github.com/Antiz96/arch-update/releases/tag/v3.10.0) - 2025-04-09
+
+### Features
+
+- Make the blue systray icon the default ([#362](https://github.com/Antiz96/arch-update/pull/362)) - ([8485cd1](https://github.com/Antiz96/arch-update/commit/8485cd11b48ed123b697ce53447d68f0f9e31675)) by @Antiz96
+
 ## [v3.9.2](https://github.com/Antiz96/arch-update/releases/tag/v3.9.2) - 2025-04-02
 
 ### Fixes
