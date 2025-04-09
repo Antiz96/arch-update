@@ -60,7 +60,7 @@ if [ -f "${config_file}" ]; then
 
 	# Check the "TrayIconStyle" option in arch-update.conf
 	# shellcheck disable=SC2034
-	tray_icon_style=$(grep -E '^[[:space:]]*TrayIconStyle[[:space:]]*=[[:space:]]*(light|dark|blue)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+	tray_icon_style=$(grep -E '^[[:space:]]*TrayIconStyle[[:space:]]*=[[:space:]]*(blue|light|dark)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 fi
 
 # Set the default / fallback value for options that require it (if the arch-update.conf configuration file doesn't exists, if the concerned option is commented or if the set value is invalid) 
@@ -68,4 +68,4 @@ fi
 [ -z "${news_timeout}" ] && news_timeout="10"
 [ -z "${old_packages_num}" ] && old_packages_num="3"
 [ -z "${uninstalled_packages_num}" ] && uninstalled_packages_num="0"
-[ -z "${tray_icon_style}" ] && tray_icon_style="light"
+[ -z "${tray_icon_style}" ] && tray_icon_style="blue"
