@@ -14,4 +14,4 @@
 #KeepOldPackages=3
 #KeepUninstalledPackages=0
 #DiffProg=$DIFFPROG
-#TrayIconStyle=light
+#TrayIconStyle=blue
