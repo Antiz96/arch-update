@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.11.0](https://github.com/Antiz96/arch-update/releases/tag/v3.11.0) - 2025-04-10
+
+### Features
+
+- *(notification)* Use the "updates available" icon ([#364](https://github.com/Antiz96/arch-update/pull/364)) - ([2e93a6c](https://github.com/Antiz96/arch-update/commit/2e93a6c41060c8309f58e71810fb50f53bb41abf)) by @Antiz96
+- *(systray)* New icon set ([#363](https://github.com/Antiz96/arch-update/pull/363)) - ([76f3cda](https://github.com/Antiz96/arch-update/commit/76f3cda39f26c6119922fef740df39383f7295b6)) by @PiafJaune
+
+### Documentation
+
+- *(README)* Update screenshots ([#365](https://github.com/Antiz96/arch-update/pull/365)) - ([7790b14](https://github.com/Antiz96/arch-update/commit/7790b14ad57bb5a996aa07790b8fbfe99a77f81d)) by @Antiz96
+
 ## [v3.10.0](https://github.com/Antiz96/arch-update/releases/tag/v3.10.0) - 2025-04-09
 
 ### Features
