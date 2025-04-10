@@ -1,7 +1,7 @@
 # Arch-Update
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/user-attachments/assets/fb5bb20b-dfe5-48c9-8f1b-899f2ea388ff">
+  <img width="460" height="300" src="https://github.com/user-attachments/assets/5782bd11-084a-4ca3-b599-1c322ee11b84">
 </p>
 
 [![lang-en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/Antiz96/arch-update/blob/main/README.md)
@@ -141,34 +141,34 @@ Par défaut, une vérification est effectuée **au démarrage du système puis u
 Une fois démarrée, l'applet systray apparait dans la zone systray de votre panneau.  
 C'est l'icône à droite de celle en forme de tasse de café dans la capture d'écran ci-dessous (notez qu'il y a [plusieurs variantes de couleur disponibles](https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md) pour l'icône):
 
-![icon](https://github.com/user-attachments/assets/833569de-1bff-41f5-8c38-61cddb3535cb)
+![icon](https://github.com/user-attachments/assets/e02645d1-3646-47f2-a218-08e4e5d6e4e0)
 
 Avec [le timer systemd](#le-timer-systemd) activé, les vérifications des mises à jour sont effectuées automatiqument et périodiquement, mais vous pouvez en déclencher une manuellement depuise l'applet systray en faisant un clic droit dessus puis en cliquant sur l'entrée `Vérifier les mises à jour` depuis le menu :
 
-![check_for_updates-fr](https://github.com/user-attachments/assets/3d20e8df-d1ef-42d3-838b-a3747d17b41a)
+![check_for_updates-fr](https://github.com/user-attachments/assets/b0809b17-2ce2-41a2-85b6-e2b3aa21730f)
 
 Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée :
 
-![notif-fr](https://github.com/user-attachments/assets/fdf7f769-24bf-4dd3-8928-ef4b8df1d6e1)
+![notif-fr](https://github.com/user-attachments/assets/b3074773-c683-4ace-bbcf-959c6e916ae1)
 
 Vous pouvez voir la liste des mises à jour disponibles depuis le menu en faisant un clic droit sur l'icône du systray.  
 Un menu déroulant contenant le nombre et la liste des mises à jour disponibles est dynamiquement créé pour chaque sources qui en possède (Paquets, AUR, Flatpak).  
 Un menu déroulant "Tous" affichant le nombre et la liste des mises à jour en attente pour toutes les sources est créé dynamiquement si au moins 2 sources différentes ont des mises à jour en attente :
 
-![all-fr](https://github.com/user-attachments/assets/440a19a5-ba10-4b5d-8fd1-72131b983db8)
+![all-fr](https://github.com/user-attachments/assets/988422f7-3408-4f7b-b9cc-dbb7e29672f7)
 
-![packages-fr](https://github.com/user-attachments/assets/d2fe9d34-52b1-464d-9b51-98a4b07b8dfc)
+![packages-fr](https://github.com/user-attachments/assets/a69ed36c-2278-4525-9d36-f29a2dcea78c)
 
-![aur-fr](https://github.com/user-attachments/assets/0125f571-04c6-4fd7-98e3-c44fbe873849)
+![aur-fr](https://github.com/user-attachments/assets/208676d7-45f4-4ede-8dbf-70c473444507)
 
 Quand l'icône du systray est cliquée, `arch-update` est lancé dans une fenêtre de terminal (vous pouvez également cliquer sur l'entrée "*X* mise(s) à jour disponible(s)" ou l'entrée dédiée "Lancer Arch-Update" depuis le menu) :
 
-![run-fr](https://github.com/user-attachments/assets/21ce22f7-b03f-4390-acb5-720dd6d54f08)
+![run-fr](https://github.com/user-attachments/assets/b4ff4ae5-4e44-4150-ba3c-093795a6348e)
 
 Si au moins une news Arch Linux a été publiée depuis la dernière exécution, `Arch-Update` vous proposera de lire les dernières news Arch Linux directement depuis la fenêtre de terminal.  
 Les news publiées depuis la dernière exécution sont labellisées comme `[NOUVEAU]` :
 
-![news-fr](https://github.com/user-attachments/assets/ca7d6b22-f65b-44a7-9a1c-1b46b1e6a16a)
+![news-fr](https://github.com/user-attachments/assets/385d53a5-f981-4401-8659-50c60784ccb8)
 
 Si aucune news n'a été publiée depuis la dernière exécution, `Arch-Update` demande directement votre confirmation pour procéder à la mise à jour.
 
