@@ -1,7 +1,7 @@
 # Arch-Update
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/user-attachments/assets/fb5bb20b-dfe5-48c9-8f1b-899f2ea388ff">
+  <img width="460" height="300" src="https://github.com/user-attachments/assets/f4564b7f-4637-49ab-bbeb-3b47fe685bea">
 </p>
 
 [![lang-fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/Antiz96/arch-update/blob/main/README-fr.md)
@@ -141,34 +141,34 @@ By default, a check is performed **at boot and then once every hour**. The check
 Once started, the systray applet appears in the systray area of your panel.  
 It is the icon at the right of the 'coffee cup' one in the screenshot below (note that there are [different color variants available](https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md) for it):
 
-![icon](https://github.com/user-attachments/assets/833569de-1bff-41f5-8c38-61cddb3535cb)
+![icon](https://github.com/user-attachments/assets/e02645d1-3646-47f2-a218-08e4e5d6e4e0)
 
 With [the systemd timer](#the-systemd-timer) enabled, checks for updates are automatically and periodically performed, but you can manually trigger one from the systray applet icon by right-clicking it and then clicking on the `Check for updates` menu entry:
 
-![check_for_updates](https://github.com/user-attachments/assets/16ef08b1-7feb-4e60-a6a3-a832e112f78f)
+![check_for_updates](https://github.com/user-attachments/assets/efd190f5-4338-4204-a19b-0a6f138b4435)
 
 If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent:
 
-![notif](https://github.com/user-attachments/assets/58b959f5-d870-41ff-8a8d-0041cb01e0b7)
+![notif](https://github.com/user-attachments/assets/976a435f-db44-477a-b339-1b257639501a)
 
 You can see the list of available updates from the menu by right-clicking the systray icon.  
 A dropdown menu displaying the number and the list of pending updates is dynamically created for each sources that have some (Packages, AUR, Flatpak).  
 A "All" dropdown menu gathering the number and the list of pending updates for all sources is dynamically created if at least 2 different sources have pending updates:
 
-![all](https://github.com/user-attachments/assets/eea057ac-febc-4f52-a350-02de647fa409)
+![all](https://github.com/user-attachments/assets/798a4712-254b-470c-b83d-de2f3fcbdad4)
 
-![packages](https://github.com/user-attachments/assets/9ea0edd0-b133-471a-b93e-d5be1a180e50)
+![packages](https://github.com/user-attachments/assets/056e2044-7e46-4bd0-8aad-6e8f93c8bc4b)
 
-![aur](https://github.com/user-attachments/assets/2c7c0fbd-3251-4c1d-9ca3-f346417ee32a)
+![aur](https://github.com/user-attachments/assets/f5d2c7a2-ea08-4749-ba43-9ef4c3510863)
 
 When the systray icon is left-clicked, `arch-update` is run in a terminal window (alternatively, you can click the "*X* update(s) available" entry or the dedicated "Run Arch-Update" one from the right-click menu):
 
-![run](https://github.com/user-attachments/assets/bb07412c-5b55-4637-bc57-e6c072c1e578)
+![run](https://github.com/user-attachments/assets/c776e778-cafc-4713-9bcd-13c871710bef)
 
 If at least one Arch Linux news has been published since the last run, `Arch-Update` will offer you to read the latest Arch Linux news directly from the terminal window.  
 The news published since the last run are tagged as `[NEW]`:
 
-![news](https://github.com/user-attachments/assets/1309b0b9-ad82-41c4-88e3-4eaef397d293)
+![news](https://github.com/user-attachments/assets/44dde466-00bb-4878-8134-c13a9bbb366d)
 
 If no news has been published since the last run, `Arch-Update` directly asks for your confirmation to proceed with update.
 
