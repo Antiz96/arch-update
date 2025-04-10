@@ -1,7 +1,7 @@
 # Arch-Update
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/user-attachments/assets/f4564b7f-4637-49ab-bbeb-3b47fe685bea">
+  <img width="460" height="300" src="https://github.com/user-attachments/assets/5782bd11-084a-4ca3-b599-1c322ee11b84">
 </p>
 
 [![lang-fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/Antiz96/arch-update/blob/main/README-fr.md)
