@@ -6,6 +6,7 @@ opts=(
     {-l,--list}'[Display the list of pending updates]'
     {-d,--devel}'[Include AUR development packages updates]'
     {-n,--news}'[Display latest Arch news]'
+    {-s,--services}'[Check for services requiring a post upgrade restart]'
     {-D,--debug}'[Display debug traces]'
     {--gen-config}'[Generate a default / example configuration file]'
     {--show-config}'[Display the current configuration file]'

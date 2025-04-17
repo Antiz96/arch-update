@@ -78,6 +78,12 @@ case "${option}" in
 		# shellcheck source=src/lib/list_news.sh
 		source "${libdir}/list_news.sh"
 	;;
+	-s|--services)
+		# Source the "restart_services" library which displays services requiring a post upgrade restart (and offers to do so if there are)
+		# shellcheck source=src/lib/restart_services.sh
+		services_option="true"
+		source "${libdir}/restart_services.sh"
+	;;
 	--gen-config)
 		# Check if the user specified to overwrite any existing "arch-update.conf" configuration file
 		if [ "${2}" == "--force" ]; then

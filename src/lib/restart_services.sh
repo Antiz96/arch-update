@@ -4,7 +4,7 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-if [ -n "${packages_updated}" ]; then
+if [ -n "${packages_updated}" ] || [ -n "${services_option}" ]; then
 	services=$(sudo checkservices -F -P -R -i gdm.service -i sddm.service -i lightdm.service -i lxdm.service -i slim.service -i xdm.service -i greetd.service -i nodm.service -i ly.service -i lemurs.service 2> /dev/null | grep ".service"  | cut -f2 -d "'")
 	services_num=$(echo "${services}" | wc -l)
 
