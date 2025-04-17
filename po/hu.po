@@ -195,10 +195,15 @@ msgstr ""
 
 #: src/lib/help.sh:20
 #, sh-format
+msgid "  -s, --services    Check for services requiring a post upgrade restart"
+msgstr ""
+
+#: src/lib/help.sh:21
+#, sh-format
 msgid "  -D, --debug       Display debug traces"
 msgstr "  -D, --debug       Hibakeresési nyomkövetések megjelenítése"
 
-#: src/lib/help.sh:21
+#: src/lib/help.sh:22
 #, sh-format
 msgid ""
 "  --gen-config      Generate a default / example 'arch-update.conf' "
@@ -209,7 +214,7 @@ msgstr ""
 "konfigurációs fájlt. Opcionálisan átadhatja a '--force' argumentumot, "
 "hogy felülírja a meglévő 'arch-update.conf' konfigurációs fájlt"
 
-#: src/lib/help.sh:22
+#: src/lib/help.sh:23
 #, sh-format
 msgid ""
 "  --show-config     Display the 'arch-update.conf' configuration file "
@@ -218,7 +223,7 @@ msgstr ""
 "  --show-config     Megjeleníti meg az aktuálisan használt 'arch-update.conf' konfigurációs fájlt "
 "(ha létezik)"
 
-#: src/lib/help.sh:23
+#: src/lib/help.sh:24
 #, sh-format
 msgid ""
 "  --edit-config     Edit the 'arch-update.conf' configuration file currently "
@@ -227,7 +232,7 @@ msgstr ""
 "  --edit-config     Szerkeszti az aktuálisan használt 'arch-update.conf' konfigurációs "
 "fájlt (ha létezik)"
 
-#: src/lib/help.sh:24
+#: src/lib/help.sh:25
 #, sh-format
 msgid ""
 "  --tray            Launch the Arch-Update systray applet, you can "
@@ -236,22 +241,22 @@ msgstr ""
 "  --tray            Elindítja el az Arch-Update rendszertálca "
 "kisalkalmazást. Opcionálisan hozzáadhatja az '-enable' argumentumot, hogy automatikusan elinduljon a rendszerindításkor"
 
-#: src/lib/help.sh:25
+#: src/lib/help.sh:26
 #, sh-format
 msgid "  -h, --help        Display this help message and exit"
 msgstr "  -h, --help       Megjeleníti a súgóüzenetet és kilép"
 
-#: src/lib/help.sh:26
+#: src/lib/help.sh:27
 #, sh-format
 msgid "  -V, --version     Display version information and exit"
 msgstr "  -V, --version     Megjeleníti a verzióinformációkat és kilép"
 
-#: src/lib/help.sh:28
+#: src/lib/help.sh:29
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
 msgstr "További információért lásd a ${name}(1) man oldalt."
 
-#: src/lib/help.sh:29
+#: src/lib/help.sh:30
 #, sh-format
 msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf "
