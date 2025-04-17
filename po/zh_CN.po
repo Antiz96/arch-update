@@ -178,7 +178,7 @@ msgstr "  -n, --news [Num]  显示最新 Arch 新闻，你可以选择性地指�
 #: src/lib/help.sh:20
 #, sh-format
 msgid "  -s, --services    Check for services requiring a post upgrade restart"
-msgstr ""
+msgstr "  -s, --services    检查在升级后需要重启的服务"
 
 #: src/lib/help.sh:21
 #, sh-format
