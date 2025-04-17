@@ -195,10 +195,15 @@ msgstr ""
 
 #: src/lib/help.sh:20
 #, sh-format
+msgid "  -s, --services    Check for services requiring a post upgrade restart"
+msgstr ""
+
+#: src/lib/help.sh:21
+#, sh-format
 msgid "  -D, --debug       Display debug traces"
 msgstr "  -D, --debug       Debug-Traces anzeigen"
 
-#: src/lib/help.sh:21
+#: src/lib/help.sh:22
 #, sh-format
 msgid ""
 "  --gen-config      Generate a default / example 'arch-update.conf' "
@@ -209,7 +214,7 @@ msgstr ""
 "mit vorgegebenen Werten, optional mit Angabe von '--force' zum "
 "Überschreiben einer vorhandenen 'arch-update.conf' Konfigurationsdatei"
 
-#: src/lib/help.sh:22
+#: src/lib/help.sh:23
 #, sh-format
 msgid ""
 "  --show-config     Display the 'arch-update.conf' configuration file "
@@ -218,7 +223,7 @@ msgstr ""
 "  --show-config     Anzeige der aktuell genutzten 'arch-update.conf' "
 "Konfigurationsdatei (falls sie existiert)"
 
-#: src/lib/help.sh:23
+#: src/lib/help.sh:24
 #, sh-format
 msgid ""
 "  --edit-config     Edit the 'arch-update.conf' configuration file currently "
@@ -227,7 +232,7 @@ msgstr ""
 "  --edit-config     Bearbeiten der aktuell genutzten 'arch-update.conf' "
 "Konfigurationsdatei (falls sie existiert)"
 
-#: src/lib/help.sh:24
+#: src/lib/help.sh:25
 #, sh-format
 msgid ""
 "  --tray            Launch the Arch-Update systray applet, you can "
@@ -236,22 +241,22 @@ msgstr ""
 "  --tray            Starten des Systray-Applets von Arch-Update, optional "
 "mit Angabe von '--enable' zum automatischen Starten beim Hochfahren des Systems"
 
-#: src/lib/help.sh:25
+#: src/lib/help.sh:26
 #, sh-format
 msgid "  -h, --help        Display this help message and exit"
 msgstr "  -h, --help        Hilfe anzeigen und beenden"
 
-#: src/lib/help.sh:26
+#: src/lib/help.sh:27
 #, sh-format
 msgid "  -V, --version     Display version information and exit"
 msgstr "  -V, --version     Versionsinformation anzeigen und beenden"
 
-#: src/lib/help.sh:28
+#: src/lib/help.sh:29
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
 msgstr "Weitere Informationen gibt es auf der ${name}(1) Manpage."
 
-#: src/lib/help.sh:29
+#: src/lib/help.sh:30
 #, sh-format
 msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf "

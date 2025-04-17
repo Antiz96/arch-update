@@ -50,6 +50,9 @@ If no option is passed, launch the relevant series of functions to perform a com
 	Display latest Arch news.
 	You can optionally specify how much Arch news to display as an argument, like so: `arch-update --news 10`. Defaults to 5.
 
+*-s, --services*
+	Check for services requiring a post upgrade restart.
+
 *-D, --debug*
 	Display debug traces.
 

@@ -177,10 +177,15 @@ msgstr "  -n, --news [Num]  显示最新 Arch 新闻，你可以选择性地指�
 
 #: src/lib/help.sh:20
 #, sh-format
+msgid "  -s, --services    Check for services requiring a post upgrade restart"
+msgstr ""
+
+#: src/lib/help.sh:21
+#, sh-format
 msgid "  -D, --debug       Display debug traces"
 msgstr "  -D, --debug       显示调试跟踪信息"
 
-#: src/lib/help.sh:21
+#: src/lib/help.sh:22
 #, sh-format
 msgid ""
 "  --gen-config      Generate a default / example 'arch-update.conf' "
@@ -189,21 +194,21 @@ msgid ""
 msgstr "  --gen-config      生成默认的 'arch-update.conf' 配置文件，"
 "你可以选择性地传递 '--force' 参数来覆盖任何现有的 'arch-update.conf' 配置文件"
 
-#: src/lib/help.sh:22
+#: src/lib/help.sh:23
 #, sh-format
 msgid ""
 "  --show-config     Display the 'arch-update.conf' configuration file "
 "currently used (if it exists)"
 msgstr "  --show-config     显示当前使用的 'arch-update.conf' 配置文件（如果存在）"
 
-#: src/lib/help.sh:23
+#: src/lib/help.sh:24
 #, sh-format
 msgid ""
 "  --edit-config     Edit the 'arch-update.conf' configuration file currently "
 "used (if it exists)"
 msgstr "  --edit-config     编辑当前使用的 'arch-update.conf' 配置文件（如果存在）"
 
-#: src/lib/help.sh:24
+#: src/lib/help.sh:25
 #, sh-format
 msgid ""
 "  --tray            Launch the Arch-Update systray applet, you can "
@@ -211,22 +216,22 @@ msgid ""
 msgstr "  --tray            启动 Arch-Update 系统托盘应用程序，"
 "你可以选择性地添加 '--enable' 参数以在启动时自动启动"
 
-#: src/lib/help.sh:25
+#: src/lib/help.sh:26
 #, sh-format
 msgid "  -h, --help        Display this help message and exit"
 msgstr "  -h, --help        显示帮助信息"
 
-#: src/lib/help.sh:26
+#: src/lib/help.sh:27
 #, sh-format
 msgid "  -V, --version     Display version information and exit"
 msgstr "  -V, --version     显示版本信息"
 
-#: src/lib/help.sh:28
+#: src/lib/help.sh:29
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
 msgstr "更多信息，请参阅 ${name}(1) 手册页。"
 
-#: src/lib/help.sh:29
+#: src/lib/help.sh:30
 #, sh-format
 msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf "

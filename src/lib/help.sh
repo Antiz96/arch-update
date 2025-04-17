@@ -17,6 +17,7 @@ $(eval_gettext "  -c, --check       Check for available updates, change the syst
 $(eval_gettext "  -l, --list        Display the list of pending updates")
 $(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
+$(eval_gettext "  -s, --services    Check for services requiring a post upgrade restart")
 $(eval_gettext "  -D, --debug       Display debug traces")
 $(eval_gettext "  --gen-config      Generate a default / example 'arch-update.conf' configuration file, you can optionally pass the '--force' argument to overwrite any existing 'arch-update.conf' configuration file")
 $(eval_gettext "  --show-config     Display the 'arch-update.conf' configuration file currently used (if it exists)")

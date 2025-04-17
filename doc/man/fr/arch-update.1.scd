@@ -50,6 +50,9 @@ Si aucune option n'est passée, lance la série de fonctions adéquates pour eff
 	Afficher les dernières Arch news.
 	Vous pouvez optionnellement spécifier le nombre d'Arch news a afficher en tant qu'argument, comme ceci : `arch-update --news 10`. La valeur par défaut est 5.
 
+*-s, --services*
+	Vérifier les services nécessitant un redémarrage après mise à jour.
+
 *-D, --debug*
 	Afficher les traces de débogage.
 
