@@ -43,7 +43,7 @@ If no option is passed, launch the relevant series of functions to perform a com
 *-l, --list*
 	Display the list of pending updates.
 
-*d, --devel*
+*-d, --devel*
 	Include AUR development packages updates.
 
 *-n, --news*
