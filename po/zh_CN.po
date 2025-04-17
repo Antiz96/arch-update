@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.11.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2025-03-14 12:00+0800\n"
+"PO-Revision-Date: 2025-04-17 12:00+0800\n"
 "Last-Translator: Aubrey Carlson <aubreycarlson24@outlook.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -51,27 +51,27 @@ msgstr "按下 \"enter\" 退出"
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
 "update.conf configuration file is not found\\n"
-msgstr "AUR 帮助程序 ${aur_helper} 在 arch-update.conf 配置文件中未找到\\n"
+msgstr "配置在 arch-update.conf 文件中的 AUR 帮助程序 ${aur_helper} 未找到\\n"
 
 #: src/lib/common.sh:156
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
-msgstr "需要特权提升命令（sudo、doas 或 run0）\\n"
+msgstr "需要特权提升命令程序（sudo、doas 或 run0）\\n"
 
 #: src/lib/common.sh:161
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
-msgstr "特权提升命令 ${su_cmd} 在 arch-update.conf 配置文件中未找到\\n"
+msgstr "配置在 arch-update.conf 文件中的特权提升命令程序 ${su_cmd} 未找到\\n"
 
 #: src/lib/common.sh:169
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
 "files in the arch-update.conf configuration file is not found\\n"
-msgstr "用于可视化和编辑 pacnew 文件差异的 ${diff_prog} "
-"在 arch-update.conf 配置文件中未找到\\n"
+msgstr "配置在 arch-update.conf 文件中的，用于可视化和编辑 pacnew "
+"文件差异的程序 ${diff_prog} 未找到\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
@@ -307,7 +307,7 @@ msgid ""
 "Unable to retrieve recent Arch News (HTTP error response or request timeout)"
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
-msgstr "无法检索最近的 Arch 新闻（HTTP错误响应或请求超时）"
+msgstr "无法检索最近的 Arch 新闻（HTTP 错误响应或请求超时）"
 "\\n请在更新系统之前查看 https://archlinux.org 上的任何最新新闻"
 
 #: src/lib/list_news.sh:23
