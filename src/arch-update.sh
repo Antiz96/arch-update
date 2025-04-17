@@ -79,9 +79,11 @@ case "${option}" in
 		source "${libdir}/list_news.sh"
 	;;
 	-s|--services)
+		# Set that the "-s / --services" option is used (required for the "restart_services" library to proceed without expecting an upgrade to be performed beforehand
+		services_option="true"
+
 		# Source the "restart_services" library which displays services requiring a post upgrade restart (and offers to do so if there are)
 		# shellcheck source=src/lib/restart_services.sh
-		services_option="true"
 		source "${libdir}/restart_services.sh"
 	;;
 	--gen-config)
