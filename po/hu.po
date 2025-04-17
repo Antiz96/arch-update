@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.11.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2025-04-17 14:08+0200\n"
+"PO-Revision-Date: 2025-04-17 14:22+0200\n"
 "Last-Translator: summoner <summoner@vivaldi.net>\n"
 "Language-Team: \n"
 "Language: hu_HU\n"
@@ -102,13 +102,13 @@ msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it before generating a new one (or use --force "
 "to overwrite it)"
 msgstr ""
-"A „${config_file}” konfigurációs fájl már létezik\\nTávolítsa el, mielőtt újat állít elő (vagy használja a --force "
+"A(z) „${config_file}” konfigurációs fájl már létezik\\nTávolítsa el, mielőtt újat állít elő (vagy használja a --force "
 "parancsot a felülíráshoz)"
 
 #: src/lib/gen-config.sh:30
 #, sh-format
 msgid "The '${config_file}' configuration file has been generated"
-msgstr "A „${config_file}” konfigurációs fájl elő lett állítva"
+msgstr "A(z) „${config_file}” konfigurációs fájl elő lett állítva"
 
 #: src/lib/help.sh:8
 #, sh-format
@@ -173,8 +173,8 @@ msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--"
 "news [Num]' (e.g. '--news 10')"
 msgstr ""
-"  -n, --news [Num]  Legfrissebb Arch hírek megjelenítése. Opcionálisan megadhatja a megjelenítendő Arch hírek számát a "
-"„--news [Num]” paranccsal (például:. „--news 10”)."
+"  -n, --news [Num]  Legfrissebb Arch hírek megjelenítése. Megadhatja a megjelenítendő Arch hírek számát a „--news "
+"[Num]” paranccsal (például:. „--news 10”) – Nem kötelező."
 
 #: src/lib/help.sh:20
 #, sh-format
@@ -187,8 +187,8 @@ msgid ""
 "  --gen-config      Generate a default / example 'arch-update.conf' configuration file, you can optionally pass the '--"
 "force' argument to overwrite any existing 'arch-update.conf' configuration file"
 msgstr ""
-"  --gen-config      Előállít egy alapértelmezett / példa „arch-update.conf” konfigurációs fájlt. Opcionálisan "
-"átadhatja a „--force” argumentumot, hogy felülírja a meglévő „arch-update.conf” konfigurációs fájlt"
+"  --gen-config      Előállít egy alapértelmezett / példa „arch-update.conf” konfigurációs fájlt. Átadhatja a „--force” "
+"argumentumot, hogy felülírja a meglévő „arch-update.conf” konfigurációs fájlt – Nem kötelező"
 
 #: src/lib/help.sh:22
 #, sh-format
@@ -206,8 +206,8 @@ msgid ""
 "  --tray            Launch the Arch-Update systray applet, you can optionally add the '--enable' argument to start it "
 "automatically at boot"
 msgstr ""
-"  --tray            Elindítja el az Arch-Update rendszertálca kisalkalmazást. Opcionálisan hozzáadhatja az „-enable” "
-"argumentumot, hogy automatikusan elinduljon a rendszerindításkor"
+"  --tray            Elindítja el az Arch-Update rendszertálca kisalkalmazást. Hozzáadhatja az „-enable” argumentumot, "
+"hogy automatikusan elinduljon a rendszerindításkor – Nem kötelező"
 
 #: src/lib/help.sh:25
 #, sh-format
@@ -230,14 +230,14 @@ msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf configuration file, see the ${name}.conf(5) "
 "man page."
 msgstr ""
-"Bizonyos opciók engedélyezhetők, letilthatók vagy módosíthatók a ${name}.conf konfigurációs fájlban, tekintse meg a(z) "
-"${name}.conf(5) kézikönyv oldalát."
+"Bizonyos beállítások engedélyezhetők, letilthatók vagy módosíthatók a(z) ${name}.conf konfigurációs fájlban, tekintse "
+"meg a(z) ${name}.conf(5) kézikönyv oldalát."
 
 #: src/lib/invalid_option.sh:7
 #, sh-format
 msgid "${name}: invalid option -- '${option}'\\nTry '${name} --help' for more information"
 msgstr ""
-"${name}: érvénytelen opció -- „${option}”\\nPróbálja meg a(z) „${name} --help” parancsot a további információkért"
+"${name}: érvénytelen beállítás -- „${option}”\\nPróbálja meg a(z) „${name} --help” parancsot a további információkért"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
@@ -468,7 +468,7 @@ msgstr "Szeretné most eltávolítani a gyorsítótárból? [I/n]"
 #: src/lib/packages_cache.sh:24
 #, sh-format
 msgid "Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
-msgstr "Gyorsítótárazott csomagok:\\nRégi/nem telepített csomagok vannak a gyorsítótárban\\n"
+msgstr "Gyorsítótárazott csomagok:\\nRégi / nem telepített csomagok vannak a gyorsítótárban\\n"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
