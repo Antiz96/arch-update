@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.12.0](https://github.com/Antiz96/arch-update/releases/tag/v3.12.0) - 2025-04-20
+
+### Features
+
+- Add the `-s / --services` option flag to check for services requiring a post upgrade restart ([#369](https://github.com/Antiz96/arch-update/pull/369)) - ([c3b7a9f](https://github.com/Antiz96/arch-update/commit/c3b7a9f39d37e1fccdbfe39b08db5ffe1afc853c)) by @Antiz96
+
+### Styling
+
+- *(man)* Add missing hyphen in options list ([#368](https://github.com/Antiz96/arch-update/pull/368)) - ([e4be478](https://github.com/Antiz96/arch-update/commit/e4be478a15f759e7c0f0170f885a159972bb1126)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update Swedish translation ([#375](https://github.com/Antiz96/arch-update/pull/375)) - ([10ac455](https://github.com/Antiz96/arch-update/commit/10ac4555f2457c5dced3343ff08508205247748a)) by @bittin
+- *(i18n)* Update German translation ([#374](https://github.com/Antiz96/arch-update/pull/374)) - ([5cd83ef](https://github.com/Antiz96/arch-update/commit/5cd83efc57fb5efcbc45749aa1be170511006734)) by @DeN-AlB
+- *(i18n)* Update Hungarian translation ([#373](https://github.com/Antiz96/arch-update/pull/373)) - ([f19d71f](https://github.com/Antiz96/arch-update/commit/f19d71fb815a50c64c908fa1151a8fea818bff89)) by @summoner001
+- *(i18n)* Update Chinese (simplified) translation ([#372](https://github.com/Antiz96/arch-update/pull/372)) - ([e329bcd](https://github.com/Antiz96/arch-update/commit/e329bcd2e803620da2a2e1a41a235a6320d0e198)) by @Carlson24
+- *(i18n)* Update French translation ([#370](https://github.com/Antiz96/arch-update/pull/370)) - ([5499ac4](https://github.com/Antiz96/arch-update/commit/5499ac41a538de1dc0df376ec4b18a047e669c8d)) by @Antiz96
+
 ## [v3.11.0](https://github.com/Antiz96/arch-update/releases/tag/v3.11.0) - 2025-04-10
 
 ### Features
