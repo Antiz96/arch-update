@@ -4,6 +4,25 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+# Lock file definition
+lock_file="${TMPDIR:-/tmp}/arch-update.lock"
+
+# Exit if a lock file already exists (meaning there's already a running instance of Arch-Update)
+if [ -f "${lock_file}" ]; then
+	error_msg "$(eval_gettext "There's already a running instance of Arch-Update\n")" && quit_msg
+	exit 17
+fi
+
+# Create a lock file to avoid multiple parallel runs
+touch "${lock_file}"
+
+# Delete the lock file on exit
+delete_lock_file() {
+	rm -f "${lock_file}"
+}
+
+trap delete_lock_file EXIT
+
 # Source the "list_packages" library which displays the list of packages available for updates
 # shellcheck source=src/lib/list_packages.sh disable=SC2154
 source "${libdir}/list_packages.sh"

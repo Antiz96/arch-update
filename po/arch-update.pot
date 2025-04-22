@@ -86,6 +86,11 @@ msgid ""
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
 
+#: src/lib/full_upgrade.sh:12
+#, sh-format
+msgid "There's already a running instance of Arch-Update\\n"
+msgstr ""
+
 #: src/lib/gen-config.sh:19
 #, sh-format
 msgid "Example configuration file not found"
