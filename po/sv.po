@@ -98,6 +98,11 @@ msgstr ""
 "miljövariabeln är inte inställd och \"nano\" (reservalternativ) är inte "
 "installerat"
 
+#: src/lib/full_upgrade.sh:12
+#, sh-format
+msgid "There's already a running instance of Arch-Update"
+msgstr "Det finns redan en pågående instans av Arch-Update"
+
 #: src/lib/gen-config.sh:19
 #, sh-format
 msgid "Example configuration file not found"

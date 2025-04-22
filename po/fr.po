@@ -96,6 +96,11 @@ msgstr ""
 "Impossible de déterminer l'éditeur à utiliser\\n La variable d'environnement \"EDITOR\" "
 "n'est pas paramétrée et \"nano\" (option de secours) n'est pas installé"
 
+#: src/lib/full_upgrade.sh:12
+#, sh-format
+msgid "There's already a running instance of Arch-Update"
+msgstr "Il y a déjà une instance d'Arch-Update en cours d'exécution"
+
 #: src/lib/gen-config.sh:19
 #, sh-format
 msgid "Example configuration file not found"

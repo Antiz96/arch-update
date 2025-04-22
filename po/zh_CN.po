@@ -88,6 +88,11 @@ msgid ""
 msgstr "无法确定要使用的编辑器\\n\"EDITOR\" 环境变量未设置"
 "且 \"nano\" (备用选项) 未安装"
 
+#: src/lib/full_upgrade.sh:12
+#, sh-format
+msgid "There's already a running instance of Arch-Update"
+msgstr "已经有一个 Arch-Update 实例在运行了"
+
 #: src/lib/gen-config.sh:19
 #, sh-format
 msgid "Example configuration file not found"
