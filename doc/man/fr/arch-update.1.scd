@@ -241,7 +241,7 @@ Voir https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#config
 	Erreur lors de la création des répertoires `statedir` et / ou `tmpdir`.
 
 *17*
-	Une autre instance d'Arch-Update est en cours d'exécution.
+	Une autre instance d'Arch-Update est déjà en cours d'exécution.
 
 # VOIR AUSSI
 
