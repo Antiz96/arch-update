@@ -75,15 +75,15 @@ Download the archive of the [latest stable release](https://github.com/Antiz96/a
 To install `arch-update`, go into the extracted / cloned directory and run the following commands:
 
 ```bash
-sudo make
-sudo make test
+make
+make test
 sudo make install
 ```
 
 Once the installation is complete, you may optionally clean up the directory of files generated during installation by running the following command:
 
 ```bash
-sudo make clean
+make clean
 ```
 
 To uninstall `arch-update`, go into the extracted / cloned directory and run the following command:
