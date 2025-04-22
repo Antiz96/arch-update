@@ -75,15 +75,15 @@ Téléchargez l'archive de la [dernière version stable](https://github.com/Anti
 Pour installer `arch-update`, allez dans le répertoire extrait / cloné et exécutez les commandes suivantes :
 
 ```bash
-sudo make
-sudo make test
+make
+make test
 sudo make install
 ```
 
 Une fois l'installation terminée, vous pouvez optionnellement nettoyer le répertoire des fichiers générés durant l'installation en exécutant cette commande :
 
 ```bash
-sudo make clean
+make clean
 ```
 
 Pour désinstaller `arch-update`, allez dans le répertoire extrait / cloné et exécutez la commande suivante :
