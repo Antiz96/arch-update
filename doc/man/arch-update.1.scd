@@ -240,6 +240,9 @@ See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configu
 *16*
 	Error when creating the `statedir` and / or the `tmpdir` directories.
 
+*17*
+	Another instance of Arch-Update is already running.
+
 # SEE ALSO
 
 *checkupdates*(8),

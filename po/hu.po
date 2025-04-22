@@ -97,6 +97,11 @@ msgstr ""
 "Nem lehet meghatározni a használni kívánt szerkesztőt\\nAz „EDITOR” "
 "környezeti változó nincs beállítva, és a „nano” (tartalékbeállítás) nincs telepítve"
 
+#: src/lib/full_upgrade.sh:12
+#, sh-format
+msgid "There's already a running instance of Arch-Update\\n"
+msgstr "Már van egy futó példánya az Arch-Update\\n"
+
 #: src/lib/gen-config.sh:19
 #, sh-format
 msgid "Example configuration file not found"
