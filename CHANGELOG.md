@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.12.2](https://github.com/Antiz96/arch-update/releases/tag/v3.12.2) - 2025-04-22
+
+### Documentation
+
+- *(README)* Remove unnecessary sudo mentions ([#378](https://github.com/Antiz96/arch-update/pull/378)) - ([3ff6dc2](https://github.com/Antiz96/arch-update/commit/3ff6dc2d1f1c7fd1ae84c2da7159312b4fcefe29)) by @Integral-Tech
+- *(README-fr)* Remove unnecessary sudo mentions ([#379](https://github.com/Antiz96/arch-update/pull/379)) - ([fb9c61d](https://github.com/Antiz96/arch-update/commit/fb9c61dc41ea2a4c8d808ff5fcf3137e8446b642)) by @Antiz96
+
 ## [v3.12.1](https://github.com/Antiz96/arch-update/releases/tag/v3.12.1) - 2025-04-22
 
 ### Features
