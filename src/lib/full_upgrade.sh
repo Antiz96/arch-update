@@ -9,7 +9,7 @@ lock_file="${TMPDIR:-/tmp}/arch-update.lock"
 
 # Exit if a lock file already exists (meaning there's already a running instance of Arch-Update)
 if [ -f "${lock_file}" ]; then
-	error_msg "$(eval_gettext "There's already a running instance of Arch-Update")" && quit_msg
+	error_msg "$(eval_gettext "There's already a running instance of Arch-Update\n")" && quit_msg
 	exit 17
 fi
 

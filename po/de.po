@@ -98,8 +98,8 @@ msgstr ""
 
 #: src/lib/full_upgrade.sh:12
 #, sh-format
-msgid "There's already a running instance of Arch-Update"
-msgstr "Es gibt bereits eine laufende Instanz von Arch-Update"
+msgid "There's already a running instance of Arch-Update\\n"
+msgstr "Es gibt bereits eine laufende Instanz von Arch-Update\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
