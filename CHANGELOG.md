@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.12.1](https://github.com/Antiz96/arch-update/releases/tag/v3.12.1) - 2025-04-22
+
+### Features
+
+- Add a lock file to avoid multiple parallel runs ([#377](https://github.com/Antiz96/arch-update/pull/377)) - ([a765374](https://github.com/Antiz96/arch-update/commit/a7653740be2a749bc4ea02350fadc196d0a8f08f)) by @Antiz96
+
 ## [v3.12.0](https://github.com/Antiz96/arch-update/releases/tag/v3.12.0) - 2025-04-20
 
 ### Features
