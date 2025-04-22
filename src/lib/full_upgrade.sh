@@ -13,7 +13,7 @@ if [ -f "${lock_file}" ]; then
 	exit 17
 fi
 
-# Create a lock file to avoid multiple parralel runs
+# Create a lock file to avoid multiple parallel runs
 touch "${lock_file}"
 
 # Delete the lock file on exit
