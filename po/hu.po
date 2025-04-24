@@ -17,37 +17,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:48 src/lib/check.sh:51
+#: src/lib/check.sh:51 src/lib/check.sh:54
 #, sh-format
 msgid "${update_number} update available"
 msgstr "${update_number} frissítés érhető el"
 
-#: src/lib/check.sh:56 src/lib/check.sh:58
+#: src/lib/check.sh:59 src/lib/check.sh:61
 #, sh-format
 msgid "${update_number} updates available"
 msgstr "${update_number} frissítés érhető el"
 
-#: src/lib/common.sh:92
+#: src/lib/common.sh:97
 #, sh-format
 msgid "WARNING"
 msgstr "FIGYELMEZTETÉS"
 
-#: src/lib/common.sh:98
+#: src/lib/common.sh:103
 #, sh-format
 msgid "ERROR"
 msgstr "HIBA"
 
-#: src/lib/common.sh:103
+#: src/lib/common.sh:108
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Nyomja meg az „enter” gombot a folytatáshoz "
 
-#: src/lib/common.sh:109
+#: src/lib/common.sh:114
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Nyomja meg az „enter” gombot a kilépéshez "
 
-#: src/lib/common.sh:129
+#: src/lib/common.sh:134
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
@@ -56,12 +56,12 @@ msgstr ""
 "A(z) ${aur_helper} AUR-csomagok AUR-segédkészletének támogatása nem található "
 "az arch-update.conf konfigurációs fájlban\\n"
 
-#: src/lib/common.sh:156
+#: src/lib/common.sh:161
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "Jogosultságszint-emelési parancs szükséges (sudo, doas vagy run0)\\n"
 
-#: src/lib/common.sh:161
+#: src/lib/common.sh:166
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
@@ -70,7 +70,7 @@ msgstr ""
 "A(z) ${su_cmd} arch-update.conf konfigurációs fájlban, a jogosultságok "
 "kiterjesztéséhez beállított parancs nem található\\n"
 
-#: src/lib/common.sh:169
+#: src/lib/common.sh:174
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -97,7 +97,7 @@ msgstr ""
 "Nem lehet meghatározni a használni kívánt szerkesztőt\\nAz „EDITOR” "
 "környezeti változó nincs beállítva, és a „nano” (tartalékbeállítás) nincs telepítve"
 
-#: src/lib/full_upgrade.sh:12
+#: src/lib/full_upgrade.sh:10
 #, sh-format
 msgid "There's already a running instance of Arch-Update\\n"
 msgstr "Már van egy futó példánya az Arch-Update\\n"
@@ -295,26 +295,26 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Szeretné most újraindítani? [i/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:74
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "I"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:74
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
 msgstr "i"
 
-#: src/lib/kernel_reboot.sh:27
+#: src/lib/kernel_reboot.sh:24
 #, sh-format
 msgid "Rebooting in ${sec}...\\r"
 msgstr "Újraindítás ebben: ${sec}…\\r"
 
-#: src/lib/kernel_reboot.sh:33
+#: src/lib/kernel_reboot.sh:30
 #, sh-format
 msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
@@ -323,7 +323,7 @@ msgstr ""
 "Hiba történt az újraindítási folyamat közben\\nAz újraindítás "
 "megszakadt\\n"
 
-#: src/lib/kernel_reboot.sh:41
+#: src/lib/kernel_reboot.sh:38
 #, sh-format
 msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
@@ -332,7 +332,7 @@ msgstr ""
 "Az újraindítás nem történt meg\\nFontolja meg az újraindítást a függőben lévő "
 "kernelfrissítés véglegesítéséhez\\n"
 
-#: src/lib/kernel_reboot.sh:45
+#: src/lib/kernel_reboot.sh:42
 #, sh-format
 msgid "No pending kernel update found\\n"
 msgstr "Nem található függőben lévő kernelfrissítés\\n"
@@ -422,32 +422,32 @@ msgstr "Webcím:"
 msgid "Looking for updates...\\n"
 msgstr "Frissítések keresése…\\n"
 
-#: src/lib/list_packages.sh:38
+#: src/lib/list_packages.sh:41
 #, sh-format
 msgid "Packages:"
 msgstr "Csomagok:"
 
-#: src/lib/list_packages.sh:45
+#: src/lib/list_packages.sh:48
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-csomagok:"
 
-#: src/lib/list_packages.sh:52
+#: src/lib/list_packages.sh:55
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak-csomagok:"
 
-#: src/lib/list_packages.sh:62
+#: src/lib/list_packages.sh:65
 #, sh-format
 msgid "No update available\\n"
 msgstr "Nincs elérhető frissítés\\n"
 
-#: src/lib/list_packages.sh:70
+#: src/lib/list_packages.sh:73
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Folytatja a frissítést? [I/n]"
 
-#: src/lib/list_packages.sh:80
+#: src/lib/list_packages.sh:83
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "A frissítés meg lett szakítva\\n"

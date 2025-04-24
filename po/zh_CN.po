@@ -16,56 +16,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:48 src/lib/check.sh:51
+#: src/lib/check.sh:51 src/lib/check.sh:54
 #, sh-format
 msgid "${update_number} update available"
 msgstr "${update_number} 个更新可用"
 
-#: src/lib/check.sh:56 src/lib/check.sh:58
+#: src/lib/check.sh:59 src/lib/check.sh:61
 #, sh-format
 msgid "${update_number} updates available"
 msgstr "${update_number} 个更新可用"
 
-#: src/lib/common.sh:92
+#: src/lib/common.sh:97
 #, sh-format
 msgid "WARNING"
 msgstr "警告"
 
-#: src/lib/common.sh:98
+#: src/lib/common.sh:103
 #, sh-format
 msgid "ERROR"
 msgstr "错误"
 
-#: src/lib/common.sh:103
+#: src/lib/common.sh:108
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "按下 \"enter\" 继续"
 
-#: src/lib/common.sh:109
+#: src/lib/common.sh:114
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "按下 \"enter\" 退出"
 
-#: src/lib/common.sh:129
+#: src/lib/common.sh:134
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
 "update.conf configuration file is not found\\n"
 msgstr "配置在 arch-update.conf 文件中的 AUR 帮助程序 ${aur_helper} 未找到\\n"
 
-#: src/lib/common.sh:156
+#: src/lib/common.sh:161
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "需要特权提升命令程序（sudo、doas 或 run0）\\n"
 
-#: src/lib/common.sh:161
+#: src/lib/common.sh:166
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
 msgstr "配置在 arch-update.conf 文件中的特权提升命令程序 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:169
+#: src/lib/common.sh:174
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -88,7 +88,7 @@ msgid ""
 msgstr "无法确定要使用的编辑器\\n\"EDITOR\" 环境变量未设置"
 "且 \"nano\" (备用选项) 未安装"
 
-#: src/lib/full_upgrade.sh:12
+#: src/lib/full_upgrade.sh:10
 #, sh-format
 msgid "There's already a running instance of Arch-Update\\n"
 msgstr "已经有一个 Arch-Update 实例在运行了\\n"
@@ -263,40 +263,40 @@ msgstr "需要重启:\\n系统上有一个待更新的内核，需要重启才�
 msgid "Would you like to reboot now? [y/N]"
 msgstr "是否现在重启？[y/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:74
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:74
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
 msgstr "y"
 
-#: src/lib/kernel_reboot.sh:27
+#: src/lib/kernel_reboot.sh:24
 #, sh-format
 msgid "Rebooting in ${sec}...\\r"
 msgstr "在 ${sec} 秒后重启...\\r"
 
-#: src/lib/kernel_reboot.sh:33
+#: src/lib/kernel_reboot.sh:30
 #, sh-format
 msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
 "aborted\\n"
 msgstr "在重启过程中发生错误\\n重启已被中止\\n"
 
-#: src/lib/kernel_reboot.sh:41
+#: src/lib/kernel_reboot.sh:38
 #, sh-format
 msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
 "the pending kernel update\\n"
 msgstr "重启未执行\\n请考虑手动重启以完成待处理的内核更新\\n"
 
-#: src/lib/kernel_reboot.sh:45
+#: src/lib/kernel_reboot.sh:42
 #, sh-format
 msgid "No pending kernel update found\\n"
 msgstr "未找到待处理的内核更新\\n"
@@ -378,32 +378,32 @@ msgstr "URL："
 msgid "Looking for updates...\\n"
 msgstr "正在查找更新..."
 
-#: src/lib/list_packages.sh:38
+#: src/lib/list_packages.sh:41
 #, sh-format
 msgid "Packages:"
 msgstr "官方包："
 
-#: src/lib/list_packages.sh:45
+#: src/lib/list_packages.sh:48
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR 包："
 
-#: src/lib/list_packages.sh:52
+#: src/lib/list_packages.sh:55
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak 包："
 
-#: src/lib/list_packages.sh:62
+#: src/lib/list_packages.sh:65
 #, sh-format
 msgid "No update available\\n"
 msgstr "没有可用更新\\n"
 
-#: src/lib/list_packages.sh:70
+#: src/lib/list_packages.sh:73
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "是否现在进行更新？[Y/n]"
 
-#: src/lib/list_packages.sh:80
+#: src/lib/list_packages.sh:83
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "更新已取消\\n"
