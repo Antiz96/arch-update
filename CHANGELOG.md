@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.12.3](https://github.com/Antiz96/arch-update/releases/tag/v3.12.3) - 2025-04-24
+
+### Fixes
+
+- Avoid collisions during parallel updates checks ([#381](https://github.com/Antiz96/arch-update/pull/381)) - ([6aa4e7c](https://github.com/Antiz96/arch-update/commit/6aa4e7c067283dcd086a259ab154e2e80c056444)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#382](https://github.com/Antiz96/arch-update/pull/382)) - ([0ee11b4](https://github.com/Antiz96/arch-update/commit/0ee11b44dfc63b223371975e91ccf989176ad476)) by @Antiz96
+
 ## [v3.12.2](https://github.com/Antiz96/arch-update/releases/tag/v3.12.2) - 2025-04-22
 
 ### Documentation
