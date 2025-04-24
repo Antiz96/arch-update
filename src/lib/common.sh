@@ -27,6 +27,11 @@ statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
 tmpdir="${TMPDIR:-/tmp}/${name}-${UID}"
 mkdir -p "${statedir}" "${tmpdir}" || exit 16
 
+# Define checkupdates temporary db dir prefix and lock file (for later use if needed)
+# shellcheck disable=SC2034
+checkupdates_db_tmpdir_prefix="${tmpdir}/checkupdates-"
+lock_file="${TMPDIR:-/tmp}/arch-update.lock"
+
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
 . gettext.sh
@@ -190,3 +195,13 @@ icon_updates-available() {
 	# shellcheck disable=SC2154
 	echo "${name}_updates-available-${tray_icon_style}" > "${statedir}/tray_icon"
 }
+
+# Definition of commands to always run on exit (e.g. cleanup of files / dirs which have no purpose being kept)
+cleanup() {
+	# shellcheck disable=SC2154
+	[ -d "${checkupdates_db_tmpdir}" ] && rm -rf "${checkupdates_db_tmpdir}"
+	[ -f "${lock_file}" ] && rm -f "${lock_file}"
+	[ -n "${kernel_reboot}" ] && tput cnorm
+}
+
+trap cleanup EXIT
