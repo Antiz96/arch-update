@@ -13,13 +13,10 @@ if [ -z "${kernel_compare}" ]; then
 	# shellcheck disable=SC2154
 	case "${answer}" in
 		"$(eval_gettext "Y")"|"$(eval_gettext "y")")
-			echo
+			# shellcheck disable=SC2034
+			kernel_reboot="true"
 
-			# shellcheck disable=SC2317,SC2329
-			restore_cursor() {
-				tput cnorm
-			}
-			trap restore_cursor EXIT
+			echo
 
 			# shellcheck disable=SC2034
 			for sec in {5..1}; do

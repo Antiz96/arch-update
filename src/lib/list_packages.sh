@@ -6,12 +6,15 @@
 
 info_msg "$(eval_gettext "Looking for updates...\n")"
 
+# shellcheck disable=SC2154
+checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
+
 if [ -z "${no_version}" ]; then
 	# shellcheck disable=SC2154
-	packages=$(checkupdates "${contrib_color_opt[@]}")
+	packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" checkupdates "${contrib_color_opt[@]}")
 else
 	# shellcheck disable=SC2154
-	packages=$(checkupdates "${contrib_color_opt[@]}" | awk '{print $1}')
+	packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" checkupdates "${contrib_color_opt[@]}" | awk '{print $1}')
 fi
 
 if [ -n "${aur_helper}" ]; then

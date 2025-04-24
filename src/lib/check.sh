@@ -5,12 +5,15 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # shellcheck disable=SC2154
+checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
+
+# shellcheck disable=SC2154
 if [ -z "${no_version}" ]; then
 	# shellcheck disable=SC2154
-	checkupdates > "${statedir}/last_updates_check_packages"
+	CHECKUPDATES_DB="${checkupdates_db_tmpdir}" checkupdates > "${statedir}/last_updates_check_packages"
 else
 	# shellcheck disable=SC2154
-	checkupdates | awk '{print $1}' > "${statedir}/last_updates_check_packages"
+	CHECKUPDATES_DB="${checkupdates_db_tmpdir}" checkupdates | awk '{print $1}' > "${statedir}/last_updates_check_packages"
 fi
 
 if [ -n "${aur_helper}" ]; then
