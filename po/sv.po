@@ -16,37 +16,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:48 src/lib/check.sh:51
+#: src/lib/check.sh:51 src/lib/check.sh:54
 #, sh-format
 msgid "${update_number} update available"
 msgstr "${update_number} uppdatering är tillgänglig"
 
-#: src/lib/check.sh:56 src/lib/check.sh:58
+#: src/lib/check.sh:59 src/lib/check.sh:61
 #, sh-format
 msgid "${update_number} updates available"
 msgstr "${update_number} uppdateringar är tillgängliga"
 
-#: src/lib/common.sh:92
+#: src/lib/common.sh:97
 #, sh-format
 msgid "WARNING"
 msgstr "VARNING"
 
-#: src/lib/common.sh:98
+#: src/lib/common.sh:103
 #, sh-format
 msgid "ERROR"
 msgstr "FEL"
 
-#: src/lib/common.sh:103
+#: src/lib/common.sh:108
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Tryck på \"enter\" för att fortsätta "
 
-#: src/lib/common.sh:109
+#: src/lib/common.sh:114
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Tryck på \"enter\" för att avsluta "
 
-#: src/lib/common.sh:129
+#: src/lib/common.sh:134
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
@@ -55,12 +55,12 @@ msgstr ""
 "${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
 "konfigurationsfilen arch-update.conf hittades inte\\n"
 
-#: src/lib/common.sh:156
+#: src/lib/common.sh:161
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "Ett kommando för behörighetshöjning krävs (sudo, doas eller run0)\\n"
 
-#: src/lib/common.sh:161
+#: src/lib/common.sh:166
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
@@ -69,7 +69,7 @@ msgstr ""
 "${su_cmd}-kommandot inställt för privilegieskalering i arch-update.conf-"
 "konfigurationsfilen hittades inte\\n"
 
-#: src/lib/common.sh:169
+#: src/lib/common.sh:174
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -98,7 +98,7 @@ msgstr ""
 "miljövariabeln är inte inställd och \"nano\" (reservalternativ) är inte "
 "installerat"
 
-#: src/lib/full_upgrade.sh:12
+#: src/lib/full_upgrade.sh:10
 #, sh-format
 msgid "There's already a running instance of Arch-Update\\n"
 msgstr "Det finns redan en pågående instans av Arch-Update\\n"
@@ -298,26 +298,26 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Vill du starta om nu? [j/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:74
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:74
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
 msgstr "j"
 
-#: src/lib/kernel_reboot.sh:27
+#: src/lib/kernel_reboot.sh:24
 #, sh-format
 msgid "Rebooting in ${sec}...\\r"
 msgstr "Startar om om ${sec}...\\r"
 
-#: src/lib/kernel_reboot.sh:33
+#: src/lib/kernel_reboot.sh:30
 #, sh-format
 msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
@@ -325,7 +325,7 @@ msgid ""
 msgstr ""
 "Ett fel har uppstått under omstartsprocessen\\nOmstarten har avbrutits\\n"
 
-#: src/lib/kernel_reboot.sh:41
+#: src/lib/kernel_reboot.sh:38
 #, sh-format
 msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
@@ -334,7 +334,7 @@ msgstr ""
 "Omstarten har inte utförts\\nVänligen överväg att starta om för att slutföra "
 "den väntande kärnuppdateringen\\n"
 
-#: src/lib/kernel_reboot.sh:45
+#: src/lib/kernel_reboot.sh:42
 #, sh-format
 msgid "No pending kernel update found\\n"
 msgstr "Ingen väntande kärnuppdatering hittades\\n"
@@ -424,32 +424,32 @@ msgstr "Webbadress:"
 msgid "Looking for updates...\\n"
 msgstr "Letar efter uppdateringar...\\n"
 
-#: src/lib/list_packages.sh:38
+#: src/lib/list_packages.sh:41
 #, sh-format
 msgid "Packages:"
 msgstr "Paket:"
 
-#: src/lib/list_packages.sh:45
+#: src/lib/list_packages.sh:48
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-paket:"
 
-#: src/lib/list_packages.sh:52
+#: src/lib/list_packages.sh:55
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak paket:"
 
-#: src/lib/list_packages.sh:62
+#: src/lib/list_packages.sh:65
 #, sh-format
 msgid "No update available\\n"
 msgstr "Ingen uppdatering tillgänglig\\n"
 
-#: src/lib/list_packages.sh:70
+#: src/lib/list_packages.sh:73
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Fortsätt med uppdatering? [J/n]"
 
-#: src/lib/list_packages.sh:80
+#: src/lib/list_packages.sh:83
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Uppdatering har avbrutits\\n"
