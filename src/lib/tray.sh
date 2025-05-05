@@ -43,7 +43,7 @@ else
 	fi
 
 	# shellcheck disable=SC2154
-	if pgrep -f "${libdir}/tray.py" > /dev/null; then
+	if pgrep -U "${USER}" -f "${libdir}/tray.py" > /dev/null; then
 		error_msg "$(eval_gettext "There's already a running instance of the Arch-Update systray applet")"
 		exit 3
 	fi
