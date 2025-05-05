@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.12.4](https://github.com/Antiz96/arch-update/releases/tag/v3.12.4) - 2025-05-05
+
+### Fixes
+
+- *(systray)* Allow systray applet to run for multiple users ([#383](https://github.com/Antiz96/arch-update/pull/383)) - ([3b48326](https://github.com/Antiz96/arch-update/commit/3b483266a8cbd897c83674b8165828fd15a2e532)) by @Antiz96
+
 ## [v3.12.3](https://github.com/Antiz96/arch-update/releases/tag/v3.12.3) - 2025-04-24
 
 ### Fixes
