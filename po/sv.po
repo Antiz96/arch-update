@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:51 src/lib/check.sh:54
+#: src/lib/check.sh:54 src/lib/check.sh:57
 #, sh-format
 msgid "${update_number} update available"
 msgstr "${update_number} uppdatering är tillgänglig"
 
-#: src/lib/check.sh:59 src/lib/check.sh:61
+#: src/lib/check.sh:62 src/lib/check.sh:64
 #, sh-format
 msgid "${update_number} updates available"
 msgstr "${update_number} uppdateringar är tillgängliga"
