@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.12.5](https://github.com/Antiz96/arch-update/releases/tag/v3.12.5) - 2025-05-20
+
+### Fixes
+
+- *(check)* Ensure state files exist before being processed ([#385](https://github.com/Antiz96/arch-update/pull/385)) - ([97f7747](https://github.com/Antiz96/arch-update/commit/97f7747c7a2b617004737fa8ee1ac9184ebe984f)) by @Antiz96
+
 ## [v3.12.4](https://github.com/Antiz96/arch-update/releases/tag/v3.12.4) - 2025-05-05
 
 ### Fixes
