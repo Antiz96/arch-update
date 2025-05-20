@@ -5,6 +5,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # shellcheck disable=SC2154
+touch "${statedir}"/last_updates_check_{packages,aur,flatpak}
+
+# shellcheck disable=SC2154
 checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
 
 # shellcheck disable=SC2154
