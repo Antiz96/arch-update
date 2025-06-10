@@ -61,7 +61,7 @@ Additional optional dependencies you might want or need:
 - [pikaur](https://aur.archlinux.org/packages/pikaur): AUR Packages support
 - [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/): Flatpak Packages support
 - [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/): Desktop notifications support on new available updates (see <https://wiki.archlinux.org/title/Desktop_notifications>)
-- [vim](https://archlinux.org/packages/extra/x86_64/vim/): Default merge program for pacdiff
+- [vim](https://archlinux.org/packages/extra/x86_64/vim/): Default diff program for pacdiff
 - [neovim](https://archlinux.org/packages/extra/x86_64/neovim/): Default diff program for pacdiff if `EDITOR=nvim`
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/): Systray applet support on Wayland
 - [sudo](https://archlinux.org/packages/core/x86_64/sudo/): Privilege elevation

@@ -61,8 +61,8 @@ Dépendances optionnelles supplémentaires dont vous pourriez avoir envie ou bes
 - [pikaur](https://aur.archlinux.org/packages/pikaur) : Support des paquets AUR
 - [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) : Support des paquets Flatpak
 - [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/) : Support des notifications de bureau lors de nouvelles mises à jour disponibles (voir <https://wiki.archlinux.org/title/Desktop_notifications>)
-- [vim](https://archlinux.org/packages/extra/x86_64/vim/) : Programme de fusion par défaut pour pacdiff
-- [neovim](https://archlinux.org/packages/extra/x86_64/neovim/) : Programme de fusion par défaut pour pacdiff si `EDITOR=nvim`
+- [vim](https://archlinux.org/packages/extra/x86_64/vim/) : Programme de comparaison par défaut pour pacdiff
+- [neovim](https://archlinux.org/packages/extra/x86_64/neovim/) : Programme de comparaison par défaut pour pacdiff si `EDITOR=nvim`
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/) : Support de l'applet systray sur Wayland
 - [sudo](https://archlinux.org/packages/core/x86_64/sudo/): Élévation de privilèges
 - [doas](https://archlinux.org/packages/extra/x86_64/opendoas/): Élévation de privilèges
