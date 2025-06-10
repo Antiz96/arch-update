@@ -51,7 +51,7 @@ Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-up
 Installez les dépendances requises :
 
 ```bash
-sudo pacman -S --needed pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
+sudo pacman -S --needed bash systemd pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
 ```
 
 Dépendances optionnelles supplémentaires dont vous pourriez avoir envie ou besoin :
@@ -62,7 +62,10 @@ Dépendances optionnelles supplémentaires dont vous pourriez avoir envie ou bes
 - [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) : Support des paquets Flatpak
 - [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/) : Support des notifications de bureau lors de nouvelles mises à jour disponibles (voir <https://wiki.archlinux.org/title/Desktop_notifications>)
 - [vim](https://archlinux.org/packages/extra/x86_64/vim/) : Programme de fusion par défaut pour pacdiff
+- [neovim](https://archlinux.org/packages/extra/x86_64/neovim/) : Programme de fusion par défaut pour pacdiff si `EDITOR=nvim`
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/) : Support de l'applet systray sur Wayland
+- [sudo](https://archlinux.org/packages/core/x86_64/sudo/): Élévation de privilèges
+- [doas](https://archlinux.org/packages/extra/x86_64/opendoas/): Élévation de privilèges
 
 Installez les dépendances de compilation requises :
 
