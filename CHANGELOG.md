@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.12.6](https://github.com/Antiz96/arch-update/releases/tag/v3.12.6) - 2025-06-10
+
+### Documentation
+
+- *(deps)* Rename `doas` to `opendoas` ([#388](https://github.com/Antiz96/arch-update/pull/388)) - ([7baf6c1](https://github.com/Antiz96/arch-update/commit/7baf6c10fa554aa11eb23c221dd0987b8d15fa20)) by @Antiz96
+- *(deps)* Update dependencies list ([#387](https://github.com/Antiz96/arch-update/pull/387)) - ([8597eef](https://github.com/Antiz96/arch-update/commit/8597eef83a30321912ef7d6424c7f9118310a990)) by @Antiz96
+
 ## [v3.12.5](https://github.com/Antiz96/arch-update/releases/tag/v3.12.5) - 2025-05-20
 
 ### Fixes
