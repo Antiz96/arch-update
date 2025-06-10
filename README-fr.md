@@ -65,7 +65,7 @@ Dépendances optionnelles supplémentaires dont vous pourriez avoir envie ou bes
 - [neovim](https://archlinux.org/packages/extra/x86_64/neovim/) : Programme de comparaison par défaut pour pacdiff si `EDITOR=nvim`
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/) : Support de l'applet systray sur Wayland
 - [sudo](https://archlinux.org/packages/core/x86_64/sudo/): Élévation de privilèges
-- [doas](https://archlinux.org/packages/extra/x86_64/opendoas/): Élévation de privilèges
+- [opendoas](https://archlinux.org/packages/extra/x86_64/opendoas/): Élévation de privilèges
 
 Installez les dépendances de compilation requises :
 
