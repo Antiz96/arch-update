@@ -49,8 +49,8 @@ source "${libdir}/packages_cache.sh"
 # shellcheck source=src/lib/pacnew_files.sh
 source "${libdir}/pacnew_files.sh"
 
-# Source the "kernel_reboot" library which checks if there's a pending kernel update requiring a reboot to be applied (unless running from WSL)
-if [ -z "${WSL_DISTRO_NAME}" ]; then
+# Source the "kernel_reboot" library which checks if there's a pending kernel update requiring a reboot to be applied (unless running from a container)
+if ! systemd-detect-virt --container --quiet; then
 	# shellcheck source=src/lib/kernel_reboot.sh
 	source "${libdir}/kernel_reboot.sh"
 fi
