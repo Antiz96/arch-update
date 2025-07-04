@@ -170,7 +170,7 @@ fi
 
 # Definition of the diff program to use (if it is set in the arch-update.conf configuration file)
 if [ -n "${diff_prog}" ]; then
-	if ! command -v "${diff_prog}" > /dev/null; then
+	if ! command -v "${diff_prog%% *}" > /dev/null; then
 		error_msg "$(eval_gettext "The \${diff_prog} editor set for visualizing / editing differences of pacnew files in the arch-update.conf configuration file is not found\n")" && quit_msg
 		exit 15
 	else
