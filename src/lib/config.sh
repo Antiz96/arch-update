@@ -56,7 +56,7 @@ if [ -f "${config_file}" ]; then
 
 	# Check the "DiffProg" option in arch-update.conf
 	# shellcheck disable=SC2034
-	diff_prog=$(grep -E '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+	diff_prog=$(grep -E '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
 	# Check the "TrayIconStyle" option in arch-update.conf
 	# shellcheck disable=SC2034
