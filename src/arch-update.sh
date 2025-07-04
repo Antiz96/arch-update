@@ -39,6 +39,11 @@ source "${libdir}/common.sh"
 # Source the different libraries depending on the option(s) passed
 case "${option}" in
 	"")
+		# Check for requirements
+		check_su_cmd
+		check_aur_helper
+		check_diff_prog
+
 		# Source the "full_upgrade" library which executes the series of relevant functions / libraries to perform a complete and proper update of the system
 		# shellcheck source=src/lib/full_upgrade.sh
 		source "${libdir}/full_upgrade.sh"
@@ -47,16 +52,27 @@ case "${option}" in
 		# Set the "--devel" flag for AUR helpers
 		devel_flag+=("--devel")
 
+		# Check for requirements
+		check_su_cmd
+		check_aur_helper
+		check_diff_prog
+
 		# Source the "full_upgrade" library which executes the series of relevant functions / libraries to perform a complete and proper update of the system
 		# shellcheck source=src/lib/full_upgrade.sh
 		source "${libdir}/full_upgrade.sh"
 	;;
 	-c|--check)
+		# Check for requirements
+		check_aur_helper
+
 		# Source the "check" library which checks for available updates
 		# shellcheck source=src/lib/check.sh
 		source "${libdir}/check.sh"
 	;;
 	-l|--list)
+		# Check for requirements
+		check_aur_helper
+
 		# Set that the "-l / --list" option is used (required for the "list_packages" library to only print the list of packages available for update without asking for the user confirmation to apply them)
 		list_option="true"
 
@@ -79,6 +95,9 @@ case "${option}" in
 		source "${libdir}/list_news.sh"
 	;;
 	-s|--services)
+		# Check for requirements
+		check_su_cmd
+
 		# Set that the "-s / --services" option is used (required for the "restart_services" library to proceed without expecting an upgrade to be performed beforehand
 		services_option="true"
 
