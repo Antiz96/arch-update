@@ -47,7 +47,7 @@ msgstr "Nyomja meg az „enter” gombot a folytatáshoz "
 msgid "Press \"enter\" to quit "
 msgstr "Nyomja meg az „enter” gombot a kilépéshez "
 
-#: src/lib/common.sh:134
+#: src/lib/common.sh:135
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
@@ -56,12 +56,12 @@ msgstr ""
 "A(z) ${aur_helper} AUR-csomagok AUR-segédkészletének támogatása nem található "
 "az arch-update.conf konfigurációs fájlban\\n"
 
-#: src/lib/common.sh:161
+#: src/lib/common.sh:164
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "Jogosultságszint-emelési parancs szükséges (sudo, doas vagy run0)\\n"
 
-#: src/lib/common.sh:166
+#: src/lib/common.sh:169
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
@@ -70,7 +70,7 @@ msgstr ""
 "A(z) ${su_cmd} arch-update.conf konfigurációs fájlban, a jogosultságok "
 "kiterjesztéséhez beállított parancs nem található\\n"
 
-#: src/lib/common.sh:174
+#: src/lib/common.sh:179
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

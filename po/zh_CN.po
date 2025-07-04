@@ -46,26 +46,26 @@ msgstr "按下 \"enter\" 继续"
 msgid "Press \"enter\" to quit "
 msgstr "按下 \"enter\" 退出"
 
-#: src/lib/common.sh:134
+#: src/lib/common.sh:135
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-"
 "update.conf configuration file is not found\\n"
 msgstr "配置在 arch-update.conf 文件中的 AUR 帮助程序 ${aur_helper} 未找到\\n"
 
-#: src/lib/common.sh:161
+#: src/lib/common.sh:164
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr "需要特权提升命令程序（sudo、doas 或 run0）\\n"
 
-#: src/lib/common.sh:166
+#: src/lib/common.sh:169
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
 msgstr "配置在 arch-update.conf 文件中的特权提升命令程序 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:174
+#: src/lib/common.sh:179
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
