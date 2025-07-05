@@ -74,7 +74,8 @@ main_msg() {
 # Definition of the info_msg function: Display a message as an information message
 info_msg() {
 	msg="${1}"
-	echo -e "${green}==>${color_off}${bold} ${msg}${color_off}"
+	[ -n "${2}" ] && opt="${2}"
+	echo -e "${opt}" "${green}==>${color_off}${bold} ${msg}${color_off}"
 }
 
 # Definition of the ask_msg function: Display a message as an interactive question

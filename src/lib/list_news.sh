@@ -4,12 +4,12 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-info_msg "$(eval_gettext "Looking for recent Arch News...")"
+info_msg "$(eval_gettext "Looking for recent Arch News... ")" "-n"
 # shellcheck disable=SC2154
 news=$(curl -m "${news_timeout}" -Lfs https://www.archlinux.org/news || echo "error")
+echo -en "\r$(tput el)"
 
 if [ "${news}" == "error" ]; then
-	echo
 	warning_msg "$(eval_gettext "Unable to retrieve recent Arch News (HTTP error response or request timeout)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
 else
 	if [ -z "${show_news}" ]; then
@@ -19,8 +19,7 @@ else
 		if ! diff "${statedir}/current_news_check" "${statedir}/last_news_check" &> /dev/null; then
 			show_news="true"
 		else
-			echo
-			info_msg "$(eval_gettext "No recent Arch News found")"
+			info_msg "$(eval_gettext "No recent Arch News found\n")"
 		fi
 
 		if [ -f "${statedir}/current_news_check" ]; then
@@ -33,7 +32,6 @@ else
 		news_titles=$(echo "${news}" | htmlq -a title a | grep ^"View:" | sed "s/View:\ //g" | head -"${news_num}")
 		mapfile -t news_dates < <(echo "${news}" | htmlq td | grep -v "class" | grep "[0-9]" | sed "s/<[^>]*>//g" | head -"${news_num}" | xargs -I{} date -d "{}" "+%s")
 
-		echo
 		main_msg "$(eval_gettext "Arch News:")"
 
 		i=1

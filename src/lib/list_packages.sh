@@ -4,7 +4,7 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-info_msg "$(eval_gettext "Looking for updates...\n")"
+info_msg "$(eval_gettext "Looking for updates... ")" "-n"
 
 # shellcheck disable=SC2154
 checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
@@ -36,6 +36,7 @@ true > "${statedir}/last_updates_check"
 true > "${statedir}/last_updates_check_packages"
 true > "${statedir}/last_updates_check_aur"
 true > "${statedir}/last_updates_check_flatpak"
+echo -en "\r$(tput el)"
 
 if [ -n "${packages}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
