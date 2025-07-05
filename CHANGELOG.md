@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.12.7](https://github.com/Antiz96/arch-update/releases/tag/v3.12.7) - 2025-07-05
+
+### Fixes
+
+- *(DiffProg)* Fix command parsing ([#392](https://github.com/Antiz96/arch-update/pull/392)) - ([47736ef](https://github.com/Antiz96/arch-update/commit/47736efb1bdd7cd0ea08eed5992cd5434901cd32)) by @Antiz96
+- *(DiffProg)* Fix value parsing ([#391](https://github.com/Antiz96/arch-update/pull/391)) - ([2685d81](https://github.com/Antiz96/arch-update/commit/2685d816df0b3f55b02c5a4c006f66521b363816)) by @Antiz96
+- *(kernel upgrade detection)* Expand skip condition to containers ([#390](https://github.com/Antiz96/arch-update/pull/390)) - ([d972461](https://github.com/Antiz96/arch-update/commit/d9724613e317f4f9913b73262494e18457fa728c)) by @Antiz96
+- Relax requirement checks ([#393](https://github.com/Antiz96/arch-update/pull/393)) - ([d06254e](https://github.com/Antiz96/arch-update/commit/d06254e36f197d13fbaba1f9527e11d34ac99f5c)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#394](https://github.com/Antiz96/arch-update/pull/394)) - ([efc67d5](https://github.com/Antiz96/arch-update/commit/efc67d5131f7abb53a6fa2350d8b0444bb949586)) by @Antiz96
+
 ## [v3.12.6](https://github.com/Antiz96/arch-update/releases/tag/v3.12.6) - 2025-06-10
 
 ### Documentation
