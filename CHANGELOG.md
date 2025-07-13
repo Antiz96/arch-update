@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.12.8](https://github.com/Antiz96/arch-update/releases/tag/v3.12.8) - 2025-07-13
+
+### Fixes
+
+- Skip kernel upgrade check if the kernel-modules-hook package is installed ([#397](https://github.com/Antiz96/arch-update/pull/397)) - ([15503b0](https://github.com/Antiz96/arch-update/commit/15503b0c76fcb2bceeae43b90e6544b36c04bc46)) by @ChrisTX
+
 ## [v3.12.7](https://github.com/Antiz96/arch-update/releases/tag/v3.12.7) - 2025-07-05
 
 ### Fixes
