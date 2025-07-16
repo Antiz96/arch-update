@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.13.0](https://github.com/Antiz96/arch-update/releases/tag/v3.13.0) - 2025-07-16
+
+### Features
+
+- *(notification)* Add click actions to run Arch-Update and dismiss notifications ([#398](https://github.com/Antiz96/arch-update/pull/398)) - ([8164c27](https://github.com/Antiz96/arch-update/commit/8164c27d1b04e1e940bb42dfaa8b1da87670264d)) by @Antiz96
+
 ## [v3.12.8](https://github.com/Antiz96/arch-update/releases/tag/v3.12.8) - 2025-07-13
 
 ### Fixes
