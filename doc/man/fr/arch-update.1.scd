@@ -243,6 +243,9 @@ Voir https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#config
 *17*
 	Une autre instance d'Arch-Update est déjà en cours d'exécution.
 
+*18*
+	Erreur lors de l'exécution d'Arch-Update depuis l'action de la notification de bureau.
+
 # VOIR AUSSI
 
 *checkupdates*(8),

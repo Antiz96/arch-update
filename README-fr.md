@@ -150,9 +150,9 @@ Avec [le timer systemd](#le-timer-systemd) activé, les vérifications des mises
 
 ![check_for_updates-fr](https://github.com/user-attachments/assets/b0809b17-2ce2-41a2-85b6-e2b3aa21730f)
 
-Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée :
+Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée. Vous pouvez directement lancer Arch-Update depuis cette dernière ou la fermer grâce aux actions de clique associées.
 
-![notif-fr](https://github.com/user-attachments/assets/b3074773-c683-4ace-bbcf-959c6e916ae1)
+![notif-fr](https://github.com/user-attachments/assets/be242dc1-eddb-453d-ae1a-404845530889)
 
 Vous pouvez voir la liste des mises à jour disponibles depuis le menu en faisant un clic droit sur l'icône du systray.  
 Un menu déroulant contenant le nombre et la liste des mises à jour disponibles est dynamiquement créé pour chaque sources qui en possède (Paquets, AUR, Flatpak).  

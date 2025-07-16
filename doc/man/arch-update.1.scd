@@ -243,6 +243,9 @@ See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configu
 *17*
 	Another instance of Arch-Update is already running.
 
+*18*
+	Error when running Arch-Update from the desktop notification action.
+
 # SEE ALSO
 
 *checkupdates*(8),
