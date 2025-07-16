@@ -16,14 +16,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:54 src/lib/check.sh:57
+#: src/lib/check.sh:57 src/lib/check.sh:60
 #, sh-format
 msgid "${update_number} update available"
 msgstr ""
 
-#: src/lib/check.sh:62 src/lib/check.sh:64
+#: src/lib/check.sh:57 src/lib/check.sh:60 src/lib/check.sh:64
+#: src/lib/check.sh:66 src/lib/tray.py:296
+#, sh-format
+msgid "Run Arch-Update"
+msgstr ""
+
+#: src/lib/check.sh:57 src/lib/check.sh:60 src/lib/check.sh:64
+#: src/lib/check.sh:66
+#, sh-format
+msgid "Close"
+msgstr ""
+
+#: src/lib/check.sh:64 src/lib/check.sh:66
 #, sh-format
 msgid "${update_number} updates available"
+msgstr ""
+
+#: src/lib/check.sh:82
+#, sh-format
+msgid "Arch-Update desktop file not found"
 msgstr ""
 
 #: src/lib/common.sh:97
@@ -638,10 +655,6 @@ msgstr ""
 
 #: src/lib/tray.py:290 src/lib/tray.py:295
 msgid "Arch-Update"
-msgstr ""
-
-#: src/lib/tray.py:296
-msgid "Run Arch-Update"
 msgstr ""
 
 #: src/lib/tray.py:297

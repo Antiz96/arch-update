@@ -150,9 +150,9 @@ With [the systemd timer](#the-systemd-timer) enabled, checks for updates are aut
 
 ![check_for_updates](https://github.com/user-attachments/assets/efd190f5-4338-4204-a19b-0a6f138b4435)
 
-If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent:
+If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent. You can directly run Arch-Update from it or close / dismiss it thanks to the related click actions.
 
-![notif](https://github.com/user-attachments/assets/976a435f-db44-477a-b339-1b257639501a)
+![notif](https://github.com/user-attachments/assets/ce8c9229-9b36-484a-8561-bcb69b06310a)
 
 You can see the list of available updates from the menu by right-clicking the systray icon.  
 A dropdown menu displaying the number and the list of pending updates is dynamically created for each sources that have some (Packages, AUR, Flatpak).  
