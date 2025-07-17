@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.13.1](https://github.com/Antiz96/arch-update/releases/tag/v3.13.1) - 2025-07-17
+
+### Fixes
+
+- *(notification)* Fix updates count ([#399](https://github.com/Antiz96/arch-update/pull/399)) - ([a884b09](https://github.com/Antiz96/arch-update/commit/a884b09183ec908b4b12ff14fc544b94e01da841)) by @Antiz96
+
 ## [v3.13.0](https://github.com/Antiz96/arch-update/releases/tag/v3.13.0) - 2025-07-16
 
 ### Features
