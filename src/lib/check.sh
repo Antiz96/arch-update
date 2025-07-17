@@ -44,13 +44,13 @@ if [ -n "${update_available}" ]; then
 	icon_updates-available
 
 	if [ -n "${notification_support}" ]; then
-		(
 		if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
 			update_number=$(wc -l "${statedir}/current_updates_check" | awk '{print $1}')
 
 			# shellcheck disable=SC2154
 			last_notif_id=$(sed -n '1p' "${tmpdir}/notif_param" 2> /dev/null)
 
+			(
 			if [ "${update_number}" -eq 1 ]; then
 				if [ -z "${last_notif_id}" ]; then
 					# shellcheck disable=SC2154
@@ -90,8 +90,8 @@ if [ -n "${update_available}" ]; then
 					gio launch "${desktop_file}" || exit 18
 				fi
 			fi
+			) & disown
 		fi
-		) & disown
 	fi
 else
 	icon_up-to-date
