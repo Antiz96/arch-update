@@ -9,6 +9,7 @@
 # shellcheck disable=SC1091
 . gettext.sh
 
+# shellcheck disable=SC2154
 if [ "${update_number}" -eq 1 ]; then
 	if [ -z "${last_notif_id}" ]; then
 		# shellcheck disable=SC2154
@@ -45,6 +46,6 @@ if [ "$(sed -n '2p' "${tmpdir}/notif_param")" == "run" ]; then
 	exec 9>"${tmpdir}/notif_action.lock"
 
 	if flock -n 9; then
-		systemd-run --user --scope --unit=arch-update-run-$(date +%Y%m%d-%H%M%S) --quiet /bin/bash -c "gio launch ${desktop_file}" || exit 18
+		systemd-run --user --scope --unit=arch-update-run-"$(date +%Y%m%d-%H%M%S)" --quiet /bin/bash -c "gio launch ${desktop_file}" || exit 18
 	fi
 fi
