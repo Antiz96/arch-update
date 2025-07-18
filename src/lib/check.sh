@@ -50,47 +50,27 @@ if [ -n "${update_available}" ]; then
 			# shellcheck disable=SC2154
 			last_notif_id=$(sed -n '1p' "${tmpdir}/notif_param" 2> /dev/null)
 
-			(
-			if [ "${update_number}" -eq 1 ]; then
-				if [ -z "${last_notif_id}" ]; then
-					# shellcheck disable=SC2154
-					notify-send -p -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run Arch-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
-				else
-					# shellcheck disable=SC2154
-					notify-send -p -r "${last_notif_id}" -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run Arch-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
-				fi
-			else
-				if [ -z "${last_notif_id}" ]; then
-					notify-send -p -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run Arch-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
-				else
-					notify-send -p -r "${last_notif_id}" -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run Arch-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
-				fi
-			fi
-			
-			# shellcheck disable=SC2154
-			if [ -f "${XDG_DATA_HOME}/applications/${name}.desktop" ]; then
-				desktop_file="${XDG_DATA_HOME}/applications/${name}.desktop"
-			elif [ -f "${HOME}/.local/share/applications/${name}.desktop" ]; then
-				desktop_file="${HOME}/.local/share/applications/${name}.desktop"
-			elif [ -f "${XDG_DATA_DIRS}/applications/${name}.desktop" ]; then
-				desktop_file="${XDG_DATA_DIRS}/applications/${name}.desktop"
-			elif [ -f "/usr/local/share/applications/${name}.desktop" ]; then
-				desktop_file="/usr/local/share/applications/${name}.desktop"
-			elif [ -f "/usr/share/applications/${name}.desktop" ]; then
-				desktop_file="/usr/share/applications/${name}.desktop"
-			else
-				error_msg "$(eval_gettext "Arch-Update desktop file not found")"
-				exit 18
-			fi
-
-			if [ "$(sed -n '2p' "${tmpdir}/notif_param")" == "run" ]; then
-				exec 9>"${tmpdir}/notif_action.lock"
-
-				if flock -n 9; then
-					gio launch "${desktop_file}" || exit 18
-				fi
-			fi
-			) & disown
+			systemd-run --user --unit=arch-update-notification-$(date +%Y%m%d-%H%M%S) --quiet \
+				--setenv=DISPLAY="${DISPLAY}" \
+				--setenv=DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS}" \
+				--setenv=TEXTDOMAIN="${_name}" \
+				--setenv=TEXTDOMAINDIR="${TEXTDOMAINDIR}" \
+				--setenv=LANG="${LANG}" \
+				--setenv=LANGUAGE="${LANGUAGE}" \
+				--setenv=LC_ALL="${LC_ALL}" \
+				--setenv=LC_MESSAGES="${LC_MESSAGES}" \
+				--setenv=XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR}" \
+				--setenv=XDG_DATA_HOME="${XDG_DATA_HOME}" \
+				--setenv=XDG_DATA_DIRS="${XDG_DATA_DIRS}" \
+				--setenv=HOME="${HOME}" \
+				--setenv=update_number="${update_number}" \
+				--setenv=last_notif_id="${last_notif_id}" \
+				--setenv=_name="${_name}" \
+				--setenv=name="${name}" \
+				--setenv=tray_icon_style="${tray_icon_style}" \
+				--setenv=tmpdir="${tmpdir}" \
+				--setenv=desktop_file="${desktop_file}" \
+			 "${libdir}/notification.sh"
 		fi
 	fi
 else
