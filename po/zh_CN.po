@@ -16,33 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/check.sh:57 src/lib/check.sh:60
-#, sh-format
-msgid "${update_number} update available"
-msgstr "${update_number} 个更新可用"
-
-#: src/lib/check.sh:57 src/lib/check.sh:60 src/lib/check.sh:64
-#: src/lib/check.sh:66 src/lib/tray.py:296
-#, sh-format
-msgid "Run Arch-Update"
-msgstr "运行 Arch-Update"
-
-#: src/lib/check.sh:57 src/lib/check.sh:60 src/lib/check.sh:64
-#: src/lib/check.sh:66
-#, sh-format
-msgid "Close"
-msgstr "关闭"
-
-#: src/lib/check.sh:64 src/lib/check.sh:66
-#, sh-format
-msgid "${update_number} updates available"
-msgstr "${update_number} 个更新可用"
-
-#: src/lib/check.sh:82
-#, sh-format
-msgid "Arch-Update desktop file not found"
-msgstr "Arch-Update 桌面文件未找到"
-
 #: src/lib/common.sh:97
 #, sh-format
 msgid "WARNING"
@@ -424,6 +397,33 @@ msgstr "是否现在进行更新？[Y/n]"
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "更新已取消\\n"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#, sh-format
+msgid "${update_number} update available"
+msgstr "${update_number} 个更新可用"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:296
+#, sh-format
+msgid "Run Arch-Update"
+msgstr "运行 Arch-Update"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "Close"
+msgstr "关闭"
+
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "${update_number} updates available"
+msgstr "${update_number} 个更新可用"
+
+#: src/lib/notification.sh:41
+#, sh-format
+msgid "Arch-Update desktop file not found"
+msgstr "Arch-Update 桌面文件未找到"
 
 #: src/lib/orphan_packages.sh:14
 #, sh-format
