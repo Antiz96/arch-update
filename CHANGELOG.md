@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.13.2](https://github.com/Antiz96/arch-update/releases/tag/v3.13.2) - 2025-07-18
+
+### Fixes
+
+- *(notification)* Switch to `systemd-run` to detach desktop notifications processes ([#401](https://github.com/Antiz96/arch-update/pull/401)) - ([4299cff](https://github.com/Antiz96/arch-update/commit/4299cff92457ea6b4d9f640e0eac32c97ad6e7de)) by @Antiz96
+
 ## [v3.13.1](https://github.com/Antiz96/arch-update/releases/tag/v3.13.1) - 2025-07-17
 
 ### Fixes
