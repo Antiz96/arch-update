@@ -39,11 +39,11 @@ msgstr "Tryck på \"enter\" för att avsluta "
 #: src/lib/common.sh:135
 #, sh-format
 msgid ""
-"The ${aur_helper} AUR helper set for AUR packages support in the arch-"
-"update.conf configuration file is not found\\n"
+"The ${aur_helper} AUR helper set for AUR packages support in the "
+"${name}.conf configuration file is not found\\n"
 msgstr ""
 "${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
-"konfigurationsfilen arch-update.conf hittades inte\\n"
+"konfigurationsfilen ${name}.conf hittades inte\\n"
 
 #: src/lib/common.sh:164
 #, sh-format
@@ -53,29 +53,29 @@ msgstr "Ett kommando för behörighetshöjning krävs (sudo, doas eller run0)\\n
 #: src/lib/common.sh:169
 #, sh-format
 msgid ""
-"The ${su_cmd} command set for privilege escalation in the arch-update.conf "
+"The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
-"${su_cmd}-kommandot inställt för privilegieskalering i arch-update.conf-"
+"${su_cmd}-kommandot inställt för privilegieskalering i ${name}.conf-"
 "konfigurationsfilen hittades inte\\n"
 
 #: src/lib/common.sh:179
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
-"files in the arch-update.conf configuration file is not found\\n"
+"files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
 "${diff_prog}-redigeraren som är inställd för att visualisera/redigera "
-"skillnader mellan pacnew-filer i konfigurationsfilen arch-update.conf "
+"skillnader mellan pacnew-filer i konfigurationsfilen ${name}.conf "
 "hittades inte\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
 msgid ""
-"No configuration file found\\nYou can generate one with \"arch-update --gen-"
+"No configuration file found\\nYou can generate one with \"${name} --gen-"
 "config\""
 msgstr ""
-"Ingen konfigurationsfil hittades\\nDu kan skapa en med \"arch-update --gen-"
+"Ingen konfigurationsfil hittades\\nDu kan skapa en med \"${name} --gen-"
 "config\""
 
 #: src/lib/edit-config.sh:13
@@ -90,8 +90,8 @@ msgstr ""
 
 #: src/lib/full_upgrade.sh:10
 #, sh-format
-msgid "There's already a running instance of Arch-Update\\n"
-msgstr "Det finns redan en pågående instans av Arch-Update\\n"
+msgid "There's already a running instance of ${_name}\\n"
+msgstr "Det finns redan en pågående instans av ${_name}\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -206,39 +206,39 @@ msgstr "  -D, --debug       Visa felsökningsspår"
 #: src/lib/help.sh:22
 #, sh-format
 msgid ""
-"  --gen-config      Generate a default / example 'arch-update.conf' "
+"  --gen-config      Generate a default / example '${name}.conf' "
 "configuration file, you can optionally pass the '--force' argument to "
-"overwrite any existing 'arch-update.conf' configuration file"
+"overwrite any existing '${name}.conf' configuration file"
 msgstr ""
 "  --gen-config      Generera en standard/exempel konfigurationsfil för 'arch-"
 "update.conf', du kan skicka valfritt argumentet '--force' för att skriva "
-"över alla befintliga konfigurationsfiler för 'arch-update.conf'"
+"över alla befintliga konfigurationsfiler för '${name}.conf'"
 
 #: src/lib/help.sh:23
 #, sh-format
 msgid ""
-"  --show-config     Display the 'arch-update.conf' configuration file "
-"currently used (if it exists)"
+"  --show-config     Display the '${name}.conf' configuration file currently "
+"used (if it exists)"
 msgstr ""
-"  --show-config     Visa \"arch-update.conf\"-konfigurationsfilen som "
+"  --show-config     Visa \"${name}.conf\"-konfigurationsfilen som "
 "används för närvarande (om den finns)"
 
 #: src/lib/help.sh:24
 #, sh-format
 msgid ""
-"  --edit-config     Edit the 'arch-update.conf' configuration file currently "
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
-"  --edit-config     Redigera \"arch-update.conf\"-konfigurationsfilen som "
+"  --edit-config     Redigera \"${name}.conf\"-konfigurationsfilen som "
 "används för närvarande (om den finns)"
 
 #: src/lib/help.sh:25
 #, sh-format
 msgid ""
-"  --tray            Launch the Arch-Update systray applet, you can "
-"optionally add the '--enable' argument to start it automatically at boot"
+"  --tray            Launch the ${_name} systray applet, you can optionally "
+"add the '--enable' argument to start it automatically at boot"
 msgstr ""
-"  --tray            Starta Arch-Update systemfält-appleten, du kan valfritt "
+"  --tray            Starta ${_name} systemfält-appleten, du kan valfritt "
 "lägga till argumentet '--enable' för att starta den automatiskt vid uppstart"
 
 #: src/lib/help.sh:26
@@ -450,10 +450,10 @@ msgid "${update_number} update available"
 msgstr "${update_number} uppdatering är tillgänglig"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:296
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
-msgid "Run Arch-Update"
-msgstr "Kör Arch-Update"
+msgid "Run ${_name}"
+msgstr "Kör ${_name}"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
@@ -468,8 +468,8 @@ msgstr "${update_number} uppdateringar är tillgängliga"
 
 #: src/lib/notification.sh:41
 #, sh-format
-msgid "Arch-Update desktop file not found"
-msgstr "Arch-Update skrivbordsfil hittades inte"
+msgid "${_name} desktop file not found"
+msgstr "${_name} skrivbordsfil hittades inte"
 
 #: src/lib/orphan_packages.sh:14
 #, sh-format
@@ -735,6 +735,10 @@ msgstr "Flatpak ({updates})"
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
+#: src/lib/tray.py:296
+msgid "Run Arch-Update"
+msgstr "Kör Arch-Update"
+
 #: src/lib/tray.py:297
 msgid "Check for updates"
 msgstr "Sök efter uppdateringar"
@@ -761,8 +765,8 @@ msgstr "Flatpak"
 
 #: src/lib/tray.sh:20
 #, sh-format
-msgid "Arch-Update tray desktop file not found"
-msgstr "Arch-Update skrivbordsfält skrivbordsfil hittades inte"
+msgid "${_name} tray desktop file not found"
+msgstr "${_name} skrivbordsfält skrivbordsfil hittades inte"
 
 #: src/lib/tray.sh:27
 #, sh-format
@@ -772,20 +776,20 @@ msgstr "Filen '${tray_desktop_file_autostart}' existerar redan"
 #: src/lib/tray.sh:32
 #, sh-format
 msgid ""
-"The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
+"The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at your next log on\\nTo start "
-"it right now, you can launch the \"Arch-Update Systray Applet\" application "
+"it right now, you can launch the \"${_name} Systray Applet\" application "
 "from your app menu"
 msgstr ""
-"Filen '${tray_desktop_file_autostart}' har skapats, Arch-Update systemfält-"
+"Filen '${tray_desktop_file_autostart}' har skapats, ${_name} systemfält-"
 "appleten startas automatiskt vid din nästa inloggning\\nFör att starta den "
-"direkt kan du starta programmet \"Arch-Update Systray Applet\" från din "
+"direkt kan du starta programmet \"${_name} Systray Applet\" från din "
 "program meny"
 
 #: src/lib/tray.sh:47
 #, sh-format
-msgid "There's already a running instance of the Arch-Update systray applet"
-msgstr "Det finns redan en körande instans av Arch-Update systemfält-appleten"
+msgid "There's already a running instance of the ${_name} systray applet"
+msgstr "Det finns redan en körande instans av ${_name} systemfält-appleten"
 
 #: src/lib/update.sh:9
 #, sh-format

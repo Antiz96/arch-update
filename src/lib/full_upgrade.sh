@@ -7,7 +7,7 @@
 # Exit if a lock file already exists (meaning there's already a running instance of Arch-Update)
 # shellcheck disable=SC2154
 if [ -f "${lock_file}" ]; then
-	error_msg "$(eval_gettext "There's already a running instance of Arch-Update\n")" && quit_msg
+	error_msg "$(eval_gettext "There's already a running instance of \${_name}\n")" && quit_msg
 	trap - EXIT
 	exit 17
 fi

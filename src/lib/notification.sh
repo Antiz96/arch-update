@@ -13,16 +13,16 @@
 if [ "${update_number}" -eq 1 ]; then
 	if [ -z "${last_notif_id}" ]; then
 		# shellcheck disable=SC2154
-		notify-send -p -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run Arch-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
+		notify-send -p -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run \${_name}")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
 	else
 		# shellcheck disable=SC2154
-		notify-send -p -r "${last_notif_id}" -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run Arch-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
+		notify-send -p -r "${last_notif_id}" -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run \${_name}")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
 	fi
 else
 	if [ -z "${last_notif_id}" ]; then
-		notify-send -p -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run Arch-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
+		notify-send -p -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run \${_name}")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
 	else
-		notify-send -p -r "${last_notif_id}" -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run Arch-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
+		notify-send -p -r "${last_notif_id}" -a "${_name}" -i "${name}_updates-available-${tray_icon_style}" "${_name}" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run \${_name}")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
 	fi
 fi
 
@@ -38,7 +38,7 @@ elif [ -f "/usr/local/share/applications/${name}.desktop" ]; then
 elif [ -f "/usr/share/applications/${name}.desktop" ]; then
 	desktop_file="/usr/share/applications/${name}.desktop"
 else
-	error_msg "$(eval_gettext "Arch-Update desktop file not found")"
+	error_msg "$(eval_gettext "\${_name} desktop file not found")"
 	exit 18
 fi
 
@@ -46,6 +46,6 @@ if [ "$(sed -n '2p' "${tmpdir}/notif_param")" == "run" ]; then
 	exec 9>"${tmpdir}/notif_action.lock"
 
 	if flock -n 9; then
-		systemd-run --user --scope --unit=arch-update-run-"$(date +%Y%m%d-%H%M%S)" --quiet /bin/bash -c "gio launch ${desktop_file}" || exit 18
+		systemd-run --user --scope --unit="${name}"-run-"$(date +%Y%m%d-%H%M%S)" --quiet /bin/bash -c "gio launch ${desktop_file}" || exit 18
 	fi
 fi

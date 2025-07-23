@@ -40,11 +40,11 @@ msgstr "Nyomja meg az „enter” gombot a kilépéshez "
 #: src/lib/common.sh:135
 #, sh-format
 msgid ""
-"The ${aur_helper} AUR helper set for AUR packages support in the arch-"
-"update.conf configuration file is not found\\n"
+"The ${aur_helper} AUR helper set for AUR packages support in the "
+"${name}.conf configuration file is not found\\n"
 msgstr ""
 "A(z) ${aur_helper} AUR-csomagok AUR-segédkészletének támogatása nem található "
-"az arch-update.conf konfigurációs fájlban\\n"
+"az ${name}.conf konfigurációs fájlban\\n"
 
 #: src/lib/common.sh:164
 #, sh-format
@@ -54,28 +54,28 @@ msgstr "Jogosultságszint-emelési parancs szükséges (sudo, doas vagy run0)\\n
 #: src/lib/common.sh:169
 #, sh-format
 msgid ""
-"The ${su_cmd} command set for privilege escalation in the arch-update.conf "
+"The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
-"A(z) ${su_cmd} arch-update.conf konfigurációs fájlban, a jogosultságok "
+"A(z) ${su_cmd} ${name}.conf konfigurációs fájlban, a jogosultságok "
 "kiterjesztéséhez beállított parancs nem található\\n"
 
 #: src/lib/common.sh:179
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
-"files in the arch-update.conf configuration file is not found\\n"
+"files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
-"A(z) ${diff_prog} arch-update.conf konfigurációs fájlban nem található a "
+"A(z) ${diff_prog} ${name}.conf konfigurációs fájlban nem található a "
 "pacnew fájlok összehasonlításának megjelenítésére / szerkesztésére beállított szerkesztő\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
 msgid ""
-"No configuration file found\\nYou can generate one with \"arch-update --gen-"
+"No configuration file found\\nYou can generate one with \"${name} --gen-"
 "config\""
 msgstr ""
-"Nem található konfigurációs fájl\\nAz „arch-update --gen-config” paranccsal "
+"Nem található konfigurációs fájl\\nAz „${name} --gen-config” paranccsal "
 "előállíthat egyet."
 
 #: src/lib/edit-config.sh:13
@@ -89,8 +89,8 @@ msgstr ""
 
 #: src/lib/full_upgrade.sh:10
 #, sh-format
-msgid "There's already a running instance of Arch-Update\\n"
-msgstr "Már van egy futó példánya az Arch-Update\\n"
+msgid "There's already a running instance of ${_name}\\n"
+msgstr "Már van egy futó példánya az ${_name}\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -203,39 +203,39 @@ msgstr "  -D, --debug       Hibakeresési nyomonkövetések megjelenítése"
 #: src/lib/help.sh:22
 #, sh-format
 msgid ""
-"  --gen-config      Generate a default / example 'arch-update.conf' "
+"  --gen-config      Generate a default / example '${name}.conf' "
 "configuration file, you can optionally pass the '--force' argument to "
-"overwrite any existing 'arch-update.conf' configuration file"
+"overwrite any existing '${name}.conf' configuration file"
 msgstr ""
-"  --gen-config      Előállít egy alapértelmezett / példa „arch-update.conf” "
+"  --gen-config      Előállít egy alapértelmezett / példa „${name}.conf” "
 "konfigurációs fájlt. Átadhatja a „--force” argumentumot, hogy felülírja a "
-"meglévő „arch-update.conf” konfigurációs fájlt – Nem kötelező"
+"meglévő „${name}.conf” konfigurációs fájlt – Nem kötelező"
 
 #: src/lib/help.sh:23
 #, sh-format
 msgid ""
-"  --show-config     Display the 'arch-update.conf' configuration file "
-"currently used (if it exists)"
+"  --show-config     Display the '${name}.conf' configuration file currently "
+"used (if it exists)"
 msgstr ""
-"  --show-config     Megjeleníti a jelenleg használt „arch-update.conf” "
+"  --show-config     Megjeleníti a jelenleg használt „${name}.conf” "
 "konfigurációs fájlt (ha létezik)"
 
 #: src/lib/help.sh:24
 #, sh-format
 msgid ""
-"  --edit-config     Edit the 'arch-update.conf' configuration file currently "
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
-"  --edit-config     Szerkeszti a jelenleg használt „arch-update.conf” "
+"  --edit-config     Szerkeszti a jelenleg használt „${name}.conf” "
 "konfigurációs fájlt (ha létezik)"
 
 #: src/lib/help.sh:25
 #, sh-format
 msgid ""
-"  --tray            Launch the Arch-Update systray applet, you can "
-"optionally add the '--enable' argument to start it automatically at boot"
+"  --tray            Launch the ${_name} systray applet, you can optionally "
+"add the '--enable' argument to start it automatically at boot"
 msgstr ""
-"  --tray            Elindítja el az Arch-Update rendszertálca kisalkalmazást. "
+"  --tray            Elindítja el az ${_name} rendszertálca kisalkalmazást. "
 "Hozzáadhatja az „-enable” argumentumot, hogy automatikusan elinduljon a rendszerindításkor – Nem kötelező"
 
 #: src/lib/help.sh:26
@@ -448,10 +448,10 @@ msgid "${update_number} update available"
 msgstr "${update_number} frissítés érhető el"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:296
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
-msgid "Run Arch-Update"
-msgstr "Arch-Update futtatása"
+msgid "Run ${_name}"
+msgstr "${_name} futtatása"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
@@ -466,8 +466,8 @@ msgstr "${update_number} frissítés érhető el"
 
 #: src/lib/notification.sh:41
 #, sh-format
-msgid "Arch-Update desktop file not found"
-msgstr "Az Arch-Update asztali fájlja nem található"
+msgid "${_name} desktop file not found"
+msgstr "Az ${_name} asztali fájlja nem található"
 
 #: src/lib/orphan_packages.sh:14
 #, sh-format
@@ -731,6 +731,10 @@ msgstr "Flatpak ({updates})"
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
+#: src/lib/tray.py:296
+msgid "Run Arch-Update"
+msgstr "Arch-Update futtatása"
+
 #: src/lib/tray.py:297
 msgid "Check for updates"
 msgstr "Frissítések keresése"
@@ -757,8 +761,8 @@ msgstr "Flatpak"
 
 #: src/lib/tray.sh:20
 #, sh-format
-msgid "Arch-Update tray desktop file not found"
-msgstr "Az Arch-Update tálcájának asztali fájlja nem található"
+msgid "${_name} tray desktop file not found"
+msgstr "Az ${_name} tálcájának asztali fájlja nem található"
 
 #: src/lib/tray.sh:27
 #, sh-format
@@ -768,20 +772,20 @@ msgstr "A(z) „${tray_desktop_file_autostart}” fájl már létezik"
 #: src/lib/tray.sh:32
 #, sh-format
 msgid ""
-"The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
+"The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at your next log on\\nTo start "
-"it right now, you can launch the \"Arch-Update Systray Applet\" application "
+"it right now, you can launch the \"${_name} Systray Applet\" application "
 "from your app menu"
 msgstr ""
-"A „${tray_desktop_file_autostart}” fájl létrejött, az Arch-Update "
+"A „${tray_desktop_file_autostart}” fájl létrejött, az ${_name} "
 "rendszertálca-kisalkalmazás automatikusan elindul a következő "
 "bejelentkezéskor\\nHa most azonnal el szeretné indítani, futtassa az „Arch-"
 "Update rendszertálca-kisalkalmazást”, a rendszer alkalmazásindító-menüjéből"
 
 #: src/lib/tray.sh:47
 #, sh-format
-msgid "There's already a running instance of the Arch-Update systray applet"
-msgstr "Már fut egy példány az Arch-Update rendszertálca-kisalkalmazásból"
+msgid "There's already a running instance of the ${_name} systray applet"
+msgstr "Már fut egy példány az ${_name} rendszertálca-kisalkalmazásból"
 
 #: src/lib/update.sh:9
 #, sh-format

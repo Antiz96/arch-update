@@ -39,8 +39,8 @@ msgstr ""
 #: src/lib/common.sh:135
 #, sh-format
 msgid ""
-"The ${aur_helper} AUR helper set for AUR packages support in the arch-"
-"update.conf configuration file is not found\\n"
+"The ${aur_helper} AUR helper set for AUR packages support in the "
+"${name}.conf configuration file is not found\\n"
 msgstr ""
 
 #: src/lib/common.sh:164
@@ -51,7 +51,7 @@ msgstr ""
 #: src/lib/common.sh:169
 #, sh-format
 msgid ""
-"The ${su_cmd} command set for privilege escalation in the arch-update.conf "
+"The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
 
@@ -59,13 +59,13 @@ msgstr ""
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
-"files in the arch-update.conf configuration file is not found\\n"
+"files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
 msgid ""
-"No configuration file found\\nYou can generate one with \"arch-update --gen-"
+"No configuration file found\\nYou can generate one with \"${name} --gen-"
 "config\""
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr ""
 
 #: src/lib/full_upgrade.sh:10
 #, sh-format
-msgid "There's already a running instance of Arch-Update\\n"
+msgid "There's already a running instance of ${_name}\\n"
 msgstr ""
 
 #: src/lib/gen-config.sh:19
@@ -175,30 +175,30 @@ msgstr ""
 #: src/lib/help.sh:22
 #, sh-format
 msgid ""
-"  --gen-config      Generate a default / example 'arch-update.conf' "
+"  --gen-config      Generate a default / example '${name}.conf' "
 "configuration file, you can optionally pass the '--force' argument to "
-"overwrite any existing 'arch-update.conf' configuration file"
+"overwrite any existing '${name}.conf' configuration file"
 msgstr ""
 
 #: src/lib/help.sh:23
 #, sh-format
 msgid ""
-"  --show-config     Display the 'arch-update.conf' configuration file "
-"currently used (if it exists)"
+"  --show-config     Display the '${name}.conf' configuration file currently "
+"used (if it exists)"
 msgstr ""
 
 #: src/lib/help.sh:24
 #, sh-format
 msgid ""
-"  --edit-config     Edit the 'arch-update.conf' configuration file currently "
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
 
 #: src/lib/help.sh:25
 #, sh-format
 msgid ""
-"  --tray            Launch the Arch-Update systray applet, you can "
-"optionally add the '--enable' argument to start it automatically at boot"
+"  --tray            Launch the ${_name} systray applet, you can optionally "
+"add the '--enable' argument to start it automatically at boot"
 msgstr ""
 
 #: src/lib/help.sh:26
@@ -391,9 +391,9 @@ msgid "${update_number} update available"
 msgstr ""
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:296
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
-msgid "Run Arch-Update"
+msgid "Run ${_name}"
 msgstr ""
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
@@ -409,7 +409,7 @@ msgstr ""
 
 #: src/lib/notification.sh:41
 #, sh-format
-msgid "Arch-Update desktop file not found"
+msgid "${_name} desktop file not found"
 msgstr ""
 
 #: src/lib/orphan_packages.sh:14
@@ -657,6 +657,10 @@ msgstr ""
 msgid "Arch-Update"
 msgstr ""
 
+#: src/lib/tray.py:296
+msgid "Run Arch-Update"
+msgstr ""
+
 #: src/lib/tray.py:297
 msgid "Check for updates"
 msgstr ""
@@ -683,7 +687,7 @@ msgstr ""
 
 #: src/lib/tray.sh:20
 #, sh-format
-msgid "Arch-Update tray desktop file not found"
+msgid "${_name} tray desktop file not found"
 msgstr ""
 
 #: src/lib/tray.sh:27
@@ -694,15 +698,15 @@ msgstr ""
 #: src/lib/tray.sh:32
 #, sh-format
 msgid ""
-"The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
+"The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at your next log on\\nTo start "
-"it right now, you can launch the \"Arch-Update Systray Applet\" application "
+"it right now, you can launch the \"${_name} Systray Applet\" application "
 "from your app menu"
 msgstr ""
 
 #: src/lib/tray.sh:47
 #, sh-format
-msgid "There's already a running instance of the Arch-Update systray applet"
+msgid "There's already a running instance of the ${_name} systray applet"
 msgstr ""
 
 #: src/lib/update.sh:9

@@ -39,9 +39,9 @@ msgstr "按下 \"enter\" 退出"
 #: src/lib/common.sh:135
 #, sh-format
 msgid ""
-"The ${aur_helper} AUR helper set for AUR packages support in the arch-"
-"update.conf configuration file is not found\\n"
-msgstr "配置在 arch-update.conf 文件中的 AUR 帮助程序 ${aur_helper} 未找到\\n"
+"The ${aur_helper} AUR helper set for AUR packages support in the "
+"${name}.conf configuration file is not found\\n"
+msgstr "配置在 ${name}.conf 文件中的 AUR 帮助程序 ${aur_helper} 未找到\\n"
 
 #: src/lib/common.sh:164
 #, sh-format
@@ -51,24 +51,24 @@ msgstr "需要特权提升命令程序（sudo、doas 或 run0）\\n"
 #: src/lib/common.sh:169
 #, sh-format
 msgid ""
-"The ${su_cmd} command set for privilege escalation in the arch-update.conf "
+"The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
-msgstr "配置在 arch-update.conf 文件中的特权提升命令程序 ${su_cmd} 未找到\\n"
+msgstr "配置在 ${name}.conf 文件中的特权提升命令程序 ${su_cmd} 未找到\\n"
 
 #: src/lib/common.sh:179
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
-"files in the arch-update.conf configuration file is not found\\n"
-msgstr "配置在 arch-update.conf 文件中的，用于可视化和编辑 pacnew "
+"files in the ${name}.conf configuration file is not found\\n"
+msgstr "配置在 ${name}.conf 文件中的，用于可视化和编辑 pacnew "
 "文件差异的程序 ${diff_prog} 未找到\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
 msgid ""
-"No configuration file found\\nYou can generate one with \"arch-update --gen-"
+"No configuration file found\\nYou can generate one with \"${name} --gen-"
 "config\""
-msgstr "未找到配置文件\\n你可以使用 \"arch-update --gen-config\" 生成一个\\n"
+msgstr "未找到配置文件\\n你可以使用 \"${name} --gen-config\" 生成一个\\n"
 
 #: src/lib/edit-config.sh:13
 #, sh-format
@@ -80,8 +80,8 @@ msgstr "无法确定要使用的编辑器\\n\"EDITOR\" 环境变量未设置"
 
 #: src/lib/full_upgrade.sh:10
 #, sh-format
-msgid "There's already a running instance of Arch-Update\\n"
-msgstr "已经有一个 Arch-Update 实例在运行了\\n"
+msgid "There's already a running instance of ${_name}\\n"
+msgstr "已经有一个 ${_name} 实例在运行了\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -183,32 +183,32 @@ msgstr "  -D, --debug       显示调试跟踪信息"
 #: src/lib/help.sh:22
 #, sh-format
 msgid ""
-"  --gen-config      Generate a default / example 'arch-update.conf' "
+"  --gen-config      Generate a default / example '${name}.conf' "
 "configuration file, you can optionally pass the '--force' argument to "
-"overwrite any existing 'arch-update.conf' configuration file"
-msgstr "  --gen-config      生成默认的 'arch-update.conf' 配置文件，"
-"你可以选择性地传递 '--force' 参数来覆盖任何现有的 'arch-update.conf' 配置文件"
+"overwrite any existing '${name}.conf' configuration file"
+msgstr "  --gen-config      生成默认的 '${name}.conf' 配置文件，"
+"你可以选择性地传递 '--force' 参数来覆盖任何现有的 '${name}.conf' 配置文件"
 
 #: src/lib/help.sh:23
 #, sh-format
 msgid ""
-"  --show-config     Display the 'arch-update.conf' configuration file "
-"currently used (if it exists)"
-msgstr "  --show-config     显示当前使用的 'arch-update.conf' 配置文件（如果存在）"
+"  --show-config     Display the '${name}.conf' configuration file currently "
+"used (if it exists)"
+msgstr "  --show-config     显示当前使用的 '${name}.conf' 配置文件（如果存在）"
 
 #: src/lib/help.sh:24
 #, sh-format
 msgid ""
-"  --edit-config     Edit the 'arch-update.conf' configuration file currently "
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
-msgstr "  --edit-config     编辑当前使用的 'arch-update.conf' 配置文件（如果存在）"
+msgstr "  --edit-config     编辑当前使用的 '${name}.conf' 配置文件（如果存在）"
 
 #: src/lib/help.sh:25
 #, sh-format
 msgid ""
-"  --tray            Launch the Arch-Update systray applet, you can "
-"optionally add the '--enable' argument to start it automatically at boot"
-msgstr "  --tray            启动 Arch-Update 系统托盘应用程序，"
+"  --tray            Launch the ${_name} systray applet, you can optionally "
+"add the '--enable' argument to start it automatically at boot"
+msgstr "  --tray            启动 ${_name} 系统托盘应用程序，"
 "你可以选择性地添加 '--enable' 参数以在启动时自动启动"
 
 #: src/lib/help.sh:26
@@ -404,10 +404,10 @@ msgid "${update_number} update available"
 msgstr "${update_number} 个更新可用"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:296
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
-msgid "Run Arch-Update"
-msgstr "运行 Arch-Update"
+msgid "Run ${_name}"
+msgstr "运行 ${_name}"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
@@ -422,8 +422,8 @@ msgstr "${update_number} 个更新可用"
 
 #: src/lib/notification.sh:41
 #, sh-format
-msgid "Arch-Update desktop file not found"
-msgstr "Arch-Update 桌面文件未找到"
+msgid "${_name} desktop file not found"
+msgstr "${_name} 桌面文件未找到"
 
 #: src/lib/orphan_packages.sh:14
 #, sh-format
@@ -671,6 +671,10 @@ msgstr "Flatpak ({updates})"
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
+#: src/lib/tray.py:296
+msgid "Run Arch-Update"
+msgstr "运行 Arch-Update"
+
 #: src/lib/tray.py:297
 msgid "Check for updates"
 msgstr "检查更新"
@@ -697,8 +701,8 @@ msgstr "Flatpak"
 
 #: src/lib/tray.sh:20
 #, sh-format
-msgid "Arch-Update tray desktop file not found"
-msgstr "Arch-Update tray 桌面文件未找到"
+msgid "${_name} tray desktop file not found"
+msgstr "${_name} tray 桌面文件未找到"
 
 #: src/lib/tray.sh:27
 #, sh-format
@@ -708,18 +712,18 @@ msgstr "${tray_desktop_file_autostart} 文件已经存在"
 #: src/lib/tray.sh:32
 #, sh-format
 msgid ""
-"The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
+"The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at your next log on\\nTo start "
-"it right now, you can launch the \"Arch-Update Systray Applet\" application "
+"it right now, you can launch the \"${_name} Systray Applet\" application "
 "from your app menu"
 msgstr "${tray_desktop_file_autostart} 文件已创建，"
-"Arch-Update 系统托盘应用程序将在下次登录时自动启动\\n"
-"要立即启动它，您可以从应用菜单中运行 \"Arch-Update Systray Applet\" 应用程序"
+"${_name} 系统托盘应用程序将在下次登录时自动启动\\n"
+"要立即启动它，您可以从应用菜单中运行 \"${_name} Systray Applet\" 应用程序"
 
 #: src/lib/tray.sh:47
 #, sh-format
-msgid "There's already a running instance of the Arch-Update systray applet"
-msgstr "已经有 Arch-Update 系统托盘应用程序的运行实例"
+msgid "There's already a running instance of the ${_name} systray applet"
+msgstr "已经有 ${_name} 系统托盘应用程序的运行实例"
 
 #: src/lib/update.sh:9
 #, sh-format
