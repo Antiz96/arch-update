@@ -732,7 +732,6 @@ msgstr "Arch-Update"
 msgid "Run Arch-Update"
 msgstr "Lancer Arch-Update"
 
-
 #: src/lib/tray.py:297
 msgid "Check for updates"
 msgstr "Vérifier les mises à jour"
