@@ -30,7 +30,7 @@ mkdir -p "${statedir}" "${tmpdir}" || exit 16
 # Define checkupdates temporary db dir prefix and lock file (for later use if needed)
 # shellcheck disable=SC2034
 checkupdates_db_tmpdir_prefix="${tmpdir}/checkupdates-"
-lock_file="${TMPDIR:-/tmp}/arch-update.lock"
+lock_file="${TMPDIR:-/tmp}/${name}.lock"
 
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
@@ -132,7 +132,7 @@ check_aur_helper() {
 			fi
 		else
 			if ! command -v "${aur_helper}" > /dev/null; then
-				warning_msg "$(eval_gettext "The \${aur_helper} AUR helper set for AUR packages support in the arch-update.conf configuration file is not found\n")"
+				warning_msg "$(eval_gettext "The \${aur_helper} AUR helper set for AUR packages support in the \${name}.conf configuration file is not found\n")"
 				unset aur_helper
 			fi
 		fi
@@ -166,7 +166,7 @@ check_su_cmd () {
 		fi
 	else
 		if ! command -v "${su_cmd}" > /dev/null; then
-			error_msg "$(eval_gettext "The \${su_cmd} command set for privilege escalation in the arch-update.conf configuration file is not found\n")" && quit_msg
+			error_msg "$(eval_gettext "The \${su_cmd} command set for privilege escalation in the \${name}.conf configuration file is not found\n")" && quit_msg
 			exit 2
 		fi
 	fi
@@ -176,7 +176,7 @@ check_su_cmd () {
 check_diff_prog () {
 	if [ -n "${diff_prog}" ]; then
 		if ! command -v "${diff_prog%% *}" > /dev/null; then
-			error_msg "$(eval_gettext "The \${diff_prog} editor set for visualizing / editing differences of pacnew files in the arch-update.conf configuration file is not found\n")" && quit_msg
+			error_msg "$(eval_gettext "The \${diff_prog} editor set for visualizing / editing differences of pacnew files in the \${name}.conf configuration file is not found\n")" && quit_msg
 			exit 15
 		else
 			if [ "${su_cmd}" == "sudo" ]; then

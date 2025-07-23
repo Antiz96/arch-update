@@ -50,7 +50,7 @@ if [ -n "${update_available}" ]; then
 			# shellcheck disable=SC2154
 			last_notif_id=$(sed -n '1p' "${tmpdir}/notif_param" 2> /dev/null)
 
-			systemd-run --user --unit=arch-update-notification-"$(date +%Y%m%d-%H%M%S)" --quiet \
+			systemd-run --user --unit="${name}"-notification-"$(date +%Y%m%d-%H%M%S)" --quiet \
 				--setenv=DISPLAY="${DISPLAY}" \
 				--setenv=DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS}" \
 				--setenv=TEXTDOMAIN="${_name}" \

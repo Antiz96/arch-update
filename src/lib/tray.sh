@@ -17,11 +17,11 @@ if [ "${2}" == "--enable" ]; then
 	elif [ -f "/usr/share/applications/${name}-tray.desktop" ]; then
 		tray_desktop_file="/usr/share/applications/${name}-tray.desktop"
 	else
-		error_msg "$(eval_gettext "Arch-Update tray desktop file not found")"
+		error_msg "$(eval_gettext "\${_name} tray desktop file not found")"
 		exit 10
 	fi
 
-	tray_desktop_file_autostart="${XDG_CONFIG_HOME:-${HOME}/.config}/autostart/arch-update-tray.desktop"
+	tray_desktop_file_autostart="${XDG_CONFIG_HOME:-${HOME}/.config}/autostart/${name}-tray.desktop"
 
 	if [ -f "${tray_desktop_file_autostart}" ]; then
 		error_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file already exists")"
@@ -29,7 +29,7 @@ if [ "${2}" == "--enable" ]; then
 	else
 		mkdir -p "${XDG_CONFIG_HOME:-${HOME}/.config}/autostart/" || exit 10
 		cp "${tray_desktop_file}" "${tray_desktop_file_autostart}" || exit 10
-		info_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file has been created, the Arch-Update systray applet will be automatically started at your next log on\nTo start it right now, you can launch the \"Arch-Update Systray Applet\" application from your app menu")"
+		info_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file has been created, the \${_name} systray applet will be automatically started at your next log on\nTo start it right now, you can launch the \"\${_name} Systray Applet\" application from your app menu")"
 	fi
 else
 	# shellcheck disable=SC2154
@@ -44,7 +44,7 @@ else
 
 	# shellcheck disable=SC2154
 	if pgrep -U "${USER}" -f "${libdir}/tray.py" > /dev/null; then
-		error_msg "$(eval_gettext "There's already a running instance of the Arch-Update systray applet")"
+		error_msg "$(eval_gettext "There's already a running instance of the \${_name} systray applet")"
 		exit 3
 	fi
 

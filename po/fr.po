@@ -39,11 +39,11 @@ msgstr "Appuyez sur \"entrée\" pour quitter "
 #: src/lib/common.sh:135
 #, sh-format
 msgid ""
-"The ${aur_helper} AUR helper set for AUR packages support in the arch-"
-"update.conf configuration file is not found\\n"
+"The ${aur_helper} AUR helper set for AUR packages support in the "
+"${name}.conf configuration file is not found\\n"
 msgstr ""
 "Le AUR helper ${aur_helper} défini pour le support des paquets AUR dans le fichier de configuration "
-"arch-update.conf n'est pas disponible\\n"
+"${name}.conf n'est pas disponible\\n"
 
 #: src/lib/common.sh:164
 #, sh-format
@@ -53,28 +53,28 @@ msgstr "Une commande d'élévation de privilège est requise (sudo, doas ou run0
 #: src/lib/common.sh:169
 #, sh-format
 msgid ""
-"The ${su_cmd} command set for privilege escalation in the arch-update.conf "
+"The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
 "La commande ${su_cmd} définie pour l'élévation de privilège dans le fichier "
-"de configuration arch-update.conf n'est pas disponible\\n"
+"de configuration ${name}.conf n'est pas disponible\\n"
 
 #: src/lib/common.sh:179
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
-"files in the arch-update.conf configuration file is not found\\n"
+"files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
 "L'éditeur ${diff_prog} défini pour la visualisation / l'édition des différences des fichiers pacnew "
-"dans le fichier de configuration arch-update.conf n'est pas disponible\\n"
+"dans le fichier de configuration ${name}.conf n'est pas disponible\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
 msgid ""
-"No configuration file found\\nYou can generate one with \"arch-update --gen-"
+"No configuration file found\\nYou can generate one with \"${name} --gen-"
 "config\""
 msgstr ""
-"Aucun fichier de configuration n'a été trouvé\\nVous pouvez en générer un avec \"arch-update --gen-"
+"Aucun fichier de configuration n'a été trouvé\\nVous pouvez en générer un avec \"${name} --gen-"
 "config\""
 
 #: src/lib/edit-config.sh:13
@@ -88,8 +88,8 @@ msgstr ""
 
 #: src/lib/full_upgrade.sh:10
 #, sh-format
-msgid "There's already a running instance of Arch-Update\\n"
-msgstr "Il y a déjà une instance d'Arch-Update en cours d'exécution\\n"
+msgid "There's already a running instance of ${_name}\\n"
+msgstr "Il y a déjà une instance d'${_name} en cours d'exécution\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -201,39 +201,39 @@ msgstr "  -D, --debug       Afficher les traces de débogage"
 #: src/lib/help.sh:22
 #, sh-format
 msgid ""
-"  --gen-config      Generate a default / example 'arch-update.conf' "
+"  --gen-config      Generate a default / example '${name}.conf' "
 "configuration file, you can optionally pass the '--force' argument to "
-"overwrite any existing 'arch-update.conf' configuration file"
+"overwrite any existing '${name}.conf' configuration file"
 msgstr ""
-"  --gen-config      Générer un fichier de configuration 'arch-update.conf' "
+"  --gen-config      Générer un fichier de configuration '${name}.conf' "
 "par défaut / exemple, vous pouvez optionnellement passer l'argument '--force' pour "
-"écraser un fichier de configuration 'arch-update.conf' existant"
+"écraser un fichier de configuration '${name}.conf' existant"
 
 #: src/lib/help.sh:23
 #, sh-format
 msgid ""
-"  --show-config     Display the 'arch-update.conf' configuration file "
-"currently used (if it exists)"
+"  --show-config     Display the '${name}.conf' configuration file currently "
+"used (if it exists)"
 msgstr ""
-"  --show-config     Afficher le fichier de configuration 'arch-update.conf' "
+"  --show-config     Afficher le fichier de configuration '${name}.conf' "
 "actuellement utilisé (s'il existe)"
 
 #: src/lib/help.sh:24
 #, sh-format
 msgid ""
-"  --edit-config     Edit the 'arch-update.conf' configuration file currently "
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
-"  --edit-config     Editer le fichier de configuration 'arch-update.conf' actuellement "
+"  --edit-config     Editer le fichier de configuration '${name}.conf' actuellement "
 "utilisé (s'il existe)"
 
 #: src/lib/help.sh:25
 #, sh-format
 msgid ""
-"  --tray            Launch the Arch-Update systray applet, you can "
-"optionally add the '--enable' argument to start it automatically at boot"
+"  --tray            Launch the ${_name} systray applet, you can optionally "
+"add the '--enable' argument to start it automatically at boot"
 msgstr ""
-"  --tray            Lancer l'applet systray d'Arch-Update, vous pouvez "
+"  --tray            Lancer l'applet systray d'${_name}, vous pouvez "
 "optionnellement ajouter l'argument '--enable' pour la démarrer automatiquement au démarrage du système"
 
 #: src/lib/help.sh:26
@@ -446,10 +446,10 @@ msgid "${update_number} update available"
 msgstr "${update_number} mise à jour disponible"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:296
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
-msgid "Run Arch-Update"
-msgstr "Lancer Arch-Update"
+msgid "Run ${_name}"
+msgstr "Lancer ${_name}"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
@@ -464,8 +464,8 @@ msgstr "${update_number} mises à jour disponibles"
 
 #: src/lib/notification.sh:41
 #, sh-format
-msgid "Arch-Update desktop file not found"
-msgstr "Le fichier Arch-Update desktop n'a pas été trouvé"
+msgid "${_name} desktop file not found"
+msgstr "Le fichier ${_name} desktop n'a pas été trouvé"
 
 #: src/lib/orphan_packages.sh:14
 #, sh-format
@@ -728,6 +728,10 @@ msgstr "Flatpak ({updates})"
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
+#: src/lib/tray.py:296
+msgid "Run Arch-Update"
+msgstr "Lancer Arch-Update"
+
 #: src/lib/tray.py:297
 msgid "Check for updates"
 msgstr "Vérifier les mises à jour"
@@ -754,8 +758,8 @@ msgstr "Flatpak"
 
 #: src/lib/tray.sh:20
 #, sh-format
-msgid "Arch-Update tray desktop file not found"
-msgstr "Le fichier Arch-Update tray desktop n'a pas été trouvé"
+msgid "${_name} tray desktop file not found"
+msgstr "Le fichier ${_name} tray desktop n'a pas été trouvé"
 
 #: src/lib/tray.sh:27
 #, sh-format
@@ -765,20 +769,20 @@ msgstr "Le fichier '${tray_desktop_file_autostart}' existe déjà"
 #: src/lib/tray.sh:32
 #, sh-format
 msgid ""
-"The '${tray_desktop_file_autostart}' file has been created, the Arch-Update "
+"The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at your next log on\\nTo start "
-"it right now, you can launch the \"Arch-Update Systray Applet\" application "
+"it right now, you can launch the \"${_name} Systray Applet\" application "
 "from your app menu"
 msgstr ""
-"Le fichier '${tray_desktop_file_autostart}' a été créé, l'applet systray d'Arch-Update "
+"Le fichier '${tray_desktop_file_autostart}' a été créé, l'applet systray d'${_name} "
 "sera automatiquement démarré à votre prochaine connexion\\nPour la démarrer "
-"immédiatement, vous pouvez lancer l'application \"Arch-Update Systray Applet\" "
+"immédiatement, vous pouvez lancer l'application \"${_name} Systray Applet\" "
 "depuis votre menu d'application"
 
 #: src/lib/tray.sh:47
 #, sh-format
-msgid "There's already a running instance of the Arch-Update systray applet"
-msgstr "Il y a déjà une instance de l'applet systray d'Arch-Update en cours d'exécution"
+msgid "There's already a running instance of the ${_name} systray applet"
+msgstr "Il y a déjà une instance de l'applet systray d'${_name} en cours d'exécution"
 
 #: src/lib/update.sh:9
 #, sh-format
