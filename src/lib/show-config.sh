@@ -6,7 +6,7 @@
 
 # shellcheck disable=SC2154
 if [ ! -f "${config_file}" ]; then
-	error_msg "$(eval_gettext "No configuration file found\nYou can generate one with \"arch-update --gen-config\"")"
+	error_msg "$(eval_gettext "No configuration file found\nYou can generate one with \"\${name} --gen-config\"")"
 	exit 9
 else
 	cat "${config_file}" || exit 9
