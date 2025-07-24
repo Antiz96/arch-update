@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.13.3](https://github.com/Antiz96/arch-update/releases/tag/v3.13.3) - 2025-07-24
+
+### Miscellaneous
+
+- Popularize the usage of the $name var ([#402](https://github.com/Antiz96/arch-update/pull/402)) - ([7dcae52](https://github.com/Antiz96/arch-update/commit/7dcae52d7a0f1f2629be2632055834763b78809d)) by @Antiz96
+
 ## [v3.13.2](https://github.com/Antiz96/arch-update/releases/tag/v3.13.2) - 2025-07-18
 
 ### Fixes
