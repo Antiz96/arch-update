@@ -51,7 +51,7 @@ Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-up
 Installez les dépendances requises :
 
 ```bash
-sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
+sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2 xdg-utils
 ```
 
 Dépendances optionnelles supplémentaires dont vous pourriez avoir envie ou besoin :
@@ -150,13 +150,15 @@ Avec [le timer systemd](#le-timer-systemd) activé, les vérifications des mises
 
 ![check_for_updates-fr](https://github.com/user-attachments/assets/b0809b17-2ce2-41a2-85b6-e2b3aa21730f)
 
-Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée. Vous pouvez directement lancer Arch-Update depuis cette dernière ou la fermer grâce aux actions de clique associées.
+Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée. Vous pouvez directement lancer Arch-Update depuis cette dernière ou la fermer grâce aux actions de clique associées:
 
 ![notif-fr](https://github.com/user-attachments/assets/be242dc1-eddb-453d-ae1a-404845530889)
 
 Vous pouvez voir la liste des mises à jour disponibles depuis le menu en faisant un clic droit sur l'icône du systray.  
 Un menu déroulant contenant le nombre et la liste des mises à jour disponibles est dynamiquement créé pour chaque sources qui en possède (Paquets, AUR, Flatpak).  
 Un menu déroulant "Tous" affichant le nombre et la liste des mises à jour en attente pour toutes les sources est créé dynamiquement si au moins 2 sources différentes ont des mises à jour en attente :
+
+*Cliquer sur l'entrée d'un paquet depuis la liste ouvre l'URL du projet upstream dans votre navigateur web (à l'exception des paquets Flatpak)*
 
 ![all-fr](https://github.com/user-attachments/assets/988422f7-3408-4f7b-b9cc-dbb7e29672f7)
 

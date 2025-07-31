@@ -51,7 +51,7 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 Install required dependencies:
 
 ```bash
-sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2
+sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2 xdg-utils
 ```
 
 Additional optional dependencies you might want or need:
@@ -150,13 +150,15 @@ With [the systemd timer](#the-systemd-timer) enabled, checks for updates are aut
 
 ![check_for_updates](https://github.com/user-attachments/assets/efd190f5-4338-4204-a19b-0a6f138b4435)
 
-If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent. You can directly run Arch-Update from it or close / dismiss it thanks to the related click actions.
+If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent. You can directly run Arch-Update from it or close / dismiss it thanks to the related click actions:
 
 ![notif](https://github.com/user-attachments/assets/ce8c9229-9b36-484a-8561-bcb69b06310a)
 
 You can see the list of available updates from the menu by right-clicking the systray icon.  
 A dropdown menu displaying the number and the list of pending updates is dynamically created for each sources that have some (Packages, AUR, Flatpak).  
 A "All" dropdown menu gathering the number and the list of pending updates for all sources is dynamically created if at least 2 different sources have pending updates:
+
+*Clicking on the entry for a package opens the upstream project's URL in your web browser (except for Flatpak packages)*
 
 ![all](https://github.com/user-attachments/assets/798a4712-254b-470c-b83d-de2f3fcbdad4)
 
