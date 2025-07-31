@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.14.0](https://github.com/Antiz96/arch-update/releases/tag/v3.14.0) - 2025-07-31
+
+### Features
+
+- *(systray)* Open upstream project URL in web browser when clicking on a package update entry ([#404](https://github.com/Antiz96/arch-update/pull/404)) - ([cb69c24](https://github.com/Antiz96/arch-update/commit/cb69c24497234524bbf3596c5ff5fe88d7844135)) by @ckorn
+
 ## [v3.13.3](https://github.com/Antiz96/arch-update/releases/tag/v3.13.3) - 2025-07-24
 
 ### Miscellaneous
