@@ -630,72 +630,72 @@ msgstr "一个或多个服务重启失败，请考虑重启已更新的服务以
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "没有需要在升级后重启的服务\\n"
 
-#: src/lib/tray.py:146
+#: src/lib/tray.py:166
 msgid "'updates' state file isn't found"
 msgstr "'updates' 状态文件未找到"
 
-#: src/lib/tray.py:193
+#: src/lib/tray.py:213
 msgid "System is up to date"
 msgstr "系统已更新到最新版本"
 
-#: src/lib/tray.py:196
+#: src/lib/tray.py:216
 msgid "1 update available"
 msgstr "1 更新可用"
 
-#: src/lib/tray.py:199
+#: src/lib/tray.py:219
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr "{updates} 更新可用"
 
-#: src/lib/tray.py:208
+#: src/lib/tray.py:228
 #, python-brace-format
 msgid "All ({updates})"
 msgstr "全部 ({updates})"
 
-#: src/lib/tray.py:218
+#: src/lib/tray.py:241
 #, python-brace-format
 msgid "Packages ({updates})"
 msgstr "官方包 ({updates})"
 
-#: src/lib/tray.py:228
+#: src/lib/tray.py:252
 #, python-brace-format
 msgid "AUR ({updates})"
 msgstr "AUR ({updates})"
 
-#: src/lib/tray.py:238
+#: src/lib/tray.py:263
 #, python-brace-format
 msgid "Flatpak ({updates})"
 msgstr "Flatpak ({updates})"
 
-#: src/lib/tray.py:290 src/lib/tray.py:295
+#: src/lib/tray.py:315 src/lib/tray.py:320
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
-#: src/lib/tray.py:296
+#: src/lib/tray.py:321
 msgid "Run Arch-Update"
 msgstr "运行 Arch-Update"
 
-#: src/lib/tray.py:297
+#: src/lib/tray.py:322
 msgid "Check for updates"
 msgstr "检查更新"
 
-#: src/lib/tray.py:298
+#: src/lib/tray.py:323
 msgid "Exit"
 msgstr "退出"
 
-#: src/lib/tray.py:301
+#: src/lib/tray.py:326
 msgid "All"
 msgstr "全部"
 
-#: src/lib/tray.py:302
+#: src/lib/tray.py:327
 msgid "Packages"
 msgstr "官方包"
 
-#: src/lib/tray.py:303
+#: src/lib/tray.py:328
 msgid "AUR"
 msgstr "AUR"
 
-#: src/lib/tray.py:304
+#: src/lib/tray.py:329
 msgid "Flatpak"
 msgstr "Flatpak"
 

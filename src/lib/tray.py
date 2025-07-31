@@ -131,6 +131,26 @@ class ArchUpdateQt6:
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
+    # Open packages upstream URL in browser when clicked
+    def showUpdate(self, update):
+        """Open upstream URL in browser"""
+        package = update.split(' ')[0]
+        if not package:
+            return
+        with subprocess.Popen(["/usr/bin/pacman", "-Qi", package], stdout=subprocess.PIPE, stderr=subprocess.PIPE) as p:
+            stdout, _ = p.communicate()
+        if p.returncode != 0:
+            return
+        outs = stdout.decode()
+        for line in outs.splitlines():
+            if line.startswith("URL"):
+                parts = line.split(":", 1)
+                print(parts)
+                if len(parts) < 2:
+                    return
+                url = parts[1].strip()
+                subprocess.run(["xdg-open", url], check=False)
+
     # Update dropdown menus based on the state files content
     def update_dropdown_menus(self):
         """Update dropdown menus"""
@@ -208,7 +228,10 @@ class ArchUpdateQt6:
             self.dropdown_menu_all.setTitle(_("All ({updates})").format(updates=updates_count))
             self.dropdown_menu_all.setEnabled(True)
             self.dropdown_menu_all.clear()
-            for update in updates_list:
+            for update in [*updates_list_pkg, *updates_list_aur]:
+                action = self.dropdown_menu_all.addAction(update)
+                action.triggered.connect(lambda x, update=update: self.showUpdate(update))
+            for update in updates_list_flatpak:
                 self.dropdown_menu_all.addAction(update)
             self.menu.addMenu(self.dropdown_menu_all)
         else:
@@ -219,7 +242,8 @@ class ArchUpdateQt6:
             self.dropdown_menu_pkg.setEnabled(True)
             self.dropdown_menu_pkg.clear()
             for update in updates_list_pkg:
-                self.dropdown_menu_pkg.addAction(update)
+                action = self.dropdown_menu_pkg.addAction(update)
+                action.triggered.connect(lambda x, update=update: self.showUpdate(update))
             self.menu.addMenu(self.dropdown_menu_pkg)
         else:
             self.menu.removeAction(self.dropdown_menu_pkg.menuAction())
@@ -229,7 +253,8 @@ class ArchUpdateQt6:
             self.dropdown_menu_aur.setEnabled(True)
             self.dropdown_menu_aur.clear()
             for update in updates_list_aur:
-                self.dropdown_menu_aur.addAction(update)
+                action = self.dropdown_menu_aur.addAction(update)
+                action.triggered.connect(lambda x, update=update: self.showUpdate(update))
             self.menu.addMenu(self.dropdown_menu_aur)
         else:
             self.menu.removeAction(self.dropdown_menu_aur.menuAction())
