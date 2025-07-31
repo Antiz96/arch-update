@@ -158,7 +158,7 @@ Vous pouvez voir la liste des mises à jour disponibles depuis le menu en faisan
 Un menu déroulant contenant le nombre et la liste des mises à jour disponibles est dynamiquement créé pour chaque sources qui en possède (Paquets, AUR, Flatpak).  
 Un menu déroulant "Tous" affichant le nombre et la liste des mises à jour en attente pour toutes les sources est créé dynamiquement si au moins 2 sources différentes ont des mises à jour en attente :
 
-*Cliquer sur l'entrée d'un paquet depuis la liste ouvre l'URL du projet upstream dans votre navigateur web (à l'exception des paquets Flatpak)*
+*Cliquer sur l'entrée d'un paquet depuis la liste ouvre l'URL du projet upstream dans votre navigateur web (à l'exception des paquets Flatpak).*
 
 ![all-fr](https://github.com/user-attachments/assets/988422f7-3408-4f7b-b9cc-dbb7e29672f7)
 

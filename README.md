@@ -158,7 +158,7 @@ You can see the list of available updates from the menu by right-clicking the sy
 A dropdown menu displaying the number and the list of pending updates is dynamically created for each sources that have some (Packages, AUR, Flatpak).  
 A "All" dropdown menu gathering the number and the list of pending updates for all sources is dynamically created if at least 2 different sources have pending updates:
 
-*Clicking on the entry for a package opens the upstream project's URL in your web browser (except for Flatpak packages)*
+*Clicking on the entry for a package opens the upstream project's URL in your web browser (except for Flatpak packages).*
 
 ![all](https://github.com/user-attachments/assets/798a4712-254b-470c-b83d-de2f3fcbdad4)
 
