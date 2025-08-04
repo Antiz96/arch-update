@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.14.1](https://github.com/Antiz96/arch-update/releases/tag/v3.14.1) - 2025-08-04
+
+### Fixes
+
+- *(news)* Make URL path parsing more robust ([#406](https://github.com/Antiz96/arch-update/pull/406)) - ([19fae5a](https://github.com/Antiz96/arch-update/commit/19fae5a7e9afa39522ca525cb1666e17a1ccdaf9)) by @Antiz96
+
 ## [v3.14.0](https://github.com/Antiz96/arch-update/releases/tag/v3.14.0) - 2025-07-31
 
 ### Features
