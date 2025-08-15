@@ -32,7 +32,7 @@ Features:
 - Check for pacnew & pacsave files (and offers to process them if there are).
 - Check for pending kernel update requiring a reboot (and offers to do so if there's one).
 - Check for services requiring a post upgrade restart (and offers to do so if there are).
-- Support for `sudo`, `doas` & `run0`.
+- Support for `sudo`, `sudo-rs`, `doas` & `run0`.
 
 Optional support for:
 
@@ -65,6 +65,7 @@ Additional optional dependencies you might want or need:
 - [neovim](https://archlinux.org/packages/extra/x86_64/neovim/): Default diff program for pacdiff if `EDITOR=nvim`
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/): Systray applet support on Wayland
 - [sudo](https://archlinux.org/packages/core/x86_64/sudo/): Privilege elevation
+- [sudo-rs](https://archlinux.org/packages/core/x86_64/sudo-rs/): Privilege elevation
 - [opendoas](https://archlinux.org/packages/extra/x86_64/opendoas/): Privilege elevation
 
 Install required build dependencies:

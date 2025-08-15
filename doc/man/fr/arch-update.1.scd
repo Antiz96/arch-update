@@ -1,4 +1,4 @@
-arch-update(1) ["Arch-Update 3.14.1" ["Manuel de Arch-Update"]]
+arch-update(1) ["Arch-Update 3.15.0" ["Manuel de Arch-Update"]]
 
 # NOM
 
@@ -24,7 +24,7 @@ Fonctionnalités :
 - Vérification des fichiers pacnew & pacsave (et propose de les traiters s'il y en a).
 - Vérification des mises à jour du noyau en attente nécessitant un redémarrage (et propose de le faire s'il y en a une).
 - Vérification des services nécessitant un redémarrage après mise à jour (et propose de le faire s'il y en a).
-- Support de `sudo`, `doas` et `run0`.
+- Support de `sudo`, `sudo-rs`, `doas` et `run0`.
 
 Support optionnel pour :
 
@@ -196,7 +196,7 @@ Voir https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#config
 	Option invalide.
 
 *2*
-	Aucune commande d'élévation de privilège (`sudo`, `doas` ou `run0`) n'est installée ou celle définie dans le fichier de configuration `arch-update.conf` n'est pas disponible.
+	Aucune commande d'élévation de privilège (`sudo`, `sudo-rs`, `doas` ou `run0`) n'est installée ou celle définie dans le fichier de configuration `arch-update.conf` n'est pas disponible.
 
 *3*
 	Erreur lors du lancement de l'applet systray d'Arch-update.

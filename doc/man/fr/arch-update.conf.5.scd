@@ -1,4 +1,4 @@
-arch-update.conf(5) ["Arch-Update 3.14.1" ["Manuel de Arch-Update"]]
+arch-update.conf(5) ["Arch-Update 3.15.0" ["Manuel de Arch-Update"]]
 
 # NOM
 
@@ -45,7 +45,7 @@ Les options sont sensibles à la casse, les majuscules doivent donc être respec
 	AUR helper à utiliser pour la prise en charge des paquets AUR. Les valeurs valides sont `paru`, `yay` ou `pikaur`. Si cette option n'est pas spécifiée, Arch-Update utilisera le premier AUR helper disponible dans l'ordre suivant : `paru` puis `yay` puis `pikaur` (si aucun d'eux n'est installé, Arch-Update ne prendra pas en compte les paquets AUR).
 
 *PrivilegeElevationCommand=[Cmd]*
-	Commande à utiliser pour l'élévation de privilège. Les valeurs valides sont `sudo`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'ordre suivant: `sudo`, `doas` puis `run0`.
+	Commande à utiliser pour l'élévation de privilège. Les valeurs valides sont `sudo`, `sudo-rs`, `doas` ou `run0`. Si cette option n'est pas spécifiée, Arch-Update utilisera la première commande disponible dans l'ordre suivant: `sudo`, `sudo-rs`, `doas` puis `run0`.
 
 *KeepOldPackages=[Num]*
 	Nombre d'anciennes versions de paquets à conserver dans le cache de pacman. La valeur par défaut est 3.

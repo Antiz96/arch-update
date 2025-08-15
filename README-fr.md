@@ -32,7 +32,7 @@ Fonctionnalités :
 - Vérification des fichiers pacnew & pacsave (et propose de les traiters s'il y en a).
 - Vérification des mises à jour du noyau en attente nécessitant un redémarrage (et propose de le faire s'il y en a une).
 - Vérification des services nécessitant un redémarrage après mise à jour (et propose de le faire s'il y en a).
-- Support de `sudo`, `doas` et `run0`.
+- Support de `sudo`, `sudo-rs`, `doas` et `run0`.
 
 Support optionnel pour :
 
@@ -65,6 +65,7 @@ Dépendances optionnelles supplémentaires dont vous pourriez avoir envie ou bes
 - [neovim](https://archlinux.org/packages/extra/x86_64/neovim/) : Programme de comparaison par défaut pour pacdiff si `EDITOR=nvim`
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/) : Support de l'applet systray sur Wayland
 - [sudo](https://archlinux.org/packages/core/x86_64/sudo/): Élévation de privilèges
+- [sudo-rs](https://archlinux.org/packages/extra/x86_64/sudo-rs/): Élévation de privilèges
 - [opendoas](https://archlinux.org/packages/extra/x86_64/opendoas/): Élévation de privilèges
 
 Installez les dépendances de compilation requises :

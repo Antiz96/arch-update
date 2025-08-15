@@ -6,7 +6,7 @@
 # Luna Jernberg <droidbittin@gmail.com>, 2024
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.14.1\n"
+"Project-Id-Version: Arch-Update 3.15.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2024-11-19 12:22+0100\n"
@@ -45,12 +45,14 @@ msgstr ""
 "${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
 "konfigurationsfilen ${name}.conf hittades inte\\n"
 
-#: src/lib/common.sh:164
+#: src/lib/common.sh:166
 #, sh-format
-msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
-msgstr "Ett kommando för behörighetshöjning krävs (sudo, doas eller run0)\\n"
+msgid ""
+"A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
+msgstr ""
+"Ett kommando för behörighetshöjning krävs (sudo, sudo-rs, doas eller run0)\\n"
 
-#: src/lib/common.sh:169
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -59,7 +61,7 @@ msgstr ""
 "${su_cmd}-kommandot inställt för privilegieskalering i ${name}.conf-"
 "konfigurationsfilen hittades inte\\n"
 
-#: src/lib/common.sh:179
+#: src/lib/common.sh:181
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -633,18 +635,18 @@ msgstr ""
 msgid "No pacnew file found\\n"
 msgstr "Inga pacnew filer hittades\\n"
 
-#: src/lib/restart_services.sh:13
+#: src/lib/restart_services.sh:14
 #, sh-format
 msgid "Services:\\nThe following service requires a post upgrade restart\\n"
 msgstr "Tjänster:\\nFöljande tjänst kräver en omstart efter uppgraderingen\\n"
 
-#: src/lib/restart_services.sh:15
+#: src/lib/restart_services.sh:16
 #, sh-format
 msgid "Services:\\nThe following services require a post upgrade restart\\n"
 msgstr ""
 "Tjänster:\\nFöljande tjänster kräver en omstart efter uppgraderingen\\n"
 
-#: src/lib/restart_services.sh:25
+#: src/lib/restart_services.sh:26
 #, sh-format
 msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
@@ -654,12 +656,12 @@ msgstr ""
 "starta om alla eller tryck på \"enter\" för att fortsätta utan att starta om "
 "tjänsten/tjänsterna:"
 
-#: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
+#: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
 #, sh-format
 msgid "Service(s) restarted successfully\\n"
 msgstr "Tjänsten/tjänsterna har startats om\\n"
 
-#: src/lib/restart_services.sh:34 src/lib/restart_services.sh:61
+#: src/lib/restart_services.sh:35 src/lib/restart_services.sh:62
 #, sh-format
 msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
@@ -668,18 +670,18 @@ msgstr ""
 "Ett fel har inträffat under omstarten av tjänsten/tjänsterna\\nKontrollera "
 "tjänsten/tjänsternas status ovan\\n"
 
-#: src/lib/restart_services.sh:47
+#: src/lib/restart_services.sh:48
 #, sh-format
 msgid "The ${service_selected} service has been successfully restarted"
 msgstr "Tjänsten ${service_selected} har startats om"
 
-#: src/lib/restart_services.sh:49
+#: src/lib/restart_services.sh:50
 #, sh-format
 msgid ""
 "An error has occurred during the restart of the ${service_selected} service"
 msgstr "Ett fel har inträffat under omstarten av ${service_selected}-tjänsten"
 
-#: src/lib/restart_services.sh:65
+#: src/lib/restart_services.sh:66
 #, sh-format
 msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
@@ -689,7 +691,7 @@ msgstr ""
 "starta om tjänster som har uppdaterats för att tillämpa uppgraderingen "
 "helt\\n"
 
-#: src/lib/restart_services.sh:69
+#: src/lib/restart_services.sh:70
 #, sh-format
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "Ingen tjänst som kräver omstart efter uppgradering hittades\\n"

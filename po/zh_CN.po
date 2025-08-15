@@ -6,7 +6,7 @@
 # Aubrey Carlson <aubreycarlson24@outlook.com>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.14.1\n"
+"Project-Id-Version: Arch-Update 3.15.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-04-17 12:00+0800\n"
@@ -43,19 +43,21 @@ msgid ""
 "${name}.conf configuration file is not found\\n"
 msgstr "配置在 ${name}.conf 文件中的 AUR 帮助程序 ${aur_helper} 未找到\\n"
 
-#: src/lib/common.sh:164
+#: src/lib/common.sh:166
 #, sh-format
-msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
-msgstr "需要特权提升命令程序（sudo、doas 或 run0）\\n"
+msgid ""
+"A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
+msgstr ""
+"需要特权提升命令程序（sudo、sudo-rs、doas 或 run0）\\n"
 
-#: src/lib/common.sh:169
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr "配置在 ${name}.conf 文件中的特权提升命令程序 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:179
+#: src/lib/common.sh:181
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -577,17 +579,17 @@ msgstr "一个或多个 pacnew 文件处理过程中发生错误\\n请尽快处�
 msgid "No pacnew file found\\n"
 msgstr "没有找到 pacnew 文件\\n"
 
-#: src/lib/restart_services.sh:13
+#: src/lib/restart_services.sh:14
 #, sh-format
 msgid "Services:\\nThe following service requires a post upgrade restart\\n"
 msgstr "服务：\\n这个服务升级后需要重启\\n"
 
-#: src/lib/restart_services.sh:15
+#: src/lib/restart_services.sh:16
 #, sh-format
 msgid "Services:\\nThe following services require a post upgrade restart\\n"
 msgstr "服务：\\n这些服务升级后需要重启\\n"
 
-#: src/lib/restart_services.sh:25
+#: src/lib/restart_services.sh:26
 #, sh-format
 msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
@@ -595,37 +597,37 @@ msgid ""
 msgstr "选择要重启的服务（例如 1 3 5），选择 0 重启所有服务，"
 "或者按 \"enter\" 继续而不重启服务："
 
-#: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
+#: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
 #, sh-format
 msgid "Service(s) restarted successfully\\n"
 msgstr "一个或多个服务重启成功\\n"
 
-#: src/lib/restart_services.sh:34 src/lib/restart_services.sh:61
+#: src/lib/restart_services.sh:35 src/lib/restart_services.sh:62
 #, sh-format
 msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
 "above service(s) status\\n"
 msgstr "一个或多个服务重启失败，请检查上述服务状态\\n"
 
-#: src/lib/restart_services.sh:47
+#: src/lib/restart_services.sh:48
 #, sh-format
 msgid "The ${service_selected} service has been successfully restarted"
 msgstr "${service_selected} 服务重启成功"
 
-#: src/lib/restart_services.sh:49
+#: src/lib/restart_services.sh:50
 #, sh-format
 msgid ""
 "An error has occurred during the restart of the ${service_selected} service"
 msgstr "${service_selected} 服务重启失败"
 
-#: src/lib/restart_services.sh:65
+#: src/lib/restart_services.sh:66
 #, sh-format
 msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
 "services that have been updated to fully apply the upgrade\\n"
 msgstr "一个或多个服务重启失败，请考虑重启已更新的服务以完全应用升级\\n"
 
-#: src/lib/restart_services.sh:69
+#: src/lib/restart_services.sh:70
 #, sh-format
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "没有需要在升级后重启的服务\\n"
