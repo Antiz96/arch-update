@@ -46,12 +46,14 @@ msgstr ""
 "A(z) ${aur_helper} AUR-csomagok AUR-segédkészletének támogatása nem található "
 "az ${name}.conf konfigurációs fájlban\\n"
 
-#: src/lib/common.sh:164
+#: src/lib/common.sh:166
 #, sh-format
-msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
-msgstr "Jogosultságszint-emelési parancs szükséges (sudo, doas vagy run0)\\n"
+msgid ""
+"A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
+msgstr ""
+"Jogosultságszint-emelési parancs szükséges (sudo, sudo-rs, doas vagy run0)\\n"
 
-#: src/lib/common.sh:169
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -60,7 +62,7 @@ msgstr ""
 "A(z) ${su_cmd} ${name}.conf konfigurációs fájlban, a jogosultságok "
 "kiterjesztéséhez beállított parancs nem található\\n"
 
-#: src/lib/common.sh:179
+#: src/lib/common.sh:181
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

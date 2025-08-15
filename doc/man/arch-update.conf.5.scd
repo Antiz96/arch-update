@@ -45,7 +45,7 @@ Options are case sensitive, so capital letters have to be respected.
 	AUR helper to be used for AUR packages support. Valid values are `paru`, `yay` or `pikaur`. If this option is not set, Arch-Update will use the first AUR helper available in the following order: `paru` then `yay` then `pikaur` (in case none of them is installed, Arch-Update will not take AUR packages into account).
 
 *PrivilegeElevationCommand=[Cmd]*
-	Command to be used for privilege elevation. Valid values are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first command available in the following order: `sudo`, `doas` then `run0`.
+	Command to be used for privilege elevation. Valid values are `sudo`, `sudo-rs`, `doas` or `run0`. If this option is not set, Arch-Update will use the first command available in the following order: `sudo`, `sudo-rs`, `doas` then `run0`.
 
 *KeepOldPackages=[Num]*
 	Number of old packages versions to keep in pacman's cache. Defaults to 3.
