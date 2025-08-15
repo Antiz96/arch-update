@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.15.0](https://github.com/Antiz96/arch-update/releases/tag/v3.15.0) - 2025-08-15
+
+### Features
+
+- Add support for sudo-rs ([#408](https://github.com/Antiz96/arch-update/pull/408)) - ([221fdbb](https://github.com/Antiz96/arch-update/commit/221fdbb96d37823efe796dbadfea19e4f98aa9e0)) by @Antiz96
+
 ## [v3.14.1](https://github.com/Antiz96/arch-update/releases/tag/v3.14.1) - 2025-08-04
 
 ### Fixes
