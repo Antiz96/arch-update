@@ -44,7 +44,7 @@ if [ -f "${config_file}" ]; then
 
 	# Check the "PrivilegeElevationCommand" option in arch-update.conf
 	# shellcheck disable=SC2034
-	su_cmd=$(grep -E '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+	su_cmd=$(grep -E '^[[:space:]]*PrivilegeElevationCommand[[:space:]]*=[[:space:]]*(sudo|sudo-rs|doas|run0)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
 
 	# Check the "KeepOldPackages" option in arch-update.conf
 	# shellcheck disable=SC2034
