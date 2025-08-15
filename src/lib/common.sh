@@ -181,7 +181,7 @@ check_diff_prog () {
 			error_msg "$(eval_gettext "The \${diff_prog} editor set for visualizing / editing differences of pacnew files in the \${name}.conf configuration file is not found\n")" && quit_msg
 			exit 15
 		else
-			if [ "${su_cmd}" == "sudo" || "${su_cmd}" == "sudo-rs" ]; then
+			if [ "${su_cmd}" == "sudo" ] || [ "${su_cmd}" == "sudo-rs" ]; then
 				diff_prog_opt=("DIFFPROG=${diff_prog}")
 			elif [ "${su_cmd}" == "doas" ]; then
 				diff_prog_opt=("env" "DIFFPROG=${diff_prog}")
