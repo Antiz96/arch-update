@@ -65,7 +65,7 @@ Additional optional dependencies you might want or need:
 - [neovim](https://archlinux.org/packages/extra/x86_64/neovim/): Default diff program for pacdiff if `EDITOR=nvim`
 - [qt6-wayland](https://archlinux.org/packages/extra/x86_64/qt6-wayland/): Systray applet support on Wayland
 - [sudo](https://archlinux.org/packages/core/x86_64/sudo/): Privilege elevation
-- [sudo-rs](https://archlinux.org/packages/core/x86_64/sudo-rs/): Privilege elevation
+- [sudo-rs](https://archlinux.org/packages/extra/x86_64/sudo-rs/): Privilege elevation
 - [opendoas](https://archlinux.org/packages/extra/x86_64/opendoas/): Privilege elevation
 
 Install required build dependencies:
