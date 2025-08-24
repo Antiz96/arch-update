@@ -312,7 +312,7 @@ class ArchUpdateQt6:
         self.tray.activated.connect(self.run)
 
         # Tooltip
-        tooltip = _("Arch-Update")
+        tooltip = _("Cachy-Update")
         self.tray.setToolTip(tooltip)
 
         # Definition of menus titles
