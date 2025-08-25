@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.15.1](https://github.com/Antiz96/arch-update/releases/tag/v3.15.1) - 2025-08-25
+
+### Fixes
+
+- *(news)* Add a workaround for the current Arch Linux service outages ([#414](https://github.com/Antiz96/arch-update/pull/414)) - ([f8241f4](https://github.com/Antiz96/arch-update/commit/f8241f422ec7a34061923956fe35ab57be0177d3)) by @Antiz96
+
+### Documentation
+
+- *(deps)* Correct invalid link to extra repository for sudo-rs ([#409](https://github.com/Antiz96/arch-update/pull/409)) - ([4808155](https://github.com/Antiz96/arch-update/commit/480815523dc151758062b79fbca178707303f740)) by @Frestein
+- Update Tips & Tricks section to advise for "/bin/sh" rather than "sh" ([#412](https://github.com/Antiz96/arch-update/pull/412)) - ([06a2f81](https://github.com/Antiz96/arch-update/commit/06a2f8171076e1d0caf427ae697827ffa446d400)) by @Antiz96
+
 ## [v3.15.0](https://github.com/Antiz96/arch-update/releases/tag/v3.15.0) - 2025-08-15
 
 ### Features
