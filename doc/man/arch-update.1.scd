@@ -136,7 +136,7 @@ To prevent that, you can add a small delay to the systray applet startup using t
 
 ```
 [...]
-Exec=sh -c "sleep 3 && arch-update --tray"
+Exec=/bin/sh -c "sleep 3 && arch-update --tray"
 [...]
 ```
 
@@ -144,7 +144,7 @@ Exec=sh -c "sleep 3 && arch-update --tray"
 
 ```
 [...]
-ExecStart=sh -c "sleep 3 && arch-update --tray"
+ExecStart=/bin/sh -c "sleep 3 && arch-update --tray"
 [...]
 ```
 

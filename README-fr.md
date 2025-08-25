@@ -205,13 +205,13 @@ Pour éviter ceci, vous pouvez ajouter un léger délai au démarrage de l'apple
 - Si vous avez utilisé `arch-update --tray --enable`, modifiez la ligne `Exec=` dans le fichier `arch-update-tray.desktop` (qui se trouve sous `~/.config/autostart/` par défaut), comme ceci :
 
 ```text
-Exec=sh -c "sleep 3 && arch-update --tray"
+Exec=/bin/sh -c "sleep 3 && arch-update --tray"
 ```
 
 - Si vous avez utilisé le service systemd `arch-update-tray.service`, exécutez `systemctl --user edit --full arch-update-tray.service` et modifiez la ligne `ExecStart=`, comme ceci :
 
 ```text
-ExecStart=sh -c "sleep 3 && arch-update --tray"
+ExecStart=/bin/sh -c "sleep 3 && arch-update --tray"
 ```
 
 - Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, modifiez la commande dans vos applications "auto-start" / vôtre fichier de configuration, comme ceci :
