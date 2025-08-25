@@ -136,7 +136,7 @@ Pour éviter ceci, vous pouvez ajouter un léger délai au démarrage de l'apple
 
 ```
 [...]
-Exec=sh -c "sleep 3 && arch-update --tray"
+Exec=/bin/sh -c "sleep 3 && arch-update --tray"
 [...]
 ```
 
@@ -144,7 +144,7 @@ Exec=sh -c "sleep 3 && arch-update --tray"
 
 ```
 [...]
-ExecStart=sh -c "sleep 3 && arch-update --tray"
+ExecStart=/bin/sh -c "sleep 3 && arch-update --tray"
 [...]
 ```
 
