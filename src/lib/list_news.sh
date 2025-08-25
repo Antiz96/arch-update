@@ -6,7 +6,7 @@
 
 info_msg "$(eval_gettext "Looking for recent Arch News...")"
 # shellcheck disable=SC2154
-news=$(curl -m "${news_timeout}" -Lfs https://www.archlinux.org/news || echo "error")
+news=$(curl -s https://archlinux.org &> /dev/null ; curl -m "${news_timeout}" -Lfs https://www.archlinux.org/news || echo "error")
 
 if [ "${news}" == "error" ]; then
 	echo
