@@ -16,27 +16,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/common.sh:97
+#: src/lib/common.sh:102
 #, sh-format
 msgid "WARNING"
 msgstr "WARNUNG"
 
-#: src/lib/common.sh:103
+#: src/lib/common.sh:108
 #, sh-format
 msgid "ERROR"
 msgstr "FEHLER"
 
-#: src/lib/common.sh:108
+#: src/lib/common.sh:113
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Zum Fortfahren \"ENTER\" drücken "
 
-#: src/lib/common.sh:114
+#: src/lib/common.sh:119
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Zum Beenden \"ENTER\" drücken "
 
-#: src/lib/common.sh:135
+#: src/lib/common.sh:140
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the "
@@ -45,14 +45,14 @@ msgstr ""
 "Der ${aur_helper} AUR-Helper für den Support von AUR-Paketen in der "
 "${name}.conf Konfigurationsdatei wurde nicht gefunden\\n"
 
-#: src/lib/common.sh:166
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "Ein Befehl zur Erhöhung der Rechte ist erforderlich (sudo, sudo-rs, doas oder run0)\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:176
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -61,7 +61,7 @@ msgstr ""
 "Der ${su_cmd} Befehl für die Rechteerhöhung in der ${name}.conf "
 "Konfigurationsdatei wurde nicht gefunden\\n"
 
-#: src/lib/common.sh:181
+#: src/lib/common.sh:186
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -88,7 +88,7 @@ msgstr ""
 "Zu verwendender Editor kann nicht ermittel werden\\nDie \"EDITOR\" Umgebungsvariable "
 "ist nicht gesetzt und \"nano\" (Fallback-Option) ist nicht installiert"
 
-#: src/lib/full_upgrade.sh:10
+#: src/lib/full_upgrade.sh:13
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Es gibt bereits eine laufende Instanz von ${_name}\\n"
@@ -781,7 +781,7 @@ msgstr ""
 "zu starten, einfach die Anwendung \"${_name} Systray Applet\" aus dem "
 "Anwendungsmenü aufrufen"
 
-#: src/lib/tray.sh:47
+#: src/lib/tray.sh:49
 #, sh-format
 msgid "There's already a running instance of the ${_name} systray applet"
 msgstr "Es gibt bereits eine laufende Instanz des ${_name} Systray-Applets"

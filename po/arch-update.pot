@@ -16,47 +16,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/common.sh:97
+#: src/lib/common.sh:102
 #, sh-format
 msgid "WARNING"
 msgstr ""
 
-#: src/lib/common.sh:103
+#: src/lib/common.sh:108
 #, sh-format
 msgid "ERROR"
 msgstr ""
 
-#: src/lib/common.sh:108
+#: src/lib/common.sh:113
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr ""
 
-#: src/lib/common.sh:114
+#: src/lib/common.sh:119
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr ""
 
-#: src/lib/common.sh:135
+#: src/lib/common.sh:140
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the "
 "${name}.conf configuration file is not found\\n"
 msgstr ""
 
-#: src/lib/common.sh:166
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:176
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
 
-#: src/lib/common.sh:181
+#: src/lib/common.sh:186
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -77,7 +77,7 @@ msgid ""
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
 
-#: src/lib/full_upgrade.sh:10
+#: src/lib/full_upgrade.sh:13
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr ""
@@ -705,7 +705,7 @@ msgid ""
 "from your app menu"
 msgstr ""
 
-#: src/lib/tray.sh:47
+#: src/lib/tray.sh:49
 #, sh-format
 msgid "There's already a running instance of the ${_name} systray applet"
 msgstr ""
