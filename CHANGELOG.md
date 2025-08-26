@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.15.3](https://github.com/Antiz96/arch-update/releases/tag/v3.15.3) - 2025-08-26
+
+### Fixes
+
+- *(news)* Add default timeout to the initial connection request ([#416](https://github.com/Antiz96/arch-update/pull/416)) - ([660d4dc](https://github.com/Antiz96/arch-update/commit/660d4dc4eee5808a8b0c9be49278f2f15dcbfab4)) by @Antiz96
+
 ## [v3.15.2](https://github.com/Antiz96/arch-update/releases/tag/v3.15.2) - 2025-08-26
 
 ### Fixes
