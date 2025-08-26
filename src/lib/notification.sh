@@ -43,6 +43,7 @@ else
 fi
 
 if [ "$(sed -n '2p' "${tmpdir}/notif_param")" == "run" ]; then
+	# shellcheck disable=SC2154
 	exec {fd_notif}>"${notif_lockfile}" 2> /dev/null
 
 	if flock -n "${fd_notif}"; then
