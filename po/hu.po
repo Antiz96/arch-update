@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/common.sh:97
+#: src/lib/common.sh:102
 #, sh-format
 msgid "WARNING"
 msgstr "FIGYELMEZTETÉS"
 
-#: src/lib/common.sh:103
+#: src/lib/common.sh:108
 #, sh-format
 msgid "ERROR"
 msgstr "HIBA"
 
-#: src/lib/common.sh:108
+#: src/lib/common.sh:113
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Nyomja meg az „enter” gombot a folytatáshoz "
 
-#: src/lib/common.sh:114
+#: src/lib/common.sh:119
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Nyomja meg az „enter” gombot a kilépéshez "
 
-#: src/lib/common.sh:135
+#: src/lib/common.sh:140
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the "
@@ -46,14 +46,14 @@ msgstr ""
 "A(z) ${aur_helper} AUR-csomagok AUR-segédkészletének támogatása nem található "
 "az ${name}.conf konfigurációs fájlban\\n"
 
-#: src/lib/common.sh:166
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "Jogosultságszint-emelési parancs szükséges (sudo, sudo-rs, doas vagy run0)\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:176
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -62,7 +62,7 @@ msgstr ""
 "A(z) ${su_cmd} ${name}.conf konfigurációs fájlban, a jogosultságok "
 "kiterjesztéséhez beállított parancs nem található\\n"
 
-#: src/lib/common.sh:181
+#: src/lib/common.sh:186
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -89,7 +89,7 @@ msgstr ""
 "Nem lehet meghatározni a használni kívánt szerkesztőt\\nAz „EDITOR” "
 "környezeti változó nincs beállítva, és a „nano” (tartalékbeállítás) nincs telepítve"
 
-#: src/lib/full_upgrade.sh:10
+#: src/lib/full_upgrade.sh:13
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Már van egy futó példánya az ${_name}\\n"
@@ -784,7 +784,7 @@ msgstr ""
 "bejelentkezéskor\\nHa most azonnal el szeretné indítani, futtassa az „Arch-"
 "Update rendszertálca-kisalkalmazást”, a rendszer alkalmazásindító-menüjéből"
 
-#: src/lib/tray.sh:47
+#: src/lib/tray.sh:49
 #, sh-format
 msgid "There's already a running instance of the ${_name} systray applet"
 msgstr "Már fut egy példány az ${_name} rendszertálca-kisalkalmazásból"

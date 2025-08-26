@@ -43,7 +43,9 @@ else
 	fi
 
 	# shellcheck disable=SC2154
-	if pgrep -U "${USER}" -f "${libdir}/tray.py" > /dev/null; then
+	exec {fd_tray}>"${tray_lockfile}"
+
+	if ! flock -n "${fd_tray}"; then
 		error_msg "$(eval_gettext "There's already a running instance of the \${_name} systray applet")"
 		exit 3
 	fi

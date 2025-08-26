@@ -27,10 +27,15 @@ statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
 tmpdir="${TMPDIR:-/tmp}/${name}-${UID}"
 mkdir -p "${statedir}" "${tmpdir}" || exit 16
 
-# Define checkupdates temporary db dir prefix and lock file (for later use if needed)
+# Define checkupdates temporary db dir prefix and lockfiles
 # shellcheck disable=SC2034
 checkupdates_db_tmpdir_prefix="${tmpdir}/checkupdates-"
-lock_file="${TMPDIR:-/tmp}/${name}.lock"
+# shellcheck disable=SC2034
+upgrade_lockfile="${TMPDIR:-/tmp}/${name}.lock"
+# shellcheck disable=SC2034
+tray_lockfile="${tmpdir}/tray.lock"
+# shellcheck disable=SC2034
+notif_lockfile="${tmpdir}/notif_action.lock"
 
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
@@ -208,7 +213,6 @@ icon_updates-available() {
 cleanup() {
 	# shellcheck disable=SC2154
 	[ -d "${checkupdates_db_tmpdir}" ] && rm -rf "${checkupdates_db_tmpdir}"
-	[ -f "${lock_file}" ] && rm -f "${lock_file}"
 	[ -n "${kernel_reboot}" ] && tput cnorm
 }
 

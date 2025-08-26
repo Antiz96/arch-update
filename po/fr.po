@@ -16,27 +16,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/common.sh:97
+#: src/lib/common.sh:102
 #, sh-format
 msgid "WARNING"
 msgstr "AVERTISSEMENT"
 
-#: src/lib/common.sh:103
+#: src/lib/common.sh:108
 #, sh-format
 msgid "ERROR"
 msgstr "ERREUR"
 
-#: src/lib/common.sh:108
+#: src/lib/common.sh:113
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Appuyez sur \"entrée\" pour continuer "
 
-#: src/lib/common.sh:114
+#: src/lib/common.sh:119
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Appuyez sur \"entrée\" pour quitter "
 
-#: src/lib/common.sh:135
+#: src/lib/common.sh:140
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the "
@@ -45,14 +45,14 @@ msgstr ""
 "Le AUR helper ${aur_helper} défini pour le support des paquets AUR dans le fichier de configuration "
 "${name}.conf n'est pas disponible\\n"
 
-#: src/lib/common.sh:166
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "Une commande d'élévation de privilège est requise (sudo, sudo-rs, doas ou run0)\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:176
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -61,7 +61,7 @@ msgstr ""
 "La commande ${su_cmd} définie pour l'élévation de privilège dans le fichier "
 "de configuration ${name}.conf n'est pas disponible\\n"
 
-#: src/lib/common.sh:181
+#: src/lib/common.sh:186
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -88,7 +88,7 @@ msgstr ""
 "Impossible de déterminer l'éditeur à utiliser\\n La variable d'environnement \"EDITOR\" "
 "n'est pas paramétrée et \"nano\" (option de secours) n'est pas installé"
 
-#: src/lib/full_upgrade.sh:10
+#: src/lib/full_upgrade.sh:13
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Il y a déjà une instance d'${_name} en cours d'exécution\\n"
@@ -781,7 +781,7 @@ msgstr ""
 "immédiatement, vous pouvez lancer l'application \"${_name} Systray Applet\" "
 "depuis votre menu d'application"
 
-#: src/lib/tray.sh:47
+#: src/lib/tray.sh:49
 #, sh-format
 msgid "There's already a running instance of the ${_name} systray applet"
 msgstr "Il y a déjà une instance de l'applet systray d'${_name} en cours d'exécution"
