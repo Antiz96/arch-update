@@ -44,7 +44,7 @@ fi
 
 if [ "$(sed -n '2p' "${tmpdir}/notif_param")" == "run" ]; then
 	# shellcheck disable=SC2154
-	exec {fd_notif}>"${notif_lockfile}" 2> /dev/null
+	exec {fd_notif}>"${notif_lockfile}"
 
 	if flock -n "${fd_notif}"; then
 		systemd-run --user --scope --unit="${name}"-run-"$(date +%Y%m%d-%H%M%S)" --quiet /bin/bash -c "gio launch ${desktop_file}" || exit 18

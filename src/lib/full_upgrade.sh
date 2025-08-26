@@ -6,7 +6,7 @@
 
 # Hold the lockfile to avoid multiple parallel runs
 # shellcheck disable=SC2154
-exec {fd_upgrade}> "${upgrade_lockfile}" 2> /dev/null
+exec {fd_upgrade}> "${upgrade_lockfile}"
 
 # Exit if the lockfile is already hold
 if ! flock -n "${fd_upgrade}"; then

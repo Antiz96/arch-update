@@ -43,7 +43,7 @@ else
 	fi
 
 	# shellcheck disable=SC2154
-	exec {fd_tray}>"${tray_lockfile}" 2> /dev/null
+	exec {fd_tray}>"${tray_lockfile}"
 
 	if ! flock -n "${fd_tray}"; then
 		error_msg "$(eval_gettext "There's already a running instance of the \${_name} systray applet")"
