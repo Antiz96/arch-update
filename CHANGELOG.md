@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.15.2](https://github.com/Antiz96/arch-update/releases/tag/v3.15.2) - 2025-08-26
+
+### Fixes
+
+- Make lockfiles logic more robust ([#415](https://github.com/Antiz96/arch-update/pull/415)) - ([3454d97](https://github.com/Antiz96/arch-update/commit/3454d97cfd2b206f6d5342066a95cdee008ec033)) by @Antiz96
+
 ## [v3.15.1](https://github.com/Antiz96/arch-update/releases/tag/v3.15.1) - 2025-08-25
 
 ### Fixes
