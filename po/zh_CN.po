@@ -16,48 +16,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/common.sh:102
+#: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
 msgstr "警告"
 
-#: src/lib/common.sh:108
+#: src/lib/common.sh:102
 #, sh-format
 msgid "ERROR"
 msgstr "错误"
 
-#: src/lib/common.sh:113
+#: src/lib/common.sh:107
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "按下 \"enter\" 继续"
 
-#: src/lib/common.sh:119
+#: src/lib/common.sh:113
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "按下 \"enter\" 退出"
 
-#: src/lib/common.sh:140
+#: src/lib/common.sh:134
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the "
 "${name}.conf configuration file is not found\\n"
 msgstr "配置在 ${name}.conf 文件中的 AUR 帮助程序 ${aur_helper} 未找到\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:165
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "需要特权提升命令程序（sudo、sudo-rs、doas 或 run0）\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:170
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr "配置在 ${name}.conf 文件中的特权提升命令程序 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:186
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

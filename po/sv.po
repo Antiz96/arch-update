@@ -16,27 +16,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/lib/common.sh:102
+#: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
 msgstr "VARNING"
 
-#: src/lib/common.sh:108
+#: src/lib/common.sh:102
 #, sh-format
 msgid "ERROR"
 msgstr "FEL"
 
-#: src/lib/common.sh:113
+#: src/lib/common.sh:107
 #, sh-format
 msgid "Press \"enter\" to continue "
 msgstr "Tryck på \"enter\" för att fortsätta "
 
-#: src/lib/common.sh:119
+#: src/lib/common.sh:113
 #, sh-format
 msgid "Press \"enter\" to quit "
 msgstr "Tryck på \"enter\" för att avsluta "
 
-#: src/lib/common.sh:140
+#: src/lib/common.sh:134
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the "
@@ -45,14 +45,14 @@ msgstr ""
 "${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
 "konfigurationsfilen ${name}.conf hittades inte\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:165
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "Ett kommando för behörighetshöjning krävs (sudo, sudo-rs, doas eller run0)\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:170
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -61,7 +61,7 @@ msgstr ""
 "${su_cmd}-kommandot inställt för privilegieskalering i ${name}.conf-"
 "konfigurationsfilen hittades inte\\n"
 
-#: src/lib/common.sh:186
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
