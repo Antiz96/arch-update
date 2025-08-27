@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.15.4](https://github.com/Antiz96/arch-update/releases/tag/v3.15.4) - 2025-08-27
+
+### Fixes
+
+- *(notification)* Fix "Run Arch-Update" click action ([#417](https://github.com/Antiz96/arch-update/pull/417)) - ([28a6a8b](https://github.com/Antiz96/arch-update/commit/28a6a8b0c350525494860d1cd844751de8f10294)) by @Antiz96
+
 ## [v3.15.3](https://github.com/Antiz96/arch-update/releases/tag/v3.15.3) - 2025-08-26
 
 ### Fixes
