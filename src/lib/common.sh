@@ -27,15 +27,9 @@ statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
 tmpdir="${TMPDIR:-/tmp}/${name}-${UID}"
 mkdir -p "${statedir}" "${tmpdir}" || exit 16
 
-# Define checkupdates temporary db dir prefix and lockfiles
+# Define checkupdates temporary db dir prefix
 # shellcheck disable=SC2034
 checkupdates_db_tmpdir_prefix="${tmpdir}/checkupdates-"
-# shellcheck disable=SC2034
-upgrade_lockfile="${TMPDIR:-/tmp}/${name}.lock"
-# shellcheck disable=SC2034
-tray_lockfile="${tmpdir}/tray.lock"
-# shellcheck disable=SC2034
-notif_lockfile="${tmpdir}/notif_action.lock"
 
 # Declare necessary parameters for translations
 # shellcheck disable=SC1091
