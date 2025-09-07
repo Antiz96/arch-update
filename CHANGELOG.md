@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.15.5](https://github.com/Antiz96/arch-update/releases/tag/v3.15.5) - 2025-09-07
+
+### Miscellaneous
+
+- *(i18n)* Add Brazilian Portuguese translation ([#419](https://github.com/Antiz96/arch-update/pull/419)) - ([97fa938](https://github.com/Antiz96/arch-update/commit/97fa93833d15bc32d1c9cebdc6a01b6d0ea915c1)) by @diegons490
+
 ## [v3.15.4](https://github.com/Antiz96/arch-update/releases/tag/v3.15.4) - 2025-08-27
 
 ### Fixes
