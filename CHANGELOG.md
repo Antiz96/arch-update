@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.15.6](https://github.com/Antiz96/arch-update/releases/tag/v3.15.6) - 2025-09-11
+
+### Miscellaneous
+
+- *(i18n)* Add Spanish translation ([#421](https://github.com/Antiz96/arch-update/pull/421)) - ([120d80b](https://github.com/Antiz96/arch-update/commit/120d80b2f7c1cac9e60ced6c264f8922ae407d72)) by @djgs01
+
 ## [v3.15.5](https://github.com/Antiz96/arch-update/releases/tag/v3.15.5) - 2025-09-07
 
 ### Miscellaneous
