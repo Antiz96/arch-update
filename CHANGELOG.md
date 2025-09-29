@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.15.7](https://github.com/Antiz96/arch-update/releases/tag/v3.15.7) - 2025-09-29
+
+### Fixes
+
+- *(i18n)* Add missing line return in German translation ([#423](https://github.com/Antiz96/arch-update/pull/423)) - ([2acb654](https://github.com/Antiz96/arch-update/commit/2acb65412e1e3b0d591fb36faef01244194f384a)) by @bermeitinger-b
+
 ## [v3.15.6](https://github.com/Antiz96/arch-update/releases/tag/v3.15.6) - 2025-09-11
 
 ### Miscellaneous
