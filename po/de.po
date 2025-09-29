@@ -517,7 +517,7 @@ msgstr "Das Löschen wurde durchgeführt\\n"
 #: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
-msgstr "Das Löschen wurde nicht durchgeführt\\"
+msgstr "Das Löschen wurde nicht durchgeführt\\n"
 
 #: src/lib/orphan_packages.sh:44
 #, sh-format
