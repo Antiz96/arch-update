@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Security concerns
+    url: https://github.com/Antiz96/arch-update/blob/main/SECURITY.md
+    about: To report security concerns, please follow the instructions in the SECURITY.md document
   - name: Contributing guidelines
     url: https://github.com/Antiz96/arch-update/blob/main/CONTRIBUTING.md
     about: Please, read the contributing guidelines before opening an issue
