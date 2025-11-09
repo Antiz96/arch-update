@@ -715,72 +715,72 @@ msgstr ""
 "No se ha encontrado ningún servicio que requiera un reinicio tras la "
 "actualización\\n"
 
-#: src/lib/tray.py:166
+#: src/lib/tray.py:168
 msgid "'updates' state file isn't found"
 msgstr "No se encuentra el archivo de estado «updates»"
 
-#: src/lib/tray.py:213
+#: src/lib/tray.py:215
 msgid "System is up to date"
 msgstr "El sistema está actualizado"
 
-#: src/lib/tray.py:216
+#: src/lib/tray.py:218
 msgid "1 update available"
 msgstr "1 actualización disponible"
 
-#: src/lib/tray.py:219
+#: src/lib/tray.py:221
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr "{updates} actualizaciones disponibles"
 
-#: src/lib/tray.py:228
+#: src/lib/tray.py:230
 #, python-brace-format
 msgid "All ({updates})"
 msgstr "Todo ({updates})"
 
-#: src/lib/tray.py:241
+#: src/lib/tray.py:243
 #, python-brace-format
 msgid "Packages ({updates})"
 msgstr "Paquetes ({updates})"
 
-#: src/lib/tray.py:252
+#: src/lib/tray.py:254
 #, python-brace-format
 msgid "AUR ({updates})"
 msgstr "AUR ({updates})"
 
-#: src/lib/tray.py:263
+#: src/lib/tray.py:265
 #, python-brace-format
 msgid "Flatpak ({updates})"
 msgstr "Flatpak ({updates})"
 
-#: src/lib/tray.py:315 src/lib/tray.py:320
+#: src/lib/tray.py:317 src/lib/tray.py:322
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
-#: src/lib/tray.py:321
+#: src/lib/tray.py:323
 msgid "Run Arch-Update"
 msgstr "Ejecutar Arch-Update"
 
-#: src/lib/tray.py:322
+#: src/lib/tray.py:324
 msgid "Check for updates"
 msgstr "Buscar actualizaciones"
 
-#: src/lib/tray.py:323
+#: src/lib/tray.py:325
 msgid "Exit"
 msgstr "Salir"
 
-#: src/lib/tray.py:326
+#: src/lib/tray.py:328
 msgid "All"
 msgstr "Todo"
 
-#: src/lib/tray.py:327
+#: src/lib/tray.py:329
 msgid "Packages"
 msgstr "Paquetes"
 
-#: src/lib/tray.py:328
+#: src/lib/tray.py:330
 msgid "AUR"
 msgstr "AUR"
 
-#: src/lib/tray.py:329
+#: src/lib/tray.py:331
 msgid "Flatpak"
 msgstr "Flatpak"
 
