@@ -150,7 +150,7 @@ class ArchUpdateQt6:
                     return
                 url = parts[1].strip()
                 # Make sure to only send URLs to xdg-open
-				if url.startswith("http://") or url.startswith("https://"):
+                if url.startswith("http://") or url.startswith("https://"):
                     subprocess.run(["xdg-open", url], check=False)
 
     # Update dropdown menus based on the state files content
