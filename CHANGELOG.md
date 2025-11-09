@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.15.8](https://github.com/Antiz96/arch-update/releases/tag/v3.15.8) - 2025-11-09
+
+### Fixes
+
+- *(tray)* Add basic validation of package URL format ([#427](https://github.com/Antiz96/arch-update/pull/427)) - ([50b0f30](https://github.com/Antiz96/arch-update/commit/50b0f3010551683abc61be118cd1c89978a86080)) by @mgruberb
+
+### Documentation
+
+- *(optdepends)* Remove mentions of qt6-wayland ([#425](https://github.com/Antiz96/arch-update/pull/425)) - ([7323154](https://github.com/Antiz96/arch-update/commit/7323154c04b5c87a3c35b6d76833c4887f1cc98f)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#429](https://github.com/Antiz96/arch-update/pull/429)) - ([8186685](https://github.com/Antiz96/arch-update/commit/818668561d1ef2e090758f64774851570ba0bff8)) by @Antiz96
+- Add security concerns reporting guidelines ([#428](https://github.com/Antiz96/arch-update/pull/428)) - ([ccbc39a](https://github.com/Antiz96/arch-update/commit/ccbc39a2a7ffe9319349e9f1b749dba898da3ffa)) by @Antiz96
+
 ## [v3.15.7](https://github.com/Antiz96/arch-update/releases/tag/v3.15.7) - 2025-09-29
 
 ### Fixes
