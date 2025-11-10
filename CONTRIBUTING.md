@@ -49,6 +49,7 @@ When submitting code changes, try to respect the coding style and the overall wa
 For instance:
 
 - Stick to bash syntax
+- Use tabs
 - Variables should use the `"${var}"` format
 - Use the `{main,info,ask,warning,error}_msg` functions to print messages
 - Use `"$(eval_gettext "string")"` for any string chain that should be included in translations

@@ -14,15 +14,15 @@ option="${1}"
 if [ -n "${ARCH_UPDATE_LIBDIR}" ]; then
 	libdir="${ARCH_UPDATE_LIBDIR}"
 elif [ -d "${XDG_DATA_HOME}/${name}/lib" ]; then
-        libdir="${XDG_DATA_HOME}/${name}/lib"
+	libdir="${XDG_DATA_HOME}/${name}/lib"
 elif [ -d "${HOME}/.local/share/${name}/lib" ]; then
-        libdir="${HOME}/.local/share/${name}/lib"
+	libdir="${HOME}/.local/share/${name}/lib"
 elif [ -d "${XDG_DATA_DIRS}/${name}/lib" ]; then
-        libdir="${XDG_DATA_DIRS}/${name}/lib"
+	libdir="${XDG_DATA_DIRS}/${name}/lib"
 elif [ -d "/usr/local/share/${name}/lib" ]; then
-        libdir="/usr/local/share/${name}/lib"
+	libdir="/usr/local/share/${name}/lib"
 elif [ -d "/usr/share/${name}/lib" ]; then
-        libdir="/usr/share/${name}/lib"
+	libdir="/usr/share/${name}/lib"
 else
 	echo -e >&2 "ERROR: Libraries directory not found"
 	exit 14
