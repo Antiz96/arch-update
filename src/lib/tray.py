@@ -231,7 +231,6 @@ class ArchUpdateQt6:
         # Clear the menu (to update entries)
         self.menu.clear()
         self.menu.addAction(self.menu_count)
-        self.menu.addAction(self.menu_last_check)
 
         # Add / update dropdown menus if there's at least one available update, remove it otherwise
         if (updates_count_pkg >= 1) + (updates_count_aur >=1) + (updates_count_flatpak >=1) >= 2:
@@ -278,6 +277,9 @@ class ArchUpdateQt6:
             self.menu.addMenu(self.dropdown_menu_flatpak)
         else:
             self.menu.removeAction(self.dropdown_menu_flatpak.menuAction())
+
+        # Add check timestamp after listing of updates
+        self.menu.addAction(self.menu_last_check)
 
         # Restore static menu entries (after clearing the menu)
         self.menu.addSeparator()
