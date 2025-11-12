@@ -10,6 +10,7 @@ import logging
 import os
 import sys
 import subprocess
+import time
 from PyQt6.QtGui import QIcon, QAction
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QFileSystemWatcher
@@ -157,12 +158,14 @@ class ArchUpdateQt6:
     def update_dropdown_menus(self):
         """Update dropdown menus"""
     # Check presence of state files
+        last_check_time = "never"
         if self.watcher and not self.updatesfile in self.watcher.files():
             self.watcher.addPath(self.updatesfile)
 
         try:
             with open(self.updatesfile, encoding="utf-8") as f:
                 updates_list = f.readlines()
+                last_check_time = time.strftime("%d %b %H:%M:%S", time.localtime(os.path.getmtime(self.updatesfile)))
         except FileNotFoundError:
             log.error("State updates file missing")
             self.menu_count.setText(_("'updates' state file isn't found"))
@@ -221,9 +224,14 @@ class ArchUpdateQt6:
             self.menu_count.setText(_("{updates} updates available").format(updates=updates_count))
             self.menu_count.setEnabled(True)
 
+        # Update last check timestamp (always False to not pull unwanted attention)
+        self.menu_last_check.setText(_("Last check:\n{time}").format(time=last_check_time))
+        self.menu_last_check.setEnabled(False)
+
         # Clear the menu (to update entries)
         self.menu.clear()
         self.menu.addAction(self.menu_count)
+        self.menu.addAction(self.menu_last_check)
 
         # Add / update dropdown menus if there's at least one available update, remove it otherwise
         if (updates_count_pkg >= 1) + (updates_count_aur >=1) + (updates_count_flatpak >=1) >= 2:
@@ -320,6 +328,7 @@ class ArchUpdateQt6:
         # Definition of menus titles
         self.menu = QMenu()
         self.menu_count = QAction(_("Arch-Update"))
+        self.menu_last_check = QAction(_("Last check"))
         self.menu_launch = QAction(_("Run Arch-Update"))
         self.menu_check = QAction(_("Check for updates"))
         self.menu_exit = QAction(_("Exit"))
@@ -332,6 +341,7 @@ class ArchUpdateQt6:
 
         # Link actions to the menu
         self.menu.addAction(self.menu_count)
+        self.menu.addAction(self.menu_last_check)
         self.menu.addSeparator()
         self.menu.addAction(self.menu_launch)
         self.menu.addAction(self.menu_check)
