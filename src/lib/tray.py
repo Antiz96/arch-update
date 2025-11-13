@@ -165,7 +165,7 @@ class ArchUpdateQt6:
         try:
             with open(self.updatesfile, encoding="utf-8") as f:
                 updates_list = f.readlines()
-                last_check_time = time.strftime("%d %b %H:%M:%S", time.localtime(os.path.getmtime(self.updatesfile)))
+                last_check_time = time.strftime("%d %b - %H:%M:%S", time.localtime(os.path.getmtime(self.updatesfile)))
         except FileNotFoundError:
             log.error("State updates file missing")
             self.menu_count.setText(_("'updates' state file isn't found"))
@@ -296,6 +296,8 @@ class ArchUpdateQt6:
             self.menu.removeAction(self.dropdown_menu_flatpak.menuAction())
 
         # Add check timestamps (after updates list)
+        if updates_count >= 1:
+            self.menu.addSeparator()
         self.menu.addAction(self.menu_last_check)
         if self.menu_next_check:
             self.menu.addAction(self.menu_next_check)
