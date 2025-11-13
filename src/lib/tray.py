@@ -307,9 +307,10 @@ class ArchUpdateQt6:
         self.menu.addAction(self.menu_exit)
 
     # Action to run the arch_update function
-    def run(self):
+    def run(self, reason):
         """Run arch-update"""
-        arch_update()
+        if reason in (QSystemTrayIcon.ActivationReason.Trigger, QSystemTrayIcon.ActivationReason.MiddleClick, "menu_click_action"):
+            arch_update()
 
     # Action to run `arch-update --check`
     def check(self):
@@ -370,8 +371,8 @@ class ArchUpdateQt6:
         self.menu.addAction(self.menu_check)
         self.menu.addAction(self.menu_exit)
 
-        self.menu_count.triggered.connect(self.run)
-        self.menu_launch.triggered.connect(self.run)
+        self.menu_count.triggered.connect(lambda: self.run("menu_click_action"))
+        self.menu_launch.triggered.connect(lambda: self.run("menu_click_action"))
         self.menu_check.triggered.connect(self.check)
         self.menu_exit.triggered.connect(self.exit)
 
