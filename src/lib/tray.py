@@ -238,10 +238,10 @@ class ArchUpdateQt6:
              | (($s%3600)/60|floor) as $m \
              | ($s%60|floor) as $s \
              | [ \
-                 (if $d>0 then \"\($d)d\" else empty end), \
-                 (if $h>0 then \"\($h)h\" else empty end), \
-                 (if $m>0 then \"\($m)m\" else empty end), \
-                 (if $s>0 then \"\($s)s\" else empty end) \
+                 (if $d>0 then \"\\($d)d\" else empty end), \
+                 (if $h>0 then \"\\($h)h\" else empty end), \
+                 (if $m>0 then \"\\($m)m\" else empty end), \
+                 (if $s>0 then \"\\($s)s\" else empty end) \
                ] \
              | join(\" \")'", \
             check=False,
