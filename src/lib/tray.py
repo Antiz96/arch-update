@@ -157,7 +157,7 @@ class ArchUpdateQt6:
     # Update dropdown menus based on the state files content
     def update_dropdown_menus(self):
         """Update dropdown menus"""
-    # Check presence of state files
+        # Check presence of state files
         last_check_time = "never"
         if self.watcher and not self.updatesfile in self.watcher.files():
             self.watcher.addPath(self.updatesfile)
@@ -228,6 +228,26 @@ class ArchUpdateQt6:
         self.menu_last_check.setText(_("Last check:\n{time}").format(time=last_check_time))
         self.menu_last_check.setEnabled(False)
 
+        # Update next check timestamp (always False to not pull unwanted attention)
+        try:
+            timer_left = subprocess.run(
+                "/usr/bin/systemctl --user list-timers | awk '/arch-update.timer/ {print $5}'",
+                shell=True,
+                capture_output=True,
+                text=True,
+                timeout=1,
+            )
+            next_check_output = timer_left.stdout.strip()
+        except Exception as error_output:
+            next_check_output = ""
+            log.error(f"Failed to get next check time: {error_output}")
+
+        if next_check_output:
+            self.menu_next_check = QAction(f"Next check in {next_check_output}")
+            self.menu_next_check.setEnabled(False)
+        else:
+            self.menu_next_check = None
+
         # Clear the menu (to update entries)
         self.menu.clear()
         self.menu.addAction(self.menu_count)
@@ -278,8 +298,10 @@ class ArchUpdateQt6:
         else:
             self.menu.removeAction(self.dropdown_menu_flatpak.menuAction())
 
-        # Add check timestamp after listing of updates
+        # Add check timestamps (after updates list)
         self.menu.addAction(self.menu_last_check)
+        if self.menu_next_check:
+            self.menu.addAction(self.menu_next_check)
 
         # Restore static menu entries (after clearing the menu)
         self.menu.addSeparator()
@@ -331,6 +353,7 @@ class ArchUpdateQt6:
         self.menu = QMenu()
         self.menu_count = QAction(_("Arch-Update"))
         self.menu_last_check = QAction(_("Last check"))
+        self.menu_next_check = QAction(_("Next check"))
         self.menu_launch = QAction(_("Run Arch-Update"))
         self.menu_check = QAction(_("Check for updates"))
         self.menu_exit = QAction(_("Exit"))
@@ -344,6 +367,7 @@ class ArchUpdateQt6:
         # Link actions to the menu
         self.menu.addAction(self.menu_count)
         self.menu.addAction(self.menu_last_check)
+        self.menu.aboutToShow.connect(self.update_dropdown_menus) # Function connector for the menu_next_check entry
         self.menu.addSeparator()
         self.menu.addAction(self.menu_launch)
         self.menu.addAction(self.menu_check)
