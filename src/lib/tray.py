@@ -278,9 +278,10 @@ class ArchUpdateQt6:
         self.menu.addAction(self.menu_exit)
 
     # Action to run the arch_update function
-    def run(self):
+    def run(self, reason):
         """Run arch-update"""
-        arch_update()
+        if reason == QSystemTrayIcon.ActivationReason.Trigger:
+            arch_update()
 
     # Action to run `arch-update --check`
     def check(self):
