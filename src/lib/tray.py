@@ -230,7 +230,20 @@ class ArchUpdateQt6:
 
         # Update next check timestamp (always False to not pull unwanted attention)
         timer_left = subprocess.run(
-            "/usr/bin/systemctl --user list-timers | awk '/arch-update.timer/ {print $5}'",
+            "/usr/bin/systemctl --user list-timers -o json | jq -r '.[] \
+             | select(.unit==\"arch-update.timer\") \
+             | ((.next - (now*1000000))/1000000 | floor) as $s \
+             | ($s/86400|floor) as $d \
+             | (($s%86400)/3600|floor) as $h \
+             | (($s%3600)/60|floor) as $m \
+             | ($s%60|floor) as $s \
+             | [ \
+                 (if $d>0 then \"\($d)d\" else empty end), \
+                 (if $h>0 then \"\($h)h\" else empty end), \
+                 (if $m>0 then \"\($m)m\" else empty end), \
+                 (if $s>0 then \"\($s)s\" else empty end) \
+               ] \
+             | join(\" \")'", \
             check=False,
             shell=True,
             capture_output=True,
@@ -328,7 +341,7 @@ class ArchUpdateQt6:
     def __init__(self, iconfile):
         """Start Qt6 System Tray"""
 
-	# Variables definition
+        # Variables definition
         self.iconfile = iconfile
         self.updatesfile = UPDATES_STATEFILE
         self.updatesfilepkg = UPDATES_STATEFILE_PACKAGES
