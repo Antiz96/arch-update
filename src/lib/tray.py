@@ -229,21 +229,18 @@ class ArchUpdateQt6:
         self.menu_last_check.setEnabled(False)
 
         # Update next check timestamp (always False to not pull unwanted attention)
-        try:
-            timer_left = subprocess.run(
-                "/usr/bin/systemctl --user list-timers | awk '/arch-update.timer/ {print $5}'",
-                shell=True,
-                capture_output=True,
-                text=True,
-                timeout=1,
-            )
-            next_check_output = timer_left.stdout.strip()
-        except Exception as error_output:
-            next_check_output = ""
-            log.error(f"Failed to get next check time: {error_output}")
+        timer_left = subprocess.run(
+            "/usr/bin/systemctl --user list-timers | awk '/arch-update.timer/ {print $5}'",
+            check=False,
+            shell=True,
+            capture_output=True,
+            text=True,
+            timeout=1,
+        )
+        next_check_output = timer_left.stdout.strip()
 
         if next_check_output:
-            self.menu_next_check = QAction(f"Next check in {next_check_output}")
+            self.menu_next_check = QAction("Next check in " + next_check_output)
             self.menu_next_check.setEnabled(False)
         else:
             self.menu_next_check = None
