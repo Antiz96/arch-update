@@ -165,7 +165,7 @@ class ArchUpdateQt6:
         try:
             with open(self.updatesfile, encoding="utf-8") as f:
                 updates_list = f.readlines()
-                last_check_time = time.strftime("%d %b - %H:%M:%S", time.localtime(os.path.getmtime(self.updatesfile)))
+                last_check_time = time.strftime("%d %b %H:%M:%S", time.localtime(os.path.getmtime(self.updatesfile)))
         except FileNotFoundError:
             log.error("State updates file missing")
             self.menu_count.setText(_("'updates' state file isn't found"))
