@@ -117,7 +117,7 @@ def get_next_check_duration_human_readable(input_json):
             seconds = floor((next_microseconds - int(time.time() * 1_000_000))/1_000_000)
             days = floor(seconds/86400)
             hours = floor((seconds % 86400) / 3600)
-            minutes = floor((seconds % 86400) / 60)
+            minutes = floor((seconds % 3600) / 60)
             seconds = floor(seconds % 60)
             parts = []
             if days > 0:
