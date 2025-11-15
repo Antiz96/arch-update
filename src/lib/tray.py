@@ -109,6 +109,7 @@ def arch_update():
 
 # Helper function to extract human-readable duration from systemctl JSON output
 def get_next_check_duration_human_readable(input_json):
+    """Calculate human-readable duration from systemctl output"""
     result = None
     timer_json = json.loads(input_json)
     if timer_json:
@@ -121,13 +122,13 @@ def get_next_check_duration_human_readable(input_json):
             seconds = floor(seconds % 60)
             parts = []
             if days > 0:
-                parts.append("{d}d".format(d=days))
+                parts.append(f"{days}d")
             if hours > 0:
-                parts.append("{h}h".format(h=hours))
+                parts.append(f"{hours}h")
             if minutes > 0:
-                parts.append("{m}m".format(m=minutes))
+                parts.append(f"{minutes}m")
             if seconds > 0:
-                parts.append("{s}s".format(s=seconds))
+                parts.append(f"{seconds}s")
             if parts:
                 result = " ".join(parts)
     return result
