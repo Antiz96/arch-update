@@ -10,6 +10,9 @@ import logging
 import os
 import sys
 import subprocess
+import time
+import json
+from math import floor
 from PyQt6.QtGui import QIcon, QAction
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QFileSystemWatcher
@@ -104,6 +107,32 @@ def arch_update():
         DESKTOP_FILE = "/usr/share/applications/arch-update.desktop"
     subprocess.run(["gio", "launch", DESKTOP_FILE], check=False)
 
+# Helper function to extract human-readable duration from systemctl JSON output
+def get_next_check_duration_human_readable(input_json):
+    """Calculate human-readable duration from systemctl output"""
+    result = None
+    timer_json = json.loads(input_json)
+    if timer_json:
+        next_microseconds = timer_json[0].get("next")
+        if next_microseconds:
+            seconds = floor((next_microseconds - int(time.time() * 1_000_000))/1_000_000)
+            days = floor(seconds/86400)
+            hours = floor((seconds % 86400) / 3600)
+            minutes = floor((seconds % 3600) / 60)
+            seconds = floor(seconds % 60)
+            parts = []
+            if days > 0:
+                parts.append(f"{days}d")
+            if hours > 0:
+                parts.append(f"{hours}h")
+            if minutes > 0:
+                parts.append(f"{minutes}m")
+            if seconds > 0:
+                parts.append(f"{seconds}s")
+            if parts:
+                result = " ".join(parts)
+    return result
+
 # User Interface
 class ArchUpdateQt6:
     """System Tray using QT6 library"""
@@ -156,13 +185,15 @@ class ArchUpdateQt6:
     # Update dropdown menus based on the state files content
     def update_dropdown_menus(self):
         """Update dropdown menus"""
-    # Check presence of state files
+        # Check presence of state files
+        last_check_time = "never"
         if self.watcher and not self.updatesfile in self.watcher.files():
             self.watcher.addPath(self.updatesfile)
 
         try:
             with open(self.updatesfile, encoding="utf-8") as f:
                 updates_list = f.readlines()
+                last_check_time = time.strftime("%d %b %H:%M:%S", time.localtime(os.path.getmtime(self.updatesfile)))
         except FileNotFoundError:
             log.error("State updates file missing")
             self.menu_count.setText(_("'updates' state file isn't found"))
@@ -221,6 +252,27 @@ class ArchUpdateQt6:
             self.menu_count.setText(_("{updates} updates available").format(updates=updates_count))
             self.menu_count.setEnabled(True)
 
+        # Update last check timestamp (always False to not pull unwanted attention)
+        self.menu_last_check.setText(_("Last check:\n{time}").format(time=last_check_time))
+        self.menu_last_check.setEnabled(False)
+
+        # Update next check timestamp (always False to not pull unwanted attention)
+        timer_left = subprocess.run(
+            "/usr/bin/systemctl --user list-timers arch-update.timer -o json",
+            check=False,
+            shell=True,
+            capture_output=True,
+            text=True,
+            timeout=1,
+        )
+        next_check_output = get_next_check_duration_human_readable(timer_left.stdout.strip())
+
+        if next_check_output:
+            self.menu_next_check = QAction("Next check in " + next_check_output)
+            self.menu_next_check.setEnabled(False)
+        else:
+            self.menu_next_check = None
+
         # Clear the menu (to update entries)
         self.menu.clear()
         self.menu.addAction(self.menu_count)
@@ -271,6 +323,13 @@ class ArchUpdateQt6:
         else:
             self.menu.removeAction(self.dropdown_menu_flatpak.menuAction())
 
+        # Add check timestamps (after updates list)
+        if updates_count >= 1:
+            self.menu.addSeparator()
+        self.menu.addAction(self.menu_last_check)
+        if self.menu_next_check:
+            self.menu.addAction(self.menu_next_check)
+
         # Restore static menu entries (after clearing the menu)
         self.menu.addSeparator()
         self.menu.addAction(self.menu_launch)
@@ -297,7 +356,7 @@ class ArchUpdateQt6:
     def __init__(self, iconfile):
         """Start Qt6 System Tray"""
 
-	# Variables definition
+        # Variables definition
         self.iconfile = iconfile
         self.updatesfile = UPDATES_STATEFILE
         self.updatesfilepkg = UPDATES_STATEFILE_PACKAGES
@@ -321,6 +380,8 @@ class ArchUpdateQt6:
         # Definition of menus titles
         self.menu = QMenu()
         self.menu_count = QAction(_("Arch-Update"))
+        self.menu_last_check = QAction(_("Last check"))
+        self.menu_next_check = QAction(_("Next check"))
         self.menu_launch = QAction(_("Run Arch-Update"))
         self.menu_check = QAction(_("Check for updates"))
         self.menu_exit = QAction(_("Exit"))
@@ -333,6 +394,8 @@ class ArchUpdateQt6:
 
         # Link actions to the menu
         self.menu.addAction(self.menu_count)
+        self.menu.addAction(self.menu_last_check)
+        self.menu.aboutToShow.connect(self.update_dropdown_menus) # Function connector for the menu_next_check entry
         self.menu.addSeparator()
         self.menu.addAction(self.menu_launch)
         self.menu.addAction(self.menu_check)
