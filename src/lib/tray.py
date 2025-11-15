@@ -11,6 +11,8 @@ import os
 import sys
 import subprocess
 import time
+import json
+from math import floor
 from PyQt6.QtGui import QIcon, QAction
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QFileSystemWatcher
@@ -104,6 +106,31 @@ def arch_update():
     if not os.path.isfile(DESKTOP_FILE):
         DESKTOP_FILE = "/usr/share/applications/arch-update.desktop"
     subprocess.run(["gio", "launch", DESKTOP_FILE], check=False)
+
+# Helper function to extract human-readable duration from systemctl JSON output
+def get_next_check_duration_human_readable(input_json):
+    result = None
+    timer_json = json.loads(input_json)
+    if timer_json:
+        next_microseconds = timer_json[0].get("next")
+        if next_microseconds:
+            seconds = floor((next_microseconds - int(time.time() * 1_000_000))/1_000_000)
+            days = floor(seconds/86400)
+            hours = floor((seconds % 86400) / 3600)
+            minutes = floor((seconds % 86400) / 60)
+            seconds = floor(seconds % 60)
+            parts = []
+            if days > 0:
+                parts.append("{d}d".format(d=days))
+            if hours > 0:
+                parts.append("{h}h".format(h=hours))
+            if minutes > 0:
+                parts.append("{m}m".format(m=minutes))
+            if seconds > 0:
+                parts.append("{s}s".format(s=seconds))
+            if parts:
+                result = " ".join(parts)
+    return result
 
 # User Interface
 class ArchUpdateQt6:
@@ -230,27 +257,14 @@ class ArchUpdateQt6:
 
         # Update next check timestamp (always False to not pull unwanted attention)
         timer_left = subprocess.run(
-            "/usr/bin/systemctl --user list-timers -o json | jq -r '.[] \
-             | select(.unit==\"arch-update.timer\") \
-             | ((.next - (now*1000000))/1000000 | floor) as $s \
-             | ($s/86400|floor) as $d \
-             | (($s%86400)/3600|floor) as $h \
-             | (($s%3600)/60|floor) as $m \
-             | ($s%60|floor) as $s \
-             | [ \
-                 (if $d>0 then \"\\($d)d\" else empty end), \
-                 (if $h>0 then \"\\($h)h\" else empty end), \
-                 (if $m>0 then \"\\($m)m\" else empty end), \
-                 (if $s>0 then \"\\($s)s\" else empty end) \
-               ] \
-             | join(\" \")'", \
+            "/usr/bin/systemctl --user list-timers arch-update.timer -o json",
             check=False,
             shell=True,
             capture_output=True,
             text=True,
             timeout=1,
         )
-        next_check_output = timer_left.stdout.strip()
+        next_check_output = get_next_check_duration_human_readable(timer_left.stdout.strip())
 
         if next_check_output:
             self.menu_next_check = QAction("Next check in " + next_check_output)

@@ -51,7 +51,7 @@ Installez le paquet AUR [arch-update](https://aur.archlinux.org/packages/arch-up
 Installez les dépendances requises :
 
 ```bash
-sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib curl fakeroot jq htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2 xdg-utils
+sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2 xdg-utils
 ```
 
 Dépendances optionnelles supplémentaires dont vous pourriez avoir envie ou besoin :
