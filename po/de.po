@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 3.15.8\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
-"POT-Creation-Date: 2024-03-21 10:30+0100\n"
+"POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-03-26 10:30+0100\n"
 "Last-Translator: DeN-AlB <denalb@mailbox.org>\n"
 "Language: de_DE\n"
@@ -50,7 +50,8 @@ msgstr ""
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
-"Ein Befehl zur Erhöhung der Rechte ist erforderlich (sudo, sudo-rs, doas oder run0)\\n"
+"Ein Befehl zur Erhöhung der Rechte ist erforderlich (sudo, sudo-rs, doas "
+"oder run0)\\n"
 
 #: src/lib/common.sh:170
 #, sh-format
@@ -67,8 +68,9 @@ msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
 "files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
-"Der ${diff_prog} Editor zur Anzeige / zum Bearbeiten der Unterschiede von pacnew "
-"Dateien in der ${name}.conf Konfigurationsdatei wurde nicht gefunden\\n"
+"Der ${diff_prog} Editor zur Anzeige / zum Bearbeiten der Unterschiede von "
+"pacnew Dateien in der ${name}.conf Konfigurationsdatei wurde nicht "
+"gefunden\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
@@ -76,8 +78,8 @@ msgid ""
 "No configuration file found\\nYou can generate one with \"${name} --gen-"
 "config\""
 msgstr ""
-"Keine Konfigurationsdatei gefunden\\nSie kann generiert werden durch \"${name} --gen-"
-"config\""
+"Keine Konfigurationsdatei gefunden\\nSie kann generiert werden durch "
+"\"${name} --gen-config\""
 
 #: src/lib/edit-config.sh:13
 #, sh-format
@@ -85,8 +87,9 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"Zu verwendender Editor kann nicht ermittel werden\\nDie \"EDITOR\" Umgebungsvariable "
-"ist nicht gesetzt und \"nano\" (Fallback-Option) ist nicht installiert"
+"Zu verwendender Editor kann nicht ermittel werden\\nDie \"EDITOR\" "
+"Umgebungsvariable ist nicht gesetzt und \"nano\" (Fallback-Option) ist nicht "
+"installiert"
 
 #: src/lib/full_upgrade.sh:13
 #, sh-format
@@ -104,8 +107,9 @@ msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
 "before generating a new one (or use --force to overwrite it)"
 msgstr ""
-"Die '${config_file}' Konfigurationsdatei existiert bereits\\nBitte entfernen, "
-"bevor eine neue Datei generiert wird (oder --force zum Überschreiben benutzen)"
+"Die '${config_file}' Konfigurationsdatei existiert bereits\\nBitte "
+"entfernen, bevor eine neue Datei generiert wird (oder --force zum "
+"Überschreiben benutzen)"
 
 #: src/lib/gen-config.sh:30
 #, sh-format
@@ -118,8 +122,8 @@ msgid ""
 "An update notifier & applier for Arch Linux that assists you with important "
 "pre / post update tasks."
 msgstr ""
-"Eine App zum Benachrichtigen bei und Ausführen von Updates für Arch Linux, die wichtige "
-"Aufgaben vor und nach Updates ausführt."
+"Eine App zum Benachrichtigen bei und Ausführen von Updates für Arch Linux, "
+"die wichtige Aufgaben vor und nach Updates ausführt."
 
 #: src/lib/help.sh:10
 #, sh-format
@@ -132,8 +136,8 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
-"Die Liste der Pakete anzeigen, die zur Verfügug stehen und nach Bestätigung des Benutzers "
-"fragen, um mit der Installation fortzufahren."
+"Die Liste der Pakete anzeigen, die zur Verfügug stehen und nach Bestätigung "
+"des Benutzers fragen, um mit der Installation fortzufahren."
 
 #: src/lib/help.sh:12
 #, sh-format
@@ -151,9 +155,10 @@ msgid ""
 "pacnew & pacsave files, pending kernel update as well as services requiring "
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
-"Nach der Aktualisierung wird auf verwaiste und unbenutzte Pakete, alte zwischengespeicherte Pakete, "
-"pacnew- und pacsave-Dateien, ausstehende Kernel-Aktualisierungen sowie Dienste, "
-"die einen Neustart erfordern, geprüft und eine Verarbeitung gegebenenfalls angeboten."
+"Nach der Aktualisierung wird auf verwaiste und unbenutzte Pakete, alte "
+"zwischengespeicherte Pakete, pacnew- und pacsave-Dateien, ausstehende Kernel-"
+"Aktualisierungen sowie Dienste, die einen Neustart erfordern, geprüft und "
+"eine Verarbeitung gegebenenfalls angeboten."
 
 #: src/lib/help.sh:15
 #, sh-format
@@ -167,9 +172,9 @@ msgid ""
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check)"
 msgstr ""
-"  -c, --check       Prüfung auf vorhandene Updates, Ändern des Systray Icons und "
-"Senden einer Desktop-Benachrichtigung mit der Anzahl der vorhandenen Updates (falls "
-"verglichen zur letzten Prüfung neue Updates verfügbar sind)"
+"  -c, --check       Prüfung auf vorhandene Updates, Ändern des Systray Icons "
+"und Senden einer Desktop-Benachrichtigung mit der Anzahl der vorhandenen "
+"Updates (falls verglichen zur letzten Prüfung neue Updates verfügbar sind)"
 
 #: src/lib/help.sh:17
 #, sh-format
@@ -187,13 +192,16 @@ msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
-"  -n, --news [Num]  Aktuelle Arch-Neuigkeiten anzeigen, optionale Angabe für die Anzahl der "
-"anzuzeigenden Arch-Neuigkeiten mit '--news [Num]' (z.B. '--news 10')"
+"  -n, --news [Num]  Aktuelle Arch-Neuigkeiten anzeigen, optionale Angabe für "
+"die Anzahl der anzuzeigenden Arch-Neuigkeiten mit '--news [Num]' (z.B. '--"
+"news 10')"
 
 #: src/lib/help.sh:20
 #, sh-format
 msgid "  -s, --services    Check for services requiring a post upgrade restart"
-msgstr "  -s, --services    Prüfen, ob Dienste nach der Aktualisierung einen Neustart erfordern"
+msgstr ""
+"  -s, --services    Prüfen, ob Dienste nach der Aktualisierung einen "
+"Neustart erfordern"
 
 #: src/lib/help.sh:21
 #, sh-format
@@ -207,9 +215,9 @@ msgid ""
 "configuration file, you can optionally pass the '--force' argument to "
 "overwrite any existing '${name}.conf' configuration file"
 msgstr ""
-"  --gen-config      Erstellen einer '${name}.conf' Konfigurationsdatei "
-"mit vorgegebenen Werten, optional mit Angabe von '--force' zum "
-"Überschreiben einer vorhandenen '${name}.conf' Konfigurationsdatei"
+"  --gen-config      Erstellen einer '${name}.conf' Konfigurationsdatei mit "
+"vorgegebenen Werten, optional mit Angabe von '--force' zum Überschreiben "
+"einer vorhandenen '${name}.conf' Konfigurationsdatei"
 
 #: src/lib/help.sh:23
 #, sh-format
@@ -235,8 +243,8 @@ msgid ""
 "  --tray            Launch the ${_name} systray applet, you can optionally "
 "add the '--enable' argument to start it automatically at boot"
 msgstr ""
-"  --tray            Starten des Systray-Applets von ${_name}, optional "
-"mit Angabe von '--enable' zum automatischen Starten beim Hochfahren des Systems"
+"  --tray            Starten des Systray-Applets von ${_name}, optional mit "
+"Angabe von '--enable' zum automatischen Starten beim Hochfahren des Systems"
 
 #: src/lib/help.sh:26
 #, sh-format
@@ -259,8 +267,9 @@ msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf "
 "configuration file, see the ${name}.conf(5) man page."
 msgstr ""
-"Bestimmte Optionen können über die ${name}.conf Konfigurationsdatei aktiviert, deaktiviert oder "
-"geändert werden, siehe die ${name}.conf(5) Manpage."
+"Bestimmte Optionen können über die ${name}.conf Konfigurationsdatei "
+"aktiviert, deaktiviert oder geändert werden, siehe die ${name}.conf(5) "
+"Manpage."
 
 #: src/lib/invalid_option.sh:7
 #, sh-format
@@ -268,8 +277,8 @@ msgid ""
 "${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
 "information"
 msgstr ""
-"${name}: Unzulässige Option -- '${option}'\\n'${name} --help' für weitere Informationen "
-"aufrufen"
+"${name}: Unzulässige Option -- '${option}'\\n'${name} --help' für weitere "
+"Informationen aufrufen"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
@@ -277,8 +286,8 @@ msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
-"Neustart erforderlich:\\nAuf dem System steht ein Kernel-Update aus, das einen Neustart erfordert, "
-"um angewendet zu werden\\n"
+"Neustart erforderlich:\\nAuf dem System steht ein Kernel-Update aus, das "
+"einen Neustart erfordert, um angewendet zu werden\\n"
 
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
@@ -339,9 +348,9 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
-"Arch-Neugkeiten können nicht abgerufen werden (HTTP-Fehlerantwort oder Zeitüberschreitung der Anfrage)"
-"\\nBitte unter https://archlinux.org über die neuesten Nachrichten informieren, bevor das System "
-"aktualisiert wird"
+"Arch-Neugkeiten können nicht abgerufen werden (HTTP-Fehlerantwort oder "
+"Zeitüberschreitung der Anfrage)\\nBitte unter https://archlinux.org über die "
+"neuesten Nachrichten informieren, bevor das System aktualisiert wird"
 
 #: src/lib/list_news.sh:23
 #, sh-format
@@ -364,8 +373,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
-"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen oder zum "
-"Beenden \"ENTER\" drücken:"
+"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen "
+"oder zum Beenden \"ENTER\" drücken:"
 
 #: src/lib/list_news.sh:56
 #, sh-format
@@ -373,8 +382,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
-"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen oder \"ENTER\" drücken, "
-"um mit der Aktualisierung fortzufahren:"
+"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen "
+"oder \"ENTER\" drücken, um mit der Aktualisierung fortzufahren:"
 
 #: src/lib/list_news.sh:80
 #, sh-format
@@ -383,9 +392,9 @@ msgid ""
 "timeout)\\nPlease, read the selected Arch News at ${news_url} before "
 "updating your system"
 msgstr ""
-"Ausgewählte Arch-Neugkeiten können nicht abgerufen werden (HTTP-Fehlerantwort oder "
-"Zeitüberschreitung der Anfrage)\\nBitte die ausgewählten Arch-Neuigkeiten unter ${news_url} lesen, "
-"bevor das System aktualisiert wird"
+"Ausgewählte Arch-Neugkeiten können nicht abgerufen werden (HTTP-"
+"Fehlerantwort oder Zeitüberschreitung der Anfrage)\\nBitte die ausgewählten "
+"Arch-Neuigkeiten unter ${news_url} lesen, bevor das System aktualisiert wird"
 
 #: src/lib/list_news.sh:85
 #, sh-format
@@ -552,7 +561,9 @@ msgstr "Keine unbenutzten Flatpak-Pakete gefunden\\n"
 #: src/lib/packages_cache.sh:21
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr "Zwischengespeicherte Pakete:\\nEs gibt ein altes oder deinstalliertes Paket\\n"
+msgstr ""
+"Zwischengespeicherte Pakete:\\nEs gibt ein altes oder deinstalliertes "
+"Paket\\n"
 
 #: src/lib/packages_cache.sh:22
 #, sh-format
@@ -564,7 +575,8 @@ msgstr "Soll es jetzt aus dem Cache gelöscht werden? [J/n]"
 msgid ""
 "Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
-"Zwischengespeicherte Pakete:\\nEs gibt alte und / oder deinstallierte Pakete\\n"
+"Zwischengespeicherte Pakete:\\nEs gibt alte und / oder deinstallierte "
+"Pakete\\n"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
@@ -614,7 +626,8 @@ msgstr "Verarbeitung der Pacnew-Datei(en) durchgeführt\\n"
 #: src/lib/pacnew_files.sh:31
 #, sh-format
 msgid "An error occurred during the pacnew file(s) processing\\n"
-msgstr "Bei der Verarbeitung der Pacnew-Datei(en) ist ein Fehler aufgetreten\\n"
+msgstr ""
+"Bei der Verarbeitung der Pacnew-Datei(en) ist ein Fehler aufgetreten\\n"
 
 #: src/lib/pacnew_files.sh:37
 #, sh-format
@@ -622,8 +635,8 @@ msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
 msgstr ""
-"Verarbeitung der Pacnew-Datei(en) nicht durchgeführt\\nBiite die Verarbeitung "
-"zeitnah durchführen\\n"
+"Verarbeitung der Pacnew-Datei(en) nicht durchgeführt\\nBiite die "
+"Verarbeitung zeitnah durchführen\\n"
 
 #: src/lib/pacnew_files.sh:41
 #, sh-format
@@ -646,8 +659,8 @@ msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
-"Dienst(e) zum Neustarten auswählen (z.B. 1 3 5), 0 wählen, um alle neu zu starten oder \"ENTER\" drücken, "
-"um ohne Neustart fortzufahren:"
+"Dienst(e) zum Neustarten auswählen (z.B. 1 3 5), 0 wählen, um alle neu zu "
+"starten oder \"ENTER\" drücken, um ohne Neustart fortzufahren:"
 
 #: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
 #, sh-format
@@ -660,8 +673,8 @@ msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
 "above service(s) status\\n"
 msgstr ""
-"Beim Neustart des/der Dienste(s) ist ein Fehler aufgetreten\\nBitte den Status "
-"des/der oben genannten Dienste(s) prüfen\\n"
+"Beim Neustart des/der Dienste(s) ist ein Fehler aufgetreten\\nBitte den "
+"Status des/der oben genannten Dienste(s) prüfen\\n"
 
 #: src/lib/restart_services.sh:48
 #, sh-format
@@ -681,8 +694,9 @@ msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
 "services that have been updated to fully apply the upgrade\\n"
 msgstr ""
-"Der Neustart des/der Dienste(s) wurde nicht durchgeführt\\nBitte die aktualisierten Dienste "
-"neu starten, um die Aktualisierung vollständig durchzuführen\\n"
+"Der Neustart des/der Dienste(s) wurde nicht durchgeführt\\nBitte die "
+"aktualisierten Dienste neu starten, um die Aktualisierung vollständig "
+"durchzuführen\\n"
 
 #: src/lib/restart_services.sh:70
 #, sh-format
@@ -777,8 +791,8 @@ msgid ""
 "from your app menu"
 msgstr ""
 "Die '${tray_desktop_file_autostart}' Datei wurde erstellt, das ${_name} "
-"Systray-Applet wird bei der nächsten Anmeldung automatisch gestartet\\nUm es jetzt "
-"zu starten, einfach die Anwendung \"${_name} Systray Applet\" aus dem "
+"Systray-Applet wird bei der nächsten Anmeldung automatisch gestartet\\nUm es "
+"jetzt zu starten, einfach die Anwendung \"${_name} Systray Applet\" aus dem "
 "Anwendungsmenü aufrufen"
 
 #: src/lib/tray.sh:49
