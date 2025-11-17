@@ -732,11 +732,13 @@ msgid ""
 "Last check:\n"
 "{time}"
 msgstr ""
+"Utolsó ellenőrzés:\n"
+"{time}"
 
 #: src/lib/tray.py:271
 #, python-brace-format
 msgid "Next check in {time}"
-msgstr ""
+msgstr "Következő ellenőrzés {time}"
 
 #: src/lib/tray.py:282
 #, python-brace-format
@@ -764,11 +766,11 @@ msgstr "Arch-Update"
 
 #: src/lib/tray.py:383
 msgid "Last check"
-msgstr ""
+msgstr "Utolsó ellenőrzés"
 
 #: src/lib/tray.py:384
 msgid "Next check"
-msgstr ""
+msgstr "Következő ellenőrzés"
 
 #: src/lib/tray.py:385
 msgid "Run Arch-Update"
