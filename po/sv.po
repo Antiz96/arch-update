@@ -698,72 +698,92 @@ msgstr ""
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "Ingen tjänst som kräver omstart efter uppgradering hittades\\n"
 
-#: src/lib/tray.py:168
+#: src/lib/tray.py:199
 msgid "'updates' state file isn't found"
 msgstr "\"Updates\"-tillståndsfilen hittades inte"
 
-#: src/lib/tray.py:215
+#: src/lib/tray.py:246
 msgid "System is up to date"
 msgstr "Systemet är uppdaterat"
 
-#: src/lib/tray.py:218
+#: src/lib/tray.py:249
 msgid "1 update available"
 msgstr "1 uppdatering tillgänglig"
 
-#: src/lib/tray.py:221
+#: src/lib/tray.py:252
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr "{updates} uppdateringar tillgängliga"
 
-#: src/lib/tray.py:230
+#: src/lib/tray.py:256
+#, python-brace-format
+msgid ""
+"Last check:\n"
+"{time}"
+msgstr ""
+
+#: src/lib/tray.py:271
+#, python-brace-format
+msgid "Next check in {time}"
+msgstr ""
+
+#: src/lib/tray.py:282
 #, python-brace-format
 msgid "All ({updates})"
 msgstr "Alla ({updates})"
 
-#: src/lib/tray.py:243
+#: src/lib/tray.py:295
 #, python-brace-format
 msgid "Packages ({updates})"
 msgstr "Paket ({updates})"
 
-#: src/lib/tray.py:254
+#: src/lib/tray.py:306
 #, python-brace-format
 msgid "AUR ({updates})"
 msgstr "AUR ({updates})"
 
-#: src/lib/tray.py:265
+#: src/lib/tray.py:317
 #, python-brace-format
 msgid "Flatpak ({updates})"
 msgstr "Flatpak ({updates})"
 
-#: src/lib/tray.py:317 src/lib/tray.py:322
+#: src/lib/tray.py:377 src/lib/tray.py:382
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
-#: src/lib/tray.py:323
+#: src/lib/tray.py:383
+msgid "Last check"
+msgstr ""
+
+#: src/lib/tray.py:384
+msgid "Next check"
+msgstr ""
+
+#: src/lib/tray.py:385
 msgid "Run Arch-Update"
 msgstr "Kör Arch-Update"
 
-#: src/lib/tray.py:324
+#: src/lib/tray.py:386
 msgid "Check for updates"
 msgstr "Sök efter uppdateringar"
 
-#: src/lib/tray.py:325
+#: src/lib/tray.py:387
 msgid "Exit"
 msgstr "Avsluta"
 
-#: src/lib/tray.py:328
+#: src/lib/tray.py:390
 msgid "All"
 msgstr "Alla"
 
-#: src/lib/tray.py:329
+#: src/lib/tray.py:391
 msgid "Packages"
 msgstr "Paket"
 
-#: src/lib/tray.py:330
+#: src/lib/tray.py:392
 msgid "AUR"
 msgstr "AUR"
 
-#: src/lib/tray.py:331
+#: src/lib/tray.py:393
 msgid "Flatpak"
 msgstr "Flatpak"
 
