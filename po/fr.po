@@ -715,72 +715,87 @@ msgstr ""
 "Aucun service nécessitant un redémarrage suite à la mise à jour n'a été "
 "trouvé\\n"
 
-#: src/lib/tray.py:168
+#: src/lib/tray.py:199
 msgid "'updates' state file isn't found"
 msgstr "fichier d'état 'updates' non trouvé"
 
-#: src/lib/tray.py:215
+#: src/lib/tray.py:246
 msgid "System is up to date"
 msgstr "Le système est à jour"
 
-#: src/lib/tray.py:218
+#: src/lib/tray.py:249
 msgid "1 update available"
 msgstr "1 mise à jour disponible"
 
-#: src/lib/tray.py:221
+#: src/lib/tray.py:252
 #, python-brace-format
 msgid "{updates} updates available"
 msgstr "{updates} mises à jour disponibles"
 
-#: src/lib/tray.py:230
+#: src/lib/tray.py:256
+#, python-brace-format
+msgid ""
+"Last check:\n"
+"{time}"
+msgstr ""
+
+#: src/lib/tray.py:282
 #, python-brace-format
 msgid "All ({updates})"
 msgstr "Tous ({updates})"
 
-#: src/lib/tray.py:243
+#: src/lib/tray.py:295
 #, python-brace-format
 msgid "Packages ({updates})"
 msgstr "Paquets ({updates})"
 
-#: src/lib/tray.py:254
+#: src/lib/tray.py:306
 #, python-brace-format
 msgid "AUR ({updates})"
 msgstr "AUR ({updates})"
 
-#: src/lib/tray.py:265
+#: src/lib/tray.py:317
 #, python-brace-format
 msgid "Flatpak ({updates})"
 msgstr "Flatpak ({updates})"
 
-#: src/lib/tray.py:317 src/lib/tray.py:322
+#: src/lib/tray.py:377 src/lib/tray.py:382
 msgid "Arch-Update"
 msgstr "Arch-Update"
 
-#: src/lib/tray.py:323
+#: src/lib/tray.py:383
+msgid "Last check"
+msgstr ""
+
+#: src/lib/tray.py:384
+msgid "Next check"
+msgstr ""
+
+#: src/lib/tray.py:385
 msgid "Run Arch-Update"
 msgstr "Lancer Arch-Update"
 
-#: src/lib/tray.py:324
+#: src/lib/tray.py:386
 msgid "Check for updates"
 msgstr "Vérifier les mises à jour"
 
-#: src/lib/tray.py:325
+#: src/lib/tray.py:387
 msgid "Exit"
 msgstr "Quitter"
 
-#: src/lib/tray.py:328
+#: src/lib/tray.py:390
 msgid "All"
 msgstr "Tous"
 
-#: src/lib/tray.py:329
+#: src/lib/tray.py:391
 msgid "Packages"
 msgstr "Paquets"
 
-#: src/lib/tray.py:330
+#: src/lib/tray.py:392
 msgid "AUR"
 msgstr "AUR"
 
-#: src/lib/tray.py:331
+#: src/lib/tray.py:393
 msgid "Flatpak"
 msgstr "Flatpak"
 
