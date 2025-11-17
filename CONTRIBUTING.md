@@ -124,7 +124,7 @@ By contributing to this project, you agree that your contributions will be licen
 
 ## Translation
 
-To contribute to translations, follow the related instructions in the [dedicated discussion thread](https://github.com/Antiz96/arch-update/discussions/436).
+To contribute to translations, please follow the instructions in the [dedicated discussion thread](https://github.com/Antiz96/arch-update/discussions/436).
 
 ## Donations
 
