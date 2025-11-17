@@ -268,7 +268,7 @@ class ArchUpdateQt6:
         next_check_output = get_next_check_duration_human_readable(timer_left.stdout.strip())
 
         if next_check_output:
-            self.menu_next_check = QAction("Next check in " + next_check_output)
+            self.menu_next_check = QAction(_("Next check in {time}").format(time=next_check_output))
             self.menu_next_check.setEnabled(False)
         else:
             self.menu_next_check = None
