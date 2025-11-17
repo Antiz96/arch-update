@@ -11,7 +11,7 @@ Please, don't refrain yourself from contributing if you feel that your contribut
 - [General rules](#general-rules)
 - [Open an issue](#open-an-issue)
 - [Open a pull request](#open-a-pull-request)
-- [Translations](#Translations)
+- [Translation](#Translation)
 - [Donations](#donations)
 - [Thank you](#thank-you)
 

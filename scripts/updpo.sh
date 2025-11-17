@@ -4,6 +4,7 @@
 xgettext src/arch-update.sh src/lib/*
 
 # Normalize messages.po
+# shellcheck disable=SC2016
 sed -i '/^#:.*$/N;/\nmsgid "\$(\(echo -e\|info_msg\) "/,/msgstr ""/d' messages.po
 sed -i '/^$/N;/^\n$/D' messages.po
 sed -i '1,/^#: src\//{ /^#: src\//!d }' messages.po
