@@ -25,7 +25,7 @@ if [ -z "${kernel_compare}" ]; then
 				sleep 1
 			done
 
-			if ! reboot; then
+			if ! systemctl reboot; then
 				echo
 				error_msg "$(eval_gettext "An error has occurred during the reboot process\nThe reboot has been aborted\n")" && quit_msg
 				exit 6
