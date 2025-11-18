@@ -41,7 +41,9 @@ msgstr "按下「Enter」退出"
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the "
 "${name}.conf configuration file is not found\\n"
-msgstr "在 ${name}.conf 設定檔中，為 AUR 套件支援所設定的 AUR 輔助程式 ${aur_helper} 未找到\\n"
+msgstr ""
+"在 ${name}.conf 設定檔中，為 AUR 套件支援所設定的 AUR 輔助程式 ${aur_helper} "
+"未找到\\n"
 
 #: src/lib/common.sh:165
 #, sh-format
@@ -62,8 +64,8 @@ msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
 "files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
-"在 ${name}.conf 設定檔中，用於檢視/編輯 pacnew 檔案差異的編輯器 "
-"${diff_prog} 未找到\\n"
+"在 ${name}.conf 設定檔中，用於檢視/編輯 pacnew 檔案差異的編輯器 ${diff_prog} "
+"未找到\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
@@ -78,8 +80,7 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"無法決定要使用的編輯器\\n「EDITOR」環境變數未設定且「nano」 (備用選項) 未安"
-"裝"
+"無法決定要使用的編輯器\\n「EDITOR」環境變數未設定且「nano」 (備用選項) 未安裝"
 
 #: src/lib/full_upgrade.sh:13
 #, sh-format
@@ -97,8 +98,8 @@ msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
 "before generating a new one (or use --force to overwrite it)"
 msgstr ""
-"「${config_file}」設定檔已存在\\n請在生成新設定檔之前移除它（或使用 --"
-"force 選項來覆寫它）"
+"「${config_file}」設定檔已存在\\n請在生成新設定檔之前移除它（或使用 --force "
+"選項來覆寫它）"
 
 #: src/lib/gen-config.sh:30
 #, sh-format
@@ -110,8 +111,7 @@ msgstr "「${config_file}」設定檔已生成"
 msgid ""
 "An update notifier & applier for Arch Linux that assists you with important "
 "pre / post update tasks."
-msgstr ""
-"一個 Arch Linux 的更新通知與應用程式，可協助您完成重要的更新前後作業。"
+msgstr "一個 Arch Linux 的更新通知與應用程式，可協助您完成重要的更新前後作業。"
 
 #: src/lib/help.sh:10
 #, sh-format
@@ -140,7 +140,8 @@ msgid ""
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
 "更新完成後，它會檢查孤立套件、未使用的套件、舊的快取套件、pacnew 與 pacsave "
-"檔案、待處理的核心更新，以及升級後需要重新啟動的服務，如果有的話，會提示您處理它們。"
+"檔案、待處理的核心更新，以及升級後需要重新啟動的服務，如果有的話，會提示您處"
+"理它們。"
 
 #: src/lib/help.sh:15
 #, sh-format
@@ -148,85 +149,85 @@ msgid "Options:"
 msgstr "選項："
 
 #: src/lib/help.sh:16
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
-"  -c, --check       Check for available updates, change the systray icon and "
+"  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check)"
 msgstr ""
-"  -c, --check       檢查是否有可用更新，變更系統匣圖示並傳送一個桌面通知，其中"
-"包含可用更新的數量（若與上次檢查相比有新的可用更新）"
+"  -c, --check       檢查是否有可用更新，變更系統匣圖示並傳送一個桌面通知，其"
+"中包含可用更新的數量（若與上次檢查相比有新的可用更新）"
 
 #: src/lib/help.sh:17
-#, sh-format
-msgid "  -l, --list        Display the list of pending updates"
+#, fuzzy, sh-format
+msgid "  -l, --list        Display the list of pending updates"
 msgstr "  -l, --list        顯示待處理的更新清單"
 
 #: src/lib/help.sh:18
-#, sh-format
-msgid "  -d, --devel       Include AUR development packages updates"
+#, fuzzy, sh-format
+msgid "  -d, --devel       Include AUR development packages updates"
 msgstr "  -d, --devel       包含 AUR 開發套件的更新"
 
 #: src/lib/help.sh:19
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
-"  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
+"  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
-"  -n, --news [Num]  顯示最新的 Arch 新聞，您可以選擇性地指定要顯示的 Arch 新聞"
-"數量（例如：「--news 10」）"
+"  -n, --news [Num]  顯示最新的 Arch 新聞，您可以選擇性地指定要顯示的 Arch 新"
+"聞數量（例如：「--news 10」）"
 
 #: src/lib/help.sh:20
-#, sh-format
-msgid "  -s, --services    Check for services requiring a post upgrade restart"
+#, fuzzy, sh-format
+msgid "  -s, --services    Check for services requiring a post upgrade restart"
 msgstr "  -s, --services    檢查升級後需要重新啟動的服務"
 
 #: src/lib/help.sh:21
-#, sh-format
-msgid "  -D, --debug       Display debug traces"
+#, fuzzy, sh-format
+msgid "  -D, --debug       Display debug traces"
 msgstr "  -D, --debug       顯示偵錯追蹤資訊"
 
 #: src/lib/help.sh:22
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
-"  --gen-config      Generate a default / example '${name}.conf' "
+"  --gen-config      Generate a default / example '${name}.conf' "
 "configuration file, you can optionally pass the '--force' argument to "
 "overwrite any existing '${name}.conf' configuration file"
 msgstr ""
-"  --gen-config      生成預設的「${name}.conf」設定檔，您可以選擇性地傳遞 "
-"「--force」引數來覆寫任何現有的「${name}.conf」設定檔"
+"  --gen-config      生成預設的「${name}.conf」設定檔，您可以選擇性地傳遞 「--"
+"force」引數來覆寫任何現有的「${name}.conf」設定檔"
 
 #: src/lib/help.sh:23
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
-"  --show-config     Display the '${name}.conf' configuration file currently "
+"  --show-config     Display the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr "  --show-config     顯示目前使用的「${name}.conf」設定檔（如果存在）"
 
 #: src/lib/help.sh:24
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
-"  --edit-config     Edit the '${name}.conf' configuration file currently "
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr "  --edit-config     編輯目前使用的「${name}.conf」設定檔（如果存在）"
 
 #: src/lib/help.sh:25
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
-"  --tray            Launch the ${_name} systray applet, you can optionally "
+"  --tray            Launch the ${_name} systray applet, you can optionally "
 "add the '--enable' argument to start it automatically at boot"
 msgstr ""
 "  --tray            啟動 ${_name} 系統匣應用程式，您可以選擇性地加入「--"
 "enable」引數以在啟動時自動啟動"
 
 #: src/lib/help.sh:26
-#, sh-format
-msgid "  -h, --help        Display this help message and exit"
+#, fuzzy, sh-format
+msgid "  -h, --help        Display this help message and exit"
 msgstr "  -h, --help        顯示此說明訊息並離開"
 
 #: src/lib/help.sh:27
-#, sh-format
-msgid "  -V, --version     Display version information and exit"
+#, fuzzy, sh-format
+msgid "  -V, --version     Display version information and exit"
 msgstr "  -V, --version     顯示版本資訊並離開"
 
 #: src/lib/help.sh:29
@@ -240,15 +241,16 @@ msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf "
 "configuration file, see the ${name}.conf(5) man page."
 msgstr ""
-"某些選項可透過 ${name}.conf 設定檔啟用、停用或修改，請參閱 ${name}.conf(5) "
-"線上手冊。"
+"某些選項可透過 ${name}.conf 設定檔啟用、停用或修改，請參閱 ${name}.conf(5) 線"
+"上手冊。"
 
 #: src/lib/invalid_option.sh:7
 #, sh-format
 msgid ""
 "${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
 "information"
-msgstr "${name}: 無效選項 --「${option}」\\n請嘗試「${name} --help」以取得更多資訊"
+msgstr ""
+"${name}: 無效選項 --「${option}」\\n請嘗試「${name} --help」以取得更多資訊"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
@@ -335,8 +337,7 @@ msgstr "[新]"
 msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
-msgstr ""
-"請選擇要閱讀的新聞（例如：1 3 5），選 0 閱讀全部，或按下「Enter」離開:"
+msgstr "請選擇要閱讀的新聞（例如：1 3 5），選 0 閱讀全部，或按下「Enter」離開:"
 
 #: src/lib/list_news.sh:56
 #, sh-format
@@ -753,8 +754,8 @@ msgid ""
 "it right now, you can launch the \"${_name} Systray Applet\" application "
 "from your app menu"
 msgstr ""
-"「${tray_desktop_file_autostart}」檔案已建立，${_name} 系統匣應用程式將在您下次"
-"登入時自動啟動\\n若要立即啟動，您可以從應用程式選單中執行「${_name} 系統匣"
+"「${tray_desktop_file_autostart}」檔案已建立，${_name} 系統匣應用程式將在您下"
+"次登入時自動啟動\\n若要立即啟動，您可以從應用程式選單中執行「${_name} 系統匣"
 "應用程式」"
 
 #: src/lib/tray.sh:49
