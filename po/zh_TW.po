@@ -1,0 +1,790 @@
+# Arch-Update Chinese (traditional) translation
+# Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
+# This file is distributed under the same license as the Arch-Update package.
+#
+# Translators:
+# Capricornus007 <sihaogang@gmail.com>, 2025
+msgid ""
+msgstr ""
+"Project-Id-Version: Arch-Update 3.15.8\n"
+"Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
+"POT-Creation-Date: 2024-03-17 16:22+0100\n"
+"PO-Revision-Date: 2025-11-18 14:50+0800\n"
+"Last-Translator: Capricornus007 <sihaogang@gmail.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/lib/common.sh:96
+#, sh-format
+msgid "WARNING"
+msgstr "警告"
+
+#: src/lib/common.sh:102
+#, sh-format
+msgid "ERROR"
+msgstr "錯誤"
+
+#: src/lib/common.sh:107
+#, sh-format
+msgid "Press \"enter\" to continue "
+msgstr "按下「Enter」繼續"
+
+#: src/lib/common.sh:113
+#, sh-format
+msgid "Press \"enter\" to quit "
+msgstr "按下「Enter」退出"
+
+#: src/lib/common.sh:134
+#, sh-format
+msgid ""
+"The ${aur_helper} AUR helper set for AUR packages support in the "
+"${name}.conf configuration file is not found\\n"
+msgstr "在 ${name}.conf 設定檔中，為 AUR 套件支援所設定的 AUR 輔助程式 ${aur_helper} 未找到\\n"
+
+#: src/lib/common.sh:165
+#, sh-format
+msgid ""
+"A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
+msgstr "需要權限提升指令（sudo、sudo-rs、doas 或 run0）\\n"
+
+#: src/lib/common.sh:170
+#, sh-format
+msgid ""
+"The ${su_cmd} command set for privilege escalation in the ${name}.conf "
+"configuration file is not found\\n"
+msgstr "在 ${name}.conf 設定檔中，為權限提升所設定的指令 ${su_cmd} 未找到\\n"
+
+#: src/lib/common.sh:180
+#, sh-format
+msgid ""
+"The ${diff_prog} editor set for visualizing / editing differences of pacnew "
+"files in the ${name}.conf configuration file is not found\\n"
+msgstr ""
+"在 ${name}.conf 設定檔中，用於檢視/編輯 pacnew 檔案差異的編輯器 "
+"${diff_prog} 未找到\\n"
+
+#: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
+#, sh-format
+msgid ""
+"No configuration file found\\nYou can generate one with \"${name} --gen-"
+"config\""
+msgstr "找不到設定檔\\n您可以使用「${name} --gen-config」來生成一個\\n"
+
+#: src/lib/edit-config.sh:13
+#, sh-format
+msgid ""
+"Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
+"is not set and \"nano\" (fallback option) is not installed"
+msgstr ""
+"無法決定要使用的編輯器\\n「EDITOR」環境變數未設定且「nano」 (備用選項) 未安"
+"裝"
+
+#: src/lib/full_upgrade.sh:13
+#, sh-format
+msgid "There's already a running instance of ${_name}\\n"
+msgstr "${_name} 已有執行個體正在執行\\n"
+
+#: src/lib/gen-config.sh:19
+#, sh-format
+msgid "Example configuration file not found"
+msgstr "找不到範例設定檔"
+
+#: src/lib/gen-config.sh:25
+#, sh-format
+msgid ""
+"The '${config_file}' configuration file already exists\\nPlease, remove it "
+"before generating a new one (or use --force to overwrite it)"
+msgstr ""
+"「${config_file}」設定檔已存在\\n請在生成新設定檔之前移除它（或使用 --"
+"force 選項來覆寫它）"
+
+#: src/lib/gen-config.sh:30
+#, sh-format
+msgid "The '${config_file}' configuration file has been generated"
+msgstr "「${config_file}」設定檔已生成"
+
+#: src/lib/help.sh:8
+#, sh-format
+msgid ""
+"An update notifier & applier for Arch Linux that assists you with important "
+"pre / post update tasks."
+msgstr ""
+"一個 Arch Linux 的更新通知與應用程式，可協助您完成重要的更新前後作業。"
+
+#: src/lib/help.sh:10
+#, sh-format
+msgid "Run ${name} to perform the main 'update' function:"
+msgstr "執行 ${name} 以進行主要的「更新」功能："
+
+#: src/lib/help.sh:11
+#, sh-format
+msgid ""
+"Display the list of packages available for update, then ask for the user's "
+"confirmation to proceed with the installation."
+msgstr "顯示可供更新的套件清單，然後詢問使用者是否要繼續安裝。"
+
+#: src/lib/help.sh:12
+#, sh-format
+msgid ""
+"Before performing the update, it offers to display the latest Arch Linux "
+"news."
+msgstr "在執行更新之前，它會提示您是否要檢視最新的 Arch Linux 新聞。"
+
+#: src/lib/help.sh:13
+#, sh-format
+msgid ""
+"Post update, it checks for orphan & unused packages, old cached packages, "
+"pacnew & pacsave files, pending kernel update as well as services requiring "
+"a post upgrade restart and, if there are, offers to process them."
+msgstr ""
+"更新完成後，它會檢查孤立套件、未使用的套件、舊的快取套件、pacnew 與 pacsave "
+"檔案、待處理的核心更新，以及升級後需要重新啟動的服務，如果有的話，會提示您處理它們。"
+
+#: src/lib/help.sh:15
+#, sh-format
+msgid "Options:"
+msgstr "選項："
+
+#: src/lib/help.sh:16
+#, sh-format
+msgid ""
+"  -c, --check       Check for available updates, change the systray icon and "
+"send a desktop notification containing the number of available updates (if "
+"there are new available updates compared to the last check)"
+msgstr ""
+"  -c, --check       檢查是否有可用更新，變更系統匣圖示並傳送一個桌面通知，其中"
+"包含可用更新的數量（若與上次檢查相比有新的可用更新）"
+
+#: src/lib/help.sh:17
+#, sh-format
+msgid "  -l, --list        Display the list of pending updates"
+msgstr "  -l, --list        顯示待處理的更新清單"
+
+#: src/lib/help.sh:18
+#, sh-format
+msgid "  -d, --devel       Include AUR development packages updates"
+msgstr "  -d, --devel       包含 AUR 開發套件的更新"
+
+#: src/lib/help.sh:19
+#, sh-format
+msgid ""
+"  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
+"number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
+msgstr ""
+"  -n, --news [Num]  顯示最新的 Arch 新聞，您可以選擇性地指定要顯示的 Arch 新聞"
+"數量（例如：「--news 10」）"
+
+#: src/lib/help.sh:20
+#, sh-format
+msgid "  -s, --services    Check for services requiring a post upgrade restart"
+msgstr "  -s, --services    檢查升級後需要重新啟動的服務"
+
+#: src/lib/help.sh:21
+#, sh-format
+msgid "  -D, --debug       Display debug traces"
+msgstr "  -D, --debug       顯示偵錯追蹤資訊"
+
+#: src/lib/help.sh:22
+#, sh-format
+msgid ""
+"  --gen-config      Generate a default / example '${name}.conf' "
+"configuration file, you can optionally pass the '--force' argument to "
+"overwrite any existing '${name}.conf' configuration file"
+msgstr ""
+"  --gen-config      生成預設的「${name}.conf」設定檔，您可以選擇性地傳遞 "
+"「--force」引數來覆寫任何現有的「${name}.conf」設定檔"
+
+#: src/lib/help.sh:23
+#, sh-format
+msgid ""
+"  --show-config     Display the '${name}.conf' configuration file currently "
+"used (if it exists)"
+msgstr "  --show-config     顯示目前使用的「${name}.conf」設定檔（如果存在）"
+
+#: src/lib/help.sh:24
+#, sh-format
+msgid ""
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
+"used (if it exists)"
+msgstr "  --edit-config     編輯目前使用的「${name}.conf」設定檔（如果存在）"
+
+#: src/lib/help.sh:25
+#, sh-format
+msgid ""
+"  --tray            Launch the ${_name} systray applet, you can optionally "
+"add the '--enable' argument to start it automatically at boot"
+msgstr ""
+"  --tray            啟動 ${_name} 系統匣應用程式，您可以選擇性地加入「--"
+"enable」引數以在啟動時自動啟動"
+
+#: src/lib/help.sh:26
+#, sh-format
+msgid "  -h, --help        Display this help message and exit"
+msgstr "  -h, --help        顯示此說明訊息並離開"
+
+#: src/lib/help.sh:27
+#, sh-format
+msgid "  -V, --version     Display version information and exit"
+msgstr "  -V, --version     顯示版本資訊並離開"
+
+#: src/lib/help.sh:29
+#, sh-format
+msgid "For more information, see the ${name}(1) man page."
+msgstr "如需更多資訊，請參閱 ${name}(1) 線上手冊。"
+
+#: src/lib/help.sh:30
+#, sh-format
+msgid ""
+"Certain options can be enabled, disabled or modified via the ${name}.conf "
+"configuration file, see the ${name}.conf(5) man page."
+msgstr ""
+"某些選項可透過 ${name}.conf 設定檔啟用、停用或修改，請參閱 ${name}.conf(5) "
+"線上手冊。"
+
+#: src/lib/invalid_option.sh:7
+#, sh-format
+msgid ""
+"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
+"information"
+msgstr "${name}: 無效選項 --「${option}」\\n請嘗試「${name} --help」以取得更多資訊"
+
+#: src/lib/kernel_reboot.sh:10
+#, sh-format
+msgid ""
+"Reboot required:\\nThere's a pending kernel update on your system requiring "
+"a reboot to be applied\\n"
+msgstr "需要重新啟動：\\n系統上有待處理的核心更新，需要重新啟動才能套用\\n"
+
+#: src/lib/kernel_reboot.sh:11
+#, sh-format
+msgid "Would you like to reboot now? [y/N]"
+msgstr "是否現在重新啟動？ [y/N]"
+
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "Y"
+msgstr "Y"
+
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "y"
+msgstr "y"
+
+#: src/lib/kernel_reboot.sh:24
+#, sh-format
+msgid "Rebooting in ${sec}...\\r"
+msgstr "將在 ${sec} 秒後重新啟動...\\r"
+
+#: src/lib/kernel_reboot.sh:30
+#, sh-format
+msgid ""
+"An error has occurred during the reboot process\\nThe reboot has been "
+"aborted\\n"
+msgstr "在重新啟動過程中發生錯誤\\n重新啟動已中止\\n"
+
+#: src/lib/kernel_reboot.sh:38
+#, sh-format
+msgid ""
+"The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
+"the pending kernel update\\n"
+msgstr "重新啟動未執行\\n請考慮手動重新啟動以完成待處理的核心更新\\n"
+
+#: src/lib/kernel_reboot.sh:42
+#, sh-format
+msgid "No pending kernel update found\\n"
+msgstr "找不到待處理的核心更新\\n"
+
+#: src/lib/list_news.sh:7
+#, sh-format
+msgid "Looking for recent Arch News..."
+msgstr "正在尋找近期的 Arch 新聞..."
+
+#: src/lib/list_news.sh:13
+#, sh-format
+msgid ""
+"Unable to retrieve recent Arch News (HTTP error response or request timeout)"
+"\\nPlease, look for any recent news at https://archlinux.org before updating "
+"your system"
+msgstr ""
+"無法擷取近期的 Arch 新聞（HTTP 錯誤回應或要求逾時）\\n請在更新系統之前，前往 "
+"https://archlinux.org 檢視任何最新新聞"
+
+#: src/lib/list_news.sh:23
+#, sh-format
+msgid "No recent Arch News found"
+msgstr "找不到近期的 Arch 新聞"
+
+#: src/lib/list_news.sh:37
+#, sh-format
+msgid "Arch News:"
+msgstr "Arch 新聞："
+
+#: src/lib/list_news.sh:42
+#, sh-format
+msgid "[NEW]"
+msgstr "[新]"
+
+#: src/lib/list_news.sh:54
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to quit:"
+msgstr ""
+"請選擇要閱讀的新聞（例如：1 3 5），選 0 閱讀全部，或按下「Enter」離開:"
+
+#: src/lib/list_news.sh:56
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to proceed with update:"
+msgstr ""
+"請選擇要閱讀的新聞（例如：1 3 5），選 0 閱讀全部，或按下「Enter」繼續更新:"
+
+#: src/lib/list_news.sh:80
+#, sh-format
+msgid ""
+"Unable to retrieve the selected Arch News (HTTP error response or request "
+"timeout)\\nPlease, read the selected Arch News at ${news_url} before "
+"updating your system"
+msgstr ""
+"無法擷取所選的 Arch 新聞（HTTP 錯誤回應或要求逾時）\\n請在更新系統之前，前往 "
+"${news_url} 閱讀所選的 Arch 新聞"
+
+#: src/lib/list_news.sh:85
+#, sh-format
+msgid "Title:"
+msgstr "標題："
+
+#: src/lib/list_news.sh:86
+#, sh-format
+msgid "Author:"
+msgstr "作者："
+
+#: src/lib/list_news.sh:87
+#, sh-format
+msgid "Publication date:"
+msgstr "發布日期："
+
+#: src/lib/list_news.sh:88
+#, sh-format
+msgid "URL:"
+msgstr "網址："
+
+#: src/lib/list_packages.sh:7
+#, sh-format
+msgid "Looking for updates...\\n"
+msgstr "正在尋找更新...\\n"
+
+#: src/lib/list_packages.sh:41
+#, sh-format
+msgid "Packages:"
+msgstr "官方套件："
+
+#: src/lib/list_packages.sh:48
+#, sh-format
+msgid "AUR Packages:"
+msgstr "AUR 套件："
+
+#: src/lib/list_packages.sh:55
+#, sh-format
+msgid "Flatpak Packages:"
+msgstr "Flatpak 套件："
+
+#: src/lib/list_packages.sh:65
+#, sh-format
+msgid "No update available\\n"
+msgstr "沒有可用的更新\\n"
+
+#: src/lib/list_packages.sh:73
+#, sh-format
+msgid "Proceed with update? [Y/n]"
+msgstr "是否繼續進行更新？ [Y/n]"
+
+#: src/lib/list_packages.sh:83
+#, sh-format
+msgid "The update has been aborted\\n"
+msgstr "更新已中止\\n"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#, sh-format
+msgid "${update_number} update available"
+msgstr "${update_number} 個更新可用"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "Run ${_name}"
+msgstr "執行 ${_name}"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "Close"
+msgstr "關閉"
+
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "${update_number} updates available"
+msgstr "${update_number} 個更新可用"
+
+#: src/lib/notification.sh:41
+#, sh-format
+msgid "${_name} desktop file not found"
+msgstr "找不到 ${_name} 桌面檔案"
+
+#: src/lib/orphan_packages.sh:14
+#, sh-format
+msgid "Orphan Packages:"
+msgstr "孤立套件："
+
+#: src/lib/orphan_packages.sh:18
+#, sh-format
+msgid ""
+"Would you like to remove this orphan package (and its potential "
+"dependencies) now? [y/N]"
+msgstr "是否現在移除此孤立套件（及其潛在依賴項）？ [y/N]"
+
+#: src/lib/orphan_packages.sh:20
+#, sh-format
+msgid ""
+"Would you like to remove these orphan packages (and their potential "
+"dependencies) now? [y/N]"
+msgstr "是否現在移除這些孤立套件（及其潛在依賴項）？ [y/N]"
+
+#: src/lib/orphan_packages.sh:27
+#, sh-format
+msgid "Removing Orphan Packages...\\n"
+msgstr "正在移除孤立套件...\\n"
+
+#: src/lib/orphan_packages.sh:32 src/lib/orphan_packages.sh:65
+#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
+#, sh-format
+msgid ""
+"An error has occurred during the removal process\\nThe removal has been "
+"aborted\\n"
+msgstr "在移除過程中發生錯誤\\n移除已中止\\n"
+
+#: src/lib/orphan_packages.sh:35 src/lib/orphan_packages.sh:68
+#, sh-format
+msgid "The removal has been applied\\n"
+msgstr "已成功移除\\n"
+
+#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:72
+#: src/lib/packages_cache.sh:75
+#, sh-format
+msgid "The removal hasn't been applied\\n"
+msgstr "移除未套用\\n"
+
+#: src/lib/orphan_packages.sh:44
+#, sh-format
+msgid "No orphan package found\\n"
+msgstr "找不到孤立套件\\n"
+
+#: src/lib/orphan_packages.sh:49
+#, sh-format
+msgid "Flatpak Unused Packages:"
+msgstr "Flatpak 未使用套件："
+
+#: src/lib/orphan_packages.sh:53
+#, sh-format
+msgid "Would you like to remove this Flatpak unused package now? [y/N]"
+msgstr "是否現在移除此 Flatpak 未使用套件？ [y/N]"
+
+#: src/lib/orphan_packages.sh:55
+#, sh-format
+msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
+msgstr "是否現在移除這些 Flatpak 未使用套件？ [y/N]"
+
+#: src/lib/orphan_packages.sh:61
+#, sh-format
+msgid "Removing Flatpak Unused Packages..."
+msgstr "正在移除 Flatpak 未使用套件..."
+
+#: src/lib/orphan_packages.sh:76
+#, sh-format
+msgid "No Flatpak unused package found\\n"
+msgstr "找不到 Flatpak 未使用套件\\n"
+
+#: src/lib/packages_cache.sh:21
+#, sh-format
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr "快取套件：\\n有舊的或未安裝的快取套件\\n"
+
+#: src/lib/packages_cache.sh:22
+#, sh-format
+msgid "Would you like to remove it from the cache now? [Y/n]"
+msgstr "是否現在從快取中移除它？ [Y/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr "快取套件：\\n有舊的及/或未安裝的快取套件\\n"
+
+#: src/lib/packages_cache.sh:25
+#, sh-format
+msgid "Would you like to remove them from the cache now? [Y/n]"
+msgstr "是否現在從快取中移除它們？ [Y/n]"
+
+#: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
+#, sh-format
+msgid "Removing old cached packages..."
+msgstr "正在移除舊的快取套件...\\n"
+
+#: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
+#, sh-format
+msgid "Removing uninstalled cached packages..."
+msgstr "正在移除未安裝的快取套件...\\n"
+
+#: src/lib/packages_cache.sh:79
+#, sh-format
+msgid "No old or uninstalled cached package found\\n"
+msgstr "找不到舊的或未安裝的快取套件\\n"
+
+#: src/lib/pacnew_files.sh:10
+#, sh-format
+msgid "Pacnew Files:"
+msgstr "Pacnew 檔案："
+
+#: src/lib/pacnew_files.sh:14
+#, sh-format
+msgid "Would you like to process this file now? [Y/n]"
+msgstr "是否現在處理此檔案？ [Y/n]"
+
+#: src/lib/pacnew_files.sh:16
+#, sh-format
+msgid "Would you like to process these files now? [Y/n]"
+msgstr "是否現在處理這些檔案？ [Y/n]"
+
+#: src/lib/pacnew_files.sh:23
+#, sh-format
+msgid "Processing Pacnew Files...\\n"
+msgstr "正在處理 Pacnew 檔案...\\n"
+
+#: src/lib/pacnew_files.sh:28
+#, sh-format
+msgid "The pacnew file(s) processing has been applied\\n"
+msgstr "Pacnew 檔案處理已套用\\n"
+
+#: src/lib/pacnew_files.sh:31
+#, sh-format
+msgid "An error occurred during the pacnew file(s) processing\\n"
+msgstr "在 Pacnew 檔案處理過程中發生錯誤\\n"
+
+#: src/lib/pacnew_files.sh:37
+#, sh-format
+msgid ""
+"The pacnew file(s) processing hasn't been applied\\nPlease, consider "
+"processing them promptly\\n"
+msgstr "Pacnew 檔案處理未套用\\n請盡快處理這些檔案\\n"
+
+#: src/lib/pacnew_files.sh:41
+#, sh-format
+msgid "No pacnew file found\\n"
+msgstr "找不到 Pacnew 檔案\\n"
+
+#: src/lib/restart_services.sh:14
+#, sh-format
+msgid "Services:\\nThe following service requires a post upgrade restart\\n"
+msgstr "服務：\\n以下服務在升級後需要重新啟動\\n"
+
+#: src/lib/restart_services.sh:16
+#, sh-format
+msgid "Services:\\nThe following services require a post upgrade restart\\n"
+msgstr "服務：\\n以下服務在升級後需要重新啟動\\n"
+
+#: src/lib/restart_services.sh:26
+#, sh-format
+msgid ""
+"Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
+"or press \"enter\" to continue without restarting the service(s):"
+msgstr ""
+"請選擇要重新啟動的服務（例如：1 3 5），選 0 重新啟動所有服務，或按下「Enter」"
+"以繼續而不重新啟動服務："
+
+#: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
+#, sh-format
+msgid "Service(s) restarted successfully\\n"
+msgstr "服務已成功重新啟動\\n"
+
+#: src/lib/restart_services.sh:35 src/lib/restart_services.sh:62
+#, sh-format
+msgid ""
+"An error has occurred during the service(s) restart\\nPlease, verify the "
+"above service(s) status\\n"
+msgstr "在服務重新啟動期間發生錯誤\\n請驗證上述服務的狀態\\n"
+
+#: src/lib/restart_services.sh:48
+#, sh-format
+msgid "The ${service_selected} service has been successfully restarted"
+msgstr "${service_selected} 服務已成功重新啟動"
+
+#: src/lib/restart_services.sh:50
+#, sh-format
+msgid ""
+"An error has occurred during the restart of the ${service_selected} service"
+msgstr "在 ${service_selected} 服務重新啟動期間發生錯誤"
+
+#: src/lib/restart_services.sh:66
+#, sh-format
+msgid ""
+"The service(s) restart hasn't been performed\\nPlease, consider restarting "
+"services that have been updated to fully apply the upgrade\\n"
+msgstr "服務重新啟動未執行\\n請考慮重新啟動已更新的服務以完全套用升級\\n"
+
+#: src/lib/restart_services.sh:70
+#, sh-format
+msgid "No service requiring a post upgrade restart found\\n"
+msgstr "找不到升級後需要重新啟動的服務\\n"
+
+#: src/lib/tray.py:199
+msgid "'updates' state file isn't found"
+msgstr "找不到「updates」狀態檔案"
+
+#: src/lib/tray.py:246
+msgid "System is up to date"
+msgstr "系統已是最新版本"
+
+#: src/lib/tray.py:249
+msgid "1 update available"
+msgstr "1 個更新可用"
+
+#: src/lib/tray.py:252
+#, python-brace-format
+msgid "{updates} updates available"
+msgstr "{updates} 個更新可用"
+
+#: src/lib/tray.py:256
+#, python-brace-format
+msgid ""
+"Last check:\n"
+"{time}"
+msgstr ""
+"上次檢查：\n"
+"{time}"
+
+#: src/lib/tray.py:271
+#, python-brace-format
+msgid "Next check in {time}"
+msgstr "下次檢查於 {time}"
+
+#: src/lib/tray.py:282
+#, python-brace-format
+msgid "All ({updates})"
+msgstr "全部 ({updates})"
+
+#: src/lib/tray.py:295
+#, python-brace-format
+msgid "Packages ({updates})"
+msgstr "官方套件 ({updates})"
+
+#: src/lib/tray.py:306
+#, python-brace-format
+msgid "AUR ({updates})"
+msgstr "AUR ({updates})"
+
+#: src/lib/tray.py:317
+#, python-brace-format
+msgid "Flatpak ({updates})"
+msgstr "Flatpak ({updates})"
+
+#: src/lib/tray.py:377 src/lib/tray.py:382
+msgid "Arch-Update"
+msgstr "Arch-Update"
+
+#: src/lib/tray.py:383
+msgid "Last check"
+msgstr "上次檢查"
+
+#: src/lib/tray.py:384
+msgid "Next check"
+msgstr "下次檢查"
+
+#: src/lib/tray.py:385
+msgid "Run Arch-Update"
+msgstr "執行 Arch-Update"
+
+#: src/lib/tray.py:386
+msgid "Check for updates"
+msgstr "檢查更新"
+
+#: src/lib/tray.py:387
+msgid "Exit"
+msgstr "離開"
+
+#: src/lib/tray.py:390
+msgid "All"
+msgstr "全部"
+
+#: src/lib/tray.py:391
+msgid "Packages"
+msgstr "官方套件"
+
+#: src/lib/tray.py:392
+msgid "AUR"
+msgstr "AUR"
+
+#: src/lib/tray.py:393
+msgid "Flatpak"
+msgstr "Flatpak"
+
+#: src/lib/tray.sh:20
+#, sh-format
+msgid "${_name} tray desktop file not found"
+msgstr "找不到 ${_name} 系統匣桌面檔案"
+
+#: src/lib/tray.sh:27
+#, sh-format
+msgid "The '${tray_desktop_file_autostart}' file already exists"
+msgstr "「${tray_desktop_file_autostart}」檔案已存在"
+
+#: src/lib/tray.sh:32
+#, sh-format
+msgid ""
+"The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
+"systray applet will be automatically started at your next log on\\nTo start "
+"it right now, you can launch the \"${_name} Systray Applet\" application "
+"from your app menu"
+msgstr ""
+"「${tray_desktop_file_autostart}」檔案已建立，${_name} 系統匣應用程式將在您下次"
+"登入時自動啟動\\n若要立即啟動，您可以從應用程式選單中執行「${_name} 系統匣"
+"應用程式」"
+
+#: src/lib/tray.sh:49
+#, sh-format
+msgid "There's already a running instance of the ${_name} systray applet"
+msgstr "${_name} 系統匣應用程式已有執行個體正在執行"
+
+#: src/lib/update.sh:9
+#, sh-format
+msgid "Updating Packages...\\n"
+msgstr "正在更新套件...\\n"
+
+#: src/lib/update.sh:15 src/lib/update.sh:30 src/lib/update.sh:44
+#, sh-format
+msgid ""
+"An error has occurred during the update process\\nThe update has been "
+"aborted\\n"
+msgstr "在更新過程中發生錯誤\\n更新已中止\\n"
+
+#: src/lib/update.sh:24
+#, sh-format
+msgid "Updating AUR Packages...\\n"
+msgstr "正在更新 AUR 套件...\\n"
+
+#: src/lib/update.sh:40
+#, sh-format
+msgid "Updating Flatpak Packages...\\n"
+msgstr "正在更新 Flatpak 套件...\\n"
+
+#: src/lib/update.sh:51
+#, sh-format
+msgid "The update has been applied\\n"
+msgstr "更新已套用\\n"
