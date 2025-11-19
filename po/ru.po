@@ -294,14 +294,14 @@ msgstr "Хотите перезагрузиться сейчас? [y/N]"
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
-msgstr "Д"
+msgstr "Y"
 
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
-msgstr "д"
+msgstr "y"
 
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
