@@ -74,7 +74,8 @@ git tag "v${release_tag}" -u D33FAA16B937F3B2 -m "v${release_tag}"
 git push origin "v${release_tag}"
 
 # Create release
-gh release create "v${release_tag}" --verify-tag -F -
+echo -e "\nType (or paste) release notes, press ctrl+d when done\n"
+gh release create "v${release_tag}" --title "v${release_tag}" --verify-tag -F -
 
 # Download and sign auto-generated source tarball and checksum
 gh release download "v${release_tag}" --archive tar.gz --clobber
