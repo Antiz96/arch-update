@@ -392,9 +392,9 @@ msgid "${update_number} update available"
 msgstr ""
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:385
 #, sh-format
-msgid "Run ${_name}"
+msgid "Run Cachy-Update"
 msgstr ""
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19

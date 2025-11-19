@@ -46,7 +46,7 @@ source "${libdir}/packages_cache.sh"
 
 # Source the "pacnew_files" library which displays pacnew files and offers to process them 
 # shellcheck source=src/lib/pacnew_files.sh
-source "${libdir}/pacnew_files.sh"
+#source "${libdir}/pacnew_files.sh"
 
 # Source the "kernel_reboot" library which checks if there's a pending kernel update requiring a reboot to be applied (unless the "kernel-modules-hook" package is installed or we're running from a container)
 if ! pacman -Q kernel-modules-hook &> /dev/null && ! systemd-detect-virt --container --quiet; then

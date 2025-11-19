@@ -156,7 +156,7 @@ class ArchUpdateQt6:
             log.error("Statefile Missing")
             sys.exit(1)
 
-        if contents.startswith("arch-update"):
+        if contents.startswith("cachy-update"):
             icon = QIcon.fromTheme(contents)
             self.tray.setIcon(icon)
 
@@ -374,7 +374,7 @@ class ArchUpdateQt6:
         self.tray.activated.connect(self.run)
 
         # Tooltip
-        tooltip = _("Arch-Update")
+        tooltip = _("Cachy-Update")
         self.tray.setToolTip(tooltip)
 
         # Definition of menus titles
@@ -382,7 +382,7 @@ class ArchUpdateQt6:
         self.menu_count = QAction(_("Arch-Update"))
         self.menu_last_check = QAction(_("Last check"))
         self.menu_next_check = QAction(_("Next check"))
-        self.menu_launch = QAction(_("Run Arch-Update"))
+        self.menu_launch = QAction(_("Run Cachy-Update"))
         self.menu_check = QAction(_("Check for updates"))
         self.menu_exit = QAction(_("Exit"))
 
