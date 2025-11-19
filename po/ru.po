@@ -1,0 +1,843 @@
+# Arch-Update Russian translation
+# Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
+# This file is distributed under the same license as the Arch-Update package.
+#
+# Translators:
+# DrWeb56 <borodaxxx@gmail.com>, 2025
+msgid ""
+msgstr ""
+"Project-Id-Version: Arch-Update 3.16.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
+"POT-Creation-Date: 2024-03-17 16:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/lib/common.sh:96
+#, sh-format
+msgid "WARNING"
+msgstr "ПРЕДУПРЕЖДЕНИЕ"
+
+#: src/lib/common.sh:102
+#, sh-format
+msgid "ERROR"
+msgstr "ОШИБКА"
+
+#: src/lib/common.sh:107
+#, sh-format
+msgid "Press \"enter\" to continue "
+msgstr "Нажмите \"enter\" для продолжения "
+
+#: src/lib/common.sh:113
+#, sh-format
+msgid "Press \"enter\" to quit "
+msgstr "Нажмите \"enter\" для выхода "
+
+#: src/lib/common.sh:134
+#, sh-format
+msgid ""
+"The ${aur_helper} AUR helper set for AUR packages support in the "
+"${name}.conf configuration file is not found\\n"
+msgstr ""
+"Помощник AUR ${aur_helper}, установленный для поддержки пакетов AUR в "
+"конфигурационном файле ${name}.conf, не найден\\n"
+
+#: src/lib/common.sh:165
+#, sh-format
+msgid ""
+"A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
+msgstr ""
+"Требуется команда повышения привилегий (sudo, sudo-rs, doas или run0)\\n"
+
+#: src/lib/common.sh:170
+#, sh-format
+msgid ""
+"The ${su_cmd} command set for privilege escalation in the ${name}.conf "
+"configuration file is not found\\n"
+msgstr ""
+"Команда ${su_cmd}, установленная для повышения привилегий в конфигурационном "
+"файле ${name}.conf, не найдена\\n"
+
+#: src/lib/common.sh:180
+#, sh-format
+msgid ""
+"The ${diff_prog} editor set for visualizing / editing differences of pacnew "
+"files in the ${name}.conf configuration file is not found\\n"
+msgstr ""
+"Редактор ${diff_prog}, установленный для просмотра / редактирования различий "
+"файлов pacnew в конфигурационном файле ${name}.conf, не найден\\n"
+
+#: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
+#, sh-format
+msgid ""
+"No configuration file found\\nYou can generate one with \"${name} --gen-"
+"config\""
+msgstr ""
+"Конфигурационный файл не найден\\nВы можете сгенерировать его с помощью "
+"\"${name} --gen-config\""
+
+#: src/lib/edit-config.sh:13
+#, sh-format
+msgid ""
+"Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
+"is not set and \"nano\" (fallback option) is not installed"
+msgstr ""
+"Не удалось определить используемый редактор\\nПеременная окружения \"EDITOR\" "
+"не установлена, и \"nano\" (запасной вариант) не установлен"
+
+#: src/lib/full_upgrade.sh:13
+#, sh-format
+msgid "There's already a running instance of ${_name}\\n"
+msgstr "Уже запущен работающий экземпляр ${_name}\\n"
+
+#: src/lib/gen-config.sh:19
+#, sh-format
+msgid "Example configuration file not found"
+msgstr "Пример конфигурационного файла не найден"
+
+#: src/lib/gen-config.sh:25
+#, sh-format
+msgid ""
+"The '${config_file}' configuration file already exists\\nPlease, remove it "
+"before generating a new one (or use --force to overwrite it)"
+msgstr ""
+"Конфигурационный файл '${config_file}' уже существует\\nПожалуйста, удалите "
+"его перед генерацией нового (или используйте --force для перезаписи)"
+
+#: src/lib/gen-config.sh:30
+#, sh-format
+msgid "The '${config_file}' configuration file has been generated"
+msgstr "Конфигурационный файл '${config_file}' был сгенерирован"
+
+#: src/lib/help.sh:8
+#, sh-format
+msgid ""
+"An update notifier & applier for Arch Linux that assists you with important "
+"pre / post update tasks."
+msgstr ""
+"Уведомитель и установщик обновлений для Arch Linux, который помогает вам с "
+"важными задачами до / после обновления."
+
+#: src/lib/help.sh:10
+#, sh-format
+msgid "Run ${name} to perform the main 'update' function:"
+msgstr "Запустите ${name} для выполнения основной функции 'update':"
+
+#: src/lib/help.sh:11
+#, sh-format
+msgid ""
+"Display the list of packages available for update, then ask for the user's "
+"confirmation to proceed with the installation."
+msgstr ""
+"Отобразить список пакетов, доступных для обновления, затем запросить "
+"подтверждение пользователя для продолжения установки."
+
+#: src/lib/help.sh:12
+#, sh-format
+msgid ""
+"Before performing the update, it offers to display the latest Arch Linux "
+"news."
+msgstr ""
+"Перед выполнением обновления, предлагается отобразить последние новости Arch "
+"Linux."
+
+#: src/lib/help.sh:13
+#, sh-format
+msgid ""
+"Post update, it checks for orphan & unused packages, old cached packages, "
+"pacnew & pacsave files, pending kernel update as well as services requiring "
+"a post upgrade restart and, if there are, offers to process them."
+msgstr ""
+"После обновления, проверяется наличие осиротевших и неиспользуемых пакетов, "
+"старых кэшированных пакетов, файлов pacnew и pacsave, ожидающего обновления "
+"ядра, а также служб, требующих перезапуска после обновления, и, если они "
+"есть, предлагается их обработать."
+
+#: src/lib/help.sh:15
+#, sh-format
+msgid "Options:"
+msgstr "Опции:"
+
+#: src/lib/help.sh:16
+#, sh-format
+msgid ""
+"  -c, --check       Check for available updates, change the systray icon and "
+"send a desktop notification containing the number of available updates (if "
+"there are new available updates compared to the last check)"
+msgstr ""
+"  -c, --check       Проверить наличие доступных обновлений, изменить иконку "
+"системного трея и отправить уведомление на рабочий стол с количеством "
+"доступных обновлений (если есть новые доступные обновления по сравнению с "
+"последней проверкой)"
+
+#: src/lib/help.sh:17
+#, sh-format
+msgid "  -l, --list        Display the list of pending updates"
+msgstr "  -l, --list        Отобразить список ожидающих обновлений"
+
+#: src/lib/help.sh:18
+#, sh-format
+msgid "  -d, --devel       Include AUR development packages updates"
+msgstr "  -d, --devel       Включить обновления AUR пакетов разработки"
+
+#: src/lib/help.sh:19
+#, sh-format
+msgid ""
+"  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
+"number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
+msgstr ""
+"  -n, --news [Num]  Отобразить последние новости Arch, вы можете "
+"опционально указать количество новостей Arch для отображения с помощью "
+"'--news [Num]' (например, '--news 10')"
+
+#: src/lib/help.sh:20
+#, sh-format
+msgid "  -s, --services    Check for services requiring a post upgrade restart"
+msgstr "  -s, --services    Проверить службы, требующие перезапуска после обновления"
+
+#: src/lib/help.sh:21
+#, sh-format
+msgid "  -D, --debug       Display debug traces"
+msgstr "  -D, --debug       Отобразить отладочные трассировки"
+
+#: src/lib/help.sh:22
+#, sh-format
+msgid ""
+"  --gen-config      Generate a default / example '${name}.conf' "
+"configuration file, you can optionally pass the '--force' argument to "
+"overwrite any existing '${name}.conf' configuration file"
+msgstr ""
+"  --gen-config      Сгенерировать конфигурационный файл по умолчанию / "
+"пример '${name}.conf', вы можете опционально передать аргумент '--force' для "
+"перезаписи любого существующего конфигурационного файла '${name}.conf'"
+
+#: src/lib/help.sh:23
+#, sh-format
+msgid ""
+"  --show-config     Display the '${name}.conf' configuration file currently "
+"used (if it exists)"
+msgstr ""
+"  --show-config     Отобразить конфигурационный файл '${name}.conf', "
+"используемый в настоящее время (если он существует)"
+
+#: src/lib/help.sh:24
+#, sh-format
+msgid ""
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
+"used (if it exists)"
+msgstr ""
+"  --edit-config     Редактировать конфигурационный файл '${name}.conf', "
+"используемый в настоящее время (если он существует)"
+
+#: src/lib/help.sh:25
+#, sh-format
+msgid ""
+"  --tray            Launch the ${_name} systray applet, you can optionally "
+"add the '--enable' argument to start it automatically at boot"
+msgstr ""
+"  --tray            Запустить апплет системного трея ${_name}, вы можете "
+"опционально добавить аргумент '--enable' для его автоматического запуска при "
+"загрузке"
+
+#: src/lib/help.sh:26
+#, sh-format
+msgid "  -h, --help        Display this help message and exit"
+msgstr "  -h, --help        Отобразить это справочное сообщение и выйти"
+
+#: src/lib/help.sh:27
+#, sh-format
+msgid "  -V, --version     Display version information and exit"
+msgstr "  -V, --version     Отобразить информацию о версии и выйти"
+
+#: src/lib/help.sh:29
+#, sh-format
+msgid "For more information, see the ${name}(1) man page."
+msgstr "Для получения дополнительной информации смотрите man-страницу ${name}(1)."
+
+#: src/lib/help.sh:30
+#, sh-format
+msgid ""
+"Certain options can be enabled, disabled or modified via the ${name}.conf "
+"configuration file, see the ${name}.conf(5) man page."
+msgstr ""
+"Определенные опции могут быть включены, отключены или изменены с помощью "
+"конфигурационного файла ${name}.conf, смотрите man-страницу ${name}.conf(5)."
+
+#: src/lib/invalid_option.sh:7
+#, sh-format
+msgid ""
+"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
+"information"
+msgstr ""
+"${name}: неверная опция -- '${option}'\\nПопробуйте '${name} --help' для "
+"получения дополнительной информации"
+
+#: src/lib/kernel_reboot.sh:10
+#, sh-format
+msgid ""
+"Reboot required:\\nThere's a pending kernel update on your system requiring "
+"a reboot to be applied\\n"
+msgstr ""
+"Требуется перезагрузка:\\nВ вашей системе ожидается обновление ядра, "
+"требующее перезагрузки для применения\\n"
+
+#: src/lib/kernel_reboot.sh:11
+#, sh-format
+msgid "Would you like to reboot now? [y/N]"
+msgstr "Хотите перезагрузиться сейчас? [y/N]"
+
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "Y"
+msgstr "Y"
+
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "y"
+msgstr "y"
+
+#: src/lib/kernel_reboot.sh:24
+#, sh-format
+msgid "Rebooting in ${sec}...\\r"
+msgstr "Перезагрузка через ${sec}...\\r"
+
+#: src/lib/kernel_reboot.sh:30
+#, sh-format
+msgid ""
+"An error has occurred during the reboot process\\nThe reboot has been "
+"aborted\\n"
+msgstr ""
+"Произошла ошибка во время процесса перезагрузки\\nПерезагрузка была "
+"прервана\\n"
+
+#: src/lib/kernel_reboot.sh:38
+#, sh-format
+msgid ""
+"The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
+"the pending kernel update\\n"
+msgstr ""
+"Перезагрузка не была выполнена\\nПожалуйста, рассмотрите возможность "
+"перезагрузки для завершения ожидающего обновления ядра\\n"
+
+#: src/lib/kernel_reboot.sh:42
+#, sh-format
+msgid "No pending kernel update found\\n"
+msgstr "Ожидающих обновлений ядра не найдено\\n"
+
+#: src/lib/list_news.sh:7
+#, sh-format
+msgid "Looking for recent Arch News..."
+msgstr "Поиск последних новостей Arch..."
+
+#: src/lib/list_news.sh:13
+#, sh-format
+msgid ""
+"Unable to retrieve recent Arch News (HTTP error response or request timeout)"
+"\\nPlease, look for any recent news at https://archlinux.org before updating "
+"your system"
+msgstr ""
+"Не удалось получить последние новости Arch (ошибка HTTP или тайм-аут "
+"запроса)\\nПожалуйста, поищите последние новости на https://archlinux.org "
+"перед обновлением вашей системы"
+
+#: src/lib/list_news.sh:23
+#, sh-format
+msgid "No recent Arch News found"
+msgstr "Последних новостей Arch не найдено"
+
+#: src/lib/list_news.sh:37
+#, sh-format
+msgid "Arch News:"
+msgstr "Новости Arch:"
+
+#: src/lib/list_news.sh:42
+#, sh-format
+msgid "[NEW]"
+msgstr "[НОВОЕ]"
+
+#: src/lib/list_news.sh:54
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to quit:"
+msgstr ""
+"Выберите новости для чтения (например, 1 3 5), выберите 0, чтобы прочитать "
+"их все, или нажмите \"enter\" для выхода:"
+
+#: src/lib/list_news.sh:56
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to proceed with update:"
+msgstr ""
+"Выберите новости для чтения (например, 1 3 5), выберите 0, чтобы прочитать "
+"их все, или нажмите \"enter\" для продолжения обновления:"
+
+#: src/lib/list_news.sh:80
+#, sh-format
+msgid ""
+"Unable to retrieve the selected Arch News (HTTP error response or request "
+"timeout)\\nPlease, read the selected Arch News at ${news_url} before "
+"updating your system"
+msgstr ""
+"Не удалось получить выбранные новости Arch (ошибка HTTP или тайм-аут "
+"запроса)\\nПожалуйста, прочитайте выбранные новости Arch по адресу ${news_url} "
+"перед обновлением вашей системы"
+
+#: src/lib/list_news.sh:85
+#, sh-format
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: src/lib/list_news.sh:86
+#, sh-format
+msgid "Author:"
+msgstr "Автор:"
+
+#: src/lib/list_news.sh:87
+#, sh-format
+msgid "Publication date:"
+msgstr "Дата публикации:"
+
+#: src/lib/list_news.sh:88
+#, sh-format
+msgid "URL:"
+msgstr "URL:"
+
+#: src/lib/list_packages.sh:7
+#, sh-format
+msgid "Looking for updates...\\n"
+msgstr "Поиск обновлений...\\n"
+
+#: src/lib/list_packages.sh:41
+#, sh-format
+msgid "Packages:"
+msgstr "Пакеты:"
+
+#: src/lib/list_packages.sh:48
+#, sh-format
+msgid "AUR Packages:"
+msgstr "Пакеты AUR:"
+
+#: src/lib/list_packages.sh:55
+#, sh-format
+msgid "Flatpak Packages:"
+msgstr "Пакеты Flatpak:"
+
+#: src/lib/list_packages.sh:65
+#, sh-format
+msgid "No update available\\n"
+msgstr "Обновлений нет\\n"
+
+#: src/lib/list_packages.sh:73
+#, sh-format
+msgid "Proceed with update? [Y/n]"
+msgstr "Продолжить обновление? [Y/n]"
+
+#: src/lib/list_packages.sh:83
+#, sh-format
+msgid "The update has been aborted\\n"
+msgstr "Обновление было прервано\\n"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#, sh-format
+msgid "${update_number} update available"
+msgstr "${update_number} обновление доступно"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "Run ${_name}"
+msgstr "Запустить ${_name}"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "Close"
+msgstr "Закрыть"
+
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "${update_number} updates available"
+msgstr "${update_number} обновлений доступно"
+
+#: src/lib/notification.sh:41
+#, sh-format
+msgid "${_name} desktop file not found"
+msgstr "Рабочий файл ${_name} не найден"
+
+#: src/lib/orphan_packages.sh:14
+#, sh-format
+msgid "Orphan Packages:"
+msgstr "Осиротевшие пакеты:"
+
+#: src/lib/orphan_packages.sh:18
+#, sh-format
+msgid ""
+"Would you like to remove this orphan package (and its potential "
+"dependencies) now? [y/N]"
+msgstr ""
+"Хотите удалить этот осиротевший пакет (и его потенциальные зависимости) "
+"сейчас? [y/N]"
+
+#: src/lib/orphan_packages.sh:20
+#, sh-format
+msgid ""
+"Would you like to remove these orphan packages (and their potential "
+"dependencies) now? [y/N]"
+msgstr ""
+"Хотите удалить эти осиротевшие пакеты (и их потенциальные зависимости) "
+"сейчас? [y/N]"
+
+#: src/lib/orphan_packages.sh:27
+#, sh-format
+msgid "Removing Orphan Packages...\\n"
+msgstr "Удаление осиротевших пакетов...\\n"
+
+#: src/lib/orphan_packages.sh:32 src/lib/orphan_packages.sh:65
+#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
+#, sh-format
+msgid ""
+"An error has occurred during the removal process\\nThe removal has been "
+"aborted\\n"
+msgstr ""
+"Произошла ошибка во время процесса удаления\\nУдаление было прервано\\n"
+
+#: src/lib/orphan_packages.sh:35 src/lib/orphan_packages.sh:68
+#, sh-format
+msgid "The removal has been applied\\n"
+msgstr "Удаление было применено\\n"
+
+#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:72
+#: src/lib/packages_cache.sh:75
+#, sh-format
+msgid "The removal hasn't been applied\\n"
+msgstr "Удаление не было применено\\n"
+
+#: src/lib/orphan_packages.sh:44
+#, sh-format
+msgid "No orphan package found\\n"
+msgstr "Осиротевших пакетов не найдено\\n"
+
+#: src/lib/orphan_packages.sh:49
+#, sh-format
+msgid "Flatpak Unused Packages:"
+msgstr "Неиспользуемые пакеты Flatpak:"
+
+#: src/lib/orphan_packages.sh:53
+#, sh-format
+msgid "Would you like to remove this Flatpak unused package now? [y/N]"
+msgstr "Хотите удалить этот неиспользуемый пакет Flatpak сейчас? [y/N]"
+
+#: src/lib/orphan_packages.sh:55
+#, sh-format
+msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
+msgstr "Хотите удалить эти неиспользуемые пакеты Flatpak сейчас? [y/N]"
+
+#: src/lib/orphan_packages.sh:61
+#, sh-format
+msgid "Removing Flatpak Unused Packages..."
+msgstr "Удаление неиспользуемых пакетов Flatpak..."
+
+#: src/lib/orphan_packages.sh:76
+#, sh-format
+msgid "No Flatpak unused package found\\n"
+msgstr "Неиспользуемых пакетов Flatpak не найдено\\n"
+
+#: src/lib/packages_cache.sh:21
+#, sh-format
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr "Кэшированные пакеты:\\nЕсть старый или не установленный кэшированный пакет\\n"
+
+#: src/lib/packages_cache.sh:22
+#, sh-format
+msgid "Would you like to remove it from the cache now? [Y/n]"
+msgstr "Хотите удалить его из кэша сейчас? [Y/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Кэшированные пакеты:\\nЕсть старые и / или не установленные кэшированные "
+"пакеты\\n"
+
+#: src/lib/packages_cache.sh:25
+#, sh-format
+msgid "Would you like to remove them from the cache now? [Y/n]"
+msgstr "Хотите удалить их из кэша сейчас? [Y/n]"
+
+#: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
+#, sh-format
+msgid "Removing old cached packages..."
+msgstr "Удаление старых кэшированных пакетов..."
+
+#: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
+#, sh-format
+msgid "Removing uninstalled cached packages..."
+msgstr "Удаление не установленных кэшированных пакетов..."
+
+#: src/lib/packages_cache.sh:79
+#, sh-format
+msgid "No old or uninstalled cached package found\\n"
+msgstr "Старых или не установленных кэшированных пакетов не найдено\\n"
+
+#: src/lib/pacnew_files.sh:10
+#, sh-format
+msgid "Pacnew Files:"
+msgstr "Файлы Pacnew:"
+
+#: src/lib/pacnew_files.sh:14
+#, sh-format
+msgid "Would you like to process this file now? [Y/n]"
+msgstr "Хотите обработать этот файл сейчас? [Y/n]"
+
+#: src/lib/pacnew_files.sh:16
+#, sh-format
+msgid "Would you like to process these files now? [Y/n]"
+msgstr "Хотите обработать эти файлы сейчас? [Y/n]"
+
+#: src/lib/pacnew_files.sh:23
+#, sh-format
+msgid "Processing Pacnew Files...\\n"
+msgstr "Обработка файлов Pacnew...\\n"
+
+#: src/lib/pacnew_files.sh:28
+#, sh-format
+msgid "The pacnew file(s) processing has been applied\\n"
+msgstr "Обработка файла(ов) pacnew была применена\\n"
+
+#: src/lib/pacnew_files.sh:31
+#, sh-format
+msgid "An error occurred during the pacnew file(s) processing\\n"
+msgstr "Произошла ошибка во время обработки файла(ов) pacnew\\n"
+
+#: src/lib/pacnew_files.sh:37
+#, sh-format
+msgid ""
+"The pacnew file(s) processing hasn't been applied\\nPlease, consider "
+"processing them promptly\\n"
+msgstr ""
+"Обработка файла(ов) pacnew не была применена\\nПожалуйста, рассмотрите "
+"возможность немедленной их обработки\\n"
+
+#: src/lib/pacnew_files.sh:41
+#, sh-format
+msgid "No pacnew file found\\n"
+msgstr "Файлов pacnew не найдено\\n"
+
+#: src/lib/restart_services.sh:14
+#, sh-format
+msgid "Services:\\nThe following service requires a post upgrade restart\\n"
+msgstr "Службы:\\nСледующая служба требует перезапуска после обновления\\n"
+
+#: src/lib/restart_services.sh:16
+#, sh-format
+msgid "Services:\\nThe following services require a post upgrade restart\\n"
+msgstr "Службы:\\nСледующие службы требуют перезапуска после обновления\\n"
+
+#: src/lib/restart_services.sh:26
+#, sh-format
+msgid ""
+"Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
+"or press \"enter\" to continue without restarting the service(s):"
+msgstr ""
+"Выберите службу(ы) для перезапуска (например, 1 3 5), выберите 0, чтобы "
+"перезапустить их все, или нажмите \"enter\", чтобы продолжить без "
+"перезапуска службы(служб):"
+
+#: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
+#, sh-format
+msgid "Service(s) restarted successfully\\n"
+msgstr "Служба(ы) успешно перезапущена\\n"
+
+#: src/lib/restart_services.sh:35 src/lib/restart_services.sh:62
+#, sh-format
+msgid ""
+"An error has occurred during the service(s) restart\\nPlease, verify the "
+"above service(s) status\\n"
+msgstr ""
+"Произошла ошибка во время перезапуска службы(служб)\\nПожалуйста, проверьте "
+"статус вышеуказанной службы(служб)\\n"
+
+#: src/lib/restart_services.sh:48
+#, sh-format
+msgid "The ${service_selected} service has been successfully restarted"
+msgstr "Служба ${service_selected} была успешно перезапущена"
+
+#: src/lib/restart_services.sh:50
+#, sh-format
+msgid ""
+"An error has occurred during the restart of the ${service_selected} service"
+msgstr ""
+"Произошла ошибка во время перезапуска службы ${service_selected}"
+
+#: src/lib/restart_services.sh:66
+#, sh-format
+msgid ""
+"The service(s) restart hasn't been performed\\nPlease, consider restarting "
+"services that have been updated to fully apply the upgrade\\n"
+msgstr ""
+"Перезапуск службы(служб) не был выполнен\\nПожалуйста, рассмотрите "
+"возможность перезапуска служб, которые были обновлены, для полного "
+"применения обновления\\n"
+
+#: src/lib/restart_services.sh:70
+#, sh-format
+msgid "No service requiring a post upgrade restart found\\n"
+msgstr "Не найдено служб, требующих перезапуска после обновления\\n"
+
+#: src/lib/tray.py:199
+msgid "'updates' state file isn't found"
+msgstr "Файл состояния 'updates' не найден"
+
+#: src/lib/tray.py:246
+msgid "System is up to date"
+msgstr "Система обновлена"
+
+#: src/lib/tray.py:249
+msgid "1 update available"
+msgstr "Доступно 1 обновление"
+
+#: src/lib/tray.py:252
+#, python-brace-format
+msgid "{updates} updates available"
+msgstr "Доступно {updates} обновлений"
+
+#: src/lib/tray.py:256
+#, python-brace-format
+msgid ""
+"Last check:\n"
+"{time}"
+msgstr ""
+"Последняя проверка:\n"
+"{time}"
+
+#: src/lib/tray.py:271
+#, python-brace-format
+msgid "Next check in {time}"
+msgstr "Следующая проверка через {time}"
+
+#: src/lib/tray.py:282
+#, python-brace-format
+msgid "All ({updates})"
+msgstr "Все ({updates})"
+
+#: src/lib/tray.py:295
+#, python-brace-format
+msgid "Packages ({updates})"
+msgstr "Пакеты ({updates})"
+
+#: src/lib/tray.py:306
+#, python-brace-format
+msgid "AUR ({updates})"
+msgstr "AUR ({updates})"
+
+#: src/lib/tray.py:317
+#, python-brace-format
+msgid "Flatpak ({updates})"
+msgstr "Flatpak ({updates})"
+
+#: src/lib/tray.py:377 src/lib/tray.py:382
+msgid "Arch-Update"
+msgstr "Arch-Update"
+
+#: src/lib/tray.py:383
+msgid "Last check"
+msgstr "Последняя проверка"
+
+#: src/lib/tray.py:384
+msgid "Next check"
+msgstr "Следующая проверка"
+
+#: src/lib/tray.py:385
+msgid "Run Arch-Update"
+msgstr "Запустить Arch-Update"
+
+#: src/lib/tray.py:386
+msgid "Check for updates"
+msgstr "Проверить обновления"
+
+#: src/lib/tray.py:387
+msgid "Exit"
+msgstr "Выход"
+
+#: src/lib/tray.py:390
+msgid "All"
+msgstr "Все"
+
+#: src/lib/tray.py:391
+msgid "Packages"
+msgstr "Пакеты"
+
+#: src/lib/tray.py:392
+msgid "AUR"
+msgstr "AUR"
+
+#: src/lib/tray.py:393
+msgid "Flatpak"
+msgstr "Flatpak"
+
+#: src/lib/tray.sh:20
+#, sh-format
+msgid "${_name} tray desktop file not found"
+msgstr "Рабочий файл ${_name} для трея не найден"
+
+#: src/lib/tray.sh:27
+#, sh-format
+msgid "The '${tray_desktop_file_autostart}' file already exists"
+msgstr "Файл '${tray_desktop_file_autostart}' уже существует"
+
+#: src/lib/tray.sh:32
+#, sh-format
+msgid ""
+"The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
+"systray applet will be automatically started at your next log on\\nTo start "
+"it right now, you can launch the \"${_name} Systray Applet\" application "
+"from your app menu"
+msgstr ""
+"Файл '${tray_desktop_file_autostart}' был создан, апплет системного трея "
+"${_name} будет автоматически запущен при следующем входе в систему\\nЧтобы "
+"запустить его прямо сейчас, вы можете запустить приложение \"${_name} "
+"Systray Applet\" из меню приложений"
+
+#: src/lib/tray.sh:49
+#, sh-format
+msgid "There's already a running instance of the ${_name} systray applet"
+msgstr "Уже запущен работающий экземпляр апплета системного трея ${_name}"
+
+#: src/lib/update.sh:9
+#, sh-format
+msgid "Updating Packages...\\n"
+msgstr "Обновление пакетов...\\n"
+
+#: src/lib/update.sh:15 src/lib/update.sh:30 src/lib/update.sh:44
+#, sh-format
+msgid ""
+"An error has occurred during the update process\\nThe update has been "
+"aborted\\n"
+msgstr ""
+"Произошла ошибка во время процесса обновления\\nОбновление было прервано\\n"
+
+#: src/lib/update.sh:24
+#, sh-format
+msgid "Updating AUR Packages...\\n"
+msgstr "Обновление пакетов AUR...\\n"
+
+#: src/lib/update.sh:40
+#, sh-format
+msgid "Updating Flatpak Packages...\\n"
+msgstr "Обновление пакетов Flatpak...\\n"
+
+#: src/lib/update.sh:51
+#, sh-format
+msgid "The update has been applied\\n"
+msgstr "Обновление было применено\\n"
