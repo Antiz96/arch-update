@@ -144,15 +144,15 @@ Par défaut, une vérification est effectuée **au démarrage du système puis u
 Une fois démarrée, l'applet systray apparait dans la zone systray de votre panneau.  
 C'est l'icône à droite de celle en forme de tasse de café dans la capture d'écran ci-dessous (notez qu'il y a [plusieurs variantes de couleur disponibles](https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md) pour l'icône):
 
-![icon](https://github.com/user-attachments/assets/e02645d1-3646-47f2-a218-08e4e5d6e4e0)
+![icon](https://github.com/user-attachments/assets/09e82ee1-3e4a-4190-8473-97ee9ec61e1c)
 
-Avec [le timer systemd](#le-timer-systemd) activé, les vérifications des mises à jour sont effectuées automatiqument et périodiquement, mais vous pouvez en déclencher une manuellement depuise l'applet systray en faisant un clic droit dessus puis en cliquant sur l'entrée `Vérifier les mises à jour` depuis le menu :
+Avec [le timer systemd](#le-timer-systemd) activé, les vérifications des mises à jour sont effectuées automatiqument et périodiquement, mais vous pouvez en déclencher une manuellement depuise l'applet systray en faisant un clic droit dessus puis en cliquant sur l'entrée `Vérifier les mises à jour` depuis le menu. Vous pouvez également voir les horodatages de la dernière et la prochaine vérification de mises à jour :
 
-![check_for_updates-fr](https://github.com/user-attachments/assets/b0809b17-2ce2-41a2-85b6-e2b3aa21730f)
+![check_for_updates-fr](https://github.com/user-attachments/assets/96b9563d-1852-45dd-af78-af3de444db8b)
 
 Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée. Vous pouvez directement lancer Arch-Update depuis cette dernière ou la fermer grâce aux actions de clique associées:
 
-![notif-fr](https://github.com/user-attachments/assets/be242dc1-eddb-453d-ae1a-404845530889)
+![notif-fr](https://github.com/user-attachments/assets/7f41eb9e-2c54-47a9-a2db-4c75a3671aaf)
 
 Vous pouvez voir la liste des mises à jour disponibles depuis le menu en faisant un clic droit sur l'icône du systray.  
 Un menu déroulant contenant le nombre et la liste des mises à jour disponibles est dynamiquement créé pour chaque sources qui en possède (Paquets, AUR, Flatpak).  
@@ -160,20 +160,20 @@ Un menu déroulant "Tous" affichant le nombre et la liste des mises à jour en a
 
 *Cliquer sur l'entrée d'un paquet depuis la liste ouvre l'URL du projet upstream dans votre navigateur web (à l'exception des paquets Flatpak).*
 
-![all-fr](https://github.com/user-attachments/assets/988422f7-3408-4f7b-b9cc-dbb7e29672f7)
+![all-fr](https://github.com/user-attachments/assets/20fb4905-980e-4260-9401-31297bdaa223)
 
-![packages-fr](https://github.com/user-attachments/assets/a69ed36c-2278-4525-9d36-f29a2dcea78c)
+![packages-fr](https://github.com/user-attachments/assets/377c726b-748a-4698-82f6-46891d6282fa)
 
-![aur-fr](https://github.com/user-attachments/assets/208676d7-45f4-4ede-8dbf-70c473444507)
+![aur-fr](https://github.com/user-attachments/assets/946f91bd-5d91-4854-ad48-04fd4977bb93)
 
 Quand l'icône du systray est cliquée, `arch-update` est lancé dans une fenêtre de terminal (vous pouvez également cliquer sur l'entrée "*X* mise(s) à jour disponible(s)" ou l'entrée dédiée "Lancer Arch-Update" depuis le menu) :
 
-![run-fr](https://github.com/user-attachments/assets/b4ff4ae5-4e44-4150-ba3c-093795a6348e)
+![run-fr](https://github.com/user-attachments/assets/a902502e-b3e5-4a45-8a78-cc06fd8ac0c7)
 
 Si au moins une news Arch Linux a été publiée depuis la dernière exécution, `Arch-Update` vous proposera de lire les dernières news Arch Linux directement depuis la fenêtre de terminal.  
 Les news publiées depuis la dernière exécution sont labellisées comme `[NOUVEAU]` :
 
-![news-fr](https://github.com/user-attachments/assets/385d53a5-f981-4401-8659-50c60784ccb8)
+![news-fr](https://github.com/user-attachments/assets/c0a908db-586c-41d4-99e0-22dde40654cd)
 
 Si aucune news n'a été publiée depuis la dernière exécution, `Arch-Update` demande directement votre confirmation pour procéder à la mise à jour.
 

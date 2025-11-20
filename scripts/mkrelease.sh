@@ -40,7 +40,6 @@ case "${answer}" in
 	;;
 esac
 
-
 # Bump version where necessary
 sed -i "s/${latest_tag#v}/${release_tag}/g" doc/man/arch-update.* doc/man/fr/arch-update.* po/* src/arch-update.sh
 

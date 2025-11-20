@@ -146,15 +146,15 @@ By default, a check is performed **at boot and then once every hour**. The check
 Once started, the systray applet appears in the systray area of your panel.  
 It is the icon at the right of the 'coffee cup' one in the screenshot below:
 
-![icon](https://github.com/user-attachments/assets/e02645d1-3646-47f2-a218-08e4e5d6e4e0)
+![icon](https://github.com/user-attachments/assets/09e82ee1-3e4a-4190-8473-97ee9ec61e1c)
 
-With [the systemd timer](#the-systemd-timer) enabled, checks for updates are automatically and periodically performed, but you can manually trigger one from the systray applet icon by right-clicking it and then clicking on the `Check for updates` menu entry:
+With [the systemd timer](#the-systemd-timer) enabled, checks for updates are automatically and periodically performed, but you can manually trigger one from the systray applet icon by right-clicking it and then clicking on the `Check for updates` menu entry. You can also see timestamps report for the last and next update checks:
 
-![check_for_updates](https://github.com/user-attachments/assets/efd190f5-4338-4204-a19b-0a6f138b4435)
+![check_for_updates](https://github.com/user-attachments/assets/8a10828c-2d80-4cdb-ba68-de37ba11e7c4)
 
 If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent. You can directly run Cachy-Update from it or close / dismiss it thanks to the related click actions:
 
-![notif](https://github.com/user-attachments/assets/ce8c9229-9b36-484a-8561-bcb69b06310a)
+![notif](https://github.com/user-attachments/assets/65d7ba9b-5d53-4afe-9382-017e1652b193)
 
 You can see the list of available updates from the menu by right-clicking the systray icon.  
 A dropdown menu displaying the number and the list of pending updates is dynamically created for each sources that have some (Packages, AUR, Flatpak).  
@@ -162,20 +162,20 @@ A "All" dropdown menu gathering the number and the list of pending updates for a
 
 *Clicking on the entry for a package opens the upstream project's URL in your web browser (except for Flatpak packages).*
 
-![all](https://github.com/user-attachments/assets/798a4712-254b-470c-b83d-de2f3fcbdad4)
+![all](https://github.com/user-attachments/assets/2afb70cf-2fe8-448d-9e34-62581278ca4f)
 
-![packages](https://github.com/user-attachments/assets/056e2044-7e46-4bd0-8aad-6e8f93c8bc4b)
+![packages](https://github.com/user-attachments/assets/2ce0c1b5-05c2-4e3b-bbd5-c941fd5b383e)
 
-![aur](https://github.com/user-attachments/assets/f5d2c7a2-ea08-4749-ba43-9ef4c3510863)
+![aur](https://github.com/user-attachments/assets/a318c42e-4659-4c41-9b73-095758cf8a18)
 
 When the systray icon is left-clicked, `arch-update` is run in a terminal window (alternatively, you can click the "*X* update(s) available" entry or the dedicated "Run Cachy-Update" one from the right-click menu):
 
-![run](https://github.com/user-attachments/assets/c776e778-cafc-4713-9bcd-13c871710bef)
+![run](https://github.com/user-attachments/assets/c3a2e6bb-3b6c-439b-a2c6-c7c8d5da29f8)
 
 If at least one Arch Linux news has been published since the last run, `Cachy-Update` will offer you to read the latest Arch Linux news directly from the terminal window.  
 The news published since the last run are tagged as `[NEW]`:
 
-![news](https://github.com/user-attachments/assets/44dde466-00bb-4878-8134-c13a9bbb366d)
+![news](https://github.com/user-attachments/assets/0de9c744-3f7d-4a1f-bfd5-b80f6318118e)
 
 If no news has been published since the last run, `Cachy-Update` directly asks for your confirmation to proceed with update.
 

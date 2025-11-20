@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.16.1](https://github.com/Antiz96/arch-update/releases/tag/v3.16.1) - 2025-11-20
+
+### Features
+
+- *(i18n)* Add Russian translation ([#451](https://github.com/Antiz96/arch-update/pull/451)) - ([b80ff61](https://github.com/Antiz96/arch-update/commit/b80ff612d5df990cb81179debfd0c285a71d37ac)) by @DrWeb56
+
+### Fixes
+
+- Fix orphan packages removal with `sudo-rs` & `run0` ([#456](https://github.com/Antiz96/arch-update/pull/456)) - ([8955754](https://github.com/Antiz96/arch-update/commit/89557541d0558b99a09ad1785a1dd0b0fde0d0cd)) by @Antiz96
+
+### Documentation
+
+- *(README)* Update screenshots with the new update check timestamps report ([#452](https://github.com/Antiz96/arch-update/pull/452)) - ([b8a614e](https://github.com/Antiz96/arch-update/commit/b8a614eab1ca0a22b1c3b5a158c8b1e8bcf240a2)) by @Antiz96
+
+### Styling
+
+- *(i18n)* Update ru translation file formatting ([#457](https://github.com/Antiz96/arch-update/pull/457)) - ([cab07de](https://github.com/Antiz96/arch-update/commit/cab07deade795afe7d0da186f143e8522c1c042f)) by @Antiz96
+- Remove blank line from the release script ([#453](https://github.com/Antiz96/arch-update/pull/453)) - ([e292b8f](https://github.com/Antiz96/arch-update/commit/e292b8fd3ad56651a8a98bc100a1b7b41603e215)) by @Antiz96
+
+### Miscellaneous
+
+- *(release)* Add release title to the release script ([#449](https://github.com/Antiz96/arch-update/pull/449)) - ([9b66623](https://github.com/Antiz96/arch-update/commit/9b66623b189b414cfb3799cfe4a02e2f98612825)) by @Antiz96
+
 ## [v3.16.0](https://github.com/Antiz96/arch-update/releases/tag/v3.16.0) - 2025-11-19
 
 ### Features
