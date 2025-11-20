@@ -4,17 +4,17 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-orphan_packages=$(pacman -Qtdq)
+mapfile -t orphan_packages < <(pacman -Qtdq)
 
 if [ -n "${flatpak_support}" ]; then
 	flatpak_unused=$(flatpak uninstall --unused | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
 fi
 
-if [ -n "${orphan_packages}" ]; then
+if [ "${#orphan_packages[@]}" -gt 0 ]; then
 	main_msg "$(eval_gettext "Orphan Packages:")"
-	echo -e "${orphan_packages}\n"
+	printf "%s\n" "${orphan_packages[@]}" ""
 
-	if [ "$(echo "${orphan_packages}" | wc -l)" -eq 1 ]; then
+	if [ "${#orphan_packages[@]}" -eq 1 ]; then
 		ask_msg "$(eval_gettext "Would you like to remove this orphan package (and its potential dependencies) now? [y/N]")"
 	else
 		ask_msg "$(eval_gettext "Would you like to remove these orphan packages (and their potential dependencies) now? [y/N]")"
@@ -27,7 +27,7 @@ if [ -n "${orphan_packages}" ]; then
 			main_msg "$(eval_gettext "Removing Orphan Packages...\n")"
 
 			# shellcheck disable=SC2154
-			if ! pacman -Qtdq | "${su_cmd}" pacman --color "${pacman_color_opt}" -Rns -; then
+			if ! "${su_cmd}" pacman --color "${pacman_color_opt}" -Rns "${orphan_packages[@]}"; then
 				echo
 				error_msg "$(eval_gettext "An error has occurred during the removal process\nThe removal has been aborted\n")"
 			else
