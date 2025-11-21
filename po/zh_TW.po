@@ -264,14 +264,14 @@ msgstr "需要重新啟動：\\n系統上有待處理的核心更新，需要重
 msgid "Would you like to reboot now? [y/N]"
 msgstr "是否現在重新啟動？ [y/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -382,32 +382,32 @@ msgstr "網址："
 msgid "Looking for updates...\\n"
 msgstr "正在尋找更新...\\n"
 
-#: src/lib/list_packages.sh:41
+#: src/lib/list_packages.sh:47
 #, sh-format
 msgid "Packages:"
 msgstr "官方套件："
 
-#: src/lib/list_packages.sh:48
+#: src/lib/list_packages.sh:54
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR 套件："
 
-#: src/lib/list_packages.sh:55
+#: src/lib/list_packages.sh:61
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak 套件："
 
-#: src/lib/list_packages.sh:65
+#: src/lib/list_packages.sh:71
 #, sh-format
 msgid "No update available\\n"
 msgstr "沒有可用的更新\\n"
 
-#: src/lib/list_packages.sh:73
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "是否繼續進行更新？ [Y/n]"
 
-#: src/lib/list_packages.sh:83
+#: src/lib/list_packages.sh:89
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "更新已中止\\n"
@@ -477,7 +477,7 @@ msgstr "在移除過程中發生錯誤\\n移除已中止\\n"
 msgid "The removal has been applied\\n"
 msgstr "已成功移除\\n"
 
-#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:72
+#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:73
 #: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
@@ -508,7 +508,7 @@ msgstr "是否現在移除這些 Flatpak 未使用套件？ [y/N]"
 msgid "Removing Flatpak Unused Packages..."
 msgstr "正在移除 Flatpak 未使用套件..."
 
-#: src/lib/orphan_packages.sh:76
+#: src/lib/orphan_packages.sh:77
 #, sh-format
 msgid "No Flatpak unused package found\\n"
 msgstr "找不到 Flatpak 未使用套件\\n"
