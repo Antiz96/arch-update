@@ -30,7 +30,13 @@ if [ -n "${aur_helper}" ]; then
 fi
 
 if [ -n "${flatpak_support}" ]; then
-	flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d' > "${statedir}/last_updates_check_flatpak"
+	flatpak update --appstream > /dev/null
+
+	if [ -z "${no_version}" ]; then
+		flatpak remote-ls --updates --columns=name,version | tr -s '\t' ' ' > "${statedir}/last_updates_check_flatpak"
+	else
+		flatpak remote-ls --updates --columns=name > "${statedir}/last_updates_check_flatpak"
+	fi
 fi
 
 sed -i '/^\s*$/d' "${statedir}"/last_updates_check_{packages,aur,flatpak}

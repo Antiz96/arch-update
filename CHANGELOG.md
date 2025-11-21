@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.0](https://github.com/Antiz96/arch-update/releases/tag/v3.17.0) - 2025-11-21
+
+### Features
+
+- *(flatpak)* Improve overall support & integration ([#459](https://github.com/Antiz96/arch-update/pull/459)) - ([522a602](https://github.com/Antiz96/arch-update/commit/522a60237df13d79571575f7099108a81eff33cf)) by @Antiz96
+
+### Styling
+
+- *(flatpak)* Add missing line break in unused removal script ([#460](https://github.com/Antiz96/arch-update/pull/460)) - ([dc055cf](https://github.com/Antiz96/arch-update/commit/dc055cfd3be505c41ec57142b6a7c74b4481907d)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#461](https://github.com/Antiz96/arch-update/pull/461)) - ([d465cbf](https://github.com/Antiz96/arch-update/commit/d465cbf9beb72f5426b51e60f88abc0ea9d08a67)) by @Antiz96
+
 ## [v3.16.1](https://github.com/Antiz96/arch-update/releases/tag/v3.16.1) - 2025-11-20
 
 ### Features

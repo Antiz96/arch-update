@@ -6,7 +6,7 @@
 # Diego Jesús <diego.u7ozo@addy.io>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.16.1\n"
+"Project-Id-Version: Arch-Update 3.17.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-11-17 22:03+0100\n"
@@ -298,14 +298,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "¿Desea reiniciar ahora? [s/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "S"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -426,32 +426,32 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "Buscando actualizaciones...\\n"
 
-#: src/lib/list_packages.sh:41
+#: src/lib/list_packages.sh:47
 #, sh-format
 msgid "Packages:"
 msgstr "Paquetes:"
 
-#: src/lib/list_packages.sh:48
+#: src/lib/list_packages.sh:54
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Paquetes AUR:"
 
-#: src/lib/list_packages.sh:55
+#: src/lib/list_packages.sh:61
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Paquetes Flatpak:"
 
-#: src/lib/list_packages.sh:65
+#: src/lib/list_packages.sh:71
 #, sh-format
 msgid "No update available\\n"
 msgstr "No hay actualizaciones disponibles\\n"
 
-#: src/lib/list_packages.sh:73
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "¿Continuar con la actualización? [S/n]"
 
-#: src/lib/list_packages.sh:83
+#: src/lib/list_packages.sh:89
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "La actualización se ha cancelado\\n"
@@ -527,7 +527,7 @@ msgstr ""
 msgid "The removal has been applied\\n"
 msgstr "La eliminación se ha aplicado\\n"
 
-#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:72
+#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:73
 #: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
@@ -558,7 +558,7 @@ msgstr "¿Desea eliminar ahora estos paquetes Flatpak no utilizados? [s/N]"
 msgid "Removing Flatpak Unused Packages..."
 msgstr "Eliminando paquetes Flatpak no utilizados..."
 
-#: src/lib/orphan_packages.sh:76
+#: src/lib/orphan_packages.sh:77
 #, sh-format
 msgid "No Flatpak unused package found\\n"
 msgstr "No se han encontrado paquetes Flatpak no utilizados\\n"

@@ -28,7 +28,13 @@ if [ -n "${aur_helper}" ]; then
 fi
 
 if [ -n "${flatpak_support}" ]; then
-	flatpak_packages=$(flatpak update | sed -n '/^ 1./,$p' | awk '{print $2}' | grep -v '^$' | sed '$d')
+	flatpak update --appstream > /dev/null
+
+	if [ -z "${no_version}" ]; then
+		flatpak_packages=$(flatpak remote-ls --updates --columns=name,version | tr -s '\t' ' ')
+	else
+		flatpak_packages=$(flatpak remote-ls --updates --columns=name)
+	fi
 fi
 
 # shellcheck disable=SC2154
