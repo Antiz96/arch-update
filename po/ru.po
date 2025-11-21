@@ -291,14 +291,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Хотите перезагрузиться сейчас? [y/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:77
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -418,32 +418,32 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "Поиск обновлений...\\n"
 
-#: src/lib/list_packages.sh:41
+#: src/lib/list_packages.sh:47
 #, sh-format
 msgid "Packages:"
 msgstr "Пакеты:"
 
-#: src/lib/list_packages.sh:48
+#: src/lib/list_packages.sh:54
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Пакеты AUR:"
 
-#: src/lib/list_packages.sh:55
+#: src/lib/list_packages.sh:61
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Пакеты Flatpak:"
 
-#: src/lib/list_packages.sh:65
+#: src/lib/list_packages.sh:71
 #, sh-format
 msgid "No update available\\n"
 msgstr "Обновлений нет\\n"
 
-#: src/lib/list_packages.sh:73
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Продолжить обновление? [Y/n]"
 
-#: src/lib/list_packages.sh:83
+#: src/lib/list_packages.sh:89
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Обновление было прервано\\n"
@@ -518,7 +518,7 @@ msgstr ""
 msgid "The removal has been applied\\n"
 msgstr "Удаление было применено\\n"
 
-#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:72
+#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:73
 #: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
@@ -549,7 +549,7 @@ msgstr "Хотите удалить эти неиспользуемые паке
 msgid "Removing Flatpak Unused Packages..."
 msgstr "Удаление неиспользуемых пакетов Flatpak..."
 
-#: src/lib/orphan_packages.sh:76
+#: src/lib/orphan_packages.sh:77
 #, sh-format
 msgid "No Flatpak unused package found\\n"
 msgstr "Неиспользуемых пакетов Flatpak не найдено\\n"
