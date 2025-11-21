@@ -33,7 +33,7 @@ if [ -n "${flatpak_support}" ]; then
 	flatpak update --appstream > /dev/null
 
 	if [ -z "${no_version}" ]; then
-		flatpak remote-ls --updates --columns=name,version > "${statedir}/last_updates_check_flatpak"
+		flatpak remote-ls --updates --columns=name,version | tr -s '\t' ' ' > "${statedir}/last_updates_check_flatpak"
 	else
 		flatpak remote-ls --updates --columns=name > "${statedir}/last_updates_check_flatpak"
 	fi

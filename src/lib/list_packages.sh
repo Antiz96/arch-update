@@ -31,7 +31,7 @@ if [ -n "${flatpak_support}" ]; then
 	flatpak update --appstream > /dev/null
 
 	if [ -z "${no_version}" ]; then
-		flatpak_packages=$(flatpak remote-ls --updates --columns=name,version)
+		flatpak_packages=$(flatpak remote-ls --updates --columns=name,version | tr -s '\t' ' ')
 	else
 		flatpak_packages=$(flatpak remote-ls --updates --columns=name)
 	fi
