@@ -29,7 +29,12 @@ fi
 
 if [ -n "${flatpak_support}" ]; then
 	flatpak update --appstream > /dev/null
-	flatpak_packages=$(flatpak remote-ls --updates --columns=name)
+
+	if [ -z "${no_version}" ]; then
+		flatpak_packages=$(flatpak remote-ls --updates --columns=name,version)
+	else
+		flatpak_packages=$(flatpak remote-ls --updates --columns=name)
+	fi
 fi
 
 # shellcheck disable=SC2154

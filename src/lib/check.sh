@@ -31,7 +31,12 @@ fi
 
 if [ -n "${flatpak_support}" ]; then
 	flatpak update --appstream > /dev/null
-	flatpak remote-ls --updates --columns=name > "${statedir}/last_updates_check_flatpak"
+
+	if [ -z "${no_version}" ]; then
+		flatpak remote-ls --updates --columns=name,version > "${statedir}/last_updates_check_flatpak"
+	else
+		flatpak remote-ls --updates --columns=name > "${statedir}/last_updates_check_flatpak"
+	fi
 fi
 
 sed -i '/^\s*$/d' "${statedir}"/last_updates_check_{packages,aur,flatpak}
