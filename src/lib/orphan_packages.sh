@@ -69,6 +69,7 @@ if [ -n "${flatpak_support}" ]; then
 				fi
 			;;
 			*)
+				echo
 				info_msg "$(eval_gettext "The removal hasn't been applied\n")"
 			;;
 		esac
