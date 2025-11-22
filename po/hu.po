@@ -10,12 +10,14 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.17.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2025-04-17 15:31+0200\n"
-"Last-Translator: summoner <summoner@vivaldi.net>\n"
+"PO-Revision-Date: 2025-11-22 11:04+0100\n"
+"Last-Translator: summoner <summoner@disroot.org>\n"
+"Language-Team: \n"
 "Language: hu_HU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -87,9 +89,8 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"Nem lehet meghatározni a használni kívánt szerkesztőt\\nAz „EDITOR” "
-"környezeti változó nincs beállítva, és a „nano” (tartalékbeállítás) nincs "
-"telepítve"
+"Nem lehet meghatározni a használandó szerkesztőt\\nAz „EDITOR” környezeti "
+"változó nincs beállítva, és a „nano” (tartalékbeállítás) nincs telepítve"
 
 #: src/lib/full_upgrade.sh:13
 #, sh-format
@@ -128,7 +129,7 @@ msgstr ""
 #, sh-format
 msgid "Run ${name} to perform the main 'update' function:"
 msgstr ""
-"Futtasa a(z) ${name} parancsot a fő „frissítési” funkció végrehajtásához:"
+"Futtassa a(z) ${name} parancsot a fő „frissítési” funkció végrehajtásához:"
 
 #: src/lib/help.sh:11
 #, sh-format
@@ -208,7 +209,7 @@ msgstr ""
 #: src/lib/help.sh:21
 #, sh-format
 msgid "  -D, --debug       Display debug traces"
-msgstr "  -D, --debug       Hibakeresési nyomonkövetések megjelenítése"
+msgstr "  -D, --debug       Hibakeresési nyomon követések megjelenítése"
 
 #: src/lib/help.sh:22
 #, sh-format
@@ -245,9 +246,9 @@ msgid ""
 "  --tray            Launch the ${_name} systray applet, you can optionally "
 "add the '--enable' argument to start it automatically at boot"
 msgstr ""
-"  --tray            Elindítja el az ${_name} rendszertálca kisalkalmazást. "
+"  --tray            Elindítja az ${_name} rendszertálca-kisalkalmazást. "
 "Hozzáadhatja az „-enable” argumentumot, hogy automatikusan elinduljon a "
-"rendszerindításkor – Nem kötelező"
+"rendszer indításakor – Nem kötelező"
 
 #: src/lib/help.sh:26
 #, sh-format
@@ -350,7 +351,7 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
-"Nem sikerült lekérdezni a legújabb Arch híreket (HTTP hiba, válasz- vagy "
+"Nem sikerült lekérdezni a legújabb Arch híreket (HTTP-hiba, válasz- vagy "
 "kérés-időtúllépés)\\nA legfrissebb híreket megtekintheti a rendszer "
 "frissítése előtt a következő webcímen: https://archlinux.org"
 
@@ -375,8 +376,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
-"Válassza ki az olvasni kívánt híreket (például: 1 3 5), válassza a 0 értéket "
-"az összes elolvasásához vagy nyomja meg az „enter” gombot a kilépéshez:"
+"Válassza ki az elolvasandó híreket (például: 1 3 5), válassza a 0 értéket az "
+"összes elolvasásához vagy nyomja meg az „enter” gombot a kilépéshez:"
 
 #: src/lib/list_news.sh:56
 #, sh-format
@@ -384,8 +385,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
-"Válassza ki az olvasni kívánt híreket (például: 1 3 5), válassza a 0 értéket "
-"az összes elolvasásához vagy nyomja meg az „enter” gombot a frissítés "
+"Válassza ki az elolvasandó híreket (például: 1 3 5), válassza a 0 értéket az "
+"összes elolvasásához vagy nyomja meg az „enter” gombot a frissítés "
 "folytatásához:"
 
 #: src/lib/list_news.sh:80
@@ -395,7 +396,7 @@ msgid ""
 "timeout)\\nPlease, read the selected Arch News at ${news_url} before "
 "updating your system"
 msgstr ""
-"Nem sikerült lekérdezni a kiválasztott Arch híreket (HTTP hiba, válasz- vagy "
+"Nem sikerült lekérdezni a kiválasztott Arch híreket (HTTP-hiba, válasz- vagy "
 "kérés-időtúllépés)\\nA kiválasztott Arch híreket elolvashatja a rendszer "
 "frissítése előtt a következő webcímen: ${news_url}"
 
@@ -522,13 +523,13 @@ msgstr ""
 #: src/lib/orphan_packages.sh:35 src/lib/orphan_packages.sh:68
 #, sh-format
 msgid "The removal has been applied\\n"
-msgstr "Az eltávolítás végrehajtása megtörtént\\n"
+msgstr "Az eltávolítás alkalmazva lett\\n"
 
 #: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:73
 #: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
-msgstr "Az eltávolítás nem történt meg\\n"
+msgstr "Az eltávolítás nem lett alkalmazva\\n"
 
 #: src/lib/orphan_packages.sh:44
 #, sh-format
@@ -578,7 +579,7 @@ msgstr "Szeretné most eltávolítani a gyorsítótárból? [I/n]"
 msgid ""
 "Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
-"Gyorsítótárazott csomagok:\\nRégi / nem telepített csomagok vannak a "
+"Gyorsítótárazott csomagok:\\nRégi/nem telepített csomagok vannak a "
 "gyorsítótárban\\n"
 
 #: src/lib/packages_cache.sh:25
@@ -766,7 +767,7 @@ msgstr "Arch-Update"
 
 #: src/lib/tray.py:383
 msgid "Last check"
-msgstr "Utolsó ellenőrzés"
+msgstr "Utoljára ellenőrizve"
 
 #: src/lib/tray.py:384
 msgid "Next check"
@@ -778,7 +779,7 @@ msgstr "Arch-Update futtatása"
 
 #: src/lib/tray.py:386
 msgid "Check for updates"
-msgstr "Frissítések keresése"
+msgstr "Frissítések ellenőrzése"
 
 #: src/lib/tray.py:387
 msgid "Exit"
@@ -803,7 +804,7 @@ msgstr "Flatpak"
 #: src/lib/tray.sh:20
 #, sh-format
 msgid "${_name} tray desktop file not found"
-msgstr "Az ${_name} tálcájának asztali fájlja nem található"
+msgstr "A(z) ${_name} tálcájának asztali fájlja nem található"
 
 #: src/lib/tray.sh:27
 #, sh-format
