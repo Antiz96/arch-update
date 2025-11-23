@@ -30,10 +30,26 @@ fi
 if [ -n "${flatpak_support}" ]; then
 	flatpak update --appstream > /dev/null
 
+	mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=name,version,application | tr -s '\t' ' ')
+	mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
+
+	if [ "${#flatpak_mask[@]}" -gt 0 ]; then
+	        mapfile -t flatpak_packages < <(
+	                for application in "${flatpak_packages[@]}"; do
+	                        app_id=$(awk '{print $3}' <<< "${application}")
+	                        for pattern in "${flatpak_mask[@]}"; do
+	                                # shellcheck disable=SC2053
+	                                [[ "${app_id}" == ${pattern} ]] && continue 2
+	                        done
+	                        echo "${application}"
+	                done
+	        )
+	fi
+
 	if [ -z "${no_version}" ]; then
-		flatpak_packages=$(flatpak remote-ls --updates --columns=name,version | tr -s '\t' ' ')
+		flatpak_packages=$(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1,$2}')
 	else
-		flatpak_packages=$(flatpak remote-ls --updates --columns=name)
+		flatpak_packages=$(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1}')
 	fi
 fi
 
