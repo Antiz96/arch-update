@@ -6,7 +6,7 @@
 # Robin Candau <robincandau@protonmail.com>, 2024
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.0\n"
+"Project-Id-Version: Arch-Update 3.17.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2024-05-09 09:30+0100\n"
@@ -296,14 +296,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Voulez-vous redémarrer votre système maintenant ? [o/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "O"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -425,32 +425,32 @@ msgstr "URL :"
 msgid "Looking for updates...\\n"
 msgstr "Recherche de mises à jour...\\n"
 
-#: src/lib/list_packages.sh:47
+#: src/lib/list_packages.sh:63
 #, sh-format
 msgid "Packages:"
 msgstr "Paquets :"
 
-#: src/lib/list_packages.sh:54
+#: src/lib/list_packages.sh:70
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Paquets AUR :"
 
-#: src/lib/list_packages.sh:61
+#: src/lib/list_packages.sh:77
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Paquets Flatpak :"
 
-#: src/lib/list_packages.sh:71
+#: src/lib/list_packages.sh:87
 #, sh-format
 msgid "No update available\\n"
 msgstr "Aucune mise à jour disponible\\n"
 
-#: src/lib/list_packages.sh:79
+#: src/lib/list_packages.sh:95
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Procéder à la mise à jour ? [O/n]"
 
-#: src/lib/list_packages.sh:89
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "La mise à jour a été abandonnée\\n"

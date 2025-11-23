@@ -103,6 +103,8 @@ L'utilisation consiste à démarrer [l'applet systray](#lapplet-systray) et à a
 
 Pour démarrer l'applet systray, lancez l'application "Arch-Update Systray Applet" depuis votre menu d'application.
 
+**Note:** GNOME ne supporte pas les icônes systray nativement, les utilisateurs de GNOME doivent installer [l'extension "AppIndicator and KStatusNotifierItem Support"](https://extensions.gnome.org/extension/615/appindicator-support/) pour que l'applet systray apparaisse.
+
 Pour la démarrer automatiquement au démarrage du système, utilisez l'une des options suivantes :
 
 - Lancer la commande suivante (méthode recommandée pour la plupart des environnements de bureau, utilise [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)) :

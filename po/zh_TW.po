@@ -6,7 +6,7 @@
 # Capricornus007 <sihaogang@gmail.com>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.0\n"
+"Project-Id-Version: Arch-Update 3.17.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-11-18 14:50+0800\n"
@@ -264,14 +264,14 @@ msgstr "需要重新啟動：\\n系統上有待處理的核心更新，需要重
 msgid "Would you like to reboot now? [y/N]"
 msgstr "是否現在重新啟動？ [y/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -382,32 +382,32 @@ msgstr "網址："
 msgid "Looking for updates...\\n"
 msgstr "正在尋找更新...\\n"
 
-#: src/lib/list_packages.sh:47
+#: src/lib/list_packages.sh:63
 #, sh-format
 msgid "Packages:"
 msgstr "官方套件："
 
-#: src/lib/list_packages.sh:54
+#: src/lib/list_packages.sh:70
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR 套件："
 
-#: src/lib/list_packages.sh:61
+#: src/lib/list_packages.sh:77
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak 套件："
 
-#: src/lib/list_packages.sh:71
+#: src/lib/list_packages.sh:87
 #, sh-format
 msgid "No update available\\n"
 msgstr "沒有可用的更新\\n"
 
-#: src/lib/list_packages.sh:79
+#: src/lib/list_packages.sh:95
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "是否繼續進行更新？ [Y/n]"
 
-#: src/lib/list_packages.sh:89
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "更新已中止\\n"
