@@ -103,6 +103,8 @@ The usage consist of starting [the systray applet](#the-systray-applet) and enab
 
 To start the systray applet, launch the "Arch-Update Systray Applet" application from your app menu.
 
+**Note:** GNOME shell does not support systray icons natively, GNOME users need to install the ["AppIndicator and KStatusNotifierItem Support" extension](https://extensions.gnome.org/extension/615/appindicator-support/) for the systray applet to show.
+
 To start it automatically at boot, you can either:
 
 - Run the following command (preferred method for most Desktop Environments, uses [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)):
