@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.1](https://github.com/Antiz96/arch-update/releases/tag/v3.17.1) - 2025-11-23
+
+### Fixes
+
+- *(flatpak)* Honor masked patterns ([#466](https://github.com/Antiz96/arch-update/pull/466)) - ([0ec4e52](https://github.com/Antiz96/arch-update/commit/0ec4e52d12c1d82b52cf70ac8443628730e8dd62)) by @Antiz96
+
+### Documentation
+
+- *(README)* Add a note about the appindicator GNOME extension ([#465](https://github.com/Antiz96/arch-update/pull/465)) - ([0036543](https://github.com/Antiz96/arch-update/commit/00365434967f7a0a7b0bc242bb26d81ac29ee28e)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#467](https://github.com/Antiz96/arch-update/pull/467)) - ([3e83299](https://github.com/Antiz96/arch-update/commit/3e832995f92e331f151a8bd81f46f5e509c75080)) by @Antiz96
+- *(i18n)* Update Hungarian translation ([#463](https://github.com/Antiz96/arch-update/pull/463)) - ([5afb1ee](https://github.com/Antiz96/arch-update/commit/5afb1ee75e1692f62a0ee2e2b5c6005027d17669)) by @summoner001
+
 ## [v3.17.0](https://github.com/Antiz96/arch-update/releases/tag/v3.17.0) - 2025-11-21
 
 ### Features
