@@ -47,9 +47,9 @@ if [ -n "${flatpak_support}" ]; then
 	fi
 
 	if [ -z "${no_version}" ]; then
-		mapfile -t flatpak_packages= < <(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1,$2}')
+		mapfile -t flatpak_packages < <(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1,$2}')
 	else
-		mapfile -t flatpak_packages= < <(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1}')
+		mapfile -t flatpak_packages < <(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1}')
 	fi
 fi
 
