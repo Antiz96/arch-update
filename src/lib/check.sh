@@ -49,9 +49,9 @@ if [ -n "${flatpak_support}" ]; then
 	fi
 
 	if [ -z "${no_version}" ]; then
-		printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1,$2}' > "${statedir}/last_updates_check_flatpak"
+		printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1,$2}' | sed '/^[[:space:]]*$/d' > "${statedir}/last_updates_check_flatpak"
 	else
-		printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1}' > "${statedir}/last_updates_check_flatpak"
+		printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1}' | sed '/^[[:space:]]*$/d' > "${statedir}/last_updates_check_flatpak"
 	fi
 fi
 
