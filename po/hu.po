@@ -298,14 +298,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Szeretné most újraindítani? [i/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "I"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -425,32 +425,32 @@ msgstr "Webcím:"
 msgid "Looking for updates...\\n"
 msgstr "Frissítések keresése…\\n"
 
-#: src/lib/list_packages.sh:47
+#: src/lib/list_packages.sh:63
 #, sh-format
 msgid "Packages:"
 msgstr "Csomagok:"
 
-#: src/lib/list_packages.sh:54
+#: src/lib/list_packages.sh:70
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-csomagok:"
 
-#: src/lib/list_packages.sh:61
+#: src/lib/list_packages.sh:77
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak-csomagok:"
 
-#: src/lib/list_packages.sh:71
+#: src/lib/list_packages.sh:87
 #, sh-format
 msgid "No update available\\n"
 msgstr "Nincs elérhető frissítés\\n"
 
-#: src/lib/list_packages.sh:79
+#: src/lib/list_packages.sh:95
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Folytatja a frissítést? [I/n]"
 
-#: src/lib/list_packages.sh:89
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "A frissítés meg lett szakítva\\n"
