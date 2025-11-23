@@ -47,9 +47,9 @@ if [ -n "${flatpak_support}" ]; then
 	fi
 
 	if [ -z "${no_version}" ]; then
-		flatpak_packages=$(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1,$2}')
+		mapfile -t flatpak_packages= < <(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1,$2}')
 	else
-		flatpak_packages=$(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1}')
+		mapfile -t flatpak_packages= < <(printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1}')
 	fi
 fi
 
@@ -73,16 +73,16 @@ if [ -n "${aur_packages}" ]; then
 	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
 fi
 
-if [ -n "${flatpak_packages}" ]; then
+if [ "${#flatpak_packages[@]}" -gt 0 ]; then
 	main_msg "$(eval_gettext "Flatpak Packages:")"
-	echo -e "${flatpak_packages}\n"
-	echo "${flatpak_packages}" >> "${statedir}/last_updates_check"
-	echo "${flatpak_packages}" > "${statedir}/last_updates_check_flatpak"
+	printf "%s\n" "${flatpak_packages[@]}" ""
+	printf "%s\n" "${flatpak_packages[@]}" >> "${statedir}/last_updates_check"
+	printf "%s\n" "${flatpak_packages[@]}" > "${statedir}/last_updates_check_flatpak"
 fi
 
 sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}"/last_updates_check{,_packages,_aur,_flatpak}
 
-if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ -z "${flatpak_packages}" ]; then
+if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ "${#flatpak_packages[@]}" -eq 0 ]; then
 	icon_up-to-date
 	info_msg "$(eval_gettext "No update available\n")"
 
