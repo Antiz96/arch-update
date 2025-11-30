@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.2](https://github.com/Antiz96/arch-update/releases/tag/v3.17.2) - 2025-11-30
+
+### Miscellaneous
+
+- *(i18n)* Update Brazilian Portuguese translation ([#468](https://github.com/Antiz96/arch-update/pull/468)) - ([02a26be](https://github.com/Antiz96/arch-update/commit/02a26befdad7dc120b7eb313d782b88938082267)) by @diegons490
+- *(release)* Fix substitution pattern in release script ([#470](https://github.com/Antiz96/arch-update/pull/470)) - ([aae731a](https://github.com/Antiz96/arch-update/commit/aae731a738af013ecf5376dd758c320b10c5dba6)) by @Antiz96
+- *(style)* Add line break in release script ([#469](https://github.com/Antiz96/arch-update/pull/469)) - ([51346e3](https://github.com/Antiz96/arch-update/commit/51346e38fdf99913a9fcc40aa05e5212ba9a1aa0)) by @Antiz96
+
 ## [v3.17.1](https://github.com/Antiz96/arch-update/releases/tag/v3.17.1) - 2025-11-23
 
 ### Fixes
