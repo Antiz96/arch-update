@@ -22,11 +22,11 @@ release_tag="${1}"
 latest_tag=$(git describe --tags --abbrev=0)
 
 if [ -z "${release_tag}" ]; then
-	echo -e >&2 "ERROR: Release tag is empty\nUsage: ./scripts/mkrelease.sh X.Y.Z # where 'X.Y.Z' is the tag to create"
+	echo -e >&2 "\nERROR: Release tag is empty\nUsage: ./scripts/mkrelease.sh X.Y.Z # where 'X.Y.Z' is the tag to create"
 	exit 3
 fi
 
-echo -e "Release tag = v${release_tag}\nLatest tag = ${latest_tag}\n"
+echo -e "\nRelease tag = v${release_tag}\nLatest tag = ${latest_tag}\n"
 read -rp "Confirm? [y/N] " answer
 
 case "${answer}" in
@@ -41,7 +41,8 @@ case "${answer}" in
 esac
 
 # Bump version where necessary
-sed -i "s/${latest_tag#v}/${release_tag}/g" doc/man/arch-update.* doc/man/fr/arch-update.* po/* src/arch-update.sh
+sed_pattern="${latest_tag//./\\.}" # escape dots
+sed -i "s/${sed_pattern#v}/${release_tag}/g" doc/man/arch-update.* doc/man/fr/arch-update.* po/* src/arch-update.sh
 
 # Update changelog
 git-cliff -up CHANGELOG.md
