@@ -13,16 +13,16 @@
 if [ "${update_number}" -eq 1 ]; then
 	if [ -z "${last_notif_id}" ]; then
 		# shellcheck disable=SC2154
-		notify-send -p -a "Cachy-Update" -i "cachy-update_updates-available" "Cachy-Update" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run Cachy-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
+		notify-send -p -a "Cachy-Update" -i "cachy-update_updates-available-${tray_icon_style}" "Cachy-Update" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run Cachy-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
 	else
 		# shellcheck disable=SC2154
-		notify-send -p -r "${last_notif_id}" -a "Cachy-Update" -i "cachy-update_updates-available" "Cachy-Update" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run Cachy-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
+		notify-send -p -r "${last_notif_id}" -a "Cachy-Update" -i "cachy-update_updates-available-${tray_icon_style}" "Cachy-Update" "$(eval_gettext "\${update_number} update available")" -A "run=$(eval_gettext "Run Cachy-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
 	fi
 else
 	if [ -z "${last_notif_id}" ]; then
-		notify-send -p -a "Cachy-Update" -i "cachy-update_updates-available" "Cachy-Update" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run Cachy-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
+		notify-send -p -a "Cachy-Update" -i "cachy-update_updates-available-${tray_icon_style}" "Cachy-Update" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run Cachy-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
 	else
-		notify-send -p -r "${last_notif_id}" -a "Cachy-Update" -i "cachy-update_updates-available" "Cachy-Update" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run Cachy-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
+		notify-send -p -r "${last_notif_id}" -a "Cachy-Update" -i "cachy-update_updates-available-${tray_icon_style}" "Cachy-Update" "$(eval_gettext "\${update_number} updates available")" -A "run=$(eval_gettext "Run Cachy-Update")" -A "close=$(eval_gettext "Close")" > "${tmpdir}/notif_param"
 	fi
 fi
 
