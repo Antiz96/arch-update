@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.3](https://github.com/Antiz96/arch-update/releases/tag/v3.17.3) - 2025-12-02
+
+### Miscellaneous
+
+- *(i18n)* Update Chinese (simplified) translation ([#471](https://github.com/Antiz96/arch-update/pull/471)) - ([16b8f32](https://github.com/Antiz96/arch-update/commit/16b8f3201cfdeceb71fb11b721c20fd8fe8bbd72)) by @Carlson24
+
 ## [v3.17.2](https://github.com/Antiz96/arch-update/releases/tag/v3.17.2) - 2025-11-30
 
 ### Miscellaneous
