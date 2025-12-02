@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.17.2\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2025-04-17 12:00+0800\n"
+"PO-Revision-Date: 2025-12-02 12:00+0800\n"
 "Last-Translator: Aubrey Carlson <aubreycarlson24@outlook.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -668,11 +668,13 @@ msgid ""
 "Last check:\n"
 "{time}"
 msgstr ""
+"上一次检查于：\n"
+"{time}"
 
 #: src/lib/tray.py:271
 #, python-brace-format
 msgid "Next check in {time}"
-msgstr ""
+msgstr "下一次检查时间：{time}"
 
 #: src/lib/tray.py:282
 #, python-brace-format
@@ -700,11 +702,11 @@ msgstr "Arch-Update"
 
 #: src/lib/tray.py:383
 msgid "Last check"
-msgstr ""
+msgstr "上一次检查"
 
 #: src/lib/tray.py:384
 msgid "Next check"
-msgstr ""
+msgstr "下一次检查"
 
 #: src/lib/tray.py:385
 msgid "Run Arch-Update"
