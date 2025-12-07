@@ -10,7 +10,7 @@ arch-update.conf - Arch-Update configuration file.
 
 # DESCRIPTION
 
-Arch-Update's _optional_  configuration file.
+Arch-Update's _optional_ configuration file.
 
 Arch-Update first attempts to read the file at `$XDG_CONFIG_HOME/arch-update/arch-update.conf` then at `$HOME/.config/arch-update/arch-update.conf` if `$XDG_CONFIG_HOME` is not set, or the file doesn't exist.
 

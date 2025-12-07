@@ -908,7 +908,7 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - Correction of documentation regarding how to change the auto-check cycle by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/97>
-- Update url for systemd Time Spans in documentation  by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/98>
+- Update url for systemd Time Spans in documentation by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/98>
 
 ### Other
 

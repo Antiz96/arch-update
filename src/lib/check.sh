@@ -36,16 +36,16 @@ if [ -n "${flatpak_support}" ]; then
 	mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
 
 	if [ "${#flatpak_mask[@]}" -gt 0 ]; then
-	        mapfile -t flatpak_packages < <(
-	                for application in "${flatpak_packages[@]}"; do
-	                        app_id=$(awk '{print $3}' <<< "${application}")
-	                        for pattern in "${flatpak_mask[@]}"; do
-	                                # shellcheck disable=SC2053
-	                                [[ "${app_id}" == ${pattern} ]] && continue 2
-	                        done
-	                        echo "${application}"
-	                done
-	        )
+		mapfile -t flatpak_packages < <(
+			for application in "${flatpak_packages[@]}"; do
+				app_id=$(awk '{print $3}' <<< "${application}")
+				for pattern in "${flatpak_mask[@]}"; do
+					# shellcheck disable=SC2053
+					[[ "${app_id}" == ${pattern} ]] && continue 2
+				done
+				echo "${application}"
+			done
+		)
 	fi
 
 	if [ -z "${no_version}" ]; then
