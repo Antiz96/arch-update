@@ -1,4 +1,4 @@
-arch-update.conf(5) ["Arch-Update 3.17.3" ["Manuel de Arch-Update"]]
+arch-update.conf(5) ["Arch-Update 3.17.4" ["Manuel de Arch-Update"]]
 
 # NOM
 
@@ -14,7 +14,9 @@ Fichier de configuration _optionnel_ pour Arch-Update.
 
 Arch-Update tente d'abord de lire le fichier sous `$XDG_CONFIG_HOME/arch-update/arch-update.conf` puis sous `$HOME/.config/arch-update/arch-update.conf` si `$XDG_CONFIG_HOME` n'est pas paramétré, ou que le fichier n'existe pas.
 
-Un fichier de configuration par défaut / exemple peut être généré en exécutant : `arch-update --gen-config`
+Un fichier de configuration par défaut / exemple peut être généré en exécutant : `arch-update --gen-config`.
+
+Le fichier de configuration peut être édité en exécutant : `arch-update --edit-config`.
 
 # OPTIONS
 

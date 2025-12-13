@@ -175,6 +175,8 @@ check_su_cmd () {
 
 # Definition of the diff program to use (if it is set in the arch-update.conf configuration file)
 check_diff_prog () {
+	[ -n "${DIFFPROG}" ] && diff_prog="${DIFFPROG}"
+
 	if [ -n "${diff_prog}" ]; then
 		if ! command -v "${diff_prog%% *}" > /dev/null; then
 			error_msg "$(eval_gettext "The \${diff_prog} editor set for visualizing / editing differences of pacnew files in the \${name}.conf configuration file is not found\n")" && quit_msg

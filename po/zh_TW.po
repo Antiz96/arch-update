@@ -6,7 +6,7 @@
 # Capricornus007 <sihaogang@gmail.com>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.3\n"
+"Project-Id-Version: Arch-Update 3.17.4\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-11-18 14:50+0800\n"
@@ -58,7 +58,7 @@ msgid ""
 "configuration file is not found\\n"
 msgstr "在 ${name}.conf 設定檔中，為權限提升所設定的指令 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:182
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

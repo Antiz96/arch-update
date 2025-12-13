@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.4](https://github.com/Antiz96/arch-update/releases/tag/v3.17.4) - 2025-12-13
+
+### Fixes
+
+- *(pacnew)* Honor `$DIFFPROG` properly ([#480](https://github.com/Antiz96/arch-update/pull/480)) - ([8e01fa9](https://github.com/Antiz96/arch-update/commit/8e01fa924091f59baac758567cec253145cd969e)) by @Antiz96
+
+### Documentation
+
+- *(man)* Mention `arch-update --edit-config` in arch-update.conf(5) man page ([#475](https://github.com/Antiz96/arch-update/pull/475)) - ([71aa8a7](https://github.com/Antiz96/arch-update/commit/71aa8a75a23851cf49667f07ce410b619f38e258)) by @Antiz96
+
+### Styling
+
+- Fix spacing and indentation ([#474](https://github.com/Antiz96/arch-update/pull/474)) - ([a01c508](https://github.com/Antiz96/arch-update/commit/a01c5088e37dfc0398926e85fc90619e74afd788)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#481](https://github.com/Antiz96/arch-update/pull/481)) - ([1eeeb70](https://github.com/Antiz96/arch-update/commit/1eeeb70bcc84ceea7f82a79cfcc4c5988ed11ebd)) by @Antiz96
+
 ## [v3.17.3](https://github.com/Antiz96/arch-update/releases/tag/v3.17.3) - 2025-12-02
 
 ### Miscellaneous
@@ -908,7 +926,7 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - Correction of documentation regarding how to change the auto-check cycle by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/97>
-- Update url for systemd Time Spans in documentation  by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/98>
+- Update url for systemd Time Spans in documentation by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/98>
 
 ### Other
 

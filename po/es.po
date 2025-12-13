@@ -6,7 +6,7 @@
 # Diego Jesús <diego.u7ozo@addy.io>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.3\n"
+"Project-Id-Version: Arch-Update 3.17.4\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-11-17 22:03+0100\n"
@@ -64,7 +64,7 @@ msgstr ""
 "No se ha encontrado el comando ${su_cmd} configurado para la elevación de "
 "privilegios en el archivo ${name}.conf\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:182
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
