@@ -63,7 +63,7 @@ msgstr ""
 "${su_cmd}-kommandot inställt för privilegieskalering i ${name}.conf-"
 "konfigurationsfilen hittades inte\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:182
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

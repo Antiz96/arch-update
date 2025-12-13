@@ -58,7 +58,7 @@ msgid ""
 "configuration file is not found\\n"
 msgstr "在 ${name}.conf 設定檔中，為權限提升所設定的指令 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:182
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

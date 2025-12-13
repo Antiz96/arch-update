@@ -61,7 +61,7 @@ msgstr ""
 "Команда ${su_cmd}, установленная для повышения привилегий в конфигурационном "
 "файле ${name}.conf, не найдена\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:182
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

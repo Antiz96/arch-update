@@ -62,7 +62,7 @@ msgstr ""
 "O comando ${su_cmd} definido para escalação de privilégio no arquivo de "
 "configuração ${name}.conf não foi encontrado\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:182
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

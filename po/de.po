@@ -62,7 +62,7 @@ msgstr ""
 "Der ${su_cmd} Befehl für die Rechteerhöhung in der ${name}.conf "
 "Konfigurationsdatei wurde nicht gefunden\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:182
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
