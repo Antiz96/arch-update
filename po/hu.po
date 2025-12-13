@@ -64,7 +64,7 @@ msgstr ""
 "A(z) ${su_cmd} ${name}.conf konfigurációs fájlban, a jogosultságok "
 "kiterjesztéséhez beállított parancs nem található\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:182
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
