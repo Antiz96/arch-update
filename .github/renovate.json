@@ -1,8 +1,7 @@
 {
   "dependencyDashboard": false,
-  "git-submodules": {
-    "enabled": true
-  },
+  "assignees": ["Antiz96"],
+  "git-submodules": { "enabled": true },
   "commitMessagePrefix": "chore(deps): ",
   "commitMessageAction": "update",
   "commitMessageTopic": "{{depName}}",
