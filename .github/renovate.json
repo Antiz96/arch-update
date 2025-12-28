@@ -1,0 +1,10 @@
+{
+  "dependencyDashboard": false,
+  "git-submodules": {
+    "enabled": true
+  },
+  "commitMessagePrefix": "chore(deps): ",
+  "commitMessageAction": "update",
+  "commitMessageTopic": "{{depName}}",
+  "commitMessageExtra": "to {{newVersion}}"
+}
