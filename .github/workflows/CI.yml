@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Clone repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run actionlint
         run: actionlint -ignore 'label "CI-CD" is unknown' .github/workflows/CI.yml
