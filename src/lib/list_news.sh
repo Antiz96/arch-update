@@ -6,7 +6,7 @@
 
 info_msg "$(eval_gettext "Looking for recent Arch News...")"
 # shellcheck disable=SC2154
-news=$(curl -m "${news_timeout}" -s https://archlinux.org &> /dev/null ; curl -m "${news_timeout}" -Lfs https://www.archlinux.org/news || echo "error")
+news=$(curl --compressed -m "${news_timeout}" -Lfs https://www.archlinux.org/news || echo "error")
 
 if [ "${news}" == "error" ]; then
 	echo
@@ -73,7 +73,7 @@ else
 				news_path=$(echo "${news}" | htmlq -a href a | grep ^"/news/" | sed -n "${num}"p)
 				news_url="https://www.archlinux.org${news_path}"
 				# shellcheck disable=SC2154
-				news_content=$(curl -m "${news_timeout}" -Lfs "${news_url}" || echo "error")
+				news_content=$(curl --compressed -m "${news_timeout}" -Lfs "${news_url}" || echo "error")
 
 				if [ "${news_content}" == "error" ]; then
 					echo
