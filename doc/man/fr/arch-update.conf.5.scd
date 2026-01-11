@@ -1,4 +1,4 @@
-arch-update.conf(5) ["Arch-Update 3.17.6" ["Manuel de Arch-Update"]]
+arch-update.conf(5) ["Arch-Update 3.17.7" ["Manuel de Arch-Update"]]
 
 # NOM
 

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.7](https://github.com/Antiz96/arch-update/releases/tag/v3.17.7) - 2026-01-12
+
+### Fixes
+
+- *(notification)* Set app icon with the new libnotify `-n / --app-name` option ([#492](https://github.com/Antiz96/arch-update/pull/492)) - ([b463cb8](https://github.com/Antiz96/arch-update/commit/b463cb8a53c58e4c8fa76aed41b38c4a1370eafc)) by @Antiz96
+
 ## [v3.17.6](https://github.com/Antiz96/arch-update/releases/tag/v3.17.6) - 2026-01-11
 
 ### Fixes
