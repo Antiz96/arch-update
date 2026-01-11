@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.6](https://github.com/Antiz96/arch-update/releases/tag/v3.17.6) - 2026-01-11
+
+### Fixes
+
+- *(flatpak)* Make masked patterns detection logic more robust ([#490](https://github.com/Antiz96/arch-update/pull/490)) - ([1d50275](https://github.com/Antiz96/arch-update/commit/1d50275e10df94da220a339a4c837b15d7122f7b)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#491](https://github.com/Antiz96/arch-update/pull/491)) - ([8ca1e95](https://github.com/Antiz96/arch-update/commit/8ca1e95ccfa7f6a7d28d5de695c419f7f768963b)) by @Antiz96
+
 ## [v3.17.5](https://github.com/Antiz96/arch-update/releases/tag/v3.17.5) - 2026-01-09
 
 ### Features
