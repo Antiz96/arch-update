@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.8](https://github.com/Antiz96/arch-update/releases/tag/v3.17.8) - 2026-01-30
+
+### Fixes
+
+- Add `plasmalogin.service` to the list of ignored services when restarting services - ([0706c6f](https://github.com/Antiz96/arch-update/commit/0706c6f596237fa1fddf0f7d19b0d8ef87e29d5b)) by @hunabku94
+
 ## [v3.17.7](https://github.com/Antiz96/arch-update/releases/tag/v3.17.7) - 2026-01-12
 
 ### Fixes
