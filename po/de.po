@@ -87,7 +87,7 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"Zu verwendender Editor kann nicht ermittel werden\\nDie \"EDITOR\" "
+"Zu verwendender Editor kann nicht ermittelt werden\\nDie \"EDITOR\" "
 "Umgebungsvariable ist nicht gesetzt und \"nano\" (Fallback-Option) ist nicht "
 "installiert"
 
@@ -136,7 +136,7 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
-"Die Liste der Pakete anzeigen, die zur Verfügug stehen und nach Bestätigung "
+"Die Liste der Pakete anzeigen, die zur Verfügung stehen und nach Bestätigung "
 "des Benutzers fragen, um mit der Installation fortzufahren."
 
 #: src/lib/help.sh:12
@@ -172,7 +172,7 @@ msgid ""
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check)"
 msgstr ""
-"  -c, --check       Prüfung auf vorhandene Updates, Ändern des Systray Icons "
+"  -c, --check       Prüfung auf vorhandene Updates, Ändern des Systray-Icons "
 "und Senden einer Desktop-Benachrichtigung mit der Anzahl der vorhandenen "
 "Updates (falls verglichen zur letzten Prüfung neue Updates verfügbar sind)"
 
@@ -193,7 +193,7 @@ msgid ""
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
 "  -n, --news [Num]  Aktuelle Arch-Neuigkeiten anzeigen, optionale Angabe für "
-"die Anzahl der anzuzeigenden Arch-Neuigkeiten mit '--news [Num]' (z.B. '--"
+"die Anzahl der anzuzeigenden Arch-Neuigkeiten mit '--news [Num]' (z. B. '--"
 "news 10')"
 
 #: src/lib/help.sh:20
@@ -348,14 +348,14 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
-"Arch-Neugkeiten können nicht abgerufen werden (HTTP-Fehlerantwort oder "
+"Arch-Neuigkeiten können nicht abgerufen werden (HTTP-Fehlerantwort oder "
 "Zeitüberschreitung der Anfrage)\\nBitte unter https://archlinux.org über die "
 "neuesten Nachrichten informieren, bevor das System aktualisiert wird"
 
 #: src/lib/list_news.sh:23
 #, sh-format
 msgid "No recent Arch News found"
-msgstr "Keine aktuellen Arch-Neugikeiten gefunden"
+msgstr "Keine aktuellen Arch-Neuigkeiten gefunden"
 
 #: src/lib/list_news.sh:37
 #, sh-format
@@ -373,7 +373,7 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
-"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen "
+"Neuigkeiten zum Lesen auswählen (z. B. 1 3 5), 0 wählen, um alle zu lesen "
 "oder zum Beenden \"ENTER\" drücken:"
 
 #: src/lib/list_news.sh:56
@@ -382,7 +382,7 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
-"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen "
+"Neuigkeiten zum Lesen auswählen (z. B. 1 3 5), 0 wählen, um alle zu lesen "
 "oder \"ENTER\" drücken, um mit der Aktualisierung fortzufahren:"
 
 #: src/lib/list_news.sh:80
@@ -635,7 +635,7 @@ msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
 msgstr ""
-"Verarbeitung der Pacnew-Datei(en) nicht durchgeführt\\nBiite die "
+"Verarbeitung der Pacnew-Datei(en) nicht durchgeführt\\nBitte die "
 "Verarbeitung zeitnah durchführen\\n"
 
 #: src/lib/pacnew_files.sh:41
@@ -659,7 +659,7 @@ msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
-"Dienst(e) zum Neustarten auswählen (z.B. 1 3 5), 0 wählen, um alle neu zu "
+"Dienst(e) zum Neustarten auswählen (z. B. 1 3 5), 0 wählen, um alle neu zu "
 "starten oder \"ENTER\" drücken, um ohne Neustart fortzufahren:"
 
 #: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
@@ -814,7 +814,7 @@ msgid ""
 msgstr ""
 "Die '${tray_desktop_file_autostart}' Datei wurde erstellt, das ${_name} "
 "Systray-Applet wird bei der nächsten Anmeldung automatisch gestartet\\nUm es "
-"jetzt zu starten, einfach die Anwendung \"${_name} Systray Applet\" aus dem "
+"jetzt zu starten, einfach die Anwendung \"${_name} Systray-Applet\" aus dem "
 "Anwendungsmenü aufrufen"
 
 #: src/lib/tray.sh:49
