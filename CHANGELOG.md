@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.9](https://github.com/Antiz96/arch-update/releases/tag/v3.17.9) - 2026-02-01
+
+### Miscellaneous
+
+- *(i18n)* Fix various typos in German translation file ([#498](https://github.com/Antiz96/arch-update/pull/498)) - ([8046a7b](https://github.com/Antiz96/arch-update/commit/8046a7bea20405d027e15d793b0737cdb8ca8060)) by @m2u-84
+
 ## [v3.17.8](https://github.com/Antiz96/arch-update/releases/tag/v3.17.8) - 2026-01-30
 
 ### Fixes
