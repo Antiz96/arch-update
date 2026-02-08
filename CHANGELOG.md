@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.10](https://github.com/Antiz96/arch-update/releases/tag/v3.17.10) - 2026-02-08
+
+### Features
+
+- *(i18n)* Add Dutch translation ([#503](https://github.com/Antiz96/arch-update/pull/503)) - ([54a7d14](https://github.com/Antiz96/arch-update/commit/54a7d14468b2710f6691c512aa1e368c1a9c5c24)) by @Antiz96
+- *(i18n)* Add Norwegian bokmål translation ([#502](https://github.com/Antiz96/arch-update/pull/502)) - ([6955921](https://github.com/Antiz96/arch-update/commit/6955921d4e08f5408b00f9aa55112a167c93573a)) by @Kjodleiken
+
+### Miscellaneous
+
+- *(issues)* Update labels ([#501](https://github.com/Antiz96/arch-update/pull/501)) - ([73ab2cc](https://github.com/Antiz96/arch-update/commit/73ab2ccfa27c5dca4c8be1821b404a86c048ac30)) by @Antiz96
+
 ## [v3.17.9](https://github.com/Antiz96/arch-update/releases/tag/v3.17.9) - 2026-02-01
 
 ### Miscellaneous
