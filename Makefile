@@ -22,6 +22,7 @@ build:
 	msgfmt po/es.po -o po/es.mo
 	msgfmt po/zh_TW.po -o po/zh_TW.mo
 	msgfmt po/ru.po -o po/ru.mo
+	msgfmt po/nb.po -o po/nb.mo
 
 test:
 	# Run some simple unit tests on basic functions
@@ -69,6 +70,7 @@ install:
 	install -Dm 644 po/es.mo "${DESTDIR}${PREFIX}/share/locale/es/LC_MESSAGES/${_pkgname}.mo"
 	install -Dm 644 po/zh_TW.mo "${DESTDIR}${PREFIX}/share/locale/zh_TW/LC_MESSAGES/${_pkgname}.mo"
 	install -Dm 644 po/ru.mo "${DESTDIR}${PREFIX}/share/locale/ru/LC_MESSAGES/${_pkgname}.mo"
+	install -Dm 644 po/nb.mo "${DESTDIR}${PREFIX}/share/locale/nb/LC_MESSAGES/${_pkgname}.mo"
 
 	# Install documentation
 	install -Dm 644 README.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/README.md"
@@ -94,6 +96,7 @@ clean:
 	rm -f po/es.mo
 	rm -f po/zh_TW.mo
 	rm -f po/ru.mo
+	rm -f po/nb.mo
 
 uninstall:
 	# Delete main script
@@ -125,6 +128,7 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/share/locale/es/LC_MESSAGES/${_pkgname}.mo"
 	rm -f "${DESTDIR}${PREFIX}/share/locale/zh_TW/LC_MESSAGES/${_pkgname}.mo"
 	rm -f "${DESTDIR}${PREFIX}/share/locale/ru/LC_MESSAGES/${_pkgname}.mo"
+	rm -f "${DESTDIR}${PREFIX}/share/locale/nb/LC_MESSAGES/${_pkgname}.mo"
 
 	# Delete shell completions
 	rm -f "${DESTDIR}${PREFIX}/share/bash-completion/completions/${pkgname}"
