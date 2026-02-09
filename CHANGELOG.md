@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.17.11](https://github.com/Antiz96/arch-update/releases/tag/v3.17.11) - 2026-02-09
+
+### Features
+
+- *(i18n)* Add Portuguese translation ([#505](https://github.com/Antiz96/arch-update/pull/505)) - ([2d3bc2b](https://github.com/Antiz96/arch-update/commit/2d3bc2bcd064f2dfbc0b00cbd113bbf1b321fd0c)) by @NyaPuma
+
 ## [v3.17.10](https://github.com/Antiz96/arch-update/releases/tag/v3.17.10) - 2026-02-08
 
 ### Features
