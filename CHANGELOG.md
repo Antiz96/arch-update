@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
-- *(i18n)* Add Dutch translation ([#503](https://github.com/Antiz96/arch-update/pull/503)) - ([54a7d14](https://github.com/Antiz96/arch-update/commit/54a7d14468b2710f6691c512aa1e368c1a9c5c24)) by @Antiz96
+- *(i18n)* Add Dutch translation ([#503](https://github.com/Antiz96/arch-update/pull/503)) - ([54a7d14](https://github.com/Antiz96/arch-update/commit/54a7d14468b2710f6691c512aa1e368c1a9c5c24)) by @Vistaus
 - *(i18n)* Add Norwegian bokmål translation ([#502](https://github.com/Antiz96/arch-update/pull/502)) - ([6955921](https://github.com/Antiz96/arch-update/commit/6955921d4e08f5408b00f9aa55112a167c93573a)) by @Kjodleiken
 
 ### Miscellaneous
