@@ -22,6 +22,9 @@ The configuration file can be edited by running: `arch-update --edit-config`.
 
 Options are case sensitive, so capital letters have to be respected.
 
+*ColorblindMode*
+	Change systray applet icon update variants to a colorblind-friendly yellow.
+
 *NoColor*
 	Do not colorize output.
 

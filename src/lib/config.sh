@@ -10,6 +10,10 @@ config_file="${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf"
 
 # Check options in the arch-update.conf configuration file if it exists
 if [ -f "${config_file}" ]; then
+	# Check the "ColorblindMode" option in arch-update.conf
+	# shellcheck disable=SC2034
+	colorblind_mode=$(grep -Eq '^[[:space:]]*ColorblindMode[[:space:]]*$' "${config_file}" 2> /dev/null && echo "-cb")
+
 	# Check the "NoColor" option in arch-update.conf
 	# shellcheck disable=SC2034
 	no_color=$(grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
