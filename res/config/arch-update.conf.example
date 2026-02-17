@@ -2,7 +2,6 @@
 # Documentation for this configuration file is available in the arch-update.conf(5) man page (see <https://github.com/Antiz96/arch-update/blob/main/doc/man/arch-update.conf.5.scd>).
 # List of available options (with their default value) below, un-comment one to enable it.
 
-#ColorblindMode
 #NoColor
 #NoVersion
 #NoAUR
@@ -16,3 +15,4 @@
 #KeepUninstalledPackages=0
 #DiffProg=$DIFFPROG
 #TrayIconStyle=blue
+#ColorblindMode
