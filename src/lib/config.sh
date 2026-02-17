@@ -10,10 +10,6 @@ config_file="${XDG_CONFIG_HOME:-${HOME}/.config}/${name}/${name}.conf"
 
 # Check options in the arch-update.conf configuration file if it exists
 if [ -f "${config_file}" ]; then
-	# Check the "ColorblindMode" option in arch-update.conf
-	# shellcheck disable=SC2034
-	colorblind_mode=$(grep -Eq '^[[:space:]]*ColorblindMode[[:space:]]*$' "${config_file}" 2> /dev/null && echo "-cb")
-
 	# Check the "NoColor" option in arch-update.conf
 	# shellcheck disable=SC2034
 	no_color=$(grep -Eq '^[[:space:]]*NoColor[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
@@ -65,6 +61,10 @@ if [ -f "${config_file}" ]; then
 	# Check the "TrayIconStyle" option in arch-update.conf
 	# shellcheck disable=SC2034
 	tray_icon_style=$(grep -E '^[[:space:]]*TrayIconStyle[[:space:]]*=[[:space:]]*(blue|light|dark)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+
+	# Check the "ColorblindMode" option in arch-update.conf
+	# shellcheck disable=SC2034
+	colorblind_mode=$(grep -Eq '^[[:space:]]*ColorblindMode[[:space:]]*$' "${config_file}" 2> /dev/null && echo "-cb")
 fi
 
 # Set the default / fallback value for options that require it (if the arch-update.conf configuration file doesn't exists, if the concerned option is commented or if the set value is invalid) 
