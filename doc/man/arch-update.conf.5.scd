@@ -22,9 +22,6 @@ The configuration file can be edited by running: `arch-update --edit-config`.
 
 Options are case sensitive, so capital letters have to be respected.
 
-*ColorblindMode*
-	Change systray applet icon update variants to a colorblind-friendly yellow.
-
 *NoColor*
 	Do not colorize output.
 
@@ -63,6 +60,9 @@ Options are case sensitive, so capital letters have to be respected.
 
 *TrayIconStyle=[Style / Color]*
 	Style to be used for the systray applet icon. Valid values are the available style / color variants for the icon set, listed in https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md. Defaults to "blue".
+
+*ColorblindMode*
+	Change systray applet icon update variants to a colorblind-friendly yellow.
 
 # SEE ALSO
 
