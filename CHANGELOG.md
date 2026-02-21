@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.18.0](https://github.com/Antiz96/arch-update/releases/tag/v3.18.0) - 2026-02-21
+
+### Features
+
+- *(icons)* Add colorblind-friendly icons variants ([#511](https://github.com/Antiz96/arch-update/pull/511)) - ([6356495](https://github.com/Antiz96/arch-update/commit/6356495d4b1cb9180103065e5051d72847e376b4)) by @s-pappous
+
+### Miscellaneous
+
+- *(changelog)* Update contributor name for the Dutch translation in changelog ([#506](https://github.com/Antiz96/arch-update/pull/506)) - ([904e3d2](https://github.com/Antiz96/arch-update/commit/904e3d2b599324ff079bbb30767f217c2ec78c46)) by @Antiz96
+- *(i18n)* Update pt_PT.po ([#512](https://github.com/Antiz96/arch-update/pull/512)) - ([3ebc4ff](https://github.com/Antiz96/arch-update/commit/3ebc4ff76554e7e4f841fba7e4b82d981130dbd2)) by @NyaPuma
+
 ## [v3.17.11](https://github.com/Antiz96/arch-update/releases/tag/v3.17.11) - 2026-02-09
 
 ### Features
