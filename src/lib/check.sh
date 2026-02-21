@@ -106,6 +106,7 @@ if [ -n "${update_available}" ]; then
 				--setenv=_name="${_name}" \
 				--setenv=name="${name}" \
 				--setenv=tray_icon_style="${tray_icon_style}" \
+				--setenv=colorblind_mode="${colorblind_mode}" \
 				--setenv=tmpdir="${tmpdir}" \
 				--setenv=desktop_file="${desktop_file}" \
 			 "${libdir}/notification.sh"

@@ -15,3 +15,4 @@
 #KeepUninstalledPackages=0
 #DiffProg=$DIFFPROG
 #TrayIconStyle=blue
+#ColorblindMode
