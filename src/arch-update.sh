@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# arch-update: An update notifier & applier for Arch Linux that assists you with important pre / post update tasks
+# arch-update: An interactive update notifier & applier for Arch Linux that assists you with important pre / post update tasks
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 

@@ -2,7 +2,7 @@ arch-update(1) ["Arch-Update 3.18.0" ["Manuel de Arch-Update"]]
 
 # NOM
 
-Arch-Update - Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour.
+Arch-Update - Un notificateur & applicateur de mises à jour interactif pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour.
 
 # SYNOPSIS
 
@@ -10,7 +10,7 @@ Arch-Update - Un notificateur & applicateur de mises à jour pour Arch Linux qui
 
 # DESCRIPTION
 
-Un notificateur & applicateur de mises à jour pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour.
+Un notificateur & applicateur de mises à jour interactif pour Arch Linux qui vous assiste dans les tâches importantes d'avant / après mise à jour.
 Inclut une applet systray dynamique & cliquable pour une intégration facile avec n'importe quel environnement de bureau / gestionnaire de fenêtres.
 
 Arch-Update est conçu pour suivre les étapes usuelles de maintenance du système, telles que décrites dans le Arch Wiki à https://wiki.archlinux.org/title/System_maintenance.
