@@ -2,7 +2,7 @@ arch-update(1) ["Arch-Update 3.18.0" ["Arch-Update Manual"]]
 
 # NAME
 
-Arch-Update - An update notifier & applier for Arch Linux that assists you with important pre / post update tasks.
+Arch-Update - An interactive update notifier & applier for Arch Linux that assists you with important pre / post update tasks.
 
 # SYNOPSIS
 
@@ -10,7 +10,7 @@ Arch-Update - An update notifier & applier for Arch Linux that assists you with 
 
 # DESCRIPTION
 
-An update notifier & applier for Arch Linux that assists you with important pre / post update tasks.
+An interactive update notifier & applier for Arch Linux that assists you with important pre / post update tasks.
 Includes a dynamic & clickeable systray applet for an easy integration with any Desktop Environment / Window Manager.
 
 Arch-Update is designed to follow usual system maintenance steps, as described in the Arch Wiki at https://wiki.archlinux.org/title/System_maintenance.
