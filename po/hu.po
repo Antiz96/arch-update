@@ -119,8 +119,8 @@ msgstr "A(z) „${config_file}” konfigurációs fájl elő lett állítva"
 #: src/lib/help.sh:8
 #, sh-format
 msgid ""
-"An update notifier & applier for Arch Linux that assists you with important "
-"pre / post update tasks."
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
 msgstr ""
 "Frissítésértesítő és frissítésalkalmazó az Arch Linuxhoz, amely segít a "
 "fontos frissítés előtti / utáni feladatokban."
