@@ -121,7 +121,7 @@ msgid ""
 "An interactive update notifier & applier for Arch Linux that assists you "
 "with important pre / post update tasks."
 msgstr ""
-"Un notificateur & applicateur de mises à jour pour Arch Linux qui vous "
+"Un notificateur & applicateur de mises à jour interactif pour Arch Linux qui vous "
 "assiste dans les tâches importantes d'avant / après mise à jour."
 
 #: src/lib/help.sh:10
