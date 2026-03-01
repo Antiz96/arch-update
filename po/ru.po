@@ -115,8 +115,8 @@ msgstr "Конфигурационный файл '${config_file}' был сге
 #: src/lib/help.sh:8
 #, sh-format
 msgid ""
-"An update notifier & applier for Arch Linux that assists you with important "
-"pre / post update tasks."
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
 msgstr ""
 "Уведомитель и установщик обновлений для Arch Linux, который помогает вам с "
 "важными задачами до / после обновления."

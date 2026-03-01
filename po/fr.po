@@ -118,8 +118,8 @@ msgstr "Le fichier de configuration '${config_file}' a été généré"
 #: src/lib/help.sh:8
 #, sh-format
 msgid ""
-"An update notifier & applier for Arch Linux that assists you with important "
-"pre / post update tasks."
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
 msgstr ""
 "Un notificateur & applicateur de mises à jour pour Arch Linux qui vous "
 "assiste dans les tâches importantes d'avant / après mise à jour."
