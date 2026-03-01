@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# Kjetil Sorlund <translate@sorlund.no>, 2026
+# SPDX-FileCopyrightText: 2026 Kjetil Sorlund <translate@sorlund.no>
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 3.18.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-02-08 14:28+0100\n"
+"PO-Revision-Date: 2026-03-01 19:53+0100\n"
 "Last-Translator: Kjetil Sorlund <translate@sorlund.no>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
 "Language: nb_NO\n"
@@ -121,8 +121,8 @@ msgid ""
 "An interactive update notifier & applier for Arch Linux that assists you "
 "with important pre / post update tasks."
 msgstr ""
-"En oppdateringsvarsler og -gjennomfører for Arch Linux som hjelper deg med "
-"viktige oppgaver før og etter oppdatering."
+"En interaktiv oppdateringsvarsler og -gjennomfører for Arch Linux som "
+"hjelper deg med viktige oppgaver før og etter oppdatering."
 
 #: src/lib/help.sh:10
 #, sh-format
