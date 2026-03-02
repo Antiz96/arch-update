@@ -17,5 +17,4 @@ rm -f messages.po
 # Merge changes in po files
 for po in po/*.po; do
 	msgmerge "${po}" "po/arch-update.pot" -o "${po}"
-	msgattrib --clear-fuzzy "${po}" -o "${po}"
 done
