@@ -6,7 +6,7 @@
 # Capricornus007 <sihaogang@gmail.com>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.7\n"
+"Project-Id-Version: Arch-Update 3.18.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-11-18 14:50+0800\n"
@@ -107,10 +107,10 @@ msgid "The '${config_file}' configuration file has been generated"
 msgstr "「${config_file}」設定檔已生成"
 
 #: src/lib/help.sh:8
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
-"An update notifier & applier for Arch Linux that assists you with important "
-"pre / post update tasks."
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
 msgstr "一個 Arch Linux 的更新通知與應用程式，可協助您完成重要的更新前後作業。"
 
 #: src/lib/help.sh:10
@@ -149,7 +149,7 @@ msgid "Options:"
 msgstr "選項："
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
@@ -159,17 +159,17 @@ msgstr ""
 "中包含可用更新的數量（若與上次檢查相比有新的可用更新）"
 
 #: src/lib/help.sh:17
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -l, --list        Display the list of pending updates"
 msgstr "  -l, --list        顯示待處理的更新清單"
 
 #: src/lib/help.sh:18
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -d, --devel       Include AUR development packages updates"
 msgstr "  -d, --devel       包含 AUR 開發套件的更新"
 
 #: src/lib/help.sh:19
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
@@ -178,17 +178,17 @@ msgstr ""
 "聞數量（例如：「--news 10」）"
 
 #: src/lib/help.sh:20
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -s, --services    Check for services requiring a post upgrade restart"
 msgstr "  -s, --services    檢查升級後需要重新啟動的服務"
 
 #: src/lib/help.sh:21
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -D, --debug       Display debug traces"
 msgstr "  -D, --debug       顯示偵錯追蹤資訊"
 
 #: src/lib/help.sh:22
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  --gen-config      Generate a default / example '${name}.conf' "
 "configuration file, you can optionally pass the '--force' argument to "
@@ -198,21 +198,21 @@ msgstr ""
 "force」引數來覆寫任何現有的「${name}.conf」設定檔"
 
 #: src/lib/help.sh:23
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  --show-config     Display the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr "  --show-config     顯示目前使用的「${name}.conf」設定檔（如果存在）"
 
 #: src/lib/help.sh:24
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr "  --edit-config     編輯目前使用的「${name}.conf」設定檔（如果存在）"
 
 #: src/lib/help.sh:25
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  --tray            Launch the ${_name} systray applet, you can optionally "
 "add the '--enable' argument to start it automatically at boot"
@@ -221,12 +221,12 @@ msgstr ""
 "enable」引數以在啟動時自動啟動"
 
 #: src/lib/help.sh:26
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -h, --help        Display this help message and exit"
 msgstr "  -h, --help        顯示此說明訊息並離開"
 
 #: src/lib/help.sh:27
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -V, --version     Display version information and exit"
 msgstr "  -V, --version     顯示版本資訊並離開"
 

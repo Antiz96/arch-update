@@ -1,4 +1,4 @@
-arch-update.conf(5) ["Arch-Update 3.17.7" ["Manuel de Arch-Update"]]
+arch-update.conf(5) ["Arch-Update 3.18.0" ["Manuel de Arch-Update"]]
 
 # NOM
 
@@ -60,6 +60,9 @@ Les options sont sensibles à la casse, les majuscules doivent donc être respec
 
 *TrayIconStyle=[Style / Couleur]*
 	Style à utiliser pour l'icône de l'applet systray. Les valeurs valides sont les variantes de style / couleur disponibles pour le set d'icône, listées ici : https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md. La valeur par défaut est "blue".
+
+*ColorblindMode*
+	Changer la variante de l'icône de l'applet systray pour utiliser une couleur jaune lorsque des mises à jour sont disponibles, afin d'être plus facilement distinguable pour les daltoniens.
 
 # VOIR AUSSI
 

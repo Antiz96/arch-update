@@ -6,7 +6,7 @@
 
 if [ -n "${packages_updated}" ] || [ -n "${services_option}" ]; then
 	# shellcheck disable=SC2154
-	services=$("${su_cmd}" checkservices -F -P -R -i gdm.service -i sddm.service -i lightdm.service -i lxdm.service -i slim.service -i xdm.service -i greetd.service -i nodm.service -i ly.service -i lemurs.service 2> /dev/null | grep ".service" | cut -f2 -d "'")
+	services=$("${su_cmd}" checkservices -F -P -R -i gdm.service -i plasmalogin.service -i sddm.service -i lightdm.service -i lxdm.service -i slim.service -i xdm.service -i greetd.service -i nodm.service -i ly.service -i lemurs.service 2> /dev/null | grep ".service" | cut -f2 -d "'")
 	services_num=$(echo "${services}" | wc -l)
 
 	if [ -n "${services}" ]; then

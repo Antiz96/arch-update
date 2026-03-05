@@ -202,7 +202,7 @@ icon_up-to-date() {
 # Definition of the icon_updates-available function: Change tray icon to "updates available"
 icon_updates-available() {
 	# shellcheck disable=SC2154
-	echo "${name}_updates-available-${tray_icon_style}" > "${statedir}/tray_icon"
+	echo "${name}_updates-available-${tray_icon_style}${colorblind_mode}" > "${statedir}/tray_icon"
 }
 
 # Definition of commands to always run on exit (e.g. cleanup of files / dirs which have no purpose being kept)

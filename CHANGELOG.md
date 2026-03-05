@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.18.0](https://github.com/Antiz96/arch-update/releases/tag/v3.18.0) - 2026-02-21
+
+### Features
+
+- *(icons)* Add colorblind-friendly icons variants ([#511](https://github.com/Antiz96/arch-update/pull/511)) - ([6356495](https://github.com/Antiz96/arch-update/commit/6356495d4b1cb9180103065e5051d72847e376b4)) by @s-pappous
+
+### Miscellaneous
+
+- *(changelog)* Update contributor name for the Dutch translation in changelog ([#506](https://github.com/Antiz96/arch-update/pull/506)) - ([904e3d2](https://github.com/Antiz96/arch-update/commit/904e3d2b599324ff079bbb30767f217c2ec78c46)) by @Antiz96
+- *(i18n)* Update pt_PT.po ([#512](https://github.com/Antiz96/arch-update/pull/512)) - ([3ebc4ff](https://github.com/Antiz96/arch-update/commit/3ebc4ff76554e7e4f841fba7e4b82d981130dbd2)) by @NyaPuma
+
+## [v3.17.11](https://github.com/Antiz96/arch-update/releases/tag/v3.17.11) - 2026-02-09
+
+### Features
+
+- *(i18n)* Add Portuguese translation ([#505](https://github.com/Antiz96/arch-update/pull/505)) - ([2d3bc2b](https://github.com/Antiz96/arch-update/commit/2d3bc2bcd064f2dfbc0b00cbd113bbf1b321fd0c)) by @NyaPuma
+
+## [v3.17.10](https://github.com/Antiz96/arch-update/releases/tag/v3.17.10) - 2026-02-08
+
+### Features
+
+- *(i18n)* Add Dutch translation ([#503](https://github.com/Antiz96/arch-update/pull/503)) - ([54a7d14](https://github.com/Antiz96/arch-update/commit/54a7d14468b2710f6691c512aa1e368c1a9c5c24)) by @Vistaus
+- *(i18n)* Add Norwegian bokmål translation ([#502](https://github.com/Antiz96/arch-update/pull/502)) - ([6955921](https://github.com/Antiz96/arch-update/commit/6955921d4e08f5408b00f9aa55112a167c93573a)) by @Kjodleiken
+
+### Miscellaneous
+
+- *(issues)* Update labels ([#501](https://github.com/Antiz96/arch-update/pull/501)) - ([73ab2cc](https://github.com/Antiz96/arch-update/commit/73ab2ccfa27c5dca4c8be1821b404a86c048ac30)) by @Antiz96
+
+## [v3.17.9](https://github.com/Antiz96/arch-update/releases/tag/v3.17.9) - 2026-02-01
+
+### Miscellaneous
+
+- *(i18n)* Fix various typos in German translation file ([#498](https://github.com/Antiz96/arch-update/pull/498)) - ([8046a7b](https://github.com/Antiz96/arch-update/commit/8046a7bea20405d027e15d793b0737cdb8ca8060)) by @m2u-84
+
+## [v3.17.8](https://github.com/Antiz96/arch-update/releases/tag/v3.17.8) - 2026-01-30
+
+### Fixes
+
+- Add `plasmalogin.service` to the list of ignored services when restarting services - ([0706c6f](https://github.com/Antiz96/arch-update/commit/0706c6f596237fa1fddf0f7d19b0d8ef87e29d5b)) by @hunabku94
+
 ## [v3.17.7](https://github.com/Antiz96/arch-update/releases/tag/v3.17.7) - 2026-01-12
 
 ### Fixes

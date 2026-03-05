@@ -1,19 +1,18 @@
-# Arch-Update Hungarian translation
+# Arch-Update translation template
 # Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# Attila <kj.attil@gmail.com>, 2024
-# summoner <summoner@vivaldi.net>, 2025
+# AUTHOR <EMAIL@ADDRESS>, YEAR
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 3.18.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2025-11-22 11:04+0100\n"
-"Last-Translator: summoner <summoner@disroot.org>\n"
+"PO-Revision-Date: 2026-03-01 18:51+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
-"Language: hu_HU\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,22 +21,22 @@ msgstr ""
 #: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
-msgstr "FIGYELMEZTETÉS"
+msgstr "WAARSCHUWING"
 
 #: src/lib/common.sh:102
 #, sh-format
 msgid "ERROR"
-msgstr "HIBA"
+msgstr "FOUTMELDING"
 
 #: src/lib/common.sh:107
 #, sh-format
 msgid "Press \"enter\" to continue "
-msgstr "Nyomja meg az „enter” gombot a folytatáshoz "
+msgstr "Druk op enter om door te gaan "
 
 #: src/lib/common.sh:113
 #, sh-format
 msgid "Press \"enter\" to quit "
-msgstr "Nyomja meg az „enter” gombot a kilépéshez "
+msgstr "Druk op enter om af te sluiten "
 
 #: src/lib/common.sh:134
 #, sh-format
@@ -45,15 +44,16 @@ msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the "
 "${name}.conf configuration file is not found\\n"
 msgstr ""
-"A(z) ${aur_helper} AUR-csomagok AUR-segédkészletének támogatása nem "
-"található az ${name}.conf konfigurációs fájlban\\n"
+"Het hulpmiddel voor de afhandeling van AUR-pakketten, ‘${aur_helper}’, zoals "
+"ingesteld in ${name}.conf, is niet aangetroffen.\\n"
 
 #: src/lib/common.sh:165
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
-"Jogosultságszint-emelési parancs szükséges (sudo, sudo-rs, doas vagy run0)\\n"
+"Een opdracht om meer rechten te verlenen is vereist (sudo, sudo-rs, doas of "
+"run0)\\n"
 
 #: src/lib/common.sh:170
 #, sh-format
@@ -61,8 +61,8 @@ msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
-"A(z) ${su_cmd} ${name}.conf konfigurációs fájlban, a jogosultságok "
-"kiterjesztéséhez beállított parancs nem található\\n"
+"De opdracht voor het verlenen van meer rechten, ‘${su_cmd}’, zoals ingesteld "
+"in ${name}.conf, is niet aangetroffen.\\n"
 
 #: src/lib/common.sh:182
 #, sh-format
@@ -70,9 +70,8 @@ msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
 "files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
-"A(z) ${diff_prog} ${name}.conf konfigurációs fájlban nem található a pacnew "
-"fájlok összehasonlításának megjelenítésére / szerkesztésére beállított "
-"szerkesztő\\n"
+"De tekstbewerker voor het aanpassen van verschillen tussen pacnew-bestanden, "
+"‘${diff_prog}’, zoals ingesteld in ${name}.conf, is niet aangetroffen.\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
@@ -80,8 +79,8 @@ msgid ""
 "No configuration file found\\nYou can generate one with \"${name} --gen-"
 "config\""
 msgstr ""
-"Nem található konfigurációs fájl\\nAz „${name} --gen-config” paranccsal "
-"előállíthat egyet."
+"Er is geen configuratiebestand aangetroffen.\\nStel een bestand samen met "
+"behulp van de opdracht ‘${name} --gen-config’."
 
 #: src/lib/edit-config.sh:13
 #, sh-format
@@ -89,18 +88,18 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"Nem lehet meghatározni a használandó szerkesztőt\\nAz „EDITOR” környezeti "
-"változó nincs beállítva, és a „nano” (tartalékbeállítás) nincs telepítve"
+"De te gebruiken tekstbewerker kan niet worden vastgesteld.\\nDe "
+"omgevingsvariabele ‘EDITOR’ is niet ingesteld en nano is niet geïnstalleerd."
 
 #: src/lib/full_upgrade.sh:13
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
-msgstr "Már van egy futó példánya az ${_name}\\n"
+msgstr "Er is al een ${_name}-proces actief.\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
 msgid "Example configuration file not found"
-msgstr "A konfigurációs példafájl nem található"
+msgstr "Het voorbeeldconfiguratiebestand is niet aangetroffen"
 
 #: src/lib/gen-config.sh:25
 #, sh-format
@@ -108,28 +107,28 @@ msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
 "before generating a new one (or use --force to overwrite it)"
 msgstr ""
-"A(z) „${config_file}” konfigurációs fájl már létezik\\nTávolítsa el, mielőtt "
-"újat állít elő (vagy használja a --force parancsot a felülíráshoz)"
+"Het configuratiebestand ‘${config_file}’ bestaat al.\\nVerwijder dit "
+"alvorens een nieuw bestand samen te stellen (of voeg --force toe om te "
+"overschrijven)."
 
 #: src/lib/gen-config.sh:30
 #, sh-format
 msgid "The '${config_file}' configuration file has been generated"
-msgstr "A(z) „${config_file}” konfigurációs fájl elő lett állítva"
+msgstr "‘${config_file}’ is samengesteld"
 
 #: src/lib/help.sh:8
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "An interactive update notifier & applier for Arch Linux that assists you "
 "with important pre / post update tasks."
 msgstr ""
-"Frissítésértesítő és frissítésalkalmazó az Arch Linuxhoz, amely segít a "
-"fontos frissítés előtti / utáni feladatokban."
+"Een interactieve updatemelder en -installeerder voor Arch Linux, die je "
+"helpt bij het uitvoeren van belangrijke taken ervoor en erna."
 
 #: src/lib/help.sh:10
 #, sh-format
 msgid "Run ${name} to perform the main 'update' function:"
-msgstr ""
-"Futtassa a(z) ${name} parancsot a fő „frissítési” funkció végrehajtásához:"
+msgstr "Voer ‘${name}’ uit om de hoofdfunctie te gebruiken:"
 
 #: src/lib/help.sh:11
 #, sh-format
@@ -137,17 +136,15 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
-"Megjeleníti a frissíthető csomagok listáját, majd a felhasználó "
-"megerősítését kéri a telepítés folytatásához."
+"Toon de lijst met bij te werken pakketten en vraag om bevestiging alvorens "
+"ze te installeren."
 
 #: src/lib/help.sh:12
 #, sh-format
 msgid ""
 "Before performing the update, it offers to display the latest Arch Linux "
 "news."
-msgstr ""
-"A frissítés végrehajtása előtt felajánlja a legfrissebb Arch Linux hírek "
-"megjelenítését."
+msgstr "Toon het recentste Arch Linux-nieuws alvorens bij te werken."
 
 #: src/lib/help.sh:13
 #, sh-format
@@ -156,15 +153,15 @@ msgid ""
 "pacnew & pacsave files, pending kernel update as well as services requiring "
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
-"A frissítés után ellenőrzi az árva és nem használt csomagokat, a régi "
-"gyorsítótárazott csomagokat, a pacnew és pacsave fájlokat, a függőben lévő "
-"kernelfrissítéseket, valamint a frissítés utáni újraindítást igénylő "
-"szolgáltatásokat, és ha van ilyen, felajánlja azok feldolgozását."
+"Controleer na het bijwerken op onteigende en verouderde pakketten, oude "
+"pakketten in de cache, pacnew- en pacsave-bestanden, in afwachting van "
+"verdere actie zijnde kernelupdates en diensten die moeten worden herstart. "
+"Vraag hierbij tevens om verwerking."
 
 #: src/lib/help.sh:15
 #, sh-format
 msgid "Options:"
-msgstr "Beállítások:"
+msgstr "Opties"
 
 #: src/lib/help.sh:16
 #, sh-format
@@ -173,21 +170,19 @@ msgid ""
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check)"
 msgstr ""
-"  -c, --check       Ellenőrzi az elérhető frissítéseket, megváltoztatja a "
-"rendszertálca ikonját, és asztali értesítést küld az elérhető frissítések "
-"számáról (ha a legutóbbi ellenőrzéshez képest új frissítések állnak "
-"rendelkezésre)."
+"  -c, --check       Controleer op updates, pas het systeemvakpictogram aan "
+"en toon een bureaubladmelding met het aantal bij te werken pakketten (indien "
+"beschikbaar)"
 
 #: src/lib/help.sh:17
 #, sh-format
 msgid "  -l, --list        Display the list of pending updates"
-msgstr ""
-"  -l, --list        A függőben lévő frissítések listájának megjelenítése"
+msgstr "  -l, --list        Toon de lijst met in afwachting zijnde updates"
 
 #: src/lib/help.sh:18
 #, sh-format
 msgid "  -d, --devel       Include AUR development packages updates"
-msgstr "  -d, --devel       Az AUR fejlesztői csomagfrissítések tartalma"
+msgstr "  -d, --devel       Toon AUR-ontwikkelingspakketupdates"
 
 #: src/lib/help.sh:19
 #, sh-format
@@ -195,21 +190,20 @@ msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
-"  -n, --news [Num]  Legfrissebb Arch hírek megjelenítése. Megadhatja a "
-"megjelenítendő Arch hírek számát a „--news [Num]” paranccsal (például:. „--"
-"news 10”) – Nem kötelező"
+"  -n, --news [aantal]  Toon het recentste Arch-nieuws (al dan niet beperkt "
+"tot een specifiek aantal met ‘--news [aantal]’ (bijv. ‘--news 10’))"
 
 #: src/lib/help.sh:20
 #, sh-format
 msgid "  -s, --services    Check for services requiring a post upgrade restart"
 msgstr ""
-"  -s, --services    A frissítés utáni újraindítást igénylő szolgáltatások "
-"ellenőrzése"
+"  -s, --services    Controleer op diensten die na het bijwerken moeten "
+"worden herstart"
 
 #: src/lib/help.sh:21
 #, sh-format
 msgid "  -D, --debug       Display debug traces"
-msgstr "  -D, --debug       Hibakeresési nyomon követések megjelenítése"
+msgstr "  -D, --debug       Toon foutopsporingstekst"
 
 #: src/lib/help.sh:22
 #, sh-format
@@ -218,9 +212,9 @@ msgid ""
 "configuration file, you can optionally pass the '--force' argument to "
 "overwrite any existing '${name}.conf' configuration file"
 msgstr ""
-"  --gen-config      Előállít egy alapértelmezett / példa „${name}.conf” "
-"konfigurációs fájlt. Átadhatja a „--force” argumentumot, hogy felülírja a "
-"meglévő „${name}.conf” konfigurációs fájlt – Nem kötelező"
+"  --gen-config      Stel een standaardconfiguratiebestand genaamd "
+"‘${name}.conf’ samen, al dan niet voorzien van de optie ‘--force’ om het "
+"bestaande ‘${name}.conf’-bestand te overschrijven"
 
 #: src/lib/help.sh:23
 #, sh-format
@@ -228,8 +222,8 @@ msgid ""
 "  --show-config     Display the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
-"  --show-config     Megjeleníti a jelenleg használt „${name}.conf” "
-"konfigurációs fájlt (ha létezik)"
+"  --show-config     Toon het momenteel in gebruik zijnde configuratiebestand "
+"‘${name}.conf’ (indien beschikbaar)"
 
 #: src/lib/help.sh:24
 #, sh-format
@@ -237,8 +231,8 @@ msgid ""
 "  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
-"  --edit-config     Szerkeszti a jelenleg használt „${name}.conf” "
-"konfigurációs fájlt (ha létezik)"
+"  --edit-config     Bewerk het momenteel in gebruik zijnde "
+"configuratiebestand ‘${name}.conf’ (indien beschikbaar)"
 
 #: src/lib/help.sh:25
 #, sh-format
@@ -246,24 +240,23 @@ msgid ""
 "  --tray            Launch the ${_name} systray applet, you can optionally "
 "add the '--enable' argument to start it automatically at boot"
 msgstr ""
-"  --tray            Elindítja az ${_name} rendszertálca-kisalkalmazást. "
-"Hozzáadhatja az „-enable” argumentumot, hogy automatikusan elinduljon a "
-"rendszer indításakor – Nem kötelező"
+"  --tray            Toon het systeemvakpictogram van ${_name} (gebruik de "
+"optie ‘--enable’ om automatisch op te starten)"
 
 #: src/lib/help.sh:26
 #, sh-format
 msgid "  -h, --help        Display this help message and exit"
-msgstr "  -h, --help       Megjeleníti a súgóüzenetet és kilép"
+msgstr "  -h, --help        Toon deze hulptekst en sluit af"
 
 #: src/lib/help.sh:27
 #, sh-format
 msgid "  -V, --version     Display version information and exit"
-msgstr "  -V, --version     Megjeleníti a verzióinformációkat és kilép"
+msgstr "  -V, --version     Toon versie-informatie en sluit af"
 
 #: src/lib/help.sh:29
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
-msgstr "További információért tekintse meg a(z) ${name}(1) kézikönyv oldalát."
+msgstr "Meer informatie is te vinden in de man-pagina ‘${name}(1)’"
 
 #: src/lib/help.sh:30
 #, sh-format
@@ -271,9 +264,9 @@ msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf "
 "configuration file, see the ${name}.conf(5) man page."
 msgstr ""
-"Bizonyos beállítások engedélyezhetők, letilthatók vagy módosíthatók a(z) "
-"${name}.conf konfigurációs fájlban, tekintse meg a(z) ${name}.conf(5) "
-"kézikönyv oldalát."
+"Bepaalde opties kunnen worden bewerkt of in- en uitgeschakeld in het "
+"configuratiebestand ‘${name}.conf’. Bekijk voor meer informatie de man-"
+"pagina ‘${name}.conf(5)’."
 
 #: src/lib/invalid_option.sh:7
 #, sh-format
@@ -281,8 +274,8 @@ msgid ""
 "${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
 "information"
 msgstr ""
-"${name}: érvénytelen beállítás -- „${option}”\\nPróbálja meg a(z) „${name} --"
-"help” parancsot a további információkért"
+"${name}: ongeldige optie -- ‘${option}’\\nBekijk voor meer informatie de "
+"hulptekst met ‘${name} --help’"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
@@ -290,32 +283,32 @@ msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
-"Újraindítás szükséges:\\nVan egy függőben lévő kernelfrissítés a rendszeren, "
-"amely újraindítást igényel\\n"
+"Herstart vereist:\\nHet systeem moet worden herstart om de kernelupdate toe "
+"te kunnen passen.\\n"
 
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr "Szeretné most újraindítani? [i/N]"
+msgstr "Wil je nu opnieuw opstarten? [j/n]"
 
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
-msgstr "I"
+msgstr "J"
 
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
-msgstr "i"
+msgstr "j"
 
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
 msgid "Rebooting in ${sec}...\\r"
-msgstr "Újraindítás ebben: ${sec}…\\r"
+msgstr "Het systeem wordt over ${sec} herstart…\\r"
 
 #: src/lib/kernel_reboot.sh:30
 #, sh-format
@@ -323,7 +316,8 @@ msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
 "aborted\\n"
 msgstr ""
-"Hiba történt az újraindítási folyamat közben\\nAz újraindítás megszakadt\\n"
+"Er is een fout opgetreden tijdens de herstartprocedure.\\nDe procedure is "
+"daarom afgebroken.\\n"
 
 #: src/lib/kernel_reboot.sh:38
 #, sh-format
@@ -331,18 +325,18 @@ msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
 "the pending kernel update\\n"
 msgstr ""
-"Az újraindítás nem történt meg\\nFontolja meg az újraindítást a függőben "
-"lévő kernelfrissítés véglegesítéséhez\\n"
+"De herstart is niet uitgevoerd.\\nOverweeg handmatig te herstarten om de "
+"kernelupdate toe te passen.\\n"
 
 #: src/lib/kernel_reboot.sh:42
 #, sh-format
 msgid "No pending kernel update found\\n"
-msgstr "Nem található függőben lévő kernelfrissítés\\n"
+msgstr "Er is geen kernelupdate in afwachting van een herstart\\n"
 
 #: src/lib/list_news.sh:7
 #, sh-format
 msgid "Looking for recent Arch News..."
-msgstr "A legfrissebb Arch hírek keresése…"
+msgstr "Bezig met ophalen van Arch Linux-nieuws…"
 
 #: src/lib/list_news.sh:13
 #, sh-format
@@ -351,24 +345,24 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
-"Nem sikerült lekérdezni a legújabb Arch híreket (HTTP-hiba, válasz- vagy "
-"kérés-időtúllépés)\\nA legfrissebb híreket megtekintheti a rendszer "
-"frissítése előtt a következő webcímen: https://archlinux.org"
+"Het recentste Arch Linux-nieuws kan niet worden opgehaald (http-foutmelding "
+"of verlopen verzoek)\\nBekijk zelf of er nieuws is op https://archlinux.org "
+"alvorens het systeem bij te werken"
 
 #: src/lib/list_news.sh:23
 #, sh-format
 msgid "No recent Arch News found"
-msgstr "Nem található friss Arch hír"
+msgstr "Er is geen Arch Linux-nieuws beschikbaar"
 
 #: src/lib/list_news.sh:37
 #, sh-format
 msgid "Arch News:"
-msgstr "Arch hírek:"
+msgstr "Arch Linux-nieuws:"
 
 #: src/lib/list_news.sh:42
 #, sh-format
 msgid "[NEW]"
-msgstr "[ÚJ]"
+msgstr "[NIEUW]"
 
 #: src/lib/list_news.sh:54
 #, sh-format
@@ -376,8 +370,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
-"Válassza ki az elolvasandó híreket (például: 1 3 5), válassza a 0 értéket az "
-"összes elolvasásához vagy nyomja meg az „enter” gombot a kilépéshez:"
+"Geef aan welk nieuws je wilt lezen (bijv. 1 3 5) of dat je alles wilt lezen "
+"(0). Druk op enter om af te sluiten:"
 
 #: src/lib/list_news.sh:56
 #, sh-format
@@ -385,9 +379,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
-"Válassza ki az elolvasandó híreket (például: 1 3 5), válassza a 0 értéket az "
-"összes elolvasásához vagy nyomja meg az „enter” gombot a frissítés "
-"folytatásához:"
+"Geef aan welk nieuws je wilt lezen (bijv. 1 3 5) of dat je alles wilt lezen "
+"(0). Druk op enter om verder te gaan:"
 
 #: src/lib/list_news.sh:80
 #, sh-format
@@ -396,96 +389,96 @@ msgid ""
 "timeout)\\nPlease, read the selected Arch News at ${news_url} before "
 "updating your system"
 msgstr ""
-"Nem sikerült lekérdezni a kiválasztott Arch híreket (HTTP-hiba, válasz- vagy "
-"kérés-időtúllépés)\\nA kiválasztott Arch híreket elolvashatja a rendszer "
-"frissítése előtt a következő webcímen: ${news_url}"
+"Het gekozen Arch Linux-nieuws kan niet worden opgehaald (http-foutmelding of "
+"verlopen verzoek)\\nLees het nieuws op ${news_url} alvorens het systeem bij "
+"te werken"
 
 #: src/lib/list_news.sh:85
 #, sh-format
 msgid "Title:"
-msgstr "Cím:"
+msgstr "Titel:"
 
 #: src/lib/list_news.sh:86
 #, sh-format
 msgid "Author:"
-msgstr "Szerző:"
+msgstr "Auteur:"
 
 #: src/lib/list_news.sh:87
 #, sh-format
 msgid "Publication date:"
-msgstr "Közzétéve:"
+msgstr "Publicatiedatum:"
 
 #: src/lib/list_news.sh:88
 #, sh-format
 msgid "URL:"
-msgstr "Webcím:"
+msgstr "Url:"
 
 #: src/lib/list_packages.sh:7
 #, sh-format
 msgid "Looking for updates...\\n"
-msgstr "Frissítések keresése…\\n"
+msgstr "Bezig met zoeken naar updates…\\n"
 
 #: src/lib/list_packages.sh:77
 #, sh-format
 msgid "Packages:"
-msgstr "Csomagok:"
+msgstr "Pakketten:"
 
 #: src/lib/list_packages.sh:84
 #, sh-format
 msgid "AUR Packages:"
-msgstr "AUR-csomagok:"
+msgstr "AUR-pakketten:"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
 msgid "Flatpak Packages:"
-msgstr "Flatpak-csomagok:"
+msgstr "Flatpak-pakketten:"
 
 #: src/lib/list_packages.sh:101
 #, sh-format
 msgid "No update available\\n"
-msgstr "Nincs elérhető frissítés\\n"
+msgstr "Er zijn geen updates beschikbaar\\n"
 
 #: src/lib/list_packages.sh:109
 #, sh-format
 msgid "Proceed with update? [Y/n]"
-msgstr "Folytatja a frissítést? [I/n]"
+msgstr "Wil je het systeem bijwerken? [j/n]"
 
 #: src/lib/list_packages.sh:119
 #, sh-format
 msgid "The update has been aborted\\n"
-msgstr "A frissítés meg lett szakítva\\n"
+msgstr "Het bijwerken is afgebroken\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #, sh-format
 msgid "${update_number} update available"
-msgstr "${update_number} frissítés érhető el"
+msgstr "Er is/zijn ${update_number} update(s) beschikbaar"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
 msgid "Run ${_name}"
-msgstr "${_name} futtatása"
+msgstr "${_name} starten"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
 msgid "Close"
-msgstr "Bezárás"
+msgstr "Sluiten"
 
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
 msgid "${update_number} updates available"
-msgstr "${update_number} frissítés érhető el"
+msgstr "Er is/zijn ${update_number} update(s) beschikbaar"
 
 #: src/lib/notification.sh:41
 #, sh-format
 msgid "${_name} desktop file not found"
-msgstr "Az ${_name} asztali fájlja nem található"
+msgstr "Het desktopbestand van ‘${_name}’ is niet aangetroffen"
 
 #: src/lib/orphan_packages.sh:14
 #, sh-format
 msgid "Orphan Packages:"
-msgstr "Árva csomagok:"
+msgstr "Onteigende pakketten:"
 
 #: src/lib/orphan_packages.sh:18
 #, sh-format
@@ -493,8 +486,8 @@ msgid ""
 "Would you like to remove this orphan package (and its potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Szeretné most eltávolítani ezt az árva csomagot (és lehetséges függőségeit)? "
-"[i/N]"
+"Wil je dit onteigende pakket en eventuele afhankelijkheden ervan "
+"verwijderen? [j/n]"
 
 #: src/lib/orphan_packages.sh:20
 #, sh-format
@@ -502,13 +495,13 @@ msgid ""
 "Would you like to remove these orphan packages (and their potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Szeretné most eltávolítani ezeket az árva csomagokat (és lehetséges "
-"függőségeiket)? [i/N]"
+"Wil je deze onteigende pakketten en eventuele afhankelijkheden ervan "
+"verwijderen? [j/n]"
 
 #: src/lib/orphan_packages.sh:27
 #, sh-format
 msgid "Removing Orphan Packages...\\n"
-msgstr "Árva csomagok eltávolítása…\\n"
+msgstr "Bezig met verwijderen van onteigende pakketten…\\n"
 
 #: src/lib/orphan_packages.sh:32 src/lib/orphan_packages.sh:65
 #: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
@@ -518,119 +511,118 @@ msgid ""
 "An error has occurred during the removal process\\nThe removal has been "
 "aborted\\n"
 msgstr ""
-"Hiba történt az eltávolítási folyamat közben\\nAz eltávolítás megszakadt\\n"
+"Er is een fout opgetreden tijdens het verwijderen\\nDe verwijderprocedure is "
+"afgebroken\\n"
 
 #: src/lib/orphan_packages.sh:35 src/lib/orphan_packages.sh:68
 #, sh-format
 msgid "The removal has been applied\\n"
-msgstr "Az eltávolítás alkalmazva lett\\n"
+msgstr "De pakketten zijn verwijderd\\n"
 
 #: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:73
 #: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
-msgstr "Az eltávolítás nem lett alkalmazva\\n"
+msgstr "De pakketten zijn niet verwijderd\\n"
 
 #: src/lib/orphan_packages.sh:44
 #, sh-format
 msgid "No orphan package found\\n"
-msgstr "Nem található árva csomag\\n"
+msgstr "Er zijn geen onteigende pakketten aangetroffen\\n"
 
 #: src/lib/orphan_packages.sh:49
 #, sh-format
 msgid "Flatpak Unused Packages:"
-msgstr "Nem használt Flatpak-csomagok:"
+msgstr "Ongebruikte Flatpak-pakketten:"
 
 #: src/lib/orphan_packages.sh:53
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
-msgstr "Szeretné most eltávolítani ezt a nem használt Flatpak-csomagot? [i/N]"
+msgstr "Wil je dit ongebruikte Flatpak-pakket verwijderen? [j/n]"
 
 #: src/lib/orphan_packages.sh:55
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
-msgstr ""
-"Szeretné most eltávolítani ezeket a nem használt Flatpak-csomagokat? [i/N]"
+msgstr "Wil je deze ongebruikte Flatpak-pakketten verwijderen? [j/n]"
 
 #: src/lib/orphan_packages.sh:61
 #, sh-format
 msgid "Removing Flatpak Unused Packages..."
-msgstr "A nem használt Flatpak-csomagok eltávolítása…"
+msgstr "Bezig met verwijderen van ongebruikte Flatpak-pakketten…"
 
 #: src/lib/orphan_packages.sh:77
 #, sh-format
 msgid "No Flatpak unused package found\\n"
-msgstr "Nem található nem használt Flatpak-csomag\\n"
+msgstr "Er zijn geen ongebruikte Flatpak-pakketten aangetroffen\\n"
 
 #: src/lib/packages_cache.sh:21
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
 msgstr ""
-"Gyorsítótárazott csomagok:\\nVan egy régi vagy eltávolított gyorsítótárazott "
-"csomag\\n"
+"Pakketten in cache:\\nEr staat een oud of verwijderd pakket in de cache\\n"
 
 #: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Szeretné most eltávolítani a gyorsítótárból? [I/n]"
+msgstr "Wil je dit pakket uit de cache verwijderen? [j/n]"
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
 msgid ""
 "Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
-"Gyorsítótárazott csomagok:\\nRégi/nem telepített csomagok vannak a "
-"gyorsítótárban\\n"
+"Pakketten in cache:\\nEr staan oude of verwijderde pakketten in de cache\\n"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
 msgid "Would you like to remove them from the cache now? [Y/n]"
-msgstr "Szeretné most eltávolítani őket a gyorsítótárból? [I/n]"
+msgstr "Wil je deze pakketten uit de cache verwijderen? [j/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
 msgid "Removing old cached packages..."
-msgstr "Régi gyorsítótárazott csomagok eltávolítása…"
+msgstr "Bezig met verwijderen van oude pakketten uit cache…"
 
 #: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
 #, sh-format
 msgid "Removing uninstalled cached packages..."
-msgstr "Nem telepített fájlok eltávolítása a gyorsítótárazott csomagokból…"
+msgstr "Bezig met verwijderen van verwijderde pakketten uit cache…"
 
 #: src/lib/packages_cache.sh:79
 #, sh-format
 msgid "No old or uninstalled cached package found\\n"
-msgstr "Nem található régi vagy nem telepített gyorsítótárazott csomag\\n"
+msgstr "Er is geen oud of verwijderd pakket aangetroffen in de cache\\n"
 
 #: src/lib/pacnew_files.sh:10
 #, sh-format
 msgid "Pacnew Files:"
-msgstr "Pacnew-fájlok:"
+msgstr "Pacnew-bestanden:"
 
 #: src/lib/pacnew_files.sh:14
 #, sh-format
 msgid "Would you like to process this file now? [Y/n]"
-msgstr "Szeretné most feldolgozni ezt a fájlt? [I/n]"
+msgstr "Wil je dit bestand nu verwerken? [j/n]"
 
 #: src/lib/pacnew_files.sh:16
 #, sh-format
 msgid "Would you like to process these files now? [Y/n]"
-msgstr "Szeretné most feldolgozni ezeket a fájlokat? [I/n]"
+msgstr "Wil je deze bestanden nu verwerken? [j/n]"
 
 #: src/lib/pacnew_files.sh:23
 #, sh-format
 msgid "Processing Pacnew Files...\\n"
-msgstr "Pacnew-fájlok feldolgozása…\\n"
+msgstr "Bezig verwerken van Pacnew-bestanden…\\n"
 
 #: src/lib/pacnew_files.sh:28
 #, sh-format
 msgid "The pacnew file(s) processing has been applied\\n"
-msgstr "A pacnew-fájl(ok) feldolgozása megtörtént\\n"
+msgstr "De pacnew-bestanden zijn verwerkt\\n"
 
 #: src/lib/pacnew_files.sh:31
 #, sh-format
 msgid "An error occurred during the pacnew file(s) processing\\n"
-msgstr "Hiba történt a pacnew-fájl(ok) feldolgozásakor\\n"
+msgstr ""
+"Er is een fout opgetreden tijdens het verwerken van de pacnew-bestanden\\n"
 
 #: src/lib/pacnew_files.sh:37
 #, sh-format
@@ -638,27 +630,22 @@ msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
 msgstr ""
-"A pacnew-fájl(ok) feldolgozása nem történt meg\\nFontolja meg az azonnali "
-"feldolgozásukat\\n"
+"De pacnew-bestanden zijn niet verwerkt\\nOverweeg om dit spoedig te doen\\n"
 
 #: src/lib/pacnew_files.sh:41
 #, sh-format
 msgid "No pacnew file found\\n"
-msgstr "Nem található pacnew-fájl\\n"
+msgstr "Er is geen pacnew-bestand aangetroffen\\n"
 
 #: src/lib/restart_services.sh:14
 #, sh-format
 msgid "Services:\\nThe following service requires a post upgrade restart\\n"
-msgstr ""
-"Szolgáltatások:\\nA következő szolgáltatás frissítés utáni újraindítást "
-"igényel\\n"
+msgstr "Diensten:\\nDeze dienst moet worden herstart:\\n"
 
 #: src/lib/restart_services.sh:16
 #, sh-format
 msgid "Services:\\nThe following services require a post upgrade restart\\n"
-msgstr ""
-"Szolgáltatások:\\nA következő szolgáltatások frissítés utáni újraindítást "
-"igényelnek\\n"
+msgstr "Diensten:\\nDeze diensten moeten worden herstart:\\n"
 
 #: src/lib/restart_services.sh:26
 #, sh-format
@@ -666,14 +653,13 @@ msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
-"Válassza ki az újraindítandó szolgáltatás(okat) (például: 1 3 5), válassza a "
-"0 értéket az összes újraindításához, vagy nyomja meg az „enter” gombot a "
-"szolgáltatás(ok) újraindítása nélküli folytatáshoz.:"
+"Kies de te herstarten diensten (bijv. 1 3 5), herstart alle diensten (0) of "
+"druk op enter om verder te gaan zonder ze te herstarten:"
 
 #: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
 #, sh-format
 msgid "Service(s) restarted successfully\\n"
-msgstr "A szolgáltatás(ok) sikeresen újraindultak\\n"
+msgstr "De diensten zijn herstart\\n"
 
 #: src/lib/restart_services.sh:35 src/lib/restart_services.sh:62
 #, sh-format
@@ -681,19 +667,20 @@ msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
 "above service(s) status\\n"
 msgstr ""
-"Hiba történt a szolgáltatás(ok) újraindításakor\\nEllenőrizze a fenti "
-"szolgáltatás(ok) állapotát\\n"
+"Er is een fout opgetreden tijdens het herstarten van de dienst(en)\\nBekijk "
+"de dienststatus(sen)\\n"
 
 #: src/lib/restart_services.sh:48
 #, sh-format
 msgid "The ${service_selected} service has been successfully restarted"
-msgstr "A(z) ${service_selected}-szolgáltatás sikeresen újraindult"
+msgstr "‘${service_selected}’ is herstart"
 
 #: src/lib/restart_services.sh:50
 #, sh-format
 msgid ""
 "An error has occurred during the restart of the ${service_selected} service"
-msgstr "Hiba történt a ${service_selected}-szolgáltatás újraindításakor"
+msgstr ""
+"Er is een fout opgetreden tijdens het herstarten van ‘${service_selected}’"
 
 #: src/lib/restart_services.sh:66
 #, sh-format
@@ -701,31 +688,30 @@ msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
 "services that have been updated to fully apply the upgrade\\n"
 msgstr ""
-"A szolgáltatás(ok) újraindítása nem történt meg\\nFontolja meg a "
-"megváltozott szolgáltatások újraindítását a frissítés teljes körű "
-"alkalmazásához\\n"
+"De diensten zijn niet herstart\\nOverweeg om ze te herstarten, zodat de "
+"updates kunnen worden toegepast\\n"
 
 #: src/lib/restart_services.sh:70
 #, sh-format
 msgid "No service requiring a post upgrade restart found\\n"
-msgstr "Nem található frissítés utáni újraindítást igénylő szolgáltatás\\n"
+msgstr "Er is geen dienst die moet worden herstart\\n"
 
 #: src/lib/tray.py:199
 msgid "'updates' state file isn't found"
-msgstr "Az „updates” állapotfájlja nem található"
+msgstr "Het statusbestand ‘updates’ is niet aangetroffen"
 
 #: src/lib/tray.py:246
 msgid "System is up to date"
-msgstr "A rendszer naprakész"
+msgstr "Je beschikt over de nieuwste versies"
 
 #: src/lib/tray.py:249
 msgid "1 update available"
-msgstr "1 frissítés érhető el"
+msgstr "Er is 1 update beschikbaar"
 
 #: src/lib/tray.py:252
 #, python-brace-format
 msgid "{updates} updates available"
-msgstr "{updates} frissítés érhető el"
+msgstr "Er zijn {updates} updates beschikbaar"
 
 #: src/lib/tray.py:256
 #, python-brace-format
@@ -733,23 +719,23 @@ msgid ""
 "Last check:\n"
 "{time}"
 msgstr ""
-"Utolsó ellenőrzés:\n"
+"Recentste controle:\n"
 "{time}"
 
 #: src/lib/tray.py:271
 #, python-brace-format
 msgid "Next check in {time}"
-msgstr "Következő ellenőrzés {time}"
+msgstr "Volgende controle: {time}"
 
 #: src/lib/tray.py:282
 #, python-brace-format
 msgid "All ({updates})"
-msgstr "Összes ({updates})"
+msgstr "Alle ({updates})"
 
 #: src/lib/tray.py:295
 #, python-brace-format
 msgid "Packages ({updates})"
-msgstr "Csomagok ({updates})"
+msgstr "Pakketten ({updates})"
 
 #: src/lib/tray.py:306
 #, python-brace-format
@@ -767,31 +753,31 @@ msgstr "Arch-Update"
 
 #: src/lib/tray.py:383
 msgid "Last check"
-msgstr "Utoljára ellenőrizve"
+msgstr "Recentste controle"
 
 #: src/lib/tray.py:384
 msgid "Next check"
-msgstr "Következő ellenőrzés"
+msgstr "Volgende controle"
 
 #: src/lib/tray.py:385
 msgid "Run Arch-Update"
-msgstr "Arch-Update futtatása"
+msgstr "Arch-Update starten"
 
 #: src/lib/tray.py:386
 msgid "Check for updates"
-msgstr "Frissítések ellenőrzése"
+msgstr "Controleren op updates"
 
 #: src/lib/tray.py:387
 msgid "Exit"
-msgstr "Kilépés"
+msgstr "Afsluiten"
 
 #: src/lib/tray.py:390
 msgid "All"
-msgstr "Összes"
+msgstr "Alles"
 
 #: src/lib/tray.py:391
 msgid "Packages"
-msgstr "Csomagok"
+msgstr "Pakketten"
 
 #: src/lib/tray.py:392
 msgid "AUR"
@@ -804,12 +790,12 @@ msgstr "Flatpak"
 #: src/lib/tray.sh:20
 #, sh-format
 msgid "${_name} tray desktop file not found"
-msgstr "A(z) ${_name} tálcájának asztali fájlja nem található"
+msgstr "Het systeemvak-desktopbestand van ‘${_name}’ is niet aangetroffen"
 
 #: src/lib/tray.sh:27
 #, sh-format
 msgid "The '${tray_desktop_file_autostart}' file already exists"
-msgstr "A(z) „${tray_desktop_file_autostart}” fájl már létezik"
+msgstr "‘${tray_desktop_file_autostart}’ bestaat al"
 
 #: src/lib/tray.sh:32
 #, sh-format
@@ -819,39 +805,41 @@ msgid ""
 "it right now, you can launch the \"${_name} Systray Applet\" application "
 "from your app menu"
 msgstr ""
-"A „${tray_desktop_file_autostart}” fájl létrejött, az ${_name} rendszertálca-"
-"kisalkalmazás automatikusan elindul a következő bejelentkezéskor\\nHa most "
-"azonnal el szeretné indítani, futtassa az „Arch-Update rendszertálca-"
-"kisalkalmazást”, a rendszer alkalmazásindító-menüjéből"
+"‘${tray_desktop_file_autostart}’ is aangemaakt. Het systeemvakpictogram van "
+"${_name} wordt voortaan automatisch getoond na het opstarten.\\nToon het "
+"pictogram nu door ‘${_name}-systeemvakpictogram’ te openen vanuit de "
+"programmastarter."
 
 #: src/lib/tray.sh:49
 #, sh-format
 msgid "There's already a running instance of the ${_name} systray applet"
-msgstr "Már fut egy példány az ${_name} rendszertálca-kisalkalmazásból"
+msgstr "Het systeemvakprogramma ‘${_name}’ is al gestart"
 
 #: src/lib/update.sh:9
 #, sh-format
 msgid "Updating Packages...\\n"
-msgstr "Csomagok frissítése…\\n"
+msgstr "Bezig met bijwerken van pakketten…\\n"
 
 #: src/lib/update.sh:15 src/lib/update.sh:30 src/lib/update.sh:44
 #, sh-format
 msgid ""
 "An error has occurred during the update process\\nThe update has been "
 "aborted\\n"
-msgstr "Hiba történt a frissítési folyamat közben\\nA frissítés megszakadt\\n"
+msgstr ""
+"Er is een fout opgetreden tijdens de updateprocedure.\\nDe procedure is "
+"daarom afgebroken.\\n"
 
 #: src/lib/update.sh:24
 #, sh-format
 msgid "Updating AUR Packages...\\n"
-msgstr "AUR-csomagok frissítése…\\n"
+msgstr "Bezig met bijwerken van AUR-pakketten…\\n"
 
 #: src/lib/update.sh:40
 #, sh-format
 msgid "Updating Flatpak Packages...\\n"
-msgstr "Flatpak-csomagok frissítése…\\n"
+msgstr "Bezig met bijwerken van Flatpak-pakketten…\\n"
 
 #: src/lib/update.sh:51
 #, sh-format
 msgid "The update has been applied\\n"
-msgstr "A frissítés alkalmazva lett\\n"
+msgstr "Alle pakketten zijn bijgewerkt\\n"
