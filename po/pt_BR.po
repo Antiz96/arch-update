@@ -293,7 +293,7 @@ msgstr ""
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr "Gostaria de reinicializar agora? [y/N]"
+msgstr "Gostaria de reinicializar agora? [s/N]"
 
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
