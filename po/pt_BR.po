@@ -115,13 +115,13 @@ msgid "The '${config_file}' configuration file has been generated"
 msgstr "O arquivo de configuração '${config_file}' foi gerado"
 
 #: src/lib/help.sh:8
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "An interactive update notifier & applier for Arch Linux that assists you "
 "with important pre / post update tasks."
 msgstr ""
-"Um notificador e aplicador de atualizações para Arch Linux que auxilia em "
-"tarefas importantes pré/pós atualização."
+"Um notificador e aplicador de atualizações interativo para Arch Linux que "
+"auxilia em tarefas importantes pré/pós atualização."
 
 #: src/lib/help.sh:10
 #, sh-format
@@ -293,7 +293,7 @@ msgstr ""
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr "Gostaria de reinicializar agora? [y/N]"
+msgstr "Gostaria de reinicializar agora? [s/N]"
 
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
