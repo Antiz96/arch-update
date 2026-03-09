@@ -9,8 +9,6 @@ build:
 	# Generate man pages
 	scdoc < "doc/man/${pkgname}.1.scd" > "doc/man/${pkgname}.1"
 	scdoc < "doc/man/${pkgname}.conf.5.scd" > "doc/man/${pkgname}.conf.5"
-	scdoc < "doc/man/fr/${pkgname}.1.scd" > "doc/man/fr/${pkgname}.1"
-	scdoc < "doc/man/fr/${pkgname}.conf.5.scd" > "doc/man/fr/${pkgname}.conf.5"
 
 	# Generate translation files
 	msgfmt po/fr.po -o po/fr.mo
@@ -58,8 +56,6 @@ install:
 	# Install man pages
 	install -Dm 644 "doc/man/${pkgname}.1" "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1"
 	install -Dm 644 "doc/man/${pkgname}.conf.5" "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5"
-	install -Dm 644 "doc/man/fr/${pkgname}.1" "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1"
-	install -Dm 644 "doc/man/fr/${pkgname}.conf.5" "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5"
 
 	# Install translation files
 	# Translation files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
@@ -78,7 +74,6 @@ install:
 
 	# Install documentation
 	install -Dm 644 README.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/README.md"
-	install -Dm 644 README-fr.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/fr/README.md"
 
 	# Install example config
 	install -Dm 644 "res/config/${pkgname}.conf.example" "${DESTDIR}${PREFIX}/share/${pkgname}/config/${pkgname}.conf.example"
@@ -87,8 +82,6 @@ clean:
 	# Delete generated man pages
 	rm -f "doc/man/${pkgname}.1"
 	rm -f "doc/man/${pkgname}.conf.5"
-	rm -f "doc/man/fr/${pkgname}.1"
-	rm -f "doc/man/fr/${pkgname}.conf.5"
 
 	# Delete generated translation files
 	rm -f po/fr.mo
@@ -146,8 +139,6 @@ uninstall:
 	# Delete man pages
 	rm -f "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1"
 	rm -f "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5"
-	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1"
-	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5"
 
 	# Delete documentation folder
 	rm -rf "${DESTDIR}${PREFIX}/share/doc/${pkgname}/"

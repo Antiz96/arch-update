@@ -42,7 +42,7 @@ esac
 
 # Bump version where necessary
 sed_pattern="${latest_tag//./\\.}" # escape dots
-sed -i "s/${sed_pattern#v}/${release_tag}/g" doc/man/arch-update.* doc/man/fr/arch-update.* po/* src/arch-update.sh
+sed -i "s/${sed_pattern#v}/${release_tag}/g" doc/man/arch-update.* po/* src/arch-update.sh
 
 # Update changelog
 git-cliff -up CHANGELOG.md
