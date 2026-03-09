@@ -4,8 +4,6 @@
   <img width="460" height="300" src="https://github.com/user-attachments/assets/5782bd11-084a-4ca3-b599-1c322ee11b84">
 </p>
 
-[![lang-fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/Antiz96/arch-update/blob/main/README-fr.md)
-
 ## Table of contents
 
 - [Description](#description)
