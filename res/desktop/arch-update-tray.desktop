@@ -3,6 +3,7 @@ Name=Arch-Update Systray Applet
 Comment=Systray applet for Arch-Update
 Comment[fr]=Applet systray pour Arch-Update
 Comment[nb]=Miniprogam for å legge Arch-Update i systemkurven
+Comment[ja]=Arch-Update 用のシステムトレイアプレット
 Icon=arch-update_updates-available-blue
 Type=Application
 Exec=arch-update --tray
