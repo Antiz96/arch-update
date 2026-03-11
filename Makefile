@@ -12,8 +12,8 @@ build:
 	scdoc < "doc/man/${pkgname}.conf.5.scd" > "doc/man/${pkgname}.conf.5"
 
 	# Generate translation files
-	for locale in $(locales); do
-		msgfmt "po/${locale}.po" -o "po/${locale}.mo"
+	for locale in $(locales); do \
+		msgfmt "po/$${locale}.po" -o "po/$${locale}.mo"; \
 	done
 
 test:
@@ -58,8 +58,8 @@ install:
 
 	# Install translation files
 	# Translation files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
-	for locale in $(locales); do
-		install -Dm 644 "po/${locale}.mo" "${DESTDIR}${PREFIX}/share/locale/${locale}/LC_MESSAGES/${_pkgname}.mo"
+	for locale in $(locales); do \
+		install -Dm 644 "po/$${locale}.mo" "${DESTDIR}${PREFIX}/share/locale/$${locale}/LC_MESSAGES/${_pkgname}.mo"; \
 	done
 
 	# Install documentation
@@ -74,8 +74,8 @@ clean:
 	rm -f "doc/man/${pkgname}.conf.5"
 
 	# Delete generated translation files
-	for locale in $(locales); do
-		rm -f "po/${locale}.mo"
+	for locale in $(locales); do \
+		rm -f "po/$${locale}.mo"; \
 	done
 
 uninstall:
@@ -106,8 +106,8 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}-tray.service"
 
 	# Delete .mo files
-	for locale in $(locales); do
-		rm -f "${DESTDIR}${PREFIX}/share/locale/${locale}/LC_MESSAGES/${_pkgname}.mo"
+	for locale in $(locales); do \
+		rm -f "${DESTDIR}${PREFIX}/share/locale/$${locale}/LC_MESSAGES/${_pkgname}.mo"; \
 	done
 
 	# Delete shell completions
