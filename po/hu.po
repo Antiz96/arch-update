@@ -461,10 +461,10 @@ msgid "${update_number} update available"
 msgstr "${update_number} frissítés érhető el"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:385
 #, sh-format
-msgid "Run ${_name}"
-msgstr "${_name} futtatása"
+msgid "Run Cachy-Update"
+msgstr "Cachy-Update futtatása"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25

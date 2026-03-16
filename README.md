@@ -1,4 +1,4 @@
-# Arch-Update
+# Cachy-Update (fork of [Arch-Update](https://github.com/Antiz96/arch-update))
 
 <p align="center">
   <img width="460" height="300" src="https://github.com/user-attachments/assets/5782bd11-084a-4ca3-b599-1c322ee11b84">
@@ -16,7 +16,7 @@
 
 ## Description
 
-An interactive update notifier & applier for Arch Linux that assists you with important pre / post update tasks.  
+An interactive update notifier & applier for CachyOS that assists you with important pre / post update tasks.  
 Includes a dynamic & clickeable systray applet for an easy integration with any Desktop Environment / Window Manager.
 
 Arch-Update is designed to follow usual system maintenance steps, as described in the [Arch Wiki](https://wiki.archlinux.org/title/System_maintenance).
@@ -40,9 +40,13 @@ Optional support for:
 
 ## Installation
 
-### AUR
+### From Repo
 
-Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package") AUR package (also check the list of optional dependencies for anything you may want or need).
+Install the [cachy-update](https://packages.cachyos.org/package/cachyos/any/cachy-update) package from CachyOS repos (also check the list of optional dependencies for anything you may want or need):
+
+```bash
+sudo pacman -S cachy-update
+```
 
 ### From Source
 
@@ -71,9 +75,9 @@ Install required build dependencies:
 sudo pacman -S --asdeps make scdoc bats
 ```
 
-Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it (alternatively, you can clone this repository with `git`).
+Download the archive of the [latest tag](https://github.com/CachyOS/cachy-update/tags) and extract it (alternatively, you can clone this repository with `git`).
 
-To install `arch-update`, go into the extracted / cloned directory and run the following commands:
+To install `cachy-update`, go into the extracted / cloned directory and run the following commands:
 
 ```bash
 make
@@ -125,9 +129,9 @@ arch-update --tray
 
 **If the systray applet doesn't start at boot regardless or if it doesn't work as expected** (e.g the icon is missing or the click actions do not act as they should), please read [this chapter](#the-systray-applet-does-not-start-at-boot-or-does-not-work-as-expected).
 
-The systray icon dynamically changes to indicate the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` in a terminal window via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.
+The systray icon dynamically changes to indicate the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` in a terminal window via the [arch-update.desktop](https://github.com/CachyOS/cachy-update/blob/main/res/desktop/arch-update.desktop) file.
 
-**If clicking the systray applet does nothing**, please read [this chapter](#run-arch-update-in-a-specific-terminal-emulator).
+**If clicking the systray applet does nothing**, please read [this chapter](#run-cachy-update-in-a-specific-terminal-emulator).
 
 ### The systemd timer
 
@@ -142,7 +146,7 @@ By default, a check is performed **at boot and then once every hour**. The check
 ### Screenshots
 
 Once started, the systray applet appears in the systray area of your panel.  
-It is the icon at the right of the 'coffee cup' one in the screenshot below (note that there are [different color variants available](https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md) for it):
+It is the icon at the right of the 'coffee cup' one in the screenshot below:
 
 ![icon](https://github.com/user-attachments/assets/09e82ee1-3e4a-4190-8473-97ee9ec61e1c)
 
@@ -150,7 +154,7 @@ With [the systemd timer](#the-systemd-timer) enabled, checks for updates are aut
 
 ![check_for_updates](https://github.com/user-attachments/assets/8a10828c-2d80-4cdb-ba68-de37ba11e7c4)
 
-If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent. You can directly run Arch-Update from it or close / dismiss it thanks to the related click actions:
+If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent. You can directly run Cachy-Update from it or close / dismiss it thanks to the related click actions:
 
 ![notif](https://github.com/user-attachments/assets/65d7ba9b-5d53-4afe-9382-017e1652b193)
 
@@ -166,30 +170,30 @@ A "All" dropdown menu gathering the number and the list of pending updates for a
 
 ![aur](https://github.com/user-attachments/assets/a318c42e-4659-4c41-9b73-095758cf8a18)
 
-When the systray icon is left-clicked, `arch-update` is run in a terminal window (alternatively, you can click the "*X* update(s) available" entry or the dedicated "Run Arch-Update" one from the right-click menu):
+When the systray icon is left-clicked, `arch-update` is run in a terminal window (alternatively, you can click the "*X* update(s) available" entry or the dedicated "Run Cachy-Update" one from the right-click menu):
 
 ![run](https://github.com/user-attachments/assets/c3a2e6bb-3b6c-439b-a2c6-c7c8d5da29f8)
 
-If at least one Arch Linux news has been published since the last run, `Arch-Update` will offer you to read the latest Arch Linux news directly from the terminal window.  
+If at least one Arch Linux news has been published since the last run, `Cachy-Update` will offer you to read the latest Arch Linux news directly from the terminal window.  
 The news published since the last run are tagged as `[NEW]`:
 
 ![news](https://github.com/user-attachments/assets/0de9c744-3f7d-4a1f-bfd5-b80f6318118e)
 
-If no news has been published since the last run, `Arch-Update` directly asks for your confirmation to proceed with update.
+If no news has been published since the last run, `Cachy-Update` directly asks for your confirmation to proceed with update.
 
-From there, just let `Arch-Update` guide you through the various steps required for a complete and proper update of your system! :smile:
+From there, just let `Cachy-Update` guide you through the various steps required for a complete and proper update of your system! :smile:
 
-Certain options can be enabled, disabled or modified via the `arch-update.conf` configuration file. See the [arch-update.conf(5) man page](https://github.com/Antiz96/arch-update/blob/main/doc/man/arch-update.conf.5.scd) for more details.
+Certain options can be enabled, disabled or modified via the `arch-update.conf` configuration file. See the [arch-update.conf(5) man page](https://github.com/CachyOS/cachy-update/blob/main/doc/man/arch-update.conf.5.scd) for more details.
 
 ## Documentation
 
 ### arch-update
 
-See `arch-update --help` and the [arch-update(1) man page](https://github.com/Antiz96/arch-update/blob/main/doc/man/arch-update.1.scd).
+See `arch-update --help` and the [arch-update(1) man page](https://github.com/CachyOS/cachy-update/blob/main/doc/man/arch-update.1.scd).
 
 ### arch-update configuration file
 
-See the [arch-update.conf(5) man page](https://github.com/Antiz96/arch-update/blob/main/doc/man/arch-update.conf.5.scd).
+See the [arch-update.conf(5) man page](https://github.com/CachyOS/cachy-update/blob/main/doc/man/arch-update.conf.5.scd).
 
 ## Tips and tricks
 
@@ -223,25 +227,26 @@ If the systray applet still does not start at boot, try to gradually increase th
 
 ### Modify the check cycle
 
-If you enabled the [systemd timer](#the-systemd-timer), a check for available updates is automatically launched at boot and then once per hour.
+If you enabled the [systemd timer](#the-systemd-timer), a check for available updates is automatically launched at boot and then once a day.
 
-If you want to customize the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.  
-For instance, if you want `Arch-Update` to check for new updates every 10 minutes instead:
+If you want to customize the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.
+For instance, if you want `Cachy-Update` to check for new updates every hour instead:
 
 ```text
 [...]
 [Timer]
-OnStartupSec=15
-OnUnitActiveSec=10m
+OnStartupSec=2min
+RandomizedDelaySec=1h
+OnUnitActiveSec=1h
 [...]
 ```
 
 Time units are `s` for seconds, `m` for minutes, `h` for hours, `d` for days...  
 See <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> for more details.
 
-In case you want `Arch-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
+In case you want `Cachy-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
 
-### Run Arch-Update in a specific terminal emulator
+### Run Cachy-Update in a specific terminal emulator
 
 `gio` (used to launch the `arch-update` terminal application via the `arch-update.desktop` file when the systray applet is clicked) currently has a default limited list of known terminal emulators.  
 As such, if you don't have any of these "known" terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing (as `gio` couldn't find a terminal emulator from the said list). Incidentally, you might have multiple terminal emulators installed on your system. In both cases, you can specify which terminal emulator to use.
@@ -251,8 +256,8 @@ See <https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#config
 
 ## Contributing
 
-See the [contributing guidelines](https://github.com/Antiz96/arch-update/blob/main/CONTRIBUTING.md).
+See the [contributing guidelines](https://github.com/CachyOS/cachy-update/blob/main/CONTRIBUTING.md).
 
 ## License
 
-Arch-Update is licensed under the [GPL-3.0 license](https://github.com/Antiz96/arch-update/blob/main/LICENSE) (or any later version of that license).
+Arch-Update is licensed under the [GPL-3.0 license](https://github.com/CachyOS/cachy-update/blob/main/LICENSE) (or any later version of that license).

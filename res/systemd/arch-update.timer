@@ -1,9 +1,10 @@
 [Unit]
-Description=Run arch-update auto check at boot and then every hour
+Description=Run arch-update auto check at boot and then once a day
 
 [Timer]
-OnStartupSec=15
-OnUnitActiveSec=1h
+OnStartupSec=2min
+RandomizedDelaySec=1h
+OnUnitActiveSec=1d
 
 [Install]
 WantedBy=timers.target

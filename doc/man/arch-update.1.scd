@@ -160,16 +160,17 @@ If the systray applet still does not start at boot, try to gradually increase th
 
 ## Modify the check cycle
 
-If you enabled the systemd timer, a check for available updates is automatically launched at boot and then once per hour.
+If you enabled the systemd timer, a check for available updates is automatically launched at boot and then once a day.
 
 If you want to customize the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.
-For instance, if you want `Arch-Update` to check for new updates every 10 minutes instead:
+For instance, if you want `Arch-Update` to check for new updates every hour instead:
 
 ```
 [...]
 [Timer]
-OnStartupSec=15
-OnUnitActiveSec=10m
+OnStartupSec=2min
+RandomizedDelaySec=1h
+OnUnitActiveSec=1h
 [...]
 ```
 

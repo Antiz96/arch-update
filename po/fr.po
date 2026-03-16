@@ -461,10 +461,10 @@ msgid "${update_number} update available"
 msgstr "${update_number} mise à jour disponible"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:385
 #, sh-format
-msgid "Run ${_name}"
-msgstr "Lancer ${_name}"
+msgid "Run Cachy-Update"
+msgstr "Lancer Cachy-Update"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25

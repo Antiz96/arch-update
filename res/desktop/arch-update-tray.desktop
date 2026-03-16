@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=Arch-Update Systray Applet
-Comment=Systray applet for Arch-Update
-Comment[de]=Arch-Update-Minianwendung für den Benachrichtigungsbereich
-Comment[fr]=Applet systray pour Arch-Update
-Comment[ja]=Arch-Update 用のシステムトレイアプレット
-Comment[ka]=Arch-Update-ის აპლეტი სისტემურ საათთან
-Comment[nb]=Miniprogam for å legge Arch-Update i systemkurven
-Icon=arch-update_updates-available-blue
+Name=Cachy-Update Systray Applet
+Comment=Systray applet for Cachy-Update
+Comment[de]=Cachy-Update-Minianwendung für den Benachrichtigungsbereich
+Comment[fr]=Applet systray pour Cachy-Update
+Comment[ja]=Cachy-Update 用のシステムトレイアプレット
+Comment[ka]=Cachy-Update-ის აპლეტი სისტემურ საათთან
+Comment[nb]=Miniprogam for å legge Cachy-Update i systemkurven
+Icon=cachy-update_updates-available-blue
 Type=Application
 Exec=arch-update --tray
 Categories=Utility

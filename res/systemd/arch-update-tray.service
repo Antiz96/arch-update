@@ -3,6 +3,7 @@ Description=Launch the Arch-Update systray applet
 After=graphical-session.target
 
 [Service]
+ExecStartPre=-/bin/sh -c '/usr/bin/arch-update --tray --enable 2>/dev/null'
 ExecStart=arch-update --tray
 Restart=on-failure
 
