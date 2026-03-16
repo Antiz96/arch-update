@@ -1,0 +1,838 @@
+# Georgian translation for Arch-Update
+# Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
+# This file is distributed under the same license as the Arch-Update package.
+#
+# Translators:
+# Ekaterine Papava <papava.e@gtu.ge>, 2026
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Arch-Update 3.18.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
+"POT-Creation-Date: 2024-03-17 16:22+0100\n"
+"PO-Revision-Date: 2026-03-16 09:32+0100\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"Language-Team: Georgian <(nothing)>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: src/lib/common.sh:96
+#, sh-format
+msgid "WARNING"
+msgstr "გაფრთხილება"
+
+#: src/lib/common.sh:102
+#, sh-format
+msgid "ERROR"
+msgstr "შეცდომა"
+
+#: src/lib/common.sh:107
+#, sh-format
+msgid "Press \"enter\" to continue "
+msgstr "და გასაგრძელებლად დააჭირეთ ღილაკს 'Enter' "
+
+#: src/lib/common.sh:113
+#, sh-format
+msgid "Press \"enter\" to quit "
+msgstr "გასასვლელად დააჭირეთ ღილაკს \"Enter\" "
+
+#: src/lib/common.sh:134
+#, sh-format
+msgid ""
+"The ${aur_helper} AUR helper set for AUR packages support in the "
+"${name}.conf configuration file is not found\\n"
+msgstr ""
+"AUR-ის დამხმარე ${aur_helper}, დაყენებული AUR პაკეტების მხარდაჭერისთვის "
+"კონფიგურაციის ფაილში ${name}.conf აღმოჩენილი არაა\\n"
+
+#: src/lib/common.sh:165
+#, sh-format
+msgid ""
+"A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
+msgstr ""
+"აუცილებელია პრივილეგიების ამაღლების ბრძანება (sudo, sudo-rs, doas, ან "
+"run0)\\n"
+
+#: src/lib/common.sh:170
+#, sh-format
+msgid ""
+"The ${su_cmd} command set for privilege escalation in the ${name}.conf "
+"configuration file is not found\\n"
+msgstr ""
+"ბრძანება ${su_cmd}, დაყენებული პრივილეგიების აწევისთვის კონფიგურაციის ფაილში "
+"${name}.conf, აღმოჩენილი არაა\\n"
+
+#: src/lib/common.sh:182
+#, sh-format
+msgid ""
+"The ${diff_prog} editor set for visualizing / editing differences of pacnew "
+"files in the ${name}.conf configuration file is not found\\n"
+msgstr ""
+"რედაქტორი ${diff_prog}, დაყენებული pacnew ფაილების ვიზუალიზაციისთვის / "
+"სხვაობების ჩასასწორებლად კონფიგურაციის ფაილში ${name}.conf აღმოჩენილი არაა\\n"
+
+#: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
+#, sh-format
+msgid ""
+"No configuration file found\\nYou can generate one with \"${name} --gen-"
+"config\""
+msgstr ""
+"კონფიგურაციის ფაილი აღმოჩენილი არაა\\nმისი გენერაცია შეგიძლიათ ბრძანებით "
+"\"${name} --gen-config\""
+
+#: src/lib/edit-config.sh:13
+#, sh-format
+msgid ""
+"Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
+"is not set and \"nano\" (fallback option) is not installed"
+msgstr ""
+"გამოსაყენებელი რედაქტორის დადგენა შეუძლებელია\\nგარემოს ცვლადი \"EDITOR\" და "
+"\"nano\" (სარეზერვო ვარიანტი) დაყენებული არაა"
+
+#: src/lib/full_upgrade.sh:13
+#, sh-format
+msgid "There's already a running instance of ${_name}\\n"
+msgstr "${_name}-ის გაშვებული ასლი უკვე არსებობს\\n"
+
+#: src/lib/gen-config.sh:19
+#, sh-format
+msgid "Example configuration file not found"
+msgstr "კონფიგურაციის ფაილის მაგალითი ვერ მოიძებნა"
+
+#: src/lib/gen-config.sh:25
+#, sh-format
+msgid ""
+"The '${config_file}' configuration file already exists\\nPlease, remove it "
+"before generating a new one (or use --force to overwrite it)"
+msgstr ""
+"კონფიგურაციის ფაილი '${config_file}' უკვე არსებობს\\nწაშალეთ ის ახლის "
+"გენერაციამდე (ან, თუ გნებავთ, თავზე გადააწეროთ, გამოიყენეთ --force)"
+
+#: src/lib/gen-config.sh:30
+#, sh-format
+msgid "The '${config_file}' configuration file has been generated"
+msgstr "დაგენერირდა კონფიგურაციის ფაილი '${config_file}'"
+
+#: src/lib/help.sh:8
+#, sh-format
+msgid ""
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
+msgstr ""
+"ინტერაქტიური განახლებების შემხსენებელი და გადამტარებელი Arch Linux-ისთვის, "
+"რომელიც გეხმარებათ განახლებამდელ/განახლების შემდგომ ამოცანებში."
+
+#: src/lib/help.sh:10
+#, sh-format
+msgid "Run ${name} to perform the main 'update' function:"
+msgstr "გაუშვით ${name} მთავარი 'update' ფუნქციის შესასრულებლად:"
+
+#: src/lib/help.sh:11
+#, sh-format
+msgid ""
+"Display the list of packages available for update, then ask for the user's "
+"confirmation to proceed with the installation."
+msgstr ""
+"განახლებისთვის ხელმისაწვდომი პაკეტების სიის ჩვენება, შემდეგ კი მომხმარებლის "
+"დადასტურების მოთხოვნა დაყენების გასაგრძელებლად."
+
+#: src/lib/help.sh:12
+#, sh-format
+msgid ""
+"Before performing the update, it offers to display the latest Arch Linux "
+"news."
+msgstr ""
+"განახლების შესრულებამდე ის გთავაზობთ Arch Linux-ის უახლესი სიახლეების "
+"ჩვენებას."
+
+#: src/lib/help.sh:13
+#, sh-format
+msgid ""
+"Post update, it checks for orphan & unused packages, old cached packages, "
+"pacnew & pacsave files, pending kernel update as well as services requiring "
+"a post upgrade restart and, if there are, offers to process them."
+msgstr ""
+"განახლების შემდეგ ის ამოწმებს მიტოვებულ & გამოუყენებელ პაკეტებს, ძველ "
+"დაკეშილ პაკეტებს, pacnew & pacsave ფაილებს, რიგში მყოფ ბირთვის განახლებას და "
+"სერვისებს, რომლებსაც განახლების შემდეგ გადატვირთვა სჭირდება და თუ ეს "
+"აუცილებელია, გთავაზობთ მათ დამუშავებას."
+
+#: src/lib/help.sh:15
+#, sh-format
+msgid "Options:"
+msgstr "მორგება:"
+
+#: src/lib/help.sh:16
+#, sh-format
+msgid ""
+"  -c, --check       Check for available updates, change the systray icon and "
+"send a desktop notification containing the number of available updates (if "
+"there are new available updates compared to the last check)"
+msgstr ""
+"  -c, --check       ხელმისაწვდომი განახლებების შემოწმება, სისტემურ საათთან "
+"ხატულას შეცვლა და სამუშაო მაგიდისთვის გაფრთხილების გაგზავნა რომელიც "
+"ხელმისაწვდომი განახლებების რაოდენობას შეიცავს (თუ არსებობს ხელმისაწვდომი "
+"განახლებები ბოლო შემოწმებასთან შედარებით)"
+
+#: src/lib/help.sh:17
+#, sh-format
+msgid "  -l, --list        Display the list of pending updates"
+msgstr "  -l, --list        დარჩენილი განახლებების ჩამონათვალის ჩვენება"
+
+#: src/lib/help.sh:18
+#, sh-format
+msgid "  -d, --devel       Include AUR development packages updates"
+msgstr "  -d, --devel       AUR-ის პროგრამისტის პაკეტის განახლებების ჩათვლა"
+
+#: src/lib/help.sh:19
+#, sh-format
+msgid ""
+"  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
+"number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
+msgstr ""
+"  -n, --news [Num]  Arch-ის სიახლეების ჩვენება. შეგიძლიათ ასევე მიუთითოთ, "
+"რამდენი სიახლე გნებავთ პარამეტრით '--news [რიცხვი]' (მაგ: '--news 10')"
+
+#: src/lib/help.sh:20
+#, sh-format
+msgid "  -s, --services    Check for services requiring a post upgrade restart"
+msgstr ""
+"  -s, --services    განახლების შემდეგ გადატვირთვის საჭიროების მქონე "
+"სერვისების შემოწმება"
+
+#: src/lib/help.sh:21
+#, sh-format
+msgid "  -D, --debug       Display debug traces"
+msgstr "  -D, --debug       გამართვის ინფორმაციის გამოტანა"
+
+#: src/lib/help.sh:22
+#, sh-format
+msgid ""
+"  --gen-config      Generate a default / example '${name}.conf' "
+"configuration file, you can optionally pass the '--force' argument to "
+"overwrite any existing '${name}.conf' configuration file"
+msgstr ""
+"  --gen-config      ნაგულისხმევი / მაგალითი '${name}.conf' კონფიგურაციის "
+"ფაილის გენერაცია. შეგიძლიათ ასევე გადასცეთ პარამეტრი '--force' რომ არსებულ "
+"ფაილს '${name}.conf' თავზე გადაეწეროს"
+
+#: src/lib/help.sh:23
+#, sh-format
+msgid ""
+"  --show-config     Display the '${name}.conf' configuration file currently "
+"used (if it exists)"
+msgstr ""
+"  --show-config     ამჟამად გამოყენებული კონფიგურაციის ფაილის '${name}.conf' "
+"გამოტანა (თუ არსებობს)"
+
+#: src/lib/help.sh:24
+#, sh-format
+msgid ""
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
+"used (if it exists)"
+msgstr ""
+"  --edit-config     ამჟამად გამოყენებული კონფიგურაციის ფაილის '${name}.conf' "
+"ჩასწორება (თუ არსებობს)"
+
+#: src/lib/help.sh:25
+#, sh-format
+msgid ""
+"  --tray            Launch the ${_name} systray applet, you can optionally "
+"add the '--enable' argument to start it automatically at boot"
+msgstr ""
+"  --tray             ${_name}-ის აპლეტის გაშვება სისტემურ საათთან. ასევე "
+"შეგიძლიათ, დაამატოთ არგუმენტი '--enable', რომ ის ჩატვირთვისას გაეშვას"
+
+#: src/lib/help.sh:26
+#, sh-format
+msgid "  -h, --help        Display this help message and exit"
+msgstr "  -h, --help        ამ დახმარების შეტყობინების გამოტანა და გასვლა"
+
+#: src/lib/help.sh:27
+#, sh-format
+msgid "  -V, --version     Display version information and exit"
+msgstr "  -V, --version     ვერსიის ინფორმაციის გამოტანა და გასვლა"
+
+#: src/lib/help.sh:29
+#, sh-format
+msgid "For more information, see the ${name}(1) man page."
+msgstr "მეტი ინფორმაციისთვის იხილეთ ${name}(1)."
+
+#: src/lib/help.sh:30
+#, sh-format
+msgid ""
+"Certain options can be enabled, disabled or modified via the ${name}.conf "
+"configuration file, see the ${name}.conf(5) man page."
+msgstr ""
+"ზოგიერთი პარამეტრი შეგიძლიათ ჩართოთ, გამორთოთ, ან შეცვალოთ კონფიგურაციის "
+"ფაილში ${name}.conf დეტალებისთვის იხილეთ დოკუმენტაცია ${name}.conf(5)."
+
+#: src/lib/invalid_option.sh:7
+#, sh-format
+msgid ""
+"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
+"information"
+msgstr ""
+"${name}: არასწორი პარამეტრი -- '${option}'\\nმეტი ინფორმაციისთვის სცადეთ "
+"'${name} --help'"
+
+#: src/lib/kernel_reboot.sh:10
+#, sh-format
+msgid ""
+"Reboot required:\\nThere's a pending kernel update on your system requiring "
+"a reboot to be applied\\n"
+msgstr ""
+"საჭიროა გადატვირთვა:\\nრიგშია ბირთვის განახლება, რომელსაც გადასატარებლად "
+"სისტემის გადატვირთვა სჭირდება\\n"
+
+#: src/lib/kernel_reboot.sh:11
+#, sh-format
+msgid "Would you like to reboot now? [y/N]"
+msgstr "გნებავთ გადატვირთვა ახლავე? [y/N]"
+
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "Y"
+msgstr "Y"
+
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "y"
+msgstr "y"
+
+#: src/lib/kernel_reboot.sh:24
+#, sh-format
+msgid "Rebooting in ${sec}...\\r"
+msgstr "გადატვირთვა ${sec} წამში...\\r"
+
+#: src/lib/kernel_reboot.sh:30
+#, sh-format
+msgid ""
+"An error has occurred during the reboot process\\nThe reboot has been "
+"aborted\\n"
+msgstr "გადატვირთვის პროცესისას აღმოჩენილია შეცდომა\\nგადატვირთვა შეწყდა\\n"
+
+#: src/lib/kernel_reboot.sh:38
+#, sh-format
+msgid ""
+"The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
+"the pending kernel update\\n"
+msgstr ""
+"გადატვირთვა არ მომხდარა\\nიფიქრეთ გადატვირთვამდე, რომ ბირთვის განახლება "
+"დასრულდეს\\n"
+
+#: src/lib/kernel_reboot.sh:42
+#, sh-format
+msgid "No pending kernel update found\\n"
+msgstr "რიგში მყოფი ბირთვის განახლება აღმოჩენილი არაა\\n"
+
+#: src/lib/list_news.sh:7
+#, sh-format
+msgid "Looking for recent Arch News..."
+msgstr "Arch-ის ახალი ამბების ძებნა..."
+
+#: src/lib/list_news.sh:13
+#, sh-format
+msgid ""
+"Unable to retrieve recent Arch News (HTTP error response or request timeout)"
+"\\nPlease, look for any recent news at https://archlinux.org before updating "
+"your system"
+msgstr ""
+"Arch-ის სიახლეების მიღება შეუძლებელია (HTTP შეცდომა, ან მოთხოვნის მოლოდინის "
+"ვადა ამოიწურა)\\nსისტემის განახლებამდე სიახლეები საიტზე https://archlinux.org"
+
+#: src/lib/list_news.sh:23
+#, sh-format
+msgid "No recent Arch News found"
+msgstr "Arch-ის ახალი ამბები აღმოჩენილი არაა"
+
+#: src/lib/list_news.sh:37
+#, sh-format
+msgid "Arch News:"
+msgstr "Arch-ის სიახლეები:"
+
+#: src/lib/list_news.sh:42
+#, sh-format
+msgid "[NEW]"
+msgstr "[ახალი]"
+
+#: src/lib/list_news.sh:54
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to quit:"
+msgstr ""
+"აირჩიეთ სიახლეები წასაკითხად (მაგ: 1 3 5). აირჩიეთ 0 ყველას წასაკითხად, ან "
+"დააჭირეთ ღილაკს 'Enter' გასასვლელად:"
+
+#: src/lib/list_news.sh:56
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to proceed with update:"
+msgstr ""
+"აირჩიეთ სიახლეები წასაკითხად (მაგ: 1 3 5). აირჩიეთ 0 ყველას წასაკითხად, ან "
+"დააჭირეთ ღილაკს 'Enter' განახლების დასაწყებად:"
+
+#: src/lib/list_news.sh:80
+#, sh-format
+msgid ""
+"Unable to retrieve the selected Arch News (HTTP error response or request "
+"timeout)\\nPlease, read the selected Arch News at ${news_url} before "
+"updating your system"
+msgstr ""
+"მონიშნული Arch-ის სიახლეების მიღება შეუძლებელია (HTTP შეცდომა, ან მოთხოვნის "
+"მოლოდინის ვადა ამოიწურა\\nწაიკთხეთ Arch-ის სიახლე ბმულზე ${news_url} "
+"სისტემის განახლებამდე"
+
+#: src/lib/list_news.sh:85
+#, sh-format
+msgid "Title:"
+msgstr "სათაური:"
+
+#: src/lib/list_news.sh:86
+#, sh-format
+msgid "Author:"
+msgstr "ავტორი:"
+
+#: src/lib/list_news.sh:87
+#, sh-format
+msgid "Publication date:"
+msgstr "გამოქვეყნების თარიღი:"
+
+#: src/lib/list_news.sh:88
+#, sh-format
+msgid "URL:"
+msgstr "URL:"
+
+#: src/lib/list_packages.sh:7
+#, sh-format
+msgid "Looking for updates...\\n"
+msgstr "განახლებების ძებნა...\\n"
+
+#: src/lib/list_packages.sh:77
+#, sh-format
+msgid "Packages:"
+msgstr "პაკეტები:"
+
+#: src/lib/list_packages.sh:84
+#, sh-format
+msgid "AUR Packages:"
+msgstr "AUR პაკეტები:"
+
+#: src/lib/list_packages.sh:91
+#, sh-format
+msgid "Flatpak Packages:"
+msgstr "Flatpak პაკეტები:"
+
+#: src/lib/list_packages.sh:101
+#, sh-format
+msgid "No update available\\n"
+msgstr "განახლებები ხელმისაწვდომი არაა\\n"
+
+#: src/lib/list_packages.sh:109
+#, sh-format
+msgid "Proceed with update? [Y/n]"
+msgstr "გაგრძელდეს განახლება? [Y/n]"
+
+#: src/lib/list_packages.sh:119
+#, sh-format
+msgid "The update has been aborted\\n"
+msgstr "განახლება შეწყდა\\n"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#, sh-format
+msgid "${update_number} update available"
+msgstr "ხელმისაწვდომია ${update_number} განახლება"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "Run ${_name}"
+msgstr "${_name}-ის გაშვება"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "Close"
+msgstr "დახურვა"
+
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "${update_number} updates available"
+msgstr "ხელმისაწვდომია ${update_number} განახლება"
+
+#: src/lib/notification.sh:41
+#, sh-format
+msgid "${_name} desktop file not found"
+msgstr "სამუშაო მაგიდის ფაილი ${_name} აღმოჩენილი არაა"
+
+#: src/lib/orphan_packages.sh:14
+#, sh-format
+msgid "Orphan Packages:"
+msgstr "მიტოვებული პაკეტები:"
+
+#: src/lib/orphan_packages.sh:18
+#, sh-format
+msgid ""
+"Would you like to remove this orphan package (and its potential "
+"dependencies) now? [y/N]"
+msgstr ""
+"გნებავთ ამ მიტოვებული პაკეტის (და მისი პოტენციური დამოკიდებულებების წაშლა? "
+"(y/N)"
+
+#: src/lib/orphan_packages.sh:20
+#, sh-format
+msgid ""
+"Would you like to remove these orphan packages (and their potential "
+"dependencies) now? [y/N]"
+msgstr ""
+"გნებავთ ამ მიტოვებული პაკეტების (და მათი პოტენციური დამოკიდებულებების წაშლა? "
+"(y/N)"
+
+#: src/lib/orphan_packages.sh:27
+#, sh-format
+msgid "Removing Orphan Packages...\\n"
+msgstr "მიტოვებული პაკეტების წაშლა...\\n"
+
+#: src/lib/orphan_packages.sh:32 src/lib/orphan_packages.sh:65
+#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
+#, sh-format
+msgid ""
+"An error has occurred during the removal process\\nThe removal has been "
+"aborted\\n"
+msgstr "შეცდომა პროცესის წაშლისას\\nწაშლა შეწყდა\\n"
+
+#: src/lib/orphan_packages.sh:35 src/lib/orphan_packages.sh:68
+#, sh-format
+msgid "The removal has been applied\\n"
+msgstr "წაშლა მოხდა\\n"
+
+#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:73
+#: src/lib/packages_cache.sh:75
+#, sh-format
+msgid "The removal hasn't been applied\\n"
+msgstr "წაშლა არ მომხდარა\\n"
+
+#: src/lib/orphan_packages.sh:44
+#, sh-format
+msgid "No orphan package found\\n"
+msgstr "მიტოვებული პაკეტები აღმოჩენილი არაა\\n"
+
+#: src/lib/orphan_packages.sh:49
+#, sh-format
+msgid "Flatpak Unused Packages:"
+msgstr "Flatpak-ის გამოუყენებელი პაკეტები:"
+
+#: src/lib/orphan_packages.sh:53
+#, sh-format
+msgid "Would you like to remove this Flatpak unused package now? [y/N]"
+msgstr "გნებავთ Flatpak-ის ამ გამოუყენებელი პაკეტის წაშლა? [y/N]"
+
+#: src/lib/orphan_packages.sh:55
+#, sh-format
+msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
+msgstr "გნებავთ Flatpak-ის ამ გამოუყენებელი პაკეტების წაშლა? [y/N]"
+
+#: src/lib/orphan_packages.sh:61
+#, sh-format
+msgid "Removing Flatpak Unused Packages..."
+msgstr "Flatpak-ის გამოუყენებელი პაკეტების წაშლა..."
+
+#: src/lib/orphan_packages.sh:77
+#, sh-format
+msgid "No Flatpak unused package found\\n"
+msgstr "Flatpak-ის გამოუყენებელი პაკეტები აღმოჩენილი არაა\\n"
+
+#: src/lib/packages_cache.sh:21
+#, sh-format
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr "დაკეშილი პაკეტები:\\nარსებობს ძველი, ან წაშლილი დაკეშილი პაკეტი\\n"
+
+#: src/lib/packages_cache.sh:22
+#, sh-format
+msgid "Would you like to remove it from the cache now? [Y/n]"
+msgstr "გნებავთ მისი წაშლა კეშიდან? [Y/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr "დაკეშილი პაკეტები:\\nეს ძველი ან/და წაშლილი დაკეშილი პაკეტებია\\n"
+
+#: src/lib/packages_cache.sh:25
+#, sh-format
+msgid "Would you like to remove them from the cache now? [Y/n]"
+msgstr "გნებავთ მათი წაშლა კეშიდან ახლავე? [Y/n]"
+
+#: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
+#, sh-format
+msgid "Removing old cached packages..."
+msgstr "ძველი დაკეშილი კაეტების წაშლა..."
+
+#: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
+#, sh-format
+msgid "Removing uninstalled cached packages..."
+msgstr "წაშლილი დაკეშილი პაკეტების წაშლა..."
+
+#: src/lib/packages_cache.sh:79
+#, sh-format
+msgid "No old or uninstalled cached package found\\n"
+msgstr "ძველი, ან წაშლილი დაკეშილი პაკეტები აღმოჩენილი არაა\\n"
+
+#: src/lib/pacnew_files.sh:10
+#, sh-format
+msgid "Pacnew Files:"
+msgstr "Pacnew ფაილები:"
+
+#: src/lib/pacnew_files.sh:14
+#, sh-format
+msgid "Would you like to process this file now? [Y/n]"
+msgstr "გნებავთ ამ ფაილის დამუშავება ახლავე? [Y/n]"
+
+#: src/lib/pacnew_files.sh:16
+#, sh-format
+msgid "Would you like to process these files now? [Y/n]"
+msgstr "გნებავთ ამ ფაილების დამუშავება ახლავე? [Y/n]"
+
+#: src/lib/pacnew_files.sh:23
+#, sh-format
+msgid "Processing Pacnew Files...\\n"
+msgstr "Pacnew ფაილების დამუშავება...\\n"
+
+#: src/lib/pacnew_files.sh:28
+#, sh-format
+msgid "The pacnew file(s) processing has been applied\\n"
+msgstr "pacnew ფაილ(ებ)-ის დამუშავება გადატარდა\\n"
+
+#: src/lib/pacnew_files.sh:31
+#, sh-format
+msgid "An error occurred during the pacnew file(s) processing\\n"
+msgstr "pacnew ფაილ(ებ)-ის დამუშავებისას აღმოჩენილია შეცდომა\\n"
+
+#: src/lib/pacnew_files.sh:37
+#, sh-format
+msgid ""
+"The pacnew file(s) processing hasn't been applied\\nPlease, consider "
+"processing them promptly\\n"
+msgstr "pacnew ფაილ(ებ)-ის დამუშავება არ გადატარებულა\\nმალე გააკეთეთ ეს\\n"
+
+#: src/lib/pacnew_files.sh:41
+#, sh-format
+msgid "No pacnew file found\\n"
+msgstr "pacnew ფაილი აღმოჩენილი არაა\\n"
+
+#: src/lib/restart_services.sh:14
+#, sh-format
+msgid "Services:\\nThe following service requires a post upgrade restart\\n"
+msgstr "სერვისები:\\nშემდეგი სერვისი ითხოვს გადატვირთვას განახლების შემდეგ\\n"
+
+#: src/lib/restart_services.sh:16
+#, sh-format
+msgid "Services:\\nThe following services require a post upgrade restart\\n"
+msgstr ""
+"სერვისები:\\nშემდეგი სერვისები ითხოვენ გადატვირთვას განახლების შემდეგ\\n"
+
+#: src/lib/restart_services.sh:26
+#, sh-format
+msgid ""
+"Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
+"or press \"enter\" to continue without restarting the service(s):"
+msgstr ""
+"აირჩიეთ გადასატვირთი სერვისები (მაგ: 1 3 5). აირჩიეთ 0, რომ ყველა "
+"გადაიტვირთოს, ან დააჭირეთ ღილაკს 'Enter' სერვისების გადატვირთვის გარეშე "
+"გასაგრძელებლად:"
+
+#: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
+#, sh-format
+msgid "Service(s) restarted successfully\\n"
+msgstr "სერვის(ებ)-ი წარმატებით გადაიტვირთა\\n"
+
+#: src/lib/restart_services.sh:35 src/lib/restart_services.sh:62
+#, sh-format
+msgid ""
+"An error has occurred during the service(s) restart\\nPlease, verify the "
+"above service(s) status\\n"
+msgstr ""
+"სერვის(ებ)-ის გადატვირთვისას აღმოჩენილია შეცდომა\\nშეამოწმეთ შემდეგი "
+"სერვის(ებ)-ის სტატუსი\\n"
+
+#: src/lib/restart_services.sh:48
+#, sh-format
+msgid "The ${service_selected} service has been successfully restarted"
+msgstr "სერვისი ${service_selected} წარმატებით გადაიტვირთა"
+
+#: src/lib/restart_services.sh:50
+#, sh-format
+msgid ""
+"An error has occurred during the restart of the ${service_selected} service"
+msgstr "სერვისის ${service_selected} გადატვირთვისას აღმოჩენილია შეცდომა"
+
+#: src/lib/restart_services.sh:66
+#, sh-format
+msgid ""
+"The service(s) restart hasn't been performed\\nPlease, consider restarting "
+"services that have been updated to fully apply the upgrade\\n"
+msgstr ""
+"სერვის(ებ)-ის გადატვირთვა არ შესრულებულა\\nგანახლების სრულად გადასატარებლად "
+"საჭიროა, გადატვირთოთ სერვისები\\n"
+
+#: src/lib/restart_services.sh:70
+#, sh-format
+msgid "No service requiring a post upgrade restart found\\n"
+msgstr ""
+"სერვისი, რომელსაც განახლების შემდეგ გადატვირთვა სჭირდება, აღმოჩენილი არაა\\n"
+
+#: src/lib/tray.py:199
+msgid "'updates' state file isn't found"
+msgstr "მდგომარეობის ფაილი 'updates' აღმოჩენილი არაა"
+
+#: src/lib/tray.py:246
+msgid "System is up to date"
+msgstr "სისტემა განახლებულია"
+
+#: src/lib/tray.py:249
+msgid "1 update available"
+msgstr "ხელმისაწვდომია 1 განახლება"
+
+#: src/lib/tray.py:252
+#, python-brace-format
+msgid "{updates} updates available"
+msgstr "ხელმისაწვდომია {updates} განახლება"
+
+#: src/lib/tray.py:256
+#, python-brace-format
+msgid ""
+"Last check:\n"
+"{time}"
+msgstr ""
+"ბოლო შემოწმება:\n"
+"{time}"
+
+#: src/lib/tray.py:271
+#, python-brace-format
+msgid "Next check in {time}"
+msgstr "შემდეგი შემოწმება {time}-ში"
+
+#: src/lib/tray.py:282
+#, python-brace-format
+msgid "All ({updates})"
+msgstr "ყველა ({updates})"
+
+#: src/lib/tray.py:295
+#, python-brace-format
+msgid "Packages ({updates})"
+msgstr "პაკეტი ({updates})"
+
+#: src/lib/tray.py:306
+#, python-brace-format
+msgid "AUR ({updates})"
+msgstr "AUR ({updates})"
+
+#: src/lib/tray.py:317
+#, python-brace-format
+msgid "Flatpak ({updates})"
+msgstr "Flatpak ({updates})"
+
+#: src/lib/tray.py:377 src/lib/tray.py:382
+msgid "Arch-Update"
+msgstr "Arch-Update"
+
+#: src/lib/tray.py:383
+msgid "Last check"
+msgstr "ბოლო შემოწმება"
+
+#: src/lib/tray.py:384
+msgid "Next check"
+msgstr "შემდეგი შემოწმება"
+
+#: src/lib/tray.py:385
+msgid "Run Arch-Update"
+msgstr "Arch-Update-ის გაშვება"
+
+#: src/lib/tray.py:386
+msgid "Check for updates"
+msgstr "განახლებების შემოწმება"
+
+#: src/lib/tray.py:387
+msgid "Exit"
+msgstr "გასვლა"
+
+#: src/lib/tray.py:390
+msgid "All"
+msgstr "ყველა"
+
+#: src/lib/tray.py:391
+msgid "Packages"
+msgstr "პაკეტები"
+
+#: src/lib/tray.py:392
+msgid "AUR"
+msgstr "AUR"
+
+#: src/lib/tray.py:393
+msgid "Flatpak"
+msgstr "Flat pak"
+
+#: src/lib/tray.sh:20
+#, sh-format
+msgid "${_name} tray desktop file not found"
+msgstr "სამუშაო მაგიდის ფაილი ${_name} აღმოჩენილი არაა"
+
+#: src/lib/tray.sh:27
+#, sh-format
+msgid "The '${tray_desktop_file_autostart}' file already exists"
+msgstr "ფაილი '${tray_desktop_file_autostart}' უკვე არსებობს"
+
+#: src/lib/tray.sh:32
+#, sh-format
+msgid ""
+"The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
+"systray applet will be automatically started at your next log on\\nTo start "
+"it right now, you can launch the \"${_name} Systray Applet\" application "
+"from your app menu"
+msgstr ""
+"ფაილი '${tray_desktop_file_autostart}' შეიქმნა და სისტემურ საათთან აპლეტი "
+"${_name} ავტომატურად გაეშვება, როცა შემდეგ ჯერზე სისტემაში შეხვალთ\\nმის "
+"ახლავე გასაშვებად გაუშვით აპლიკაცია \"${_name} Systray Applet\" თქვენი "
+"აპლიკაციის მენიუდან"
+
+#: src/lib/tray.sh:49
+#, sh-format
+msgid "There's already a running instance of the ${_name} systray applet"
+msgstr "${_name} სისტემურ საათთან აპლეტის გაშვებული ასლი უკვე არსებობს"
+
+#: src/lib/update.sh:9
+#, sh-format
+msgid "Updating Packages...\\n"
+msgstr "პაკეტების განახლება...\\n"
+
+#: src/lib/update.sh:15 src/lib/update.sh:30 src/lib/update.sh:44
+#, sh-format
+msgid ""
+"An error has occurred during the update process\\nThe update has been "
+"aborted\\n"
+msgstr "განახლების მიმდინარეობისას აღმოჩენილია შეცდომა\\nგანახლება შეწყდა\\n"
+
+#: src/lib/update.sh:24
+#, sh-format
+msgid "Updating AUR Packages...\\n"
+msgstr "AUR პაკეტების განახლება...\\n"
+
+#: src/lib/update.sh:40
+#, sh-format
+msgid "Updating Flatpak Packages...\\n"
+msgstr "Flatpak პაკეტების განახლება...\\n"
+
+#: src/lib/update.sh:51
+#, sh-format
+msgid "The update has been applied\\n"
+msgstr "განახლება გადატარებულია\\n"
