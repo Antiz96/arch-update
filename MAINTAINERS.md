@@ -1,11 +1,10 @@
 # Maintainers
 
-This file contains the maintainers that are trusted and are allowed to cut and sign git tags and release artifacts for this project.  
-As a user, you can *(and should)* verify that git tags and auto-generated source tarballs on releases (tar.gz archives) for this project are signed by one of the person listed below (with the associated OpenPGP key).
+This file contains the list of trusted maintainers that are expected to sign git tags and releases artifacts for this project.
 
-If a git tag or an auto-generated source tarball (tar.gz archive) contained in a release of this project cannot be verified (e.g. it is not signed / it is signed with a OpenPGP key or by a person that is not listed below), the associated tag/release/artifact(s) should not be trusted.
+If a git tag or a release artifact is missing a signature, or the signature has been made by a key holder / OpenPGP key ID that isn't listed below, it should **not** be trusted.
 
-Current maintainers:
+Any update of the below list are expected to be made through a commit signed with one of the key **already listed before the modification**. Otherwise, the content of the modification should **not** be trusted.
 
 | Name | Mail | OpenPGP Key (ID / Fingerprint) | GitHub username |
 | ---- | ---- | ------------------------------ | --------------- |
