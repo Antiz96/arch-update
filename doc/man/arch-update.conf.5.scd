@@ -64,6 +64,9 @@ Options are case sensitive, so capital letters have to be respected.
 *ColorblindMode*
 	Change systray applet icon update variants to a colorblind-friendly yellow.
 
+*NoALHPWarning*
+	Disable checking for pending ALHP builds or mirror updates with the `alhp.utils` command, if present.
+
 # SEE ALSO
 
 *arch-update*(1)
