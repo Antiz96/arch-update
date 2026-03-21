@@ -37,7 +37,7 @@ Options are case sensitive, so capital letters have to be respected.
 *NoNotification*
 	Do not send desktop notifications.
 
-*NoALHPWarning*
+*NoALHPCheck*
 	Disable checking for pending ALHP builds or mirror updates with the `alhp.utils` command, if present.
 
 *NewsNum=[Num]*
