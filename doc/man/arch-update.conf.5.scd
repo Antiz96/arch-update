@@ -37,6 +37,9 @@ Options are case sensitive, so capital letters have to be respected.
 *NoNotification*
 	Do not send desktop notifications.
 
+*NoALHPWarning*
+	Disable checking for pending ALHP builds or mirror updates with the `alhp.utils` command, if present.
+
 *NewsNum=[Num]*
 	Number of Arch news to display before updating and with the `-n / --news` option (see the *arch-update*(1) man page for more details). Defaults to 5.
 
@@ -63,9 +66,6 @@ Options are case sensitive, so capital letters have to be respected.
 
 *ColorblindMode*
 	Change systray applet icon update variants to a colorblind-friendly yellow.
-
-*NoALHPWarning*
-	Disable checking for pending ALHP builds or mirror updates with the `alhp.utils` command, if present.
 
 # SEE ALSO
 
