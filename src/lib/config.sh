@@ -32,7 +32,7 @@ if [ -f "${config_file}" ]; then
 
 	# Check the "NoALHPWarning" option in arch-update.conf
 	# shellcheck disable=SC2034
-	no_alhp_warning=$(grep -Eq '^[[:space:]]*NoALHPWarning[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
+	no_alhp_check=$(grep -Eq '^[[:space:]]*NoALHPWarning[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
 
 	# Check the "NewsNum" option in arch-update.conf
 	# shellcheck disable=SC2034
