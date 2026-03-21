@@ -106,6 +106,7 @@ if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ "${#flatpak_packages[@]
 else
 	icon_updates-available
 	if [ -z "${list_option}" ]; then
+	    source "${libdir}/alhp_check.sh"
 		ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
 
 		# shellcheck disable=SC2154
