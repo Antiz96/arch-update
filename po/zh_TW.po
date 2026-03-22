@@ -16,6 +16,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!"
+msgstr ""
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr ""
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr ""
+
 #: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
@@ -45,20 +60,20 @@ msgstr ""
 "在 ${name}.conf 設定檔中，為 AUR 套件支援所設定的 AUR 輔助程式 ${aur_helper} "
 "未找到\\n"
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr "需要權限提升指令（sudo、sudo-rs、doas 或 run0）\\n"
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:176
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr "在 ${name}.conf 設定檔中，為權限提升所設定的指令 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:182
+#: src/lib/common.sh:188
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -264,14 +279,14 @@ msgstr "需要重新啟動：\\n系統上有待處理的核心更新，需要重
 msgid "Would you like to reboot now? [y/N]"
 msgstr "是否現在重新啟動？ [y/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -402,12 +417,12 @@ msgstr "Flatpak 套件："
 msgid "No update available\\n"
 msgstr "沒有可用的更新\\n"
 
-#: src/lib/list_packages.sh:109
+#: src/lib/list_packages.sh:113
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "是否繼續進行更新？ [Y/n]"
 
-#: src/lib/list_packages.sh:119
+#: src/lib/list_packages.sh:123
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "更新已中止\\n"
