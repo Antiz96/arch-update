@@ -1,4 +1,4 @@
-arch-update(1) ["Arch-Update 3.18.0" ["Arch-Update Manual"]]
+arch-update(1) ["Arch-Update 3.18.1" ["Arch-Update Manual"]]
 
 # NAME
 
@@ -31,6 +31,7 @@ Optional support for:
 - AUR packages (via `paru`, `yay` or `pikaur`).
 - Flatpak packages (via `flatpak`).
 - Desktop notifications (via `libnotify`).
+- Check for ALHP build queue or outdated mirrors (via `alhp-utils`).
 
 # OPTIONS
 
