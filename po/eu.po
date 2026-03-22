@@ -45,14 +45,14 @@ msgstr ""
 "${name}.conf konfigurazio fitxategian AUR paketeetarako ezarritako "
 "${aur_helper} AUR laguntzailea ez da aurkitu\\n"
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "Privilegioak igotzeko komando bat behar da (sudo, sudo-rs, doas edo run0)\\n"
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:176
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -61,14 +61,14 @@ msgstr ""
 "${name}.conf konfigurazio fitxategian privilegioak igotzeko ezarritako "
 "${su_cmd} komandoa ez da aurkitu\\n"
 
-#: src/lib/common.sh:182
+#: src/lib/common.sh:188
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
 "files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
-"${name}.conf konfigurazio fitxategian pacnew fitxategien arteko aldeak ikusteko "
-"edo editatzeko ezarritako ${diff_prog} editorea ez da aurkitu\\n"
+"${name}.conf konfigurazio fitxategian pacnew fitxategien arteko aldeak "
+"ikusteko edo editatzeko ezarritako ${diff_prog} editorea ez da aurkitu\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
@@ -85,8 +85,8 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"Ezin izan da erabili beharreko editorea zehaztu\\n\"EDITOR\" ingurune-aldagaia "
-"ez dago ezarrita eta \"nano\" (ordezko aukera) ez dago instalatuta"
+"Ezin izan da erabili beharreko editorea zehaztu\\n\"EDITOR\" ingurune-"
+"aldagaia ez dago ezarrita eta \"nano\" (ordezko aukera) ez dago instalatuta"
 
 #: src/lib/full_upgrade.sh:13
 #, sh-format
@@ -151,10 +151,10 @@ msgid ""
 "pacnew & pacsave files, pending kernel update as well as services requiring "
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
-"Eguneratu ondoren, pakete umezurtz eta erabili gabeak, cacheko pakete zaharrak, "
-"pacnew eta pacsave fitxategiak, zain dauden kernel eguneraketak eta berrabiarazi "
-"behar diren zerbitzuak egiaztatzen ditu, eta egonez gero, horiek kudeatzea "
-"eskaintzen du."
+"Eguneratu ondoren, pakete umezurtz eta erabili gabeak, cacheko pakete "
+"zaharrak, pacnew eta pacsave fitxategiak, zain dauden kernel eguneraketak "
+"eta berrabiarazi behar diren zerbitzuak egiaztatzen ditu, eta egonez gero, "
+"horiek kudeatzea eskaintzen du."
 
 #: src/lib/help.sh:15
 #, sh-format
@@ -164,42 +164,44 @@ msgstr "Aukerak:"
 #: src/lib/help.sh:16
 #, sh-format
 msgid ""
-"  -c, --check        Check for available updates, change the systray icon and "
+"  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check)"
 msgstr ""
-"  -c, --check        Eguneraketa erabilgarriak egiaztatu, sistemako erretiluko "
-"ikonoa aldatu eta jakinarazpen bat bidali eguneraketa kopuruarekin (azken "
-"egiaztapenetik eguneraketa berriak egonez gero)"
+"  -c, --check        Eguneraketa erabilgarriak egiaztatu, sistemako "
+"erretiluko ikonoa aldatu eta jakinarazpen bat bidali eguneraketa "
+"kopuruarekin (azken egiaztapenetik eguneraketa berriak egonez gero)"
 
 #: src/lib/help.sh:17
 #, sh-format
-msgid "  -l, --list         Display the list of pending updates"
+msgid "  -l, --list        Display the list of pending updates"
 msgstr "  -l, --list         Zain dauden eguneraketen zerrenda erakutsi"
 
 #: src/lib/help.sh:18
 #, sh-format
-msgid "  -d, --devel        Include AUR development packages updates"
+msgid "  -d, --devel       Include AUR development packages updates"
 msgstr "  -d, --devel        Sartu AUReko garapen-paketeen eguneraketak"
 
 #: src/lib/help.sh:19
 #, sh-format
 msgid ""
-"  -n, --news [Num]   Display latest Arch news, you can optionally specify the "
+"  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
-"  -n, --news [Zenb]  Arch-en azken berriak erakutsi. Nahi izanez gero, erakutsi "
-"beharreko berri kopurua zehaztu dezakezu '--news [Zenb]' erabiliz (adib. '--news 10')"
+"  -n, --news [Zenb]  Arch-en azken berriak erakutsi. Nahi izanez gero, "
+"erakutsi beharreko berri kopurua zehaztu dezakezu '--news [Zenb]' erabiliz "
+"(adib. '--news 10')"
 
 #: src/lib/help.sh:20
 #, sh-format
-msgid "  -s, --services     Check for services requiring a post upgrade restart"
+msgid "  -s, --services    Check for services requiring a post upgrade restart"
 msgstr ""
-"  -s, --services     Eguneratu ondoren berrabiarazi behar diren zerbitzuak egiaztatu"
+"  -s, --services     Eguneratu ondoren berrabiarazi behar diren zerbitzuak "
+"egiaztatu"
 
 #: src/lib/help.sh:21
 #, sh-format
-msgid "  -D, --debug        Display debug traces"
+msgid "  -D, --debug       Display debug traces"
 msgstr "  -D, --debug        Erakutsi arazte-aztarnak (debug)"
 
 #: src/lib/help.sh:22
@@ -216,7 +218,7 @@ msgstr ""
 #: src/lib/help.sh:23
 #, sh-format
 msgid ""
-"  --show-config      Display the '${name}.conf' configuration file currently "
+"  --show-config     Display the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
 "  --show-config      Erakutsi unean erabiltzen ari den '${name}.conf' "
@@ -225,7 +227,7 @@ msgstr ""
 #: src/lib/help.sh:24
 #, sh-format
 msgid ""
-"  --edit-config      Edit the '${name}.conf' configuration file currently "
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
 "  --edit-config      Editatu unean erabiltzen ari den '${name}.conf' "
@@ -234,25 +236,25 @@ msgstr ""
 #: src/lib/help.sh:25
 #, sh-format
 msgid ""
-"  --tray             Launch the ${_name} systray applet, you can optionally "
+"  --tray            Launch the ${_name} systray applet, you can optionally "
 "add the '--enable' argument to start it automatically at boot"
 msgstr ""
 "  --tray             Abiarazi ${_name} sistemako erretiluko applet-a. Nahi "
-"izanez gero, '--enable' argumentua gehitu dezakezu abiaraztean automatikoki hasteko"
+"izanez gero, '--enable' argumentua gehitu dezakezu abiaraztean automatikoki "
+"hasteko"
 
 #: src/lib/help.sh:26
 #, sh-format
-msgid "  -h, --help         Display this help message and exit"
+msgid "  -h, --help        Display this help message and exit"
 msgstr "  -h, --help         Laguntza mezu hau erakutsi eta irten"
 
 #: src/lib/help.sh:27
 #, sh-format
-msgid "  -V, --version      Display version information and exit"
+msgid "  -V, --version     Display version information and exit"
 msgstr "  -V, --version      Bertsioaren informazioa erakutsi eta irten"
 
 #: src/lib/help.sh:29
 #, sh-format
-msgformat
 msgid "For more information, see the ${name}(1) man page."
 msgstr "Informazio gehiagorako, ikus ${name}(1) man orrialdea."
 
@@ -262,8 +264,8 @@ msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf "
 "configuration file, see the ${name}.conf(5) man page."
 msgstr ""
-"Zenbait aukera gaitu, desgaitu edo aldatu daitezke ${name}.conf "
-"konfigurazio fitxategiaren bidez, ikus ${name}.conf(5) man orrialdea."
+"Zenbait aukera gaitu, desgaitu edo aldatu daitezke ${name}.conf konfigurazio "
+"fitxategiaren bidez, ikus ${name}.conf(5) man orrialdea."
 
 #: src/lib/invalid_option.sh:7
 #, sh-format
@@ -288,14 +290,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Orain berrabiarazi nahi duzu? [b/E]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "B"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -313,8 +315,8 @@ msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
 "aborted\\n"
 msgstr ""
-"Errore bat gertatu da berrabiarazte prozesuan\\nBerrabiaraztea bertan "
-"behera utzi da\\n"
+"Errore bat gertatu da berrabiarazte prozesuan\\nBerrabiaraztea bertan behera "
+"utzi da\\n"
 
 #: src/lib/kernel_reboot.sh:38
 #, sh-format
@@ -322,8 +324,8 @@ msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
 "the pending kernel update\\n"
 msgstr ""
-"Ez da berrabiarazi\\nMesezez, berrabiarazi zain dagoen kernel "
-"eguneraketa amaitzeko\\n"
+"Ez da berrabiarazi\\nMesezez, berrabiarazi zain dagoen kernel eguneraketa "
+"amaitzeko\\n"
 
 #: src/lib/kernel_reboot.sh:42
 #, sh-format
@@ -343,8 +345,8 @@ msgid ""
 "your system"
 msgstr ""
 "Ezin izan dira Arch-eko azken berriak lortu (HTTP errore-erantzuna edo "
-"eskaeraren denbora-muga)\\nMesezez, begiratu azken berriak "
-"https://archlinux.org helbidean zure sistema eguneratu aurretik"
+"eskaeraren denbora-muga)\\nMesezez, begiratu azken berriak https://"
+"archlinux.org helbidean zure sistema eguneratu aurretik"
 
 #: src/lib/list_news.sh:23
 #, sh-format
@@ -367,8 +369,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
-"Hautatu irakurri beharreko berriak (adib. 1 3 5), hautatu 0 guztiak irakurtzeko "
-"edo sakatu \"enter\" irteteko:"
+"Hautatu irakurri beharreko berriak (adib. 1 3 5), hautatu 0 guztiak "
+"irakurtzeko edo sakatu \"enter\" irteteko:"
 
 #: src/lib/list_news.sh:56
 #, sh-format
@@ -376,8 +378,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
-"Hautatu irakurri beharreko berriak (adib. 1 3 5), hautatu 0 guztiak irakurtzeko "
-"edo sakatu \"enter\" eguneraketarekin jarraitzeko:"
+"Hautatu irakurri beharreko berriak (adib. 1 3 5), hautatu 0 guztiak "
+"irakurtzeko edo sakatu \"enter\" eguneraketarekin jarraitzeko:"
 
 #: src/lib/list_news.sh:80
 #, sh-format
@@ -435,12 +437,12 @@ msgstr "Flatpak paketeak:"
 msgid "No update available\\n"
 msgstr "Ez dago eguneraketa erabilgarririk\\n"
 
-#: src/lib/list_packages.sh:109
+#: src/lib/list_packages.sh:113
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Eguneraketarekin jarraitu? [B/e]"
 
-#: src/lib/list_packages.sh:119
+#: src/lib/list_packages.sh:123
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Eguneraketa bertan behera utzi da\\n"
@@ -483,7 +485,8 @@ msgid ""
 "Would you like to remove this orphan package (and its potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Pakete umezurtz hau (eta izan ditzakeen menpekotasunak) orain kendu nahi duzu? [b/E]"
+"Pakete umezurtz hau (eta izan ditzakeen menpekotasunak) orain kendu nahi "
+"duzu? [b/E]"
 
 #: src/lib/orphan_packages.sh:20
 #, sh-format
@@ -491,7 +494,8 @@ msgid ""
 "Would you like to remove these orphan packages (and their potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Pakete umezurtz hauek (eta izan ditzaketen menpekotasunak) orain kendu nahi dituzu? [b/E]"
+"Pakete umezurtz hauek (eta izan ditzaketen menpekotasunak) orain kendu nahi "
+"dituzu? [b/E]"
 
 #: src/lib/orphan_packages.sh:27
 #, sh-format
@@ -552,7 +556,8 @@ msgstr "Ez da erabili gabeko Flatpak paketerik aurkitu\\n"
 #: src/lib/packages_cache.sh:21
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr "Cacheko paketeak:\\nInstalatu gabeko edo cacheko pakete zahar bat dago\\n"
+msgstr ""
+"Cacheko paketeak:\\nInstalatu gabeko edo cacheko pakete zahar bat dago\\n"
 
 #: src/lib/packages_cache.sh:22
 #, sh-format
@@ -640,7 +645,8 @@ msgstr ""
 #, sh-format
 msgid "Services:\\nThe following services require a post upgrade restart\\n"
 msgstr ""
-"Zerbitzuak:\\nHurrengo zerbitzuak berrabiarazi behar dira eguneratu ondoren\\n"
+"Zerbitzuak:\\nHurrengo zerbitzuak berrabiarazi behar dira eguneratu "
+"ondoren\\n"
 
 #: src/lib/restart_services.sh:26
 #, sh-format
@@ -649,7 +655,8 @@ msgid ""
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
 "Hautatu berrabiarazi beharreko zerbitzua(k) (adib. 1 3 5), hautatu 0 guztiak "
-"berrabiarazteko edo sakatu \"enter\" zerbitzuak berrabiarazi gabe jarraitzeko:"
+"berrabiarazteko edo sakatu \"enter\" zerbitzuak berrabiarazi gabe "
+"jarraitzeko:"
 
 #: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
 #, sh-format
@@ -799,15 +806,16 @@ msgid ""
 "it right now, you can launch the \"${_name} Systray Applet\" application "
 "from your app menu"
 msgstr ""
-"'${tray_desktop_file_autostart}' fitxategia sortu da, ${_name} "
-"systray applet-a automatikoki abiaraziko da hurrengo saio-hasieran\\nOraintxe "
+"'${tray_desktop_file_autostart}' fitxategia sortu da, ${_name} systray "
+"applet-a automatikoki abiaraziko da hurrengo saio-hasieran\\nOraintxe "
 "abiarazteko, \"${_name} Systray Applet\" aplikazioa erabili dezakezu zure "
 "aplikazio menutik"
 
 #: src/lib/tray.sh:49
 #, sh-format
 msgid "There's already a running instance of the ${_name} systray applet"
-msgstr "Dagoeneko ${_name} systray applet-aren instantzia bat exekutatzen ari da"
+msgstr ""
+"Dagoeneko ${_name} systray applet-aren instantzia bat exekutatzen ari da"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -820,8 +828,8 @@ msgid ""
 "An error has occurred during the update process\\nThe update has been "
 "aborted\\n"
 msgstr ""
-"Errore bat gertatu da eguneraketa prozesuan\\nEguneraketa bertan behera "
-"utzi da\\n"
+"Errore bat gertatu da eguneraketa prozesuan\\nEguneraketa bertan behera utzi "
+"da\\n"
 
 #: src/lib/update.sh:24
 #, sh-format
