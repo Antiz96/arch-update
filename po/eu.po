@@ -451,10 +451,10 @@ msgid "${update_number} update available"
 msgstr "Eguneraketa ${update_number} erabilgarri"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:385
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
-msgid "Run Cachy-Update"
-msgstr "Exekutatu Cachy-Update"
+msgid "Run ${_name}"
+msgstr "Exekutatu ${_name}"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
