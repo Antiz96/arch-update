@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# Robin Candau <robincandau@protonmail.com>, 2024
+# Robin Candau <robincandau@protonmail.com>, 2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2024-05-09 09:30+0100\n"
+"PO-Revision-Date: 2026-03-22 09:30+0100\n"
 "Last-Translator: Robin Candau <robincandau@protonmail.com>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -19,17 +19,17 @@ msgstr ""
 #: src/lib/alhp_check.sh:14
 #, sh-format
 msgid "Your primary ALHP mirror is out of date!"
-msgstr ""
+msgstr "Votre mirroir primaire ALHP n'est pas à jour !"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr ""
+msgstr "Les paquets suivants ont toujours des compilations ALHP en cours :"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
 msgid "Error during ALHP check:"
-msgstr ""
+msgstr "Erreur lors du check ALHP :"
 
 #: src/lib/common.sh:96
 #, sh-format
