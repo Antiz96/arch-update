@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-09 22:01+0900\n"
+"PO-Revision-Date: 2026-03-23 08:50+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
@@ -23,17 +23,17 @@ msgstr ""
 #: src/lib/alhp_check.sh:14
 #, sh-format
 msgid "Your primary ALHP mirror is out of date!"
-msgstr ""
+msgstr "現在設定されている ALHP ミラーが古くなっています"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr ""
+msgstr "以下のパッケージにはまだ保留中の ALHP ビルドがあります。"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
 msgid "Error during ALHP check:"
-msgstr ""
+msgstr "ALHP の確認中にエラーが発生しました。"
 
 #: src/lib/common.sh:96
 #, sh-format
