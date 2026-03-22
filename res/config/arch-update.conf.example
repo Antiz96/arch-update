@@ -7,6 +7,7 @@
 #NoAUR
 #NoFlatpak
 #NoNotification
+#NoALHPCheck
 #NewsNum=5
 #NewsTimeout=10
 #AURHelper=paru

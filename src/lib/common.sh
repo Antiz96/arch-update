@@ -150,6 +150,12 @@ if [ -z "${no_notification}" ]; then
 	notification_support=$(command -v notify-send)
 fi
 
+# Check if alhp.utils is installed for the optional alhp.utils check support
+if [ -z "${no_alhp_check}" ]; then
+	# shellcheck disable=SC2034
+	alhp_support=$(command -v alhp.utils)
+fi
+
 # Definition of the elevation command to use (depending on which one is installed on the system and if it's not already defined in arch-update.conf)
 check_su_cmd () {
 	if [ -z "${su_cmd}" ]; then
@@ -196,13 +202,13 @@ check_diff_prog () {
 # Definition of the icon_up-to-date function: Change tray icon to "up to date"
 icon_up-to-date() {
 	# shellcheck disable=SC2154
-	echo "cachy-update-${tray_icon_style}" > "${statedir}/tray_icon"
+	echo "${name}-${tray_icon_style}" > "${statedir}/tray_icon"
 }
 
 # Definition of the icon_updates-available function: Change tray icon to "updates available"
 icon_updates-available() {
 	# shellcheck disable=SC2154
-	echo "cachy-update_updates-available-${tray_icon_style}${colorblind_mode}" > "${statedir}/tray_icon"
+	echo "${name}_updates-available-${tray_icon_style}${colorblind_mode}" > "${statedir}/tray_icon"
 }
 
 # Definition of commands to always run on exit (e.g. cleanup of files / dirs which have no purpose being kept)

@@ -31,6 +31,7 @@ Optional support for:
 - AUR packages (via `paru`, `yay` or `pikaur`).
 - Flatpak packages (via `flatpak`).
 - Desktop notifications (via `libnotify`).
+- Check for ALHP build queue or outdated mirrors (via `alhp-utils`).
 
 # OPTIONS
 
@@ -160,17 +161,16 @@ If the systray applet still does not start at boot, try to gradually increase th
 
 ## Modify the check cycle
 
-If you enabled the systemd timer, a check for available updates is automatically launched at boot and then once a day.
+If you enabled the systemd timer, a check for available updates is automatically launched at boot and then once per hour.
 
 If you want to customize the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.
-For instance, if you want `Arch-Update` to check for new updates every hour instead:
+For instance, if you want `Arch-Update` to check for new updates every 10 minutes instead:
 
 ```
 [...]
 [Timer]
-OnStartupSec=2min
-RandomizedDelaySec=1h
-OnUnitActiveSec=1h
+OnStartupSec=15
+OnUnitActiveSec=10m
 [...]
 ```
 
