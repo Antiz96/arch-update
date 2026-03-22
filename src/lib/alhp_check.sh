@@ -4,7 +4,6 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-
 alhp_utils_output="$(alhp.utils -m 2>&1)"
 alhp_utils_exit_code=$?
 
