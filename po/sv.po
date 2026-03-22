@@ -18,6 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.8\n"
 
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!"
+msgstr ""
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr ""
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr ""
+
 #: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
@@ -47,14 +62,14 @@ msgstr ""
 "${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
 "konfigurationsfilen ${name}.conf hittades inte\\n"
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "Ett kommando för behörighetshöjning krävs (sudo, sudo-rs, doas eller run0)\\n"
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:176
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -63,7 +78,7 @@ msgstr ""
 "${su_cmd}-kommandot inställt för privilegieskalering i ${name}.conf-"
 "konfigurationsfilen hittades inte\\n"
 
-#: src/lib/common.sh:182
+#: src/lib/common.sh:188
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -294,14 +309,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Vill du starta om nu? [j/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -440,12 +455,12 @@ msgstr "Flatpak paket:"
 msgid "No update available\\n"
 msgstr "Ingen uppdatering tillgänglig\\n"
 
-#: src/lib/list_packages.sh:109
+#: src/lib/list_packages.sh:113
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Fortsätt med uppdatering? [J/n]"
 
-#: src/lib/list_packages.sh:119
+#: src/lib/list_packages.sh:123
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Uppdatering har avbrutits\\n"

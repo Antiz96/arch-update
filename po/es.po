@@ -18,6 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.8\n"
 
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!"
+msgstr ""
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr ""
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr ""
+
 #: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
@@ -47,7 +62,7 @@ msgstr ""
 "No se ha encontrado el ayudante ${aur_helper} configurado para el soporte de "
 "paquetes AUR en el archivo ${name}.conf\\n"
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
@@ -55,7 +70,7 @@ msgstr ""
 "Se requiere un comando de elevación de privilegios (sudo, sudo-rs, doas o "
 "run0)\\n"
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:176
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -64,7 +79,7 @@ msgstr ""
 "No se ha encontrado el comando ${su_cmd} configurado para la elevación de "
 "privilegios en el archivo ${name}.conf\\n"
 
-#: src/lib/common.sh:182
+#: src/lib/common.sh:188
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -298,14 +313,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "¿Desea reiniciar ahora? [s/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "S"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -446,12 +461,12 @@ msgstr "Paquetes Flatpak:"
 msgid "No update available\\n"
 msgstr "No hay actualizaciones disponibles\\n"
 
-#: src/lib/list_packages.sh:109
+#: src/lib/list_packages.sh:113
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "¿Continuar con la actualización? [S/n]"
 
-#: src/lib/list_packages.sh:119
+#: src/lib/list_packages.sh:123
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "La actualización se ha cancelado\\n"
