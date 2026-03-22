@@ -24,7 +24,7 @@ msgstr "Zure ALHP ispilu nagusia zaharkituta dago!"
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr "Hurrengo paketeek eraikitze-prozesak zain dituzte ALHPn:"
+msgstr "Hurrengo paketeek eraikitze-prozesuak zain dituzte ALHPn:"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
