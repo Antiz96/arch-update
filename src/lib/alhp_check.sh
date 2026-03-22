@@ -21,6 +21,6 @@ if [ -n "${alhp_utils_output}" ]; then
 		warning_msg "$(eval_gettext "The following packages still have pending ALHP builds:")"
 			echo -e "${alhp_utils_output}\n"
 		else
-			warning_msg "$(eval_gettext "Unable to perform ALHP check:") ${alhp_utils_output}"
+			warning_msg "$(eval_gettext "Error during ALHP check:") ${alhp_utils_output}"
 		fi
 fi
