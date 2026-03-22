@@ -107,6 +107,7 @@ else
 	icon_updates-available
 	if [ -z "${list_option}" ]; then
 		if [ -n "${alhp_support}" ]; then
+			# shellcheck source=src/lib/alhp_check.sh disable=SC2154
 			source "${libdir}/alhp_check.sh"
 		fi
 		ask_msg "$(eval_gettext "Proceed with update? [Y/n]")"
