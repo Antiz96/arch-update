@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-01 18:51+0100\n"
+"PO-Revision-Date: 2026-03-22 19:40+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -17,6 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.8\n"
+
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!"
+msgstr "De primaire ALHP-spiegelserver is te lang niet bijgewerkt!"
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr "De volgende pakketten wachten op ALHP-pakketten:"
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr "Fout tijdens ALHP-controle:"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -47,7 +62,7 @@ msgstr ""
 "Het hulpmiddel voor de afhandeling van AUR-pakketten, ‘${aur_helper}’, zoals "
 "ingesteld in ${name}.conf, is niet aangetroffen.\\n"
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:171
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
@@ -55,7 +70,7 @@ msgstr ""
 "Een opdracht om meer rechten te verlenen is vereist (sudo, sudo-rs, doas of "
 "run0)\\n"
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:176
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -64,7 +79,7 @@ msgstr ""
 "De opdracht voor het verlenen van meer rechten, ‘${su_cmd}’, zoals ingesteld "
 "in ${name}.conf, is niet aangetroffen.\\n"
 
-#: src/lib/common.sh:182
+#: src/lib/common.sh:188
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -291,14 +306,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Wil je nu opnieuw opstarten? [j/n]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:113
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -438,12 +453,12 @@ msgstr "Flatpak-pakketten:"
 msgid "No update available\\n"
 msgstr "Er zijn geen updates beschikbaar\\n"
 
-#: src/lib/list_packages.sh:109
+#: src/lib/list_packages.sh:113
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Wil je het systeem bijwerken? [j/n]"
 
-#: src/lib/list_packages.sh:119
+#: src/lib/list_packages.sh:123
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Het bijwerken is afgebroken\\n"

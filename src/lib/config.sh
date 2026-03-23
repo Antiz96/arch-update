@@ -30,6 +30,10 @@ if [ -f "${config_file}" ]; then
 	# shellcheck disable=SC2034
 	no_notification=$(grep -Eq '^[[:space:]]*NoNotification[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
 
+	# Check the "NoALHPCheck" option in arch-update.conf
+	# shellcheck disable=SC2034
+	no_alhp_check=$(grep -Eq '^[[:space:]]*NoALHPCheck[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
+
 	# Check the "NewsNum" option in arch-update.conf
 	# shellcheck disable=SC2034
 	news_num=$(grep -E '^[[:space:]]*NewsNum[[:space:]]*=[[:space:]]*[1-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')

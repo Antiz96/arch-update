@@ -150,6 +150,12 @@ if [ -z "${no_notification}" ]; then
 	notification_support=$(command -v notify-send)
 fi
 
+# Check if alhp.utils is installed for the optional alhp.utils check support
+if [ -z "${no_alhp_check}" ]; then
+	# shellcheck disable=SC2034
+	alhp_support=$(command -v alhp.utils)
+fi
+
 # Definition of the elevation command to use (depending on which one is installed on the system and if it's not already defined in arch-update.conf)
 check_su_cmd () {
 	if [ -z "${su_cmd}" ]; then

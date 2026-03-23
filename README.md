@@ -37,6 +37,7 @@ Optional support for:
 - AUR packages (via `paru`, `yay` or `pikaur`).
 - Flatpak packages (via `flatpak`).
 - Desktop notifications (via `libnotify`).
+- Check for ALHP build queue or outdated mirrors (via `alhp-utils`).
 
 ## Installation
 
