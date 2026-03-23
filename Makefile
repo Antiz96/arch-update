@@ -1,5 +1,6 @@
 pkgname=arch-update
 _pkgname=Arch-Update
+locales = de es eu fr hu ja ka nb nl pt_BR pt_PT ru sv zh_CN zh_TW
 
 PREFIX ?= /usr/local
 
@@ -9,22 +10,11 @@ build:
 	# Generate man pages
 	scdoc < "doc/man/${pkgname}.1.scd" > "doc/man/${pkgname}.1"
 	scdoc < "doc/man/${pkgname}.conf.5.scd" > "doc/man/${pkgname}.conf.5"
-	scdoc < "doc/man/fr/${pkgname}.1.scd" > "doc/man/fr/${pkgname}.1"
-	scdoc < "doc/man/fr/${pkgname}.conf.5.scd" > "doc/man/fr/${pkgname}.conf.5"
 
 	# Generate translation files
-	msgfmt po/fr.po -o po/fr.mo
-	msgfmt po/sv.po -o po/sv.mo
-	msgfmt po/zh_CN.po -o po/zh_CN.mo
-	msgfmt po/hu.po -o po/hu.mo
-	msgfmt po/de.po -o po/de.mo
-	msgfmt po/pt_BR.po -o po/pt_BR.mo
-	msgfmt po/es.po -o po/es.mo
-	msgfmt po/zh_TW.po -o po/zh_TW.mo
-	msgfmt po/ru.po -o po/ru.mo
-	msgfmt po/nb.po -o po/nb.mo
-	msgfmt po/nl.po -o po/nl.mo
-	msgfmt po/pt_PT.po -o po/pt_PT.mo
+	for locale in $(locales); do \
+		msgfmt "po/$${locale}.po" -o "po/$${locale}.mo"; \
+	done
 
 test:
 	# Run some simple unit tests on basic functions
@@ -38,8 +28,15 @@ install:
 	install -Dm 755 src/lib/* -t "${DESTDIR}${PREFIX}/share/${pkgname}/lib/"
 
 	# Install icons
-	install -Dm 664 res/icons/"${pkgname}"*.svg -t "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/"
-	install -Dm 664 res/icons/"${pkgname}"_updates-available*.svg -t "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/"
+	install -Dm 664 "res/icons/${pkgname}-blue.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-blue.svg"
+	install -Dm 664 "res/icons/${pkgname}_updates-available-blue.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-blue.svg"
+	install -Dm 664 "res/icons/${pkgname}_updates-available-blue-cb.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-blue-cb.svg"
+	install -Dm 664 "res/icons/${pkgname}-light.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-light.svg"
+	install -Dm 664 "res/icons/${pkgname}_updates-available-light.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-light.svg"
+	install -Dm 664 "res/icons/${pkgname}_updates-available-light-cb.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-light-cb.svg"
+	install -Dm 664 "res/icons/${pkgname}-dark.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-dark.svg"
+	install -Dm 664 "res/icons/${pkgname}_updates-available-dark.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-dark.svg"
+	install -Dm 664 "res/icons/${pkgname}_updates-available-dark-cb.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-dark-cb.svg"
 
 	# Install .desktop files
 	install -Dm 644 "res/desktop/${pkgname}.desktop" "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
@@ -58,27 +55,15 @@ install:
 	# Install man pages
 	install -Dm 644 "doc/man/${pkgname}.1" "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1"
 	install -Dm 644 "doc/man/${pkgname}.conf.5" "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5"
-	install -Dm 644 "doc/man/fr/${pkgname}.1" "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1"
-	install -Dm 644 "doc/man/fr/${pkgname}.conf.5" "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5"
 
 	# Install translation files
 	# Translation files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
-	install -Dm 644 po/fr.mo "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/sv.mo "${DESTDIR}${PREFIX}/share/locale/sv/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/zh_CN.mo "${DESTDIR}${PREFIX}/share/locale/zh_CN/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/hu.mo "${DESTDIR}${PREFIX}/share/locale/hu/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/de.mo "${DESTDIR}${PREFIX}/share/locale/de/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/pt_BR.mo "${DESTDIR}${PREFIX}/share/locale/pt_BR/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/es.mo "${DESTDIR}${PREFIX}/share/locale/es/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/zh_TW.mo "${DESTDIR}${PREFIX}/share/locale/zh_TW/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/ru.mo "${DESTDIR}${PREFIX}/share/locale/ru/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/nb.mo "${DESTDIR}${PREFIX}/share/locale/nb/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/nl.mo "${DESTDIR}${PREFIX}/share/locale/nl/LC_MESSAGES/${_pkgname}.mo"
-	install -Dm 644 po/pt_PT.mo "${DESTDIR}${PREFIX}/share/locale/pt_PT/LC_MESSAGES/${_pkgname}.mo"
+	for locale in $(locales); do \
+		install -Dm 644 "po/$${locale}.mo" "${DESTDIR}${PREFIX}/share/locale/$${locale}/LC_MESSAGES/${_pkgname}.mo"; \
+	done
 
 	# Install documentation
 	install -Dm 644 README.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/README.md"
-	install -Dm 644 README-fr.md "${DESTDIR}${PREFIX}/share/doc/${pkgname}/fr/README.md"
 
 	# Install example config
 	install -Dm 644 "res/config/${pkgname}.conf.example" "${DESTDIR}${PREFIX}/share/${pkgname}/config/${pkgname}.conf.example"
@@ -87,33 +72,29 @@ clean:
 	# Delete generated man pages
 	rm -f "doc/man/${pkgname}.1"
 	rm -f "doc/man/${pkgname}.conf.5"
-	rm -f "doc/man/fr/${pkgname}.1"
-	rm -f "doc/man/fr/${pkgname}.conf.5"
 
 	# Delete generated translation files
-	rm -f po/fr.mo
-	rm -f po/sv.mo
-	rm -f po/zh_CN.mo
-	rm -f po/hu.mo
-	rm -f po/de.mo
-	rm -f po/pt_BR.mo
-	rm -f po/es.mo
-	rm -f po/zh_TW.mo
-	rm -f po/ru.mo
-	rm -f po/nb.mo
-	rm -f po/nl.mo
-	rm -f po/pt_PT.mo
+	for locale in $(locales); do \
+		rm -f "po/$${locale}.mo"; \
+	done
 
 uninstall:
 	# Delete main script
 	rm -f "${DESTDIR}${PREFIX}/bin/${pkgname}"
 
-	# Delete data folder (which stores libraries and example config)
+	# Delete share folder (contains libraries and example config)
 	rm -rf "${DESTDIR}${PREFIX}/share/${pkgname}/"
 
 	# Delete icons
-	rm -f "${DESTDIR}${PREFIX}"/share/icons/hicolor/scalable/apps/"${pkgname}"*.svg
-	rm -f "${DESTDIR}${PREFIX}"/share/icons/hicolor/scalable/apps/"${pkgname}"_updates-available*.svg
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-blue.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-blue.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-blue-cb.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-light.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-light.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-light-cb.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-dark.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-dark.svg"
+	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-dark-cb.svg"
 
 	# Delete .desktop files
 	rm -f "${DESTDIR}${PREFIX}/share/applications/${pkgname}.desktop"
@@ -125,18 +106,9 @@ uninstall:
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}-tray.service"
 
 	# Delete .mo files
-	rm -f "${DESTDIR}${PREFIX}/share/locale/fr/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/sv/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/zh_CN/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/hu/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/de/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/pt_BR/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/es/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/zh_TW/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/ru/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/nb/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/nl/LC_MESSAGES/${_pkgname}.mo"
-	rm -f "${DESTDIR}${PREFIX}/share/locale/pt_PT/LC_MESSAGES/${_pkgname}.mo"
+	for locale in $(locales); do \
+		rm -f "${DESTDIR}${PREFIX}/share/locale/$${locale}/LC_MESSAGES/${_pkgname}.mo"; \
+	done
 
 	# Delete shell completions
 	rm -f "${DESTDIR}${PREFIX}/share/bash-completion/completions/${pkgname}"
@@ -146,8 +118,6 @@ uninstall:
 	# Delete man pages
 	rm -f "${DESTDIR}${PREFIX}/share/man/man1/${pkgname}.1"
 	rm -f "${DESTDIR}${PREFIX}/share/man/man5/${pkgname}.conf.5"
-	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man1/${pkgname}.1"
-	rm -f "${DESTDIR}${PREFIX}/share/man/fr/man5/${pkgname}.conf.5"
 
 	# Delete documentation folder
 	rm -rf "${DESTDIR}${PREFIX}/share/doc/${pkgname}/"

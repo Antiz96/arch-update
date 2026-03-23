@@ -1,4 +1,4 @@
-arch-update.conf(5) ["Arch-Update 3.18.0" ["Arch-Update Manual"]]
+arch-update.conf(5) ["Arch-Update 3.18.1" ["Arch-Update Manual"]]
 
 # NAME
 
@@ -36,6 +36,9 @@ Options are case sensitive, so capital letters have to be respected.
 
 *NoNotification*
 	Do not send desktop notifications.
+
+*NoALHPCheck*
+	Disable checking for ALHP build queue or outdated mirrors.
 
 *NewsNum=[Num]*
 	Number of Arch news to display before updating and with the `-n / --news` option (see the *arch-update*(1) man page for more details). Defaults to 5.
