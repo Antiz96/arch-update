@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-05 02:27+0100\n"
+"PO-Revision-Date: 2026-03-23 10:28+0100\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -21,17 +21,17 @@ msgstr ""
 #: src/lib/alhp_check.sh:14
 #, sh-format
 msgid "Your primary ALHP mirror is out of date!"
-msgstr ""
+msgstr "Din primära ALHP spegel är föråldrad!"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr ""
+msgstr "Följande paket har fortfarande väntande ALHP byggen:"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
 msgid "Error during ALHP check:"
-msgstr ""
+msgstr "Fel under ALHP kontroll:"
 
 #: src/lib/common.sh:96
 #, sh-format
