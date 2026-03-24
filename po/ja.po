@@ -64,13 +64,13 @@ msgstr ""
 "${name}.conf 設定ファイルで AUR パッケージサポートに指定された AUR ヘルパー "
 "${aur_helper} が見つかりません\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr "権限昇格コマンドが必要です (sudo, sudo-rs, doas または run0)\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -79,7 +79,7 @@ msgstr ""
 "${name}.conf 設定ファイルで権限昇格に指定されたコマンド ${su_cmd} が見つかり"
 "ません\\n"
 
-#: src/lib/common.sh:188
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

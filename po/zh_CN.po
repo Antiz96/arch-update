@@ -58,20 +58,20 @@ msgid ""
 "${name}.conf configuration file is not found\\n"
 msgstr "配置在 ${name}.conf 文件中的 AUR 帮助程序 ${aur_helper} 未找到\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr "需要特权提升命令程序（sudo、sudo-rs、doas 或 run0）\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr "配置在 ${name}.conf 文件中的特权提升命令程序 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:188
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

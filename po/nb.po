@@ -63,14 +63,14 @@ msgstr ""
 "AUR-hjelperen ${aur_helper} som er satt for AUR-pakkestøtte i oppsettsfilen "
 "${name}.conf finnes ikke\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "En kommando med høyere adgang kreves (sudo, sudo-rs, doas eller run0)\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -79,7 +79,7 @@ msgstr ""
 "Kommandoen ${su_cmd} for høyere adgang som er satt i oppsettsfilen "
 "${name}.conf finnes ikke\\n"
 
-#: src/lib/common.sh:188
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "

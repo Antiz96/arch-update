@@ -60,14 +60,14 @@ msgstr ""
 "Помощник AUR ${aur_helper}, установленный для поддержки пакетов AUR в "
 "конфигурационном файле ${name}.conf, не найден\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "Требуется команда повышения привилегий (sudo, sudo-rs, doas или run0)\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -76,7 +76,7 @@ msgstr ""
 "Команда ${su_cmd}, установленная для повышения привилегий в конфигурационном "
 "файле ${name}.conf, не найдена\\n"
 
-#: src/lib/common.sh:188
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
