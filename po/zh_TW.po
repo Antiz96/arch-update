@@ -60,20 +60,20 @@ msgstr ""
 "在 ${name}.conf 設定檔中，為 AUR 套件支援所設定的 AUR 輔助程式 ${aur_helper} "
 "未找到\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr "需要權限提升指令（sudo、sudo-rs、doas 或 run0）\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr "在 ${name}.conf 設定檔中，為權限提升所設定的指令 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:188
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
