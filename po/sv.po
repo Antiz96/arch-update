@@ -20,8 +20,8 @@ msgstr ""
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
-msgid "Your primary ALHP mirror is out of date!"
-msgstr "Din primära ALHP spegel är föråldrad!"
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr "Din primära ALHP spegel är föråldrad!\\n"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format

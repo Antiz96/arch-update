@@ -18,8 +18,8 @@ msgstr ""
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
-msgid "Your primary ALHP mirror is out of date!"
-msgstr "Votre mirroir primaire ALHP n'est pas à jour !"
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr "Votre mirroir primaire ALHP n'est pas à jour !\\n"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
