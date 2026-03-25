@@ -13,6 +13,7 @@ packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_t
 packages_exit_code=$?
 
 if [ "${packages_exit_code}" -eq 124 ]; then
+	# shellcheck disable=SC2034
 	package_type="Packages"
 	warning_msg "$(eval_gettext "Unable to retrieve \${package_type} updates (request timeout)\n")"
 	unset packages
@@ -30,6 +31,7 @@ if [ -n "${aur_helper}" ]; then
 	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 
 	if [ "${unformatted_aur_packages_exit_code}" -eq 124 ]; then
+		# shellcheck disable=SC2034
 		package_type="AUR Packages"
 		warning_msg "$(eval_gettext "Unable to retrieve \${package_type} updates (request timeout)\n")"
 		unset aur_packages
@@ -43,6 +45,7 @@ if [ -n "${flatpak_support}" ]; then
 	flatpak_metadata_update_exit_code=$?
 
 	if [ "${flatpak_metadata_update_exit_code}" -eq 124 ]; then
+		# shellcheck disable=SC2034
 		package_type="Flatpak Packages"
 		warning_msg "$(eval_gettext "Unable to retrieve \${package_type} updates (request timeout)\n")"
 	else
