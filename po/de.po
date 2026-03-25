@@ -440,16 +440,22 @@ msgstr "Suche nach Updates...\\n"
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
 msgstr ""
+"Paket-Aktualisierungen können nicht abgerufen werden (Zeitüberschreitung der "
+"Anfrage)\\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
 msgstr ""
+"Aktualisierungen für AUR-Pakete können nicht abgerufen werden "
+"(Zeitüberschreitung der Anfrage)\\n"
 
 #: src/lib/list_packages.sh:44
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
+"Aktualisierungen für Flatpak-Pakete können nicht abgerufen werden "
+"(Zeitüberschreitung der Anfrage)\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
