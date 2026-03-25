@@ -24,7 +24,7 @@ if [ -n "${aur_helper}" ]; then
 	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null || echo "error_during_request")
 	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 
-	if [ "${aur_packages}" == "error_during_request" ]; then
+	if [ "${unformatted_aur_packages}" == "error_during_request" ]; then
 		package_type="AUR Packages"
 		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout\n)")"
 		unset aur_packages
