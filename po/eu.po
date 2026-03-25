@@ -15,6 +15,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language: eu_ES\n"
+"X-Source-Language: C\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
@@ -436,16 +439,22 @@ msgstr "Eguneraketak bilatzen...\\n"
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
 msgstr ""
+"Ezin izan dira paketeen eguneraketak eskuratu (eskaeraren denbora-muga "
+"gainditu da)\\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
 msgstr ""
+"Ezin izan dira AUR paketeen eguneraketak eskuratu (eskaeraren denbora-muga "
+"gainditu da)\\n"
 
 #: src/lib/list_packages.sh:44
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
+"Ezin izan dira Flatpak paketeen eguneraketak eskuratu (eskaeraren denbora-"
+"muga gainditu da)\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
