@@ -11,29 +11,29 @@ checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
 
 if [ -z "${no_version}" ]; then
 	# shellcheck disable=SC2154
-	packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" checkupdates "${contrib_color_opt[@]}")
+	packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates "${contrib_color_opt[@]}" || echo "error")
 else
 	# shellcheck disable=SC2154
-	packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" checkupdates "${contrib_color_opt[@]}" | awk '{print $1}')
+	packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates "${contrib_color_opt[@]}" | awk '{print $1}' || echo "error")
 fi
 
 if [ -n "${aur_helper}" ]; then
 	if [ -z "${no_version}" ]; then
 		# shellcheck disable=SC2154
-		aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
+		aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" || echo "error")
 	else
 		# shellcheck disable=SC2154
-		aur_packages=$("${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" | awk '{print $1}')
+		aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" | awk '{print $1}' || echo "error")
 	fi
 fi
 
 if [ -n "${flatpak_support}" ]; then
-	flatpak update --appstream > /dev/null
+	flatpak_metadata_state=$(timeout "${update_check_timeout}" flatpak update --appstream > /dev/null || echo "error")
 
 	mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
 
 	if [ "${#flatpak_mask[@]}" -gt 0 ]; then
-		mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=application,version | tr -s '\t' ' ')
+		mapfile -t flatpak_packages < <(flatpak remote-ls --updates --cached --columns=application,version | tr -s '\t' ' ')
 
 		declare -A app_names
 		while read -r flatpak_id flatpak_name; do
@@ -60,9 +60,9 @@ if [ -n "${flatpak_support}" ]; then
 		)
 	else
 		if [ -z "${no_version}" ]; then
-			mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=name,version | tr -s '\t' ' ')
+			mapfile -t flatpak_packages < <(flatpak remote-ls --updates --cached --columns=name,version | tr -s '\t' ' ')
 		else
-			mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=name)
+			mapfile -t flatpak_packages < <(flatpak remote-ls --updates --cached --columns=name)
 		fi
 	fi
 fi
@@ -73,21 +73,30 @@ true > "${statedir}/last_updates_check_packages"
 true > "${statedir}/last_updates_check_aur"
 true > "${statedir}/last_updates_check_flatpak"
 
-if [ -n "${packages}" ]; then
+if [ "${packages}" == "error" ]; then
+	warning_msg "$(eval_gettext "Unable to retrieve Packages updates (error response or request timeout\n)")"
+	unset packages
+elif [ -n "${packages}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
 	echo -e "${packages}\n"
 	echo "${packages}" >> "${statedir}/last_updates_check"
 	echo "${packages}" > "${statedir}/last_updates_check_packages"
 fi
 
-if [ -n "${aur_packages}" ]; then
+if [ "${aur_packages}" == "error" ]; then
+	warning_msg "$(eval_gettext "Unable to retrieve AUR Packages updates (error response or request timeout\n)")"
+	unset aur_packages
+elif [ -n "${aur_packages}" ]; then
 	main_msg "$(eval_gettext "AUR Packages:")"
 	echo -e "${aur_packages}\n"
 	echo "${aur_packages}" >> "${statedir}/last_updates_check"
 	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
 fi
 
-if [ "${#flatpak_packages[@]}" -gt 0 ]; then
+if [ "${flatpak_metadata_state}" == "error" ]; then
+	warning_msg "$(eval_gettext "Unable to retrieve Flatpak Packages updates (error response or request timeout\n)")"
+	unset flatpak_packages
+elif [ "${#flatpak_packages[@]}" -gt 0 ]; then
 	main_msg "$(eval_gettext "Flatpak Packages:")"
 	printf "%s\n" "${flatpak_packages[@]}" ""
 	printf "%s\n" "${flatpak_packages[@]}" >> "${statedir}/last_updates_check"
