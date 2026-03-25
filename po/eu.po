@@ -15,6 +15,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language: eu_ES\n"
+"X-Source-Language: C\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
@@ -88,11 +91,11 @@ msgstr ""
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
 msgid ""
-"No configuration file found\\nYou can generate one with \"${name} --gen-"
-"config\""
+"No configuration file found\\nYou can generate one with \"${name} "
+"--gen-config\""
 msgstr ""
-"Ez da konfigurazio fitxategirik aurkitu\\nBat sortu dezakezu \"${name} --gen-"
-"config\" erabiliz"
+"Ez da konfigurazio fitxategirik aurkitu\\nBat sortu dezakezu \"${name} "
+"--gen-config\" erabiliz"
 
 #: src/lib/edit-config.sh:13
 #, sh-format
@@ -100,8 +103,9 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"Ezin izan da erabili beharreko editorea zehaztu\\n\"EDITOR\" ingurune-"
-"aldagaia ez dago ezarrita eta \"nano\" (ordezko aukera) ez dago instalatuta"
+"Ezin izan da erabili beharreko editorea zehaztu\\n\"EDITOR\" "
+"ingurune-aldagaia ez dago ezarrita eta \"nano\" (ordezko aukera) ez dago "
+"instalatuta"
 
 #: src/lib/full_upgrade.sh:13
 #, sh-format
@@ -355,13 +359,13 @@ msgstr "Arch-eko azken berriak bilatzen..."
 #: src/lib/list_news.sh:13
 #, sh-format
 msgid ""
-"Unable to retrieve recent Arch News (HTTP error response or request timeout)"
-"\\nPlease, look for any recent news at https://archlinux.org before updating "
-"your system"
+"Unable to retrieve recent Arch News (HTTP error response or request "
+"timeout)\\nPlease, look for any recent news at https://archlinux.org before "
+"updating your system"
 msgstr ""
 "Ezin izan dira Arch-eko azken berriak lortu (HTTP errore-erantzuna edo "
-"eskaeraren denbora-muga)\\nMesezez, begiratu azken berriak https://"
-"archlinux.org helbidean zure sistema eguneratu aurretik"
+"eskaeraren denbora-muga)\\nMesezez, begiratu azken berriak "
+"https://archlinux.org helbidean zure sistema eguneratu aurretik"
 
 #: src/lib/list_news.sh:23
 #, sh-format
@@ -433,19 +437,25 @@ msgid "Looking for updates...\\n"
 msgstr "Eguneraketak bilatzen...\\n"
 
 #: src/lib/list_packages.sh:16
-#, sh-format
+#, fuzzy, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
 msgstr ""
+"Ezin izan dira paketeen eguneraketak eskuratu (eskaeraren denbora-muga "
+"gainditu da)\\n"
 
 #: src/lib/list_packages.sh:32
-#, sh-format
+#, fuzzy, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
 msgstr ""
+"Ezin izan dira AUR paketeen eguneraketak eskuratu (eskaeraren denbora-muga "
+"gainditu da)\\n"
 
 #: src/lib/list_packages.sh:44
-#, sh-format
+#, fuzzy, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
+"Ezin izan dira Flatpak paketeen eguneraketak eskuratu (eskaeraren "
+"denbora-muga gainditu da)\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
