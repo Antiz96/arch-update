@@ -22,8 +22,8 @@ msgstr ""
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
-msgid "Your primary ALHP mirror is out of date!"
-msgstr "現在設定されている ALHP ミラーが古くなっています"
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr "現在設定されている ALHP ミラーが古くなっています\\n"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format

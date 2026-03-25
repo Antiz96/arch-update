@@ -11,7 +11,7 @@ alhp_utils_exit_code=$?
 # Other exit codes return other errors that we should show to the user.
 # Exit code 0 or 20 means there are queued packages.
 if [ "${alhp_utils_exit_code}" -eq 20 ]; then
-	warning_msg "$(eval_gettext "Your primary ALHP mirror is out of date!")"
+	warning_msg "$(eval_gettext "Your primary ALHP mirror is out of date!\n")"
 fi
 
 if [ -n "${alhp_utils_output}" ]; then
@@ -20,6 +20,6 @@ if [ -n "${alhp_utils_output}" ]; then
 		warning_msg "$(eval_gettext "The following packages still have pending ALHP builds:")"
 		echo -e "${alhp_utils_output}\n"
 	else
-		warning_msg "$(eval_gettext "Error during ALHP check:") ${alhp_utils_output}"
+		warning_msg "$(eval_gettext "Error during ALHP check:") ${alhp_utils_output}\n"
 	fi
 fi
