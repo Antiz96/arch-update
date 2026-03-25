@@ -13,8 +13,7 @@ packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_t
 packages_exit_code=$?
 
 if [ "${packages_exit_code}" -eq 124 ]; then
-	package_type="Packages"
-	warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (request timeout)\n")"
+	warning_msg "$(eval_gettext "Unable to retrieve Packages updates (request timeout)\n")"
 	unset packages
 elif [ -n "${no_version}" ]; then
 	packages=$(echo "${packages}" | awk '{print $1}')
@@ -30,8 +29,7 @@ if [ -n "${aur_helper}" ]; then
 	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 
 	if [ "${unformatted_aur_packages_exit_code}" -eq 124 ]; then
-		package_type="AUR Packages"
-		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (request timeout)\n")"
+		warning_msg "$(eval_gettext "Unable to retrieve AUR Packages updates (request timeout)\n")"
 		unset aur_packages
 	elif [ -n "${no_version}" ]; then
 		aur_packages=$(echo "${aur_packages}" | awk '{print $1}')
@@ -43,8 +41,7 @@ if [ -n "${flatpak_support}" ]; then
 	flatpak_metadata_update_exit_code=$?
 
 	if [ "${flatpak_metadata_update_exit_code}" -eq 124 ]; then
-		package_type="Flatpak Packages"
-		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (request timeout)\n")"
+		warning_msg "$(eval_gettext "Unable to retrieve Flatpak packages updates (request timeout)\n")"
 	else
 		mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
 
