@@ -8,6 +8,7 @@ info_msg "$(eval_gettext "Looking for updates...\n")"
 
 # shellcheck disable=SC2154
 checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
+# shellcheck disable=SC2154
 packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates "${contrib_color_opt[@]}" || echo "error_during_request")
 
 if [ "${packages}" == "error_during_request" ]; then
@@ -19,6 +20,7 @@ elif [ -n "${no_version}" ]; then
 fi
 
 if [ -n "${aur_helper}" ]; then
+	# shellcheck disable=SC2154
 	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null || echo "error_during_request")
 	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 
