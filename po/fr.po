@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-22 09:30+0100\n"
+"PO-Revision-Date: 2026-03-25 09:30+0100\n"
 "Last-Translator: Robin Candau <robincandau@protonmail.com>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -444,16 +444,22 @@ msgstr "Recherche de mises à jour...\\n"
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
 msgstr ""
+"Impossible de récupérer les mises à jour des paquets (délai d'attente de la "
+"demande dépassé)\\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
 msgstr ""
+"Impossible de récupérer les mises à jour des paquets AUR (délai d'attente de "
+"la demande dépassé)\\n"
 
 #: src/lib/list_packages.sh:44
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
+"Impossible de récupérer les mises à jour des paquets Flatpak (délai "
+"d'attente de la demande dépassé)\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
