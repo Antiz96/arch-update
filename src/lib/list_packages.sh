@@ -9,11 +9,12 @@ info_msg "$(eval_gettext "Looking for updates...\n")"
 # shellcheck disable=SC2154
 checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
 # shellcheck disable=SC2154
-packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates "${contrib_color_opt[@]}" || echo "error_during_request")
+packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates "${contrib_color_opt[@]}")
+packages_exit_code=$?
 
-if [ "${packages}" == "error_during_request" ]; then
+if [ "${packages_exit_code}" -eq 124 ]; then
 	package_type="Packages"
-	warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout)\n")"
+	warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (request timeout)\n")"
 	unset packages
 elif [ -n "${no_version}" ]; then
 	packages=$(echo "${packages}" | awk '{print $1}')
@@ -21,12 +22,13 @@ fi
 
 if [ -n "${aur_helper}" ]; then
 	# shellcheck disable=SC2154
-	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null || echo "error_during_request")
+	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null)
+	unformatted_aur_packages_exit_code=$?
 	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 
-	if [ "${unformatted_aur_packages}" == "error_during_request" ]; then
+	if [ "${unformatted_aur_packages_exit_code}" -eq 124 ]; then
 		package_type="AUR Packages"
-		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout)\n")"
+		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (request timeout)\n")"
 		unset aur_packages
 	elif [ -n "${no_version}" ]; then
 		aur_packages=$(echo "${aur_packages}" | awk '{print $1}')
@@ -34,11 +36,12 @@ if [ -n "${aur_helper}" ]; then
 fi
 
 if [ -n "${flatpak_support}" ]; then
-	flatpak_metadata_update=$(timeout "${update_check_timeout}" flatpak update --appstream > /dev/null || echo "error_during_request")
+	flatpak_metadata_update=$(timeout "${update_check_timeout}" flatpak update --appstream > /dev/null)
+	flatpak_metadata_update_exit_code=$?
 
-	if [ "${flatpak_metadata_update}" == "error_during_request" ]; then
+	if [ "${flatpak_metadata_update_exit_code}" -eq 124 ]; then
 		package_type="Flatpak Packages"
-		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout)\n")"
+		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (request timeout)\n")"
 	else
 		mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
 
