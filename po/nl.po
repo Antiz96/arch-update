@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-22 19:40+0100\n"
+"PO-Revision-Date: 2026-03-25 20:01+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -176,7 +176,7 @@ msgstr ""
 #: src/lib/help.sh:15
 #, sh-format
 msgid "Options:"
-msgstr "Opties"
+msgstr "Opties:"
 
 #: src/lib/help.sh:16
 #, sh-format
@@ -271,7 +271,7 @@ msgstr "  -V, --version     Toon versie-informatie en sluit af"
 #: src/lib/help.sh:29
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
-msgstr "Meer informatie is te vinden in de man-pagina ‘${name}(1)’"
+msgstr "Meer informatie is te vinden in de man-pagina ‘${name}(1)’."
 
 #: src/lib/help.sh:30
 #, sh-format
@@ -437,16 +437,21 @@ msgstr "Bezig met zoeken naar updates…\\n"
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
 msgstr ""
+"De pakketupdates kunnen niet worden opgehaald (het verzoek is verlopen)\\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
 msgstr ""
+"De AUR-pakketupdates kunnen niet worden opgehaald (het verzoek is verlopen)"
+"\\n"
 
 #: src/lib/list_packages.sh:44
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
+"De Flatpak-pakketupdates kunnen niet worden opgehaald (het verzoek is "
+"verlopen)\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
