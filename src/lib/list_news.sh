@@ -6,9 +6,9 @@
 
 info_msg "$(eval_gettext "Looking for recent Arch News...")"
 # shellcheck disable=SC2154
-news=$(curl --compressed -m "${news_timeout}" -Lfs https://www.archlinux.org/news || echo "error_during_request")
+news=$(curl --compressed -m "${news_timeout}" -Lfs https://www.archlinux.org/news || echo "error")
 
-if [ "${news}" == "error_during_request" ]; then
+if [ "${news}" == "error" ]; then
 	echo
 	warning_msg "$(eval_gettext "Unable to retrieve recent Arch News (HTTP error response or request timeout)\nPlease, look for any recent news at https://archlinux.org before updating your system")"
 else
@@ -73,9 +73,9 @@ else
 				news_path=$(echo "${news}" | htmlq -a href a | grep ^"/news/" | sed -n "${num}"p)
 				news_url="https://www.archlinux.org${news_path}"
 				# shellcheck disable=SC2154
-				news_content=$(curl --compressed -m "${news_timeout}" -Lfs "${news_url}" || echo "error_during_request")
+				news_content=$(curl --compressed -m "${news_timeout}" -Lfs "${news_url}" || echo "error")
 
-				if [ "${news_content}" == "error_during_request" ]; then
+				if [ "${news_content}" == "error" ]; then
 					echo
 					warning_msg "$(eval_gettext "Unable to retrieve the selected Arch News (HTTP error response or request timeout)\nPlease, read the selected Arch News at \${news_url} before updating your system")"
 				else
