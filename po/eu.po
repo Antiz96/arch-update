@@ -457,6 +457,7 @@ msgstr "Paketeak:"
 msgid "AUR Packages:"
 msgstr "AUR paketeak:"
 
+
 #: src/lib/list_packages.sh:105
 #, sh-format
 msgid "Flatpak Packages:"
