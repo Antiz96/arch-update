@@ -311,14 +311,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Gostaria de reiniciar agora? [s/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:134
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "S"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:134
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -437,32 +437,38 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "À procura de atualizações...\\n"
 
-#: src/lib/list_packages.sh:77
+#: src/lib/list_packages.sh:17 src/lib/list_packages.sh:34
+#: src/lib/list_packages.sh:47
+#, sh-format
+msgid "Unable to retrieve ${package_type} updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:94
 #, sh-format
 msgid "Packages:"
 msgstr "Pacotes:"
 
-#: src/lib/list_packages.sh:84
+#: src/lib/list_packages.sh:101
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Pacotes AUR:"
 
-#: src/lib/list_packages.sh:91
+#: src/lib/list_packages.sh:108
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Pacotes Flatpak:"
 
-#: src/lib/list_packages.sh:101
+#: src/lib/list_packages.sh:118
 #, sh-format
 msgid "No update available\\n"
 msgstr "Nenhuma atualização disponível\\n"
 
-#: src/lib/list_packages.sh:113
+#: src/lib/list_packages.sh:130
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Prosseguir com a atualização? [S/n]"
 
-#: src/lib/list_packages.sh:123
+#: src/lib/list_packages.sh:140
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "A atualização foi abortada\\n"
