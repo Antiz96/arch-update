@@ -22,7 +22,7 @@ fi
 
 if [ -n "${aur_helper}" ]; then
 	# shellcheck disable=SC2154
-	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua 2> /dev/null)
+	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua < /dev/null 2> /dev/null)
 	unformatted_aur_packages_exit_code=$?
 	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 
