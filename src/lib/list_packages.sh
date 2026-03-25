@@ -36,7 +36,7 @@ if [ -n "${aur_helper}" ]; then
 fi
 
 if [ -n "${flatpak_support}" ]; then
-	flatpak_metadata_update=$(timeout "${update_check_timeout}" flatpak update --appstream > /dev/null)
+	timeout "${update_check_timeout}" flatpak update --appstream > /dev/null
 	flatpak_metadata_update_exit_code=$?
 
 	if [ "${flatpak_metadata_update_exit_code}" -eq 124 ]; then
