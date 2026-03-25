@@ -20,7 +20,7 @@ msgstr ""
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
-msgid "Your primary ALHP mirror is out of date!"
+msgid "Your primary ALHP mirror is out of date!\\n"
 msgstr ""
 
 #: src/lib/alhp_check.sh:20
@@ -62,7 +62,7 @@ msgstr ""
 "No se ha encontrado el ayudante ${aur_helper} configurado para el soporte de "
 "paquetes AUR en el archivo ${name}.conf\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
@@ -70,7 +70,7 @@ msgstr ""
 "Se requiere un comando de elevación de privilegios (sudo, sudo-rs, doas o "
 "run0)\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -79,7 +79,7 @@ msgstr ""
 "No se ha encontrado el comando ${su_cmd} configurado para la elevación de "
 "privilegios en el archivo ${name}.conf\\n"
 
-#: src/lib/common.sh:188
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -313,14 +313,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "¿Desea reiniciar ahora? [s/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "S"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -441,32 +441,47 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "Buscando actualizaciones...\\n"
 
-#: src/lib/list_packages.sh:77
+#: src/lib/list_packages.sh:16
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:32
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:44
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:91
 #, sh-format
 msgid "Packages:"
 msgstr "Paquetes:"
 
-#: src/lib/list_packages.sh:84
+#: src/lib/list_packages.sh:98
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Paquetes AUR:"
 
-#: src/lib/list_packages.sh:91
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Paquetes Flatpak:"
 
-#: src/lib/list_packages.sh:101
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "No update available\\n"
 msgstr "No hay actualizaciones disponibles\\n"
 
-#: src/lib/list_packages.sh:113
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "¿Continuar con la actualización? [S/n]"
 
-#: src/lib/list_packages.sh:123
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "La actualización se ha cancelado\\n"

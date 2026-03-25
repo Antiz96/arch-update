@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-22 19:40+0100\n"
+"PO-Revision-Date: 2026-03-25 20:01+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -20,8 +20,8 @@ msgstr ""
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
-msgid "Your primary ALHP mirror is out of date!"
-msgstr "De primaire ALHP-spiegelserver is te lang niet bijgewerkt!"
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr "De primaire ALHP-spiegelserver is te lang niet bijgewerkt!\\n"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
@@ -62,7 +62,7 @@ msgstr ""
 "Het hulpmiddel voor de afhandeling van AUR-pakketten, ‘${aur_helper}’, zoals "
 "ingesteld in ${name}.conf, is niet aangetroffen.\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
@@ -70,7 +70,7 @@ msgstr ""
 "Een opdracht om meer rechten te verlenen is vereist (sudo, sudo-rs, doas of "
 "run0)\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -79,7 +79,7 @@ msgstr ""
 "De opdracht voor het verlenen van meer rechten, ‘${su_cmd}’, zoals ingesteld "
 "in ${name}.conf, is niet aangetroffen.\\n"
 
-#: src/lib/common.sh:188
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -176,7 +176,7 @@ msgstr ""
 #: src/lib/help.sh:15
 #, sh-format
 msgid "Options:"
-msgstr "Opties"
+msgstr "Opties:"
 
 #: src/lib/help.sh:16
 #, sh-format
@@ -271,7 +271,7 @@ msgstr "  -V, --version     Toon versie-informatie en sluit af"
 #: src/lib/help.sh:29
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
-msgstr "Meer informatie is te vinden in de man-pagina ‘${name}(1)’"
+msgstr "Meer informatie is te vinden in de man-pagina ‘${name}(1)’."
 
 #: src/lib/help.sh:30
 #, sh-format
@@ -306,14 +306,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Wil je nu opnieuw opstarten? [j/n]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -433,32 +433,52 @@ msgstr "Url:"
 msgid "Looking for updates...\\n"
 msgstr "Bezig met zoeken naar updates…\\n"
 
-#: src/lib/list_packages.sh:77
+#: src/lib/list_packages.sh:16
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+"De pakketupdates kunnen niet worden opgehaald (het verzoek is verlopen)\\n"
+
+#: src/lib/list_packages.sh:32
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"De AUR-pakketupdates kunnen niet worden opgehaald (het verzoek is verlopen)"
+"\\n"
+
+#: src/lib/list_packages.sh:44
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"De Flatpak-pakketupdates kunnen niet worden opgehaald (het verzoek is "
+"verlopen)\\n"
+
+#: src/lib/list_packages.sh:91
 #, sh-format
 msgid "Packages:"
 msgstr "Pakketten:"
 
-#: src/lib/list_packages.sh:84
+#: src/lib/list_packages.sh:98
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-pakketten:"
 
-#: src/lib/list_packages.sh:91
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak-pakketten:"
 
-#: src/lib/list_packages.sh:101
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "No update available\\n"
 msgstr "Er zijn geen updates beschikbaar\\n"
 
-#: src/lib/list_packages.sh:113
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Wil je het systeem bijwerken? [j/n]"
 
-#: src/lib/list_packages.sh:123
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Het bijwerken is afgebroken\\n"

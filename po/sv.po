@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-05 02:27+0100\n"
+"PO-Revision-Date: 2026-03-23 10:28+0100\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -20,18 +20,18 @@ msgstr ""
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
-msgid "Your primary ALHP mirror is out of date!"
-msgstr ""
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr "Din primära ALHP spegel är föråldrad!\\n"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr ""
+msgstr "Följande paket har fortfarande väntande ALHP byggen:"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
 msgid "Error during ALHP check:"
-msgstr ""
+msgstr "Fel under ALHP kontroll:"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -62,14 +62,14 @@ msgstr ""
 "${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
 "konfigurationsfilen ${name}.conf hittades inte\\n"
 
-#: src/lib/common.sh:171
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "Ett kommando för behörighetshöjning krävs (sudo, sudo-rs, doas eller run0)\\n"
 
-#: src/lib/common.sh:176
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -78,7 +78,7 @@ msgstr ""
 "${su_cmd}-kommandot inställt för privilegieskalering i ${name}.conf-"
 "konfigurationsfilen hittades inte\\n"
 
-#: src/lib/common.sh:188
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -309,14 +309,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Vill du starta om nu? [j/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:117
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -435,32 +435,47 @@ msgstr "Webbadress:"
 msgid "Looking for updates...\\n"
 msgstr "Letar efter uppdateringar...\\n"
 
-#: src/lib/list_packages.sh:77
+#: src/lib/list_packages.sh:16
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:32
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:44
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:91
 #, sh-format
 msgid "Packages:"
 msgstr "Paket:"
 
-#: src/lib/list_packages.sh:84
+#: src/lib/list_packages.sh:98
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-paket:"
 
-#: src/lib/list_packages.sh:91
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak paket:"
 
-#: src/lib/list_packages.sh:101
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "No update available\\n"
 msgstr "Ingen uppdatering tillgänglig\\n"
 
-#: src/lib/list_packages.sh:113
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Fortsätt med uppdatering? [J/n]"
 
-#: src/lib/list_packages.sh:123
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Uppdatering har avbrutits\\n"

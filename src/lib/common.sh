@@ -142,6 +142,10 @@ check_aur_helper() {
 if [ -z "${no_flatpak}" ]; then
 	# shellcheck disable=SC2034
 	flatpak_support=$(command -v flatpak)
+	# Disable flatpak support if flatpak is available but no Flatpak package is installed
+	if [ -n "${flatpak_support}" ] && [ -z "$(flatpak list --user ; flatpak list --system)" ]; then
+		unset flatpak_support
+	fi
 fi
 
 # Check if notify-send is installed for the optional desktop notification support
