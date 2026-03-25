@@ -13,7 +13,7 @@ packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_t
 
 if [ "${packages}" == "error_during_request" ]; then
 	package_type="Packages"
-	warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout\n)")"
+	warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout)\n")"
 	unset packages
 elif [ -n "${no_version}" ]; then
 	packages=$(echo "${packages}" | awk '{print $1}')
@@ -26,7 +26,7 @@ if [ -n "${aur_helper}" ]; then
 
 	if [ "${unformatted_aur_packages}" == "error_during_request" ]; then
 		package_type="AUR Packages"
-		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout\n)")"
+		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout)\n")"
 		unset aur_packages
 	elif [ -n "${no_version}" ]; then
 		aur_packages=$(echo "${aur_packages}" | awk '{print $1}')
@@ -38,7 +38,7 @@ if [ -n "${flatpak_support}" ]; then
 
 	if [ "${flatpak_metadata_update}" == "error_during_request" ]; then
 		package_type="Flatpak Packages"
-		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout\n)")"
+		warning_msg "$(eval_gettext "Unable to retrieve ${package_type} updates (error response or request timeout)\n")"
 	else
 		mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
 
