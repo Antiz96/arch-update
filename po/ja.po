@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-23 08:50+0900\n"
+"PO-Revision-Date: 2026-03-26 18:30+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
@@ -426,16 +426,20 @@ msgstr "アップデートを確認中...\\n"
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
 msgstr ""
+"パッケージ更新の取得に失敗しました (リクエストがタイムアウトしました)\\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
 msgstr ""
+"AUR パッケージ更新の取得に失敗しました (リクエストがタイムアウトしました)\\n"
 
 #: src/lib/list_packages.sh:44
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
+"Flatpak パッケージ更新の取得に失敗しました (リクエストがタイムアウトしました)"
+"\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
