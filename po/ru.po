@@ -450,7 +450,7 @@ msgstr ""
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
-"Не удалось получить обновления пакетов AUR (превышено время ожидания)\\n"
+"Не удалось получить обновления пакетов Flaptak (превышено время ожидания)\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
