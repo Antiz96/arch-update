@@ -9,27 +9,29 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-03-27 09:32+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
 msgid "Your primary ALHP mirror is out of date!\\n"
-msgstr ""
+msgstr "Ваше основное зеркало ALHP устарело!\\n"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr ""
+msgstr "Для следующих пакетов всё еще ожидается сборка в ALHP:"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
 msgid "Error during ALHP check:"
-msgstr ""
+msgstr "Ошибка при проверке ALHP:"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -128,13 +130,13 @@ msgid "The '${config_file}' configuration file has been generated"
 msgstr "Конфигурационный файл '${config_file}' был сгенерирован"
 
 #: src/lib/help.sh:8
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "An interactive update notifier & applier for Arch Linux that assists you "
 "with important pre / post update tasks."
 msgstr ""
-"Уведомитель и установщик обновлений для Arch Linux, который помогает вам с "
-"важными задачами до / после обновления."
+"Интерактивный помощник по обновлению Arch Linux: уведомляет и сопровождает "
+"до / после обновления системы."
 
 #: src/lib/help.sh:10
 #, sh-format
@@ -436,17 +438,19 @@ msgstr "Поиск обновлений...\\n"
 #: src/lib/list_packages.sh:16
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr ""
+msgstr "Не удалось получить обновления пакетов (превышено время ожидания) \\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
 msgstr ""
+"Не удалось получить обновления пакетов AUR (превышено время ожидания)\\n"
 
 #: src/lib/list_packages.sh:44
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
+"Не удалось получить обновления пакетов AUR (превышено время ожидания)\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
