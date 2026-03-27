@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.18.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-23 11:47+0100\n"
+"PO-Revision-Date: 2026-03-27 08:51+0100\n"
 "Last-Translator: Kjetil Sorlund <translate@sorlund.no>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
 "Language: nb_NO\n"
@@ -438,16 +438,20 @@ msgstr "Ser etter oppdateringer …\\n"
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
 msgstr ""
+"Kan ikke hente oppdatering av pakker (forespørselen løper ut på tid)\\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
 msgstr ""
+"Kan ikke hente oppdatering av AUR-pakker (forespørselen løper ut på tid)\\n"
 
 #: src/lib/list_packages.sh:44
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
+"Kan ikke hente oppdatering av Flatpak-pakker (forespørselen løper ut på tid)"
+"\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
