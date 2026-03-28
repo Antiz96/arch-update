@@ -6,7 +6,7 @@
 # Capricornus007 <sihaogang@gmail.com>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.1\n"
+"Project-Id-Version: Arch-Update 3.19.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-11-18 14:50+0800\n"
@@ -15,6 +15,21 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr ""
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr ""
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr ""
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -45,20 +60,20 @@ msgstr ""
 "在 ${name}.conf 設定檔中，為 AUR 套件支援所設定的 AUR 輔助程式 ${aur_helper} "
 "未找到\\n"
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr "需要權限提升指令（sudo、sudo-rs、doas 或 run0）\\n"
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr "在 ${name}.conf 設定檔中，為權限提升所設定的指令 ${su_cmd} 未找到\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -107,10 +122,10 @@ msgid "The '${config_file}' configuration file has been generated"
 msgstr "「${config_file}」設定檔已生成"
 
 #: src/lib/help.sh:8
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
-"An update notifier & applier for Arch Linux that assists you with important "
-"pre / post update tasks."
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
 msgstr "一個 Arch Linux 的更新通知與應用程式，可協助您完成重要的更新前後作業。"
 
 #: src/lib/help.sh:10
@@ -149,7 +164,7 @@ msgid "Options:"
 msgstr "選項："
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
@@ -159,17 +174,17 @@ msgstr ""
 "中包含可用更新的數量（若與上次檢查相比有新的可用更新）"
 
 #: src/lib/help.sh:17
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -l, --list        Display the list of pending updates"
 msgstr "  -l, --list        顯示待處理的更新清單"
 
 #: src/lib/help.sh:18
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -d, --devel       Include AUR development packages updates"
 msgstr "  -d, --devel       包含 AUR 開發套件的更新"
 
 #: src/lib/help.sh:19
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
@@ -178,17 +193,17 @@ msgstr ""
 "聞數量（例如：「--news 10」）"
 
 #: src/lib/help.sh:20
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -s, --services    Check for services requiring a post upgrade restart"
 msgstr "  -s, --services    檢查升級後需要重新啟動的服務"
 
 #: src/lib/help.sh:21
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -D, --debug       Display debug traces"
 msgstr "  -D, --debug       顯示偵錯追蹤資訊"
 
 #: src/lib/help.sh:22
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  --gen-config      Generate a default / example '${name}.conf' "
 "configuration file, you can optionally pass the '--force' argument to "
@@ -198,21 +213,21 @@ msgstr ""
 "force」引數來覆寫任何現有的「${name}.conf」設定檔"
 
 #: src/lib/help.sh:23
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  --show-config     Display the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr "  --show-config     顯示目前使用的「${name}.conf」設定檔（如果存在）"
 
 #: src/lib/help.sh:24
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr "  --edit-config     編輯目前使用的「${name}.conf」設定檔（如果存在）"
 
 #: src/lib/help.sh:25
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  --tray            Launch the ${_name} systray applet, you can optionally "
 "add the '--enable' argument to start it automatically at boot"
@@ -221,12 +236,12 @@ msgstr ""
 "enable」引數以在啟動時自動啟動"
 
 #: src/lib/help.sh:26
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -h, --help        Display this help message and exit"
 msgstr "  -h, --help        顯示此說明訊息並離開"
 
 #: src/lib/help.sh:27
-#, fuzzy, sh-format
+#, sh-format
 msgid "  -V, --version     Display version information and exit"
 msgstr "  -V, --version     顯示版本資訊並離開"
 
@@ -264,14 +279,14 @@ msgstr "需要重新啟動：\\n系統上有待處理的核心更新，需要重
 msgid "Would you like to reboot now? [y/N]"
 msgstr "是否現在重新啟動？ [y/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -382,32 +397,47 @@ msgstr "網址："
 msgid "Looking for updates...\\n"
 msgstr "正在尋找更新...\\n"
 
-#: src/lib/list_packages.sh:63
+#: src/lib/list_packages.sh:16
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:32
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:44
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:91
 #, sh-format
 msgid "Packages:"
 msgstr "官方套件："
 
-#: src/lib/list_packages.sh:70
+#: src/lib/list_packages.sh:98
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR 套件："
 
-#: src/lib/list_packages.sh:77
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak 套件："
 
-#: src/lib/list_packages.sh:87
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "No update available\\n"
 msgstr "沒有可用的更新\\n"
 
-#: src/lib/list_packages.sh:95
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "是否繼續進行更新？ [Y/n]"
 
-#: src/lib/list_packages.sh:105
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "更新已中止\\n"

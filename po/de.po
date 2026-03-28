@@ -6,15 +6,30 @@
 # DeN-AlB <denalb@mailbox.org>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.1\n"
+"Project-Id-Version: Arch-Update 3.19.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2025-11-17 23:20+0100\n"
-"Last-Translator: mgruberb\n"
+"PO-Revision-Date: 2026-01-03 18:40+0100\n"
+"Last-Translator: DeN-AlB\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr "Der primäre ALHP-Mirror ist veraltet!\\n"
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr "Für die folgenden Pakete stehen noch ALHP-Builds aus:"
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr "Fehler bei der ALHP-Prüfung:"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -45,7 +60,7 @@ msgstr ""
 "Der ${aur_helper} AUR-Helper für den Support von AUR-Paketen in der "
 "${name}.conf Konfigurationsdatei wurde nicht gefunden\\n"
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
@@ -53,7 +68,7 @@ msgstr ""
 "Ein Befehl zur Erhöhung der Rechte ist erforderlich (sudo, sudo-rs, doas "
 "oder run0)\\n"
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -62,7 +77,7 @@ msgstr ""
 "Der ${su_cmd} Befehl für die Rechteerhöhung in der ${name}.conf "
 "Konfigurationsdatei wurde nicht gefunden\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -87,7 +102,7 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"Zu verwendender Editor kann nicht ermittel werden\\nDie \"EDITOR\" "
+"Zu verwendender Editor kann nicht ermittelt werden\\nDie \"EDITOR\" "
 "Umgebungsvariable ist nicht gesetzt und \"nano\" (Fallback-Option) ist nicht "
 "installiert"
 
@@ -119,11 +134,11 @@ msgstr "Die '${config_file}' Konfigurationsdatei wurde generiert"
 #: src/lib/help.sh:8
 #, sh-format
 msgid ""
-"An update notifier & applier for Arch Linux that assists you with important "
-"pre / post update tasks."
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
 msgstr ""
-"Eine App zum Benachrichtigen bei und Ausführen von Updates für Arch Linux, "
-"die wichtige Aufgaben vor und nach Updates ausführt."
+"Eine interaktive App zum Benachrichtigen bei und Ausführen von Updates für "
+"Arch Linux, die wichtige Aufgaben vor und nach Updates ausführt."
 
 #: src/lib/help.sh:10
 #, sh-format
@@ -136,7 +151,7 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
-"Die Liste der Pakete anzeigen, die zur Verfügug stehen und nach Bestätigung "
+"Die Liste der Pakete anzeigen, die zur Verfügung stehen und nach Bestätigung "
 "des Benutzers fragen, um mit der Installation fortzufahren."
 
 #: src/lib/help.sh:12
@@ -172,7 +187,7 @@ msgid ""
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check)"
 msgstr ""
-"  -c, --check       Prüfung auf vorhandene Updates, Ändern des Systray Icons "
+"  -c, --check       Prüfung auf vorhandene Updates, Ändern des Systray-Icons "
 "und Senden einer Desktop-Benachrichtigung mit der Anzahl der vorhandenen "
 "Updates (falls verglichen zur letzten Prüfung neue Updates verfügbar sind)"
 
@@ -193,7 +208,7 @@ msgid ""
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
 "  -n, --news [Num]  Aktuelle Arch-Neuigkeiten anzeigen, optionale Angabe für "
-"die Anzahl der anzuzeigenden Arch-Neuigkeiten mit '--news [Num]' (z.B. '--"
+"die Anzahl der anzuzeigenden Arch-Neuigkeiten mit '--news [Num]' (z. B. '--"
 "news 10')"
 
 #: src/lib/help.sh:20
@@ -294,14 +309,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Neustart jetzt durchführen? [j/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -348,14 +363,14 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
-"Arch-Neugkeiten können nicht abgerufen werden (HTTP-Fehlerantwort oder "
+"Arch-Neuigkeiten können nicht abgerufen werden (HTTP-Fehlerantwort oder "
 "Zeitüberschreitung der Anfrage)\\nBitte unter https://archlinux.org über die "
 "neuesten Nachrichten informieren, bevor das System aktualisiert wird"
 
 #: src/lib/list_news.sh:23
 #, sh-format
 msgid "No recent Arch News found"
-msgstr "Keine aktuellen Arch-Neugikeiten gefunden"
+msgstr "Keine aktuellen Arch-Neuigkeiten gefunden"
 
 #: src/lib/list_news.sh:37
 #, sh-format
@@ -373,7 +388,7 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
-"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen "
+"Neuigkeiten zum Lesen auswählen (z. B. 1 3 5), 0 wählen, um alle zu lesen "
 "oder zum Beenden \"ENTER\" drücken:"
 
 #: src/lib/list_news.sh:56
@@ -382,7 +397,7 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
-"Neuigkeiten zum Lesen auswählen (z.B. 1 3 5), 0 wählen, um alle zu lesen "
+"Neuigkeiten zum Lesen auswählen (z. B. 1 3 5), 0 wählen, um alle zu lesen "
 "oder \"ENTER\" drücken, um mit der Aktualisierung fortzufahren:"
 
 #: src/lib/list_news.sh:80
@@ -421,32 +436,53 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "Suche nach Updates...\\n"
 
-#: src/lib/list_packages.sh:63
+#: src/lib/list_packages.sh:16
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+"Paket-Aktualisierungen können nicht abgerufen werden (Zeitüberschreitung der "
+"Anfrage)\\n"
+
+#: src/lib/list_packages.sh:32
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"Aktualisierungen für AUR-Pakete können nicht abgerufen werden "
+"(Zeitüberschreitung der Anfrage)\\n"
+
+#: src/lib/list_packages.sh:44
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"Aktualisierungen für Flatpak-Pakete können nicht abgerufen werden "
+"(Zeitüberschreitung der Anfrage)\\n"
+
+#: src/lib/list_packages.sh:91
 #, sh-format
 msgid "Packages:"
 msgstr "Pakete:"
 
-#: src/lib/list_packages.sh:70
+#: src/lib/list_packages.sh:98
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-Pakete:"
 
-#: src/lib/list_packages.sh:77
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak-Pakete:"
 
-#: src/lib/list_packages.sh:87
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "No update available\\n"
 msgstr "Kein Update verfügbar\\n"
 
-#: src/lib/list_packages.sh:95
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Mit der Aktualisierung fortfahren? [J/n]"
 
-#: src/lib/list_packages.sh:105
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Aktualisierung wurde abgebrochen\\n"
@@ -635,7 +671,7 @@ msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
 msgstr ""
-"Verarbeitung der Pacnew-Datei(en) nicht durchgeführt\\nBiite die "
+"Verarbeitung der Pacnew-Datei(en) nicht durchgeführt\\nBitte die "
 "Verarbeitung zeitnah durchführen\\n"
 
 #: src/lib/pacnew_files.sh:41
@@ -659,7 +695,7 @@ msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
-"Dienst(e) zum Neustarten auswählen (z.B. 1 3 5), 0 wählen, um alle neu zu "
+"Dienst(e) zum Neustarten auswählen (z. B. 1 3 5), 0 wählen, um alle neu zu "
 "starten oder \"ENTER\" drücken, um ohne Neustart fortzufahren:"
 
 #: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
@@ -814,7 +850,7 @@ msgid ""
 msgstr ""
 "Die '${tray_desktop_file_autostart}' Datei wurde erstellt, das ${_name} "
 "Systray-Applet wird bei der nächsten Anmeldung automatisch gestartet\\nUm es "
-"jetzt zu starten, einfach die Anwendung \"${_name} Systray Applet\" aus dem "
+"jetzt zu starten, einfach die Anwendung \"${_name} Systray-Applet\" aus dem "
 "Anwendungsmenü aufrufen"
 
 #: src/lib/tray.sh:49

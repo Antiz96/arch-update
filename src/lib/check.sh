@@ -32,27 +32,43 @@ fi
 if [ -n "${flatpak_support}" ]; then
 	flatpak update --appstream > /dev/null
 
-	mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=name,version,application | tr -s '\t' ' ')
 	mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
 
 	if [ "${#flatpak_mask[@]}" -gt 0 ]; then
+		mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=application,version | tr -s '\t' ' ')
+
+		declare -A app_names
+		while read -r flatpak_id flatpak_name; do
+			app_names["${flatpak_id}"]="${flatpak_name}"
+		done < <(flatpak list --columns=application,name)
+
 	        mapfile -t flatpak_packages < <(
-	                for application in "${flatpak_packages[@]}"; do
-	                        app_id=$(awk '{print $3}' <<< "${application}")
-	                        for pattern in "${flatpak_mask[@]}"; do
-	                                # shellcheck disable=SC2053
-	                                [[ "${app_id}" == ${pattern} ]] && continue 2
-	                        done
-	                        echo "${application}"
-	                done
-	        )
+			for packages in "${flatpak_packages[@]}"; do
+				read -r app_id app_version <<< "${packages}"
+
+				for pattern in "${flatpak_mask[@]}"; do
+					# shellcheck disable=SC2053
+					[[ "${app_id}" == ${pattern} ]] && continue 2
+				done
+
+				app_name="${app_names[${app_id}]:-${app_id}}"
+
+				if [ -z "${no_version}" ]; then
+					echo "${app_name} ${app_version}"
+				else
+					echo "${app_name}"
+				fi
+			done
+		)
+	else
+		if [ -z "${no_version}" ]; then
+			mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=name,version | tr -s '\t' ' ')
+		else
+			mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=name)
+		fi
 	fi
 
-	if [ -z "${no_version}" ]; then
-		printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1,$2}' | sed '/^[[:space:]]*$/d' > "${statedir}/last_updates_check_flatpak"
-	else
-		printf "%s\n" "${flatpak_packages[@]}" | awk '{print $1}' | sed '/^[[:space:]]*$/d' > "${statedir}/last_updates_check_flatpak"
-	fi
+	printf "%s\n" "${flatpak_packages[@]}" > "${statedir}/last_updates_check_flatpak"
 fi
 
 sed -i '/^\s*$/d' "${statedir}"/last_updates_check_{packages,aur,flatpak}
@@ -90,6 +106,7 @@ if [ -n "${update_available}" ]; then
 				--setenv=_name="${_name}" \
 				--setenv=name="${name}" \
 				--setenv=tray_icon_style="${tray_icon_style}" \
+				--setenv=colorblind_mode="${colorblind_mode}" \
 				--setenv=tmpdir="${tmpdir}" \
 				--setenv=desktop_file="${desktop_file}" \
 			 "${libdir}/notification.sh"

@@ -142,12 +142,22 @@ check_aur_helper() {
 if [ -z "${no_flatpak}" ]; then
 	# shellcheck disable=SC2034
 	flatpak_support=$(command -v flatpak)
+	# Disable flatpak support if flatpak is available but no Flatpak package is installed
+	if [ -n "${flatpak_support}" ] && [ -z "$(flatpak list --user ; flatpak list --system)" ]; then
+		unset flatpak_support
+	fi
 fi
 
 # Check if notify-send is installed for the optional desktop notification support
 if [ -z "${no_notification}" ]; then
 	# shellcheck disable=SC2034
 	notification_support=$(command -v notify-send)
+fi
+
+# Check if alhp.utils is installed for the optional alhp.utils check support
+if [ -z "${no_alhp_check}" ]; then
+	# shellcheck disable=SC2034
+	alhp_support=$(command -v alhp.utils)
 fi
 
 # Definition of the elevation command to use (depending on which one is installed on the system and if it's not already defined in arch-update.conf)
@@ -175,6 +185,8 @@ check_su_cmd () {
 
 # Definition of the diff program to use (if it is set in the arch-update.conf configuration file)
 check_diff_prog () {
+	[ -n "${DIFFPROG}" ] && diff_prog="${DIFFPROG}"
+
 	if [ -n "${diff_prog}" ]; then
 		if ! command -v "${diff_prog%% *}" > /dev/null; then
 			error_msg "$(eval_gettext "The \${diff_prog} editor set for visualizing / editing differences of pacnew files in the \${name}.conf configuration file is not found\n")" && quit_msg
@@ -200,7 +212,7 @@ icon_up-to-date() {
 # Definition of the icon_updates-available function: Change tray icon to "updates available"
 icon_updates-available() {
 	# shellcheck disable=SC2154
-	echo "${name}_updates-available-${tray_icon_style}" > "${statedir}/tray_icon"
+	echo "${name}_updates-available-${tray_icon_style}${colorblind_mode}" > "${statedir}/tray_icon"
 }
 
 # Definition of commands to always run on exit (e.g. cleanup of files / dirs which have no purpose being kept)

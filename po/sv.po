@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# Luna Jernberg <droidbittin@gmail.com>, 2024, 2025.
+# Luna Jernberg <droidbittin@gmail.com>, 2024, 2025, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.1\n"
+"Project-Id-Version: Arch-Update 3.19.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2025-11-18 17:26+0100\n"
+"PO-Revision-Date: 2026-03-26 15:22+0100\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -17,6 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.8\n"
+
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr "Din primära ALHP spegel är föråldrad!\\n"
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr "Följande paket har fortfarande väntande ALHP byggen:"
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr "Fel under ALHP kontroll:"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -47,14 +62,14 @@ msgstr ""
 "${aur_helper} Den inställda AUR-hjälparen för stöd för AUR-paket i "
 "konfigurationsfilen ${name}.conf hittades inte\\n"
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 "Ett kommando för behörighetshöjning krävs (sudo, sudo-rs, doas eller run0)\\n"
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -63,7 +78,7 @@ msgstr ""
 "${su_cmd}-kommandot inställt för privilegieskalering i ${name}.conf-"
 "konfigurationsfilen hittades inte\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -119,11 +134,11 @@ msgstr "Konfigurationsfilen '${config_file}' har genererats"
 #: src/lib/help.sh:8
 #, sh-format
 msgid ""
-"An update notifier & applier for Arch Linux that assists you with important "
-"pre / post update tasks."
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
 msgstr ""
-"En uppdateringsnotifierare och applicerare för Arch Linux som hjälper dig "
-"med viktiga före/efter uppdaterings uppgifter."
+"En interaktiv uppdateringsnotifierare och applicerare för Arch Linux som "
+"hjälper dig med viktiga före/efter uppdaterings uppgifter."
 
 #: src/lib/help.sh:10
 #, sh-format
@@ -294,14 +309,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Vill du starta om nu? [j/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -420,32 +435,50 @@ msgstr "Webbadress:"
 msgid "Looking for updates...\\n"
 msgstr "Letar efter uppdateringar...\\n"
 
-#: src/lib/list_packages.sh:63
+#: src/lib/list_packages.sh:16
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr "Det gick inte att hämta paketuppdateringar (timeout för begäran)\\n"
+
+#: src/lib/list_packages.sh:32
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"Det gick inte att hämta uppdateringar av AUR-paket (timeout för begäran)\\n"
+
+#: src/lib/list_packages.sh:44
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"Det gick inte att hämta uppdateringar av Flatpak-paket (timeout för begäran)"
+"\\n"
+
+#: src/lib/list_packages.sh:91
 #, sh-format
 msgid "Packages:"
 msgstr "Paket:"
 
-#: src/lib/list_packages.sh:70
+#: src/lib/list_packages.sh:98
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-paket:"
 
-#: src/lib/list_packages.sh:77
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak paket:"
 
-#: src/lib/list_packages.sh:87
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "No update available\\n"
 msgstr "Ingen uppdatering tillgänglig\\n"
 
-#: src/lib/list_packages.sh:95
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Fortsätt med uppdatering? [J/n]"
 
-#: src/lib/list_packages.sh:105
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Uppdatering har avbrutits\\n"

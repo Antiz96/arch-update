@@ -2,6 +2,174 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.19.0](https://github.com/Antiz96/arch-update/releases/tag/v3.19.0) - 2026-03-27
+
+### Features
+
+- *(i18n)* Add Basque translation ([#545](https://github.com/Antiz96/arch-update/pull/545)) - ([93c2663](https://github.com/Antiz96/arch-update/commit/93c26635c276c5203a1feaafa6b2906170bb0dd8)) by @bingenm
+- Add a default timeout for update check requests ([#554](https://github.com/Antiz96/arch-update/pull/554)) - ([28d7d4e](https://github.com/Antiz96/arch-update/commit/28d7d4ebdccc93c8c7cb733be3c4c76ad5dc692a)) by @Antiz96
+- Disable flatpak support if no flatpak package is installed ([#552](https://github.com/Antiz96/arch-update/pull/552)) - ([e45185a](https://github.com/Antiz96/arch-update/commit/e45185a70b0747530be0d7a0bb43a784cb405af4)) by @Antiz96
+- Add support for ALHP utils package check ([#539](https://github.com/Antiz96/arch-update/pull/539)) - ([30551c4](https://github.com/Antiz96/arch-update/commit/30551c49f883e861bc86d65df22922d021ae96ca)) by @kescherCode
+
+### Styling
+
+- Add line breaks in alhp check warning messages ([#555](https://github.com/Antiz96/arch-update/pull/555)) - ([a215705](https://github.com/Antiz96/arch-update/commit/a2157054c4bb0266ea710f2050a479bb77160483)) by @Antiz96
+- Formatting fixes ([#540](https://github.com/Antiz96/arch-update/pull/540)) - ([c9eb9fd](https://github.com/Antiz96/arch-update/commit/c9eb9fd6a1ac6f395d6fed3a0b254effcab77650)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update Norwegian translation ([#568](https://github.com/Antiz96/arch-update/pull/568)) - ([0693b93](https://github.com/Antiz96/arch-update/commit/0693b93b30189c5015d4e136f5237229a389839d)) by @Kjodleiken
+- *(i18n)* Update Russian translation ([#567](https://github.com/Antiz96/arch-update/pull/567)) - ([efe973a](https://github.com/Antiz96/arch-update/commit/efe973a7509396a58d7b748fdd6cb875a7b40607)) by @DrWeb56
+- *(i18n)* Update Swedish translation ([#566](https://github.com/Antiz96/arch-update/pull/566)) - ([5d99328](https://github.com/Antiz96/arch-update/commit/5d99328c614ae4f3c43b78f62be3ff8b59de66a2)) by @bittin
+- *(i18n)* Update Japanese translation ([#565](https://github.com/Antiz96/arch-update/pull/565)) - ([4a8bb5f](https://github.com/Antiz96/arch-update/commit/4a8bb5fd16a39f388602081d0138564033165c44)) by @MintJapan
+- *(i18n)* Update Basque translation ([#564](https://github.com/Antiz96/arch-update/pull/564)) - ([88a7823](https://github.com/Antiz96/arch-update/commit/88a782326d280bd1cd6d159e45d9a066e307b77b)) by @bingenm
+- *(i18n)* Update Dutch translation ([#562](https://github.com/Antiz96/arch-update/pull/562)) - ([6f84d21](https://github.com/Antiz96/arch-update/commit/6f84d218808e679c63f7755afc53fbaa29be0955)) by @Vistaus
+- *(i18n)* Update Portuguese translation ([#561](https://github.com/Antiz96/arch-update/pull/561)) - ([79a12a8](https://github.com/Antiz96/arch-update/commit/79a12a8a6430a2f9d6a190fcf08c65f1a68abc32)) by @NyaPuma
+- *(i18n)* Update German translation ([#560](https://github.com/Antiz96/arch-update/pull/560)) - ([e26faaf](https://github.com/Antiz96/arch-update/commit/e26faafa0f424aadabc373ab2719e36915d1f2af)) by @DeN-AlB
+- *(i18n)* Update French translation ([#559](https://github.com/Antiz96/arch-update/pull/559)) - ([ba88d45](https://github.com/Antiz96/arch-update/commit/ba88d45410f386f649e95aeb4cd03e941a479fec)) by @Antiz96
+- *(i18n)* Update translation files ([#557](https://github.com/Antiz96/arch-update/pull/557)) - ([e021f57](https://github.com/Antiz96/arch-update/commit/e021f57a49972ec90d7944406cd3658957bbe4cf)) by @Antiz96
+- *(i18n)* Update translation files ([#553](https://github.com/Antiz96/arch-update/pull/553)) - ([e4751a1](https://github.com/Antiz96/arch-update/commit/e4751a156a906542e03b7afaa547386160739e33)) by @Antiz96
+- *(i18n)* Update Portuguese translation ([#549](https://github.com/Antiz96/arch-update/pull/549)) - ([edf6d8a](https://github.com/Antiz96/arch-update/commit/edf6d8aa00b51cdb622712bcc62c404172fa908d)) by @NyaPuma
+- *(i18n)* Update Norwegian bokmål translation ([#548](https://github.com/Antiz96/arch-update/pull/548)) - ([ca07134](https://github.com/Antiz96/arch-update/commit/ca071349c66bbcbac83324e29215609d96475ea7)) by @Kjodleiken
+- *(i18n)* Update Swedish translation ([#547](https://github.com/Antiz96/arch-update/pull/547)) - ([c9c950c](https://github.com/Antiz96/arch-update/commit/c9c950c3410abaaa358f7fb9ac5540306bcfcce4)) by @bittin
+- *(i18n)* Update Japanese translation ([#546](https://github.com/Antiz96/arch-update/pull/546)) - ([bac749f](https://github.com/Antiz96/arch-update/commit/bac749fb457881bd40f4953694ce27ade7658f20)) by @MintJapan
+- *(i18n)* Update German translation ([#544](https://github.com/Antiz96/arch-update/pull/544)) - ([a6334c8](https://github.com/Antiz96/arch-update/commit/a6334c8bce3853991a728364166feb736d5b00c1)) by @DeN-AlB
+- *(i18n)* Update Dutch translation ([#543](https://github.com/Antiz96/arch-update/pull/543)) - ([adbcf63](https://github.com/Antiz96/arch-update/commit/adbcf6340342dc762e626cbb1ab9c82251359315)) by @Vistaus
+- *(i18n)* Update French translation ([#542](https://github.com/Antiz96/arch-update/pull/542)) - ([c9f0121](https://github.com/Antiz96/arch-update/commit/c9f012144ca36a62192719369a81031442855421)) by @Antiz96
+- *(i18n)* Update translation files ([#541](https://github.com/Antiz96/arch-update/pull/541)) - ([ab99ec6](https://github.com/Antiz96/arch-update/commit/ab99ec6b30489606ecbf31e9b986fc0f0e53287e)) by @Antiz96
+- Add execution permission bit to alhp_check.sh ([#556](https://github.com/Antiz96/arch-update/pull/556)) - ([3525cbd](https://github.com/Antiz96/arch-update/commit/3525cbd9fc9e2de48ea412d18804be7a144de599)) by @Antiz96
+
+## [v3.18.1](https://github.com/Antiz96/arch-update/releases/tag/v3.18.1) - 2026-03-21
+
+### Features
+
+- *(i18n)* Add Georgian translation ([#537](https://github.com/Antiz96/arch-update/pull/537)) - ([9086f4b](https://github.com/Antiz96/arch-update/commit/9086f4bb4c02164a9529628dbccc97c0f80e2054)) by @EkaterinePapava
+- *(i18n)* Add Japanese translation ([#532](https://github.com/Antiz96/arch-update/pull/532)) - ([618c22b](https://github.com/Antiz96/arch-update/commit/618c22bd1b6ee2d15ddd13bfefafb3fc69366414)) by @MintJapan
+- *(kernel_reboot)* Use a more elegant and robust mechanism to check for pending kernel update ([#525](https://github.com/Antiz96/arch-update/pull/525)) - ([c7635cb](https://github.com/Antiz96/arch-update/commit/c7635cb3e1af33e412755ccc3c2e6d16fb31ad0d)) by @Antiz96
+
+### Miscellaneous
+
+- *(doc)* Explicitly state that Arch-Update is an interactive tool ([#516](https://github.com/Antiz96/arch-update/pull/516)) - ([cc93b52](https://github.com/Antiz96/arch-update/commit/cc93b52054a7f8f10f05ed7c02a410ba1ad713fd)) by @Antiz96
+- *(i18n)* Add Norwegian translation to `.desktop` files ([#534](https://github.com/Antiz96/arch-update/pull/534)) - ([6166d04](https://github.com/Antiz96/arch-update/commit/6166d04bfd2fb89cee905d2d29ff69ce069de875)) by @Kjodleiken
+- *(i18n)* Add German translations for `.desktop` file comments ([#536](https://github.com/Antiz96/arch-update/pull/536)) - ([8c0db46](https://github.com/Antiz96/arch-update/commit/8c0db4624990c86fa743a60f6fb66bf96b895faa)) by @m2u-84
+- *(i18n)* Restore French translation for `.desktop` files ([#533](https://github.com/Antiz96/arch-update/pull/533)) - ([9a5043f](https://github.com/Antiz96/arch-update/commit/9a5043f5f4b87a53fade87d71f8874b7cc1028ce)) by @Antiz96
+- *(i18n)* Drop French translation for "side" resources ([#531](https://github.com/Antiz96/arch-update/pull/531)) - ([602c546](https://github.com/Antiz96/arch-update/commit/602c54625fcdeff6edf43bb1b4446753be47c5a3)) by @Antiz96
+- *(i18n)* Update Brazilian portuguese translation ([#530](https://github.com/Antiz96/arch-update/pull/530)) - ([a9529dd](https://github.com/Antiz96/arch-update/commit/a9529dd2a66a19511ae0ec067eef4479e1458679)) by @RyukiBando
+- *(i18n)* Update Swedish translation ([#527](https://github.com/Antiz96/arch-update/pull/527)) - ([e2c3888](https://github.com/Antiz96/arch-update/commit/e2c3888f210fbe890c760bafdb388730dc45be40)) by @bittin
+- *(i18n)* Update portuguese (Portugal) translation ([#524](https://github.com/Antiz96/arch-update/pull/524)) - ([59ad482](https://github.com/Antiz96/arch-update/commit/59ad4827a212df1d168afee5d5e753709bb050cd)) by @NyaPuma
+- *(i18n)* Update format and re-add fuzzy ([#523](https://github.com/Antiz96/arch-update/pull/523)) - ([2f09f5e](https://github.com/Antiz96/arch-update/commit/2f09f5e3d6a961a62db4d8e93f149c45334d6055)) by @Antiz96
+- *(i18n)* Update Norwegian translation ([#522](https://github.com/Antiz96/arch-update/pull/522)) - ([4ebd094](https://github.com/Antiz96/arch-update/commit/4ebd094406e863e7ce9a14cb40c5548005ebf5e6)) by @Kjodleiken
+- *(i18n)* Update Dutch translation ([#520](https://github.com/Antiz96/arch-update/pull/520)) - ([9e0d6fa](https://github.com/Antiz96/arch-update/commit/9e0d6fa3ae8e6cfb169ebb4e7a969b758267d9d9)) by @Vistaus
+- *(i18n)* Update German translation ([#519](https://github.com/Antiz96/arch-update/pull/519)) - ([6cf917b](https://github.com/Antiz96/arch-update/commit/6cf917b0e89c2a54b6de0ff058378b12e6b1c018)) by @mgruberb
+- *(i18n)* Update French translation ([#518](https://github.com/Antiz96/arch-update/pull/518)) - ([bfb2fb5](https://github.com/Antiz96/arch-update/commit/bfb2fb53eb3c69fe251af159db22cbddfc686445)) by @Antiz96
+- *(i18n)* Update translation files ([#517](https://github.com/Antiz96/arch-update/pull/517)) - ([4fc943e](https://github.com/Antiz96/arch-update/commit/4fc943ebc6a4c18feb604ec22bd6682ce53f60a8)) by @Antiz96
+- Improve wording in MAINTAINERS.md ([#538](https://github.com/Antiz96/arch-update/pull/538)) - ([bbdde07](https://github.com/Antiz96/arch-update/commit/bbdde07241e372d6e514431fd43d0448a5ef981e)) by @Antiz96
+- Makefile rework ([#535](https://github.com/Antiz96/arch-update/pull/535)) - ([44d3636](https://github.com/Antiz96/arch-update/commit/44d3636b70ada04802a492f242b17e364cb89ec1)) by @Antiz96
+
+## [v3.18.0](https://github.com/Antiz96/arch-update/releases/tag/v3.18.0) - 2026-02-21
+
+### Features
+
+- *(icons)* Add colorblind-friendly icons variants ([#511](https://github.com/Antiz96/arch-update/pull/511)) - ([6356495](https://github.com/Antiz96/arch-update/commit/6356495d4b1cb9180103065e5051d72847e376b4)) by @s-pappous
+
+### Miscellaneous
+
+- *(changelog)* Update contributor name for the Dutch translation in changelog ([#506](https://github.com/Antiz96/arch-update/pull/506)) - ([904e3d2](https://github.com/Antiz96/arch-update/commit/904e3d2b599324ff079bbb30767f217c2ec78c46)) by @Antiz96
+- *(i18n)* Update pt_PT.po ([#512](https://github.com/Antiz96/arch-update/pull/512)) - ([3ebc4ff](https://github.com/Antiz96/arch-update/commit/3ebc4ff76554e7e4f841fba7e4b82d981130dbd2)) by @NyaPuma
+
+## [v3.17.11](https://github.com/Antiz96/arch-update/releases/tag/v3.17.11) - 2026-02-09
+
+### Features
+
+- *(i18n)* Add Portuguese translation ([#505](https://github.com/Antiz96/arch-update/pull/505)) - ([2d3bc2b](https://github.com/Antiz96/arch-update/commit/2d3bc2bcd064f2dfbc0b00cbd113bbf1b321fd0c)) by @NyaPuma
+
+## [v3.17.10](https://github.com/Antiz96/arch-update/releases/tag/v3.17.10) - 2026-02-08
+
+### Features
+
+- *(i18n)* Add Dutch translation ([#503](https://github.com/Antiz96/arch-update/pull/503)) - ([54a7d14](https://github.com/Antiz96/arch-update/commit/54a7d14468b2710f6691c512aa1e368c1a9c5c24)) by @Vistaus
+- *(i18n)* Add Norwegian bokmål translation ([#502](https://github.com/Antiz96/arch-update/pull/502)) - ([6955921](https://github.com/Antiz96/arch-update/commit/6955921d4e08f5408b00f9aa55112a167c93573a)) by @Kjodleiken
+
+### Miscellaneous
+
+- *(issues)* Update labels ([#501](https://github.com/Antiz96/arch-update/pull/501)) - ([73ab2cc](https://github.com/Antiz96/arch-update/commit/73ab2ccfa27c5dca4c8be1821b404a86c048ac30)) by @Antiz96
+
+## [v3.17.9](https://github.com/Antiz96/arch-update/releases/tag/v3.17.9) - 2026-02-01
+
+### Miscellaneous
+
+- *(i18n)* Fix various typos in German translation file ([#498](https://github.com/Antiz96/arch-update/pull/498)) - ([8046a7b](https://github.com/Antiz96/arch-update/commit/8046a7bea20405d027e15d793b0737cdb8ca8060)) by @m2u-84
+
+## [v3.17.8](https://github.com/Antiz96/arch-update/releases/tag/v3.17.8) - 2026-01-30
+
+### Fixes
+
+- Add `plasmalogin.service` to the list of ignored services when restarting services - ([0706c6f](https://github.com/Antiz96/arch-update/commit/0706c6f596237fa1fddf0f7d19b0d8ef87e29d5b)) by @hunabku94
+
+## [v3.17.7](https://github.com/Antiz96/arch-update/releases/tag/v3.17.7) - 2026-01-12
+
+### Fixes
+
+- *(notification)* Set app icon with the new libnotify `-n / --app-name` option ([#492](https://github.com/Antiz96/arch-update/pull/492)) - ([b463cb8](https://github.com/Antiz96/arch-update/commit/b463cb8a53c58e4c8fa76aed41b38c4a1370eafc)) by @Antiz96
+
+## [v3.17.6](https://github.com/Antiz96/arch-update/releases/tag/v3.17.6) - 2026-01-11
+
+### Fixes
+
+- *(flatpak)* Make masked patterns detection logic more robust ([#490](https://github.com/Antiz96/arch-update/pull/490)) - ([1d50275](https://github.com/Antiz96/arch-update/commit/1d50275e10df94da220a339a4c837b15d7122f7b)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#491](https://github.com/Antiz96/arch-update/pull/491)) - ([8ca1e95](https://github.com/Antiz96/arch-update/commit/8ca1e95ccfa7f6a7d28d5de695c419f7f768963b)) by @Antiz96
+
+## [v3.17.5](https://github.com/Antiz96/arch-update/releases/tag/v3.17.5) - 2026-01-09
+
+### Features
+
+- *(news)* Request compressed curl response ([#488](https://github.com/Antiz96/arch-update/pull/488)) - ([28aeb74](https://github.com/Antiz96/arch-update/commit/28aeb742d18034cbd9393482c621c01e2408b229)) by @Antiz96
+
+### Fixes
+
+- *(news)* Remove the preliminary curl request ([#487](https://github.com/Antiz96/arch-update/pull/487)) - ([a5be500](https://github.com/Antiz96/arch-update/commit/a5be5002b18a94853dcae383703a6d5fd24b2286)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Update actions/checkout action to v6 ([#484](https://github.com/Antiz96/arch-update/pull/484)) - ([b38c6d9](https://github.com/Antiz96/arch-update/commit/b38c6d920afff1bf4e2ce3da87acf5dca66472a2)) by @renovate[bot]
+- *(renovate)* Add assignees ([#485](https://github.com/Antiz96/arch-update/pull/485)) - ([e71c99b](https://github.com/Antiz96/arch-update/commit/e71c99b34f6267fcdd7959401b595d215f6b2e40)) by @Antiz96
+- Configure Renovate ([#483](https://github.com/Antiz96/arch-update/pull/483)) - ([b722817](https://github.com/Antiz96/arch-update/commit/b722817157adb74bdb50dd7de27f4cdb577ead6e)) by @renovate[bot]
+
+## [v3.17.4](https://github.com/Antiz96/arch-update/releases/tag/v3.17.4) - 2025-12-13
+
+### Fixes
+
+- *(pacnew)* Honor `$DIFFPROG` properly ([#480](https://github.com/Antiz96/arch-update/pull/480)) - ([8e01fa9](https://github.com/Antiz96/arch-update/commit/8e01fa924091f59baac758567cec253145cd969e)) by @Antiz96
+
+### Documentation
+
+- *(man)* Mention `arch-update --edit-config` in arch-update.conf(5) man page ([#475](https://github.com/Antiz96/arch-update/pull/475)) - ([71aa8a7](https://github.com/Antiz96/arch-update/commit/71aa8a75a23851cf49667f07ce410b619f38e258)) by @Antiz96
+
+### Styling
+
+- Fix spacing and indentation ([#474](https://github.com/Antiz96/arch-update/pull/474)) - ([a01c508](https://github.com/Antiz96/arch-update/commit/a01c5088e37dfc0398926e85fc90619e74afd788)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#481](https://github.com/Antiz96/arch-update/pull/481)) - ([1eeeb70](https://github.com/Antiz96/arch-update/commit/1eeeb70bcc84ceea7f82a79cfcc4c5988ed11ebd)) by @Antiz96
+
+## [v3.17.3](https://github.com/Antiz96/arch-update/releases/tag/v3.17.3) - 2025-12-02
+
+### Miscellaneous
+
+- *(i18n)* Update Chinese (simplified) translation ([#471](https://github.com/Antiz96/arch-update/pull/471)) - ([16b8f32](https://github.com/Antiz96/arch-update/commit/16b8f3201cfdeceb71fb11b721c20fd8fe8bbd72)) by @Carlson24
+
+## [v3.17.2](https://github.com/Antiz96/arch-update/releases/tag/v3.17.2) - 2025-11-30
+
+### Miscellaneous
+
+- *(i18n)* Update Brazilian Portuguese translation ([#468](https://github.com/Antiz96/arch-update/pull/468)) - ([02a26be](https://github.com/Antiz96/arch-update/commit/02a26befdad7dc120b7eb313d782b88938082267)) by @diegons490
+- *(release)* Fix substitution pattern in release script ([#470](https://github.com/Antiz96/arch-update/pull/470)) - ([aae731a](https://github.com/Antiz96/arch-update/commit/aae731a738af013ecf5376dd758c320b10c5dba6)) by @Antiz96
+- *(style)* Add line break in release script ([#469](https://github.com/Antiz96/arch-update/pull/469)) - ([51346e3](https://github.com/Antiz96/arch-update/commit/51346e38fdf99913a9fcc40aa05e5212ba9a1aa0)) by @Antiz96
+
 ## [v3.17.1](https://github.com/Antiz96/arch-update/releases/tag/v3.17.1) - 2025-11-23
 
 ### Fixes
@@ -894,7 +1062,7 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - Correction of documentation regarding how to change the auto-check cycle by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/97>
-- Update url for systemd Time Spans in documentation  by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/98>
+- Update url for systemd Time Spans in documentation by @Antiz96 in <https://github.com/Antiz96/arch-update/pull/98>
 
 ### Other
 

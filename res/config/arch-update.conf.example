@@ -7,11 +7,14 @@
 #NoAUR
 #NoFlatpak
 #NoNotification
+#NoALHPCheck
 #NewsNum=5
 #NewsTimeout=10
+#UpdateCheckTimeout=30
 #AURHelper=paru
 #PrivilegeElevationCommand=sudo
 #KeepOldPackages=3
 #KeepUninstalledPackages=0
 #DiffProg=$DIFFPROG
 #TrayIconStyle=blue
+#ColorblindMode

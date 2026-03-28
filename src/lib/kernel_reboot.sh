@@ -4,9 +4,9 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-kernel_compare=$(file /boot/vmlinuz* /usr/lib/modules/*/vmlinuz* | sed 's/^.*version\ //' | awk '{print $1}' | grep "$(uname -r)")
+kernel_file="/usr/lib/modules/$(uname -r)/vmlinuz"
 
-if [ -z "${kernel_compare}" ]; then
+if ! [ -f "${kernel_file}" ]; then
 	main_msg "$(eval_gettext "Reboot required:\nThere's a pending kernel update on your system requiring a reboot to be applied\n")"
 	ask_msg "$(eval_gettext "Would you like to reboot now? [y/N]")"
 

@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# arch-update: An update notifier & applier for Arch Linux that assists you with important pre / post update tasks
+# arch-update: An interactive update notifier & applier for Arch Linux that assists you with important pre / post update tasks
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # General variables
 name="arch-update"
 _name="Arch-Update"
-version="3.17.1"
+version="3.19.0"
 option="${1}"
 
 # Define the directory containing libraries

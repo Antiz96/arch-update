@@ -4,8 +4,6 @@
   <img width="460" height="300" src="https://github.com/user-attachments/assets/5782bd11-084a-4ca3-b599-1c322ee11b84">
 </p>
 
-[![lang-fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/Antiz96/arch-update/blob/main/README-fr.md)
-
 ## Table of contents
 
 - [Description](#description)
@@ -18,7 +16,7 @@
 
 ## Description
 
-An update notifier & applier for Arch Linux that assists you with important pre / post update tasks.  
+An interactive update notifier & applier for Arch Linux that assists you with important pre / post update tasks.  
 Includes a dynamic & clickeable systray applet for an easy integration with any Desktop Environment / Window Manager.
 
 Arch-Update is designed to follow usual system maintenance steps, as described in the [Arch Wiki](https://wiki.archlinux.org/title/System_maintenance).
@@ -39,6 +37,7 @@ Optional support for:
 - AUR packages (via `paru`, `yay` or `pikaur`).
 - Flatpak packages (via `flatpak`).
 - Desktop notifications (via `libnotify`).
+- Check for ALHP build queue or outdated mirrors (via `alhp-utils`).
 
 ## Installation
 

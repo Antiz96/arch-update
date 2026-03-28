@@ -6,7 +6,7 @@
 # Diego Jesús <diego.u7ozo@addy.io>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.1\n"
+"Project-Id-Version: Arch-Update 3.19.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-11-17 22:03+0100\n"
@@ -17,6 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.8\n"
+
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr ""
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr ""
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr ""
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -47,7 +62,7 @@ msgstr ""
 "No se ha encontrado el ayudante ${aur_helper} configurado para el soporte de "
 "paquetes AUR en el archivo ${name}.conf\\n"
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
@@ -55,7 +70,7 @@ msgstr ""
 "Se requiere un comando de elevación de privilegios (sudo, sudo-rs, doas o "
 "run0)\\n"
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
@@ -64,7 +79,7 @@ msgstr ""
 "No se ha encontrado el comando ${su_cmd} configurado para la elevación de "
 "privilegios en el archivo ${name}.conf\\n"
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -117,10 +132,10 @@ msgid "The '${config_file}' configuration file has been generated"
 msgstr "Se ha generado el archivo de configuración «${config_file}»"
 
 #: src/lib/help.sh:8
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
-"An update notifier & applier for Arch Linux that assists you with important "
-"pre / post update tasks."
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
 msgstr ""
 "Un notificador y aplicador de actualizaciones para Arch Linux que le ayuda "
 "con tareas importantes antes y después de las actualizaciones."
@@ -298,14 +313,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "¿Desea reiniciar ahora? [s/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "S"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -426,32 +441,47 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "Buscando actualizaciones...\\n"
 
-#: src/lib/list_packages.sh:63
+#: src/lib/list_packages.sh:16
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:32
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:44
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:91
 #, sh-format
 msgid "Packages:"
 msgstr "Paquetes:"
 
-#: src/lib/list_packages.sh:70
+#: src/lib/list_packages.sh:98
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Paquetes AUR:"
 
-#: src/lib/list_packages.sh:77
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Paquetes Flatpak:"
 
-#: src/lib/list_packages.sh:87
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "No update available\\n"
 msgstr "No hay actualizaciones disponibles\\n"
 
-#: src/lib/list_packages.sh:95
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "¿Continuar con la actualización? [S/n]"
 
-#: src/lib/list_packages.sh:105
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "La actualización se ha cancelado\\n"

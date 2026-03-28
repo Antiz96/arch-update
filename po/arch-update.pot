@@ -6,7 +6,7 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.17.1\n"
+"Project-Id-Version: Arch-Update 3.19.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -15,6 +15,21 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr ""
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr ""
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr ""
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -43,20 +58,20 @@ msgid ""
 "${name}.conf configuration file is not found\\n"
 msgstr ""
 
-#: src/lib/common.sh:165
+#: src/lib/common.sh:175
 #, sh-format
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
 
-#: src/lib/common.sh:170
+#: src/lib/common.sh:180
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
 
-#: src/lib/common.sh:180
+#: src/lib/common.sh:192
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -102,8 +117,8 @@ msgstr ""
 #: src/lib/help.sh:8
 #, sh-format
 msgid ""
-"An update notifier & applier for Arch Linux that assists you with important "
-"pre / post update tasks."
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
 msgstr ""
 
 #: src/lib/help.sh:10
@@ -243,14 +258,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr ""
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr ""
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:99
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -356,32 +371,47 @@ msgstr ""
 msgid "Looking for updates...\\n"
 msgstr ""
 
-#: src/lib/list_packages.sh:63
+#: src/lib/list_packages.sh:16
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:32
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:44
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+
+#: src/lib/list_packages.sh:91
 #, sh-format
 msgid "Packages:"
 msgstr ""
 
-#: src/lib/list_packages.sh:70
+#: src/lib/list_packages.sh:98
 #, sh-format
 msgid "AUR Packages:"
 msgstr ""
 
-#: src/lib/list_packages.sh:77
+#: src/lib/list_packages.sh:105
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr ""
 
-#: src/lib/list_packages.sh:87
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "No update available\\n"
 msgstr ""
 
-#: src/lib/list_packages.sh:95
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr ""
 
-#: src/lib/list_packages.sh:105
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr ""

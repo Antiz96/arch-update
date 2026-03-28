@@ -1,7 +1,12 @@
 [Desktop Entry]
 Name=Arch-Update
-Comment[fr]=Un notificateur & applicateur de mises à jour pour Arch Linux
-Comment=An update notifier & applier for Arch Linux
+Comment=An interactive update notifier & applier for Arch Linux
+Comment[de]=Ein interaktiver Update-Benachrichtiger und -Anwender für Arch Linux
+Comment[eu]=Arch Linuxrako eguneraketa-jakinarazle eta aplikatzaile interaktiboa.
+Comment[fr]=Un notificateur & applicateur de mises à jour interactif pour Arch Linux
+Comment[ja]=Arch Linux 用の対話式アップデート通知 & 適用システム
+Comment[ka]=ინტერაქტიური განახლებების შეტყობინება და გადატარება Arch Linux-ისთვის
+Comment[nb]=En interaktiv oppdateringsvarsler og -gjennomfører for Arch Linux
 Icon=arch-update-blue
 Type=Application
 Terminal=true
