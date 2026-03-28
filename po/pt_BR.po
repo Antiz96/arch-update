@@ -19,17 +19,17 @@ msgstr ""
 #: src/lib/alhp_check.sh:14
 #, sh-format
 msgid "Your primary ALHP mirror is out of date!\\n"
-msgstr ""
+msgstr "Seu mirror principal do ALHP está desatualizado!\\n"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr ""
+msgstr "Os seguintes pacotes ainda possuem builds pendentes no ALHP:"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
 msgid "Error during ALHP check:"
-msgstr ""
+msgstr "Erro durante a verificação do ALHP:"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -74,7 +74,7 @@ msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
-"O comando ${su_cmd} definido para escalação de privilégio no arquivo de "
+"O comando ${su_cmd} definido para elevação de privilégio no arquivo de "
 "configuração ${name}.conf não foi encontrado\\n"
 
 #: src/lib/common.sh:192
@@ -440,17 +440,17 @@ msgstr "Procurando atualizações...\\n"
 #: src/lib/list_packages.sh:16
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr ""
+msgstr "Não foi possível recuperar atualizações de pacotes (tempo limite da solicitação)\\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr ""
+msgstr "Não foi possível recuperar atualizações de pacotes AUR (tempo limite da solicitação)\\n"
 
 #: src/lib/list_packages.sh:44
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr ""
+msgstr "Não foi possível recuperar atualizações de pacotes Flatpak (tempo limite da solicitação)\\n"
 
 #: src/lib/list_packages.sh:91
 #, sh-format
@@ -512,7 +512,7 @@ msgstr "Arquivo desktop ${_name} não encontrado"
 #: src/lib/orphan_packages.sh:14
 #, sh-format
 msgid "Orphan Packages:"
-msgstr "Pacotes Órfãos:"
+msgstr "Pacotes órfãos:"
 
 #: src/lib/orphan_packages.sh:18
 #, sh-format
@@ -535,7 +535,7 @@ msgstr ""
 #: src/lib/orphan_packages.sh:27
 #, sh-format
 msgid "Removing Orphan Packages...\\n"
-msgstr "Removendo Pacotes Órfãos...\\n"
+msgstr "Removendo Pacotes órfãos...\\n"
 
 #: src/lib/orphan_packages.sh:32 src/lib/orphan_packages.sh:65
 #: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
@@ -738,7 +738,7 @@ msgstr "Arquivo de estado 'updates' não encontrado"
 
 #: src/lib/tray.py:246
 msgid "System is up to date"
-msgstr "Sistema está atualizado"
+msgstr "O sistema está atualizado"
 
 #: src/lib/tray.py:249
 msgid "1 update available"
@@ -843,7 +843,7 @@ msgid ""
 msgstr ""
 "O arquivo '${tray_desktop_file_autostart}' foi criado, o applet de bandeja "
 "do sistema ${_name} será iniciado automaticamente no seu próximo "
-"logon\\nPara iniciá-lo agora, você pode executar a aplicação \"${_name} "
+"login\\nPara iniciá-lo agora, você pode executar o aplicativo \"${_name} "
 "Systray Applet\" a partir do menu de aplicativos"
 
 #: src/lib/tray.sh:49
