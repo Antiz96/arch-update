@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.19.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-28 19:36-0300\n"
+"PO-Revision-Date: 2026-03-28 19:47-0300\n"
 "Last-Translator: Diego N.S <degons490@gmail.com>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: src/lib/alhp_check.sh:14
 #, sh-format
 msgid "Your primary ALHP mirror is out of date!\\n"
-msgstr "¡Tu espejo principal de ALHP está desactualizado!"
+msgstr "¡Tu espejo principal de ALHP está desactualizado"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
