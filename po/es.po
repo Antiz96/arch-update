@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
+# Diego Jesús <diego.u7ozo@addy.io>, 2025
 # Diego N.S <degons490@gmail.com>, 2026
 msgid ""
 msgstr ""
@@ -21,7 +22,7 @@ msgstr ""
 #: src/lib/alhp_check.sh:14
 #, sh-format
 msgid "Your primary ALHP mirror is out of date!\\n"
-msgstr "¡Tu espejo principal de ALHP está desactualizado"
+msgstr "¡Tu espejo principal de ALHP está desactualizado!\\n"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
@@ -137,7 +138,7 @@ msgid ""
 "An interactive update notifier & applier for Arch Linux that assists you "
 "with important pre / post update tasks."
 msgstr ""
-"Un notificador y aplicador de actualizaciones para Arch Linux que le ayuda "
+"Un notificador y aplicador de actualizaciones interactivo para Arch Linux que te ayuda "
 "con tareas importantes antes y después de las actualizaciones."
 
 #: src/lib/help.sh:10
