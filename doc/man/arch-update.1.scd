@@ -1,4 +1,4 @@
-arch-update(1) ["Arch-Update 3.19.0" ["Arch-Update Manual"]]
+arch-update(1) ["Arch-Update 3.19.1" ["Arch-Update Manual"]]
 
 # NAME
 

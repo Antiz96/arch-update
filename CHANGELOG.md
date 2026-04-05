@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.19.1](https://github.com/Antiz96/arch-update/releases/tag/v3.19.1) - 2026-04-05
+
+### Fixes
+
+- Syntax fix in zsh completion ([#572](https://github.com/Antiz96/arch-update/pull/572)) - ([00c86ef](https://github.com/Antiz96/arch-update/commit/00c86eff71a221f7064ce3d9dcaf19d359ccf9a4)) by @balki
+
+### Miscellaneous
+
+- *(i18n)* Update Brazilian Portuguese and Spanish translation ([#571](https://github.com/Antiz96/arch-update/pull/571)) - ([d857385](https://github.com/Antiz96/arch-update/commit/d857385bdf2ed3d62c8272b96e746a51da378c65)) by @diegons490
+
 ## [v3.19.0](https://github.com/Antiz96/arch-update/releases/tag/v3.19.0) - 2026-03-27
 
 ### Features

@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2026 Kjetil Sorlund <translate@sorlund.no>
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.19.0\n"
+"Project-Id-Version: Arch-Update 3.19.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-03-27 08:51+0100\n"
