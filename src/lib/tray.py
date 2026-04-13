@@ -111,7 +111,10 @@ def arch_update():
 def get_next_check_duration_human_readable(input_json):
     """Calculate human-readable duration from systemctl output"""
     result = None
-    timer_json = json.loads(input_json)
+    try:
+        timer_json = json.loads(input_json)
+    except json.decoder.JSONDecodeError:
+        return None
     if timer_json:
         next_microseconds = timer_json[0].get("next")
         if next_microseconds:
