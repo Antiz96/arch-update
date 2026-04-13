@@ -23,7 +23,8 @@ Basic common sense applies to every contributions & discussions: stay polite and
 
 Use English as much as possible for contributions & discussions. If required, I can also speak French, but it's important that contributions & discussions remain intelligible to most people.
 
-Arch-Update is developed and tested specifically with *vanilla* Arch Linux in mind. That doesn't mean that Arch-Update won't work with other Arch based distributions (e.g. EndeavourOS, CachyOS, Garuda...), but keep in mind that such distributions are supported at a "best effort" level. In other words, I'll try my best to keep Arch-Update compatible with derivatives distributions, but there's no guarantee that Arch-Update (or parts of it) will *continuously* work properly on such distributions.
+Arch-Update is primarily developed and tested for *vanilla* Arch Linux. While it *should* work on most Arch Linux based distributions, these are only supported at a "best effort" level. Full and continuous compatibility with such derivative distributions is not guaranteed. Bug reports, suggestions and patches specific to a derivative distribution can still be submitted regardless but note that they are not guaranteed to be addressed or accepted.  
+One strict exception is Arch Linux based distributions that do not use systemd, which are not supported *at all*. Arch-Update relies on multiple systemd tools and therefore expects a systemd based environment to function properly. As such, derivative distributions that do not use systemd cannot be reliably supported. Bug reports, suggestions and patches specific to these derivative distributions will *not* be considered.
 
 ## Open an issue
 
