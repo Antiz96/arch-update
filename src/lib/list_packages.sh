@@ -37,7 +37,8 @@ if [ -n "${aur_helper}" ]; then
 fi
 
 if [ -n "${flatpak_support}" ]; then
-	timeout "${update_check_timeout}" flatpak update --appstream > /dev/null
+	# `--foreground` because Flatpak requires interactive authentications through Polkit's `pkttyagent` if it is executed from a TTY / SSH environment
+	timeout --foreground "${update_check_timeout}" flatpak update --appstream > /dev/null
 	flatpak_metadata_update_exit_code=$?
 
 	if [ "${flatpak_metadata_update_exit_code}" -eq 124 ]; then
