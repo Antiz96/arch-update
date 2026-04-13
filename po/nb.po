@@ -308,14 +308,14 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Vil du starte på ny nå? [ j/N ]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:132
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:131
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:132
 #: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
@@ -446,39 +446,39 @@ msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
 msgstr ""
 "Kan ikke hente oppdatering av AUR-pakker (forespørselen løper ut på tid)\\n"
 
-#: src/lib/list_packages.sh:44
+#: src/lib/list_packages.sh:45
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
 "Kan ikke hente oppdatering av Flatpak-pakker (forespørselen løper ut på tid)"
 "\\n"
 
-#: src/lib/list_packages.sh:91
+#: src/lib/list_packages.sh:92
 #, sh-format
 msgid "Packages:"
 msgstr "Pakker:"
 
-#: src/lib/list_packages.sh:98
+#: src/lib/list_packages.sh:99
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-pakker:"
 
-#: src/lib/list_packages.sh:105
+#: src/lib/list_packages.sh:106
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak-pakker:"
 
-#: src/lib/list_packages.sh:115
+#: src/lib/list_packages.sh:116
 #, sh-format
 msgid "No update available\\n"
 msgstr "Ingen oppdateringer er tilgjengelige\\n"
 
-#: src/lib/list_packages.sh:127
+#: src/lib/list_packages.sh:128
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Fortsette med oppdateringen? [ J/n ]"
 
-#: src/lib/list_packages.sh:137
+#: src/lib/list_packages.sh:138
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Oppdateringen er avbrutt\\n"
