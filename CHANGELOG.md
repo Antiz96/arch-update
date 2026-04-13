@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.19.2](https://github.com/Antiz96/arch-update/releases/tag/v3.19.2) - 2026-04-14
+
+### Fixes
+
+- *(flatpak)* Fix interactive polkit authentications handling in TTY / SSH environment ([#578](https://github.com/Antiz96/arch-update/pull/578)) - ([7d3e893](https://github.com/Antiz96/arch-update/commit/7d3e893c321ecb5ab21a2456c5c9723f53314f28)) by @FineWolf
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#580](https://github.com/Antiz96/arch-update/pull/580)) - ([524828f](https://github.com/Antiz96/arch-update/commit/524828ff7cf6b80ff86294d5ca60c2d95116d0f5)) by @Antiz96
+- Update contributing guidelines regarding derivatives ([#579](https://github.com/Antiz96/arch-update/pull/579)) - ([2fa6720](https://github.com/Antiz96/arch-update/commit/2fa67207b2ab4d493b539478e8c0d597baf87287)) by @Antiz96
+
 ## [v3.19.1](https://github.com/Antiz96/arch-update/releases/tag/v3.19.1) - 2026-04-05
 
 ### Fixes
