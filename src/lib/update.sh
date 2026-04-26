@@ -40,6 +40,7 @@ if [ -n "${flatpak_packages}" ]; then
 	main_msg "$(eval_gettext "Updating Flatpak Packages...\n")"
 
 	if ! flatpak update; then
+		echo
 		warning_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")"
 		error_during_update="true"
 	else
