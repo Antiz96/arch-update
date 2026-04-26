@@ -106,6 +106,67 @@ msgstr ""
 "Umgebungsvariable ist nicht gesetzt und \"nano\" (Fallback-Option) ist nicht "
 "installiert"
 
+#: src/lib/flatpak_unused_packages.sh:10
+#, sh-format
+msgid "Flatpak Unused Packages:"
+msgstr "Unbenutzte Flatpak-Pakete:"
+
+#: src/lib/flatpak_unused_packages.sh:14
+#, sh-format
+msgid "Would you like to remove this Flatpak unused package now? [y/N]"
+msgstr "Soll dieses unbenutzte Flatpak-Paket jetzt entfernt werden? [j/N]"
+
+#: src/lib/flatpak_unused_packages.sh:16
+#, sh-format
+msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
+msgstr "Sollen diese unbenutzten Flatpak-Pakete jetzt entfernt werden? [j/N]"
+
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
+#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "Y"
+msgstr "J"
+
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
+#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "y"
+msgstr "j"
+
+#: src/lib/flatpak_unused_packages.sh:23
+#, sh-format
+msgid "Removing Flatpak Unused Packages..."
+msgstr "Lösche unbenutzte Flatpak-Pakete..."
+
+#: src/lib/flatpak_unused_packages.sh:27 src/lib/orphan_packages.sh:28
+#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
+#, sh-format
+msgid ""
+"An error has occurred during the removal process\\nThe removal has been "
+"aborted\\n"
+msgstr ""
+"Während des Löschvorgangs ist ein Fehler aufgetreten\\nDas Löschen wurde "
+"abgebrochen\\n"
+
+#: src/lib/flatpak_unused_packages.sh:30 src/lib/orphan_packages.sh:31
+#, sh-format
+msgid "The removal has been applied\\n"
+msgstr "Das Löschen wurde durchgeführt\\n"
+
+#: src/lib/flatpak_unused_packages.sh:35 src/lib/orphan_packages.sh:37
+#: src/lib/packages_cache.sh:75
+#, sh-format
+msgid "The removal hasn't been applied\\n"
+msgstr "Das Löschen wurde nicht durchgeführt\\n"
+
+#: src/lib/flatpak_unused_packages.sh:39
+#, sh-format
+msgid "No Flatpak unused package found\\n"
+msgstr "Keine unbenutzten Flatpak-Pakete gefunden\\n"
+
 #: src/lib/full_upgrade.sh:13
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
@@ -309,20 +370,6 @@ msgstr ""
 msgid "Would you like to reboot now? [y/N]"
 msgstr "Neustart jetzt durchführen? [j/N]"
 
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:132
-#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
-#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
-#, sh-format
-msgid "Y"
-msgstr "J"
-
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:132
-#: src/lib/orphan_packages.sh:25 src/lib/orphan_packages.sh:59
-#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
-#, sh-format
-msgid "y"
-msgstr "j"
-
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
 msgid "Rebooting in ${sec}...\\r"
@@ -514,12 +561,12 @@ msgstr "${update_number} Updates verfügbar"
 msgid "${_name} desktop file not found"
 msgstr "${_name} Desktop-Datei nicht gefunden"
 
-#: src/lib/orphan_packages.sh:14
+#: src/lib/orphan_packages.sh:10
 #, sh-format
 msgid "Orphan Packages:"
 msgstr "Verwaiste Pakete:"
 
-#: src/lib/orphan_packages.sh:18
+#: src/lib/orphan_packages.sh:14
 #, sh-format
 msgid ""
 "Would you like to remove this orphan package (and its potential "
@@ -528,7 +575,7 @@ msgstr ""
 "Soll dieses verwaiste Paket (und seine möglichen Abhängigkeiten) jetzt "
 "entfernt werden? [j/N]"
 
-#: src/lib/orphan_packages.sh:20
+#: src/lib/orphan_packages.sh:16
 #, sh-format
 msgid ""
 "Would you like to remove these orphan packages (and their potential "
@@ -537,62 +584,15 @@ msgstr ""
 "Sollen diese verwaisten Pakete (und ihre möglichen Abhängigkeiten) jetzt "
 "entfernt werden? [j/N]"
 
-#: src/lib/orphan_packages.sh:27
+#: src/lib/orphan_packages.sh:23
 #, sh-format
 msgid "Removing Orphan Packages...\\n"
 msgstr "Lösche verwaiste Pakete...\\n"
 
-#: src/lib/orphan_packages.sh:32 src/lib/orphan_packages.sh:65
-#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
-#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
-#, sh-format
-msgid ""
-"An error has occurred during the removal process\\nThe removal has been "
-"aborted\\n"
-msgstr ""
-"Während des Löschvorgangs ist ein Fehler aufgetreten\\nDas Löschen wurde "
-"abgebrochen\\n"
-
-#: src/lib/orphan_packages.sh:35 src/lib/orphan_packages.sh:68
-#, sh-format
-msgid "The removal has been applied\\n"
-msgstr "Das Löschen wurde durchgeführt\\n"
-
-#: src/lib/orphan_packages.sh:40 src/lib/orphan_packages.sh:73
-#: src/lib/packages_cache.sh:75
-#, sh-format
-msgid "The removal hasn't been applied\\n"
-msgstr "Das Löschen wurde nicht durchgeführt\\n"
-
-#: src/lib/orphan_packages.sh:44
+#: src/lib/orphan_packages.sh:41
 #, sh-format
 msgid "No orphan package found\\n"
 msgstr "Keine verwaisten Pakete gefunden\\n"
-
-#: src/lib/orphan_packages.sh:49
-#, sh-format
-msgid "Flatpak Unused Packages:"
-msgstr "Unbenutzte Flatpak-Pakete:"
-
-#: src/lib/orphan_packages.sh:53
-#, sh-format
-msgid "Would you like to remove this Flatpak unused package now? [y/N]"
-msgstr "Soll dieses unbenutzte Flatpak-Paket jetzt entfernt werden? [j/N]"
-
-#: src/lib/orphan_packages.sh:55
-#, sh-format
-msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
-msgstr "Sollen diese unbenutzten Flatpak-Pakete jetzt entfernt werden? [j/N]"
-
-#: src/lib/orphan_packages.sh:61
-#, sh-format
-msgid "Removing Flatpak Unused Packages..."
-msgstr "Lösche unbenutzte Flatpak-Pakete..."
-
-#: src/lib/orphan_packages.sh:77
-#, sh-format
-msgid "No Flatpak unused package found\\n"
-msgstr "Keine unbenutzten Flatpak-Pakete gefunden\\n"
 
 #: src/lib/packages_cache.sh:21
 #, sh-format
@@ -679,17 +679,17 @@ msgstr ""
 msgid "No pacnew file found\\n"
 msgstr "Keine Pacnew-Dateien gefunden\\n"
 
-#: src/lib/restart_services.sh:14
+#: src/lib/restart_services.sh:13
 #, sh-format
 msgid "Services:\\nThe following service requires a post upgrade restart\\n"
 msgstr "Dienste:\\nDer folgende Dienst erfordert einen Neustart\\n"
 
-#: src/lib/restart_services.sh:16
+#: src/lib/restart_services.sh:15
 #, sh-format
 msgid "Services:\\nThe following services require a post upgrade restart\\n"
 msgstr "Dienste:\\nDie folgenden Dienste erfordern einen Neustart\\n"
 
-#: src/lib/restart_services.sh:26
+#: src/lib/restart_services.sh:25
 #, sh-format
 msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
@@ -698,12 +698,12 @@ msgstr ""
 "Dienst(e) zum Neustarten auswählen (z. B. 1 3 5), 0 wählen, um alle neu zu "
 "starten oder \"ENTER\" drücken, um ohne Neustart fortzufahren:"
 
-#: src/lib/restart_services.sh:32 src/lib/restart_services.sh:59
+#: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
 #, sh-format
 msgid "Service(s) restarted successfully\\n"
 msgstr "Dienst(e) erfolgreich neu gestartet\\n"
 
-#: src/lib/restart_services.sh:35 src/lib/restart_services.sh:62
+#: src/lib/restart_services.sh:34 src/lib/restart_services.sh:61
 #, sh-format
 msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
@@ -712,19 +712,19 @@ msgstr ""
 "Beim Neustart des/der Dienste(s) ist ein Fehler aufgetreten\\nBitte den "
 "Status des/der oben genannten Dienste(s) prüfen\\n"
 
-#: src/lib/restart_services.sh:48
+#: src/lib/restart_services.sh:47
 #, sh-format
 msgid "The ${service_selected} service has been successfully restarted"
 msgstr "Der ${service_selected} Dienst wurde erfolgreich neu gestartet"
 
-#: src/lib/restart_services.sh:50
+#: src/lib/restart_services.sh:49
 #, sh-format
 msgid ""
 "An error has occurred during the restart of the ${service_selected} service"
 msgstr ""
 "Beim Neustart des ${service_selected} Dienstes ist ein Fehler aufgetreten"
 
-#: src/lib/restart_services.sh:66
+#: src/lib/restart_services.sh:65
 #, sh-format
 msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
@@ -734,7 +734,7 @@ msgstr ""
 "aktualisierten Dienste neu starten, um die Aktualisierung vollständig "
 "durchzuführen\\n"
 
-#: src/lib/restart_services.sh:70
+#: src/lib/restart_services.sh:69
 #, sh-format
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "Kein Dienst gefunden, der einen Neustart erfordert\\n"
@@ -863,7 +863,7 @@ msgstr "Es gibt bereits eine laufende Instanz des ${_name} Systray-Applets"
 msgid "Updating Packages...\\n"
 msgstr "Aktualisiere Pakete...\\n"
 
-#: src/lib/update.sh:15 src/lib/update.sh:30 src/lib/update.sh:44
+#: src/lib/update.sh:14 src/lib/update.sh:34 src/lib/update.sh:50
 #, sh-format
 msgid ""
 "An error has occurred during the update process\\nThe update has been "
@@ -872,17 +872,17 @@ msgstr ""
 "Während der Aktualisierung ist ein Fehler aufgetreten\\nAktualisierung wurde "
 "abgebrochen\\n"
 
-#: src/lib/update.sh:24
+#: src/lib/update.sh:29
 #, sh-format
 msgid "Updating AUR Packages...\\n"
 msgstr "Aktualisiere AUR-Pakete...\\n"
 
-#: src/lib/update.sh:40
+#: src/lib/update.sh:46
 #, sh-format
 msgid "Updating Flatpak Packages...\\n"
 msgstr "Aktualisiere Flatpak-Pakete...\\n"
 
-#: src/lib/update.sh:51
+#: src/lib/update.sh:61
 #, sh-format
 msgid "The update has been applied\\n"
 msgstr "Aktualisierung wurde durchgeführt\\n"
