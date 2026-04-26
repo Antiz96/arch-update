@@ -15,6 +15,7 @@ if [ -n "${packages}" ]; then
 		exit 5
 	else
 		true > "${statedir}/last_updates_check_packages"
+		cat "${statedir}"/last_updates_check_{packages,aur,flatpak} > "${statedir}/last_updates_check"
 		packages_updated="true"
 	fi
 fi
@@ -34,6 +35,7 @@ if [ -n "${aur_packages}" ]; then
 		error_during_update="true"
 	else
 		true > "${statedir}/last_updates_check_aur"
+		cat "${statedir}"/last_updates_check_{packages,aur,flatpak} > "${statedir}/last_updates_check"
 		# shellcheck disable=SC2034
 		packages_updated="true"
 	fi
@@ -49,10 +51,9 @@ if [ -n "${flatpak_packages}" ]; then
 		error_during_update="true"
 	else
 		true > "${statedir}/last_updates_check_flatpak"
+		cat "${statedir}"/last_updates_check_{packages,aur,flatpak} > "${statedir}/last_updates_check"
 	fi
 fi
-
-cat "${statedir}"/last_updates_check_{packages,aur,flatpak} > "${statedir}/last_updates_check"
 
 if [ -z "${error_during_update}" ]; then
 	icon_up-to-date
