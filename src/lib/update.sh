@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# update.sh: Update packages
+# update.sh: Update packages and update state files accordingly
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -15,6 +15,7 @@ if [ -n "${packages}" ]; then
 		error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
 		exit 5
 	else
+		true > "${statedir}/last_updates_check_packages"
 		packages_updated="true"
 	fi
 fi
@@ -30,6 +31,7 @@ if [ -n "${aur_packages}" ]; then
 		warning_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")"
 		error_during_update="true"
 	else
+		true > "${statedir}/last_updates_check_aur"
 		# shellcheck disable=SC2034
 		packages_updated="true"
 	fi
@@ -43,8 +45,12 @@ if [ -n "${flatpak_packages}" ]; then
 		icon_updates-available
 		warning_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")"
 		error_during_update="true"
+	else
+		true > "${statedir}/last_updates_check_flatpak"
 	fi
 fi
+
+cat "${statedir}"/last_updates_check_{packages,aur,flatpak} > "${statedir}/last_updates_check"
 
 if [ -z "${error_during_update}" ]; then
 	icon_up-to-date
