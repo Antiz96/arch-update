@@ -61,9 +61,11 @@ if ! pacman -Q kernel-modules-hook &> /dev/null && ! systemd-detect-virt --conta
 	source "${libdir}/kernel_reboot.sh"
 fi
 
-# Source the "restart_services" library which displays services requiring a post update restart and offers to restart them
+# Source the "restart_services" library which displays services requiring a post update restart and offers to restart them if packages were updated
 # shellcheck source=src/lib/restart_services.sh
-source "${libdir}/restart_services.sh"
+if [ -n "${packages_updated}" ]; then
+	source "${libdir}/restart_services.sh"
+fi
 
 # Display the "quit" message on successful full upgrade
 quit_msg
