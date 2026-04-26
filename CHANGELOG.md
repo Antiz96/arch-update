@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.19.3](https://github.com/Antiz96/arch-update/releases/tag/v3.19.3) - 2026-04-26
+
+### Fixes
+
+- *(orphans)* Additionally check for orphans packages before AUR package updates ([#587](https://github.com/Antiz96/arch-update/pull/587)) - ([af74954](https://github.com/Antiz96/arch-update/commit/af7495449f56c36c9344ca287829918a2b9de391)) by @Antiz96
+- *(restart services)* Move condition logic outside of the library script ([#589](https://github.com/Antiz96/arch-update/pull/589)) - ([2c42319](https://github.com/Antiz96/arch-update/commit/2c42319a7b8bafcb9f9e604df67885cff635b6e6)) by @Antiz96
+- *(state)* Update global update state files after each update processes ([#590](https://github.com/Antiz96/arch-update/pull/590)) - ([8d3ee00](https://github.com/Antiz96/arch-update/commit/8d3ee0098257e69434fad216bae16924113073d7)) by @Antiz96
+- Update state files updating logic to match changes added in #583 ([#584](https://github.com/Antiz96/arch-update/pull/584)) - ([3fe9e14](https://github.com/Antiz96/arch-update/commit/3fe9e14735d6dff8b76649b59167f9f4c9a94fae)) by @Antiz96
+- Treat issues during AUR and Flatpak packages updates as warning ([#583](https://github.com/Antiz96/arch-update/pull/583)) - ([bf5c825](https://github.com/Antiz96/arch-update/commit/bf5c825c849050688ddc5adee733549e115ea11f)) by @Antiz96
+
+### Styling
+
+- Add missing line break in Flatpak warning message ([#586](https://github.com/Antiz96/arch-update/pull/586)) - ([ba08c8e](https://github.com/Antiz96/arch-update/commit/ba08c8e612e7d9df9136e76b77b986c570e68bd8)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#591](https://github.com/Antiz96/arch-update/pull/591)) - ([32b56bf](https://github.com/Antiz96/arch-update/commit/32b56bf4abf2ac12dedc53af4bd6754a9414b07f)) by @Antiz96
+- *(icon)* Remove useless update calls ([#585](https://github.com/Antiz96/arch-update/pull/585)) - ([ca5a3af](https://github.com/Antiz96/arch-update/commit/ca5a3af58dbf8c499e2f565d044711da1befac30)) by @Antiz96
+- Add execution bit to the flatpak_unused_packages library script ([#588](https://github.com/Antiz96/arch-update/pull/588)) - ([ceefadb](https://github.com/Antiz96/arch-update/commit/ceefadbbcac87e4c542e862f5999f0983989b330)) by @Antiz96
+
 ## [v3.19.2](https://github.com/Antiz96/arch-update/releases/tag/v3.19.2) - 2026-04-14
 
 ### Fixes
