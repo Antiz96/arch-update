@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# update.sh: Update packages and update state files accordingly
+# update.sh: Update packages and state files
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -21,6 +21,10 @@ fi
 
 if [ -n "${aur_packages}" ]; then
 	echo
+	# shellcheck disable=SC2154
+	# shellcheck source=src/lib/orphan_packages.sh
+	source "${libdir}/orphan_packages.sh"
+
 	main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
 	# shellcheck disable=SC2154
