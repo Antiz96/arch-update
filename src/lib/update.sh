@@ -27,8 +27,8 @@ if [ -n "${aur_packages}" ]; then
 	if ! "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Syu; then
 		icon_updates-available
 		echo
-		error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
-		exit 5
+		warning_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")"
+		error_during_update="true"
 	else
 		# shellcheck disable=SC2034
 		packages_updated="true"
@@ -41,11 +41,13 @@ if [ -n "${flatpak_packages}" ]; then
 
 	if ! flatpak update; then
 		icon_updates-available
-		error_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")" && quit_msg
-		exit 5
+		warning_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")"
+		error_during_update="true"
 	fi
 fi
 
-icon_up-to-date
-echo
-info_msg "$(eval_gettext "The update has been applied\n")"
+if [ -z "${error_during_update}" ]; then
+	icon_up-to-date
+	echo
+	info_msg "$(eval_gettext "The update has been applied\n")"
+fi
