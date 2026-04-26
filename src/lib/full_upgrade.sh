@@ -32,9 +32,20 @@ if [ -n "${proceed_with_update}" ]; then
 	date +%Y-%m-%d > "${statedir}/last_update_run"
 fi
 
-# Source the "orphan_packages" library which displays orphan packages and offers to remove them
-# shellcheck source=src/lib/orphan_packages.sh
-source "${libdir}/orphan_packages.sh"
+# Source the "orphan_packages" library which displays orphan packages and offers to remove them if:
+# - There was no AUR package to update (meaning orphans have not been checked yet)
+# Or
+# - The was AUR package(s) to update but the list of orphans changed after the AUR package(s) update
+if [ -z "${aur_packages}" ] || ! diff <(printf "%s\n" "${orphan_packages[@]}" | sed '/^$/d' | sort) <(pacman -Qtdq | sort) > /dev/null; then
+	# shellcheck source=src/lib/orphan_packages.sh
+	source "${libdir}/orphan_packages.sh"
+fi
+
+# Source the "flatpak_unused_packages" library which displays Flatpak unused packages and offers to remove them (if flatpak support is enabled)
+if [ -n "${flatpak_support}" ]; then
+	# shellcheck source=src/lib/flatpak_unused_packages.sh
+	source "${libdir}/flatpak_unused_packages.sh"
+fi
 
 # Source the "packages_cache" library which searches for old package archives in pacman cache and offers to remove them
 # shellcheck source=src/lib/packages_cache.sh
