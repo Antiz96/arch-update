@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.19.4](https://github.com/Antiz96/arch-update/releases/tag/v3.19.4) - 2026-05-07
+
+### Features
+
+- *(i18n)* Add Belarusian translation ([#594](https://github.com/Antiz96/arch-update/pull/594)) - ([3937ee9](https://github.com/Antiz96/arch-update/commit/3937ee9c4b4ffbc4e512adc7c4e5f314397fd7a6)) by @lasaczka
+
 ## [v3.19.3](https://github.com/Antiz96/arch-update/releases/tag/v3.19.3) - 2026-04-26
 
 ### Fixes
