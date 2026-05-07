@@ -7,6 +7,7 @@ Comment[fr]=Applet systray pour Arch-Update
 Comment[ja]=Arch-Update 用のシステムトレイアプレット
 Comment[ka]=Arch-Update-ის აპლეტი სისტემურ საათთან
 Comment[nb]=Miniprogam for å legge Arch-Update i systemkurven
+Comment[be]=Аплет сістэмнага трэя для Arch-Update
 Icon=arch-update_updates-available-blue
 Type=Application
 Exec=arch-update --tray
