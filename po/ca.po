@@ -1,0 +1,897 @@
+# Arch-Update translation template
+# Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
+# This file is distributed under the same license as the Arch-Update package.
+#
+# Translators:
+# Daniel Talens <dtalens@dtalens.com>, 2026
+msgid ""
+msgstr ""
+"Project-Id-Version: Arch-Update 3.19.4\n"
+"Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
+"POT-Creation-Date: 2024-03-17 16:22+0100\n"
+"PO-Revision-Date: 2026-05-25 16:41+0200\n"
+"Last-Translator: Daniel Talens <dtalens@dtalens.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: src/lib/alhp_check.sh:14
+#, sh-format
+msgid "Your primary ALHP mirror is out of date!\\n"
+msgstr "El vostre espill primari d'ALHP està desactualitzat!\\n"
+
+#: src/lib/alhp_check.sh:20
+#, sh-format
+msgid "The following packages still have pending ALHP builds:"
+msgstr "Els paquets següents encara tenen construccions d'ALHP pendents:"
+
+#: src/lib/alhp_check.sh:23
+#, sh-format
+msgid "Error during ALHP check:"
+msgstr "S'ha produït un error durant la comprovació d'ALHP:"
+
+#: src/lib/common.sh:96
+#, sh-format
+msgid "WARNING"
+msgstr "AVÍS"
+
+#: src/lib/common.sh:102
+#, sh-format
+msgid "ERROR"
+msgstr "ERROR"
+
+#: src/lib/common.sh:107
+#, sh-format
+msgid "Press \"enter\" to continue "
+msgstr "Premeu «retorn» per a continuar "
+
+#: src/lib/common.sh:113
+#, sh-format
+msgid "Press \"enter\" to quit "
+msgstr "Premeu «retorn» per a sortir "
+
+#: src/lib/common.sh:134
+#, sh-format
+msgid ""
+"The ${aur_helper} AUR helper set for AUR packages support in the "
+"${name}.conf configuration file is not found\\n"
+msgstr ""
+"No s'ha trobat l'ajudant de l'AUR ${aur_helper} definit per al suport de "
+"paquets de l'AUR al fitxer de configuració ${name}.conf\\n"
+
+#: src/lib/common.sh:175
+#, sh-format
+msgid ""
+"A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
+msgstr ""
+"Es requereix una ordre d'elevació de privilegis (sudo, sudo-rs, doas o "
+"run0)\\n"
+
+#: src/lib/common.sh:180
+#, sh-format
+msgid ""
+"The ${su_cmd} command set for privilege escalation in the ${name}.conf "
+"configuration file is not found\\n"
+msgstr ""
+"No s'ha trobat l'ordre ${su_cmd} definida per a l'escalada de privilegis al "
+"fitxer de configuració ${name}.conf\\n"
+
+#: src/lib/common.sh:192
+#, sh-format
+msgid ""
+"The ${diff_prog} editor set for visualizing / editing differences of pacnew "
+"files in the ${name}.conf configuration file is not found\\n"
+msgstr ""
+"No s'ha trobat l'editor ${diff_prog} definit per a visualitzar / editar les "
+"diferències dels fitxers pacnew al fitxer de configuració ${name}.conf\\n"
+
+#: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
+#, sh-format
+msgid ""
+"No configuration file found\\nYou can generate one with \"${name} --gen-"
+"config\""
+msgstr ""
+"No s'ha trobat cap fitxer de configuració\\nEn podeu generar un amb «${name} "
+"--gen-config»"
+
+#: src/lib/edit-config.sh:13
+#, sh-format
+msgid ""
+"Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
+"is not set and \"nano\" (fallback option) is not installed"
+msgstr ""
+"No s'ha pogut determinar l'editor a fer servir\\nLa variable d'entorn "
+"«EDITOR» lo està definida i «nano» (opció de reserva) no està instal·lat"
+
+#: src/lib/flatpak_unused_packages.sh:10
+#, sh-format
+msgid "Flatpak Unused Packages:"
+msgstr "Paquets de Flatpak no utilitzats:"
+
+#: src/lib/flatpak_unused_packages.sh:14
+#, sh-format
+msgid "Would you like to remove this Flatpak unused package now? [y/N]"
+msgstr "Voleu eliminar aquest paquet no utilitzat de Flatpak ara? [y/N]"
+
+#: src/lib/flatpak_unused_packages.sh:16
+#, sh-format
+msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
+msgstr "Voleu eliminar aquests paquets no utilitzats de Flatpak ara? [y/N]"
+
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
+#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "Y"
+msgstr "S"
+
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
+#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#, sh-format
+msgid "y"
+msgstr "s"
+
+#: src/lib/flatpak_unused_packages.sh:23
+#, sh-format
+msgid "Removing Flatpak Unused Packages..."
+msgstr "S'estan eliminant els paquets no utilitzats de Flatpak..."
+
+#: src/lib/flatpak_unused_packages.sh:27 src/lib/orphan_packages.sh:28
+#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
+#, sh-format
+msgid ""
+"An error has occurred during the removal process\\nThe removal has been "
+"aborted\\n"
+msgstr ""
+"S'ha produït un error durant el procés d'eliminació\\nS'ha interromput "
+"l'eliminació\\n"
+
+#: src/lib/flatpak_unused_packages.sh:30 src/lib/orphan_packages.sh:31
+#, sh-format
+msgid "The removal has been applied\\n"
+msgstr "S'ha aplicat l'eliminació\\n"
+
+#: src/lib/flatpak_unused_packages.sh:35 src/lib/orphan_packages.sh:37
+#: src/lib/packages_cache.sh:75
+#, sh-format
+msgid "The removal hasn't been applied\\n"
+msgstr "No s'ha aplicat l'eliminació\\n"
+
+#: src/lib/flatpak_unused_packages.sh:39
+#, sh-format
+msgid "No Flatpak unused package found\\n"
+msgstr "No s'ha trobat cap paquet no utilitzat de Flatpak\\n"
+
+#: src/lib/full_upgrade.sh:13
+#, sh-format
+msgid "There's already a running instance of ${_name}\\n"
+msgstr "Ja hi ha una instància de ${_name} en execució\\n"
+
+#: src/lib/gen-config.sh:19
+#, sh-format
+msgid "Example configuration file not found"
+msgstr "No s'ha trobat el fitxer de configuració d'exemple"
+
+#: src/lib/gen-config.sh:25
+#, sh-format
+msgid ""
+"The '${config_file}' configuration file already exists\\nPlease, remove it "
+"before generating a new one (or use --force to overwrite it)"
+msgstr ""
+"El fitxer de configuració «${config_file}» ja existeix\\nSi us plau, "
+"elimineu-lo abans de generar-ne un de nou (o useu --force para "
+"sobreescriure'l)"
+
+#: src/lib/gen-config.sh:30
+#, sh-format
+msgid "The '${config_file}' configuration file has been generated"
+msgstr "S'ha generat el fitxer de configuració «${config_file}»"
+
+#: src/lib/help.sh:8
+#, sh-format
+msgid ""
+"An interactive update notifier & applier for Arch Linux that assists you "
+"with important pre / post update tasks."
+msgstr ""
+"Un notificador i aplicador d'actualitzacions interactiu per a Arch Linux que "
+"us ajuda amb tasques importants d'abans i després d'actualitzar."
+
+#: src/lib/help.sh:10
+#, sh-format
+msgid "Run ${name} to perform the main 'update' function:"
+msgstr ""
+"Executeu ${name} per a dur a terme la funció principal d'«actualització»:"
+
+#: src/lib/help.sh:11
+#, sh-format
+msgid ""
+"Display the list of packages available for update, then ask for the user's "
+"confirmation to proceed with the installation."
+msgstr ""
+"Mostra la llista de paquets disponibles per a actualitzar, i després demana "
+"la confirmació de l'usuari per a procedir amb la instal·lació."
+
+#: src/lib/help.sh:12
+#, sh-format
+msgid ""
+"Before performing the update, it offers to display the latest Arch Linux "
+"news."
+msgstr ""
+"Abans de realitzar l'actualització, ofereix mostrar les darreres notícies "
+"d'Arch Linux."
+
+#: src/lib/help.sh:13
+#, sh-format
+msgid ""
+"Post update, it checks for orphan & unused packages, old cached packages, "
+"pacnew & pacsave files, pending kernel update as well as services requiring "
+"a post upgrade restart and, if there are, offers to process them."
+msgstr ""
+"Després d'actualitzar, comprova si hi ha paquets omesos i no utilitzats, "
+"paquets antics a la memòria cau, fitxers pacnew i pacsave, actualitzacions "
+"de nucli pendents així com serveis que requereixen un reinici posterior a "
+"l'actualització i, si n'hi ha, ofereix processar-los."
+
+#: src/lib/help.sh:15
+#, sh-format
+msgid "Options:"
+msgstr "Opcions:"
+
+#: src/lib/help.sh:16
+#, sh-format
+msgid ""
+"  -c, --check       Check for available updates, change the systray icon and "
+"send a desktop notification containing the number of available updates (if "
+"there are new available updates compared to the last check)"
+msgstr ""
+"  -c, --check       Comprova les actualitzacions disponibles, canvia l'icona "
+"de la bústia del sistema i envia una notificació d'escriptori amb el nombre "
+"d'actualitzacions disponibles (si hi ha noves actualitzacions disponibles en "
+"comparació amb la darrera comprovació)"
+
+#: src/lib/help.sh:17
+#, sh-format
+msgid "  -l, --list        Display the list of pending updates"
+msgstr "  -l, --list        Mostra la llista d'actualitzacions pendents"
+
+#: src/lib/help.sh:18
+#, sh-format
+msgid "  -d, --devel       Include AUR development packages updates"
+msgstr ""
+"  -d, --devel       Inclou les actualitzacions de paquets de desenvolupament "
+"de l'AUR"
+
+#: src/lib/help.sh:19
+#, sh-format
+msgid ""
+"  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
+"number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
+msgstr ""
+"  -n, --news [Núm]  Mostra les darreres notícies d'Arch, opcionalment podeu "
+"especificar el nombre de notícies a mostrar amb «--news [Núm]» (p. ex. «--"
+"news 10»)"
+
+#: src/lib/help.sh:20
+#, sh-format
+msgid "  -s, --services    Check for services requiring a post upgrade restart"
+msgstr ""
+"  -s, --services    Comprova els serveis que requereixen un reinici "
+"posterior a l'actualització"
+
+#: src/lib/help.sh:21
+#, sh-format
+msgid "  -D, --debug       Display debug traces"
+msgstr "  -D, --debug       Mostra les traces de depuració"
+
+#: src/lib/help.sh:22
+#, sh-format
+msgid ""
+"  --gen-config      Generate a default / example '${name}.conf' "
+"configuration file, you can optionally pass the '--force' argument to "
+"overwrite any existing '${name}.conf' configuration file"
+msgstr ""
+"  --gen-config      Genera un fitxer de configuració per defecte / d'exemple "
+"«${name}.conf», opcionalment podeu passar l'argument «--force» per a "
+"sobreescriure qualsevol fitxer de configuració «${name}.conf» existent"
+
+#: src/lib/help.sh:23
+#, sh-format
+msgid ""
+"  --show-config     Display the '${name}.conf' configuration file currently "
+"used (if it exists)"
+msgstr ""
+"  --show-config     Mostra el fitxer de configuració «${name}.conf» "
+"utilitzat actualment (si existeix)"
+
+#: src/lib/help.sh:24
+#, sh-format
+msgid ""
+"  --edit-config     Edit the '${name}.conf' configuration file currently "
+"used (if it exists)"
+msgstr ""
+"  --edit-config     Edita el fitxer de configuració «${name}.conf» utilitzat "
+"actualment (si existeix)"
+
+#: src/lib/help.sh:25
+#, sh-format
+msgid ""
+"  --tray            Launch the ${_name} systray applet, you can optionally "
+"add the '--enable' argument to start it automatically at boot"
+msgstr ""
+"  --tray            Llança la miniaplicació de la bústia del sistema de "
+"${_name}, opcionalment podeu afegir l'argument «--enable» per a iniciar-la "
+"automàticament amb l'arrencada"
+
+#: src/lib/help.sh:26
+#, sh-format
+msgid "  -h, --help        Display this help message and exit"
+msgstr "  -h, --help        Mostra aquest missatge d'ajuda i surt"
+
+#: src/lib/help.sh:27
+#, sh-format
+msgid "  -V, --version     Display version information and exit"
+msgstr "  -V, --version     Mostra la informació de la versió i surt"
+
+#: src/lib/help.sh:29
+#, sh-format
+msgid "For more information, see the ${name}(1) man page."
+msgstr "Per a més informació, vegeu la pàgina de manual ${name}(1)."
+
+#: src/lib/help.sh:30
+#, sh-format
+msgid ""
+"Certain options can be enabled, disabled or modified via the ${name}.conf "
+"configuration file, see the ${name}.conf(5) man page."
+msgstr ""
+"Certes opcions es poden activar, desactivar o modificar mitjançant el fitxer "
+"de configuració ${name}.conf, vegeu la pàgina de manual ${name}.conf(5)."
+
+#: src/lib/invalid_option.sh:7
+#, sh-format
+msgid ""
+"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
+"information"
+msgstr ""
+"${name}: opció no vàlida -- «${option}»\\nTrobeu més informació amb «${name} "
+"--help»"
+
+#: src/lib/kernel_reboot.sh:10
+#, sh-format
+msgid ""
+"Reboot required:\\nThere's a pending kernel update on your system requiring "
+"a reboot to be applied\\n"
+msgstr ""
+"Cal reiniciar:\\nHi ha una actualització del nucli pendent al vostre sistema "
+"que requereix un reinici per a aplicar-se\\n"
+
+#: src/lib/kernel_reboot.sh:11
+#, sh-format
+msgid "Would you like to reboot now? [y/N]"
+msgstr "Voleu reiniciar ara? [y/N]"
+
+#: src/lib/kernel_reboot.sh:24
+#, sh-format
+msgid "Rebooting in ${sec}...\\r"
+msgstr "Es reiniciarà en ${sec}...\\r"
+
+#: src/lib/kernel_reboot.sh:30
+#, sh-format
+msgid ""
+"An error has occurred during the reboot process\\nThe reboot has been "
+"aborted\\n"
+msgstr ""
+"S'ha produït un error durant el procés de reinici\\nS'ha interromput el "
+"reinici\\n"
+
+#: src/lib/kernel_reboot.sh:38
+#, sh-format
+msgid ""
+"The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
+"the pending kernel update\\n"
+msgstr ""
+"No s'ha realitzat el reinici\\nSi us plau, considereu reiniciar per a "
+"finalitzar l'actualització pendent del nucli\\n"
+
+#: src/lib/kernel_reboot.sh:42
+#, sh-format
+msgid "No pending kernel update found\\n"
+msgstr "No s'ha trobat cap actualització pendent del nucli\\n"
+
+#: src/lib/list_news.sh:7
+#, sh-format
+msgid "Looking for recent Arch News..."
+msgstr "S'estan cercant notícies recents d'Arch..."
+
+#: src/lib/list_news.sh:13
+#, sh-format
+msgid ""
+"Unable to retrieve recent Arch News (HTTP error response or request timeout)"
+"\\nPlease, look for any recent news at https://archlinux.org before updating "
+"your system"
+msgstr ""
+"No s'han pogut recuperar les notícies recents d'Arch (resposta d'error HTTP "
+"o temps d'espera esgotat)\\nSi us plau, cerqueu notícies recents a https://"
+"archlinux.org abans d'actualitzar el sistema"
+
+#: src/lib/list_news.sh:23
+#, sh-format
+msgid "No recent Arch News found"
+msgstr "No s'ha trobat cap notícia recent d'Arch"
+
+#: src/lib/list_news.sh:37
+#, sh-format
+msgid "Arch News:"
+msgstr "Notícies d'Arch:"
+
+#: src/lib/list_news.sh:42
+#, sh-format
+msgid "[NEW]"
+msgstr "[NOU]"
+
+#: src/lib/list_news.sh:54
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to quit:"
+msgstr ""
+"Seleccioneu les notícies a llegir (p. ex. 1 3 5), seleccioneu 0 per a llegir-"
+"les totes o premeu «retorn» per a sortir:"
+
+#: src/lib/list_news.sh:56
+#, sh-format
+msgid ""
+"Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
+"\"enter\" to proceed with update:"
+msgstr ""
+"Seleccioneu les notícies a llegir (p. ex. 1 3 5), seleccioneu 0 per a llegir-"
+"les totes o premeu «retorn» per a procedir amb l'actualització:"
+
+#: src/lib/list_news.sh:80
+#, sh-format
+msgid ""
+"Unable to retrieve the selected Arch News (HTTP error response or request "
+"timeout)\\nPlease, read the selected Arch News at ${news_url} before "
+"updating your system"
+msgstr ""
+"No s'han pogut recuperar les notícies d'Arch seleccionades (resposta d'error "
+"HTTP o temps d'espera esgotat)\\nSi us plau, llegiu les notícies d'Arch "
+"seleccionades a ${news_url} abans d'actualitzar el sistema"
+
+#: src/lib/list_news.sh:85
+#, sh-format
+msgid "Title:"
+msgstr "Títol:"
+
+#: src/lib/list_news.sh:86
+#, sh-format
+msgid "Author:"
+msgstr "Autor:"
+
+#: src/lib/list_news.sh:87
+#, sh-format
+msgid "Publication date:"
+msgstr "Data de publicació:"
+
+#: src/lib/list_news.sh:88
+#, sh-format
+msgid "URL:"
+msgstr "URL:"
+
+#: src/lib/list_packages.sh:7
+#, sh-format
+msgid "Looking for updates...\\n"
+msgstr "S'estan cercant actualitzacions...\\n"
+
+#: src/lib/list_packages.sh:16
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+"No s'han pogut recuperar les actualitzacions de paquets (temps d'espera "
+"esgotat)\\n"
+
+#: src/lib/list_packages.sh:32
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"No s'han pogut recuperar les actualitzacions de paquets de l'AUR (temps "
+"d'espera esgotat)\\n"
+
+#: src/lib/list_packages.sh:45
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"No s'han pogut recuperar les actualitzacions de paquets de Flatpak (temps "
+"d'espera esgotat)\\n"
+
+#: src/lib/list_packages.sh:92
+#, sh-format
+msgid "Packages:"
+msgstr "Paquets:"
+
+#: src/lib/list_packages.sh:99
+#, sh-format
+msgid "AUR Packages:"
+msgstr "Paquets de l'AUR:"
+
+#: src/lib/list_packages.sh:106
+#, sh-format
+msgid "Flatpak Packages:"
+msgstr "Paquets de Flatpak:"
+
+#: src/lib/list_packages.sh:116
+#, sh-format
+msgid "No update available\\n"
+msgstr "No hi ha cap actualització disponible\\n"
+
+#: src/lib/list_packages.sh:128
+#, sh-format
+msgid "Proceed with update? [Y/n]"
+msgstr "Voleu procedir amb l'actualització? [Y/n]"
+
+#: src/lib/list_packages.sh:138
+#, sh-format
+msgid "The update has been aborted\\n"
+msgstr "S'ha interromput l'actualització\\n"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#, sh-format
+msgid "${update_number} update available"
+msgstr "Hi ha ${update_number} actualització disponible"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "Run ${_name}"
+msgstr "Executa ${_name}"
+
+#: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "Close"
+msgstr "Tanca"
+
+#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#, sh-format
+msgid "${update_number} updates available"
+msgstr "Hi ha ${update_number} actualitzacions disponibles"
+
+#: src/lib/notification.sh:41
+#, sh-format
+msgid "${_name} desktop file not found"
+msgstr "No s'ha trobat el fitxer d'escriptori de ${_name}"
+
+#: src/lib/orphan_packages.sh:10
+#, sh-format
+msgid "Orphan Packages:"
+msgstr "Paquets omesos:"
+
+#: src/lib/orphan_packages.sh:14
+#, sh-format
+msgid ""
+"Would you like to remove this orphan package (and its potential "
+"dependencies) now? [y/N]"
+msgstr ""
+"Voleu eliminar aquest paquet omès (i les seves possibles dependències) ara? "
+"[y/N]"
+
+#: src/lib/orphan_packages.sh:16
+#, sh-format
+msgid ""
+"Would you like to remove these orphan packages (and their potential "
+"dependencies) now? [y/N]"
+msgstr ""
+"Voleu eliminar aquests paquets omesos (i les seves possibles dependències) "
+"ara? [y/N]"
+
+#: src/lib/orphan_packages.sh:23
+#, sh-format
+msgid "Removing Orphan Packages...\\n"
+msgstr "S'estan eliminant els paquets omesos...\\n"
+
+#: src/lib/orphan_packages.sh:41
+#, sh-format
+msgid "No orphan package found\\n"
+msgstr "No s'ha trobat cap paquet omès\\n"
+
+#: src/lib/packages_cache.sh:21
+#, sh-format
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Paquets a la memòria cau:\\nHi ha un paquet antic o desinstal·lat a la "
+"memòria cau\\n"
+
+#: src/lib/packages_cache.sh:22
+#, sh-format
+msgid "Would you like to remove it from the cache now? [Y/n]"
+msgstr "Voleu eliminar-lo de la memòria cau ara? [Y/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Paquets a la memòria cau:\\nHi ha paquets antics i / o desinstal·lats a la "
+"memòria cau\\n"
+
+#: src/lib/packages_cache.sh:25
+#, sh-format
+msgid "Would you like to remove them from the cache now? [Y/n]"
+msgstr "Voleu eliminar-los de la memòria cau ara? [Y/n]"
+
+#: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
+#, sh-format
+msgid "Removing old cached packages..."
+msgstr "S'estan eliminant els paquets antics de la memòria cau..."
+
+#: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
+#, sh-format
+msgid "Removing uninstalled cached packages..."
+msgstr "S'estan eliminant els paquets desinstal·lats de la memòria cau..."
+
+#: src/lib/packages_cache.sh:79
+#, sh-format
+msgid "No old or uninstalled cached package found\\n"
+msgstr "No s'ha trobat cap paquet antic o desinstal·lat a la memòria cau\\n"
+
+#: src/lib/pacnew_files.sh:10
+#, sh-format
+msgid "Pacnew Files:"
+msgstr "Fitxers Pacnew:"
+
+#: src/lib/pacnew_files.sh:14
+#, sh-format
+msgid "Would you like to process this file now? [Y/n]"
+msgstr "Voleu processar aquest fitxer ara? [Y/n]"
+
+#: src/lib/pacnew_files.sh:16
+#, sh-format
+msgid "Would you like to process these files now? [Y/n]"
+msgstr "Voleu processar aquests fitxers ara? [Y/n]"
+
+#: src/lib/pacnew_files.sh:23
+#, sh-format
+msgid "Processing Pacnew Files...\\n"
+msgstr "S'estan processant els fitxers Pacnew...\\n"
+
+#: src/lib/pacnew_files.sh:28
+#, sh-format
+msgid "The pacnew file(s) processing has been applied\\n"
+msgstr "S'ha aplicat el processament dels fitxers pacnew\\n"
+
+#: src/lib/pacnew_files.sh:31
+#, sh-format
+msgid "An error occurred during the pacnew file(s) processing\\n"
+msgstr "S'ha produït un error durant el processament dels fitxers pacnew\\n"
+
+#: src/lib/pacnew_files.sh:37
+#, sh-format
+msgid ""
+"The pacnew file(s) processing hasn't been applied\\nPlease, consider "
+"processing them promptly\\n"
+msgstr ""
+"No s'ha aplicat el processament dels fitxers pacnew\\nSi us plau, considereu "
+"processar-los de seguida\\n"
+
+#: src/lib/pacnew_files.sh:41
+#, sh-format
+msgid "No pacnew file found\\n"
+msgstr "No s'ha trobat cap fitxer pacnew\\n"
+
+#: src/lib/restart_services.sh:13
+#, sh-format
+msgid "Services:\\nThe following service requires a post upgrade restart\\n"
+msgstr ""
+"Serveis:\\nEl servei següent requereix un reinici posterior a "
+"l'actualització\\n"
+
+#: src/lib/restart_services.sh:15
+#, sh-format
+msgid "Services:\\nThe following services require a post upgrade restart\\n"
+msgstr ""
+"Serveis:\\nEls serveis següents requereixen un reinici posterior a "
+"l'actualització\\n"
+
+#: src/lib/restart_services.sh:25
+#, sh-format
+msgid ""
+"Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
+"or press \"enter\" to continue without restarting the service(s):"
+msgstr ""
+"Seleccioneu els serveis a reiniciar (p. ex. 1 3 5), seleccioneu 0 per a "
+"reiniciar-los tots o premeu «retorn» per a continuar sense reiniciar-los:"
+
+#: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
+#, sh-format
+msgid "Service(s) restarted successfully\\n"
+msgstr "Els serveis s'han reiniciar correctament\\n"
+
+#: src/lib/restart_services.sh:34 src/lib/restart_services.sh:61
+#, sh-format
+msgid ""
+"An error has occurred during the service(s) restart\\nPlease, verify the "
+"above service(s) status\\n"
+msgstr ""
+"S'ha produït un error durant el reinici dels serveis\\nSi us plau, "
+"verifiqueu l'estat dels serveis esmentats dalt\\n"
+
+#: src/lib/restart_services.sh:47
+#, sh-format
+msgid "The ${service_selected} service has been successfully restarted"
+msgstr "El servei ${service_selected} s'ha reiniciat correctament"
+
+#: src/lib/restart_services.sh:49
+#, sh-format
+msgid ""
+"An error has occurred during the restart of the ${service_selected} service"
+msgstr "S'ha produït un error durant el reinici del servei ${service_selected}"
+
+#: src/lib/restart_services.sh:65
+#, sh-format
+msgid ""
+"The service(s) restart hasn't been performed\\nPlease, consider restarting "
+"services that have been updated to fully apply the upgrade\\n"
+msgstr ""
+"No s'ha realitzat el reinici dels serveis\\nSi us plau, considereu reiniciar "
+"els serveis que s'han actualitzat per a aplicar completament la millora\\n"
+
+#: src/lib/restart_services.sh:69
+#, sh-format
+msgid "No service requiring a post upgrade restart found\\n"
+msgstr ""
+"No s'ha trobat cap servei que requereixi un reinici posterior a "
+"l'actualització\\n"
+
+#: src/lib/tray.py:199
+msgid "'updates' state file isn't found"
+msgstr "No s'ha trobat el fitxer d'estat d'«updates»"
+
+#: src/lib/tray.py:246
+msgid "System is up to date"
+msgstr "El sistema està actualitzat"
+
+#: src/lib/tray.py:249
+msgid "1 update available"
+msgstr "1 actualització disponible"
+
+#: src/lib/tray.py:252
+#, python-brace-format
+msgid "{updates} updates available"
+msgstr "Hi ha {updates} actualitzacions disponibles"
+
+#: src/lib/tray.py:256
+#, python-brace-format
+msgid ""
+"Last check:\n"
+"{time}"
+msgstr ""
+"Darrera comprovació:\n"
+"{time}"
+
+#: src/lib/tray.py:271
+#, python-brace-format
+msgid "Next check in {time}"
+msgstr "Propera comprovació en {time}"
+
+#: src/lib/tray.py:282
+#, python-brace-format
+msgid "All ({updates})"
+msgstr "Tot ({updates})"
+
+#: src/lib/tray.py:295
+#, python-brace-format
+msgid "Packages ({updates})"
+msgstr "Paquets ({updates})"
+
+#: src/lib/tray.py:306
+#, python-brace-format
+msgid "AUR ({updates})"
+msgstr "AUR ({updates})"
+
+#: src/lib/tray.py:317
+#, python-brace-format
+msgid "Flatpak ({updates})"
+msgstr "Flatpak ({updates})"
+
+#: src/lib/tray.py:377 src/lib/tray.py:382
+msgid "Arch-Update"
+msgstr "Arch-Update"
+
+#: src/lib/tray.py:383
+msgid "Last check"
+msgstr "Darrera comprovació"
+
+#: src/lib/tray.py:384
+msgid "Next check"
+msgstr "Propera comprovació"
+
+#: src/lib/tray.py:385
+msgid "Run Arch-Update"
+msgstr "Executa Arch-Update"
+
+#: src/lib/tray.py:386
+msgid "Check for updates"
+msgstr "Comprova si hi ha actualitzacions"
+
+#: src/lib/tray.py:387
+msgid "Exit"
+msgstr "Surt"
+
+#: src/lib/tray.py:390
+msgid "All"
+msgstr "Tot"
+
+#: src/lib/tray.py:391
+msgid "Packages"
+msgstr "Paquets"
+
+#: src/lib/tray.py:392
+msgid "AUR"
+msgstr "AUR"
+
+#: src/lib/tray.py:393
+msgid "Flatpak"
+msgstr "Flatpak"
+
+#: src/lib/tray.sh:20
+#, sh-format
+msgid "${_name} tray desktop file not found"
+msgstr "No s'ha trobat el fitxer d'escriptori de la bústia de ${_name}"
+
+#: src/lib/tray.sh:27
+#, sh-format
+msgid "The '${tray_desktop_file_autostart}' file already exists"
+msgstr "El fitxer «${tray_desktop_file_autostart}» ja existeix"
+
+#: src/lib/tray.sh:32
+#, sh-format
+msgid ""
+"The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
+"systray applet will be automatically started at your next log on\\nTo start "
+"it right now, you can launch the \"${_name} Systray Applet\" application "
+"from your app menu"
+msgstr ""
+"S'ha creat el fitxer «${tray_desktop_file_autostart}», la miniaplicació de "
+"la bústia del sistema de ${_name} s'iniciarà automàticament en el proper "
+"inici de sessió\\nPer a iniciar-la ara mateix, podeu llançar l'aplicació "
+"«${_name} Systray Applet» des del menú d'aplicacions"
+
+#: src/lib/tray.sh:49
+#, sh-format
+msgid "There's already a running instance of the ${_name} systray applet"
+msgstr ""
+"Ja hi ha una instància de la miniaplicació de la bústia de ${_name} en "
+"execució"
+
+#: src/lib/update.sh:9
+#, sh-format
+msgid "Updating Packages...\\n"
+msgstr "S'estan actualitzant els paquets...\\n"
+
+#: src/lib/update.sh:14 src/lib/update.sh:34 src/lib/update.sh:50
+#, sh-format
+msgid ""
+"An error has occurred during the update process\\nThe update has been "
+"aborted\\n"
+msgstr ""
+"S'ha produït un error durant el procés d'actualització\\nS'ha interromput "
+"l'actualització\\n"
+
+#: src/lib/update.sh:29
+#, sh-format
+msgid "Updating AUR Packages...\\n"
+msgstr "S'estan actualitzant os paquets de l'AUR...\\n"
+
+#: src/lib/update.sh:46
+#, sh-format
+msgid "Updating Flatpak Packages...\\n"
+msgstr "S'estan actualitzant els paquets de Flatpak...\\n"
+
+#: src/lib/update.sh:61
+#, sh-format
+msgid "The update has been applied\\n"
+msgstr "S'ha aplicat l'actualització\\n"
