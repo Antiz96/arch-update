@@ -1,6 +1,6 @@
 pkgname=arch-update
 _pkgname=Arch-Update
-locales = be de es eu fr hu ja ka nb nl pt_BR pt_PT ru sv zh_CN zh_TW
+locales = be ca de es eu fr hu ja ka nb nl pt_BR pt_PT ru sv zh_CN zh_TW
 
 PREFIX ?= /usr/local
 
