@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.19.5](https://github.com/Antiz96/arch-update/releases/tag/v3.19.5) - 2026-05-25
+
+### Features
+
+- *(i18n)* Add Catalan translation ([#602](https://github.com/Antiz96/arch-update/pull/602)) - ([ff1eea8](https://github.com/Antiz96/arch-update/commit/ff1eea88bcab6003ca15a51a111f3c0c72066e45)) by @dtalens
+
+### Miscellaneous
+
+- Update sponsor links ([#597](https://github.com/Antiz96/arch-update/pull/597)) - ([146b3e3](https://github.com/Antiz96/arch-update/commit/146b3e370c27819a627917463df92dd2c3508931)) by @Antiz96
+
 ## [v3.19.4](https://github.com/Antiz96/arch-update/releases/tag/v3.19.4) - 2026-05-07
 
 ### Features
