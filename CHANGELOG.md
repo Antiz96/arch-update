@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.19.6](https://github.com/Antiz96/arch-update/releases/tag/v3.19.6) - 2026-05-26
+
+### Miscellaneous
+
+- *(i18n)* Fix Spanish translation formality ([#603](https://github.com/Antiz96/arch-update/pull/603)) - ([3bc2721](https://github.com/Antiz96/arch-update/commit/3bc27218a7a38fb74fb460f291ddc0c0af17a9fe)) by @djgs01
+- *(i18n)* Fix Catalan yes/no prompts ([#605](https://github.com/Antiz96/arch-update/pull/605)) - ([5c869bd](https://github.com/Antiz96/arch-update/commit/5c869bd4fbb61456df84254bc1882e16c975da20)) by @dtalens
+
 ## [v3.19.5](https://github.com/Antiz96/arch-update/releases/tag/v3.19.5) - 2026-05-25
 
 ### Features
