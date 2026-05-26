@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.19.7](https://github.com/Antiz96/arch-update/releases/tag/v3.19.7) - 2026-05-26
+
+### Features
+
+- *(i18n)* Add Bulgarian translation ([#606](https://github.com/Antiz96/arch-update/pull/606)) - ([ca1302b](https://github.com/Antiz96/arch-update/commit/ca1302b9cf09690b8857d210cc113abee4f21582)) by @compulsions
+
 ## [v3.19.6](https://github.com/Antiz96/arch-update/releases/tag/v3.19.6) - 2026-05-26
 
 ### Miscellaneous
