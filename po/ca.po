@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.19.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-05-25 16:41+0200\n"
+"PO-Revision-Date: 2026-05-26 17:43+0200\n"
 "Last-Translator: Daniel Talens <dtalens@dtalens.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -114,12 +114,12 @@ msgstr "Paquets de Flatpak no utilitzats:"
 #: src/lib/flatpak_unused_packages.sh:14
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
-msgstr "Voleu eliminar aquest paquet no utilitzat de Flatpak ara? [y/N]"
+msgstr "Voleu eliminar aquest paquet no utilitzat de Flatpak ara? [s/N]"
 
 #: src/lib/flatpak_unused_packages.sh:16
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
-msgstr "Voleu eliminar aquests paquets no utilitzats de Flatpak ara? [y/N]"
+msgstr "Voleu eliminar aquests paquets no utilitzats de Flatpak ara? [s/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
 #: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
@@ -372,7 +372,7 @@ msgstr ""
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr "Voleu reiniciar ara? [y/N]"
+msgstr "Voleu reiniciar ara? [s/N]"
 
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
@@ -577,7 +577,7 @@ msgid ""
 "dependencies) now? [y/N]"
 msgstr ""
 "Voleu eliminar aquest paquet omès (i les seves possibles dependències) ara? "
-"[y/N]"
+"[s/N]"
 
 #: src/lib/orphan_packages.sh:16
 #, sh-format
@@ -586,7 +586,7 @@ msgid ""
 "dependencies) now? [y/N]"
 msgstr ""
 "Voleu eliminar aquests paquets omesos (i les seves possibles dependències) "
-"ara? [y/N]"
+"ara? [s/N]"
 
 #: src/lib/orphan_packages.sh:23
 #, sh-format
