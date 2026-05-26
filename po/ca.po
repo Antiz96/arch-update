@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.19.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-05-25 16:41+0200\n"
+"PO-Revision-Date: 2026-05-26 17:57+0200\n"
 "Last-Translator: Daniel Talens <dtalens@dtalens.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -114,12 +114,12 @@ msgstr "Paquets de Flatpak no utilitzats:"
 #: src/lib/flatpak_unused_packages.sh:14
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
-msgstr "Voleu eliminar aquest paquet no utilitzat de Flatpak ara? [y/N]"
+msgstr "Voleu eliminar aquest paquet no utilitzat de Flatpak ara? [s/N]"
 
 #: src/lib/flatpak_unused_packages.sh:16
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
-msgstr "Voleu eliminar aquests paquets no utilitzats de Flatpak ara? [y/N]"
+msgstr "Voleu eliminar aquests paquets no utilitzats de Flatpak ara? [s/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
 #: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
@@ -372,7 +372,7 @@ msgstr ""
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr "Voleu reiniciar ara? [y/N]"
+msgstr "Voleu reiniciar ara? [s/N]"
 
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
@@ -531,7 +531,7 @@ msgstr "No hi ha cap actualització disponible\\n"
 #: src/lib/list_packages.sh:128
 #, sh-format
 msgid "Proceed with update? [Y/n]"
-msgstr "Voleu procedir amb l'actualització? [Y/n]"
+msgstr "Voleu procedir amb l'actualització? [S/n]"
 
 #: src/lib/list_packages.sh:138
 #, sh-format
@@ -577,7 +577,7 @@ msgid ""
 "dependencies) now? [y/N]"
 msgstr ""
 "Voleu eliminar aquest paquet omès (i les seves possibles dependències) ara? "
-"[y/N]"
+"[s/N]"
 
 #: src/lib/orphan_packages.sh:16
 #, sh-format
@@ -586,7 +586,7 @@ msgid ""
 "dependencies) now? [y/N]"
 msgstr ""
 "Voleu eliminar aquests paquets omesos (i les seves possibles dependències) "
-"ara? [y/N]"
+"ara? [s/N]"
 
 #: src/lib/orphan_packages.sh:23
 #, sh-format
@@ -608,7 +608,7 @@ msgstr ""
 #: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Voleu eliminar-lo de la memòria cau ara? [Y/n]"
+msgstr "Voleu eliminar-lo de la memòria cau ara? [S/n]"
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
@@ -621,7 +621,7 @@ msgstr ""
 #: src/lib/packages_cache.sh:25
 #, sh-format
 msgid "Would you like to remove them from the cache now? [Y/n]"
-msgstr "Voleu eliminar-los de la memòria cau ara? [Y/n]"
+msgstr "Voleu eliminar-los de la memòria cau ara? [S/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
@@ -646,12 +646,12 @@ msgstr "Fitxers Pacnew:"
 #: src/lib/pacnew_files.sh:14
 #, sh-format
 msgid "Would you like to process this file now? [Y/n]"
-msgstr "Voleu processar aquest fitxer ara? [Y/n]"
+msgstr "Voleu processar aquest fitxer ara? [S/n]"
 
 #: src/lib/pacnew_files.sh:16
 #, sh-format
 msgid "Would you like to process these files now? [Y/n]"
-msgstr "Voleu processar aquests fitxers ara? [Y/n]"
+msgstr "Voleu processar aquests fitxers ara? [S/n]"
 
 #: src/lib/pacnew_files.sh:23
 #, sh-format
