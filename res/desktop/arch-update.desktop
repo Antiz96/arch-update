@@ -1,6 +1,8 @@
 [Desktop Entry]
 Name=Arch-Update
 Comment=An interactive update notifier & applier for Arch Linux
+Comment[be]=Інтэрактыўны апавяшчальнік і ўсталёўшчык абнаўленняў для Arch Linux
+Comment[bg]=Интерактивен нотификатор и инструмент за актуализиране за Arch Linux
 Comment[de]=Ein interaktiver Update-Benachrichtiger und -Anwender für Arch Linux
 Comment[eu]=Arch Linuxrako eguneraketa-jakinarazle eta aplikatzaile interaktiboa.
 Comment[fr]=Un notificateur & applicateur de mises à jour interactif pour Arch Linux

@@ -2,6 +2,66 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.19.7](https://github.com/Antiz96/arch-update/releases/tag/v3.19.7) - 2026-05-26
+
+### Features
+
+- *(i18n)* Add Bulgarian translation ([#606](https://github.com/Antiz96/arch-update/pull/606)) - ([ca1302b](https://github.com/Antiz96/arch-update/commit/ca1302b9cf09690b8857d210cc113abee4f21582)) by @compulsions
+
+## [v3.19.6](https://github.com/Antiz96/arch-update/releases/tag/v3.19.6) - 2026-05-26
+
+### Miscellaneous
+
+- *(i18n)* Fix Spanish translation formality ([#603](https://github.com/Antiz96/arch-update/pull/603)) - ([3bc2721](https://github.com/Antiz96/arch-update/commit/3bc27218a7a38fb74fb460f291ddc0c0af17a9fe)) by @djgs01
+- *(i18n)* Fix Catalan yes/no prompts ([#605](https://github.com/Antiz96/arch-update/pull/605)) - ([5c869bd](https://github.com/Antiz96/arch-update/commit/5c869bd4fbb61456df84254bc1882e16c975da20)) by @dtalens
+
+## [v3.19.5](https://github.com/Antiz96/arch-update/releases/tag/v3.19.5) - 2026-05-25
+
+### Features
+
+- *(i18n)* Add Catalan translation ([#602](https://github.com/Antiz96/arch-update/pull/602)) - ([ff1eea8](https://github.com/Antiz96/arch-update/commit/ff1eea88bcab6003ca15a51a111f3c0c72066e45)) by @dtalens
+
+### Miscellaneous
+
+- Update sponsor links ([#597](https://github.com/Antiz96/arch-update/pull/597)) - ([146b3e3](https://github.com/Antiz96/arch-update/commit/146b3e370c27819a627917463df92dd2c3508931)) by @Antiz96
+
+## [v3.19.4](https://github.com/Antiz96/arch-update/releases/tag/v3.19.4) - 2026-05-07
+
+### Features
+
+- *(i18n)* Add Belarusian translation ([#594](https://github.com/Antiz96/arch-update/pull/594)) - ([3937ee9](https://github.com/Antiz96/arch-update/commit/3937ee9c4b4ffbc4e512adc7c4e5f314397fd7a6)) by @lasaczka
+
+## [v3.19.3](https://github.com/Antiz96/arch-update/releases/tag/v3.19.3) - 2026-04-26
+
+### Fixes
+
+- *(orphans)* Additionally check for orphans packages before AUR package updates ([#587](https://github.com/Antiz96/arch-update/pull/587)) - ([af74954](https://github.com/Antiz96/arch-update/commit/af7495449f56c36c9344ca287829918a2b9de391)) by @Antiz96
+- *(restart services)* Move condition logic outside of the library script ([#589](https://github.com/Antiz96/arch-update/pull/589)) - ([2c42319](https://github.com/Antiz96/arch-update/commit/2c42319a7b8bafcb9f9e604df67885cff635b6e6)) by @Antiz96
+- *(state)* Update global update state files after each update processes ([#590](https://github.com/Antiz96/arch-update/pull/590)) - ([8d3ee00](https://github.com/Antiz96/arch-update/commit/8d3ee0098257e69434fad216bae16924113073d7)) by @Antiz96
+- Update state files updating logic to match changes added in #583 ([#584](https://github.com/Antiz96/arch-update/pull/584)) - ([3fe9e14](https://github.com/Antiz96/arch-update/commit/3fe9e14735d6dff8b76649b59167f9f4c9a94fae)) by @Antiz96
+- Treat issues during AUR and Flatpak packages updates as warning ([#583](https://github.com/Antiz96/arch-update/pull/583)) - ([bf5c825](https://github.com/Antiz96/arch-update/commit/bf5c825c849050688ddc5adee733549e115ea11f)) by @Antiz96
+
+### Styling
+
+- Add missing line break in Flatpak warning message ([#586](https://github.com/Antiz96/arch-update/pull/586)) - ([ba08c8e](https://github.com/Antiz96/arch-update/commit/ba08c8e612e7d9df9136e76b77b986c570e68bd8)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#591](https://github.com/Antiz96/arch-update/pull/591)) - ([32b56bf](https://github.com/Antiz96/arch-update/commit/32b56bf4abf2ac12dedc53af4bd6754a9414b07f)) by @Antiz96
+- *(icon)* Remove useless update calls ([#585](https://github.com/Antiz96/arch-update/pull/585)) - ([ca5a3af](https://github.com/Antiz96/arch-update/commit/ca5a3af58dbf8c499e2f565d044711da1befac30)) by @Antiz96
+- Add execution bit to the flatpak_unused_packages library script ([#588](https://github.com/Antiz96/arch-update/pull/588)) - ([ceefadb](https://github.com/Antiz96/arch-update/commit/ceefadbbcac87e4c542e862f5999f0983989b330)) by @Antiz96
+
+## [v3.19.2](https://github.com/Antiz96/arch-update/releases/tag/v3.19.2) - 2026-04-14
+
+### Fixes
+
+- *(flatpak)* Fix interactive polkit authentications handling in TTY / SSH environment ([#578](https://github.com/Antiz96/arch-update/pull/578)) - ([7d3e893](https://github.com/Antiz96/arch-update/commit/7d3e893c321ecb5ab21a2456c5c9723f53314f28)) by @FineWolf
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#580](https://github.com/Antiz96/arch-update/pull/580)) - ([524828f](https://github.com/Antiz96/arch-update/commit/524828ff7cf6b80ff86294d5ca60c2d95116d0f5)) by @Antiz96
+- Update contributing guidelines regarding derivatives ([#579](https://github.com/Antiz96/arch-update/pull/579)) - ([2fa6720](https://github.com/Antiz96/arch-update/commit/2fa67207b2ab4d493b539478e8c0d597baf87287)) by @Antiz96
+
 ## [v3.19.1](https://github.com/Antiz96/arch-update/releases/tag/v3.19.1) - 2026-04-05
 
 ### Fixes

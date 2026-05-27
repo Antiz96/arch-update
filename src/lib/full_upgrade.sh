@@ -28,17 +28,24 @@ if [ -n "${proceed_with_update}" ]; then
 	# shellcheck source=src/lib/update.sh
 	source "${libdir}/update.sh"
 
-	# Record the date of the last successful update (used by other stages) and empty the 'updates' state files (which contains the list of pending updates)
+	# Record the date of the last successful update (used by the "list_news" library)
 	date +%Y-%m-%d > "${statedir}/last_update_run"
-	true > "${statedir}/last_updates_check"
-	true > "${statedir}/last_updates_check_packages"
-	true > "${statedir}/last_updates_check_aur"
-	true > "${statedir}/last_updates_check_flatpak"
 fi
 
-# Source the "orphan_packages" library which displays orphan packages and offers to remove them
-# shellcheck source=src/lib/orphan_packages.sh
-source "${libdir}/orphan_packages.sh"
+# Source the "orphan_packages" library which displays orphan packages and offers to remove them if:
+# - There was no AUR package to update (meaning orphans have not been checked yet)
+# Or
+# - The was AUR package(s) to update but the list of orphans changed after the AUR package(s) update
+if [ -z "${aur_packages}" ] || ! diff <(printf "%s\n" "${orphan_packages[@]}" | sed '/^$/d' | sort) <(pacman -Qtdq | sort) > /dev/null; then
+	# shellcheck source=src/lib/orphan_packages.sh
+	source "${libdir}/orphan_packages.sh"
+fi
+
+# Source the "flatpak_unused_packages" library which displays Flatpak unused packages and offers to remove them (if flatpak support is enabled)
+if [ -n "${flatpak_support}" ]; then
+	# shellcheck source=src/lib/flatpak_unused_packages.sh
+	source "${libdir}/flatpak_unused_packages.sh"
+fi
 
 # Source the "packages_cache" library which searches for old package archives in pacman cache and offers to remove them
 # shellcheck source=src/lib/packages_cache.sh
@@ -54,9 +61,11 @@ if ! pacman -Q kernel-modules-hook &> /dev/null && ! systemd-detect-virt --conta
 	source "${libdir}/kernel_reboot.sh"
 fi
 
-# Source the "restart_services" library which displays services requiring a post update restart and offers to restart them
+# Source the "restart_services" library which displays services requiring a post update restart and offers to restart them if packages were updated
 # shellcheck source=src/lib/restart_services.sh
-source "${libdir}/restart_services.sh"
+if [ -n "${packages_updated}" ]; then
+	source "${libdir}/restart_services.sh"
+fi
 
 # Display the "quit" message on successful full upgrade
 quit_msg
