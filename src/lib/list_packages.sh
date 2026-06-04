@@ -9,7 +9,7 @@ info_msg "$(eval_gettext "Looking for updates...\n")"
 # shellcheck disable=SC2154
 checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
 # shellcheck disable=SC2154
-packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates "${contrib_color_opt[@]}")
+packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates --nocolor)
 packages_exit_code=$?
 
 if [ "${packages_exit_code}" -eq 124 ]; then
@@ -82,22 +82,55 @@ if [ -n "${flatpak_support}" ]; then
 	fi
 fi
 
+# Strip ANSI color codes from AUR helper output
+# shellcheck disable=SC2001
+[ -n "${aur_packages}" ] && aur_packages=$(echo "${aur_packages}" | sed 's/\x1B\[[0-9;]*m//g')
+
 # shellcheck disable=SC2154
 true > "${statedir}/last_updates_check"
 true > "${statedir}/last_updates_check_packages"
 true > "${statedir}/last_updates_check_aur"
 true > "${statedir}/last_updates_check_flatpak"
 
+# Display a package list with aligned columns and version diff highlighting.
+display_update_list() {
+	local line name old new i seg
+	local -a old_parts new_parts
+
+	while IFS= read -r line; do
+		[ -z "${line}" ] && continue
+		read -r name old _ new <<< "${line}"
+		# shellcheck disable=SC2154
+		if [ -z "${old}" ]; then
+			echo "${name}"
+		elif [ -z "${no_color}" ]; then
+			IFS='.-' read -ra old_parts <<< "${old}"
+			IFS='.-' read -ra new_parts <<< "${new}"
+			i=0
+			seg=0
+			while [ "${seg}" -lt "${#old_parts[@]}" ] && [ "${seg}" -lt "${#new_parts[@]}" ] && [ "${old_parts[${seg}]}" = "${new_parts[${seg}]}" ]; do
+				i=$(( i + ${#old_parts[${seg}]} + 1 ))
+				seg=$(( seg + 1 ))
+			done
+			printf "%b %b -> %b\n" "${bold}${name}${color_off}" "${old:0:${i}}${red}${bold}${old:${i}}${color_off}" "${new:0:${i}}${green}${bold}${new:${i}}${color_off}"
+		else
+			echo "${line}"
+		fi
+	done | column -t
+}
+
 if [ -n "${packages}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
-	echo -e "${packages}\n"
+	echo "${packages}" | display_update_list
+	echo
 	echo "${packages}" >> "${statedir}/last_updates_check"
 	echo "${packages}" > "${statedir}/last_updates_check_packages"
 fi
 
 if [ -n "${aur_packages}" ]; then
 	main_msg "$(eval_gettext "AUR Packages:")"
-	echo -e "${aur_packages}\n"
+	echo "${aur_packages}" | display_update_list
+	echo
 	echo "${aur_packages}" >> "${statedir}/last_updates_check"
 	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
 fi
@@ -108,8 +141,6 @@ if [ "${#flatpak_packages[@]}" -gt 0 ]; then
 	printf "%s\n" "${flatpak_packages[@]}" >> "${statedir}/last_updates_check"
 	printf "%s\n" "${flatpak_packages[@]}" > "${statedir}/last_updates_check_flatpak"
 fi
-
-sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}"/last_updates_check{,_packages,_aur,_flatpak}
 
 if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ "${#flatpak_packages[@]}" -eq 0 ]; then
 	icon_up-to-date
