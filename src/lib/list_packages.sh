@@ -96,6 +96,7 @@ display_update_list() {
 	while IFS= read -r line; do
 		[ -z "${line}" ] && continue
 		read -r pkgname oldver _ newver <<< "${line}"
+		# If running with the "NoVersion" option
 		# shellcheck disable=SC2154
 		if [ -z "${oldver}" ]; then
 			echo "${pkgname}"
