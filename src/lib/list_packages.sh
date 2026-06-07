@@ -88,7 +88,7 @@ true > "${statedir}/last_updates_check_packages"
 true > "${statedir}/last_updates_check_aur"
 true > "${statedir}/last_updates_check_flatpak"
 
-# Display a package list with aligned columns and version diff highlighting.
+# Re-color update list output with version diff highlighting
 color_update_list() {
 	local line pkgname oldver newver counter seg
 	local -a old_vers new_vers
@@ -96,29 +96,25 @@ color_update_list() {
 	while IFS= read -r line; do
 		[ -z "${line}" ] && continue
 		read -r pkgname oldver _ newver <<< "${line}"
-		# If running with the "NoVersion" option
-		# shellcheck disable=SC2154
-		if [ -z "${oldver}" ]; then
-			echo "${pkgname}"
-		elif [ -z "${no_color}" ]; then
-			IFS='.-' read -ra old_vers <<< "${oldver}"
-			IFS='.-' read -ra new_vers <<< "${newver}"
-			counter=0
-			seg=0
-			while [ "${seg}" -lt "${#old_vers[@]}" ] && [ "${seg}" -lt "${#new_vers[@]}" ] && [ "${old_vers[${seg}]}" = "${new_vers[${seg}]}" ]; do
-				counter=$(( counter + ${#old_vers[${seg}]} + 1 ))
-				seg=$(( seg + 1 ))
-			done
-			printf "%b %b -> %b\n" "${bold}${pkgname}${color_off}" "${oldver:0:${counter}}${red}${bold}${oldver:${counter}}${color_off}" "${newver:0:${counter}}${green}${bold}${newver:${counter}}${color_off}"
-		else
-			echo "${line}"
-		fi
+		IFS='.-' read -ra old_vers <<< "${oldver}"
+		IFS='.-' read -ra new_vers <<< "${newver}"
+		counter=0
+		seg=0
+		while [ "${seg}" -lt "${#old_vers[@]}" ] && [ "${seg}" -lt "${#new_vers[@]}" ] && [ "${old_vers[${seg}]}" = "${new_vers[${seg}]}" ]; do
+			counter=$(( counter + ${#old_vers[${seg}]} + 1 ))
+			seg=$(( seg + 1 ))
+		done
+		printf "%b %b -> %b\n" "${bold}${pkgname}${color_off}" "${oldver:0:${counter}}${red}${bold}${oldver:${counter}}${color_off}" "${newver:0:${counter}}${green}${bold}${newver:${counter}}${color_off}"
 	done
 }
 
 if [ -n "${packages}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
-	echo "${packages}" | color_update_list | column -t
+	if [ -n "${no_color}" ] || [ -n "${no_version}" ]; then
+		echo "${packages}" | column -t
+	else
+		echo "${packages}" | color_update_list | column -t
+	fi
 	echo
 	echo "${packages}" >> "${statedir}/last_updates_check"
 	echo "${packages}" > "${statedir}/last_updates_check_packages"
@@ -126,7 +122,11 @@ fi
 
 if [ -n "${aur_packages}" ]; then
 	main_msg "$(eval_gettext "AUR Packages:")"
-	echo "${aur_packages}" | color_update_list | column -t
+	if [ -n "${no_color}" ] || [ -n "${no_version}" ]; then
+		echo "${aur_packages}" | column -t
+	else
+		echo "${aur_packages}" | color_update_list | column -t
+	fi
 	echo
 	echo "${aur_packages}" >> "${statedir}/last_updates_check"
 	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
