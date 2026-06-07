@@ -24,7 +24,7 @@ if [ -n "${aur_helper}" ]; then
 	# The former because it assumes an interactive TTY environment (causing `timeout` to behave unexpectedly) 
 	# The latter because it outputs some descriptive string in stderr when looking for updates with -Qua
 	# shellcheck disable=SC2154
-	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua < /dev/null 2> /dev/null)
+	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color never "${devel_flag[@]}" -Qua < /dev/null 2> /dev/null)
 	unformatted_aur_packages_exit_code=$?
 	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 
@@ -81,10 +81,6 @@ if [ -n "${flatpak_support}" ]; then
 		fi
 	fi
 fi
-
-# Strip ANSI color codes from AUR helper output
-# shellcheck disable=SC2001
-[ -n "${aur_packages}" ] && aur_packages=$(echo "${aur_packages}" | sed 's/\x1B\[[0-9;]*m//g')
 
 # shellcheck disable=SC2154
 true > "${statedir}/last_updates_check"
