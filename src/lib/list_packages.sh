@@ -90,25 +90,25 @@ true > "${statedir}/last_updates_check_flatpak"
 
 # Display a package list with aligned columns and version diff highlighting.
 display_update_list() {
-	local line name old new i seg
-	local -a old_parts new_parts
+	local line pkgname oldver newver counter seg
+	local -a old_vers new_vers
 
 	while IFS= read -r line; do
 		[ -z "${line}" ] && continue
-		read -r name old _ new <<< "${line}"
+		read -r pkgname oldver _ newver <<< "${line}"
 		# shellcheck disable=SC2154
-		if [ -z "${old}" ]; then
-			echo "${name}"
+		if [ -z "${oldver}" ]; then
+			echo "${pkgname}"
 		elif [ -z "${no_color}" ]; then
-			IFS='.-' read -ra old_parts <<< "${old}"
-			IFS='.-' read -ra new_parts <<< "${new}"
-			i=0
+			IFS='.-' read -ra old_vers <<< "${oldver}"
+			IFS='.-' read -ra new_vers <<< "${newver}"
+			counter=0
 			seg=0
-			while [ "${seg}" -lt "${#old_parts[@]}" ] && [ "${seg}" -lt "${#new_parts[@]}" ] && [ "${old_parts[${seg}]}" = "${new_parts[${seg}]}" ]; do
-				i=$(( i + ${#old_parts[${seg}]} + 1 ))
+			while [ "${seg}" -lt "${#old_vers[@]}" ] && [ "${seg}" -lt "${#new_vers[@]}" ] && [ "${old_vers[${seg}]}" = "${new_vers[${seg}]}" ]; do
+				counter=$(( counter + ${#old_vers[${seg}]} + 1 ))
 				seg=$(( seg + 1 ))
 			done
-			printf "%b %b -> %b\n" "${bold}${name}${color_off}" "${old:0:${i}}${red}${bold}${old:${i}}${color_off}" "${new:0:${i}}${green}${bold}${new:${i}}${color_off}"
+			printf "%b %b -> %b\n" "${bold}${pkgname}${color_off}" "${oldver:0:${counter}}${red}${bold}${oldver:${counter}}${color_off}" "${newver:0:${counter}}${green}${bold}${newver:${counter}}${color_off}"
 		else
 			echo "${line}"
 		fi
