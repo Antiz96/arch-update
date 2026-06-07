@@ -89,7 +89,7 @@ true > "${statedir}/last_updates_check_aur"
 true > "${statedir}/last_updates_check_flatpak"
 
 # Display a package list with aligned columns and version diff highlighting.
-display_update_list() {
+color_update_list() {
 	local line pkgname oldver newver counter seg
 	local -a old_vers new_vers
 
@@ -113,12 +113,12 @@ display_update_list() {
 		else
 			echo "${line}"
 		fi
-	done | column -t
+	done
 }
 
 if [ -n "${packages}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
-	echo "${packages}" | display_update_list
+	echo "${packages}" | color_update_list | column -t
 	echo
 	echo "${packages}" >> "${statedir}/last_updates_check"
 	echo "${packages}" > "${statedir}/last_updates_check_packages"
@@ -126,7 +126,7 @@ fi
 
 if [ -n "${aur_packages}" ]; then
 	main_msg "$(eval_gettext "AUR Packages:")"
-	echo "${aur_packages}" | display_update_list
+	echo "${aur_packages}" | color_update_list | column -t
 	echo
 	echo "${aur_packages}" >> "${statedir}/last_updates_check"
 	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
@@ -134,7 +134,8 @@ fi
 
 if [ "${#flatpak_packages[@]}" -gt 0 ]; then
 	main_msg "$(eval_gettext "Flatpak Packages:")"
-	printf "%s\n" "${flatpak_packages[@]}" ""
+	printf "%s\n" "${flatpak_packages[@]}" | column -t
+	echo
 	printf "%s\n" "${flatpak_packages[@]}" >> "${statedir}/last_updates_check"
 	printf "%s\n" "${flatpak_packages[@]}" > "${statedir}/last_updates_check_flatpak"
 fi
