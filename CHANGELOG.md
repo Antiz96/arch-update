@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.20.0](https://github.com/Antiz96/arch-update/releases/tag/v3.20.0) - 2026-06-08
+
+### Features
+
+- Add version diff highlighting and columns to the update list ([#608](https://github.com/Antiz96/arch-update/pull/608)) - ([dd5782c](https://github.com/Antiz96/arch-update/commit/dd5782c721c3d332de004a2c38a93a7e27372cc1)) by @up-the-hill
+
+### Documentation
+
+- *(README)* Update screenshots with new layout ([#610](https://github.com/Antiz96/arch-update/pull/610)) - ([fa08e2b](https://github.com/Antiz96/arch-update/commit/fa08e2b5811d1c63b111171c3aa40a06f45673c6)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#611](https://github.com/Antiz96/arch-update/pull/611)) - ([eccafba](https://github.com/Antiz96/arch-update/commit/eccafbad7dbba11003e2294ba9176b51bb0ae969)) by @Antiz96
+
 ## [v3.19.7](https://github.com/Antiz96/arch-update/releases/tag/v3.19.7) - 2026-05-26
 
 ### Features
