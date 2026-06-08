@@ -9,7 +9,7 @@ info_msg "$(eval_gettext "Looking for updates...\n")"
 # shellcheck disable=SC2154
 checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
 # shellcheck disable=SC2154
-packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates "${contrib_color_opt[@]}")
+packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates --nocolor)
 packages_exit_code=$?
 
 if [ "${packages_exit_code}" -eq 124 ]; then
@@ -24,7 +24,7 @@ if [ -n "${aur_helper}" ]; then
 	# The former because it assumes an interactive TTY environment (causing `timeout` to behave unexpectedly) 
 	# The latter because it outputs some descriptive string in stderr when looking for updates with -Qua
 	# shellcheck disable=SC2154
-	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Qua < /dev/null 2> /dev/null)
+	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color never "${devel_flag[@]}" -Qua < /dev/null 2> /dev/null)
 	unformatted_aur_packages_exit_code=$?
 	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 
@@ -88,28 +88,58 @@ true > "${statedir}/last_updates_check_packages"
 true > "${statedir}/last_updates_check_aur"
 true > "${statedir}/last_updates_check_flatpak"
 
+# Re-color update list output with version diff highlighting
+color_update_list() {
+	local line pkgname oldver newver counter seg
+	local -a old_vers new_vers
+
+	while IFS= read -r line; do
+		[ -z "${line}" ] && continue
+		read -r pkgname oldver _ newver <<< "${line}"
+		IFS='.-' read -ra old_vers <<< "${oldver}"
+		IFS='.-' read -ra new_vers <<< "${newver}"
+		counter=0
+		seg=0
+		while [ "${seg}" -lt "${#old_vers[@]}" ] && [ "${seg}" -lt "${#new_vers[@]}" ] && [ "${old_vers[${seg}]}" = "${new_vers[${seg}]}" ]; do
+			counter=$(( counter + ${#old_vers[${seg}]} + 1 ))
+			seg=$(( seg + 1 ))
+		done
+		# shellcheck disable=SC2154
+		printf "%b %b -> %b\n" "${bold}${pkgname}${color_off}" "${oldver:0:${counter}}${red}${bold}${oldver:${counter}}${color_off}" "${newver:0:${counter}}${green}${bold}${newver:${counter}}${color_off}"
+	done
+}
+
 if [ -n "${packages}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
-	echo -e "${packages}\n"
+	if [ -n "${no_color}" ] || [ -n "${no_version}" ]; then
+		echo "${packages}" | column -t
+	else
+		echo "${packages}" | color_update_list | column -t
+	fi
+	echo
 	echo "${packages}" >> "${statedir}/last_updates_check"
 	echo "${packages}" > "${statedir}/last_updates_check_packages"
 fi
 
 if [ -n "${aur_packages}" ]; then
 	main_msg "$(eval_gettext "AUR Packages:")"
-	echo -e "${aur_packages}\n"
+	if [ -n "${no_color}" ] || [ -n "${no_version}" ]; then
+		echo "${aur_packages}" | column -t
+	else
+		echo "${aur_packages}" | color_update_list | column -t
+	fi
+	echo
 	echo "${aur_packages}" >> "${statedir}/last_updates_check"
 	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
 fi
 
 if [ "${#flatpak_packages[@]}" -gt 0 ]; then
 	main_msg "$(eval_gettext "Flatpak Packages:")"
-	printf "%s\n" "${flatpak_packages[@]}" ""
+	printf "%s\n" "${flatpak_packages[@]}" | column -t
+	echo
 	printf "%s\n" "${flatpak_packages[@]}" >> "${statedir}/last_updates_check"
 	printf "%s\n" "${flatpak_packages[@]}" > "${statedir}/last_updates_check_flatpak"
 fi
-
-sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}"/last_updates_check{,_packages,_aur,_flatpak}
 
 if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ "${#flatpak_packages[@]}" -eq 0 ]; then
 	icon_up-to-date
