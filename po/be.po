@@ -121,14 +121,14 @@ msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Ці хочаце выдаліць гэтыя невыкарыстаныя пакункі Flatpak? [y/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:162 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:162 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
@@ -496,32 +496,32 @@ msgstr ""
 "Не ўдалося атрымаць абнаўленні пакункаў Flatpak (перавышаны час чакання "
 "запыту)\\n"
 
-#: src/lib/list_packages.sh:92
+#: src/lib/list_packages.sh:113
 #, sh-format
 msgid "Packages:"
 msgstr "Пакункі:"
 
-#: src/lib/list_packages.sh:99
+#: src/lib/list_packages.sh:125
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Пакункі AUR:"
 
-#: src/lib/list_packages.sh:106
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Пакункі Flatpak:"
 
-#: src/lib/list_packages.sh:116
+#: src/lib/list_packages.sh:146
 #, sh-format
 msgid "No update available\\n"
 msgstr "Няма даступных абнаўленняў\\n"
 
-#: src/lib/list_packages.sh:128
+#: src/lib/list_packages.sh:158
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Працягнуць абнаўленне? [Y/n]"
 
-#: src/lib/list_packages.sh:138
+#: src/lib/list_packages.sh:168
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Абнаўленне было перарвана\\n"

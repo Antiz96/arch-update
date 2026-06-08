@@ -123,14 +123,14 @@ msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "გნებავთ Flatpak-ის ამ გამოუყენებელი პაკეტების წაშლა? [y/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:162 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:162 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
@@ -492,32 +492,32 @@ msgstr ""
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
 
-#: src/lib/list_packages.sh:92
+#: src/lib/list_packages.sh:113
 #, sh-format
 msgid "Packages:"
 msgstr "პაკეტები:"
 
-#: src/lib/list_packages.sh:99
+#: src/lib/list_packages.sh:125
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR პაკეტები:"
 
-#: src/lib/list_packages.sh:106
+#: src/lib/list_packages.sh:137
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak პაკეტები:"
 
-#: src/lib/list_packages.sh:116
+#: src/lib/list_packages.sh:146
 #, sh-format
 msgid "No update available\\n"
 msgstr "განახლებები ხელმისაწვდომი არაა\\n"
 
-#: src/lib/list_packages.sh:128
+#: src/lib/list_packages.sh:158
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "გაგრძელდეს განახლება? [Y/n]"
 
-#: src/lib/list_packages.sh:138
+#: src/lib/list_packages.sh:168
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "განახლება შეწყდა\\n"
