@@ -104,6 +104,7 @@ color_update_list() {
 			counter=$(( counter + ${#old_vers[${seg}]} + 1 ))
 			seg=$(( seg + 1 ))
 		done
+		# shellcheck disable=SC2154
 		printf "%b %b -> %b\n" "${bold}${pkgname}${color_off}" "${oldver:0:${counter}}${red}${bold}${oldver:${counter}}${color_off}" "${newver:0:${counter}}${green}${bold}${newver:${counter}}${color_off}"
 	done
 }
