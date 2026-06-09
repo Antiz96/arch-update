@@ -263,8 +263,8 @@ msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
-"  -n, --news [Num]  Visualizza le ultime notizie di Arch, opzionalmente è possibile specificare il "
-"numero di notizie di Arch da visualizzare con '--news [Num]' (ad es. '--news 10')"
+"  -n, --news [Num]  Visualizza le ultime notizie su Arch Linux, opzionalmente è possibile specificare il "
+"numero di notizie su Arch Linux da visualizzare con '--news [Num]' (ad es. '--news 10')"
 
 #: src/lib/help.sh:20
 #, sh-format
@@ -381,7 +381,7 @@ msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
 "the pending kernel update\\n"
 msgstr ""
-"Il riavvio non è stato effettuato\\nSi prega di considerare un riavvio per "
+"Il riavvio non è stato effettuato\\nSi prega di effettuare un riavvio per "
 "finalizzare l'aggiornamento del kernel in attesa\\n"
 
 #: src/lib/kernel_reboot.sh:42
@@ -392,7 +392,7 @@ msgstr "Nessun aggiornamento del kernel in attesa trovato\\n"
 #: src/lib/list_news.sh:7
 #, sh-format
 msgid "Looking for recent Arch News..."
-msgstr "Ricerca delle notizie recenti di Arch in corso..."
+msgstr "Ricerca delle notizie recenti su Arch Linux in corso..."
 
 #: src/lib/list_news.sh:13
 #, sh-format
@@ -401,19 +401,19 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
-"Impossibile recuperare le notizie recenti di Arch (Risposta di errore HTTP o richiesta scaduta)"
-"\\nSi prega di controllare le notizie recenti su https://archlinux.org prima di aggiornare "
+"Impossibile recuperare le notizie recenti su Arch Linux (Risposta di errore HTTP o richiesta scaduta)"
+"\\nSi prega di controllare le notizie recenti all'indirizzo https://archlinux.org prima di aggiornare "
 "il sistema"
 
 #: src/lib/list_news.sh:23
 #, sh-format
 msgid "No recent Arch News found"
-msgstr "Nessuna notizia recente di Arch trovata"
+msgstr "Nessuna notizia recente su Arch Linux trovata"
 
 #: src/lib/list_news.sh:37
 #, sh-format
 msgid "Arch News:"
-msgstr "Notizie di Arch:"
+msgstr "Notizie su Arch Linux:"
 
 #: src/lib/list_news.sh:42
 #, sh-format
@@ -445,8 +445,8 @@ msgid ""
 "timeout)\\nPlease, read the selected Arch News at ${news_url} before "
 "updating your system"
 msgstr ""
-"Impossibile recuperare le notizie selezionate di Arch (Risposta di errore HTTP o richiesta "
-"scaduta)\\nSi prega di leggere le notizie selezionate di Arch su https://archlinux.org prima "
+"Impossibile recuperare le notizie selezionate su Arch Linux (Risposta di errore HTTP o richiesta "
+"scaduta)\\nSi prega di leggere le notizie selezionate su Arch Linux all'indirizzo https://archlinux.org prima "
 "di aggiornare il sistema"
 
 #: src/lib/list_news.sh:85
@@ -472,7 +472,7 @@ msgstr "Indirizzo:"
 #: src/lib/list_packages.sh:7
 #, sh-format
 msgid "Looking for updates...\\n"
-msgstr "Ricerca di aggiornamenti in corso...\\n"
+msgstr "Ricerca degli aggiornamenti in corso...\\n"
 
 #: src/lib/list_packages.sh:16
 #, sh-format
@@ -651,7 +651,7 @@ msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
 msgstr ""
-"L'elaborazione del/dei file pacnew non è stata effettuata\\nSi prega di considerare "
+"L'elaborazione del/dei file pacnew non è stata effettuata\\nSi prega di "
 "di elaborarli tempestivamente\\n"
 
 #: src/lib/pacnew_files.sh:41
@@ -710,7 +710,7 @@ msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
 "services that have been updated to fully apply the upgrade\\n"
 msgstr ""
-"Il riavvio del/dei servizo/i non è stato effettuato\\nSi prega di considerare di riavviare "
+"Il riavvio del/dei servizo/i non è stato effettuato\\nSi prega di riavviare "
 "i servizi che sono stati aggiornati per applicare a pieno l'aggiornamento\\n"
 
 #: src/lib/restart_services.sh:69
