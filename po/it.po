@@ -675,7 +675,7 @@ msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
-"Selezionare il/i servizio/i" da riavviare (ad es. 1 3 5), selezionare 0 per riavviarli tutti "
+"Selezionare il/i servizio/i da riavviare (ad es. 1 3 5), selezionare 0 per riavviarli tutti "
 "o premere \"invio\" per continuare senza riavviare il/i servizio/i:"
 
 #: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
