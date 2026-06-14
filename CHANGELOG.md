@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.20.1](https://github.com/Antiz96/arch-update/releases/tag/v3.20.1) - 2026-06-14
+
+### Features
+
+- *(i18n)* Add Italian translation ([#615](https://github.com/Antiz96/arch-update/pull/615)) - ([1f79b64](https://github.com/Antiz96/arch-update/commit/1f79b645a4ed1afb0654d340776c6773c5845d69)) by @Mattyan89
+
 ## [v3.20.0](https://github.com/Antiz96/arch-update/releases/tag/v3.20.0) - 2026-06-08
 
 ### Features
