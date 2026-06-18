@@ -122,14 +122,14 @@ msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Gostaria de remover estes pacotes Flatpak não utilizados agora? [s/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:162 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:164 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "S"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:162 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:164 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
@@ -505,32 +505,32 @@ msgstr ""
 "Não foi possível recuperar atualizações de pacotes Flatpak (tempo limite da "
 "solicitação)\\n"
 
-#: src/lib/list_packages.sh:113
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "Packages:"
 msgstr "Pacotes:"
 
-#: src/lib/list_packages.sh:125
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Pacotes AUR:"
 
-#: src/lib/list_packages.sh:137
+#: src/lib/list_packages.sh:139
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Pacotes Flatpak:"
 
-#: src/lib/list_packages.sh:146
+#: src/lib/list_packages.sh:148
 #, sh-format
 msgid "No update available\\n"
 msgstr "Nenhuma atualização disponível\\n"
 
-#: src/lib/list_packages.sh:158
+#: src/lib/list_packages.sh:160
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Prosseguir com a atualização? [S/n]"
 
-#: src/lib/list_packages.sh:168
+#: src/lib/list_packages.sh:170
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "A atualização foi abortada\\n"
