@@ -96,8 +96,8 @@ color_update_list() {
 	while IFS= read -r line; do
 		[ -z "${line}" ] && continue
 		read -r pkgname oldver _ newver <<< "${line}"
-		IFS='-' read -r old_vers_upstream old_vers_release <<< "${oldver}"
-		IFS='-' read -r new_vers_upstream new_vers_release <<< "${newver}"
+		IFS='-' read -r old_vers_upstream _old_vers_release <<< "${oldver}"
+		IFS='-' read -r new_vers_upstream _new_vers_release <<< "${newver}"
 		IFS='.' read -ra old_vers <<< "${old_vers_upstream}"
 		IFS='.' read -ra new_vers <<< "${new_vers_upstream}"
 		counter=0
