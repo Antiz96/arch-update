@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.20.2](https://github.com/Antiz96/arch-update/releases/tag/v3.20.2) - 2026-06-18
+
+### Fixes
+
+- Version diff highlighting ([#617](https://github.com/Antiz96/arch-update/pull/617)) - ([1e6b713](https://github.com/Antiz96/arch-update/commit/1e6b71323f68ec2e0eb222828d901fc0f2995456)) by @up-the-hill
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#618](https://github.com/Antiz96/arch-update/pull/618)) - ([5b6338b](https://github.com/Antiz96/arch-update/commit/5b6338be24c78a9982a0cfeea858ff6f010c636a)) by @Antiz96
+
 ## [v3.20.1](https://github.com/Antiz96/arch-update/releases/tag/v3.20.1) - 2026-06-14
 
 ### Features
