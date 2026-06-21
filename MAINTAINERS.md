@@ -8,4 +8,4 @@ Any update of the below list are expected to be made through a commit signed wit
 
 | Name | Mail | OpenPGP Key (ID / Fingerprint) | GitHub username |
 | ---- | ---- | ------------------------------ | --------------- |
-| Robin Candau | robincandau@protonmail.com | D33FAA16B937F3B2 / A67CCEEBF9613C17FDE96E4ED33FAA16B937F3B2 | @Antiz96 |
+| Robin Candau | robincandau@protonmail.com | D33FAA16B937F3B2 / A67CCEEBF9613C17FDE96E4ED33FAA16B937F3B2 | Antiz96 |
