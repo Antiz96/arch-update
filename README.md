@@ -130,6 +130,8 @@ The systray icon dynamically changes to indicate the current state of your syste
 
 **If clicking the systray applet does nothing**, please read [this chapter](#run-arch-update-in-a-specific-terminal-emulator).
 
+**If the systray applet repeatedly crashes after log out**, please read [this chapter](#the-systray-applet-repeatedly-crashes-after-log-out).
+
 ### The systemd timer
 
 To perform automatic and periodic checks for available updates, enable the associated systemd timer:
@@ -221,6 +223,10 @@ sleep 3 && arch-update --tray
 ```
 
 If the systray applet still does not start at boot, try to gradually increase the `sleep` value.
+
+### The systray applet repeatedly crashes after log out
+
+This issue has only been reported with KDE Plasma so far, when the systray applet is enabled via systemd (see [#599](https://github.com/Antiz96/arch-update/issues/599)). Due to what seems like a race condition on desktop environment teardown, the systray applet may stop too late, resulting in repeated service failures and core dumps after log out. The workaround is to enable the systray applet via XDG autostart, instead of the systemd service. See [this chapter](#the-systray-applet) for instructions.
 
 ### Modify the check cycle
 
