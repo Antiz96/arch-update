@@ -223,3 +223,4 @@ cleanup() {
 }
 
 trap cleanup EXIT
+trap 'read -t 0.1 -s -r -n 10000 >/dev/null 2>&1; exit 130' INT
