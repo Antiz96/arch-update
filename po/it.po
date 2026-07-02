@@ -461,8 +461,8 @@ msgid ""
 msgstr ""
 "Impossibile recuperare le notizie selezionate su Arch Linux (Risposta di "
 "errore HTTP o richiesta scaduta)\\nSi prega di leggere le notizie "
-"selezionate su Arch Linux all'indirizzo ${news_url} prima di aggiornare il "
-"sistema"
+"selezionate su Arch Linux all'indirizzo ${news_url} prima di aggiornare "
+"il sistema"
 
 #: src/lib/list_news.sh:85
 #, sh-format
