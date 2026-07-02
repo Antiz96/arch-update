@@ -9,12 +9,14 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.20.2\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-07-02 12:50+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
@@ -75,7 +77,7 @@ msgid ""
 "configuration file is not found\\n"
 msgstr ""
 "Il comando ${su_cmd} impostato per l'elevazione dei provilegi nel file di "
-"confgurazione ${name}.conf non è stato trovato\\n"
+"configurazione ${name}.conf non è stato trovato\\n"
 
 #: src/lib/common.sh:192
 #, sh-format
@@ -233,7 +235,7 @@ msgid ""
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
 "Dopo l'aggiornamento, controlla la presenza di pacchetti orfani & "
-"inutilizzati, vecchi pacchetti in cache, file pacnew & pacsave, "
+"inutilizzati, pacchetti obsoleti in cache, file pacnew & pacsave, "
 "aggiornamento del kernel in attesa così come i servizi che richiedono un "
 "riavvio post aggiornamento e, se ci sono, offre di elaborarli."
 
@@ -459,8 +461,8 @@ msgid ""
 msgstr ""
 "Impossibile recuperare le notizie selezionate su Arch Linux (Risposta di "
 "errore HTTP o richiesta scaduta)\\nSi prega di leggere le notizie "
-"selezionate su Arch Linux all'indirizzo https://archlinux.org prima di "
-"aggiornare il sistema"
+"selezionate su Arch Linux all'indirizzo ${news_url} prima di aggiornare "
+"il sistema"
 
 #: src/lib/list_news.sh:85
 #, sh-format
@@ -601,7 +603,7 @@ msgstr "Nessun pacchetto orfano trovato\\n"
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
 msgstr ""
-"Pacchetti in cache:\\nÈ presente un pacchetto in cache vecchio o "
+"Pacchetti in cache:\\nÈ presente un pacchetto in cache obsoleto o "
 "disinstallato\\n"
 
 #: src/lib/packages_cache.sh:22
@@ -614,7 +616,7 @@ msgstr "Si desidera rimuoverlo dalla cache adesso? [S/n]"
 msgid ""
 "Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
-"Pacchetti in cache:\\nSono presenti dei pacchetti in cache vecchi e / o "
+"Pacchetti in cache:\\nSono presenti dei pacchetti in cache obsoleti e / o "
 "disinstallati\\n"
 
 #: src/lib/packages_cache.sh:25
@@ -625,7 +627,7 @@ msgstr "Si desidera rimuoverli dalla cache adesso? [S/n]"
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
 msgid "Removing old cached packages..."
-msgstr "Rimozione dei pacchetti vecchi dalla cache in corso..."
+msgstr "Rimozione dei pacchetti obsoleti dalla cache in corso..."
 
 #: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
 #, sh-format
@@ -635,7 +637,7 @@ msgstr "Rimozione dei pacchetti disinstallati dalla cache in corso..."
 #: src/lib/packages_cache.sh:79
 #, sh-format
 msgid "No old or uninstalled cached package found\\n"
-msgstr "Nessun pacchetto vecchio o disinstallato trovato in cache\\n"
+msgstr "Nessun pacchetto obsoleto o disinstallato trovato in cache\\n"
 
 #: src/lib/pacnew_files.sh:10
 #, sh-format
