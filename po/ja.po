@@ -522,10 +522,10 @@ msgid "${update_number} update available"
 msgstr "${update_number} 件のアップデートがあります"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/lib/notification.sh:23 src/lib/notification.sh:25
+#: src/lib/notification.sh:23 src/lib/notification.sh:25 src/lib/tray.py:385
 #, sh-format
-msgid "Run ${_name}"
-msgstr "${_name} を実行"
+msgid "Run Cachy-Update"
+msgstr "Cachy-Update を実行"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
