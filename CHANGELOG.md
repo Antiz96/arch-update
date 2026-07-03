@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.20.3](https://github.com/Antiz96/arch-update/releases/tag/v3.20.3) - 2026-07-03
+
+### Documentation
+
+- *(man)* Link to raw man page in README ([#621](https://github.com/Antiz96/arch-update/pull/621)) - ([33cb059](https://github.com/Antiz96/arch-update/commit/33cb05981694d8a0dee219d317b9737dd2cf46ed)) by @Antiz96
+
+### Styling
+
+- *(MAINTAINERS)* Drop @ prefix ([#623](https://github.com/Antiz96/arch-update/pull/623)) - ([75605a1](https://github.com/Antiz96/arch-update/commit/75605a1eca62de1c3fb15de21c6f5988f7a24667)) by @Antiz96
+
+### Miscellaneous
+
+- *(CONTRIBUTING)* Update sponsor links ([#619](https://github.com/Antiz96/arch-update/pull/619)) - ([2f86c29](https://github.com/Antiz96/arch-update/commit/2f86c29a55f7dc59550aef3fc982404eb5f9a873)) by @Antiz96
+- *(deps)* Update actions/checkout action to v7.0.0 ([#620](https://github.com/Antiz96/arch-update/pull/620)) - ([07ada71](https://github.com/Antiz96/arch-update/commit/07ada7125fa09c795b825d158c5716d7af386a21)) by @renovate[bot]
+- *(i18n)* Improvements and fixes for the Italian translation ([#632](https://github.com/Antiz96/arch-update/pull/632)) - ([a9f7aae](https://github.com/Antiz96/arch-update/commit/a9f7aae87c81c3072575d0a54d32d557f4619221)) by @Mattyan89
+
 ## [v3.20.2](https://github.com/Antiz96/arch-update/releases/tag/v3.20.2) - 2026-06-18
 
 ### Fixes
