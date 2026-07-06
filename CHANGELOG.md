@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.20.4](https://github.com/Antiz96/arch-update/releases/tag/v3.20.4) - 2026-07-06
+
+### Fixes
+
+- Skip kernel upgrade check if the mkmm package is installed ([#637](https://github.com/Antiz96/arch-update/pull/637)) - ([543add0](https://github.com/Antiz96/arch-update/commit/543add0703a6cbcea7c762af6cc9a1e132d8a6ea)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update formatting in Italian translation file ([#638](https://github.com/Antiz96/arch-update/pull/638)) - ([b0b7651](https://github.com/Antiz96/arch-update/commit/b0b765183915bbe193a00aeda0118790c6e05021)) by @Antiz96
+
 ## [v3.20.3](https://github.com/Antiz96/arch-update/releases/tag/v3.20.3) - 2026-07-03
 
 ### Documentation
