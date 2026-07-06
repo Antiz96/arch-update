@@ -55,8 +55,8 @@ source "${libdir}/packages_cache.sh"
 # shellcheck source=src/lib/pacnew_files.sh
 source "${libdir}/pacnew_files.sh"
 
-# Source the "kernel_reboot" library which checks if there's a pending kernel update requiring a reboot to be applied (unless the "kernel-modules-hook" package is installed or we're running from a container)
-if ! pacman -Q kernel-modules-hook &> /dev/null && ! systemd-detect-virt --container --quiet; then
+# Source the "kernel_reboot" library which checks if there's a pending kernel update requiring a reboot to be applied (unless the "kernel-modules-hook" or "mkmm" package is installed, or we're running from a container)
+if ! pacman -Q kernel-modules-hook &> /dev/null && ! pacman -Q mkmm &> /dev/null && ! systemd-detect-virt --container --quiet; then
 	# shellcheck source=src/lib/kernel_reboot.sh
 	source "${libdir}/kernel_reboot.sh"
 fi
