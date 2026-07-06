@@ -143,6 +143,17 @@ class ArchUpdateQt6:
         self.update_icon()
         self.update_dropdown_menus()
 
+    def update_tooltip(self, *tooltips):
+        text = []
+        for tooltip in tooltips:
+            tooltip = ' '.join(map(str.strip, tooltip.split('\n')))
+            if len(tooltip) > 0:
+                text.append(tooltip)
+        if len(text) > 0:
+            self.tray.setToolTip('\n'.join(text))
+        else:
+            self.tray.setToolTip(_("Arch-Update"))
+
     # Update the icon based on the 'tray_icon' statefile content
     def update_icon(self):
         """Update icon"""
@@ -272,6 +283,11 @@ class ArchUpdateQt6:
             self.menu_next_check.setEnabled(False)
         else:
             self.menu_next_check = None
+
+        self.update_tooltip(
+            self.menu_count.text(),
+            self.menu_last_check.text(),
+            self.menu_next_check.text() if self.menu_next_check is not None else '')
 
         # Clear the menu (to update entries)
         self.menu.clear()
