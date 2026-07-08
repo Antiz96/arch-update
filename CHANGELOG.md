@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.20.5](https://github.com/Antiz96/arch-update/releases/tag/v3.20.5) - 2026-07-08
+
+### Fixes
+
+- Properly handle epoch in version diff coloring ([#641](https://github.com/Antiz96/arch-update/pull/641)) - ([2811d87](https://github.com/Antiz96/arch-update/commit/2811d8770e40b848fbb667b8ade4f58567968b20)) by @Antiz96
+
 ## [v3.20.4](https://github.com/Antiz96/arch-update/releases/tag/v3.20.4) - 2026-07-06
 
 ### Fixes
