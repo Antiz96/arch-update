@@ -47,10 +47,10 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 
 ### From Source
 
-Install required dependencies:
+Install required runtime dependencies:
 
 ```bash
-sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme python python-pyqt6 qt6-svg glib2 xdg-utils util-linux
+sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib curl fakeroot htmlq diffutils hicolor-icon-theme glib2 xdg-utils util-linux
 ```
 
 Additional optional dependencies you might want or need:
@@ -69,12 +69,12 @@ Additional optional dependencies you might want or need:
 Install required build dependencies:
 
 ```bash
-sudo pacman -S --asdeps make scdoc bats
+sudo pacman -S --asdeps make scdoc bats cargo
 ```
 
 Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it (alternatively, you can clone this repository with `git`).
 
-To install `arch-update`, go into the extracted / cloned directory and run the following commands:
+To build and install `arch-update`, go into the extracted / cloned directory and run the following commands:
 
 ```bash
 make

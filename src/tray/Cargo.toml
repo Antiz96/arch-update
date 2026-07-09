@@ -1,0 +1,8 @@
+[package]
+name = "tray"
+authors = ["Robin Candau <robincandau@protonmail.com>"]
+edition = "2024"
+description = "A systray applet for Arch-Update"
+license = "GPL-3.0-or-later"
+
+[dependencies]

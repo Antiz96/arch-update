@@ -33,6 +33,20 @@ if [ "${2}" == "--enable" ]; then
 	fi
 else
 	# shellcheck disable=SC2154
+	if [ -n "${ARCH_UPDATE_TRAY_BIN}" ]; then
+	        tray_bin="${ARCH_UPDATE_TRAY_BIN}"
+	elif [ -f "${HOME}/.local/lib/${name}/tray" ]; then
+	        tray_bin="${HOME}/.local/lib/${name}/tray"
+	elif [ -f "/usr/local/lib/${name}/tray" ]; then
+	        tray_bin="/usr/local/lib/${name}/tray"
+	elif [ -f "/usr/lib/${name}/tray" ]; then
+	        tray_bin="/usr/lib/${name}/tray"
+	else
+	        echo -e >&2 "ERROR: Systray applet binary not found"
+	        exit 3
+	fi
+
+	# shellcheck disable=SC2154
 	if [ ! -f "${statedir}/tray_icon" ]; then
 		icon_up-to-date
 	fi
@@ -51,5 +65,5 @@ else
 	fi
 
 	# shellcheck disable=SC2154
-	"${libdir}/tray.py" || exit 3
+	"${tray_bin}" || exit 3
 fi

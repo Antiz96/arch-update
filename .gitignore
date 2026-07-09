@@ -2,3 +2,4 @@
 *.5
 *.mo
 messages.po
+target/
