@@ -4,6 +4,7 @@
 
 use std::process;
 
+mod i18n_dir;
 mod icon_statefile;
 mod updates_statefiles;
 
@@ -22,6 +23,12 @@ fn main() {
         updates_statefile_flatpak,
     ) = updates_statefiles::get_updates_statefiles().unwrap_or_else(|error| {
         eprintln!("Unable to access updates statefiles:\n{error}");
+        process::exit(1);
+    });
+
+    // Get the translation directory
+    let i18n_dir = i18n_dir::get_i18n_dir().unwrap_or_else(|_| {
+        eprintln!("Unable to access the translation directory");
         process::exit(1);
     });
 }
