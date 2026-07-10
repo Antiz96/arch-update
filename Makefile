@@ -31,7 +31,7 @@ install:
 	install -Dm 755 src/lib/* -t "${DESTDIR}${PREFIX}/share/${pkgname}/lib/"
 
 	# Install systray applet
-	install -Dm 755 src/tray/target/release/tray "${DESTDIR}${PREFIX}/lib/${pkgname}/tray"
+	install -Dm 755 "src/tray/target/release/${pkgname}-tray" "${DESTDIR}${PREFIX}/lib/${pkgname}/${pkgname}-tray"
 
 	# Install icons
 	install -Dm 664 "res/icons/${pkgname}-blue.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-blue.svg"

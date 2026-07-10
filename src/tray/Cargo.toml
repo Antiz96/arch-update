@@ -1,5 +1,5 @@
 [package]
-name = "tray"
+name = "arch-update-tray"
 authors = ["Robin Candau <robincandau@protonmail.com>"]
 edition = "2024"
 description = "A systray applet for Arch-Update"

@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "tray"
+name = "arch-update-tray"
 version = "0.0.0"
