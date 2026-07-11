@@ -11,7 +11,7 @@ mod updates_statefiles;
 fn main() {
     // Get the icon statefile
     let icon_statefile = icon_statefile::get_icon_statefile().unwrap_or_else(|error| {
-        eprintln!("Unable to access the icon statefile:\n{error}");
+        eprintln!("{}", error);
         process::exit(1);
     });
 
@@ -22,13 +22,13 @@ fn main() {
         updates_statefile_aur,
         updates_statefile_flatpak,
     ) = updates_statefiles::get_updates_statefiles().unwrap_or_else(|error| {
-        eprintln!("Unable to access updates statefiles:\n{error}");
+        eprintln!("{}", error);
         process::exit(1);
     });
 
     // Get the translation directory
-    let i18n_dir = i18n_dir::get_i18n_dir().unwrap_or_else(|_| {
-        eprintln!("Unable to access the translation directory");
+    let i18n_dir = i18n_dir::get_i18n_dir().unwrap_or_else(|error| {
+        eprintln!("{}", error);
         process::exit(1);
     });
 }

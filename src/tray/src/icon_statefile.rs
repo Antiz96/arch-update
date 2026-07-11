@@ -2,19 +2,19 @@
 
 use std::env;
 use std::fs::File;
-use std::io;
+use std::io::{self, Error};
 use std::path::PathBuf;
 
 pub fn get_icon_statefile() -> io::Result<PathBuf> {
-    let state_dir = env::var_os("XDG_STATE_HOME")
-        .map(PathBuf::from)
-        .or_else(|| env::var_os("HOME").map(|path| PathBuf::from(path).join(".local/state")))
-        .ok_or_else(|| io::Error::other("State directory not found"))?
-        .join("arch-update");
+    let paths = [
+        env::var_os("XDG_STATE_HOME").map(|path| PathBuf::from(path).join("arch-update/tray_icon")),
+        env::var_os("HOME")
+            .map(|path| PathBuf::from(path).join(".local/state/arch-update/tray_icon")),
+    ];
 
-    let icon_statefile = state_dir.join("tray_icon");
-
-    File::open(&icon_statefile)?;
-
-    Ok(icon_statefile)
+    paths
+        .into_iter()
+        .flatten()
+        .find_map(|path| File::open(&path).ok().map(|_| path))
+        .ok_or_else(|| Error::other("Unable to access the icon statefile"))
 }
