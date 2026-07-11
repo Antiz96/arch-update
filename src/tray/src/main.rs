@@ -16,12 +16,7 @@ fn main() {
     });
 
     // Get the updates statefiles
-    let (
-        updates_statefile,
-        updates_statefile_packages,
-        updates_statefile_aur,
-        updates_statefile_flatpak,
-    ) = updates_statefiles::get_updates_statefiles().unwrap_or_else(|error| {
+    let updates_statefiles = updates_statefiles::get_updates_statefiles().unwrap_or_else(|error| {
         eprintln!("{}", error);
         process::exit(1);
     });
