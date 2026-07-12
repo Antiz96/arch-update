@@ -76,25 +76,38 @@ impl ksni::Tray for ArchUpdateTray {
         let mut menu = Vec::new();
 
         // Add menu group containing the "Last Check" and "Next check" entries (and a separator)
-        match get_next_check() {
-            Some(next_check) => {
-                menu.extend([
+        menu.extend([
+            StandardItem {
+                label: format!(
+                    "Last check {} ago",
+                    get_last_check(&self.updates_statefiles.all)
+                        // Just making the assumption visible
+                        // In theory, we should never reach that expect()
+                        // as we already ensure the updates statefiles are accessible beforehand
+                        .expect("Cannot access updates statefile")
+                ),
+                enabled: false,
+                ..Default::default()
+            }
+            .into(),
+            get_next_check()
+                .map(|next_check| {
                     StandardItem {
                         label: format!("Next check in {next_check}"),
                         enabled: false,
                         ..Default::default()
                     }
-                    .into(),
-                    MenuItem::Separator,
-                ]);
-            }
-            None => {
-                warn!("Unable to determine next Arch-Update check time");
-            }
-        }
+                    .into()
+                })
+                .unwrap_or_else(|| {
+                    warn!("Unable to determine next Arch-Update check time");
+                    MenuItem::Separator
+                }),
+            MenuItem::Separator,
+        ]);
 
-        // "Run Arch-Update" button
-        menu.push(
+        // Add a menu group containing the "Run Arch-Update", "Check for updates" and "Exit" buttons
+        menu.extend([
             StandardItem {
                 label: "Run Arch-Update".into(),
                 activate: Box::new(move |_| {
@@ -106,9 +119,6 @@ impl ksni::Tray for ArchUpdateTray {
                 ..Default::default()
             }
             .into(),
-        );
-        // "Check for updates" button
-        menu.push(
             StandardItem {
                 label: "Check for updates".into(),
                 activate: Box::new(
@@ -120,9 +130,6 @@ impl ksni::Tray for ArchUpdateTray {
                 ..Default::default()
             }
             .into(),
-        );
-        // "Exit" button
-        menu.push(
             StandardItem {
                 label: "Exit".into(),
                 activate: Box::new(|_| {
@@ -132,7 +139,7 @@ impl ksni::Tray for ArchUpdateTray {
                 ..Default::default()
             }
             .into(),
-        );
+        ]);
         menu
     }
 }

@@ -33,7 +33,7 @@ pub fn get_last_check(updates_statefile: &Path) -> Option<String> {
     let mtime = fs::metadata(updates_statefile).ok()?.modified().ok()?;
     let past_time = mtime.elapsed().ok()?;
 
-    Some(format_time(past_time))
+    format_time(past_time)
 }
 
 fn format_time(remaining_time: Duration) -> Option<String> {
