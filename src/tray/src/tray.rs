@@ -3,22 +3,37 @@
 //! https://github.com/iovxw/ksni#example
 
 use ksni::TrayMethods;
+use std::fs;
+use std::path::PathBuf;
 
-#[derive(Debug)]
-struct MyTray {
+use crate::updates_statefiles::UpdatesStateFiles;
+
+struct ArchUpdateTray {
+    icon_statefile: PathBuf,
+    updates_statefiles: UpdatesStateFiles,
+
     selected_option: usize,
     checked: bool,
 }
 
-impl ksni::Tray for MyTray {
+impl ksni::Tray for ArchUpdateTray {
     fn id(&self) -> String {
-        env!("CARGO_PKG_NAME").into()
+        "Arch-Update".into()
     }
     fn icon_name(&self) -> String {
-        "help-about".into()
+        fs::read_to_string(&self.icon_statefile)
+            .expect("Cannot access icon statefile")
+            .trim()
+            .to_owned()
     }
     fn title(&self) -> String {
-        if self.checked { "CHECKED!" } else { "MyTray" }.into()
+        "Arch-Update".into()
+    }
+    fn tool_tip(&self) -> ksni::ToolTip {
+        ksni::ToolTip {
+            title: "Arch-Update".into(),
+            ..Default::default()
+        }
     }
     fn menu(&self) -> Vec<ksni::MenuItem<Self>> {
         use ksni::menu::*;
@@ -93,8 +108,14 @@ impl ksni::Tray for MyTray {
     }
 }
 
-pub async fn run() {
-    let tray = MyTray {
+pub async fn run(
+    icon_statefile: PathBuf,
+    updates_statefiles: UpdatesStateFiles,
+    i18n_dir: PathBuf,
+) {
+    let tray = ArchUpdateTray {
+        icon_statefile,
+        updates_statefiles,
         selected_option: 0,
         checked: false,
     };
@@ -102,7 +123,7 @@ pub async fn run() {
 
     tokio::time::sleep(std::time::Duration::from_secs(5)).await;
     // We can modify the tray
-    handle.update(|tray: &mut MyTray| tray.checked = true).await;
+    handle.update(|tray: &mut ArchUpdateTray| tray.checked = true).await;
     // Run forever
     std::future::pending().await
 }

@@ -30,5 +30,5 @@ async fn main() {
     });
 
     // Start systray applet
-    tray::run().await;
+    tray::run(icon_statefile, updates_statefiles, i18n_dir).await;
 }
