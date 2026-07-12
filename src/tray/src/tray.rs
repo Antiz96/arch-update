@@ -155,11 +155,8 @@ pub async fn run(
         updates_statefiles,
         desktop_file,
     };
-    let handle = tray.spawn().await.unwrap();
+    tray.spawn().await.unwrap();
 
-    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
-    // We can modify the tray
-    handle;
     // Run forever
     std::future::pending().await
 }
