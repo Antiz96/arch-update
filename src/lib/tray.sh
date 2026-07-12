@@ -68,7 +68,7 @@ else
 
 	# shellcheck disable=SC2154
 	if [ ! -f "${statedir}/last_updates_check_flatpak" ]; then
-		touch "${statedir}/last_updates_check_flaptak"
+		touch "${statedir}/last_updates_check_flatpak"
 	fi
 
 	# shellcheck disable=SC2154
