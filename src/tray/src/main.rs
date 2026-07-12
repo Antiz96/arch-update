@@ -6,9 +6,11 @@ use std::process;
 
 mod i18n_dir;
 mod icon_statefile;
+mod tray;
 mod updates_statefiles;
 
-fn main() {
+#[tokio::main(flavor = "current_thread")]
+async fn main() {
     // Get the icon statefile
     let icon_statefile = icon_statefile::get_icon_statefile().unwrap_or_else(|error| {
         eprintln!("{}", error);
@@ -26,4 +28,7 @@ fn main() {
         eprintln!("{}", error);
         process::exit(1);
     });
+
+    // Start systray applet
+    tray::run().await;
 }

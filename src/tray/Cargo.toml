@@ -6,3 +6,5 @@ description = "A systray applet for Arch-Update"
 license = "GPL-3.0-or-later"
 
 [dependencies]
+ksni = "0.3.5"
+tokio = "1.52.3"
