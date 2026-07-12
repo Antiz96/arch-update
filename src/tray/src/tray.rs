@@ -34,7 +34,7 @@ impl ksni::Tray for ArchUpdateTray {
                 icon
             }
             Err(error) => {
-                error!("Cannot set the icon: {error}");
+                error!("Unable to set the icon: {error}");
                 process::exit(1);
             }
         }
@@ -64,7 +64,7 @@ impl ksni::Tray for ArchUpdateTray {
             .spawn()
         {
             Ok(_) => info!("Arch-Update launched"),
-            Err(error) => error!("Cannot launch Arch-Update: {error}"),
+            Err(error) => error!("Unable to launch Arch-Update: {error}"),
         }
     }
 
@@ -105,35 +105,6 @@ impl ksni::Tray for ArchUpdateTray {
             }
             .into(),
             MenuItem::Separator,
-            RadioGroup {
-                selected: self.selected_option,
-                select: Box::new(|this: &mut Self, current| {
-                    this.selected_option = current;
-                }),
-                options: vec![
-                    RadioItem {
-                        label: "Option 0".into(),
-                        ..Default::default()
-                    },
-                    RadioItem {
-                        label: "Option 1".into(),
-                        ..Default::default()
-                    },
-                    RadioItem {
-                        label: "Option 2".into(),
-                        ..Default::default()
-                    },
-                ],
-                ..Default::default()
-            }
-            .into(),
-            CheckmarkItem {
-                label: "Checkable".into(),
-                checked: self.checked,
-                activate: Box::new(|this: &mut Self| this.checked = !this.checked),
-                ..Default::default()
-            }
-            .into(),
             MenuItem::Separator,
             // "Run Arch-Update" button
             StandardItem {
@@ -141,7 +112,7 @@ impl ksni::Tray for ArchUpdateTray {
                 activate: Box::new(move |_| {
                     match Command::new("gio").arg("launch").arg(&desktop_file).spawn() {
                         Ok(_) => info!("Arch-Update launched"),
-                        Err(error) => error!("Cannot launch Arch-Update: {error}"),
+                        Err(error) => error!("Unable to launch Arch-Update: {error}"),
                     }
                 }),
                 ..Default::default()
@@ -153,7 +124,7 @@ impl ksni::Tray for ArchUpdateTray {
                 activate: Box::new(
                     |_| match Command::new("arch-update").arg("--check").spawn() {
                         Ok(_) => info!("Arch-Update check executed"),
-                        Err(error) => error!("Failed to execute Arch-Update check: {error}"),
+                        Err(error) => error!("Unable to execute Arch-Update check: {error}"),
                     },
                 ),
                 ..Default::default()
