@@ -4,6 +4,7 @@
 
 use std::process;
 
+mod desktop_file;
 mod i18n_dir;
 mod icon_statefile;
 mod tray;
@@ -23,6 +24,12 @@ async fn main() {
         process::exit(1);
     });
 
+    // Get the desktop file
+    let desktop_file = desktop_file::get_desktop_file().unwrap_or_else(|error| {
+        eprintln!("{}", error);
+        process::exit(1);
+    });
+
     // Get the translation directory
     let i18n_dir = i18n_dir::get_i18n_dir().unwrap_or_else(|error| {
         eprintln!("{}", error);
@@ -30,5 +37,5 @@ async fn main() {
     });
 
     // Start systray applet
-    tray::run(icon_statefile, updates_statefiles, i18n_dir).await;
+    tray::run(icon_statefile, updates_statefiles, desktop_file, i18n_dir).await;
 }

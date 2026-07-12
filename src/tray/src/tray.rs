@@ -5,12 +5,14 @@
 use ksni::TrayMethods;
 use std::fs;
 use std::path::PathBuf;
+use std::process::Command;
 
 use crate::updates_statefiles::UpdatesStateFiles;
 
 struct ArchUpdateTray {
     icon_statefile: PathBuf,
     updates_statefiles: UpdatesStateFiles,
+    desktop_file: PathBuf,
 
     selected_option: usize,
     checked: bool,
@@ -20,21 +22,33 @@ impl ksni::Tray for ArchUpdateTray {
     fn id(&self) -> String {
         "Arch-Update".into()
     }
+
     fn icon_name(&self) -> String {
         fs::read_to_string(&self.icon_statefile)
             .expect("Cannot access icon statefile")
             .trim()
             .to_owned()
     }
+
     fn title(&self) -> String {
         "Arch-Update".into()
     }
+
     fn tool_tip(&self) -> ksni::ToolTip {
         ksni::ToolTip {
             title: "Arch-Update".into(),
             ..Default::default()
         }
     }
+
+    fn activate(&mut self, _x: i32, _y: i32) {
+        Command::new("gio")
+            .arg("launch")
+            .arg(&self.desktop_file)
+            .spawn()
+            .expect("Cannot run Arch-Update");
+    }
+
     fn menu(&self) -> Vec<ksni::MenuItem<Self>> {
         use ksni::menu::*;
         vec![
@@ -111,11 +125,14 @@ impl ksni::Tray for ArchUpdateTray {
 pub async fn run(
     icon_statefile: PathBuf,
     updates_statefiles: UpdatesStateFiles,
+    desktop_file: PathBuf,
     i18n_dir: PathBuf,
 ) {
     let tray = ArchUpdateTray {
         icon_statefile,
         updates_statefiles,
+        desktop_file,
+
         selected_option: 0,
         checked: false,
     };
@@ -123,7 +140,9 @@ pub async fn run(
 
     tokio::time::sleep(std::time::Duration::from_secs(5)).await;
     // We can modify the tray
-    handle.update(|tray: &mut ArchUpdateTray| tray.checked = true).await;
+    handle
+        .update(|tray: &mut ArchUpdateTray| tray.checked = true)
+        .await;
     // Run forever
     std::future::pending().await
 }
