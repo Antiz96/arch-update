@@ -130,10 +130,13 @@ impl ksni::Tray for ArchUpdateTray {
                 ..Default::default()
             }
             .into(),
+            // Exit button
             StandardItem {
                 label: "Exit".into(),
-                icon_name: "application-exit".into(),
-                activate: Box::new(|_| process::exit(0)),
+                activate: Box::new(|_| {
+                    info!("Exited on user request");
+                    process::exit(0);
+                }),
                 ..Default::default()
             }
             .into(),
