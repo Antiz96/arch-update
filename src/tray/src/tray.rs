@@ -70,6 +70,10 @@ impl ksni::Tray for ArchUpdateTray {
 
     fn menu(&self) -> Vec<ksni::MenuItem<Self>> {
         use ksni::menu::*;
+
+        // Borrowed by the "Run Arch-Update" button
+        let desktop_file = self.desktop_file.clone();
+
         vec![
             SubMenu {
                 label: "a".into(),
@@ -130,7 +134,32 @@ impl ksni::Tray for ArchUpdateTray {
                 ..Default::default()
             }
             .into(),
-            // Exit button
+            MenuItem::Separator,
+            // "Run Arch-Update" button
+            StandardItem {
+                label: "Run Arch-Update".into(),
+                activate: Box::new(move |_| {
+                    match Command::new("gio").arg("launch").arg(&desktop_file).spawn() {
+                        Ok(_) => info!("Arch-Update launched"),
+                        Err(error) => error!("Cannot launch Arch-Update: {error}"),
+                    }
+                }),
+                ..Default::default()
+            }
+            .into(),
+            // "Check for updates" button
+            StandardItem {
+                label: "Check for updates".into(),
+                activate: Box::new(
+                    |_| match Command::new("arch-update").arg("--check").spawn() {
+                        Ok(_) => info!("Arch-Update check executed"),
+                        Err(error) => error!("Failed to execute Arch-Update check: {error}"),
+                    },
+                ),
+                ..Default::default()
+            }
+            .into(),
+            // "Exit" button
             StandardItem {
                 label: "Exit".into(),
                 activate: Box::new(|_| {
