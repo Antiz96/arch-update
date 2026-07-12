@@ -3,8 +3,10 @@
 //! https://github.com/iovxw/ksni#example
 
 use ksni::TrayMethods;
+use ksni::menu::*;
 use log::{debug, error, info, warn};
 use std::fs;
+use std::future;
 use std::path::PathBuf;
 use std::process::{self, Command};
 
@@ -67,8 +69,6 @@ impl ksni::Tray for ArchUpdateTray {
     }
 
     fn menu(&self) -> Vec<ksni::MenuItem<Self>> {
-        use ksni::menu::*;
-
         // Borrowed by the "Run Arch-Update" button
         let desktop_file = self.desktop_file.clone();
 
@@ -159,5 +159,5 @@ pub async fn run(
     tray.spawn().await.unwrap();
 
     // Run forever
-    std::future::pending().await
+    future::pending().await
 }
