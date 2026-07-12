@@ -6,7 +6,7 @@ use ksni::TrayMethods;
 use log::{debug, error, info};
 use std::fs;
 use std::path::PathBuf;
-use std::process::Command;
+use std::process::{self, Command};
 
 use crate::updates_statefiles::UpdatesStateFiles;
 
@@ -35,7 +35,7 @@ impl ksni::Tray for ArchUpdateTray {
             }
             Err(error) => {
                 error!("Cannot set the icon: {error}");
-                "dialog-error".into()
+                process::exit(1);
             }
         }
     }
@@ -133,7 +133,7 @@ impl ksni::Tray for ArchUpdateTray {
             StandardItem {
                 label: "Exit".into(),
                 icon_name: "application-exit".into(),
-                activate: Box::new(|_| std::process::exit(0)),
+                activate: Box::new(|_| process::exit(0)),
                 ..Default::default()
             }
             .into(),
