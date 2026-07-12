@@ -64,7 +64,7 @@ impl ksni::Tray for ArchUpdateTray {
             .spawn()
         {
             Ok(_) => info!("Arch-Update launched"),
-            Err(error) => error!("Cannot launch Arch-Update:\n{error}"),
+            Err(error) => error!("Cannot launch Arch-Update: {error}"),
         }
     }
 
