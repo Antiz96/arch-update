@@ -72,11 +72,11 @@ impl ksni::Tray for ArchUpdateTray {
         // Borrowed by the "Run Arch-Update" button
         let desktop_file = self.desktop_file.clone();
 
-        // Vector for the menu entries
+        // Initialize the vector for the menu entries
         let mut menu = Vec::new();
 
-        // Add menu group containing the "Last Check" and "Next check" entries (and a separator)
-        menu.extend([
+        // Add the "Last Check" menu entry
+        menu.push(
             StandardItem {
                 label: format!(
                     "Last check {} ago",
@@ -90,24 +90,25 @@ impl ksni::Tray for ArchUpdateTray {
                 ..Default::default()
             }
             .into(),
-            get_next_check()
-                .map(|next_check| {
-                    StandardItem {
-                        label: format!("Next check in {next_check}"),
-                        enabled: false,
-                        ..Default::default()
-                    }
-                    .into()
-                })
-                .unwrap_or_else(|| {
-                    warn!("Unable to determine next Arch-Update check time");
-                    MenuItem::Separator
-                }),
-            MenuItem::Separator,
-        ]);
+        );
 
-        // Add a menu group containing the "Run Arch-Update", "Check for updates" and "Exit" buttons
+        // Add the "Next Check" menu entry (if available)
+        if let Some(next_check) = get_next_check() {
+            menu.push(
+                StandardItem {
+                    label: format!("Next check in {next_check}"),
+                    enabled: false,
+                    ..Default::default()
+                }
+                .into(),
+            );
+        } else {
+            warn!("Unable to determine next Arch-Update check time");
+        }
+
+        // Add a menu group containing a separator and the "Run Arch-Update", "Check for updates" and "Exit" buttons
         menu.extend([
+            MenuItem::Separator,
             StandardItem {
                 label: "Run Arch-Update".into(),
                 activate: Box::new(move |_| {
