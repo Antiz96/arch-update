@@ -19,10 +19,12 @@ struct ArchUpdateTray {
 }
 
 impl ksni::Tray for ArchUpdateTray {
+    // Set id
     fn id(&self) -> String {
         "Arch-Update".into()
     }
 
+    // Set icon
     fn icon_name(&self) -> String {
         fs::read_to_string(&self.icon_statefile)
             .expect("Cannot access icon statefile")
@@ -30,10 +32,12 @@ impl ksni::Tray for ArchUpdateTray {
             .to_owned()
     }
 
+    // Set title
     fn title(&self) -> String {
         "Arch-Update".into()
     }
 
+    // Set tooltip
     fn tool_tip(&self) -> ksni::ToolTip {
         ksni::ToolTip {
             title: "Arch-Update".into(),
@@ -41,6 +45,10 @@ impl ksni::Tray for ArchUpdateTray {
         }
     }
 
+    // Run Arch-Update via the desktop file when activated (left click)
+    // We ignore the "zombie_processes" clippy warning as we intentionally do not wait for the `gio`
+    // launcher process, as the systray applet remain independent from the launched application
+    #[allow(clippy::zombie_processes)]
     fn activate(&mut self, _x: i32, _y: i32) {
         Command::new("gio")
             .arg("launch")
