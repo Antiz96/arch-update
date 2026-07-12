@@ -1,4 +1,4 @@
-//! Find the updates statefile containing the list of pending udpates for each package types
+//! Find the updates statefile containing the list of pending updates for each package types
 
 use std::env;
 use std::fs::File;
