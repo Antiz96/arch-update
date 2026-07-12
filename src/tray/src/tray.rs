@@ -3,6 +3,7 @@
 //! https://github.com/iovxw/ksni#example
 
 use ksni::TrayMethods;
+use log::{debug, error, info};
 use std::fs;
 use std::path::PathBuf;
 use std::process::Command;
@@ -26,10 +27,17 @@ impl ksni::Tray for ArchUpdateTray {
 
     // Set icon
     fn icon_name(&self) -> String {
-        fs::read_to_string(&self.icon_statefile)
-            .expect("Cannot access icon statefile")
-            .trim()
-            .to_owned()
+        match fs::read_to_string(&self.icon_statefile) {
+            Ok(icon) => {
+                let icon = icon.trim().to_owned();
+                debug!("Icon set or updated: {icon}");
+                icon
+            }
+            Err(error) => {
+                error!("Cannot set the icon: {error}");
+                "dialog-error".into()
+            }
+        }
     }
 
     // Set title
@@ -50,11 +58,14 @@ impl ksni::Tray for ArchUpdateTray {
     // launcher process, as the systray applet remain independent from the launched application
     #[allow(clippy::zombie_processes)]
     fn activate(&mut self, _x: i32, _y: i32) {
-        Command::new("gio")
+        match Command::new("gio")
             .arg("launch")
             .arg(&self.desktop_file)
             .spawn()
-            .expect("Cannot run Arch-Update");
+        {
+            Ok(_) => info!("Arch-Update launched"),
+            Err(error) => error!("Cannot launch Arch-Update:\n{error}"),
+        }
     }
 
     fn menu(&self) -> Vec<ksni::MenuItem<Self>> {

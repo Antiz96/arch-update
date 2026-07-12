@@ -6,5 +6,7 @@ description = "A systray applet for Arch-Update"
 license = "GPL-3.0-or-later"
 
 [dependencies]
+env_logger = "0.11.11"
 ksni = "0.3.5"
+log = "0.4.33"
 tokio = "1.52.3"
