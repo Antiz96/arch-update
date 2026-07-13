@@ -7,6 +7,7 @@ use std::path::PathBuf;
 
 pub struct UpdatesStateFiles {
     pub all: PathBuf,
+    pub time: PathBuf,
     pub packages: PathBuf,
     pub aur: PathBuf,
     pub flatpak: PathBuf,
@@ -24,12 +25,14 @@ pub fn get_updates_statefiles() -> io::Result<UpdatesStateFiles> {
         .find_map(|path| {
             let updates = UpdatesStateFiles {
                 all: path.join("last_updates_check"),
+                time: path.join("last_updates_check_time"),
                 packages: path.join("last_updates_check_packages"),
                 aur: path.join("last_updates_check_aur"),
                 flatpak: path.join("last_updates_check_flatpak"),
             };
 
             (File::open(&updates.all).is_ok()
+                && File::open(&updates.time).is_ok()
                 && File::open(&updates.packages).is_ok()
                 && File::open(&updates.aur).is_ok()
                 && File::open(&updates.flatpak).is_ok())

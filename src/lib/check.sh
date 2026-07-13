@@ -119,3 +119,5 @@ fi
 if [ -f "${statedir}/current_updates_check" ]; then
 	mv -f "${statedir}/current_updates_check" "${statedir}/last_updates_check"
 fi
+
+date "+%s%n%F %T" > "${statedir}/last_updates_check_time"

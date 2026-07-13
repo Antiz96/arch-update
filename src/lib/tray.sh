@@ -52,24 +52,7 @@ else
 	fi
 
 	# shellcheck disable=SC2154
-	if [ ! -f "${statedir}/last_updates_check" ]; then
-		touch "${statedir}/last_updates_check"
-	fi
-
-	# shellcheck disable=SC2154
-	if [ ! -f "${statedir}/last_updates_check_packages" ]; then
-		touch "${statedir}/last_updates_check_packages"
-	fi
-
-	# shellcheck disable=SC2154
-	if [ ! -f "${statedir}/last_updates_check_aur" ]; then
-		touch "${statedir}/last_updates_check_aur"
-	fi
-
-	# shellcheck disable=SC2154
-	if [ ! -f "${statedir}/last_updates_check_flatpak" ]; then
-		touch "${statedir}/last_updates_check_flatpak"
-	fi
+	touch "${statedir}"/last_updates_check{,_time,_packages,_aur,_flatpak}
 
 	# shellcheck disable=SC2154
 	exec {fd_tray}>"${tmpdir}/tray.lock"

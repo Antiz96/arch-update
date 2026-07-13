@@ -76,24 +76,26 @@ impl ksni::Tray for ArchUpdateTray {
         // Initialize the vector for the menu entries
         let mut menu = Vec::new();
 
-        // Add the "Last Check" menu entry
-        menu.push(
-            StandardItem {
-                label: format!(
-                    "Last check {} ago",
-                    get_last_check(&self.updates_statefiles.all)
-                        // Just making the assumption visible
-                        // In theory, we should never reach that expect()
-                        // as we already ensure the updates statefiles are accessible beforehand
-                        .expect("Cannot access updates statefile")
-                ),
-                enabled: false,
-                ..Default::default()
-            }
-            .into(),
-        );
+        // Add the "Last Check" menu entry (if the updates check time statefile is not empty)
+        // The reason why this entry is conditonal is because the updates check time statefile
+        // may be empty until the first check for updates is performed, so we have to handle this
+        // case
+        if let Some(last_check) = get_last_check(&self.updates_statefiles.time) {
+            menu.push(
+                StandardItem {
+                    label: format!("Last check {last_check} ago"),
+                    enabled: false,
+                    ..Default::default()
+                }
+                .into(),
+            );
+        } else {
+            warn!("Unable to determine the last Arch-Update check time");
+        }
 
-        // Add the "Next Check" menu entry (if available)
+        // Add the "Next Check" menu entry (if the systemd timer is started / enabled)
+        // The reason why this entry is conditonal is because the systemd timer for the automated
+        // checks may not be started / enabled
         if let Some(next_check) = get_next_check() {
             menu.push(
                 StandardItem {
