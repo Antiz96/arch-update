@@ -35,7 +35,7 @@ pub fn get_next_check() -> Option<String> {
 // accessible in the short window of time where it gets briefly emptied as it is being re-written
 // during a check for updates
 pub fn get_last_check(updates_statefile_time: &Path) -> Option<String> {
-    for _ in 0..5 {
+    for _ in 0..10 {
         if let Some(check_time) = read_last_check(updates_statefile_time) {
             return Some(check_time);
         }
