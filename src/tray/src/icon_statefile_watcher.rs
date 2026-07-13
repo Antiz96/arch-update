@@ -1,8 +1,13 @@
+//! Watch for the icon statefile, allowing to trigger a dynammic rebuild of the systray applet on
+//! icon change
+
+use ksni::Handle;
 use notify::{Config, EventKind, RecommendedWatcher, RecursiveMode, Watcher};
 use std::path::PathBuf;
+use tokio::sync::mpsc;
 
-pub async fn watch(icon_statefile: PathBuf, handle: ksni::Handle<crate::tray::ArchUpdateTray>) {
-    let (tx, mut rx) = tokio::sync::mpsc::unbounded_channel();
+pub async fn watch(icon_statefile: PathBuf, handle: Handle<crate::tray::ArchUpdateTray>) {
+    let (tx, mut rx) = mpsc::unbounded_channel();
 
     let mut watcher = RecommendedWatcher::new(
         move |result| {
