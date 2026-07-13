@@ -258,15 +258,25 @@ fn count_update_types(updates_statefile: &Path) -> bool {
     get_updates_count(updates_statefile) > 0
 }
 
-// Helper to get the list of pending updates from the updates statefile
+// Helper to get the list of pending updates from the updates statefile and populate the submenus
+// accordingly
 fn get_updates_submenu(updates_statefile: &Path) -> Vec<ksni::MenuItem<ArchUpdateTray>> {
     match fs::read_to_string(updates_statefile) {
         Ok(updates) => updates
             .lines()
             .filter(|line| !line.trim().is_empty())
             .map(|update| {
+                let package = update
+                    .split_whitespace()
+                    .next()
+                    .unwrap_or_default()
+                    .to_owned();
+
                 StandardItem {
                     label: update.into(),
+                    activate: Box::new(move |_| {
+                        open_package_url(&package);
+                    }),
                     ..Default::default()
                 }
                 .into()
@@ -276,6 +286,40 @@ fn get_updates_submenu(updates_statefile: &Path) -> Vec<ksni::MenuItem<ArchUpdat
         Err(error) => {
             error!("Unable to read updates statefile: {error}");
             Vec::new()
+        }
+    }
+}
+
+// Helper to open package url
+fn open_package_url(package: &str) {
+    let pacman_output = match Command::new("pacman").arg("-Qi").arg(package).output() {
+        Ok(pacman_output) => pacman_output,
+        Err(error) => {
+            error!("Unable to query the {package} package information: {error}");
+            return;
+        }
+    };
+
+    if !pacman_output.status.success() {
+        error!("Unable to get the {package} package information");
+        return;
+    }
+
+    let pacman_stdout = String::from_utf8_lossy(&pacman_output.stdout);
+
+    for line in pacman_stdout.lines() {
+        if let Some(url) = line.strip_prefix("URL") {
+            let url = url.trim_matches(|column| column == ':' || column == ' ');
+
+            // Make sure to only send URLs to xdg-open
+            if url.starts_with("http://") || url.starts_with("https://") {
+                match Command::new("xdg-open").arg(url).spawn() {
+                    Ok(_) => info!("Opened the {package} package URL: {url}"),
+                    Err(error) => error!("Unable to open the {package} package URL {url}: {error}"),
+                }
+            }
+
+            break;
         }
     }
 }
