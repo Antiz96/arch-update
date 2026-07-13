@@ -7,7 +7,7 @@ use ksni::menu::*;
 use log::{debug, error, info, warn};
 use std::fs;
 use std::future;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::{self, Command};
 
 use crate::check_times::{get_last_check, get_next_check};
@@ -20,6 +20,7 @@ pub struct ArchUpdateTray {
     desktop_file: PathBuf,
 }
 
+// Systray Applet implementation
 impl ksni::Tray for ArchUpdateTray {
     // Set id
     fn id(&self) -> String {
@@ -59,22 +60,47 @@ impl ksni::Tray for ArchUpdateTray {
     // launcher process, as the systray applet remain independent from the launched application
     #[allow(clippy::zombie_processes)]
     fn activate(&mut self, _x: i32, _y: i32) {
-        match Command::new("gio")
-            .arg("launch")
-            .arg(&self.desktop_file)
-            .spawn()
-        {
-            Ok(_) => info!("Arch-Update launched"),
-            Err(error) => error!("Unable to launch Arch-Update: {error}"),
-        }
+        launch_arch_update(&self.desktop_file);
     }
 
     fn menu(&self) -> Vec<ksni::MenuItem<Self>> {
-        // Borrowed by the "Run Arch-Update" button
-        let desktop_file = self.desktop_file.clone();
-
         // Initialize the vector for the menu entries
         let mut menu = Vec::new();
+
+        // Add the "System is up to date" or "X update(s) available" entry, depending on the number
+        // of pending updates
+        match get_updates_count(&self.updates_statefiles.all) {
+            0 => {
+                menu.push(
+                    StandardItem {
+                        label: "System is up to date".into(),
+                        enabled: false,
+                        ..Default::default()
+                    }
+                    .into(),
+                );
+            }
+
+            count => {
+                let desktop_file = self.desktop_file.clone();
+                let label = if count == 1 {
+                    "1 update available".into()
+                } else {
+                    format!("{count} updates available")
+                };
+
+                menu.push(
+                    StandardItem {
+                        label,
+                        activate: Box::new(move |_| {
+                            launch_arch_update(&desktop_file);
+                        }),
+                        ..Default::default()
+                    }
+                    .into(),
+                );
+            }
+        }
 
         // Add the "Last Check" menu entry (if the updates check time statefile is not empty)
         // The reason why this entry is conditonal is because the updates check time statefile
@@ -110,15 +136,14 @@ impl ksni::Tray for ArchUpdateTray {
         }
 
         // Add a menu group containing a separator and the "Run Arch-Update", "Check for updates" and "Exit" buttons
+        let desktop_file = self.desktop_file.clone();
+
         menu.extend([
             MenuItem::Separator,
             StandardItem {
                 label: "Run Arch-Update".into(),
                 activate: Box::new(move |_| {
-                    match Command::new("gio").arg("launch").arg(&desktop_file).spawn() {
-                        Ok(_) => info!("Arch-Update launched"),
-                        Err(error) => error!("Unable to launch Arch-Update: {error}"),
-                    }
+                    launch_arch_update(&desktop_file);
                 }),
                 ..Default::default()
             }
@@ -148,6 +173,24 @@ impl ksni::Tray for ArchUpdateTray {
     }
 }
 
+// Helper to get the number of pending updates from the updates statefile
+fn get_updates_count(updates_statefile: &Path) -> usize {
+    fs::read_to_string(updates_statefile)
+        .unwrap_or_default()
+        .lines()
+        .filter(|line| !line.trim().is_empty())
+        .count()
+}
+
+// Helper to run Arch-Update
+fn launch_arch_update(desktop_file: &Path) {
+    match Command::new("gio").arg("launch").arg(desktop_file).spawn() {
+        Ok(_) => info!("Arch-Update launched"),
+        Err(error) => error!("Unable to launch Arch-Update: {error}"),
+    }
+}
+
+// Starting the Systray Applet
 pub async fn run(
     icon_statefile: PathBuf,
     updates_statefiles: UpdatesStateFiles,
