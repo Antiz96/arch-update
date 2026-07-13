@@ -163,11 +163,13 @@ pub async fn run(
         desktop_file,
     };
 
-    // Allows to trigger systray applet updates / rebuilds
+    // Start the systray applet
     let handle = tray
         .spawn()
         .await
         .expect("Unable to start the systray applet");
+
+    info!("Systray applet started");
 
     // Update the systray applet on icon statefile content changes
     tokio::spawn(icon_statefile_watcher::watch(
