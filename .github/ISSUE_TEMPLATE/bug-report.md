@@ -34,7 +34,8 @@ Paste your arch-update.conf configuration file here (if you use one)
 ### Screenshots / Logs
 
 <!-- If you have any screenshots to illustrate the issue or any relevant logs, paste them below
-For instance, it could be useful to provide debug traces by running `arch-update --debug` (or `arch-update [OPTION] --debug` if the issue you're facing is about a specific option) -->
+For instance, it could be useful to provide debug traces by running `arch-update --debug` (or `arch-update [OPTION] --debug` if the issue you're facing is about a specific option)
+If you're facing an issue with the systray applet, debug traces can be gathered by running `RUST_LOG=DEBUG /usr/lib/arch-update/arch-update-tray` -->
 
 ```text
 Paste any relevant logs here (if you have some)
