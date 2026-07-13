@@ -14,8 +14,13 @@ pub fn get_desktop_file() -> io::Result<PathBuf> {
         // Purposely only searching the first XDG_DATA_DIRS entry for simplification
         // This can be updated if this ever becomes an issue
         env::var_os("XDG_DATA_DIRS").map(|path| {
-            PathBuf::from(path.to_string_lossy().split(':').next().unwrap())
-                .join("applications/arch-update.desktop")
+            PathBuf::from(
+                path.to_string_lossy()
+                    .split(':')
+                    .next()
+                    .expect("Unable to get the first XDG_DATA_DIRS entry"),
+            )
+            .join("applications/arch-update.desktop")
         }),
         Some(PathBuf::from(
             "/usr/local/share/applications/arch-update.desktop",

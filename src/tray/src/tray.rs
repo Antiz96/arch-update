@@ -156,7 +156,9 @@ pub async fn run(
         updates_statefiles,
         desktop_file,
     };
-    tray.spawn().await.unwrap();
+    tray.spawn()
+        .await
+        .expect("Unable to start the systray applet");
 
     // Run forever
     future::pending().await

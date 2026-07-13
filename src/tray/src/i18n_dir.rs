@@ -12,7 +12,13 @@ pub fn get_i18n_dir() -> io::Result<PathBuf> {
         // Purposely only searching the first XDG_DATA_DIRS entry for simplification
         // This can be updated if this ever becomes an issue
         env::var_os("XDG_DATA_DIRS").map(|path| {
-            PathBuf::from(path.to_string_lossy().split(':').next().unwrap()).join("locale")
+            PathBuf::from(
+                path.to_string_lossy()
+                    .split(':')
+                    .next()
+                    .expect("Unable to get the first XDG_DATA_DIRS entry"),
+            )
+            .join("locale")
         }),
         Some(PathBuf::from("/usr/local/share/locale")),
         Some(PathBuf::from("/usr/share/locale")),
