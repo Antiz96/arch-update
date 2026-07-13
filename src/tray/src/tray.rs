@@ -11,9 +11,10 @@ use std::path::PathBuf;
 use std::process::{self, Command};
 
 use crate::check_times::{get_last_check, get_next_check};
+use crate::icon_statefile_watcher;
 use crate::updates_statefiles::UpdatesStateFiles;
 
-struct ArchUpdateTray {
+pub struct ArchUpdateTray {
     icon_statefile: PathBuf,
     updates_statefiles: UpdatesStateFiles,
     desktop_file: PathBuf,
@@ -151,14 +152,26 @@ pub async fn run(
     desktop_file: PathBuf,
     i18n_dir: PathBuf,
 ) {
+    // Borrowed icon_statefile var used by the watcher
+    let watcher_icon_statefile = icon_statefile.clone();
+
     let tray = ArchUpdateTray {
         icon_statefile,
         updates_statefiles,
         desktop_file,
     };
-    tray.spawn()
+
+    // Allows to trigger systray applet updates / rebuilds
+    let handle = tray
+        .spawn()
         .await
         .expect("Unable to start the systray applet");
+
+    // Update the systray applet on icon statefile content changes
+    tokio::spawn(icon_statefile_watcher::watch(
+        watcher_icon_statefile,
+        handle.clone(),
+    ));
 
     // Run forever
     future::pending().await
