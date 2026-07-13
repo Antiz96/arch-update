@@ -64,6 +64,16 @@ impl ksni::Tray for ArchUpdateTray {
         // Initialize the vector for the menu entries
         let mut menu = Vec::new();
 
+        // Get the number of different update types
+        let update_types = [
+            &self.updates_statefiles.packages,
+            &self.updates_statefiles.aur,
+            &self.updates_statefiles.flatpak,
+        ]
+        .iter()
+        .filter(|statefile| count_update_types(statefile))
+        .count();
+
         // Add the "System is up to date" or "X update(s) available" entry, depending on the number
         // of pending updates
         match get_updates_count(&self.updates_statefiles.all) {
@@ -99,17 +109,21 @@ impl ksni::Tray for ArchUpdateTray {
             }
         }
 
-        // Add the "All" entry, if there are updates available
-        let count = get_updates_count(&self.updates_statefiles.all);
+        // Add the "All" entry, if there are updates available in at least 2 different update types
+        // (packages, aur, flatpak)
+        if update_types >= 2 {
+            let count = get_updates_count(&self.updates_statefiles.all);
 
-        if count > 0 {
-            menu.push(
-                StandardItem {
-                    label: format!("All ({count})"),
-                    ..Default::default()
-                }
-                .into(),
-            );
+            if count > 0 {
+                menu.push(
+                    SubMenu {
+                        label: format!("All ({count})"),
+                        submenu: get_updates_submenu(&self.updates_statefiles.all),
+                        ..Default::default()
+                    }
+                    .into(),
+                );
+            }
         }
 
         // Add the "Packages" entry, if there are packages updates available
@@ -117,8 +131,9 @@ impl ksni::Tray for ArchUpdateTray {
 
         if count > 0 {
             menu.push(
-                StandardItem {
+                SubMenu {
                     label: format!("Packages ({count})"),
+                    submenu: get_updates_submenu(&self.updates_statefiles.packages),
                     ..Default::default()
                 }
                 .into(),
@@ -130,8 +145,9 @@ impl ksni::Tray for ArchUpdateTray {
 
         if count > 0 {
             menu.push(
-                StandardItem {
+                SubMenu {
                     label: format!("AUR ({count})"),
+                    submenu: get_updates_submenu(&self.updates_statefiles.aur),
                     ..Default::default()
                 }
                 .into(),
@@ -143,12 +159,18 @@ impl ksni::Tray for ArchUpdateTray {
 
         if count > 0 {
             menu.push(
-                StandardItem {
+                SubMenu {
                     label: format!("Flatpak ({count})"),
+                    submenu: get_updates_submenu(&self.updates_statefiles.flatpak),
                     ..Default::default()
                 }
                 .into(),
             );
+        }
+
+        // Add a separator if relevant
+        if update_types > 0 {
+            menu.push(MenuItem::Separator);
         }
 
         // Add the "Last Check" menu entry (if the updates check time statefile is not empty)
@@ -229,6 +251,33 @@ fn get_updates_count(updates_statefile: &Path) -> usize {
         .lines()
         .filter(|line| !line.trim().is_empty())
         .count()
+}
+
+// Helper to get the number of types (packages, aur, flatpak) having available updates
+fn count_update_types(updates_statefile: &Path) -> bool {
+    get_updates_count(updates_statefile) > 0
+}
+
+// Helper to get the list of pending updates from the updates statefile
+fn get_updates_submenu(updates_statefile: &Path) -> Vec<ksni::MenuItem<ArchUpdateTray>> {
+    match fs::read_to_string(updates_statefile) {
+        Ok(updates) => updates
+            .lines()
+            .filter(|line| !line.trim().is_empty())
+            .map(|update| {
+                StandardItem {
+                    label: update.into(),
+                    ..Default::default()
+                }
+                .into()
+            })
+            .collect(),
+
+        Err(error) => {
+            error!("Unable to read updates statefile: {error}");
+            Vec::new()
+        }
+    }
 }
 
 // Helper to run Arch-Update
