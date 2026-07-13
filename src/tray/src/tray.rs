@@ -99,6 +99,58 @@ impl ksni::Tray for ArchUpdateTray {
             }
         }
 
+        // Add the "All" entry, if there are updates available
+        let count = get_updates_count(&self.updates_statefiles.all);
+
+        if count > 0 {
+            menu.push(
+                StandardItem {
+                    label: format!("All ({count})"),
+                    ..Default::default()
+                }
+                .into(),
+            );
+        }
+
+        // Add the "Packages" entry, if there are packages updates available
+        let count = get_updates_count(&self.updates_statefiles.packages);
+
+        if count > 0 {
+            menu.push(
+                StandardItem {
+                    label: format!("Packages ({count})"),
+                    ..Default::default()
+                }
+                .into(),
+            );
+        }
+
+        // Add the "AUR" entry, if there are AUR updates available
+        let count = get_updates_count(&self.updates_statefiles.aur);
+
+        if count > 0 {
+            menu.push(
+                StandardItem {
+                    label: format!("AUR ({count})"),
+                    ..Default::default()
+                }
+                .into(),
+            );
+        }
+
+        // Add the "Flatpak" entry, if there are flatpak updates available
+        let count = get_updates_count(&self.updates_statefiles.flatpak);
+
+        if count > 0 {
+            menu.push(
+                StandardItem {
+                    label: format!("Flatpak ({count})"),
+                    ..Default::default()
+                }
+                .into(),
+            );
+        }
+
         // Add the "Last Check" menu entry (if the updates check time statefile is not empty)
         // The reason why this entry is conditonal is because the updates check time statefile
         // may be empty until the first check for updates is performed, so we have to handle this
