@@ -56,9 +56,6 @@ impl ksni::Tray for ArchUpdateTray {
     }
 
     // Run Arch-Update via the desktop file when activated (left click)
-    // We ignore the "zombie_processes" clippy warning as we intentionally do not wait for the `gio`
-    // launcher process, as the systray applet remain independent from the launched application
-    #[allow(clippy::zombie_processes)]
     fn activate(&mut self, _x: i32, _y: i32) {
         launch_arch_update(&self.desktop_file);
     }
