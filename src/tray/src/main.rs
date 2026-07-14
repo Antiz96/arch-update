@@ -9,7 +9,7 @@ mod check_times;
 mod desktop_file;
 mod i18n_dir;
 mod icon_statefile;
-mod statefile_watcher;
+mod icon_statefile_watcher;
 mod tray;
 mod updates_statefiles;
 
