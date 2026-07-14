@@ -118,7 +118,7 @@ impl ksni::Tray for ArchUpdateTray {
                 menu.push(
                     SubMenu {
                         label: format!("All ({count})"),
-                        submenu: get_updates_submenu(&self.updates_statefiles.all),
+                        submenu: build_updates_submenu(&self.updates_statefiles.all),
                         ..Default::default()
                     }
                     .into(),
@@ -133,7 +133,7 @@ impl ksni::Tray for ArchUpdateTray {
             menu.push(
                 SubMenu {
                     label: format!("Packages ({count})"),
-                    submenu: get_updates_submenu(&self.updates_statefiles.packages),
+                    submenu: build_updates_submenu(&self.updates_statefiles.packages),
                     ..Default::default()
                 }
                 .into(),
@@ -147,7 +147,7 @@ impl ksni::Tray for ArchUpdateTray {
             menu.push(
                 SubMenu {
                     label: format!("AUR ({count})"),
-                    submenu: get_updates_submenu(&self.updates_statefiles.aur),
+                    submenu: build_updates_submenu(&self.updates_statefiles.aur),
                     ..Default::default()
                 }
                 .into(),
@@ -161,7 +161,7 @@ impl ksni::Tray for ArchUpdateTray {
             menu.push(
                 SubMenu {
                     label: format!("Flatpak ({count})"),
-                    submenu: get_updates_submenu(&self.updates_statefiles.flatpak),
+                    submenu: build_updates_submenu(&self.updates_statefiles.flatpak),
                     ..Default::default()
                 }
                 .into(),
@@ -260,34 +260,66 @@ fn count_update_types(updates_statefile: &Path) -> bool {
 
 // Helper to get the list of pending updates from the updates statefile and populate the submenus
 // accordingly
-fn get_updates_submenu(updates_statefile: &Path) -> Vec<ksni::MenuItem<ArchUpdateTray>> {
+fn build_updates_submenu(updates_statefile: &Path) -> Vec<ksni::MenuItem<ArchUpdateTray>> {
     match fs::read_to_string(updates_statefile) {
-        Ok(updates) => updates
-            .lines()
-            .filter(|line| !line.trim().is_empty())
-            .map(|update| {
-                let package = update
-                    .split_whitespace()
-                    .next()
-                    .unwrap_or_default()
-                    .to_owned();
+        Ok(updates) => {
+            let updates: Vec<_> = updates
+                .lines()
+                .filter(|line| !line.trim().is_empty())
+                .collect();
 
-                StandardItem {
-                    label: update.into(),
-                    activate: Box::new(move |_| {
-                        open_package_url(&package);
-                    }),
-                    ..Default::default()
-                }
-                .into()
-            })
-            .collect(),
+            build_updates_submenu_pagination(&updates, 0)
+        }
 
         Err(error) => {
             error!("Unable to read updates statefile: {error}");
             Vec::new()
         }
     }
+}
+
+// Helper to handle pagination for updates submenus
+// Set a limit to 20 packages per page, split to another page otherwise
+const UPDATES_PER_PAGE: usize = 20;
+fn build_updates_submenu_pagination(
+    updates: &[&str],
+    page: usize,
+) -> Vec<ksni::MenuItem<ArchUpdateTray>> {
+    let start = page * UPDATES_PER_PAGE;
+    let end = (start + UPDATES_PER_PAGE).min(updates.len());
+
+    let mut menu = updates[start..end]
+        .iter()
+        .map(|update| {
+            let package = update
+                .split_whitespace()
+                .next()
+                .unwrap_or_default()
+                .to_owned();
+
+            StandardItem {
+                label: (*update).into(),
+                activate: Box::new(move |_| {
+                    open_package_url(&package);
+                }),
+                ..Default::default()
+            }
+            .into()
+        })
+        .collect::<Vec<_>>();
+
+    if end < updates.len() {
+        menu.push(
+            SubMenu {
+                label: "Next page".into(),
+                submenu: build_updates_submenu_pagination(updates, page + 1),
+                ..Default::default()
+            }
+            .into(),
+        );
+    }
+
+    menu
 }
 
 // Helper to open package url
