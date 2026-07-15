@@ -7,7 +7,7 @@ license = "GPL-3.0-or-later"
 
 [dependencies]
 env_logger = "0.11.11"
-ksni = "0.3.5"
+ksni = "0.3.6"
 log = "0.4.33"
 notify = "8.2.0"
 serde = "1.0.228"

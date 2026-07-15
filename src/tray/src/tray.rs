@@ -60,6 +60,10 @@ impl ksni::Tray for ArchUpdateTray {
         launch_arch_update(&self.desktop_file);
     }
 
+    // Dynamically rebuild menu when opened (AboutToShow protocol)
+    fn menu_about_to_show(&mut self) {}
+
+    // Build menu
     fn menu(&self) -> Vec<ksni::MenuItem<Self>> {
         // Initialize the vector for the menu entries
         let mut menu = Vec::new();
