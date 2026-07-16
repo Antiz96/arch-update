@@ -118,16 +118,14 @@ impl ksni::Tray for ArchUpdateTray {
         if update_types >= 2 {
             let count = get_updates_count(&self.updates_statefiles.all);
 
-            if count > 0 {
-                menu.push(
-                    SubMenu {
-                        label: format!("All ({count})"),
-                        submenu: build_updates_submenu(&self.updates_statefiles.all),
-                        ..Default::default()
-                    }
-                    .into(),
-                );
-            }
+            menu.push(
+                SubMenu {
+                    label: format!("All ({count})"),
+                    submenu: build_updates_submenu(&self.updates_statefiles.all),
+                    ..Default::default()
+                }
+                .into(),
+            );
         }
 
         // Add the "Packages" entry, if there are packages updates available
@@ -210,7 +208,7 @@ impl ksni::Tray for ArchUpdateTray {
             warn!("Unable to determine next Arch-Update check time");
         }
 
-        // Add a menu group containing a separator and the "Run Arch-Update", "Check for updates" and "Exit" buttons
+        // Add a menu group containing a separator and the "Run Arch-Update", "Check for updates" & "Exit" buttons
         let desktop_file = self.desktop_file.clone();
 
         menu.extend([
@@ -245,6 +243,14 @@ impl ksni::Tray for ArchUpdateTray {
             .into(),
         ]);
         menu
+    }
+}
+
+// Helper to run Arch-Update from the desktop file (via `gio`)
+fn launch_arch_update(desktop_file: &Path) {
+    match Command::new("gio").arg("launch").arg(desktop_file).spawn() {
+        Ok(_) => info!("Arch-Update launched"),
+        Err(error) => error!("Unable to launch Arch-Update: {error}"),
     }
 }
 
@@ -357,14 +363,6 @@ fn open_package_url(package: &str) {
 
             break;
         }
-    }
-}
-
-// Helper to run Arch-Update
-fn launch_arch_update(desktop_file: &Path) {
-    match Command::new("gio").arg("launch").arg(desktop_file).spawn() {
-        Ok(_) => info!("Arch-Update launched"),
-        Err(error) => error!("Unable to launch Arch-Update: {error}"),
     }
 }
 
