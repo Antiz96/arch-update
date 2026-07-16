@@ -7,6 +7,7 @@ license = "GPL-3.0-or-later"
 
 [dependencies]
 env_logger = "0.11.11"
+gettext-rs = { version = "0.7.7", features = ["gettext-system"] }
 ksni = "0.3.6"
 log = "0.4.33"
 notify = "8.2.0"

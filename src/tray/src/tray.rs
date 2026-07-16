@@ -2,6 +2,7 @@
 //! Built with ksni, inspired / based on the systray example at
 //! https://github.com/iovxw/ksni#example
 
+use gettextrs::{bindtextdomain, gettext, textdomain};
 use ksni::TrayMethods;
 use ksni::menu::*;
 use log::{debug, error, info, warn};
@@ -84,7 +85,7 @@ impl ksni::Tray for ArchUpdateTray {
             0 => {
                 menu.push(
                     StandardItem {
-                        label: "System is up to date".into(),
+                        label: gettext("System is up to date"),
                         enabled: false,
                         ..Default::default()
                     }
@@ -95,9 +96,9 @@ impl ksni::Tray for ArchUpdateTray {
             count => {
                 let desktop_file = self.desktop_file.clone();
                 let label = if count == 1 {
-                    "1 update available".into()
+                    gettext("1 update available")
                 } else {
-                    format!("{count} updates available")
+                    gettext("{count} updates available").replace("{count}", &count.to_string())
                 };
 
                 menu.push(
@@ -120,7 +121,7 @@ impl ksni::Tray for ArchUpdateTray {
 
             menu.push(
                 SubMenu {
-                    label: format!("All ({count})"),
+                    label: gettext("All ({count})").replace("{count}", &count.to_string()),
                     submenu: build_updates_submenu(&self.updates_statefiles.all),
                     ..Default::default()
                 }
@@ -134,7 +135,7 @@ impl ksni::Tray for ArchUpdateTray {
         if count > 0 {
             menu.push(
                 SubMenu {
-                    label: format!("Packages ({count})"),
+                    label: gettext("Packages ({count})").replace("{count}", &count.to_string()),
                     submenu: build_updates_submenu(&self.updates_statefiles.packages),
                     ..Default::default()
                 }
@@ -148,7 +149,7 @@ impl ksni::Tray for ArchUpdateTray {
         if count > 0 {
             menu.push(
                 SubMenu {
-                    label: format!("AUR ({count})"),
+                    label: gettext("AUR ({count})").replace("{count}", &count.to_string()),
                     submenu: build_updates_submenu(&self.updates_statefiles.aur),
                     ..Default::default()
                 }
@@ -162,7 +163,7 @@ impl ksni::Tray for ArchUpdateTray {
         if count > 0 {
             menu.push(
                 SubMenu {
-                    label: format!("Flatpak ({count})"),
+                    label: gettext("Flatpak ({count})").replace("{count}", &count.to_string()),
                     submenu: build_updates_submenu(&self.updates_statefiles.flatpak),
                     ..Default::default()
                 }
@@ -182,7 +183,8 @@ impl ksni::Tray for ArchUpdateTray {
         if let Some(last_check) = get_last_check(&self.updates_statefiles.time) {
             menu.push(
                 StandardItem {
-                    label: format!("Last check {last_check} ago"),
+                    label: gettext("Last check {last_check} ago")
+                        .replace("{last_check}", &last_check.to_string()),
                     enabled: false,
                     ..Default::default()
                 }
@@ -198,7 +200,8 @@ impl ksni::Tray for ArchUpdateTray {
         if let Some(next_check) = get_next_check() {
             menu.push(
                 StandardItem {
-                    label: format!("Next check in {next_check}"),
+                    label: gettext("Next check in {next_check}")
+                        .replace("{next_check}", &next_check.to_string()),
                     enabled: false,
                     ..Default::default()
                 }
@@ -214,7 +217,7 @@ impl ksni::Tray for ArchUpdateTray {
         menu.extend([
             MenuItem::Separator,
             StandardItem {
-                label: "Run Arch-Update".into(),
+                label: gettext("Run Arch-Update"),
                 activate: Box::new(move |_| {
                     launch_arch_update(&desktop_file);
                 }),
@@ -222,7 +225,7 @@ impl ksni::Tray for ArchUpdateTray {
             }
             .into(),
             StandardItem {
-                label: "Check for updates".into(),
+                label: gettext("Check for updates"),
                 activate: Box::new(
                     |_| match Command::new("arch-update").arg("--check").spawn() {
                         Ok(_) => info!("Arch-Update check executed"),
@@ -233,7 +236,7 @@ impl ksni::Tray for ArchUpdateTray {
             }
             .into(),
             StandardItem {
-                label: "Exit".into(),
+                label: gettext("Exit"),
                 activate: Box::new(|_| {
                     info!("Exited on user request");
                     process::exit(0);
@@ -321,7 +324,7 @@ fn build_updates_submenu_pagination(
     if end < updates.len() {
         menu.push(
             SubMenu {
-                label: "Next page".into(),
+                label: gettext("Next page"),
                 submenu: build_updates_submenu_pagination(updates, page + 1),
                 ..Default::default()
             }
@@ -373,6 +376,15 @@ pub async fn run(
     desktop_file: PathBuf,
     i18n_dir: PathBuf,
 ) {
+    // Load gettext domains for translations
+    bindtextdomain(
+        "arch-update",
+        i18n_dir.to_str().expect("Unknown or invalid locale path"),
+    )
+    .expect("Failed to bind gettext domain");
+
+    textdomain("arch-update").expect("Failed to set gettext domain");
+
     // Clone icon statefile path variable (used by the watcher)
     let watcher_icon_statefile = icon_statefile.clone();
 
