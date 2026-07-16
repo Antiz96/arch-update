@@ -30,7 +30,7 @@ pub fn get_next_check() -> Option<String> {
     format_time(remaining_time)
 }
 
-// Wrapper around the "read_last_check" function including a grace period (retry each 200ms up to 1s)
+// Wrapper around the "read_last_check" function including a grace period (retry each 200ms up to 2s)
 // This is to avoid logging useless and noisy warnings about the check_time statefile not being
 // accessible in the short window of time where it gets briefly emptied as it is being re-written
 // during a check for updates
