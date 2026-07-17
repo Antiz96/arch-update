@@ -36,4 +36,7 @@ jobs:
         run: make test
 
       - name: Run make clean
-        run: make clean && rm -rf ~/.cargo
+        run: make clean
+
+      - name: Cargo cleanup
+        run: rm -rvf src/tray/target/ ~/.cargo
