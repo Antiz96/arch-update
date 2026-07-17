@@ -143,6 +143,8 @@ if [ "${#flatpak_packages[@]}" -gt 0 ]; then
 	printf "%s\n" "${flatpak_packages[@]}" > "${statedir}/last_updates_check_flatpak"
 fi
 
+date "+%s%n%F %T" > "${statedir}/last_updates_check_time"
+
 if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ "${#flatpak_packages[@]}" -eq 0 ]; then
 	icon_up-to-date
 	info_msg "$(eval_gettext "No update available\n")"

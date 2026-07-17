@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Generate messages.po
-xgettext src/arch-update.sh src/lib/*
+xgettext src/arch-update.sh src/lib/* src/tray/src/*.rs
 
 # Normalize messages.po
 # shellcheck disable=SC2016

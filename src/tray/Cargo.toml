@@ -1,0 +1,16 @@
+[package]
+name = "arch-update-tray"
+authors = ["Robin Candau <robincandau@protonmail.com>"]
+edition = "2024"
+description = "A systray applet for Arch-Update"
+license = "GPL-3.0-or-later"
+
+[dependencies]
+env_logger = "0.11.11"
+gettext-rs = { version = "0.7.7", features = ["gettext-system"] }
+ksni = "0.3.6"
+log = "0.4.33"
+notify = "8.2.0"
+serde = "1.0.228"
+serde_json = "1.0.150"
+tokio = "1.52.3"
