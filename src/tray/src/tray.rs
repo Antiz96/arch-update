@@ -378,12 +378,12 @@ pub async fn run(
 ) {
     // Load gettext domains for translations
     bindtextdomain(
-        "arch-update",
+        "Arch-Update",
         i18n_dir.to_str().expect("Unknown or invalid locale path"),
     )
     .expect("Failed to bind gettext domain");
 
-    textdomain("arch-update").expect("Failed to set gettext domain");
+    textdomain("Arch-Update").expect("Failed to set gettext domain");
 
     // Clone icon statefile path variable (used by the watcher)
     let watcher_icon_statefile = icon_statefile.clone();
