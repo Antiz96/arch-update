@@ -31,6 +31,7 @@ Features:
 - Check for pending kernel update requiring a reboot (and offers to do so if there's one).
 - Check for services requiring a post upgrade restart (and offers to do so if there are).
 - Support for `sudo`, `sudo-rs`, `doas` & `run0`.
+- Extensive CLI.
 
 Optional support for:
 
@@ -96,15 +97,12 @@ sudo make uninstall
 
 ## Usage
 
-The usage consist of starting [the systray applet](#the-systray-applet) and enabling [the systemd timer](#the-systemd-timer).
+For desktop machines, the usage consist of starting [the systray applet](#the-systray-applet) and enabling [the automated updates checks](#automated-updates-check).  
+For headless machines, `Arch-Update` includes an extensive CLI.
 
 ### The systray applet
 
-To start the systray applet, launch the "Arch-Update Systray Applet" application from your app menu.
-
-**Note:** GNOME shell does not support systray icons natively, GNOME users need to install the ["AppIndicator and KStatusNotifierItem Support" extension](https://extensions.gnome.org/extension/615/appindicator-support/) for the systray applet to show.
-
-To start it automatically at boot, you can either:
+To start the systray applet and enable it automatically at boot, you can either:
 
 - Run the following command (preferred method for most Desktop Environments, uses [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)):
 
@@ -124,21 +122,22 @@ systemctl --user enable --now arch-update-tray.service
 arch-update --tray
 ```
 
-**If the systray applet doesn't start at boot regardless or if it doesn't work as expected** (e.g the icon is missing or the click actions do not act as they should), please read [this chapter](#the-systray-applet-does-not-start-at-boot-or-does-not-work-as-expected).
+**If the systray applet doesn't start at boot regardless or if it doesn't work as expected** (e.g the icon is missing or the click actions do not act as they should), please read [this chapter](#the-systray-applet-does-not-start-at-boot-or-does-not-work-as-expected).  
+**Note:** GNOME shell does not support systray icons natively, GNOME users need to install the ["AppIndicator and KStatusNotifierItem Support" extension](https://extensions.gnome.org/extension/615/appindicator-support/) for the systray applet to show.
 
 The systray icon dynamically changes to indicate the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` in a terminal window via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.
 
 **If clicking the systray applet does nothing**, please read [this chapter](#run-arch-update-in-a-specific-terminal-emulator).
 
-### The systemd timer
+### Automated updates check
 
-To perform automatic and periodic checks for available updates, enable the associated systemd timer:
+To enable automated and periodic checks for available updates, run the following command:
 
 ```bash
-systemctl --user enable --now arch-update.timer
+arch-update --check --enable
 ```
 
-By default, a check is performed **at boot and then once every hour**. The check cycle can be customized, see [this chapter](#modify-the-check-cycle).
+By default, a check is performed **at boot and then once every 6 hours**. The check cycle can be customized, see [this chapter](#modify-the-check-cycle).
 
 ### Screenshots
 
