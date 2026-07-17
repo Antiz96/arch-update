@@ -83,7 +83,10 @@ if [ -n "${flatpak_support}" ]; then
 fi
 
 # shellcheck disable=SC2154
-true > "${statedir}"/last_updates_check{,_packages,_aur,_flatpak}
+true > "${statedir}/last_updates_check"
+true > "${statedir}/last_updates_check_packages"
+true > "${statedir}/last_updates_check_aur"
+true > "${statedir}/last_updates_check_flatpak"
 
 # Re-color update list output with version diff highlighting
 color_update_list() {
