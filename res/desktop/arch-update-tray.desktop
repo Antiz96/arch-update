@@ -14,3 +14,4 @@ Icon=arch-update_updates-available-blue
 Type=Application
 Exec=arch-update --tray
 Categories=Utility
+NoDisplay=true

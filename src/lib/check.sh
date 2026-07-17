@@ -4,6 +4,12 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+if [ "${2}" == "--enable" ]; then
+	systemctl --user enable --now "${name}.timer"
+	info_msg "$(eval_gettext "The automated updates checks have been enabled")"
+	exit 0
+fi
+
 # shellcheck disable=SC2154
 touch "${statedir}"/last_updates_check_{packages,aur,flatpak}
 

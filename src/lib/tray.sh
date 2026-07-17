@@ -29,39 +29,39 @@ if [ "${2}" == "--enable" ]; then
 	else
 		mkdir -p "${XDG_CONFIG_HOME:-${HOME}/.config}/autostart/" || exit 10
 		cp "${tray_desktop_file}" "${tray_desktop_file_autostart}" || exit 10
-		info_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file has been created, the \${_name} systray applet will be automatically started at your next log on\nTo start it right now, you can launch the \"\${_name} Systray Applet\" application from your app menu")"
+		info_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file has been created, the \${_name} systray applet will be automatically started at boot")"
 	fi
-else
-	# shellcheck disable=SC2154
-	if [ -n "${ARCH_UPDATE_TRAY_BIN}" ]; then
-	        tray_bin="${ARCH_UPDATE_TRAY_BIN}"
-	elif [ -f "${HOME}/.local/lib/${name}/${name}-tray" ]; then
-	        tray_bin="${HOME}/.local/lib/${name}/${name}-tray"
-	elif [ -f "/usr/local/lib/${name}/${name}-tray" ]; then
-	        tray_bin="/usr/local/lib/${name}/${name}-tray"
-	elif [ -f "/usr/lib/${name}/${name}-tray" ]; then
-	        tray_bin="/usr/lib/${name}/${name}-tray"
-	else
-	        echo -e >&2 "ERROR: Systray applet binary not found"
-	        exit 3
-	fi
-
-	# shellcheck disable=SC2154
-	if [ ! -f "${statedir}/tray_icon" ]; then
-		icon_up-to-date
-	fi
-
-	# shellcheck disable=SC2154
-	touch "${statedir}"/last_updates_check{,_time,_packages,_aur,_flatpak}
-
-	# shellcheck disable=SC2154
-	exec {fd_tray}>"${tmpdir}/tray.lock"
-
-	if ! flock -n "${fd_tray}"; then
-		error_msg "$(eval_gettext "There's already a running instance of the \${_name} systray applet")"
-		exit 3
-	fi
-
-	# shellcheck disable=SC2154
-	"${tray_bin}" || exit 3
 fi
+
+# shellcheck disable=SC2154
+if [ -n "${ARCH_UPDATE_TRAY_BIN}" ]; then
+        tray_bin="${ARCH_UPDATE_TRAY_BIN}"
+elif [ -f "${HOME}/.local/lib/${name}/${name}-tray" ]; then
+        tray_bin="${HOME}/.local/lib/${name}/${name}-tray"
+elif [ -f "/usr/local/lib/${name}/${name}-tray" ]; then
+        tray_bin="/usr/local/lib/${name}/${name}-tray"
+elif [ -f "/usr/lib/${name}/${name}-tray" ]; then
+        tray_bin="/usr/lib/${name}/${name}-tray"
+else
+        echo -e >&2 "ERROR: Systray applet binary not found"
+        exit 3
+fi
+
+# shellcheck disable=SC2154
+if [ ! -f "${statedir}/tray_icon" ]; then
+	icon_up-to-date
+fi
+
+# shellcheck disable=SC2154
+touch "${statedir}"/last_updates_check{,_time,_packages,_aur,_flatpak}
+
+# shellcheck disable=SC2154
+exec {fd_tray}>"${tmpdir}/tray.lock"
+
+if ! flock -n "${fd_tray}"; then
+	error_msg "$(eval_gettext "There's already a running instance of the \${_name} systray applet")"
+	exit 3
+fi
+
+# shellcheck disable=SC2154
+setsid "${tray_bin}" &

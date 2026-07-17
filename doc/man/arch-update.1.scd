@@ -25,6 +25,7 @@ Features:
 - Check for pending kernel update requiring a reboot (and offers to do so if there's one).
 - Check for services requiring a post upgrade restart (and offers to do so if there are).
 - Support for `sudo`, `sudo-rs`, `doas` & `run0`.
+- Extensive CLI.
 
 Optional support for:
 
@@ -39,7 +40,7 @@ If no option is passed, launch the relevant series of functions to perform a com
 
 *-c, --check*
 	Check for available updates. If there are, send a desktop notification and update the systray icon.
-	To run the `--check` option automatically and periodically, see the *"The systemd timer"* chapter in the *"USAGE"* section below.
+	To enable automated and periodic checks, use the `--check --enable`.
 
 *-l, --list*
 	Display the list of pending updates.
@@ -81,13 +82,12 @@ Certain options can be enabled, disabled or modified via the `arch-update.conf` 
 
 # USAGE
 
-The usage consist of starting the systray applet and enabling the systemd timer.
+For desktop machines, the usage consist of starting the systray applet and enabling the automated updates checks.  
+For headless machines, Arch-Update includes an extensive CLI.
 
 ## The systray applet
 
-To start the systray applet, launch the *Arch-Update Systray Applet* application from your app menu.
-
-To start it automatically at boot, you can either:
+To start the systray applet and enable it automatically at boot, you can either:
 
 - Run the following command (preferred method for most Desktop Environments, uses XDG Autostart): 
 
@@ -113,15 +113,15 @@ The systray icon dynamically changes to indicate the current state of your syste
 
 *If clicking the systray applet does nothing*, please read the *"Run Arch-Update in a specific terminal emulator"* chapter in the *"TIPS AND TRICKS"* section below.
 
-## The systemd timer
+## Automated updates check
 
-To perform automatic and periodic checks for available updates, enable the associated systemd timer:
+To enable automated and periodic checks for available updates, run the following command:
 
 ```
-systemctl --user enable --now arch-update.timer
+arch-update --check --enable
 ```
 
-By default, a check is performed at *boot and then once every hour*. The check cycle can be customized, see the *"Modify the check cycle"* chapter in the *"TIPS AND TRICKS"* section below.
+By default, a check is performed *at boot and then once every 6 hours*. The check cycle can be customized, see the *"Modify the check cycle"* chapter in the *"TIPS AND TRICKS"* section below.
 
 # TIPS AND TRICKS 
 
