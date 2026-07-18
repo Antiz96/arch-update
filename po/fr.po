@@ -31,6 +31,11 @@ msgstr "Les paquets suivants ont toujours des compilations ALHP en cours :"
 msgid "Error during ALHP check:"
 msgstr "Erreur lors du check ALHP :"
 
+#: src/lib/check.sh:10
+#, sh-format
+msgid "The automated updates checks have been enabled"
+msgstr ""
+
 #: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
@@ -123,14 +128,14 @@ msgstr ""
 "Voulez-vous supprimer ces paquets Flatpak inutilisés maintenant ? [o/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:164 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "O"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:164 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
@@ -524,25 +529,26 @@ msgstr "Paquets AUR :"
 msgid "Flatpak Packages:"
 msgstr "Paquets Flatpak :"
 
-#: src/lib/list_packages.sh:148
+#: src/lib/list_packages.sh:150
 #, sh-format
 msgid "No update available\\n"
 msgstr "Aucune mise à jour disponible\\n"
 
-#: src/lib/list_packages.sh:160
+#: src/lib/list_packages.sh:162
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Procéder à la mise à jour ? [O/n]"
 
-#: src/lib/list_packages.sh:170
+#: src/lib/list_packages.sh:172
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "La mise à jour a été abandonnée\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/tray/src/tray.rs:99
 #, sh-format
-msgid "${update_number} update available"
-msgstr "${update_number} mise à jour disponible"
+msgid "1 update available"
+msgstr "1 mise à jour disponible"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
@@ -751,97 +757,6 @@ msgstr ""
 "Aucun service nécessitant un redémarrage suite à la mise à jour n'a été "
 "trouvé\\n"
 
-#: src/lib/tray.py:199
-msgid "'updates' state file isn't found"
-msgstr "fichier d'état 'updates' non trouvé"
-
-#: src/lib/tray.py:246
-msgid "System is up to date"
-msgstr "Le système est à jour"
-
-#: src/lib/tray.py:249
-msgid "1 update available"
-msgstr "1 mise à jour disponible"
-
-#: src/lib/tray.py:252
-#, python-brace-format
-msgid "{updates} updates available"
-msgstr "{updates} mises à jour disponibles"
-
-#: src/lib/tray.py:256
-#, python-brace-format
-msgid ""
-"Last check:\n"
-"{time}"
-msgstr ""
-"Dernière vérification :\n"
-"{time}"
-
-#: src/lib/tray.py:271
-#, python-brace-format
-msgid "Next check in {time}"
-msgstr "Prochaine vérification dans {time}"
-
-#: src/lib/tray.py:282
-#, python-brace-format
-msgid "All ({updates})"
-msgstr "Tous ({updates})"
-
-#: src/lib/tray.py:295
-#, python-brace-format
-msgid "Packages ({updates})"
-msgstr "Paquets ({updates})"
-
-#: src/lib/tray.py:306
-#, python-brace-format
-msgid "AUR ({updates})"
-msgstr "AUR ({updates})"
-
-#: src/lib/tray.py:317
-#, python-brace-format
-msgid "Flatpak ({updates})"
-msgstr "Flatpak ({updates})"
-
-#: src/lib/tray.py:377 src/lib/tray.py:382
-msgid "Arch-Update"
-msgstr "Arch-Update"
-
-#: src/lib/tray.py:383
-msgid "Last check"
-msgstr "Dernière vérification"
-
-#: src/lib/tray.py:384
-msgid "Next check"
-msgstr "Prochaine vérification"
-
-#: src/lib/tray.py:385
-msgid "Run Arch-Update"
-msgstr "Lancer Arch-Update"
-
-#: src/lib/tray.py:386
-msgid "Check for updates"
-msgstr "Vérifier les mises à jour"
-
-#: src/lib/tray.py:387
-msgid "Exit"
-msgstr "Quitter"
-
-#: src/lib/tray.py:390
-msgid "All"
-msgstr "Tous"
-
-#: src/lib/tray.py:391
-msgid "Packages"
-msgstr "Paquets"
-
-#: src/lib/tray.py:392
-msgid "AUR"
-msgstr "AUR"
-
-#: src/lib/tray.py:393
-msgid "Flatpak"
-msgstr "Flatpak"
-
 #: src/lib/tray.sh:20
 #, sh-format
 msgid "${_name} tray desktop file not found"
@@ -856,16 +771,10 @@ msgstr "Le fichier '${tray_desktop_file_autostart}' existe déjà"
 #, sh-format
 msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
-"systray applet will be automatically started at your next log on\\nTo start "
-"it right now, you can launch the \"${_name} Systray Applet\" application "
-"from your app menu"
+"systray applet will be automatically started at boot"
 msgstr ""
-"Le fichier '${tray_desktop_file_autostart}' a été créé, l'applet systray "
-"d'${_name} sera automatiquement démarré à votre prochaine connexion\\nPour "
-"la démarrer immédiatement, vous pouvez lancer l'application \"${_name} "
-"Systray Applet\" depuis votre menu d'application"
 
-#: src/lib/tray.sh:49
+#: src/lib/tray.sh:62
 #, sh-format
 msgid "There's already a running instance of the ${_name} systray applet"
 msgstr ""
@@ -899,3 +808,58 @@ msgstr "Mise à jour des paquets Flatpak...\\n"
 #, sh-format
 msgid "The update has been applied\\n"
 msgstr "La mise à jour a été appliquée\\n"
+
+#: src/tray/src/tray.rs:88
+msgid "System is up to date"
+msgstr "Le système est à jour"
+
+#: src/tray/src/tray.rs:101
+#, rust-format
+msgid "{count} updates available"
+msgstr "{count} mises à jour disponibles"
+
+#: src/tray/src/tray.rs:124
+#, rust-format
+msgid "All ({count})"
+msgstr "Tous ({count})"
+
+#: src/tray/src/tray.rs:138
+#, rust-format
+msgid "Packages ({count})"
+msgstr "Paquets ({count})"
+
+#: src/tray/src/tray.rs:152
+#, rust-format
+msgid "AUR ({count})"
+msgstr "AUR ({count})"
+
+#: src/tray/src/tray.rs:166
+#, rust-format
+msgid "Flatpak ({count})"
+msgstr "Flatpak ({count})"
+
+#: src/tray/src/tray.rs:186
+#, rust-format
+msgid "Last check {last_check} ago"
+msgstr ""
+
+#: src/tray/src/tray.rs:203
+#, rust-format
+msgid "Next check in {next_check}"
+msgstr "Prochaine vérification dans {next_check}"
+
+#: src/tray/src/tray.rs:220
+msgid "Run Arch-Update"
+msgstr "Lancer Arch-Update"
+
+#: src/tray/src/tray.rs:228
+msgid "Check for updates"
+msgstr "Vérifier les mises à jour"
+
+#: src/tray/src/tray.rs:239
+msgid "Exit"
+msgstr "Quitter"
+
+#: src/tray/src/tray.rs:327
+msgid "Next page"
+msgstr ""
