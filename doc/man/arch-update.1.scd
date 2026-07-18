@@ -125,31 +125,19 @@ If the systray applet doesn't start at boot regardless or if it doesn't work as 
 
 To prevent that, you can add a small delay to the systray applet startup using the `sleep` command:
 
-- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default), like so: 
+- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default) like so:
 
 ```
-[...]
 Exec=/bin/sh -c "sleep 3 && arch-update --tray"
-[...]
 ```
 
-- If you used the `arch-update-tray.service` systemd service, run `systemctl --user edit --full arch-update-tray.service` and modify the `ExecStart=` line, like so:
+- If you added the `arch-update --tray` command to the auto-start method of your environment, modify the command like so:
 
 ```
-[...]
-ExecStart=/bin/sh -c "sleep 3 && arch-update --tray"
-[...]
-```
-
-- If you're using a standalone Window Manager or a Wayland Compositor, modify the command in your "auto-start" apps / your configuration file, like so:
-
-```
-[...]
 sleep 3 && arch-update --tray
-[...]
 ```
 
-If the systray applet still does not start at boot, try to gradually increase the `sleep` value.
+If the systray applet still does not start at boot, eventually try to gradually increase the `sleep` value.
 
 ## Modify the check cycle
 
