@@ -102,21 +102,13 @@ For headless machines, `Arch-Update` includes an extensive CLI.
 
 ### The systray applet
 
-To start the systray applet and enable it automatically at boot, you can either:
-
-- Run the following command (preferred method for most Desktop Environments, uses [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)):
+To start the systray applet and enable it automatically at boot, run the following command (preferred method for most environments, uses [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)):
 
 ```bash
 arch-update --tray --enable
 ```
 
-- Enable the associated systemd service (in case your Desktop Environment doesn't support [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart)):
-
-```bash
-systemctl --user enable --now arch-update-tray.service
-```
-
-- Add the following command to your "auto-start" apps / configuration file (in case you use a Window Manager or a Wayland Compositor):
+In case your graphical environment doesn't support XDG Autostart, add the following command your environment auto-start method:
 
 ```bash
 arch-update --tray
