@@ -51,7 +51,7 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 Install required runtime dependencies:
 
 ```bash
-sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib glibc libgcc curl fakeroot htmlq diffutils hicolor-icon-theme glib2 xdg-utils util-linux gettext
+sudo pacman -S --needed bash systemd pacman pacman-contrib archlinux-contrib glibc libgcc curl fakeroot htmlq diffutils hicolor-icon-theme glib2 xdg-utils util-linux
 ```
 
 Additional optional dependencies you might want or need:

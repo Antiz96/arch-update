@@ -2,7 +2,7 @@
 //! Built with ksni, inspired / based on the systray example at
 //! https://github.com/iovxw/ksni#example
 
-use gettextrs::{bindtextdomain, gettext, textdomain};
+use gettextrs::*;
 use ksni::TrayMethods;
 use ksni::menu::*;
 use log::{debug, error, info, warn};
@@ -376,14 +376,16 @@ pub async fn run(
     desktop_file: PathBuf,
     i18n_dir: PathBuf,
 ) {
-    // Load gettext domains for translations
+    // Set gettext domain for translations
+    setlocale(LocaleCategory::LcAll, "").expect("Failed to load environment locale");
+
+    textdomain("Arch-Update").expect("Failed to set gettext domain");
+
     bindtextdomain(
         "Arch-Update",
         i18n_dir.to_str().expect("Unknown or invalid locale path"),
     )
-    .expect("Failed to bind gettext domain");
-
-    textdomain("Arch-Update").expect("Failed to set gettext domain");
+    .expect("Failed to bind gettext domain path");
 
     // Clone icon statefile path variable (used by the watcher)
     let watcher_icon_statefile = icon_statefile.clone();

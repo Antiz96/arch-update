@@ -29,7 +29,7 @@ if [ "${2}" == "--enable" ]; then
 	else
 		mkdir -p "${XDG_CONFIG_HOME:-${HOME}/.config}/autostart/" || exit 10
 		cp "${tray_desktop_file}" "${tray_desktop_file_autostart}" || exit 10
-		info_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file has been created, the \${_name} systray applet will be automatically started at boot")"
+		info_msg "$(eval_gettext "The '\${tray_desktop_file_autostart}' file has been created, the \${_name} systray applet will be automatically started at boot\n")"
 	fi
 fi
 
@@ -62,6 +62,8 @@ if ! flock -n "${fd_tray}"; then
 	error_msg "$(eval_gettext "There's already a running instance of the \${_name} systray applet")"
 	exit 3
 fi
+
+info_msg "$(eval_gettext "Starting the \${_name} systray applet")"
 
 # shellcheck disable=SC2154
 setsid "${tray_bin}" &

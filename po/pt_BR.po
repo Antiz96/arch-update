@@ -32,6 +32,11 @@ msgstr "Os seguintes pacotes ainda possuem builds pendentes no ALHP:"
 msgid "Error during ALHP check:"
 msgstr "Erro durante a verificação do ALHP:"
 
+#: src/lib/check.sh:10
+#, sh-format
+msgid "Automated update checks have been enabled"
+msgstr ""
+
 #: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
@@ -122,14 +127,14 @@ msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Gostaria de remover estes pacotes Flatpak não utilizados agora? [s/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:164 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "S"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:164 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
@@ -520,25 +525,26 @@ msgstr "Pacotes AUR:"
 msgid "Flatpak Packages:"
 msgstr "Pacotes Flatpak:"
 
-#: src/lib/list_packages.sh:148
+#: src/lib/list_packages.sh:150
 #, sh-format
 msgid "No update available\\n"
 msgstr "Nenhuma atualização disponível\\n"
 
-#: src/lib/list_packages.sh:160
+#: src/lib/list_packages.sh:162
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Prosseguir com a atualização? [S/n]"
 
-#: src/lib/list_packages.sh:170
+#: src/lib/list_packages.sh:172
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "A atualização foi abortada\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/tray/src/tray.rs:99
 #, sh-format
-msgid "${update_number} update available"
-msgstr "${update_number} atualização disponível"
+msgid "1 update available"
+msgstr "1 atualização disponível"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
@@ -739,97 +745,6 @@ msgid "No service requiring a post upgrade restart found\\n"
 msgstr ""
 "Nenhum serviço requerendo reinicialização pós-atualização encontrado\\n"
 
-#: src/lib/tray.py:199
-msgid "'updates' state file isn't found"
-msgstr "Arquivo de estado 'updates' não encontrado"
-
-#: src/lib/tray.py:246
-msgid "System is up to date"
-msgstr "O sistema está atualizado"
-
-#: src/lib/tray.py:249
-msgid "1 update available"
-msgstr "1 atualização disponível"
-
-#: src/lib/tray.py:252
-#, python-brace-format
-msgid "{updates} updates available"
-msgstr "{updates} atualizações disponíveis"
-
-#: src/lib/tray.py:256
-#, python-brace-format
-msgid ""
-"Last check:\n"
-"{time}"
-msgstr ""
-"Última verificação:\n"
-"{time}"
-
-#: src/lib/tray.py:271
-#, python-brace-format
-msgid "Next check in {time}"
-msgstr "Próxima verificação em {time}"
-
-#: src/lib/tray.py:282
-#, python-brace-format
-msgid "All ({updates})"
-msgstr "Todos ({updates})"
-
-#: src/lib/tray.py:295
-#, python-brace-format
-msgid "Packages ({updates})"
-msgstr "Pacotes ({updates})"
-
-#: src/lib/tray.py:306
-#, python-brace-format
-msgid "AUR ({updates})"
-msgstr "AUR ({updates})"
-
-#: src/lib/tray.py:317
-#, python-brace-format
-msgid "Flatpak ({updates})"
-msgstr "Flatpak ({updates})"
-
-#: src/lib/tray.py:377 src/lib/tray.py:382
-msgid "Arch-Update"
-msgstr "Arch-Update"
-
-#: src/lib/tray.py:383
-msgid "Last check"
-msgstr "Última verificação"
-
-#: src/lib/tray.py:384
-msgid "Next check"
-msgstr "Próxima verificação"
-
-#: src/lib/tray.py:385
-msgid "Run Arch-Update"
-msgstr "Executar Arch-Update"
-
-#: src/lib/tray.py:386
-msgid "Check for updates"
-msgstr "Verificar atualizações"
-
-#: src/lib/tray.py:387
-msgid "Exit"
-msgstr "Sair"
-
-#: src/lib/tray.py:390
-msgid "All"
-msgstr "Todos"
-
-#: src/lib/tray.py:391
-msgid "Packages"
-msgstr "Pacotes"
-
-#: src/lib/tray.py:392
-msgid "AUR"
-msgstr "AUR"
-
-#: src/lib/tray.py:393
-msgid "Flatpak"
-msgstr "Flatpak"
-
 #: src/lib/tray.sh:20
 #, sh-format
 msgid "${_name} tray desktop file not found"
@@ -844,20 +759,19 @@ msgstr "O arquivo '${tray_desktop_file_autostart}' já existe"
 #, sh-format
 msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
-"systray applet will be automatically started at your next log on\\nTo start "
-"it right now, you can launch the \"${_name} Systray Applet\" application "
-"from your app menu"
+"systray applet will be automatically started at boot\\n"
 msgstr ""
-"O arquivo '${tray_desktop_file_autostart}' foi criado, o applet de bandeja "
-"do sistema ${_name} será iniciado automaticamente no seu próximo "
-"login\\nPara iniciá-lo agora, você pode executar o aplicativo \"${_name} "
-"Systray Applet\" a partir do menu de aplicativos"
 
-#: src/lib/tray.sh:49
+#: src/lib/tray.sh:62
 #, sh-format
 msgid "There's already a running instance of the ${_name} systray applet"
 msgstr ""
 "Já existe uma instância em execução do applet de bandeja do sistema ${_name}"
+
+#: src/lib/tray.sh:66
+#, sh-format
+msgid "Starting the ${_name} systray applet"
+msgstr ""
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -887,3 +801,58 @@ msgstr "Atualizando Pacotes Flatpak...\\n"
 #, sh-format
 msgid "The update has been applied\\n"
 msgstr "A atualização foi aplicada\\n"
+
+#: src/tray/src/tray.rs:88
+msgid "System is up to date"
+msgstr "O sistema está atualizado"
+
+#: src/tray/src/tray.rs:101
+#, rust-format
+msgid "{count} updates available"
+msgstr "{count} atualizações disponíveis"
+
+#: src/tray/src/tray.rs:124
+#, rust-format
+msgid "All ({count})"
+msgstr "Todos ({count})"
+
+#: src/tray/src/tray.rs:138
+#, rust-format
+msgid "Packages ({count})"
+msgstr "Pacotes ({count})"
+
+#: src/tray/src/tray.rs:152
+#, rust-format
+msgid "AUR ({count})"
+msgstr "AUR ({count})"
+
+#: src/tray/src/tray.rs:166
+#, rust-format
+msgid "Flatpak ({count})"
+msgstr "Flatpak ({count})"
+
+#: src/tray/src/tray.rs:186
+#, rust-format
+msgid "Last check {last_check} ago"
+msgstr ""
+
+#: src/tray/src/tray.rs:203
+#, rust-format
+msgid "Next check in {next_check}"
+msgstr "Próxima verificação em {next_check}"
+
+#: src/tray/src/tray.rs:220
+msgid "Run Arch-Update"
+msgstr "Executar Arch-Update"
+
+#: src/tray/src/tray.rs:228
+msgid "Check for updates"
+msgstr "Verificar atualizações"
+
+#: src/tray/src/tray.rs:239
+msgid "Exit"
+msgstr "Sair"
+
+#: src/tray/src/tray.rs:327
+msgid "Next page"
+msgstr ""
