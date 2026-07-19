@@ -536,7 +536,7 @@ msgid "The update has been aborted\\n"
 msgstr "Het bijwerken is afgebroken\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/tray/src/tray.rs:99
+#: src/tray/src/tray.rs:98
 #, sh-format
 msgid "1 update available"
 msgstr "Er is 1 update beschikbaar"
@@ -796,57 +796,57 @@ msgstr "Bezig met bijwerken van Flatpak-pakketten…\\n"
 msgid "The update has been applied\\n"
 msgstr "Alle pakketten zijn bijgewerkt\\n"
 
-#: src/tray/src/tray.rs:88
+#: src/tray/src/tray_helpers.rs:96
+msgid "Next page"
+msgstr "Volgende pagina"
+
+#: src/tray/src/tray.rs:87
 msgid "System is up to date"
 msgstr "Je beschikt over de nieuwste versies"
 
-#: src/tray/src/tray.rs:101
+#: src/tray/src/tray.rs:100
 #, rust-format
 msgid "{count} updates available"
 msgstr "Er is/zijn {count} updates beschikbaar"
 
-#: src/tray/src/tray.rs:124
+#: src/tray/src/tray.rs:123
 #, rust-format
 msgid "All ({count})"
 msgstr "Alle ({count})"
 
-#: src/tray/src/tray.rs:138
+#: src/tray/src/tray.rs:137
 #, rust-format
 msgid "Packages ({count})"
 msgstr "Pakketten ({count})"
 
-#: src/tray/src/tray.rs:152
+#: src/tray/src/tray.rs:153
 #, rust-format
 msgid "AUR ({count})"
 msgstr "AUR ({count})"
 
-#: src/tray/src/tray.rs:166
+#: src/tray/src/tray.rs:167
 #, rust-format
 msgid "Flatpak ({count})"
 msgstr "Flatpak ({count})"
 
-#: src/tray/src/tray.rs:186
+#: src/tray/src/tray.rs:189
 #, rust-format
 msgid "Last check {last_check} ago"
 msgstr "Recentste controle: {last_check} geleden"
 
-#: src/tray/src/tray.rs:203
+#: src/tray/src/tray.rs:206
 #, rust-format
 msgid "Next check in {next_check}"
 msgstr "Volgende controle over {next_check}"
 
-#: src/tray/src/tray.rs:220
+#: src/tray/src/tray.rs:223
 msgid "Run Arch-Update"
 msgstr "Arch-Update starten"
 
-#: src/tray/src/tray.rs:228
+#: src/tray/src/tray.rs:231
 msgid "Check for updates"
 msgstr "Controleren op updates"
 
-#: src/tray/src/tray.rs:239
+#: src/tray/src/tray.rs:242
 msgid "Exit"
 msgstr "Afsluiten"
-
-#: src/tray/src/tray.rs:327
-msgid "Next page"
-msgstr "Volgende pagina"
