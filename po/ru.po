@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.20.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-27 09:32+0500\n"
+"PO-Revision-Date: 2026-07-19 16:48+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
@@ -36,7 +36,7 @@ msgstr "Ошибка при проверке ALHP:"
 #: src/lib/check.sh:10
 #, sh-format
 msgid "Automated update checks have been enabled"
-msgstr ""
+msgstr "Автоматическая проверка обновлений включена"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -753,6 +753,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
+"Файл '${tray_desktop_file_autostart}' создан, апплет системного трея "
+"${_name} будет автоматически запускаться при загрузке\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -762,7 +764,7 @@ msgstr "Уже запущен работающий экземпляр аппле
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr ""
+msgstr "Запуск апплета системного трея ${_name}"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -824,7 +826,7 @@ msgstr "Flatpak ({count})"
 #: src/tray/src/tray.rs:186
 #, rust-format
 msgid "Last check {last_check} ago"
-msgstr ""
+msgstr "Последняя проверка {last_check} назад"
 
 #: src/tray/src/tray.rs:203
 #, rust-format
@@ -845,4 +847,4 @@ msgstr "Выход"
 
 #: src/tray/src/tray.rs:327
 msgid "Next page"
-msgstr ""
+msgstr "Следующая страница"
