@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.20.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-05-26 17:22+0200\n"
+"PO-Revision-Date: 2026-07-19 19:01-0300\n"
 "Last-Translator: Diego Jesús <diego.u7ozo@addy.io>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -37,7 +37,7 @@ msgstr "Error durante la comprobación de ALHP:"
 #: src/lib/check.sh:10
 #, sh-format
 msgid "Automated update checks have been enabled"
-msgstr ""
+msgstr "Se han habilitado las comprobaciones automáticas de actualizaciones"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -774,6 +774,9 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
+"Se ha creado el archivo '${tray_desktop_file_autostart}', el applet de la "
+"bandeja del sistema ${_name} se iniciará automáticamente durante el "
+"arranque\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -785,7 +788,7 @@ msgstr ""
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr ""
+msgstr "Iniciando el applet de la bandeja del sistema ${_name}"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -818,7 +821,7 @@ msgstr "La actualización se ha aplicado\\n"
 
 #: src/tray/src/tray_helpers.rs:96
 msgid "Next page"
-msgstr ""
+msgstr "Página siguiente"
 
 #: src/tray/src/tray.rs:87
 msgid "System is up to date"
@@ -852,7 +855,7 @@ msgstr "Flatpak ({count})"
 #: src/tray/src/tray.rs:189
 #, rust-format
 msgid "Last check {last_check} ago"
-msgstr ""
+msgstr "Última comprobación hace {last_check}"
 
 #: src/tray/src/tray.rs:206
 #, rust-format
