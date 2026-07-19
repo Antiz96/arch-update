@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# Diego N.S <degons490@gmail.com>, 2025
+# Diego N.S <degons490@gmail.com>, 2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 3.20.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2025-09-06 18:00-0300\n"
+"PO-Revision-Date: 2026-07-19 18:56-0300\n"
 "Last-Translator: Diego N.S <degons490@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
@@ -35,7 +36,7 @@ msgstr "Erro durante a verificação do ALHP:"
 #: src/lib/check.sh:10
 #, sh-format
 msgid "Automated update checks have been enabled"
-msgstr ""
+msgstr "As verificações automáticas por atualizações foram habilitadas"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -761,6 +762,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
+"O arquivo '${tray_desktop_file_autostart}' foi criado, o applet de bandeja "
+"do sistema ${_name} será iniciado automaticamente durante a inicialização\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -771,7 +774,7 @@ msgstr ""
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr ""
+msgstr "Iniciando o applet de bandeja do sistema ${_name}"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -804,7 +807,7 @@ msgstr "A atualização foi aplicada\\n"
 
 #: src/tray/src/tray_helpers.rs:96
 msgid "Next page"
-msgstr ""
+msgstr "Próxima página"
 
 #: src/tray/src/tray.rs:87
 msgid "System is up to date"
@@ -838,7 +841,7 @@ msgstr "Flatpak ({count})"
 #: src/tray/src/tray.rs:189
 #, rust-format
 msgid "Last check {last_check} ago"
-msgstr ""
+msgstr "Última verificação há {last_check}"
 
 #: src/tray/src/tray.rs:206
 #, rust-format
