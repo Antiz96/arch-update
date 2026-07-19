@@ -8,16 +8,15 @@ use ksni::menu::*;
 use log::{debug, error, info, warn};
 use std::fs;
 use std::future;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 use std::process::{self, Command};
 
-use crate::check_times::{get_last_check, get_next_check};
-use crate::icon_statefile_watcher;
-use crate::updates_statefiles::UpdatesStateFiles;
+use crate::tray_helpers;
+use crate::updates_statefiles;
 
 pub struct ArchUpdateTray {
     icon_statefile: PathBuf,
-    updates_statefiles: UpdatesStateFiles,
+    updates_statefile_type: updates_statefiles::UpdatesStateFiles,
     desktop_file: PathBuf,
 }
 
@@ -58,7 +57,7 @@ impl ksni::Tray for ArchUpdateTray {
 
     // Run Arch-Update via the desktop file when activated (left click)
     fn activate(&mut self, _x: i32, _y: i32) {
-        launch_arch_update(&self.desktop_file);
+        tray_helpers::launch_arch_update(&self.desktop_file);
     }
 
     // Dynamically rebuild menu when opened (AboutToShow protocol)
@@ -71,17 +70,17 @@ impl ksni::Tray for ArchUpdateTray {
 
         // Get the number of different update types
         let update_types = [
-            &self.updates_statefiles.packages,
-            &self.updates_statefiles.aur,
-            &self.updates_statefiles.flatpak,
+            &self.updates_statefile_type.packages,
+            &self.updates_statefile_type.aur,
+            &self.updates_statefile_type.flatpak,
         ]
         .iter()
-        .filter(|statefile| count_update_types(statefile))
+        .filter(|statefile| tray_helpers::count_update_types(statefile))
         .count();
 
         // Add the "System is up to date" or "X update(s) available" entry, depending on the number
         // of pending updates
-        match get_updates_count(&self.updates_statefiles.all) {
+        match tray_helpers::get_updates_count(&self.updates_statefile_type.all) {
             0 => {
                 menu.push(
                     StandardItem {
@@ -105,7 +104,7 @@ impl ksni::Tray for ArchUpdateTray {
                     StandardItem {
                         label,
                         activate: Box::new(move |_| {
-                            launch_arch_update(&desktop_file);
+                            tray_helpers::launch_arch_update(&desktop_file);
                         }),
                         ..Default::default()
                     }
@@ -117,12 +116,12 @@ impl ksni::Tray for ArchUpdateTray {
         // Add the "All" entry, if there are updates available in at least 2 different update types
         // (packages, aur, flatpak)
         if update_types >= 2 {
-            let count = get_updates_count(&self.updates_statefiles.all);
+            let count = tray_helpers::get_updates_count(&self.updates_statefile_type.all);
 
             menu.push(
                 SubMenu {
                     label: gettext("All ({count})").replace("{count}", &count.to_string()),
-                    submenu: build_updates_submenu(&self.updates_statefiles.all),
+                    submenu: tray_helpers::build_updates_submenu(&self.updates_statefile_type.all),
                     ..Default::default()
                 }
                 .into(),
@@ -130,13 +129,15 @@ impl ksni::Tray for ArchUpdateTray {
         }
 
         // Add the "Packages" entry, if there are packages updates available
-        let count = get_updates_count(&self.updates_statefiles.packages);
+        let count = tray_helpers::get_updates_count(&self.updates_statefile_type.packages);
 
         if count > 0 {
             menu.push(
                 SubMenu {
                     label: gettext("Packages ({count})").replace("{count}", &count.to_string()),
-                    submenu: build_updates_submenu(&self.updates_statefiles.packages),
+                    submenu: tray_helpers::build_updates_submenu(
+                        &self.updates_statefile_type.packages,
+                    ),
                     ..Default::default()
                 }
                 .into(),
@@ -144,13 +145,13 @@ impl ksni::Tray for ArchUpdateTray {
         }
 
         // Add the "AUR" entry, if there are AUR updates available
-        let count = get_updates_count(&self.updates_statefiles.aur);
+        let count = tray_helpers::get_updates_count(&self.updates_statefile_type.aur);
 
         if count > 0 {
             menu.push(
                 SubMenu {
                     label: gettext("AUR ({count})").replace("{count}", &count.to_string()),
-                    submenu: build_updates_submenu(&self.updates_statefiles.aur),
+                    submenu: tray_helpers::build_updates_submenu(&self.updates_statefile_type.aur),
                     ..Default::default()
                 }
                 .into(),
@@ -158,13 +159,15 @@ impl ksni::Tray for ArchUpdateTray {
         }
 
         // Add the "Flatpak" entry, if there are flatpak updates available
-        let count = get_updates_count(&self.updates_statefiles.flatpak);
+        let count = tray_helpers::get_updates_count(&self.updates_statefile_type.flatpak);
 
         if count > 0 {
             menu.push(
                 SubMenu {
                     label: gettext("Flatpak ({count})").replace("{count}", &count.to_string()),
-                    submenu: build_updates_submenu(&self.updates_statefiles.flatpak),
+                    submenu: tray_helpers::build_updates_submenu(
+                        &self.updates_statefile_type.flatpak,
+                    ),
                     ..Default::default()
                 }
                 .into(),
@@ -180,7 +183,7 @@ impl ksni::Tray for ArchUpdateTray {
         // The reason why this entry is conditional is because the updates check time statefile
         // may be empty until the first check for updates is performed, so we have to handle this
         // case
-        if let Some(last_check) = get_last_check(&self.updates_statefiles.time) {
+        if let Some(last_check) = tray_helpers::get_last_check(&self.updates_statefile_type.time) {
             menu.push(
                 StandardItem {
                     label: gettext("Last check {last_check} ago")
@@ -197,7 +200,7 @@ impl ksni::Tray for ArchUpdateTray {
         // Add the "Next Check" menu entry (if the systemd timer is started / enabled)
         // The reason why this entry is conditional is because the systemd timer for the automated
         // checks may not be started / enabled
-        if let Some(next_check) = get_next_check() {
+        if let Some(next_check) = tray_helpers::get_next_check() {
             menu.push(
                 StandardItem {
                     label: gettext("Next check in {next_check}")
@@ -219,7 +222,7 @@ impl ksni::Tray for ArchUpdateTray {
             StandardItem {
                 label: gettext("Run Arch-Update"),
                 activate: Box::new(move |_| {
-                    launch_arch_update(&desktop_file);
+                    tray_helpers::launch_arch_update(&desktop_file);
                 }),
                 ..Default::default()
             }
@@ -249,130 +252,10 @@ impl ksni::Tray for ArchUpdateTray {
     }
 }
 
-// Helper to run Arch-Update from the desktop file (via `gio`)
-fn launch_arch_update(desktop_file: &Path) {
-    match Command::new("gio").arg("launch").arg(desktop_file).spawn() {
-        Ok(_) => info!("Arch-Update launched"),
-        Err(error) => error!("Unable to launch Arch-Update: {error}"),
-    }
-}
-
-// Helper to get the number of pending updates from the updates statefile
-fn get_updates_count(updates_statefile: &Path) -> usize {
-    fs::read_to_string(updates_statefile)
-        .unwrap_or_default()
-        .lines()
-        .filter(|line| !line.trim().is_empty())
-        .count()
-}
-
-// Helper to get the number of types (packages, aur, flatpak) having available updates
-fn count_update_types(updates_statefile: &Path) -> bool {
-    get_updates_count(updates_statefile) > 0
-}
-
-// Helper to get the list of pending updates from the updates statefile and populate the submenus
-// accordingly
-fn build_updates_submenu(updates_statefile: &Path) -> Vec<ksni::MenuItem<ArchUpdateTray>> {
-    match fs::read_to_string(updates_statefile) {
-        Ok(updates) => {
-            let updates: Vec<_> = updates
-                .lines()
-                .filter(|line| !line.trim().is_empty())
-                .collect();
-
-            build_updates_submenu_pagination(&updates, 0)
-        }
-
-        Err(error) => {
-            error!("Unable to read updates statefile: {error}");
-            Vec::new()
-        }
-    }
-}
-
-// Helper to handle pagination for updates submenus
-// Set a limit to 20 packages per page, split to another page otherwise
-const UPDATES_PER_PAGE: usize = 20;
-fn build_updates_submenu_pagination(
-    updates: &[&str],
-    page: usize,
-) -> Vec<ksni::MenuItem<ArchUpdateTray>> {
-    let start = page * UPDATES_PER_PAGE;
-    let end = (start + UPDATES_PER_PAGE).min(updates.len());
-
-    let mut menu = updates[start..end]
-        .iter()
-        .map(|update| {
-            let package = update
-                .split_whitespace()
-                .next()
-                .unwrap_or_default()
-                .to_owned();
-
-            StandardItem {
-                label: (*update).into(),
-                activate: Box::new(move |_| {
-                    open_package_url(&package);
-                }),
-                ..Default::default()
-            }
-            .into()
-        })
-        .collect::<Vec<_>>();
-
-    if end < updates.len() {
-        menu.push(
-            SubMenu {
-                label: gettext("Next page"),
-                submenu: build_updates_submenu_pagination(updates, page + 1),
-                ..Default::default()
-            }
-            .into(),
-        );
-    }
-
-    menu
-}
-
-// Helper to open package url
-fn open_package_url(package: &str) {
-    let pacman_output = match Command::new("pacman").arg("-Qi").arg(package).output() {
-        Ok(pacman_output) => pacman_output,
-        Err(error) => {
-            error!("Unable to query the {package} package information: {error}");
-            return;
-        }
-    };
-
-    if !pacman_output.status.success() {
-        error!("Unable to get the {package} package information");
-        return;
-    }
-
-    let pacman_stdout = String::from_utf8_lossy(&pacman_output.stdout);
-
-    for line in pacman_stdout.lines() {
-        if let Some(url) = line.strip_prefix("URL") {
-            let url = url.trim_matches(|column| column == ':' || column == ' ');
-
-            // Make sure to only send URLs to xdg-open
-            if url.starts_with("http://") || url.starts_with("https://") {
-                match Command::new("xdg-open").arg(url).spawn() {
-                    Ok(_) => info!("Opened the {package} package URL: {url}"),
-                    Err(error) => error!("Unable to open the {package} package URL {url}: {error}"),
-                }
-            }
-
-            break;
-        }
-    }
-}
-
 // Starting the Systray Applet
 pub async fn run(
     icon_statefile: PathBuf,
-    updates_statefiles: UpdatesStateFiles,
+    updates_statefile_type: updates_statefiles::UpdatesStateFiles,
     desktop_file: PathBuf,
     i18n_dir: PathBuf,
 ) {
@@ -392,7 +275,7 @@ pub async fn run(
 
     let tray = ArchUpdateTray {
         icon_statefile,
-        updates_statefiles,
+        updates_statefile_type,
         desktop_file,
     };
 
@@ -405,7 +288,7 @@ pub async fn run(
     info!("Systray applet started");
 
     // Rebuild the systray applet on icon statefile content changes
-    tokio::spawn(icon_statefile_watcher::watch(
+    tokio::spawn(tray_helpers::icon_watcher(
         watcher_icon_statefile,
         handle.clone(),
     ));
