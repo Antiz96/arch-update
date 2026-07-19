@@ -5,12 +5,11 @@
 use log::error;
 use std::process;
 
-mod check_times;
 mod desktop_file;
 mod i18n_dir;
 mod icon_statefile;
-mod icon_statefile_watcher;
 mod tray;
+mod tray_helpers;
 mod updates_statefiles;
 
 #[tokio::main(flavor = "current_thread")]

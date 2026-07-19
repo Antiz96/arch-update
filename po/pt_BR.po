@@ -541,7 +541,7 @@ msgid "The update has been aborted\\n"
 msgstr "A atualização foi abortada\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/tray/src/tray.rs:99
+#: src/tray/src/tray.rs:98
 #, sh-format
 msgid "1 update available"
 msgstr "1 atualização disponível"
@@ -802,57 +802,57 @@ msgstr "Atualizando Pacotes Flatpak...\\n"
 msgid "The update has been applied\\n"
 msgstr "A atualização foi aplicada\\n"
 
-#: src/tray/src/tray.rs:88
+#: src/tray/src/tray_helpers.rs:96
+msgid "Next page"
+msgstr ""
+
+#: src/tray/src/tray.rs:87
 msgid "System is up to date"
 msgstr "O sistema está atualizado"
 
-#: src/tray/src/tray.rs:101
+#: src/tray/src/tray.rs:100
 #, rust-format
 msgid "{count} updates available"
 msgstr "{count} atualizações disponíveis"
 
-#: src/tray/src/tray.rs:124
+#: src/tray/src/tray.rs:123
 #, rust-format
 msgid "All ({count})"
 msgstr "Todos ({count})"
 
-#: src/tray/src/tray.rs:138
+#: src/tray/src/tray.rs:137
 #, rust-format
 msgid "Packages ({count})"
 msgstr "Pacotes ({count})"
 
-#: src/tray/src/tray.rs:152
+#: src/tray/src/tray.rs:153
 #, rust-format
 msgid "AUR ({count})"
 msgstr "AUR ({count})"
 
-#: src/tray/src/tray.rs:166
+#: src/tray/src/tray.rs:167
 #, rust-format
 msgid "Flatpak ({count})"
 msgstr "Flatpak ({count})"
 
-#: src/tray/src/tray.rs:186
+#: src/tray/src/tray.rs:189
 #, rust-format
 msgid "Last check {last_check} ago"
 msgstr ""
 
-#: src/tray/src/tray.rs:203
+#: src/tray/src/tray.rs:206
 #, rust-format
 msgid "Next check in {next_check}"
 msgstr "Próxima verificação em {next_check}"
 
-#: src/tray/src/tray.rs:220
+#: src/tray/src/tray.rs:223
 msgid "Run Arch-Update"
 msgstr "Executar Arch-Update"
 
-#: src/tray/src/tray.rs:228
+#: src/tray/src/tray.rs:231
 msgid "Check for updates"
 msgstr "Verificar atualizações"
 
-#: src/tray/src/tray.rs:239
+#: src/tray/src/tray.rs:242
 msgid "Exit"
 msgstr "Sair"
-
-#: src/tray/src/tray.rs:327
-msgid "Next page"
-msgstr ""
