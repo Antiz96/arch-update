@@ -6,17 +6,17 @@
 # DrWeb56 <borodaxxx@gmail.com>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.19.7\n"
+"Project-Id-Version: Arch-Update 3.20.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-27 09:32+0500\n"
+"PO-Revision-Date: 2026-07-19 16:48+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
@@ -32,6 +32,11 @@ msgstr "Для следующих пакетов всё еще ожидаетс�
 #, sh-format
 msgid "Error during ALHP check:"
 msgstr "Ошибка при проверке ALHP:"
+
+#: src/lib/check.sh:10
+#, sh-format
+msgid "Automated update checks have been enabled"
+msgstr "Автоматическая проверка обновлений включена"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -121,14 +126,14 @@ msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Хотите удалить эти неиспользуемые пакеты Flatpak сейчас? [y/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:132 src/lib/orphan_packages.sh:21
+#: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
@@ -498,40 +503,41 @@ msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
 "Не удалось получить обновления пакетов Flaptak (превышено время ожидания)\\n"
 
-#: src/lib/list_packages.sh:92
+#: src/lib/list_packages.sh:115
 #, sh-format
 msgid "Packages:"
 msgstr "Пакеты:"
 
-#: src/lib/list_packages.sh:99
+#: src/lib/list_packages.sh:127
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Пакеты AUR:"
 
-#: src/lib/list_packages.sh:106
+#: src/lib/list_packages.sh:139
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Пакеты Flatpak:"
 
-#: src/lib/list_packages.sh:116
+#: src/lib/list_packages.sh:150
 #, sh-format
 msgid "No update available\\n"
 msgstr "Обновлений нет\\n"
 
-#: src/lib/list_packages.sh:128
+#: src/lib/list_packages.sh:162
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Продолжить обновление? [Y/n]"
 
-#: src/lib/list_packages.sh:138
+#: src/lib/list_packages.sh:172
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Обновление было прервано\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
+#: src/tray/src/tray.rs:98
 #, sh-format
-msgid "${update_number} update available"
-msgstr "${update_number} обновление доступно"
+msgid "1 update available"
+msgstr "Доступно 1 обновление"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
@@ -731,97 +737,6 @@ msgstr ""
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "Не найдено служб, требующих перезапуска после обновления\\n"
 
-#: src/lib/tray.py:199
-msgid "'updates' state file isn't found"
-msgstr "Файл состояния 'updates' не найден"
-
-#: src/lib/tray.py:246
-msgid "System is up to date"
-msgstr "Система обновлена"
-
-#: src/lib/tray.py:249
-msgid "1 update available"
-msgstr "Доступно 1 обновление"
-
-#: src/lib/tray.py:252
-#, python-brace-format
-msgid "{updates} updates available"
-msgstr "Доступно {updates} обновлений"
-
-#: src/lib/tray.py:256
-#, python-brace-format
-msgid ""
-"Last check:\n"
-"{time}"
-msgstr ""
-"Последняя проверка:\n"
-"{time}"
-
-#: src/lib/tray.py:271
-#, python-brace-format
-msgid "Next check in {time}"
-msgstr "Следующая проверка через {time}"
-
-#: src/lib/tray.py:282
-#, python-brace-format
-msgid "All ({updates})"
-msgstr "Все ({updates})"
-
-#: src/lib/tray.py:295
-#, python-brace-format
-msgid "Packages ({updates})"
-msgstr "Пакеты ({updates})"
-
-#: src/lib/tray.py:306
-#, python-brace-format
-msgid "AUR ({updates})"
-msgstr "AUR ({updates})"
-
-#: src/lib/tray.py:317
-#, python-brace-format
-msgid "Flatpak ({updates})"
-msgstr "Flatpak ({updates})"
-
-#: src/lib/tray.py:377 src/lib/tray.py:382
-msgid "Arch-Update"
-msgstr "Arch-Update"
-
-#: src/lib/tray.py:383
-msgid "Last check"
-msgstr "Последняя проверка"
-
-#: src/lib/tray.py:384
-msgid "Next check"
-msgstr "Следующая проверка"
-
-#: src/lib/tray.py:385
-msgid "Run Arch-Update"
-msgstr "Запустить Arch-Update"
-
-#: src/lib/tray.py:386
-msgid "Check for updates"
-msgstr "Проверить обновления"
-
-#: src/lib/tray.py:387
-msgid "Exit"
-msgstr "Выход"
-
-#: src/lib/tray.py:390
-msgid "All"
-msgstr "Все"
-
-#: src/lib/tray.py:391
-msgid "Packages"
-msgstr "Пакеты"
-
-#: src/lib/tray.py:392
-msgid "AUR"
-msgstr "AUR"
-
-#: src/lib/tray.py:393
-msgid "Flatpak"
-msgstr "Flatpak"
-
 #: src/lib/tray.sh:20
 #, sh-format
 msgid "${_name} tray desktop file not found"
@@ -836,19 +751,20 @@ msgstr "Файл '${tray_desktop_file_autostart}' уже существует"
 #, sh-format
 msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
-"systray applet will be automatically started at your next log on\\nTo start "
-"it right now, you can launch the \"${_name} Systray Applet\" application "
-"from your app menu"
+"systray applet will be automatically started at boot\\n"
 msgstr ""
-"Файл '${tray_desktop_file_autostart}' был создан, апплет системного трея "
-"${_name} будет автоматически запущен при следующем входе в систему\\nЧтобы "
-"запустить его прямо сейчас, вы можете запустить приложение \"${_name} "
-"Systray Applet\" из меню приложений"
+"Файл '${tray_desktop_file_autostart}' создан, апплет системного трея "
+"${_name} будет автоматически запускаться при загрузке\\n"
 
-#: src/lib/tray.sh:49
+#: src/lib/tray.sh:62
 #, sh-format
 msgid "There's already a running instance of the ${_name} systray applet"
 msgstr "Уже запущен работающий экземпляр апплета системного трея ${_name}"
+
+#: src/lib/tray.sh:66
+#, sh-format
+msgid "Starting the ${_name} systray applet"
+msgstr "Запуск апплета системного трея ${_name}"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -877,3 +793,58 @@ msgstr "Обновление пакетов Flatpak...\\n"
 #, sh-format
 msgid "The update has been applied\\n"
 msgstr "Обновление было применено\\n"
+
+#: src/tray/src/tray_helpers.rs:96
+msgid "Next page"
+msgstr "Следующая страница"
+
+#: src/tray/src/tray.rs:87
+msgid "System is up to date"
+msgstr "Система обновлена"
+
+#: src/tray/src/tray.rs:100
+#, rust-format
+msgid "{count} updates available"
+msgstr "{count} обновлений доступно"
+
+#: src/tray/src/tray.rs:123
+#, rust-format
+msgid "All ({count})"
+msgstr "Все ({count})"
+
+#: src/tray/src/tray.rs:137
+#, rust-format
+msgid "Packages ({count})"
+msgstr "Пакеты ({count})"
+
+#: src/tray/src/tray.rs:153
+#, rust-format
+msgid "AUR ({count})"
+msgstr "AUR ({count})"
+
+#: src/tray/src/tray.rs:167
+#, rust-format
+msgid "Flatpak ({count})"
+msgstr "Flatpak ({count})"
+
+#: src/tray/src/tray.rs:189
+#, rust-format
+msgid "Last check {last_check} ago"
+msgstr "Последняя проверка {last_check} назад"
+
+#: src/tray/src/tray.rs:206
+#, rust-format
+msgid "Next check in {next_check}"
+msgstr "Следующая проверка через {next_check}"
+
+#: src/tray/src/tray.rs:223
+msgid "Run Arch-Update"
+msgstr "Запустить Arch-Update"
+
+#: src/tray/src/tray.rs:231
+msgid "Check for updates"
+msgstr "Проверить обновления"
+
+#: src/tray/src/tray.rs:242
+msgid "Exit"
+msgstr "Выход"

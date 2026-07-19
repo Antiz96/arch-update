@@ -59,7 +59,7 @@ For instance:
 - [...]
 
 Bash code is checked with [shellcheck](https://www.shellcheck.net/).  
-Python code is checked with [pylint](https://github.com/pylint-dev/pylint).  
+Rust code is checked with [rustfmt](https://rust-lang.github.io/rustfmt/) & [clippy](doc.rust-lang.org/cargo/commands/cargo-clippy.html).  
 Markdown syntax is checked with [markdownlint](https://github.com/markdownlint/markdownlint).
 
 ### Commit message format
@@ -129,7 +129,7 @@ To contribute to translations, please follow the instructions in the [dedicated 
 
 ## Donations
 
-You can also support this project development (and my work in general) by making a donation via my [GitHub sponsor page](https://github.com/sponsors/Antiz96).
+You can also support this project development (and my work in general) by making a donation via my [GitHub sponsor](https://github.com/sponsors/Antiz96) or [Ko-fi](https://ko-fi.com/Antiz96) page.
 
 ## Thank you
 

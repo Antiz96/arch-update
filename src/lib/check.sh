@@ -5,6 +5,13 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # shellcheck disable=SC2154
+if [ "${2}" == "--enable" ]; then
+	systemctl --user enable --now "${name}.timer"
+	info_msg "$(eval_gettext "Automated update checks have been enabled")"
+	exit 0
+fi
+
+# shellcheck disable=SC2154
 touch "${statedir}"/last_updates_check_{packages,aur,flatpak}
 
 # shellcheck disable=SC2154
@@ -119,3 +126,5 @@ fi
 if [ -f "${statedir}/current_updates_check" ]; then
 	mv -f "${statedir}/current_updates_check" "${statedir}/last_updates_check"
 fi
+
+date "+%s%n%F %T" > "${statedir}/last_updates_check_time"

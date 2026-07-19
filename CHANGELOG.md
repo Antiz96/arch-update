@@ -2,6 +2,68 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.20.5](https://github.com/Antiz96/arch-update/releases/tag/v3.20.5) - 2026-07-08
+
+### Fixes
+
+- Properly handle epoch in version diff coloring ([#641](https://github.com/Antiz96/arch-update/pull/641)) - ([2811d87](https://github.com/Antiz96/arch-update/commit/2811d8770e40b848fbb667b8ade4f58567968b20)) by @Antiz96
+
+## [v3.20.4](https://github.com/Antiz96/arch-update/releases/tag/v3.20.4) - 2026-07-06
+
+### Fixes
+
+- Skip kernel upgrade check if the mkmm package is installed ([#637](https://github.com/Antiz96/arch-update/pull/637)) - ([543add0](https://github.com/Antiz96/arch-update/commit/543add0703a6cbcea7c762af6cc9a1e132d8a6ea)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update formatting in Italian translation file ([#638](https://github.com/Antiz96/arch-update/pull/638)) - ([b0b7651](https://github.com/Antiz96/arch-update/commit/b0b765183915bbe193a00aeda0118790c6e05021)) by @Antiz96
+
+## [v3.20.3](https://github.com/Antiz96/arch-update/releases/tag/v3.20.3) - 2026-07-03
+
+### Documentation
+
+- *(man)* Link to raw man page in README ([#621](https://github.com/Antiz96/arch-update/pull/621)) - ([33cb059](https://github.com/Antiz96/arch-update/commit/33cb05981694d8a0dee219d317b9737dd2cf46ed)) by @Antiz96
+
+### Styling
+
+- *(MAINTAINERS)* Drop @ prefix ([#623](https://github.com/Antiz96/arch-update/pull/623)) - ([75605a1](https://github.com/Antiz96/arch-update/commit/75605a1eca62de1c3fb15de21c6f5988f7a24667)) by @Antiz96
+
+### Miscellaneous
+
+- *(CONTRIBUTING)* Update sponsor links ([#619](https://github.com/Antiz96/arch-update/pull/619)) - ([2f86c29](https://github.com/Antiz96/arch-update/commit/2f86c29a55f7dc59550aef3fc982404eb5f9a873)) by @Antiz96
+- *(deps)* Update actions/checkout action to v7.0.0 ([#620](https://github.com/Antiz96/arch-update/pull/620)) - ([07ada71](https://github.com/Antiz96/arch-update/commit/07ada7125fa09c795b825d158c5716d7af386a21)) by @renovate[bot]
+- *(i18n)* Improvements and fixes for the Italian translation ([#632](https://github.com/Antiz96/arch-update/pull/632)) - ([a9f7aae](https://github.com/Antiz96/arch-update/commit/a9f7aae87c81c3072575d0a54d32d557f4619221)) by @Mattyan89
+
+## [v3.20.2](https://github.com/Antiz96/arch-update/releases/tag/v3.20.2) - 2026-06-18
+
+### Fixes
+
+- Version diff highlighting ([#617](https://github.com/Antiz96/arch-update/pull/617)) - ([1e6b713](https://github.com/Antiz96/arch-update/commit/1e6b71323f68ec2e0eb222828d901fc0f2995456)) by @up-the-hill
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#618](https://github.com/Antiz96/arch-update/pull/618)) - ([5b6338b](https://github.com/Antiz96/arch-update/commit/5b6338be24c78a9982a0cfeea858ff6f010c636a)) by @Antiz96
+
+## [v3.20.1](https://github.com/Antiz96/arch-update/releases/tag/v3.20.1) - 2026-06-14
+
+### Features
+
+- *(i18n)* Add Italian translation ([#615](https://github.com/Antiz96/arch-update/pull/615)) - ([1f79b64](https://github.com/Antiz96/arch-update/commit/1f79b645a4ed1afb0654d340776c6773c5845d69)) by @Mattyan89
+
+## [v3.20.0](https://github.com/Antiz96/arch-update/releases/tag/v3.20.0) - 2026-06-08
+
+### Features
+
+- Add version diff highlighting and columns to the update list ([#608](https://github.com/Antiz96/arch-update/pull/608)) - ([dd5782c](https://github.com/Antiz96/arch-update/commit/dd5782c721c3d332de004a2c38a93a7e27372cc1)) by @up-the-hill
+
+### Documentation
+
+- *(README)* Update screenshots with new layout ([#610](https://github.com/Antiz96/arch-update/pull/610)) - ([fa08e2b](https://github.com/Antiz96/arch-update/commit/fa08e2b5811d1c63b111171c3aa40a06f45673c6)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#611](https://github.com/Antiz96/arch-update/pull/611)) - ([eccafba](https://github.com/Antiz96/arch-update/commit/eccafbad7dbba11003e2294ba9176b51bb0ae969)) by @Antiz96
+
 ## [v3.19.7](https://github.com/Antiz96/arch-update/releases/tag/v3.19.7) - 2026-05-26
 
 ### Features

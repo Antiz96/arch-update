@@ -1,4 +1,4 @@
-arch-update(1) ["Arch-Update 3.19.7" ["Arch-Update Manual"]]
+arch-update(1) ["Arch-Update 3.20.5" ["Arch-Update Manual"]]
 
 # NAME
 
@@ -25,6 +25,7 @@ Features:
 - Check for pending kernel update requiring a reboot (and offers to do so if there's one).
 - Check for services requiring a post upgrade restart (and offers to do so if there are).
 - Support for `sudo`, `sudo-rs`, `doas` & `run0`.
+- Extensive CLI.
 
 Optional support for:
 
@@ -39,7 +40,7 @@ If no option is passed, launch the relevant series of functions to perform a com
 
 *-c, --check*
 	Check for available updates. If there are, send a desktop notification and update the systray icon.
-	To run the `--check` option automatically and periodically, see the *"The systemd timer"* chapter in the *"USAGE"* section below.
+	To enable automated and periodic checks, use the `--check --enable`.
 
 *-l, --list*
 	Display the list of pending updates.
@@ -81,27 +82,18 @@ Certain options can be enabled, disabled or modified via the `arch-update.conf` 
 
 # USAGE
 
-The usage consist of starting the systray applet and enabling the systemd timer.
+For desktop machines, the usage consist of starting the systray applet and enabling the automated updates checks.  
+For headless machines, Arch-Update includes an extensive CLI.
 
 ## The systray applet
 
-To start the systray applet, launch the *Arch-Update Systray Applet* application from your app menu.
-
-To start it automatically at boot, you can either:
-
-- Run the following command (preferred method for most Desktop Environments, uses XDG Autostart): 
+To start the systray applet and enable it automatically at boot, run the following command (preferred method for most environments, uses XDG Autostart):
 
 ```
 arch-update --tray --enable
 ```
 
-- Enable the associated systemd service (in case your Desktop Environment doesn't support XDG Autostart): 
-
-```
-systemctl --user enable --now arch-update-tray.service
-```
-
-- Add the following command to your "auto-start" apps / configuration file (in case you use a Window Manager or a Wayland Compositor):
+In case your graphical environment doesn't support XDG Autostart, add the following command your environment auto-start method:
 
 ```
 arch-update --tray
@@ -113,15 +105,15 @@ The systray icon dynamically changes to indicate the current state of your syste
 
 *If clicking the systray applet does nothing*, please read the *"Run Arch-Update in a specific terminal emulator"* chapter in the *"TIPS AND TRICKS"* section below.
 
-## The systemd timer
+## Automated updates check
 
-To perform automatic and periodic checks for available updates, enable the associated systemd timer:
+To enable automated and periodic checks for available updates, run the following command:
 
 ```
-systemctl --user enable --now arch-update.timer
+arch-update --check --enable
 ```
 
-By default, a check is performed at *boot and then once every hour*. The check cycle can be customized, see the *"Modify the check cycle"* chapter in the *"TIPS AND TRICKS"* section below.
+By default, a check is performed *at boot and then once every 6 hours*. The check cycle can be customized, see the *"Modify the check cycle"* chapter in the *"TIPS AND TRICKS"* section below.
 
 # TIPS AND TRICKS 
 
@@ -133,31 +125,19 @@ If the systray applet doesn't start at boot regardless or if it doesn't work as 
 
 To prevent that, you can add a small delay to the systray applet startup using the `sleep` command:
 
-- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default), like so: 
+- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default) like so:
 
 ```
-[...]
 Exec=/bin/sh -c "sleep 3 && arch-update --tray"
-[...]
 ```
 
-- If you used the `arch-update-tray.service` systemd service, run `systemctl --user edit --full arch-update-tray.service` and modify the `ExecStart=` line, like so:
+- If you added the `arch-update --tray` command to the auto-start method of your environment, modify the command like so:
 
 ```
-[...]
-ExecStart=/bin/sh -c "sleep 3 && arch-update --tray"
-[...]
-```
-
-- If you're using a standalone Window Manager or a Wayland Compositor, modify the command in your "auto-start" apps / your configuration file, like so:
-
-```
-[...]
 sleep 3 && arch-update --tray
-[...]
 ```
 
-If the systray applet still does not start at boot, try to gradually increase the `sleep` value.
+If the systray applet still does not start at boot, eventually try to gradually increase the `sleep` value.
 
 ## Modify the check cycle
 
