@@ -34,7 +34,7 @@ msgstr "Fehler bei der ALHP-Prüfung:"
 #: src/lib/check.sh:10
 #, sh-format
 msgid "Automated update checks have been enabled"
-msgstr ""
+msgstr "Automatische Updateprüfung wurde aktiviert"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -761,6 +761,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
+"Die '${tray_desktop_file_autostart}' Datei wurde erstellt, das ${_name} "
+"Systray-Applet wird automatisch beim Bootvorgang gestartet\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -770,7 +772,7 @@ msgstr "Es gibt bereits eine laufende Instanz des ${_name} Systray-Applets"
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr ""
+msgstr "${_name} Systray-Applet wird gestartet"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -833,7 +835,7 @@ msgstr "Flatpak ({count})"
 #: src/tray/src/tray.rs:186
 #, rust-format
 msgid "Last check {last_check} ago"
-msgstr ""
+msgstr "Letzte Überprüfung vor {last_check}"
 
 #: src/tray/src/tray.rs:203
 #, rust-format
@@ -854,4 +856,4 @@ msgstr "Beenden"
 
 #: src/tray/src/tray.rs:327
 msgid "Next page"
-msgstr ""
+msgstr "Nächste Seite"
