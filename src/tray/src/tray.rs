@@ -1,5 +1,5 @@
 //! Systray applet implementation
-//! Built with ksni: 
+//! Built with ksni:
 //! https://github.com/iovxw/ksni
 //! https://crates.io/crates/ksni
 
