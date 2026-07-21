@@ -1,6 +1,7 @@
 //! Systray applet implementation
-//! Built with ksni, inspired / based on the systray example at
-//! https://github.com/iovxw/ksni#example
+//! Built with ksni: 
+//! https://github.com/iovxw/ksni
+//! https://crates.io/crates/ksni
 
 use gettextrs::*;
 use ksni::TrayMethods;
