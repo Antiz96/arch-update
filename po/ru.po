@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.20.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-19 16:48+0500\n"
+"PO-Revision-Date: 2026-07-22 15:14+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -534,7 +534,7 @@ msgid "The update has been aborted\\n"
 msgstr "Обновление было прервано\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/tray/src/tray.rs:98
+#: src/tray/src/tray.rs:99
 #, sh-format
 msgid "1 update available"
 msgstr "Доступно 1 обновление"
@@ -798,53 +798,73 @@ msgstr "Обновление было применено\\n"
 msgid "Next page"
 msgstr "Следующая страница"
 
-#: src/tray/src/tray.rs:87
+#: src/tray/src/tray_helpers.rs:229
+#, rust-format
+msgid "{days}d"
+msgstr "{days}д"
+
+#: src/tray/src/tray_helpers.rs:232
+#, rust-format
+msgid "{hours}h"
+msgstr "{hours}ч"
+
+#: src/tray/src/tray_helpers.rs:235
+#, rust-format
+msgid "{minutes}m"
+msgstr "{minutes}м"
+
+#: src/tray/src/tray_helpers.rs:238
+#, rust-format
+msgid "{seconds}s"
+msgstr "{seconds}с"
+
+#: src/tray/src/tray.rs:88
 msgid "System is up to date"
 msgstr "Система обновлена"
 
-#: src/tray/src/tray.rs:100
+#: src/tray/src/tray.rs:101
 #, rust-format
 msgid "{count} updates available"
 msgstr "{count} обновлений доступно"
 
-#: src/tray/src/tray.rs:123
+#: src/tray/src/tray.rs:124
 #, rust-format
 msgid "All ({count})"
 msgstr "Все ({count})"
 
-#: src/tray/src/tray.rs:137
+#: src/tray/src/tray.rs:138
 #, rust-format
 msgid "Packages ({count})"
 msgstr "Пакеты ({count})"
 
-#: src/tray/src/tray.rs:153
+#: src/tray/src/tray.rs:154
 #, rust-format
 msgid "AUR ({count})"
 msgstr "AUR ({count})"
 
-#: src/tray/src/tray.rs:167
+#: src/tray/src/tray.rs:168
 #, rust-format
 msgid "Flatpak ({count})"
 msgstr "Flatpak ({count})"
 
-#: src/tray/src/tray.rs:189
+#: src/tray/src/tray.rs:190
 #, rust-format
 msgid "Last check {last_check} ago"
 msgstr "Последняя проверка {last_check} назад"
 
-#: src/tray/src/tray.rs:206
+#: src/tray/src/tray.rs:207
 #, rust-format
 msgid "Next check in {next_check}"
 msgstr "Следующая проверка через {next_check}"
 
-#: src/tray/src/tray.rs:223
+#: src/tray/src/tray.rs:224
 msgid "Run Arch-Update"
 msgstr "Запустить Arch-Update"
 
-#: src/tray/src/tray.rs:231
+#: src/tray/src/tray.rs:232
 msgid "Check for updates"
 msgstr "Проверить обновления"
 
-#: src/tray/src/tray.rs:242
+#: src/tray/src/tray.rs:243
 msgid "Exit"
 msgstr "Выход"

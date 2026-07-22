@@ -534,7 +534,7 @@ msgid "The update has been aborted\\n"
 msgstr "Oppdateringen er avbrutt\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/tray/src/tray.rs:98
+#: src/tray/src/tray.rs:99
 #, sh-format
 msgid "1 update available"
 msgstr "1 oppdatering tilgjengelig"
@@ -798,53 +798,73 @@ msgstr "Oppdateringen er blitt installert\\n"
 msgid "Next page"
 msgstr ""
 
-#: src/tray/src/tray.rs:87
+#: src/tray/src/tray_helpers.rs:229
+#, rust-format
+msgid "{days}d"
+msgstr ""
+
+#: src/tray/src/tray_helpers.rs:232
+#, rust-format
+msgid "{hours}h"
+msgstr ""
+
+#: src/tray/src/tray_helpers.rs:235
+#, rust-format
+msgid "{minutes}m"
+msgstr ""
+
+#: src/tray/src/tray_helpers.rs:238
+#, rust-format
+msgid "{seconds}s"
+msgstr ""
+
+#: src/tray/src/tray.rs:88
 msgid "System is up to date"
 msgstr "Systemet er oppdatert"
 
-#: src/tray/src/tray.rs:100
+#: src/tray/src/tray.rs:101
 #, rust-format
 msgid "{count} updates available"
 msgstr "{count} oppdateringer er tilgjengelige"
 
-#: src/tray/src/tray.rs:123
+#: src/tray/src/tray.rs:124
 #, rust-format
 msgid "All ({count})"
 msgstr "Alle ({count})"
 
-#: src/tray/src/tray.rs:137
+#: src/tray/src/tray.rs:138
 #, rust-format
 msgid "Packages ({count})"
 msgstr "Pakker ({count})"
 
-#: src/tray/src/tray.rs:153
+#: src/tray/src/tray.rs:154
 #, rust-format
 msgid "AUR ({count})"
 msgstr "AUR ({count})"
 
-#: src/tray/src/tray.rs:167
+#: src/tray/src/tray.rs:168
 #, rust-format
 msgid "Flatpak ({count})"
 msgstr "Flatpak ({count})"
 
-#: src/tray/src/tray.rs:189
+#: src/tray/src/tray.rs:190
 #, rust-format
 msgid "Last check {last_check} ago"
 msgstr ""
 
-#: src/tray/src/tray.rs:206
+#: src/tray/src/tray.rs:207
 #, rust-format
 msgid "Next check in {next_check}"
 msgstr "Neste kontroll om {next_check}"
 
-#: src/tray/src/tray.rs:223
+#: src/tray/src/tray.rs:224
 msgid "Run Arch-Update"
 msgstr "Kjør Arch-Update"
 
-#: src/tray/src/tray.rs:231
+#: src/tray/src/tray.rs:232
 msgid "Check for updates"
 msgstr "Se etter oppdateringer"
 
-#: src/tray/src/tray.rs:242
+#: src/tray/src/tray.rs:243
 msgid "Exit"
 msgstr "Avslutt"

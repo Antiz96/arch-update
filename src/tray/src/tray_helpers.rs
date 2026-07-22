@@ -226,16 +226,16 @@ fn format_time(time: Duration) -> Option<String> {
     let seconds = time.as_secs() % 60;
 
     if days > 0 {
-        parts.push(format!("{days}d"));
+        parts.push(gettext("{days}d").replace("{days}", &days.to_string()));
     }
     if hours > 0 {
-        parts.push(format!("{hours}h"));
+        parts.push(gettext("{hours}h").replace("{hours}", &hours.to_string()));
     }
     if minutes > 0 {
-        parts.push(format!("{minutes}m"));
+        parts.push(gettext("{minutes}m").replace("{minutes}", &minutes.to_string()));
     }
     if seconds > 0 {
-        parts.push(format!("{seconds}s"));
+        parts.push(gettext("{seconds}s").replace("{seconds}", &seconds.to_string()));
     }
 
     if parts.is_empty() {
