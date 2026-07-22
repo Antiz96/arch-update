@@ -493,7 +493,7 @@ msgid "The update has been aborted\\n"
 msgstr "更新已取消\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/tray/src/tray.rs:98
+#: src/tray/src/tray.rs:99
 #, sh-format
 msgid "1 update available"
 msgstr "1 更新可用"
@@ -739,53 +739,53 @@ msgstr "更新已应用\\n"
 msgid "Next page"
 msgstr ""
 
-#: src/tray/src/tray.rs:87
+#: src/tray/src/tray.rs:88
 msgid "System is up to date"
 msgstr "系统已更新到最新版本"
 
-#: src/tray/src/tray.rs:100
+#: src/tray/src/tray.rs:101
 #, rust-format
 msgid "{count} updates available"
 msgstr "{count} 个更新可用"
 
-#: src/tray/src/tray.rs:123
+#: src/tray/src/tray.rs:124
 #, rust-format
 msgid "All ({count})"
 msgstr "全部 ({count})"
 
-#: src/tray/src/tray.rs:137
+#: src/tray/src/tray.rs:138
 #, rust-format
 msgid "Packages ({count})"
 msgstr "官方包 ({count})"
 
-#: src/tray/src/tray.rs:153
+#: src/tray/src/tray.rs:154
 #, rust-format
 msgid "AUR ({count})"
 msgstr "AUR ({count})"
 
-#: src/tray/src/tray.rs:167
+#: src/tray/src/tray.rs:168
 #, rust-format
 msgid "Flatpak ({count})"
 msgstr "Flatpak ({count})"
 
-#: src/tray/src/tray.rs:189
+#: src/tray/src/tray.rs:190
 #, rust-format
 msgid "Last check {last_check} ago"
 msgstr ""
 
-#: src/tray/src/tray.rs:206
+#: src/tray/src/tray.rs:207
 #, rust-format
 msgid "Next check in {next_check}"
 msgstr "下一次检查时间：{next_check}"
 
-#: src/tray/src/tray.rs:223
+#: src/tray/src/tray.rs:224
 msgid "Run Arch-Update"
 msgstr "运行 Arch-Update"
 
-#: src/tray/src/tray.rs:231
+#: src/tray/src/tray.rs:232
 msgid "Check for updates"
 msgstr "检查更新"
 
-#: src/tray/src/tray.rs:242
+#: src/tray/src/tray.rs:243
 msgid "Exit"
 msgstr "退出"
