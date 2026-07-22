@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 3.20.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-20 10:17+0200\n"
+"PO-Revision-Date: 2026-07-22 12:31+0200\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -804,22 +804,22 @@ msgstr "Nästa sida"
 #: src/tray/src/tray_helpers.rs:229
 #, rust-format
 msgid "{days}d"
-msgstr ""
+msgstr "{days}d"
 
 #: src/tray/src/tray_helpers.rs:232
 #, rust-format
 msgid "{hours}h"
-msgstr ""
+msgstr "{hours}t"
 
 #: src/tray/src/tray_helpers.rs:235
 #, rust-format
 msgid "{minutes}m"
-msgstr ""
+msgstr "{minutes}m"
 
 #: src/tray/src/tray_helpers.rs:238
 #, rust-format
 msgid "{seconds}s"
-msgstr ""
+msgstr "{seconds}s"
 
 #: src/tray/src/tray.rs:88
 msgid "System is up to date"
