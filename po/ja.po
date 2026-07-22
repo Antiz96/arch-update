@@ -184,8 +184,8 @@ msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
 "before generating a new one (or use --force to overwrite it)"
 msgstr ""
-"設定ファイル \"${config_file}\" はすでに存在します\\n新しく生成する前に削除して"
-"ください (または --force で上書きしてください)"
+"設定ファイル \"${config_file}\" はすでに存在します\\n新しく生成する前に削除し"
+"てください (または --force で上書きしてください)"
 
 #: src/lib/gen-config.sh:30
 #, sh-format
@@ -198,13 +198,15 @@ msgid ""
 "An interactive update notifier & applier for Arch Linux that assists you "
 "with important pre / post update tasks."
 msgstr ""
-"Arch Linux 向けのインタラクティブなアップデート通知・適用ツールです。アップデート前後"
-"の重要な作業を支援します。"
+"Arch Linux 向けのインタラクティブなアップデート通知・適用ツールです。アップ"
+"デート前後の重要な作業を支援します。"
 
 #: src/lib/help.sh:10
 #, sh-format
 msgid "Run ${name} to perform the main 'update' function:"
-msgstr "${name} を実行するとメインの「アップデート」機能を使用できます。アップデート機能では、以下の処理を行います。"
+msgstr ""
+"${name} を実行するとメインの「アップデート」機能を使用できます。アップデート"
+"機能では、以下の処理を行います。"
 
 #: src/lib/help.sh:11
 #, sh-format
@@ -212,15 +214,17 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
-"まず、アップデート可能なパッケージの一覧を表示し、インストールを続行するかどうか確"
-"認します。"
+"まず、アップデート可能なパッケージの一覧を表示し、インストールを続行するかど"
+"うか確認します。"
 
 #: src/lib/help.sh:12
 #, sh-format
 msgid ""
 "Before performing the update, it offers to display the latest Arch Linux "
 "news."
-msgstr "またアップデートの実行前に、最新の Arch Linux ニュースを表示するか確認します。"
+msgstr ""
+"またアップデートの実行前に、最新の Arch Linux ニュースを表示するか確認しま"
+"す。"
 
 #: src/lib/help.sh:13
 #, sh-format
@@ -285,8 +289,8 @@ msgid ""
 "configuration file, you can optionally pass the '--force' argument to "
 "overwrite any existing '${name}.conf' configuration file"
 msgstr ""
-"  --gen-config      デフォルト/サンプルの \"${name}.conf\" 設定ファイルを生成す"
-"る ('--force' を指定すると既存の \"${name}.conf\" を上書きできます)"
+"  --gen-config      デフォルト/サンプルの \"${name}.conf\" 設定ファイルを生成"
+"する ('--force' を指定すると既存の \"${name}.conf\" を上書きできます)"
 
 #: src/lib/help.sh:23
 #, sh-format
@@ -294,8 +298,8 @@ msgid ""
 "  --show-config     Display the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
-"  --show-config     現在使用中の \"${name}.conf\" 設定ファイルが存在する場合、"
-"表示する"
+"  --show-config     現在使用中の \"${name}.conf\" 設定ファイルが存在する場"
+"合、表示する"
 
 #: src/lib/help.sh:24
 #, sh-format
@@ -303,8 +307,8 @@ msgid ""
 "  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
-"  --edit-config     現在使用中の \"${name}.conf\" 設定ファイルが存在する場合、"
-"編集する"
+"  --edit-config     現在使用中の \"${name}.conf\" 設定ファイルが存在する場"
+"合、編集する"
 
 #: src/lib/help.sh:25
 #, sh-format
@@ -312,8 +316,8 @@ msgid ""
 "  --tray            Launch the ${_name} systray applet, you can optionally "
 "add the '--enable' argument to start it automatically at boot"
 msgstr ""
-"  --tray            ${_name} システムトレイアプレットを起動する ('--enable' を指定するとブート時に自動起動するよう"
-"設定します)"
+"  --tray            ${_name} システムトレイアプレットを起動する ('--enable' "
+"を指定するとブート時に自動起動するよう設定します)"
 
 #: src/lib/help.sh:26
 #, sh-format
@@ -345,8 +349,8 @@ msgid ""
 "${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
 "information"
 msgstr ""
-"${name}: 無効なオプションです (${option})\\n詳しくは '${name} --help' を実行し"
-"てください"
+"${name}: 無効なオプションです (${option})\\n詳しくは '${name} --help' を実行"
+"してください"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
@@ -475,19 +479,23 @@ msgstr "アップデートを確認中...\\n"
 #: src/lib/list_packages.sh:16
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr "パッケージのアップデートの取得に失敗しました (リクエストがタイムアウトしました)\\n"
+msgstr ""
+"パッケージのアップデートの取得に失敗しました (リクエストがタイムアウトしまし"
+"た)\\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr "AUR パッケージのアップデートの取得に失敗しました (リクエストがタイムアウトしました)\\n"
+msgstr ""
+"AUR パッケージのアップデートの取得に失敗しました (リクエストがタイムアウトし"
+"ました)\\n"
 
 #: src/lib/list_packages.sh:45
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
 msgstr ""
-"Flatpak パッケージのアップデートの取得に失敗しました (リクエストがタイムアウトしました)"
-"\\n"
+"Flatpak パッケージのアップデートの取得に失敗しました (リクエストがタイムアウ"
+"トしました)\\n"
 
 #: src/lib/list_packages.sh:115
 #, sh-format
@@ -655,7 +663,9 @@ msgstr "Pacnew ファイルの処理中にエラーが発生しました\\n"
 msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
-msgstr "Pacnew ファイルの処理は実行されませんでした\\n早めに処理することをおすすめします\\n"
+msgstr ""
+"Pacnew ファイルの処理は実行されませんでした\\n早めに処理することをおすすめし"
+"ます\\n"
 
 #: src/lib/pacnew_files.sh:41
 #, sh-format
@@ -736,8 +746,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
-"\"${tray_desktop_file_autostart}\" ファイルを作成しました。ブート後に ${_name} のシステムトレイアプレットを自動"
-"で開始します\\n"
+"\"${tray_desktop_file_autostart}\" ファイルを作成しました。ブート後に "
+"${_name} のシステムトレイアプレットを自動で開始します\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
