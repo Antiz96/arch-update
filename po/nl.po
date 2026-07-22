@@ -800,6 +800,26 @@ msgstr "Alle pakketten zijn bijgewerkt\\n"
 msgid "Next page"
 msgstr "Volgende pagina"
 
+#: src/tray/src/tray_helpers.rs:229
+#, rust-format
+msgid "{days}d"
+msgstr ""
+
+#: src/tray/src/tray_helpers.rs:232
+#, rust-format
+msgid "{hours}h"
+msgstr ""
+
+#: src/tray/src/tray_helpers.rs:235
+#, rust-format
+msgid "{minutes}m"
+msgstr ""
+
+#: src/tray/src/tray_helpers.rs:238
+#, rust-format
+msgid "{seconds}s"
+msgstr ""
+
 #: src/tray/src/tray.rs:88
 msgid "System is up to date"
 msgstr "Je beschikt over de nieuwste versies"
