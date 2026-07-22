@@ -810,22 +810,22 @@ msgstr "Nächste Seite"
 #: src/tray/src/tray_helpers.rs:229
 #, rust-format
 msgid "{days}d"
-msgstr ""
+msgstr "{days}d"
 
 #: src/tray/src/tray_helpers.rs:232
 #, rust-format
 msgid "{hours}h"
-msgstr ""
+msgstr "{hours}h"
 
 #: src/tray/src/tray_helpers.rs:235
 #, rust-format
 msgid "{minutes}m"
-msgstr ""
+msgstr "{minutes}min"
 
 #: src/tray/src/tray_helpers.rs:238
 #, rust-format
 msgid "{seconds}s"
-msgstr ""
+msgstr "{seconds}s"
 
 #: src/tray/src/tray.rs:88
 msgid "System is up to date"
