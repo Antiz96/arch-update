@@ -136,7 +136,7 @@ By default, a check is performed **at boot and then once every 6 hours**. The ch
 ### Screenshots
 
 Once started, the systray applet appears in the systray area of your panel.  
-It is the icon at the right of the 'coffee cup' one in the screenshot below (note that there are [different color variants available](https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md) for it):
+It is the first icon on the left in the screenshot below (note that there are [different color variants available](https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md) for it):
 
 ![icon](https://github.com/user-attachments/assets/ec5f4ab7-7eb0-4c41-8b2b-9983e789d516)
 
