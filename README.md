@@ -10,7 +10,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Documentation](#documentation)
-- [Tips & tricks and troubleshooting](#tips-&-tricks-and-troubleshooting)
+- [Tips & tricks and troubleshooting](#tips--tricks-and-troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
 
