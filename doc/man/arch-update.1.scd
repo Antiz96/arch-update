@@ -120,9 +120,7 @@ By default, a check is performed *at boot and then once every 6 hours*. The chec
 
 # TIPS & TRICKS AND TROUBLESHOOTING
 
-## Automated updates checks
-
-### Modify the check cycle
+## Modify the check cycle
 
 If you enabled the automated updates checks, a check for available updates is automatically launched at boot and then once each 6 hours.
 
@@ -144,9 +142,7 @@ See <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#P
 
 In case you want `Arch-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
 
-## Systray applet
-
-### The systray applet does not start at boot or does not work as expected
+## The systray applet does not start at boot or does not work as expected
 
 *Note:* GNOME shell does not support systray icons natively, GNOME users need to install the "AppIndicator and KStatusNotifierItem Support" extension for the systray applet to work.
 
@@ -172,7 +168,7 @@ If the systray applet still does not start at boot, you can eventually try to gr
 
 Otherwise, feel free to open a bug report.
 
-### Run Arch-Update in a specific terminal emulator
+## Run Arch-Update in a specific terminal emulator
 
 "gio" (used to launch the `arch-update` terminal application via the `arch-update.desktop` file when the systray applet is clicked) currently has a default limited list of known terminal emulators.  
 As such, if you don't have any of these "known" terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing (as `gio` couldn't find a terminal emulator from the said list). Incidentally, you might have multiple terminal emulators installed on your systemi and you may want to force Arch-Update to use a specific one. In both cases, you can specify which terminal emulator to use.
