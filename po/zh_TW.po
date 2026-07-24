@@ -228,11 +228,12 @@ msgid "Options:"
 msgstr "選項："
 
 #: src/lib/help.sh:16
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
-"there are new available updates compared to the last check)"
+"there are new available updates compared to the last check). Optionally add "
+"the '--enable' argument to enable automated update checks."
 msgstr ""
 "  -c, --check       檢查是否有可用更新，變更系統匣圖示並傳送一個桌面通知，其"
 "中包含可用更新的數量（若與上次檢查相比有新的可用更新）"
