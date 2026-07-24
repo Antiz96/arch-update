@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.0.0](https://github.com/Antiz96/arch-update/releases/tag/v4.0.0) - 2026-07-24
+
+### Features
+
+- Add `--check --enable` to enable automated updates checks and start the systray applet when running `--tray --enable` ([#651](https://github.com/Antiz96/arch-update/pull/651)) - ([6273eb3](https://github.com/Antiz96/arch-update/commit/6273eb30932fbc4af110a53507b3b071bc3e02b1)) by @Antiz96
+- Feat!(systray): Rewrite in Rust ([#644](https://github.com/Antiz96/arch-update/pull/644)) - ([af3f16b](https://github.com/Antiz96/arch-update/commit/af3f16b29cb6c01288dc54d6df878a6c763ee041)) by @Antiz96
+
+### Documentation
+
+- *(README)* Add missing libc dependencies ([#650](https://github.com/Antiz96/arch-update/pull/650)) - ([8bda9c3](https://github.com/Antiz96/arch-update/commit/8bda9c3c28ee5d08ed8e75971f55a68d8bc2f0b6)) by @Antiz96
+- General minor refactoring and screenshot update ([#682](https://github.com/Antiz96/arch-update/pull/682)) - ([d505699](https://github.com/Antiz96/arch-update/commit/d505699a559ddfbbb2440a226329b474a83a54cc)) by @Antiz96
+
+### Styling
+
+- Update ksni comment ([#668](https://github.com/Antiz96/arch-update/pull/668)) - ([0e3558c](https://github.com/Antiz96/arch-update/commit/0e3558cf95b8906673e96cbe90b826eb4e1b0802)) by @Antiz96
+
+### Miscellaneous
+
+- *(CI)* Add cargo cleanup stage ([#647](https://github.com/Antiz96/arch-update/pull/647)) - ([ce5a3df](https://github.com/Antiz96/arch-update/commit/ce5a3dfcabd1924a829b25f404c27cf7e2588134)) by @Antiz96
+- *(deps)* Update Rust crate tokio to 1.53.1 ([#667](https://github.com/Antiz96/arch-update/pull/667)) - ([545a133](https://github.com/Antiz96/arch-update/commit/545a1332f7ed53eece94e2c341a4c5ca03c3beab)) by @renovate[bot]
+- *(deps)* Update Rust crate serde_json to 1.0.151 ([#665](https://github.com/Antiz96/arch-update/pull/665)) - ([8155544](https://github.com/Antiz96/arch-update/commit/8155544ae4444d7ae47e1f9cd33b7657ed9532ad)) by @renovate[bot]
+- *(deps)* Update Rust crate serde to 1.0.229 ([#655](https://github.com/Antiz96/arch-update/pull/655)) - ([5edbe11](https://github.com/Antiz96/arch-update/commit/5edbe11a5995f7eb16e4808eacb7d81bdc1d7cfb)) by @renovate[bot]
+- *(deps)* Update Rust crate tokio to 1.53.0 ([#646](https://github.com/Antiz96/arch-update/pull/646)) - ([7fec16f](https://github.com/Antiz96/arch-update/commit/7fec16fec134dfbba6deb3ba5f9ec6ef498ae789)) by @renovate[bot]
+- *(i18n)* Update Portuguese translation ([#681](https://github.com/Antiz96/arch-update/pull/681)) - ([60a6265](https://github.com/Antiz96/arch-update/commit/60a6265c5b578b1d7761a366b1e3c2e9af664fd1)) by @NyaPuma
+- *(i18n)* Update Brazilian Portuguese and Spanish translations ([#680](https://github.com/Antiz96/arch-update/pull/680)) - ([fe4c0a0](https://github.com/Antiz96/arch-update/commit/fe4c0a0bb8deb56b7f8ee2bf578bd562f5049630)) by @diegons490
+- *(i18n)* Update Dutch translation ([#679](https://github.com/Antiz96/arch-update/pull/679)) - ([1f90f8b](https://github.com/Antiz96/arch-update/commit/1f90f8be4406242ba3c770c8ced606fb89a8d725)) by @Vistaus
+- *(i18n)* Update Japanese translation ([#677](https://github.com/Antiz96/arch-update/pull/677)) - ([097d594](https://github.com/Antiz96/arch-update/commit/097d5942461ac1db3d7de04643b84fe909e0a5d6)) by @MintJapan
+- *(i18n)* Update Swedish translation ([#676](https://github.com/Antiz96/arch-update/pull/676)) - ([9d4822d](https://github.com/Antiz96/arch-update/commit/9d4822d480d03eeb746d7b4cf4449daabbbd5b04)) by @bittin
+- *(i18n)* Update French translation ([#675](https://github.com/Antiz96/arch-update/pull/675)) - ([de3e13a](https://github.com/Antiz96/arch-update/commit/de3e13add2a06e40f514ab0a0dc4afd8aaba2b82)) by @Antiz96
+- *(i18n)* Update Russian translation ([#674](https://github.com/Antiz96/arch-update/pull/674)) - ([0194b60](https://github.com/Antiz96/arch-update/commit/0194b604e5b644eb85f40036f1804b7f25181e7b)) by @DrWeb56
+- *(i18n)* Update German translation ([#673](https://github.com/Antiz96/arch-update/pull/673)) - ([6e36dc8](https://github.com/Antiz96/arch-update/commit/6e36dc8ffce766cf16bf75c6ee7148b53330e809)) by @DeN-AlB
+- *(i18n)* Localize time units in systray applet ([#672](https://github.com/Antiz96/arch-update/pull/672)) - ([ec6f1dc](https://github.com/Antiz96/arch-update/commit/ec6f1dc9dad999c05ee88a5c3d35fdbfd0013e5a)) by @Antiz96
+- *(i18n)* Update translation files ([#671](https://github.com/Antiz96/arch-update/pull/671)) - ([a35035c](https://github.com/Antiz96/arch-update/commit/a35035cbda87bcbc55aa1585b1358699b2abc842)) by @Antiz96
+- *(i18n)* Update Swedish translation ([#664](https://github.com/Antiz96/arch-update/pull/664)) - ([81bcdaf](https://github.com/Antiz96/arch-update/commit/81bcdafb18ab76342e56673cfb759db1b554ccd1)) by @bittin
+- *(i18n)* Update Brazilian Portuguese and Spanish translations ([#662](https://github.com/Antiz96/arch-update/pull/662)) - ([c7ea450](https://github.com/Antiz96/arch-update/commit/c7ea450e1af4ef6cb3ac14748cbdac9bfa3039b4)) by @diegons490
+- *(i18n)* Update Bulgarian translation ([#660](https://github.com/Antiz96/arch-update/pull/660)) - ([466518b](https://github.com/Antiz96/arch-update/commit/466518b8e05f5197e904f58f6763e80c9c6b8dc6)) by @compulsions
+- *(i18n)* Update Russian translation ([#659](https://github.com/Antiz96/arch-update/pull/659)) - ([714fc56](https://github.com/Antiz96/arch-update/commit/714fc5687b39fba5ad011e7c818c4d7430e096e2)) by @DrWeb56
+- *(i18n)* Update German translation ([#658](https://github.com/Antiz96/arch-update/pull/658)) - ([75a7499](https://github.com/Antiz96/arch-update/commit/75a749983ffb3b3942ef3e24aa6cbd21b0fe3327)) by @DeN-AlB
+- *(i18n)* Update Portuguese translation ([#657](https://github.com/Antiz96/arch-update/pull/657)) - ([edeffc0](https://github.com/Antiz96/arch-update/commit/edeffc0a08ef5bd53b004c6a6781c6b13b0eea52)) by @NyaPuma
+- *(i18n)* Update Dutch translation ([#656](https://github.com/Antiz96/arch-update/pull/656)) - ([87fa4ea](https://github.com/Antiz96/arch-update/commit/87fa4eae21e0dd909b5b6bb0cd70e3d72d89540c)) by @Vistaus
+- *(i18n)* Update French translation ([#654](https://github.com/Antiz96/arch-update/pull/654)) - ([7a3134d](https://github.com/Antiz96/arch-update/commit/7a3134d1a50b470f4c808a74eef76119648833b5)) by @Antiz96
+- *(i18n)* Update translation files ([#653](https://github.com/Antiz96/arch-update/pull/653)) - ([dd2ef64](https://github.com/Antiz96/arch-update/commit/dd2ef64f166c7f93fa6debec8e35492adb1248a5)) by @Antiz96
+- Tray helpers global refactor ([#661](https://github.com/Antiz96/arch-update/pull/661)) - ([f13eaa1](https://github.com/Antiz96/arch-update/commit/f13eaa1f2974a9f058384df9ec9f1b4b85e276c7)) by @Antiz96
+- Chore!(tray): Remove systemd service method to start the systray applet ([#652](https://github.com/Antiz96/arch-update/pull/652)) - ([809f365](https://github.com/Antiz96/arch-update/commit/809f365971ae6280db55cacd9b98e531659e8d6c)) by @Antiz96
+- Increase the default automatic check interval to 6 hours ([#648](https://github.com/Antiz96/arch-update/pull/648)) - ([36d41c4](https://github.com/Antiz96/arch-update/commit/36d41c46b07152572d1cb181e707212df2cb37e3)) by @Antiz96
+
 ## [v3.20.5](https://github.com/Antiz96/arch-update/releases/tag/v3.20.5) - 2026-07-08
 
 ### Fixes
