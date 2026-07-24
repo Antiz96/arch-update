@@ -247,7 +247,7 @@ msgid "Options:"
 msgstr "Options :"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
@@ -257,7 +257,8 @@ msgstr ""
 "  -c, --check       Vérifier les mises à jour disponibles, change l'icône du "
 "systray et envoie une notification de bureau contenant le nombre de mises à "
 "jour disponibles (s'il y a des nouvelles mises à jour depuis le dernier "
-"check)"
+"check). Vous pouvez optionnellement ajouter l'argument '--enable' pour "
+"activer la vérification automatisée des mises à jours."
 
 #: src/lib/help.sh:17
 #, sh-format
