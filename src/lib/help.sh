@@ -13,7 +13,7 @@ $(eval_gettext "Before performing the update, it offers to display the latest Ar
 $(eval_gettext "Post update, it checks for orphan & unused packages, old cached packages, pacnew & pacsave files, pending kernel update as well as services requiring a post upgrade restart and, if there are, offers to process them.")
 
 $(eval_gettext "Options:")
-$(eval_gettext "  -c, --check       Check for available updates, change the systray icon and send a desktop notification containing the number of available updates (if there are new available updates compared to the last check)")
+$(eval_gettext "  -c, --check       Check for available updates, change the systray icon and send a desktop notification containing the number of available updates (if there are new available updates compared to the last check). Optionally add the '--enable' argument to enable automated update checks.")
 $(eval_gettext "  -l, --list        Display the list of pending updates")
 $(eval_gettext "  -d, --devel       Include AUR development packages updates")
 $(eval_gettext "  -n, --news [Num]  Display latest Arch news, you can optionally specify the number of Arch news to display with '--news [Num]' (e.g. '--news 10')")
