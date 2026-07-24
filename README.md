@@ -187,9 +187,9 @@ See the [arch-update.conf(5) man page](https://raw.githubusercontent.com/Antiz96
 
 ## Tips & tricks and troubleshooting
 
-#### Automated updates checks
+### Automated updates checks
 
-### Modify the check cycle
+#### Modify the check cycle
 
 If you enabled the [automated updates checks](#automated-updates-checks), a check for available updates is automatically launched at boot and then once each 6 hours.
 
