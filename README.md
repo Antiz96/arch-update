@@ -116,7 +116,7 @@ arch-update --tray
 ```
 
 The systray icon dynamically changes to indicate the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` in a terminal window via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.  
-The systray applet menu shows further informations (like the list of pending updates, time of the last and next checks, ...) and allows to trigger specific actions (like running Arch-Update, check for updates, ...). See [screenshots](#screenshots) for more details.
+The systray applet menu shows further information (like the list of pending updates, time of the last and next checks, ...) and allows to trigger specific actions (like running Arch-Update, check for updates, ...). See [screenshots](#screenshots) for more details.
 
 **If the systray applet doesn't start at boot regardless or if it doesn't work as expected** (e.g the icon is missing or the click actions do not act as they should), please read [this chapter](#the-systray-applet-does-not-start-at-boot-or-does-not-work-as-expected).  
 **If clicking the systray applet does nothing**, please read [this chapter](#run-arch-update-in-a-specific-terminal-emulator).
@@ -191,7 +191,7 @@ See the [arch-update.conf(5) man page](https://raw.githubusercontent.com/Antiz96
 
 ### Modify the check cycle
 
-If you enabled the [automated upddates checks](#automated-updates-checks), a check for available updates is automatically launched at boot and then once each 6 hours.
+If you enabled the [automated updates checks](#automated-updates-checks), a check for available updates is automatically launched at boot and then once each 6 hours.
 
 If you want to customize the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.  
 For instance, if you want `Arch-Update` to check for new updates every 4 hours instead:
