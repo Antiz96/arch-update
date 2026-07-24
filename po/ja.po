@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 4.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-22 19:47+0900\n"
+"PO-Revision-Date: 2026-07-25 07:36+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
@@ -243,16 +243,15 @@ msgid "Options:"
 msgstr "オプション:"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check). Optionally add "
 "the '--enable' argument to enable automated update checks."
 msgstr ""
-"  -c, --check       利用可能なアップデートを確認し、システムトレイアイコンを"
-"更新してデスクトップ通知を送信する (前回の確認時より新しいアップデートがある"
-"場合)"
+"  -c, --check       利用可能なアップデートを確認し、前回の確認時より新しいアップデートがある場合はシステムトレイアイコンを更新してデスク"
+"トップ通知を送信する ('--enable' を指定するとアップデートの自動確認を設定できます)"
 
 #: src/lib/help.sh:17
 #, sh-format
