@@ -17,7 +17,7 @@
 ## Description
 
 An interactive update notifier & applier for Arch Linux that assists you with important pre / post update tasks.  
-Includes a clickeable dynamic systray applet for an easy integration with any desktop / graphical environment.
+Includes a systray applet for an easy integration with any desktop / graphical environment.
 
 Arch-Update is designed to follow usual system maintenance steps, as [described in the Arch Wiki](https://wiki.archlinux.org/title/System_maintenance).
 
