@@ -82,7 +82,7 @@ Certain options can be enabled, disabled or modified via the `arch-update.conf` 
 
 # USAGE
 
-For desktop machines, the usage consist of starting the systray applet and enabling the automated updates checks.  
+For desktop machines, the usage consist of starting the systray applet and enabling the automated update checks.
 For headless machines, Arch-Update includes an extensive CLI.
 
 ## The systray applet
@@ -108,7 +108,7 @@ The systray applet menu shows further information (like the list of pending upda
 
 *Note:* GNOME shell does not support systray icons natively, GNOME users need to install the "AppIndicator and KStatusNotifierItem Support" extension for the systray applet to work.
 
-## Automated updates check
+## Automated update checks
 
 To enable automated and periodic checks for available updates, run the following command:
 
@@ -122,7 +122,7 @@ By default, a check is performed *at boot and then once every 6 hours*. The chec
 
 ## Modify the check cycle
 
-If you enabled the automated updates checks, a check for available updates is automatically launched at boot and then once each 6 hours.
+If you enabled the automated update checks, a check for available updates is automatically launched at boot and then once each 6 hours.
 
 If you want to customize the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.
 
