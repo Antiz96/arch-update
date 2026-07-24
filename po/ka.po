@@ -245,11 +245,12 @@ msgid "Options:"
 msgstr "მორგება:"
 
 #: src/lib/help.sh:16
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
-"there are new available updates compared to the last check)"
+"there are new available updates compared to the last check). Optionally add "
+"the '--enable' argument to enable automated update checks."
 msgstr ""
 "  -c, --check       ხელმისაწვდომი განახლებების შემოწმება, სისტემურ საათთან "
 "ხატულას შეცვლა და სამუშაო მაგიდისთვის გაფრთხილების გაგზავნა რომელიც "
