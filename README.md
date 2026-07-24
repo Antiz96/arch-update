@@ -140,7 +140,7 @@ It is the first icon on the left in the screenshot below (note that there are [d
 
 ![icon](https://github.com/user-attachments/assets/ec5f4ab7-7eb0-4c41-8b2b-9983e789d516)
 
-With [the automated updates checks](#the-automated-updates-checks) enabled, checks for updates are automatically and periodically performed, but you can manually trigger one from the systray applet icon by right-clicking it and then clicking on the `Check for updates` menu entry. You can also see timestamps report for the last and next update checks:
+With [the automated updates checks](#automated-updates-checks) enabled, checks for updates are automatically and periodically performed, but you can manually trigger one from the systray applet icon by right-clicking it and then clicking on the `Check for updates` menu entry. You can also see timestamps report for the last and next update checks:
 
 ![check_for_updates](https://github.com/user-attachments/assets/4b73946d-f9f5-4be6-87b8-42112fca642d)
 
