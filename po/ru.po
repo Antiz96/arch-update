@@ -6,7 +6,7 @@
 # DrWeb56 <borodaxxx@gmail.com>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.20.5\n"
+"Project-Id-Version: Arch-Update 4.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-07-22 15:14+0500\n"
@@ -244,11 +244,12 @@ msgid "Options:"
 msgstr "Опции:"
 
 #: src/lib/help.sh:16
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
-"there are new available updates compared to the last check)"
+"there are new available updates compared to the last check). Optionally add "
+"the '--enable' argument to enable automated update checks."
 msgstr ""
 "  -c, --check       Проверить наличие доступных обновлений, изменить иконку "
 "системного трея и отправить уведомление на рабочий стол с количеством "

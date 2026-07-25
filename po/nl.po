@@ -6,10 +6,10 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.20.5\n"
+"Project-Id-Version: Arch-Update 4.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-19 10:36+0200\n"
+"PO-Revision-Date: 2026-07-22 20:27+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -245,11 +245,12 @@ msgid "Options:"
 msgstr "Opties:"
 
 #: src/lib/help.sh:16
-#, sh-format
+#, fuzzy, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
-"there are new available updates compared to the last check)"
+"there are new available updates compared to the last check). Optionally add "
+"the '--enable' argument to enable automated update checks."
 msgstr ""
 "  -c, --check       Controleer op updates, pas het systeemvakpictogram aan "
 "en toon een bureaubladmelding met het aantal bij te werken pakketten (indien "
@@ -803,22 +804,22 @@ msgstr "Volgende pagina"
 #: src/tray/src/tray_helpers.rs:229
 #, rust-format
 msgid "{days}d"
-msgstr ""
+msgstr "{days}d"
 
 #: src/tray/src/tray_helpers.rs:232
 #, rust-format
 msgid "{hours}h"
-msgstr ""
+msgstr "{hours}u"
 
 #: src/tray/src/tray_helpers.rs:235
 #, rust-format
 msgid "{minutes}m"
-msgstr ""
+msgstr "{minutes}m"
 
 #: src/tray/src/tray_helpers.rs:238
 #, rust-format
 msgid "{seconds}s"
-msgstr ""
+msgstr "{seconds}s"
 
 #: src/tray/src/tray.rs:88
 msgid "System is up to date"
