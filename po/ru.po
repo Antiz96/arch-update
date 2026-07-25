@@ -98,8 +98,8 @@ msgid ""
 "No configuration file found\\nYou can generate one with \"${name} --gen-"
 "config\""
 msgstr ""
-"Конфигурационный файл не найден\\nВы можете создать его с помощью "
-"«${name} --gen-config»"
+"Конфигурационный файл не найден\\nВы можете создать его с помощью «${name} --"
+"gen-config»"
 
 #: src/lib/edit-config.sh:13
 #, sh-format
@@ -107,8 +107,8 @@ msgid ""
 "Unable to determine the editor to use\\nThe \"EDITOR\" environment variable "
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
-"Не удалось определить редактор\\nПеременная окружения «EDITOR» не задана, "
-"и «nano» (запасной вариант) не установлен"
+"Не удалось определить редактор\\nПеременная окружения «EDITOR» не задана, и "
+"«nano» (запасной вариант) не установлен"
 
 #: src/lib/flatpak_unused_packages.sh:10
 #, sh-format
@@ -151,8 +151,7 @@ msgstr "Удаление неиспользуемых пакетов Flatpak..."
 msgid ""
 "An error has occurred during the removal process\\nThe removal has been "
 "aborted\\n"
-msgstr ""
-"Во время удаления произошла ошибка\\nУдаление прервано\\n"
+msgstr "Во время удаления произошла ошибка\\nУдаление прервано\\n"
 
 #: src/lib/flatpak_unused_packages.sh:30 src/lib/orphan_packages.sh:31
 #, sh-format
@@ -214,8 +213,8 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
-"Отобразить список доступных для обновления пакетов и запросить "
-"подтверждение пользователя для продолжения установки."
+"Отобразить список доступных для обновления пакетов и запросить подтверждение "
+"пользователя для продолжения установки."
 
 #: src/lib/help.sh:12
 #, sh-format
@@ -249,10 +248,10 @@ msgid ""
 "there are new available updates compared to the last check). Optionally add "
 "the '--enable' argument to enable automated update checks."
 msgstr ""
-"  -c, --check       Проверить наличие обновлений, изменить иконку в системном "
-"трее и отправить уведомление с количеством доступных обновлений (если "
-"появились новые по сравнению с предыдущей проверкой). Добавьте --enable, "
-"чтобы включить автоматическую проверку."
+"  -c, --check       Проверить наличие обновлений, изменить иконку в "
+"системном трее и отправить уведомление с количеством доступных обновлений "
+"(если появились новые по сравнению с предыдущей проверкой). Добавьте --"
+"enable, чтобы включить автоматическую проверку."
 
 #: src/lib/help.sh:17
 #, sh-format
@@ -299,7 +298,8 @@ msgstr ""
 msgid ""
 "  --show-config     Display the '${name}.conf' configuration file currently "
 "used (if it exists)"
-msgstr "  --show-config     Показать текущий конфигурационный файл «${name}.conf»"
+msgstr ""
+"  --show-config     Показать текущий конфигурационный файл «${name}.conf»"
 
 #: src/lib/help.sh:24
 #, sh-format
@@ -402,8 +402,8 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
-"Не удалось получить последние новости Arch (ошибка HTTP или тайм-аут)\\n"
-"Проверьте новости на https://archlinux.org перед обновлением системы"
+"Не удалось получить последние новости Arch (ошибка HTTP или тайм-аут)"
+"\\nПроверьте новости на https://archlinux.org перед обновлением системы"
 
 #: src/lib/list_news.sh:23
 #, sh-format
@@ -426,8 +426,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
-"Выберите новости для чтения (например, 1 3 5), 0 — чтобы прочитать все, "
-"или нажмите Enter для выхода:"
+"Выберите новости для чтения (например, 1 3 5), 0 — чтобы прочитать все, или "
+"нажмите Enter для выхода:"
 
 #: src/lib/list_news.sh:56
 #, sh-format
@@ -445,8 +445,8 @@ msgid ""
 "timeout)\\nPlease, read the selected Arch News at ${news_url} before "
 "updating your system"
 msgstr ""
-"Не удалось получить выбранные новости (ошибка HTTP или тайм-аут)\\n"
-"Прочитайте их перед обновлением по адресу ${news_url}"
+"Не удалось получить выбранные новости (ошибка HTTP или тайм-аут)"
+"\\nПрочитайте их перед обновлением по адресу ${news_url}"
 
 #: src/lib/list_news.sh:85
 #, sh-format
@@ -580,7 +580,8 @@ msgstr "Осиротевших пакетов не найдено\\n"
 #: src/lib/packages_cache.sh:21
 #, sh-format
 msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr "Кэшированные пакеты:\\nЕсть старый или неустановленный кэшированный пакет\\n"
+msgstr ""
+"Кэшированные пакеты:\\nЕсть старый или неустановленный кэшированный пакет\\n"
 
 #: src/lib/packages_cache.sh:22
 #, sh-format
@@ -591,7 +592,8 @@ msgstr "Удалить его из кэша сейчас? [Y/n]"
 #, sh-format
 msgid ""
 "Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
-msgstr "Кэшированные пакеты:\\nЕсть старые и/или неустановленные пакеты в кэше\\n"
+msgstr ""
+"Кэшированные пакеты:\\nЕсть старые и/или неустановленные пакеты в кэше\\n"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
@@ -649,7 +651,8 @@ msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
 msgstr ""
-"Обработка файлов pacnew не выполнена\\nРекомендуется обработать их в ближайшее время\\n"
+"Обработка файлов pacnew не выполнена\\nРекомендуется обработать их в "
+"ближайшее время\\n"
 
 #: src/lib/pacnew_files.sh:41
 #, sh-format
@@ -672,8 +675,8 @@ msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
-"Выберите службы для перезапуска (например, 1 3 5), 0 — все, или нажмите Enter, "
-"чтобы продолжить без перезапуска:"
+"Выберите службы для перезапуска (например, 1 3 5), 0 — все, или нажмите "
+"Enter, чтобы продолжить без перезапуска:"
 
 #: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
 #, sh-format
@@ -705,8 +708,8 @@ msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
 "services that have been updated to fully apply the upgrade\\n"
 msgstr ""
-"Перезапуск служб не выполнен\\nРекомендуется перезапустить обновлённые службы, "
-"чтобы изменения вступили в силу\\n"
+"Перезапуск служб не выполнен\\nРекомендуется перезапустить обновлённые "
+"службы, чтобы изменения вступили в силу\\n"
 
 #: src/lib/restart_services.sh:69
 #, sh-format
