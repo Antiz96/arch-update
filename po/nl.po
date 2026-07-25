@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 4.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-22 20:27+0200\n"
+"PO-Revision-Date: 2026-07-25 10:09+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -245,7 +245,7 @@ msgid "Options:"
 msgstr "Opties:"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
@@ -254,7 +254,8 @@ msgid ""
 msgstr ""
 "  -c, --check       Controleer op updates, pas het systeemvakpictogram aan "
 "en toon een bureaubladmelding met het aantal bij te werken pakketten (indien "
-"beschikbaar)"
+"beschikbaar). Voeg eventueel de optie ‘--enable’ toe om automatische "
+"updatecontrole in te schakelen."
 
 #: src/lib/help.sh:17
 #, sh-format
