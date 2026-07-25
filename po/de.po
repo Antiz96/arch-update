@@ -256,7 +256,8 @@ msgid ""
 msgstr ""
 "  -c, --check       Prüfung auf vorhandene Updates, Ändern des Systray-Icons "
 "und Senden einer Desktop-Benachrichtigung mit der Anzahl der vorhandenen "
-"Updates (falls verglichen zur letzten Prüfung neue Updates verfügbar sind)"
+"Updates (falls verglichen zur letzten Prüfung neue Updates verfügbar sind). Optional "
+"das Argument '--enable' hinzufügen, um automatische Update-Prüfungen zu aktivieren."
 
 #: src/lib/help.sh:17
 #, sh-format
