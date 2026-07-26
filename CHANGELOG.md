@@ -26,9 +26,6 @@ All notable changes to this project will be documented in this file.
 - *(i18n)* Update Russian translate ([#687](https://github.com/Antiz96/arch-update/pull/687)) - ([f4f0fc2](https://github.com/Antiz96/arch-update/commit/f4f0fc2fc2d05632e3a7a1ca303e3c94bd9b5c97)) by @DrWeb56
 - *(i18n)* Update French translation ([#685](https://github.com/Antiz96/arch-update/pull/685)) - ([e8d837d](https://github.com/Antiz96/arch-update/commit/e8d837d8aa2cba9dad608a312e46dbc318857b5b)) by @Antiz96
 - *(i18n)* Update translation files ([#684](https://github.com/Antiz96/arch-update/pull/684)) - ([9b4306c](https://github.com/Antiz96/arch-update/commit/9b4306c7438c035f436894ba71b42b36f109fae2)) by @Antiz96
-
-### Chore
-
 - *(i18n)* Update Swedish translation ([#688](https://github.com/Antiz96/arch-update/pull/688)) - ([86e151d](https://github.com/Antiz96/arch-update/commit/86e151d8e75f649dc8d56e56bad4a3c014060be9)) by @bittin
 
 ## [v4.0.0](https://github.com/Antiz96/arch-update/releases/tag/v4.0.0) - 2026-07-24
