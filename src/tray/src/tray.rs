@@ -278,6 +278,10 @@ pub async fn run(
         warn!("Unable to bind gettext domain path");
     }
 
+    if bind_textdomain_codeset("Arch-Update", "UTF-8").is_err() {
+        warn!("Unable to set gettext domain codeset");
+    }
+
     // Clone icon statefile path variable (used by the watcher)
     let watcher_icon_statefile = icon_statefile.clone();
 
