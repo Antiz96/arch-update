@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 4.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-25 10:09+0200\n"
+"PO-Revision-Date: 2026-07-26 16:43+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -454,7 +454,7 @@ msgstr ""
 #: src/lib/list_news.sh:85
 #, sh-format
 msgid "Invalid input\\n"
-msgstr ""
+msgstr "De invoer is ongeldig\\n"
 
 #: src/lib/list_news.sh:102
 #, sh-format
