@@ -95,18 +95,20 @@ arch-update --tray --enable
 
 In case your graphical environment doesn't support XDG Autostart, add the following command your environment auto-start method instead:
 
+Note that the small startup delay in the form of the `sleep 3` command may not always be required but acts as a useful trick to avoid eventual [race condition](https://en.wikipedia.org/wiki/Race_condition) issues which may lead to the systray applet unexpectedly not starting at boot. I therefore recommend its usage as a safety measure (this small delay is already applied by default with the XDG Autostart / `arch-update --tray --enable` method).
+
 ```
-arch-update --tray
+sleep 3 && arch-update --tray
 ```
 
 The systray icon dynamically changes to indicate the current state of your system ("up to date" or "updates available"). When clicked, it launches `arch-update` in a terminal window via the `arch-update.desktop` file.
 
 The systray applet menu shows further information (like the list of pending updates, time of the last and next checks, ...) and allows to trigger specific actions (like running Arch-Update, check for updates, ...).
 
-*If the systray applet doesn't start at boot regardless or if it doesn't work as expected* (e.g. the icon is missing or the click actions do not act as they should), please read the *"The systray applet does not start at boot or does not work as expected"* chapter in the *"TIPS & TRICKS AND TROUBLESHOOTING"* section below.
-*If clicking the systray applet does nothing*, please read the *"Run Arch-Update in a specific terminal emulator"* chapter in the *"TIPS & TRICKS AND TROUBLESHOOTING"* section below.
+*Notes:*
 
-*Note:* GNOME shell does not support systray icons natively, GNOME users need to install the "AppIndicator and KStatusNotifierItem Support" extension for the systray applet to work.
+- If clicking the systray applet does nothing, please read the *"Run Arch-Update in a specific terminal emulator"* chapter in the *"TIPS & TRICKS AND TROUBLESHOOTING"* section below.
+- GNOME shell does not support systray icons natively, GNOME users need to install the "AppIndicator and KStatusNotifierItem Support" extension for the systray applet to work.
 
 ## Automated update checks
 
@@ -141,32 +143,6 @@ Time units are `s` for seconds, `m` for minutes, `h` for hours, `d` for days...
 See <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> for more details.
 
 In case you want `Arch-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
-
-## The systray applet does not start at boot or does not work as expected
-
-*Note:* GNOME shell does not support systray icons natively, GNOME users need to install the "AppIndicator and KStatusNotifierItem Support" extension for the systray applet to work.
-
-Make sure you followed instructions of the *"The systray applet"* chapter in the *"USAGE"* section above.
-
-If the systray applet doesn't start at boot regardless or if it doesn't work as expected (e.g. the icon is missing or the click actions do not act as they should), this could be the result of a *race condition*.
-
-To prevent that, you can add a small delay to the systray applet startup using the `sleep` command:
-
-- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default) like so:
-
-```
-Exec=/bin/sh -c "sleep 3 && arch-update --tray"
-```
-
-- If you added the `arch-update --tray` command to the auto-start method of your environment, modify the command like so:
-
-```
-sleep 3 && arch-update --tray
-```
-
-If the systray applet still does not start at boot, you can eventually try to gradually increase the `sleep` value.
-
-Otherwise, feel free to open a bug report.
 
 ## Run Arch-Update in a specific terminal emulator
 
