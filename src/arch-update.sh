@@ -7,7 +7,7 @@
 # General variables
 name="arch-update"
 _name="Arch-Update"
-version="3.18.1"
+version="4.0.2"
 option="${1}"
 
 # Define the directory containing libraries
@@ -97,9 +97,6 @@ case "${option}" in
 	-s|--services)
 		# Check for requirements
 		check_su_cmd
-
-		# Set that the "-s / --services" option is used (required for the "restart_services" library to proceed without expecting an upgrade to be performed beforehand
-		services_option="true"
 
 		# Source the "restart_services" library which displays services requiring a post upgrade restart (and offers to do so if there are)
 		# shellcheck source=src/lib/restart_services.sh

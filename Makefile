@@ -1,12 +1,15 @@
 pkgname=arch-update
 _pkgname=Arch-Update
-locales = de es eu fr hu ja ka nb nl pt_BR pt_PT ru sv zh_CN zh_TW
+locales = be bg ca de es eu fr hu it ja ka nb nl pt_BR pt_PT ru sv zh_CN zh_TW
 
 PREFIX ?= /usr/local
 
 .PHONY: build test install clean uninstall
 
 build:
+	# Build systray applet
+	cargo build --release --manifest-path src/tray/Cargo.toml
+
 	# Generate man pages
 	scdoc < "doc/man/${pkgname}.1.scd" > "doc/man/${pkgname}.1"
 	scdoc < "doc/man/${pkgname}.conf.5.scd" > "doc/man/${pkgname}.conf.5"
@@ -27,6 +30,9 @@ install:
 	# Install libraries
 	install -Dm 755 src/lib/* -t "${DESTDIR}${PREFIX}/share/${pkgname}/lib/"
 
+	# Install systray applet
+	install -Dm 755 "src/tray/target/release/${pkgname}-tray" "${DESTDIR}${PREFIX}/lib/${pkgname}/${pkgname}-tray"
+
 	# Install icons
 	install -Dm 664 "res/icons/${pkgname}-blue.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-blue.svg"
 	install -Dm 664 "res/icons/${pkgname}_updates-available-blue.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}_updates-available-blue.svg"
@@ -45,7 +51,6 @@ install:
 	# Install systemd units
 	install -Dm 644 "res/systemd/${pkgname}.service" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
 	install -Dm 644 "res/systemd/${pkgname}.timer" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
-	install -Dm 644 "res/systemd/${pkgname}-tray.service" "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}-tray.service"
 
 	# Install shell completions
 	install -Dm 644 "res/completions/${pkgname}.bash" "${DESTDIR}${PREFIX}/share/bash-completion/completions/${pkgname}"
@@ -69,6 +74,9 @@ install:
 	install -Dm 644 "res/config/${pkgname}.conf.example" "${DESTDIR}${PREFIX}/share/${pkgname}/config/${pkgname}.conf.example"
 
 clean:
+	# Delete built systray applet
+	rm -rf "src/tray/target/"
+
 	# Delete generated man pages
 	rm -f "doc/man/${pkgname}.1"
 	rm -f "doc/man/${pkgname}.conf.5"
@@ -84,6 +92,9 @@ uninstall:
 
 	# Delete share folder (contains libraries and example config)
 	rm -rf "${DESTDIR}${PREFIX}/share/${pkgname}/"
+
+	# Delete lib folder (contains tray binary)
+	rm -rf "${DESTDIR}${PREFIX}/lib/${pkgname}/"
 
 	# Delete icons
 	rm -f "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-blue.svg"
@@ -103,7 +114,6 @@ uninstall:
 	# Delete systemd units
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.service"
 	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}.timer"
-	rm -f "${DESTDIR}${PREFIX}/lib/systemd/user/${pkgname}-tray.service"
 
 	# Delete .mo files
 	for locale in $(locales); do \

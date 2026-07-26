@@ -13,9 +13,11 @@ assignees: Antiz96
 
 <!-- Please, provide the following information
 Distribution examples are Arch Linux, EndeavourOS, CachyOS, Garuda...
+Graphical environment examples are KDE, GNOME, XFCE, Sway, Niri...
 The Arch-Update version can be retrieved by running `arch-update --version` -->
 
 - Distribution:
+- Graphical environment:
 - Arch-Update version:
 
 ### Arch-Update configuration
@@ -34,7 +36,8 @@ Paste your arch-update.conf configuration file here (if you use one)
 ### Screenshots / Logs
 
 <!-- If you have any screenshots to illustrate the issue or any relevant logs, paste them below
-For instance, it could be useful to provide debug traces by running `arch-update --debug` (or `arch-update [OPTION] --debug` if the issue you're facing is about a specific option) -->
+For instance, it could be useful to provide debug traces by running `arch-update --debug` (or `arch-update [OPTION] --debug` if the issue you're facing is about a specific option)
+If you're facing an issue with the systray applet, debug traces can be gathered by running `RUST_LOG=DEBUG arch-update --tray` -->
 
 ```text
 Paste any relevant logs here (if you have some)

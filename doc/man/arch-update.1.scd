@@ -1,4 +1,4 @@
-arch-update(1) ["Arch-Update 3.18.1" ["Arch-Update Manual"]]
+arch-update(1) ["Arch-Update 4.0.2" ["Arch-Update Manual"]]
 
 # NAME
 
@@ -11,7 +11,7 @@ Arch-Update - An interactive update notifier & applier for Arch Linux that assis
 # DESCRIPTION
 
 An interactive update notifier & applier for Arch Linux that assists you with important pre / post update tasks.
-Includes a dynamic & clickeable systray applet for an easy integration with any Desktop Environment / Window Manager.
+Includes a systray applet for an easy integration with any desktop / graphical environment.
 
 Arch-Update is designed to follow usual system maintenance steps, as described in the Arch Wiki at https://wiki.archlinux.org/title/System_maintenance.
 
@@ -25,6 +25,7 @@ Features:
 - Check for pending kernel update requiring a reboot (and offers to do so if there's one).
 - Check for services requiring a post upgrade restart (and offers to do so if there are).
 - Support for `sudo`, `sudo-rs`, `doas` & `run0`.
+- Extensive CLI.
 
 Optional support for:
 
@@ -38,8 +39,8 @@ Optional support for:
 If no option is passed, launch the relevant series of functions to perform a complete and proper system update (can also be triggered by clicking the systray applet).
 
 *-c, --check*
-	Check for available updates. If there are, send a desktop notification and update the systray icon.
-	To run the `--check` option automatically and periodically, see the *"The systemd timer"* chapter in the *"USAGE"* section below.
+	Check for available updates. If there are, send a desktop notification and update the systray icon accordingly.
+	To enable automated and periodic checks, run `--check --enable`.
 
 *-l, --list*
 	Display the list of pending updates.
@@ -69,7 +70,7 @@ If no option is passed, launch the relevant series of functions to perform a com
 
 *--tray*
 	Start the Arch-Update systray applet.
-	To start it automatically at boot, see the *"The systray applet"* chapter in the *"USAGE"* section below.
+	To additionally start it automatically at boot, run `--tray --enable`.
 
 *-V, --version*
 	Display version information.
@@ -81,108 +82,72 @@ Certain options can be enabled, disabled or modified via the `arch-update.conf` 
 
 # USAGE
 
-The usage consist of starting the systray applet and enabling the systemd timer.
+For desktop machines, the usage consist of starting the systray applet and enabling the automated update checks.
+For headless machines, Arch-Update includes an extensive CLI.
 
 ## The systray applet
 
-To start the systray applet, launch the *Arch-Update Systray Applet* application from your app menu.
-
-To start it automatically at boot, you can either:
-
-- Run the following command (preferred method for most Desktop Environments, uses XDG Autostart): 
+To start the systray applet and enable it automatically at boot, run the following command (preferred method for most environments, uses XDG Autostart):
 
 ```
 arch-update --tray --enable
 ```
 
-- Enable the associated systemd service (in case your Desktop Environment doesn't support XDG Autostart): 
+In case your graphical environment doesn't support XDG Autostart, add the following command your environment auto-start method instead:
+
+Note that the small startup delay in the form of the `sleep 3` command may not always be required but acts as a useful trick to avoid eventual [race condition](https://en.wikipedia.org/wiki/Race_condition) issues which may lead to the systray applet unexpectedly not starting at boot. I therefore recommend its usage as a safety measure (this small delay is already applied by default with the XDG Autostart / `arch-update --tray --enable` method).
 
 ```
-systemctl --user enable --now arch-update-tray.service
+sleep 3 && arch-update --tray
 ```
-
-- Add the following command to your "auto-start" apps / configuration file (in case you use a Window Manager or a Wayland Compositor):
-
-```
-arch-update --tray
-```
-
-*If the systray applet doesn't start at boot regardless or if it doesn't work as expected* (e.g. the icon is missing or the click actions do not act as they should), please read the *"The systray applet does not start at boot or does not work as expected"* chapter in the *"TIPS AND TRICKS"* section below.
 
 The systray icon dynamically changes to indicate the current state of your system ("up to date" or "updates available"). When clicked, it launches `arch-update` in a terminal window via the `arch-update.desktop` file.
 
-*If clicking the systray applet does nothing*, please read the *"Run Arch-Update in a specific terminal emulator"* chapter in the *"TIPS AND TRICKS"* section below.
+The systray applet menu shows further information (like the list of pending updates, time of the last and next checks, ...) and allows to trigger specific actions (like running Arch-Update, check for updates, ...).
 
-## The systemd timer
+*Notes:*
 
-To perform automatic and periodic checks for available updates, enable the associated systemd timer:
+- If clicking the systray applet does nothing, please read the *"Run Arch-Update in a specific terminal emulator"* chapter in the *"TIPS & TRICKS AND TROUBLESHOOTING"* section below.
+- GNOME shell does not support systray icons natively, GNOME users need to install the "AppIndicator and KStatusNotifierItem Support" extension for the systray applet to work.
 
-```
-systemctl --user enable --now arch-update.timer
-```
+## Automated update checks
 
-By default, a check is performed at *boot and then once every hour*. The check cycle can be customized, see the *"Modify the check cycle"* chapter in the *"TIPS AND TRICKS"* section below.
-
-# TIPS AND TRICKS 
-
-## The systray applet does not start at boot or does not work as expected
-
-Make sure you followed instructions of the *"The systray applet"* chapter in the *"USAGE"* section above.
-
-If the systray applet doesn't start at boot regardless or if it doesn't work as expected (e.g. the icon is missing or the click actions do not act as they should), this could be the result of a *race condition*.
-
-To prevent that, you can add a small delay to the systray applet startup using the `sleep` command:
-
-- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default), like so: 
+To enable automated and periodic checks for available updates, run the following command:
 
 ```
-[...]
-Exec=/bin/sh -c "sleep 3 && arch-update --tray"
-[...]
+arch-update --check --enable
 ```
 
-- If you used the `arch-update-tray.service` systemd service, run `systemctl --user edit --full arch-update-tray.service` and modify the `ExecStart=` line, like so:
+By default, a check is performed *at boot and then once every 6 hours*. The check cycle can be customized, see the *"Modify the check cycle"* chapter in the *"TIPS & TRICKS AND TROUBLESHOOTING"* section below.
 
-```
-[...]
-ExecStart=/bin/sh -c "sleep 3 && arch-update --tray"
-[...]
-```
-
-- If you're using a standalone Window Manager or a Wayland Compositor, modify the command in your "auto-start" apps / your configuration file, like so:
-
-```
-[...]
-sleep 3 && arch-update --tray
-[...]
-```
-
-If the systray applet still does not start at boot, try to gradually increase the `sleep` value.
+# TIPS & TRICKS AND TROUBLESHOOTING
 
 ## Modify the check cycle
 
-If you enabled the systemd timer, a check for available updates is automatically launched at boot and then once per hour.
+If you enabled the automated update checks, a check for available updates is automatically launched at boot and then once each 6 hours.
 
 If you want to customize the check cycle, run `systemctl --user edit --full arch-update.timer` and modify the `OnUnitActiveSec` value to your liking.
-For instance, if you want `Arch-Update` to check for new updates every 10 minutes instead:
+
+For instance, if you want `Arch-Update` to check for new updates every 4 hours instead:
 
 ```
 [...]
 [Timer]
 OnStartupSec=15
-OnUnitActiveSec=10m
+OnUnitActiveSec=4h
 [...]
 ```
 
-Time units are *s* for seconds, *m* for minutes, *h* for hours, *d* for days...
-See https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans for more details.
+Time units are `s` for seconds, `m` for minutes, `h` for hours, `d` for days...
+
+See <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> for more details.
 
 In case you want `Arch-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
 
 ## Run Arch-Update in a specific terminal emulator
 
 "gio" (used to launch the `arch-update` terminal application via the `arch-update.desktop` file when the systray applet is clicked) currently has a default limited list of known terminal emulators.  
-As such, if you don't have any of these "known" terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing (as `gio` couldn't find a terminal emulator from the said list). Incidentally, you might have multiple terminal emulators installed on your system. In both cases, you can specify which terminal emulator to use.
+As such, if you don't have any of these "known" terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing (as `gio` couldn't find a terminal emulator from the said list). Incidentally, you might have multiple terminal emulators installed on your systemi and you may want to force Arch-Update to use a specific one. In both cases, you can specify which terminal emulator to use.
 
 To do so, install the `xdg-terminal-exec` AUR package (https://aur.archlinux.org/packages/xdg-terminal-exec), create the `~/.config/xdg-terminals.list` file and add the name of the `.desktop` file of your terminal emulator of choice in it (e.g. `Alacritty.desktop`).
 

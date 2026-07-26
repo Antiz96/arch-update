@@ -23,7 +23,8 @@ Basic common sense applies to every contributions & discussions: stay polite and
 
 Use English as much as possible for contributions & discussions. If required, I can also speak French, but it's important that contributions & discussions remain intelligible to most people.
 
-Arch-Update is developed and tested specifically with *vanilla* Arch Linux in mind. That doesn't mean that Arch-Update won't work with other Arch based distributions (e.g. EndeavourOS, CachyOS, Garuda...), but keep in mind that such distributions are supported at a "best effort" level. In other words, I'll try my best to keep Arch-Update compatible with derivatives distributions, but there's no guarantee that Arch-Update (or parts of it) will *continuously* work properly on such distributions.
+Arch-Update is primarily developed and tested for *vanilla* Arch Linux. While it *should* work on most Arch Linux based distributions, these are only supported at a "best effort" level. Full and continuous compatibility with such derivative distributions is not guaranteed. Bug reports, suggestions and patches specific to a derivative distribution can still be submitted regardless but note that they are not guaranteed to be addressed or accepted.  
+One strict exception is Arch Linux based distributions that do not use systemd, which are not supported *at all*. Arch-Update relies on multiple systemd tools and therefore expects a systemd based environment to function properly. As such, derivative distributions that do not use systemd cannot be reliably supported. Bug reports, suggestions and patches specific to these derivative distributions will *not* be considered.
 
 ## Open an issue
 
@@ -44,6 +45,12 @@ Make sure to create your merge request from a dedicated branch (do not use the `
 
 Apart from trivial changes (like simple typo fixes), it is advised to first [open an issue](#open-an-issue) to expose and discuss your changes, verify its feasibility / necessity and agree on the specifications.
 
+### Development tips
+
+You can override the path to the Arch-Update libraries directory with the `$ARCH_UPDATE_LIBDIR` environment variable, allowing to test libraries during development. For instance: `ARCH_UPDATE_LIBDIR="${PWD}/src/lib" arch-update`
+
+You can also override the path to the Arch-Update systray applet binary with the `$ARCH_UPDATE_TRAY_BIN` environment variable, allowing to test the systray applet binary during development. For instance: `ARCH_UPDATE_TRAY_BIN="${PWD}/src/tray/target/release/arch-update-tray" arch-update --tray`
+
 ### Coding style
 
 When submitting code changes, try to respect the coding style and the overall way things work, as much as possible.  
@@ -58,7 +65,7 @@ For instance:
 - [...]
 
 Bash code is checked with [shellcheck](https://www.shellcheck.net/).  
-Python code is checked with [pylint](https://github.com/pylint-dev/pylint).  
+Rust code is checked with [rustfmt](https://rust-lang.github.io/rustfmt/) & [clippy](doc.rust-lang.org/cargo/commands/cargo-clippy.html).  
 Markdown syntax is checked with [markdownlint](https://github.com/markdownlint/markdownlint).
 
 ### Commit message format
@@ -128,7 +135,7 @@ To contribute to translations, please follow the instructions in the [dedicated 
 
 ## Donations
 
-You can also support this project development (and my work in general) by making a donation via my [GitHub sponsor page](https://github.com/sponsors/Antiz96).
+You can also support this project development (and my work in general) by making a donation via my [GitHub sponsor](https://github.com/sponsors/Antiz96) or [Ko-fi](https://ko-fi.com/Antiz96) page.
 
 ## Thank you
 
