@@ -209,8 +209,6 @@ See <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#P
 
 In case you want `Arch-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
 
-**Note:** GNOME shell does not support systray icons natively, GNOME users need to install the ["AppIndicator and KStatusNotifierItem Support" extension](https://extensions.gnome.org/extension/615/appindicator-support/) for the systray applet to work.
-
 ### Run Arch-Update in a specific terminal emulator
 
 `gio` (used to launch the `arch-update` terminal application via the `arch-update.desktop` file when the systray applet is clicked) currently has a default limited list of known terminal emulators.  
