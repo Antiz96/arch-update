@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.0.2](https://github.com/Antiz96/arch-update/releases/tag/v4.0.2) - 2026-07-26
+
+### Fixes
+
+- *(tray)* Set UTF-8 codeset for localization ([#705](https://github.com/Antiz96/arch-update/pull/705)) - ([70ad578](https://github.com/Antiz96/arch-update/commit/70ad5783c5fcda5b102317613703793e0b4b0db0)) by @Antiz96
+
+### Styling
+
+- *(CHANGELOG)* Formatting fix ([#704](https://github.com/Antiz96/arch-update/pull/704)) - ([37b0fe0](https://github.com/Antiz96/arch-update/commit/37b0fe00b805c3fad0b0729d32dbbd46dc425263)) by @Antiz96
+
 ## [v4.0.1](https://github.com/Antiz96/arch-update/releases/tag/v4.0.1) - 2026-07-26
 
 ### Fixes
