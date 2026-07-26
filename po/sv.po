@@ -248,7 +248,7 @@ msgid "Options:"
 msgstr "Alternativ:"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
@@ -258,7 +258,8 @@ msgstr ""
 "  -c, --check       Sök efter tillgängliga uppdateringar, ändra systemfält-"
 "ikonen och skicka en skrivbordsavisering som innehåller antalet tillgängliga "
 "uppdateringar (om det finns nya tillgängliga uppdateringar jämfört med den "
-"senaste kontrollen)"
+"senaste kontrollen). Alternativt lägg valfritt till argumentet '--enable' "
+"för att aktivera automatiska uppdateringskontroller."
 
 #: src/lib/help.sh:17
 #, sh-format
