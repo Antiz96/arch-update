@@ -763,9 +763,9 @@ msgstr "'${tray_desktop_file_autostart}' fitxategia badago lehendik"
 msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
-msgstr "'${tray_desktop_file_autostart}' fitxategia sortu da, ${_name} "
-"sistemaren erretiluko aplikazioa automatikoki abiaraziko da sistemaren "
-"hasieran\n"
+msgstr ""
+"'${tray_desktop_file_autostart}' fitxategia sortu da, ${_name} sistemaren "
+"erretiluko aplikazioa automatikoki abiaraziko da sistemaren hasieran\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -776,7 +776,7 @@ msgstr ""
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr "${_name} sistemaren erretiluko aplikazioa abiarazten\n"
+msgstr "${_name} sistemaren erretiluko aplikazioa abiarazten"
 
 #: src/lib/update.sh:9
 #, sh-format
