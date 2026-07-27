@@ -37,7 +37,7 @@ msgstr "Errorea ALHP egiaztatzean:"
 #: src/lib/check.sh:10
 #, sh-format
 msgid "Automated update checks have been enabled"
-msgstr ""
+msgstr "Eguneraketa-egiaztapen automatikoak gaituta daude"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -245,16 +245,18 @@ msgid "Options:"
 msgstr "Aukerak:"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check). Optionally add "
 "the '--enable' argument to enable automated update checks."
 msgstr ""
-"  -c, --check        Eguneraketa erabilgarriak egiaztatu, sistemako "
-"erretiluko ikonoa aldatu eta jakinarazpen bat bidali eguneraketa "
-"kopuruarekin (azken egiaztapenetik eguneraketa berriak egonez gero)"
+"  -c, --check       Eguneraketa erabilgarriak egiaztatu, sistemako "
+"erretiluko ikonoa aldatu eta jakinarazpen bat bidali erabilgarri dauden "
+"eguneraketen kopuruarekin (azken egiaztapenarekin alderatuta berriak "
+"badaude). Aukeran, '--enable' argumentua gehitu daiteke eguneraketen "
+"egiaztapen automatikoak gaitzeko."
 
 #: src/lib/help.sh:17
 #, sh-format
@@ -764,6 +766,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
+"'${tray_desktop_file_autostart}' fitxategia sortu da, ${_name} sistemaren "
+"erretiluko aplikazioa automatikoki abiaraziko da sistemaren hasieran\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -774,7 +778,7 @@ msgstr ""
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr ""
+msgstr "${_name} sistemaren erretiluko aplikazioa abiarazten"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -807,27 +811,27 @@ msgstr "Eguneraketa aplikatu da\\n"
 
 #: src/tray/src/tray_helpers.rs:96
 msgid "Next page"
-msgstr ""
+msgstr "Hurrengo orria"
 
 #: src/tray/src/tray_helpers.rs:229
 #, rust-format
 msgid "{days}d"
-msgstr ""
+msgstr "{days}d"
 
 #: src/tray/src/tray_helpers.rs:232
 #, rust-format
 msgid "{hours}h"
-msgstr ""
+msgstr "{hours}h"
 
 #: src/tray/src/tray_helpers.rs:235
 #, rust-format
 msgid "{minutes}m"
-msgstr ""
+msgstr "{minutes}m"
 
 #: src/tray/src/tray_helpers.rs:238
 #, rust-format
 msgid "{seconds}s"
-msgstr ""
+msgstr "{seconds}s"
 
 #: src/tray/src/tray.rs:88
 msgid "System is up to date"
@@ -861,7 +865,7 @@ msgstr "Flatpak ({count})"
 #: src/tray/src/tray.rs:190
 #, rust-format
 msgid "Last check {last_check} ago"
-msgstr ""
+msgstr "Azken egiaztapena duela {last_check}"
 
 #: src/tray/src/tray.rs:207
 #, rust-format
