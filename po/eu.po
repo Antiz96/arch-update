@@ -245,16 +245,18 @@ msgid "Options:"
 msgstr "Aukerak:"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check). Optionally add "
 "the '--enable' argument to enable automated update checks."
 msgstr ""
-"  -c, --check        Eguneraketa erabilgarriak egiaztatu, sistemako "
-"erretiluko ikonoa aldatu eta jakinarazpen bat bidali eguneraketa "
-"kopuruarekin (azken egiaztapenetik eguneraketa berriak egonez gero)"
+"  -c, --check       Eguneraketa erabilgarriak egiaztatu, sistemako "
+"erretiluko ikonoa aldatu eta jakinarazpen bat bidali erabilgarri dauden "
+"eguneraketen kopuruarekin (azken egiaztapenarekin alderatuta berriak "
+"badaude). Aukeran, '--enable' argumentua gehitu daiteke eguneraketen "
+"egiaztapen automatikoak gaitzeko."
 
 #: src/lib/help.sh:17
 #, sh-format
