@@ -21,9 +21,26 @@ if [ -n "${services}" ]; then
 		((i=i+1))
 	done < <(printf '%s\n' "${services}")
 
-	echo
-	ask_msg_array "$(eval_gettext "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all or press \"enter\" to continue without restarting the service(s):")"
-	echo
+	while true; do
+		echo
+		ask_msg_array "$(eval_gettext "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all or press \"enter\" to continue without restarting the service(s):")"
+		echo
+
+		invalid_input=""
+
+		for num in "${answer_array[@]}"; do
+			if ! [[ "${num}" =~ ^[0-9]+$ ]] || [ "${num}" -gt "${services_num}" ] || [ "${num}" -lt 0 ]; then
+				invalid_input="true"
+				break
+			fi
+		done
+
+		if [ -n "${invalid_input}" ]; then
+			warning_msg "$(eval_gettext "Invalid input")"
+		else
+			break
+		fi
+	done
 
 	if [ "${answer_array[0]}" -eq 0 ] 2> /dev/null; then
 		# shellcheck disable=SC2086,SC2154

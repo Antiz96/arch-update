@@ -442,12 +442,12 @@ msgstr ""
 "表示するニュースを選択してください (例: 1 3 5)。0 ですべて表示、\"enter\" で"
 "アップデートへ進む:"
 
-#: src/lib/list_news.sh:85
+#: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
-msgid "Invalid input\\n"
+msgid "Invalid input"
 msgstr ""
 
-#: src/lib/list_news.sh:102
+#: src/lib/list_news.sh:103
 #, sh-format
 msgid ""
 "Unable to retrieve the selected Arch News (HTTP error response or request "
@@ -457,22 +457,22 @@ msgstr ""
 "選択した Arch ニュースを取得できませんでした (HTTP エラーまたはタイムアウト)"
 "\\nシステムをアップデートする前に ${news_url} でニュースを確認してください"
 
-#: src/lib/list_news.sh:107
+#: src/lib/list_news.sh:108
 #, sh-format
 msgid "Title:"
 msgstr "タイトル:"
 
-#: src/lib/list_news.sh:108
+#: src/lib/list_news.sh:109
 #, sh-format
 msgid "Author:"
 msgstr "著者:"
 
-#: src/lib/list_news.sh:109
+#: src/lib/list_news.sh:110
 #, sh-format
 msgid "Publication date:"
 msgstr "公開日:"
 
-#: src/lib/list_news.sh:110
+#: src/lib/list_news.sh:111
 #, sh-format
 msgid "URL:"
 msgstr "URL:"
@@ -688,7 +688,7 @@ msgstr "サービス:\\n次のサービスはアップグレード後に再起�
 msgid "Services:\\nThe following services require a post upgrade restart\\n"
 msgstr "サービス:\\n次のサービスはアップグレード後に再起動が必要です\\n"
 
-#: src/lib/restart_services.sh:25
+#: src/lib/restart_services.sh:26
 #, sh-format
 msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
@@ -697,12 +697,12 @@ msgstr ""
 "再起動するサービスを選択してください (例: 1 3 5)。0 ですべて再起動、"
 "\"enter\" でサービスを再起動せず続行:"
 
-#: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
+#: src/lib/restart_services.sh:48 src/lib/restart_services.sh:75
 #, sh-format
 msgid "Service(s) restarted successfully\\n"
 msgstr "サービスを正常に再起動しました\\n"
 
-#: src/lib/restart_services.sh:34 src/lib/restart_services.sh:61
+#: src/lib/restart_services.sh:51 src/lib/restart_services.sh:78
 #, sh-format
 msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
@@ -711,18 +711,18 @@ msgstr ""
 "サービスの再起動中にエラーが発生しました\\n上記のサービスの状態を確認してくだ"
 "さい\\n"
 
-#: src/lib/restart_services.sh:47
+#: src/lib/restart_services.sh:64
 #, sh-format
 msgid "The ${service_selected} service has been successfully restarted"
 msgstr "${service_selected} サービスを正常に再起動しました"
 
-#: src/lib/restart_services.sh:49
+#: src/lib/restart_services.sh:66
 #, sh-format
 msgid ""
 "An error has occurred during the restart of the ${service_selected} service"
 msgstr "${service_selected} サービスの再起動中にエラーが発生しました"
 
-#: src/lib/restart_services.sh:65
+#: src/lib/restart_services.sh:82
 #, sh-format
 msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
@@ -731,7 +731,7 @@ msgstr ""
 "サービスの再起動は実行されませんでした\\nアップグレードを完全に適用するため"
 "に、アップデートされたサービスの再起動をおすすめします\\n"
 
-#: src/lib/restart_services.sh:69
+#: src/lib/restart_services.sh:86
 #, sh-format
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "アップグレード後に再起動が必要なサービスはありません\\n"

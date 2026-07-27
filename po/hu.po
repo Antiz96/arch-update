@@ -457,12 +457,12 @@ msgstr ""
 "összes elolvasásához vagy nyomja meg az „enter” gombot a frissítés "
 "folytatásához:"
 
-#: src/lib/list_news.sh:85
+#: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
-msgid "Invalid input\\n"
+msgid "Invalid input"
 msgstr ""
 
-#: src/lib/list_news.sh:102
+#: src/lib/list_news.sh:103
 #, sh-format
 msgid ""
 "Unable to retrieve the selected Arch News (HTTP error response or request "
@@ -473,22 +473,22 @@ msgstr ""
 "kérés-időtúllépés)\\nA kiválasztott Arch híreket elolvashatja a rendszer "
 "frissítése előtt a következő webcímen: ${news_url}"
 
-#: src/lib/list_news.sh:107
+#: src/lib/list_news.sh:108
 #, sh-format
 msgid "Title:"
 msgstr "Cím:"
 
-#: src/lib/list_news.sh:108
+#: src/lib/list_news.sh:109
 #, sh-format
 msgid "Author:"
 msgstr "Szerző:"
 
-#: src/lib/list_news.sh:109
+#: src/lib/list_news.sh:110
 #, sh-format
 msgid "Publication date:"
 msgstr "Közzétéve:"
 
-#: src/lib/list_news.sh:110
+#: src/lib/list_news.sh:111
 #, sh-format
 msgid "URL:"
 msgstr "Webcím:"
@@ -702,7 +702,7 @@ msgstr ""
 "Szolgáltatások:\\nA következő szolgáltatások frissítés utáni újraindítást "
 "igényelnek\\n"
 
-#: src/lib/restart_services.sh:25
+#: src/lib/restart_services.sh:26
 #, sh-format
 msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
@@ -712,12 +712,12 @@ msgstr ""
 "0 értéket az összes újraindításához, vagy nyomja meg az „enter” gombot a "
 "szolgáltatás(ok) újraindítása nélküli folytatáshoz.:"
 
-#: src/lib/restart_services.sh:31 src/lib/restart_services.sh:58
+#: src/lib/restart_services.sh:48 src/lib/restart_services.sh:75
 #, sh-format
 msgid "Service(s) restarted successfully\\n"
 msgstr "A szolgáltatás(ok) sikeresen újraindultak\\n"
 
-#: src/lib/restart_services.sh:34 src/lib/restart_services.sh:61
+#: src/lib/restart_services.sh:51 src/lib/restart_services.sh:78
 #, sh-format
 msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
@@ -726,18 +726,18 @@ msgstr ""
 "Hiba történt a szolgáltatás(ok) újraindításakor\\nEllenőrizze a fenti "
 "szolgáltatás(ok) állapotát\\n"
 
-#: src/lib/restart_services.sh:47
+#: src/lib/restart_services.sh:64
 #, sh-format
 msgid "The ${service_selected} service has been successfully restarted"
 msgstr "A(z) ${service_selected}-szolgáltatás sikeresen újraindult"
 
-#: src/lib/restart_services.sh:49
+#: src/lib/restart_services.sh:66
 #, sh-format
 msgid ""
 "An error has occurred during the restart of the ${service_selected} service"
 msgstr "Hiba történt a ${service_selected}-szolgáltatás újraindításakor"
 
-#: src/lib/restart_services.sh:65
+#: src/lib/restart_services.sh:82
 #, sh-format
 msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
@@ -747,7 +747,7 @@ msgstr ""
 "megváltozott szolgáltatások újraindítását a frissítés teljes körű "
 "alkalmazásához\\n"
 
-#: src/lib/restart_services.sh:69
+#: src/lib/restart_services.sh:86
 #, sh-format
 msgid "No service requiring a post upgrade restart found\\n"
 msgstr "Nem található frissítés utáni újraindítást igénylő szolgáltatás\\n"
