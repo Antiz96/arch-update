@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 4.0.2\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-22 15:14+0500\n"
+"PO-Revision-Date: 2026-07-27 12:00+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -130,14 +130,14 @@ msgstr "Удалить эти неиспользуемые пакеты Flatpak 
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
-msgstr "Y"
+msgstr "Д"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
 #: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
 #: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
-msgstr "y"
+msgstr "д"
 
 #: src/lib/flatpak_unused_packages.sh:23
 #, sh-format
@@ -441,7 +441,7 @@ msgstr ""
 #: src/lib/list_news.sh:85
 #, sh-format
 msgid "Invalid input\\n"
-msgstr ""
+msgstr "Неверный ввод\\n"
 
 #: src/lib/list_news.sh:102
 #, sh-format
@@ -544,7 +544,7 @@ msgstr "Закрыть"
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
 msgid "${update_number} updates available"
-msgstr "${update_number} обновлений доступно"
+msgstr "Доступно ${update_number} обновлений"
 
 #: src/lib/notification.sh:41
 #, sh-format
