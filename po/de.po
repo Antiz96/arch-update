@@ -458,7 +458,7 @@ msgstr ""
 #: src/lib/list_news.sh:85
 #, sh-format
 msgid "Invalid input\\n"
-msgstr ""
+msgstr "Ungültige Eingabe\\n"
 
 #: src/lib/list_news.sh:102
 #, sh-format
