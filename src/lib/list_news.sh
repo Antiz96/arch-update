@@ -82,7 +82,8 @@ else
 
 			if [ -n "${invalid_input}" ]; then
 				echo
-				warning_msg "$(eval_gettext "Invalid input\n")"
+				warning_msg "$(eval_gettext "Invalid input")"
+				echo
 			else
 				break
 			fi
