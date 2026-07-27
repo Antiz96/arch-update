@@ -261,15 +261,26 @@ pub async fn run(
     i18n_dir: PathBuf,
 ) {
     // Set gettext domain for translations
-    setlocale(LocaleCategory::LcAll, "").expect("Failed to load environment locale");
+    if setlocale(LocaleCategory::LcMessages, "").is_none() {
+        warn!("Unable to load locale environment");
+    }
 
-    textdomain("Arch-Update").expect("Failed to set gettext domain");
+    if textdomain("Arch-Update").is_err() {
+        warn!("Unable to set gettext domain");
+    }
 
-    bindtextdomain(
+    if bindtextdomain(
         "Arch-Update",
         i18n_dir.to_str().expect("Unknown or invalid locale path"),
     )
-    .expect("Failed to bind gettext domain path");
+    .is_err()
+    {
+        warn!("Unable to bind gettext domain path");
+    }
+
+    if bind_textdomain_codeset("Arch-Update", "UTF-8").is_err() {
+        warn!("Unable to set gettext domain codeset");
+    }
 
     // Clone icon statefile path variable (used by the watcher)
     let watcher_icon_statefile = icon_statefile.clone();

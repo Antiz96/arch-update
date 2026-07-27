@@ -6,7 +6,7 @@
 # Capricornus007 <sihaogang@gmail.com>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.0.0\n"
+"Project-Id-Version: Arch-Update 4.0.2\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2025-11-18 14:50+0800\n"
@@ -398,14 +398,14 @@ msgstr "Arch 新聞："
 msgid "[NEW]"
 msgstr "[新]"
 
-#: src/lib/list_news.sh:54
+#: src/lib/list_news.sh:55
 #, sh-format
 msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr "請選擇要閱讀的新聞（例如：1 3 5），選 0 閱讀全部，或按下「Enter」離開:"
 
-#: src/lib/list_news.sh:56
+#: src/lib/list_news.sh:57
 #, sh-format
 msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
@@ -413,7 +413,12 @@ msgid ""
 msgstr ""
 "請選擇要閱讀的新聞（例如：1 3 5），選 0 閱讀全部，或按下「Enter」繼續更新:"
 
-#: src/lib/list_news.sh:80
+#: src/lib/list_news.sh:85
+#, sh-format
+msgid "Invalid input\\n"
+msgstr ""
+
+#: src/lib/list_news.sh:102
 #, sh-format
 msgid ""
 "Unable to retrieve the selected Arch News (HTTP error response or request "
@@ -423,22 +428,22 @@ msgstr ""
 "無法擷取所選的 Arch 新聞（HTTP 錯誤回應或要求逾時）\\n請在更新系統之前，前往 "
 "${news_url} 閱讀所選的 Arch 新聞"
 
-#: src/lib/list_news.sh:85
+#: src/lib/list_news.sh:107
 #, sh-format
 msgid "Title:"
 msgstr "標題："
 
-#: src/lib/list_news.sh:86
+#: src/lib/list_news.sh:108
 #, sh-format
 msgid "Author:"
 msgstr "作者："
 
-#: src/lib/list_news.sh:87
+#: src/lib/list_news.sh:109
 #, sh-format
 msgid "Publication date:"
 msgstr "發布日期："
 
-#: src/lib/list_news.sh:88
+#: src/lib/list_news.sh:110
 #, sh-format
 msgid "URL:"
 msgstr "網址："
