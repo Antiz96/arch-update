@@ -12,6 +12,6 @@ Comment[ka]=Arch-Update-ის აპლეტი სისტემურ ს�
 Comment[nb]=Miniprogam for å legge Arch-Update i systemkurven
 Icon=arch-update_updates-available-blue
 Type=Application
-Exec=arch-update --tray
+Exec=/bin/sh -c "sleep 3 && arch-update --tray"
 Categories=Utility
 NoDisplay=true

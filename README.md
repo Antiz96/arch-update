@@ -111,17 +111,19 @@ arch-update --tray --enable
 
 In case your graphical environment doesn't support XDG Autostart, add the following command your environment auto-start method instead:
 
+*Note that the small startup delay in the form of the `sleep 3` command may not always be required but acts as a useful trick to avoid eventual [race condition](https://en.wikipedia.org/wiki/Race_condition) issues which may lead to the systray applet unexpectedly not starting at boot. I therefore recommend its usage as a safety measure (this small delay is already applied by default with the XDG Autostart / `arch-update --tray --enable` method).*
+
 ```bash
-arch-update --tray
+sleep 3 && arch-update --tray
 ```
 
 The systray icon dynamically changes to indicate the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` in a terminal window via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.  
 The systray applet menu shows further information (like the list of pending updates, time of the last and next checks, ...) and allows to trigger specific actions (like running Arch-Update, check for updates, ...). See [screenshots](#screenshots) for more details.
 
-**If the systray applet doesn't start at boot regardless or if it doesn't work as expected** (e.g the icon is missing or the click actions do not act as they should), please read [this chapter](#the-systray-applet-does-not-start-at-boot-or-does-not-work-as-expected).  
-**If clicking the systray applet does nothing**, please read [this chapter](#run-arch-update-in-a-specific-terminal-emulator).
+**Notes:**
 
-**Note:** GNOME shell does not support systray icons natively, GNOME users need to install the ["AppIndicator and KStatusNotifierItem Support" extension](https://extensions.gnome.org/extension/615/appindicator-support/) for the systray applet to work.
+- If clicking the systray applet does nothing, please read [this chapter](#run-arch-update-in-a-specific-terminal-emulator).
+- GNOME shell does not support systray icons natively, GNOME users need to install the ["AppIndicator and KStatusNotifierItem Support" extension](https://extensions.gnome.org/extension/615/appindicator-support/) for the systray applet to work.
 
 ### The automated update checks
 
@@ -206,31 +208,6 @@ Time units are `s` for seconds, `m` for minutes, `h` for hours, `d` for days...
 See <https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Parsing%20Time%20Spans> for more details.
 
 In case you want `Arch-Update` to check for new updates only once at boot, you can simply delete the `OnUnitActiveSec` line completely.
-
-**Note:** GNOME shell does not support systray icons natively, GNOME users need to install the ["AppIndicator and KStatusNotifierItem Support" extension](https://extensions.gnome.org/extension/615/appindicator-support/) for the systray applet to work.
-
-### The systray applet does not start at boot or does not work as expected
-
-Make sure you followed instructions of [this chapter](#the-systray-applet).
-
-If the systray applet doesn't start at boot regardless or if it doesn't work as expected (e.g the icon is missing or the click actions do not act as they should), this could be the result of a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software).
-
-To prevent that, you can add a small delay to the systray applet startup using the `sleep` command:
-
-- If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default) like so:
-
-```text
-Exec=/bin/sh -c "sleep 3 && arch-update --tray"
-```
-
-- If you added the `arch-update --tray` command to the auto-start method of your environment, modify the command like so:
-
-```text
-sleep 3 && arch-update --tray
-```
-
-If the systray applet still does not start at boot, you can eventually try to gradually increase the `sleep` value.  
-Otherwise, feel free to [open a bug report](https://github.com/Antiz96/arch-update/issues/new?template=bug-report.md).
 
 ### Run Arch-Update in a specific terminal emulator
 
