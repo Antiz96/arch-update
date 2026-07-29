@@ -1,5 +1,6 @@
 [package]
 name = "arch-update-tray"
+version = "4.0.2"
 authors = ["Robin Candau <robincandau@protonmail.com>"]
 edition = "2024"
 description = "A systray applet for Arch-Update"
