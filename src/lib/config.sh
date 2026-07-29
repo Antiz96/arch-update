@@ -66,6 +66,10 @@ if [ -f "${config_file}" ]; then
 	# shellcheck disable=SC2034
 	diff_prog=$(grep -E '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
+	# Check the "TrayUpdatesPerPage" option in arch-update.conf
+	# shellcheck disable=SC2034
+	tray_updates_per_page=$(grep -E '^[[:space:]]*TrayUpdatesPerPage[[:space:]]*=[[:space:]]*[0-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
+
 	# Check the "TrayIconStyle" option in arch-update.conf
 	# shellcheck disable=SC2034
 	tray_icon_style=$(grep -E '^[[:space:]]*TrayIconStyle[[:space:]]*=[[:space:]]*(blue|light|dark)[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
@@ -81,4 +85,5 @@ fi
 [ -z "${update_check_timeout}" ] && update_check_timeout="30"
 [ -z "${old_packages_num}" ] && old_packages_num="3"
 [ -z "${uninstalled_packages_num}" ] && uninstalled_packages_num="0"
+[ -z "${tray_updates_per_page}" ] && tray_updates_per_page="0"
 [ -z "${tray_icon_style}" ] && tray_icon_style="blue"
