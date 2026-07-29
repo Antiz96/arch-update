@@ -65,7 +65,7 @@ Options are case sensitive, so capital letters have to be respected.
 	Editor to use to visualize / edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set).
 
 *TrayUpdatesPerPage=[Num]*
-	Number of updates to show per page in the systray applet's updates lists submenues. Setting this option to "0" disables the pagination completely (entire updates list in a single page). Defaults to 0.
+	Number of updates to show per page in the systray applet sub-menus. Setting this option to "0" disables the pagination completely (show the entire updates list in a single page). Defaults to 0.
 
 *TrayIconStyle=[Style / Color]*
 	Style to be used for the systray applet icon. Valid values are the available style / color variants for the icon set, listed in https://github.com/Antiz96/arch-update/blob/main/res/icons/README.md. Defaults to "blue".
