@@ -63,7 +63,7 @@ dependencies = [
 
 [[package]]
 name = "arch-update-tray"
-version = "0.0.0"
+version = "4.0.2"
 dependencies = [
  "env_logger",
  "gettext-rs",
