@@ -777,26 +777,26 @@ msgstr "Обновление Flatpak-пакетов...\\n"
 msgid "The update has been applied\\n"
 msgstr "Обновление выполнено\\n"
 
-#: src/tray/src/tray_helpers.rs:96
+#: src/tray/src/tray_helpers.rs:107
 msgid "Next page"
 msgstr "Следующая страница"
 
-#: src/tray/src/tray_helpers.rs:229
+#: src/tray/src/tray_helpers.rs:240
 #, rust-format
 msgid "{days}d"
 msgstr "{days} дн."
 
-#: src/tray/src/tray_helpers.rs:232
+#: src/tray/src/tray_helpers.rs:243
 #, rust-format
 msgid "{hours}h"
 msgstr "{hours} ч"
 
-#: src/tray/src/tray_helpers.rs:235
+#: src/tray/src/tray_helpers.rs:246
 #, rust-format
 msgid "{minutes}m"
 msgstr "{minutes} мин"
 
-#: src/tray/src/tray_helpers.rs:238
+#: src/tray/src/tray_helpers.rs:249
 #, rust-format
 msgid "{seconds}s"
 msgstr "{seconds} с"
