@@ -10,7 +10,7 @@ use std::env;
 use std::fs;
 use std::path::Path;
 use std::path::PathBuf;
-use std::process::Command;
+use std::process::{self, Command};
 use std::thread::sleep;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 use tokio::sync::mpsc;
@@ -160,15 +160,29 @@ pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::A
         },
         Config::default(),
     )
-    .expect("Unable to create icon statefile watcher");
+    .unwrap_or_else(|error| {
+        error!("Unable to create icon statefile watcher: {error}");
+        process::exit(1);
+    });
 
     watcher
         .watch(&icon_statefile, RecursiveMode::NonRecursive)
-        .expect("Unable to watch icon statefile");
+        .unwrap_or_else(|error| {
+            error!("Unable to watch icon statefile: {error}");
+            process::exit(1);
+        });
 
-    while let Some(Ok(event)) = rx.recv().await {
-        if matches!(event.kind, EventKind::Modify(_)) {
-            handle.update(|_| {}).await;
+    while let Some(result) = rx.recv().await {
+        match result {
+            Ok(event) => {
+                if matches!(event.kind, EventKind::Modify(_)) {
+                    handle.update(|_| {}).await;
+                }
+            }
+            Err(error) => {
+                error!("Icon statefile watcher error: {error}");
+                process::exit(1);
+            }
         }
     }
 }

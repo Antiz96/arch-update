@@ -258,7 +258,7 @@ pub async fn run(
     icon_statefile: PathBuf,
     updates_statefile_type: updates_statefiles::UpdatesStateFiles,
     desktop_file: PathBuf,
-    i18n_dir: PathBuf,
+    i18n_dir: String,
 ) {
     // Set gettext domain for translations
     if setlocale(LocaleCategory::LcMessages, "").is_none() {
@@ -269,12 +269,7 @@ pub async fn run(
         warn!("Unable to set gettext domain");
     }
 
-    if bindtextdomain(
-        "Arch-Update",
-        i18n_dir.to_str().expect("Unknown or invalid locale path"),
-    )
-    .is_err()
-    {
+    if bindtextdomain("Arch-Update", &i18n_dir).is_err() {
         warn!("Unable to bind gettext domain path");
     }
 
@@ -292,10 +287,10 @@ pub async fn run(
     };
 
     // Start the systray applet
-    let handle = tray
-        .spawn()
-        .await
-        .expect("Unable to start the systray applet");
+    let handle = tray.spawn().await.unwrap_or_else(|error| {
+        error!("Unable to start the systray applet: {error}");
+        process::exit(1);
+    });
 
     info!("Systray applet started");
 
