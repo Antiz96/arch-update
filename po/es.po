@@ -829,22 +829,22 @@ msgstr "La actualización se ha aplicado\\n"
 msgid "Next page"
 msgstr "Página siguiente"
 
-#: src/tray/src/tray_helpers.rs:240
+#: src/tray/src/tray_helpers.rs:254
 #, rust-format
 msgid "{days}d"
 msgstr "{days}d"
 
-#: src/tray/src/tray_helpers.rs:243
+#: src/tray/src/tray_helpers.rs:257
 #, rust-format
 msgid "{hours}h"
 msgstr "{hours}h"
 
-#: src/tray/src/tray_helpers.rs:246
+#: src/tray/src/tray_helpers.rs:260
 #, rust-format
 msgid "{minutes}m"
 msgstr "{minutes}min"
 
-#: src/tray/src/tray_helpers.rs:249
+#: src/tray/src/tray_helpers.rs:263
 #, rust-format
 msgid "{seconds}s"
 msgstr "{seconds}s"
