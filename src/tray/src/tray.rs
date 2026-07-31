@@ -258,18 +258,24 @@ pub async fn run(
     icon_statefile: PathBuf,
     updates_statefile_type: updates_statefiles::UpdatesStateFiles,
     desktop_file: PathBuf,
-    i18n_dir: PathBuf,
+    i18n_dir: String,
 ) {
     // Set gettext domain for translations
-    setlocale(LocaleCategory::LcAll, "").expect("Failed to load environment locale");
+    if setlocale(LocaleCategory::LcMessages, "").is_none() {
+        warn!("Unable to load locale environment");
+    }
 
-    textdomain("Arch-Update").expect("Failed to set gettext domain");
+    if textdomain("Arch-Update").is_err() {
+        warn!("Unable to set gettext domain");
+    }
 
-    bindtextdomain(
-        "Arch-Update",
-        i18n_dir.to_str().expect("Unknown or invalid locale path"),
-    )
-    .expect("Failed to bind gettext domain path");
+    if bindtextdomain("Arch-Update", &i18n_dir).is_err() {
+        warn!("Unable to bind gettext domain path");
+    }
+
+    if bind_textdomain_codeset("Arch-Update", "UTF-8").is_err() {
+        warn!("Unable to set gettext domain codeset");
+    }
 
     // Clone icon statefile path variable (used by the watcher)
     let watcher_icon_statefile = icon_statefile.clone();
@@ -281,10 +287,10 @@ pub async fn run(
     };
 
     // Start the systray applet
-    let handle = tray
-        .spawn()
-        .await
-        .expect("Unable to start the systray applet");
+    let handle = tray.spawn().await.unwrap_or_else(|error| {
+        error!("Unable to start the systray applet: {error}");
+        process::exit(1);
+    });
 
     info!("Systray applet started");
 

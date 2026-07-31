@@ -6,10 +6,11 @@ use ksni::menu::*;
 use log::{error, info};
 use notify::{Config, EventKind, RecommendedWatcher, RecursiveMode, Watcher};
 use serde::Deserialize;
+use std::env;
 use std::fs;
 use std::path::Path;
 use std::path::PathBuf;
-use std::process::Command;
+use std::process::{self, Command};
 use std::thread::sleep;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 use tokio::sync::mpsc;
@@ -38,8 +39,8 @@ pub fn count_update_types(updates_statefile: &Path) -> bool {
     get_updates_count(updates_statefile) > 0
 }
 
-// Helper to get the list of pending updates from the updates statefile and populate the submenus
-// accordingly
+// Helper to get the list of pending updates from the updates statefile as well as the number of
+// updates per pages for pagination
 pub fn build_updates_submenu(
     updates_statefile: &Path,
 ) -> Vec<ksni::MenuItem<tray::ArchUpdateTray>> {
@@ -50,7 +51,12 @@ pub fn build_updates_submenu(
                 .filter(|line| !line.trim().is_empty())
                 .collect();
 
-            build_updates_submenu_pagination(&updates, 0)
+            let updates_per_page = env::var("ARCH_UPDATE_TRAY_UPDATES_PER_PAGE")
+                .ok()
+                .and_then(|value| value.parse::<usize>().ok())
+                .unwrap_or(0);
+
+            build_updates_submenu_pagination(&updates, 0, updates_per_page)
         }
 
         Err(error) => {
@@ -60,15 +66,20 @@ pub fn build_updates_submenu(
     }
 }
 
-// Helper to handle pagination for updates submenus
-// Set a limit to 20 packages per page, split to another page otherwise
-const UPDATES_PER_PAGE: usize = 20;
+// Helper to populate submenus with the list of pending updates and
+// handle pagination if needed (0 = no pagination)
 fn build_updates_submenu_pagination(
     updates: &[&str],
     page: usize,
+    updates_per_page: usize,
 ) -> Vec<ksni::MenuItem<tray::ArchUpdateTray>> {
-    let start = page * UPDATES_PER_PAGE;
-    let end = (start + UPDATES_PER_PAGE).min(updates.len());
+    let (start, end) = if updates_per_page == 0 {
+        (0, updates.len())
+    } else {
+        let start = page * updates_per_page;
+        let end = (start + updates_per_page).min(updates.len());
+        (start, end)
+    };
 
     let mut menu = updates[start..end]
         .iter()
@@ -90,11 +101,11 @@ fn build_updates_submenu_pagination(
         })
         .collect::<Vec<_>>();
 
-    if end < updates.len() {
+    if updates_per_page > 0 && end < updates.len() {
         menu.push(
             SubMenu {
                 label: gettext("Next page"),
-                submenu: build_updates_submenu_pagination(updates, page + 1),
+                submenu: build_updates_submenu_pagination(updates, page + 1, updates_per_page),
                 ..Default::default()
             }
             .into(),
@@ -149,15 +160,29 @@ pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::A
         },
         Config::default(),
     )
-    .expect("Unable to create icon statefile watcher");
+    .unwrap_or_else(|error| {
+        error!("Unable to create icon statefile watcher: {error}");
+        process::exit(1);
+    });
 
     watcher
         .watch(&icon_statefile, RecursiveMode::NonRecursive)
-        .expect("Unable to watch icon statefile");
+        .unwrap_or_else(|error| {
+            error!("Unable to watch icon statefile: {error}");
+            process::exit(1);
+        });
 
-    while let Some(Ok(event)) = rx.recv().await {
-        if matches!(event.kind, EventKind::Modify(_)) {
-            handle.update(|_| {}).await;
+    while let Some(result) = rx.recv().await {
+        match result {
+            Ok(event) => {
+                if matches!(event.kind, EventKind::Modify(_)) {
+                    handle.update(|_| {}).await;
+                }
+            }
+            Err(error) => {
+                error!("Icon statefile watcher error: {error}");
+                process::exit(1);
+            }
         }
     }
 }

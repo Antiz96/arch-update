@@ -4,6 +4,7 @@
 
 - `git-cliff`
 - `github-cli`
+- `cargo`
 
 ## Disable the main branch protection rule temporarily
 

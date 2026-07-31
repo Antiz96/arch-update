@@ -50,24 +50,47 @@ else
 
 		echo
 
-		if [ -n "${news_option}" ]; then
-			ask_msg_array "$(eval_gettext "Select the news to read (e.g. 1 3 5), select 0 to read them all or press \"enter\" to quit:")"
-		else
-			ask_msg_array "$(eval_gettext "Select the news to read (e.g. 1 3 5), select 0 to read them all or press \"enter\" to proceed with update:")"
-		fi
+		while true; do
+			if [ -n "${news_option}" ]; then
+				ask_msg_array "$(eval_gettext "Select the news to read (e.g. 1 3 5), select 0 to read them all or press \"enter\" to quit:")"
+			else
+				ask_msg_array "$(eval_gettext "Select the news to read (e.g. 1 3 5), select 0 to read them all or press \"enter\" to proceed with update:")"
+			fi
 
-		if [ "${answer_array[0]}" -eq 0 ] 2> /dev/null; then
-			answer_array=()
-			for ((i=1; i<=news_num; i++)); do
-				answer_array+=("${i}")
-			done
-		else
-			array_to_string=$(printf "%s\n" "${answer_array[@]}")
-			mapfile -t answer_array < <(echo "${array_to_string}" | awk '!seen[$0]++')
-		fi
+			if [ "${answer_array[0]}" -eq 0 ] 2> /dev/null; then
+				answer_array=()
+				for ((i=1; i<=news_num; i++)); do
+					answer_array+=("${i}")
+				done
+			else
+				array_to_string=$(printf "%s\n" "${answer_array[@]}")
+				mapfile -t answer_array < <(echo "${array_to_string}" | awk '!seen[$0]++')
+			fi
 
-		for num in "${answer_array[@]}"; do
-			if [ "${num}" -le "${news_num}" ] 2> /dev/null && [ "${num}" -gt "0" ]; then
+			if [ -z "${answer_array[0]}" ]; then
+				break
+			else
+				invalid_input=""
+
+				for num in "${answer_array[@]}"; do
+					if ! [[ "${num}" =~ ^[0-9]+$ ]] || [ "${num}" -gt "${news_num}" ] || [ "${num}" -lt 1 ]; then
+						invalid_input="true"
+						break
+					fi
+				done
+			fi
+
+			if [ -n "${invalid_input}" ]; then
+				echo
+				warning_msg "$(eval_gettext "Invalid input")"
+				echo
+			else
+				break
+			fi
+		done
+
+		if [ -n "${answer_array[0]}" ]; then
+			for num in "${answer_array[@]}"; do
 				printed_news="true"
 				news_selected=$(sed -n "${num}"p <<< "${news_titles}")
 				news_path=$(echo "${news}" | htmlq -a href a | grep ^"/news/" | sed -n "${num}"p)
@@ -89,8 +112,8 @@ else
 					# shellcheck disable=SC2154
 					echo -e "\n${blue}---${color_off}\n${bold}${title_tag}${color_off} ${news_selected}\n${bold}${author_tag}${color_off} ${news_author}\n${bold}${publication_date_tag}${color_off} ${news_date}\n${bold}${url_tag}${color_off} ${news_url}\n${blue}---${color_off}\n\n${news_article}"
 				fi
-			fi
-		done
+			done
+		fi
 
 		if [ -z "${news_option}" ] && [ -n "${printed_news}" ]; then
 			echo
