@@ -8,7 +8,7 @@ PREFIX ?= /usr/local
 
 build:
 	# Build systray applet
-	cargo build --release --manifest-path src/tray/Cargo.toml
+	cd src/tray && cargo build --release
 
 	# Generate man pages
 	scdoc < "doc/man/${pkgname}.1.scd" > "doc/man/${pkgname}.1"
