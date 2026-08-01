@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 4.0.2\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-31 18:23-0300\n"
+"PO-Revision-Date: 2026-07-31 21:32-0300\n"
 "Last-Translator: Diego Jesús <diego.u7ozo@addy.io>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -463,7 +463,7 @@ msgstr ""
 #: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
 msgid "Invalid input"
-msgstr ""
+msgstr "Entrada no válida"
 
 #: src/lib/list_news.sh:103
 #, sh-format
