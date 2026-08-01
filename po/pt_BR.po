@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 4.0.2\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-22 17:45-0300\n"
+"PO-Revision-Date: 2026-07-31 21:32-0300\n"
 "Last-Translator: Diego N.S <degons490@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
@@ -246,7 +246,7 @@ msgid "Options:"
 msgstr "Opções:"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
@@ -254,9 +254,10 @@ msgid ""
 "the '--enable' argument to enable automated update checks."
 msgstr ""
 "  -c, --check       Verifica atualizações disponíveis, altera o ícone da "
-"bandeja do sistema e envia uma notificação de área de trabalho com o número "
-"de atualizações disponíveis (se houver novas atualizações disponíveis em "
-"comparação com a última verificação)"
+"bandeja do sistema e envia uma notificação da área de trabalho com o número "
+"de atualizações disponíveis (caso existam novas atualizações em comparação "
+"com a última verificação). Opcionalmente, adicione o argumento '--enable' "
+"para habilitar as verificações automáticas de atualização."
 
 #: src/lib/help.sh:17
 #, sh-format
@@ -458,7 +459,7 @@ msgstr ""
 #: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
 msgid "Invalid input"
-msgstr ""
+msgstr "Entrada inválida"
 
 #: src/lib/list_news.sh:103
 #, sh-format
