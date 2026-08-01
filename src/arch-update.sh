@@ -28,6 +28,15 @@ else
 	exit 14
 fi
 
+# Source the user profile to inherit environment variables (e.g. proxies) set in the user's shell profile
+if [ -f "${HOME}/.bash_profile" ]; then
+	# shellcheck source=/dev/null
+	source "${HOME}/.bash_profile"
+elif [ -f "${HOME}/.profile" ]; then
+	# shellcheck source=/dev/null
+	source "${HOME}/.profile"
+fi
+
 # Source the "config" library which checks options set in the arch-update.conf configuration file
 # shellcheck source=src/lib/config.sh
 source "${libdir}/config.sh"
