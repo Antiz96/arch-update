@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.1](https://github.com/Antiz96/arch-update/releases/tag/v4.1.1) - 2026-08-02
+
+### Fixes
+
+- *(i18n)* Honor default choice capitalization in Dutch translation ([#730](https://github.com/Antiz96/arch-update/pull/730)) - ([179b3be](https://github.com/Antiz96/arch-update/commit/179b3beb22a53261538708b53d508b0a9686fe0d)) by @Antiz96
+- *(i18n)* Update answer choices translations in Russian translation ([#729](https://github.com/Antiz96/arch-update/pull/729)) - ([0afe73b](https://github.com/Antiz96/arch-update/commit/0afe73b2739c0596ecaffce3d166c45036a07bde)) by @DrWeb56
+
 ## [v4.1.0](https://github.com/Antiz96/arch-update/releases/tag/v4.1.0) - 2026-08-01
 
 ### Features
