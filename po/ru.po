@@ -118,12 +118,12 @@ msgstr "Неиспользуемые пакеты Flatpak:"
 #: src/lib/flatpak_unused_packages.sh:14
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
-msgstr "Удалить этот неиспользуемый пакет Flatpak сейчас? [y/N]"
+msgstr "Удалить этот неиспользуемый пакет Flatpak сейчас? [д/Н]"
 
 #: src/lib/flatpak_unused_packages.sh:16
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
-msgstr "Удалить эти неиспользуемые пакеты Flatpak сейчас? [y/N]"
+msgstr "Удалить эти неиспользуемые пакеты Flatpak сейчас? [д/Н]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
 #: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
@@ -362,7 +362,7 @@ msgstr ""
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr "Перезагрузиться сейчас? [y/N]"
+msgstr "Перезагрузиться сейчас? [д/Н]"
 
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
@@ -562,7 +562,7 @@ msgid ""
 "Would you like to remove this orphan package (and its potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Удалить этот осиротевший пакет (и его возможные зависимости) сейчас? [y/N]"
+"Удалить этот осиротевший пакет (и его возможные зависимости) сейчас? [д/Н]"
 
 #: src/lib/orphan_packages.sh:16
 #, sh-format
@@ -570,7 +570,7 @@ msgid ""
 "Would you like to remove these orphan packages (and their potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Удалить эти осиротевшие пакеты (и их возможные зависимости) сейчас? [y/N]"
+"Удалить эти осиротевшие пакеты (и их возможные зависимости) сейчас? [д/Н]"
 
 #: src/lib/orphan_packages.sh:23
 #, sh-format
