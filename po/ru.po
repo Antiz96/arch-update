@@ -516,7 +516,7 @@ msgstr "Обновлений нет\\n"
 #: src/lib/list_packages.sh:162
 #, sh-format
 msgid "Proceed with update? [Y/n]"
-msgstr "Продолжить обновление? [Y/n]"
+msgstr "Продолжить обновление? [Д/н]"
 
 #: src/lib/list_packages.sh:172
 #, sh-format
@@ -591,7 +591,7 @@ msgstr ""
 #: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Удалить его из кэша сейчас? [Y/n]"
+msgstr "Удалить его из кэша сейчас? [Д/н]"
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
@@ -603,7 +603,7 @@ msgstr ""
 #: src/lib/packages_cache.sh:25
 #, sh-format
 msgid "Would you like to remove them from the cache now? [Y/n]"
-msgstr "Удалить их из кэша сейчас? [Y/n]"
+msgstr "Удалить их из кэша сейчас? [Д/н]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
@@ -628,12 +628,12 @@ msgstr "Файлы pacnew:"
 #: src/lib/pacnew_files.sh:14
 #, sh-format
 msgid "Would you like to process this file now? [Y/n]"
-msgstr "Обработать этот файл сейчас? [Y/n]"
+msgstr "Обработать этот файл сейчас? [Д/н]"
 
 #: src/lib/pacnew_files.sh:16
 #, sh-format
 msgid "Would you like to process these files now? [Y/n]"
-msgstr "Обработать эти файлы сейчас? [Y/n]"
+msgstr "Обработать эти файлы сейчас? [Д/н]"
 
 #: src/lib/pacnew_files.sh:23
 #, sh-format
