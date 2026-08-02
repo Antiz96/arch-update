@@ -119,12 +119,12 @@ msgstr "Ongebruikte Flatpak-pakketten:"
 #: src/lib/flatpak_unused_packages.sh:14
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
-msgstr "Wil je dit ongebruikte Flatpak-pakket verwijderen? [j/n]"
+msgstr "Wil je dit ongebruikte Flatpak-pakket verwijderen? [j/N]"
 
 #: src/lib/flatpak_unused_packages.sh:16
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
-msgstr "Wil je deze ongebruikte Flatpak-pakketten verwijderen? [j/n]"
+msgstr "Wil je deze ongebruikte Flatpak-pakketten verwijderen? [j/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
 #: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
@@ -372,7 +372,7 @@ msgstr ""
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr "Wil je nu opnieuw opstarten? [j/n]"
+msgstr "Wil je nu opnieuw opstarten? [j/N]"
 
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
@@ -535,7 +535,7 @@ msgstr "Er zijn geen updates beschikbaar\\n"
 #: src/lib/list_packages.sh:162
 #, sh-format
 msgid "Proceed with update? [Y/n]"
-msgstr "Wil je het systeem bijwerken? [j/n]"
+msgstr "Wil je het systeem bijwerken? [J/n]"
 
 #: src/lib/list_packages.sh:172
 #, sh-format
@@ -582,7 +582,7 @@ msgid ""
 "dependencies) now? [y/N]"
 msgstr ""
 "Wil je dit onteigende pakket en eventuele afhankelijkheden ervan "
-"verwijderen? [j/n]"
+"verwijderen? [j/N]"
 
 #: src/lib/orphan_packages.sh:16
 #, sh-format
@@ -591,7 +591,7 @@ msgid ""
 "dependencies) now? [y/N]"
 msgstr ""
 "Wil je deze onteigende pakketten en eventuele afhankelijkheden ervan "
-"verwijderen? [j/n]"
+"verwijderen? [j/N]"
 
 #: src/lib/orphan_packages.sh:23
 #, sh-format
@@ -612,7 +612,7 @@ msgstr ""
 #: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Wil je dit pakket uit de cache verwijderen? [j/n]"
+msgstr "Wil je dit pakket uit de cache verwijderen? [J/n]"
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
@@ -624,7 +624,7 @@ msgstr ""
 #: src/lib/packages_cache.sh:25
 #, sh-format
 msgid "Would you like to remove them from the cache now? [Y/n]"
-msgstr "Wil je deze pakketten uit de cache verwijderen? [j/n]"
+msgstr "Wil je deze pakketten uit de cache verwijderen? [J/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
@@ -649,12 +649,12 @@ msgstr "Pacnew-bestanden:"
 #: src/lib/pacnew_files.sh:14
 #, sh-format
 msgid "Would you like to process this file now? [Y/n]"
-msgstr "Wil je dit bestand nu verwerken? [j/n]"
+msgstr "Wil je dit bestand nu verwerken? [J/n]"
 
 #: src/lib/pacnew_files.sh:16
 #, sh-format
 msgid "Would you like to process these files now? [Y/n]"
-msgstr "Wil je deze bestanden nu verwerken? [j/n]"
+msgstr "Wil je deze bestanden nu verwerken? [J/n]"
 
 #: src/lib/pacnew_files.sh:23
 #, sh-format
