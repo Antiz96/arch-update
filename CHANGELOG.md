@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.2](https://github.com/Antiz96/arch-update/releases/tag/v4.1.2) - 2026-08-03
+
+### Features
+
+- *(i18n)* Add new Turkish translation ([#733](https://github.com/Antiz96/arch-update/pull/733)) - ([1371f84](https://github.com/Antiz96/arch-update/commit/1371f84fef28e8059c8afc02024697e22ffabeec)) by @ALiAvkaya
+- *(i18n)* Add spanish translation to .desktop files comments ([#734](https://github.com/Antiz96/arch-update/pull/734)) - ([e6cb548](https://github.com/Antiz96/arch-update/commit/e6cb548fb7353c4b46eabe7760b95377dfb61a02)) by @julionc
+- *(i18n)* Add Russian translation to the `.desktop` files comment ([#731](https://github.com/Antiz96/arch-update/pull/731)) - ([1b2264e](https://github.com/Antiz96/arch-update/commit/1b2264e8938420beb62c4d0133c44803586457c3)) by @wehrwolfmann
+
+### Miscellaneous
+
+- *(CI)* Update codespell path exclusion list ([#735](https://github.com/Antiz96/arch-update/pull/735)) - ([9685e02](https://github.com/Antiz96/arch-update/commit/9685e028dbeedaa1161cb78cd121cfeedf8d52d4)) by @Antiz96
+- *(deps)* Lock file maintenance ([#732](https://github.com/Antiz96/arch-update/pull/732)) - ([d69970b](https://github.com/Antiz96/arch-update/commit/d69970b284fe350cfa25b290b6e31fea20141cbf)) by @renovate[bot]
+
 ## [v4.1.1](https://github.com/Antiz96/arch-update/releases/tag/v4.1.1) - 2026-08-02
 
 ### Fixes
