@@ -12,6 +12,7 @@ Comment[ja]=Arch-Update 用のシステムトレイアプレット
 Comment[ka]=Arch-Update-ის აპლეტი სისტემურ საათთან
 Comment[nb]=Miniprogam for å legge Arch-Update i systemkurven
 Comment[ru]=Апплет Arch-Update в системном трее
+Comment[tr]=Arch-Update sistem tepsisi uygulaması
 Icon=arch-update_updates-available-blue
 Type=Application
 Exec=/bin/sh -c "sleep 3 && arch-update --tray"
