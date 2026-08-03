@@ -81,8 +81,8 @@ msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
-"${name}.conf yapılandırma dosyasında yetki yükseltme için ayarlanan ${su_cmd} "
-"komutu bulunamadı\\n"
+"${name}.conf yapılandırma dosyasında yetki yükseltme için ayarlanan "
+"${su_cmd} komutu bulunamadı\\n"
 
 #: src/lib/common.sh:192
 #, sh-format
@@ -90,9 +90,9 @@ msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
 "files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
-"${name}.conf yapılandırma dosyasında pacnew dosyalarının farklarını görüntülem"
-"ek "
-"/ düzenlemek için ayarlanan ${diff_prog} düzenleyicisi bulunamadı\\n"
+"${name}.conf yapılandırma dosyasında pacnew dosyalarının farklarını "
+"görüntülemek / düzenlemek için ayarlanan ${diff_prog} düzenleyicisi "
+"bulunamadı\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
 #, sh-format
@@ -100,8 +100,8 @@ msgid ""
 "No configuration file found\\nYou can generate one with \"${name} --gen-"
 "config\""
 msgstr ""
-"Yapılandırma dosyası bulunamadı\\n\"${name} --gen-config\" komutuyla bir tane "
-"oluşturabilirsiniz"
+"Yapılandırma dosyası bulunamadı\\n\"${name} --gen-config\" komutuyla bir "
+"tane oluşturabilirsiniz"
 
 #: src/lib/edit-config.sh:13
 #, sh-format
@@ -278,16 +278,15 @@ msgid ""
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
 "  -n, --news [Sayı] En son Arch haberlerini görüntüler, isteğe bağlı olarak "
-"'--news [Sayı]' ile görüntülenecek Arch haberi sayısını belirtebilirsiniz (örn"
-". "
-"'--news 10')"
+"'--news [Sayı]' ile görüntülenecek Arch haberi sayısını belirtebilirsiniz "
+"(örn. '--news 10')"
 
 #: src/lib/help.sh:20
 #, sh-format
 msgid "  -s, --services    Check for services requiring a post upgrade restart"
 msgstr ""
-"  -s, --services    Güncelleme sonrası yeniden başlatma gerektiren servisleri "
-"kontrol eder"
+"  -s, --services    Güncelleme sonrası yeniden başlatma gerektiren "
+"servisleri kontrol eder"
 
 #: src/lib/help.sh:21
 #, sh-format
@@ -302,9 +301,9 @@ msgid ""
 "overwrite any existing '${name}.conf' configuration file"
 msgstr ""
 "  --gen-config      Varsayılan / örnek bir '${name}.conf' yapılandırma "
-"dosyası oluşturur, mevcut herhangi bir '${name}.conf' yapılandırma dosyasının "
-"üzerine yazmak için isteğe bağlı olarak '--force' parametresini kullanabilirsi"
-"niz"
+"dosyası oluşturur, mevcut herhangi bir '${name}.conf' yapılandırma "
+"dosyasının üzerine yazmak için isteğe bağlı olarak '--force' parametresini "
+"kullanabilirsiniz"
 
 #: src/lib/help.sh:23
 #, sh-format
@@ -356,8 +355,8 @@ msgid ""
 "configuration file, see the ${name}.conf(5) man page."
 msgstr ""
 "Bazı seçenekler ${name}.conf yapılandırma dosyası aracılığıyla "
-"etkinleştirilebilir, devre dışı bırakılabilir veya değiştirilebilir, ${name}."
-"conf(5) kılavuz sayfasına bakın."
+"etkinleştirilebilir, devre dışı bırakılabilir veya değiştirilebilir, "
+"${name}.conf(5) kılavuz sayfasına bakın."
 
 #: src/lib/invalid_option.sh:7
 #, sh-format
@@ -374,8 +373,8 @@ msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
-"Yeniden başlatma gerekiyor:\\nSisteminizde uygulanması için yeniden "
-"başlatma gerektiren bekleyen bir çekirdek güncellemesi var\\n"
+"Yeniden başlatma gerekiyor:\\nSisteminizde uygulanması için yeniden başlatma "
+"gerektiren bekleyen bir çekirdek güncellemesi var\\n"
 
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
@@ -422,10 +421,9 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
-"Son Arch Haberleri alınamadı (HTTP hata yanıtı veya istek zaman aşımı)\\nLütfe"
-"n "
-"sisteminizi güncellemeden önce https://archlinux.org adresinden son haberleri "
-"kontrol edin"
+"Son Arch Haberleri alınamadı (HTTP hata yanıtı veya istek zaman aşımı)"
+"\\nLütfen sisteminizi güncellemeden önce https://archlinux.org adresinden "
+"son haberleri kontrol edin"
 
 #: src/lib/list_news.sh:23
 #, sh-format
@@ -448,8 +446,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
-"Okumak istediğiniz haberleri seçin (örn. 1 3 5), tümünü okumak için 0'ı seçin "
-"veya çıkmak için \"Enter\"a basın:"
+"Okumak istediğiniz haberleri seçin (örn. 1 3 5), tümünü okumak için 0'ı "
+"seçin veya çıkmak için \"Enter\"a basın:"
 
 #: src/lib/list_news.sh:57
 #, sh-format
@@ -457,8 +455,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
-"Okumak istediğiniz haberleri seçin (örn. 1 3 5), tümünü okumak için 0'ı seçin "
-"veya güncellemeye devam etmek için \"Enter\"a basın:"
+"Okumak istediğiniz haberleri seçin (örn. 1 3 5), tümünü okumak için 0'ı "
+"seçin veya güncellemeye devam etmek için \"Enter\"a basın:"
 
 #: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
@@ -472,10 +470,9 @@ msgid ""
 "timeout)\\nPlease, read the selected Arch News at ${news_url} before "
 "updating your system"
 msgstr ""
-"Seçilen Arch Haberi alınamadı (HTTP hata yanıtı veya istek zaman aşımı)\\nLütf"
-"en "
-"sisteminizi güncellemeden önce seçilen Arch Haberini ${news_url} adresinden "
-"okuyun"
+"Seçilen Arch Haberi alınamadı (HTTP hata yanıtı veya istek zaman aşımı)"
+"\\nLütfen sisteminizi güncellemeden önce seçilen Arch Haberini ${news_url} "
+"adresinden okuyun"
 
 #: src/lib/list_news.sh:108
 #, sh-format
@@ -595,8 +592,8 @@ msgid ""
 "Would you like to remove these orphan packages (and their potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Bu yetim paketleri (ve olası bağımlılıklarını) şimdi kaldırmak ister misiniz? "
-"[e/H]"
+"Bu yetim paketleri (ve olası bağımlılıklarını) şimdi kaldırmak ister "
+"misiniz? [e/H]"
 
 #: src/lib/orphan_packages.sh:23
 #, sh-format
@@ -625,8 +622,8 @@ msgstr "Şimdi önbellekten silmek ister misiniz? [E/h]"
 msgid ""
 "Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
-"Önbelleğe Alınmış Paketler:\\nÖnbellekte eski ve/veya kaldırılmış "
-"paketler var\\n"
+"Önbelleğe Alınmış Paketler:\\nÖnbellekte eski ve/veya kaldırılmış paketler "
+"var\\n"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
@@ -771,8 +768,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
-"'${tray_desktop_file_autostart}' dosyası oluşturuldu, ${_name} sistem tepsisi "
-"uygulaması açılışta otomatik olarak başlatılacak\\n"
+"'${tray_desktop_file_autostart}' dosyası oluşturuldu, ${_name} sistem "
+"tepsisi uygulaması açılışta otomatik olarak başlatılacak\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
