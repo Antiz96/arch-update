@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.3](https://github.com/Antiz96/arch-update/releases/tag/v4.1.3) - 2026-08-04
+
+### Fixes
+
+- *(i18n)* Use Latin [y/n] for the Russian translation confirmation prompts ([#738](https://github.com/Antiz96/arch-update/pull/738)) - ([2a57366](https://github.com/Antiz96/arch-update/commit/2a573662ce3e56265c4ac80d18b9e0ecc12ac0fc)) by @wehrwolfmann
+
 ## [v4.1.2](https://github.com/Antiz96/arch-update/releases/tag/v4.1.2) - 2026-08-03
 
 ### Features
