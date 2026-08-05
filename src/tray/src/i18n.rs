@@ -1,4 +1,4 @@
-//! Set and initialize locatlization
+//! Set and initialize localization
 
 use gettextrs::*;
 use log::warn;
