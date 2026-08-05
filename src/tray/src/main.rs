@@ -6,14 +6,13 @@ use log::error;
 use std::process;
 
 mod desktop_file;
-mod i18n_dir;
+mod i18n;
 mod icon_statefile;
 mod tray;
 mod tray_helpers;
 mod updates_statefiles;
 
-#[tokio::main(flavor = "current_thread")]
-async fn main() {
+fn main() {
     // Initialize logger
     env_logger::init();
 
@@ -35,12 +34,17 @@ async fn main() {
         process::exit(1);
     });
 
-    // Get the translation directory
-    let i18n_dir = i18n_dir::get_i18n_dir().unwrap_or_else(|error| {
+    // Get the translation directory and initialize localization
+    let i18n_dir = i18n::get_i18n_dir().unwrap_or_else(|error| {
         error!("{error}");
         process::exit(1);
     });
+    i18n::init_i18n(&i18n_dir);
 
-    // Start systray applet
-    tray::run(icon_statefile, updates_statefiles, desktop_file, i18n_dir).await;
+    // Create single-threaded tokio runtime and start the systray applet
+    tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()
+        .unwrap()
+        .block_on(tray::run(icon_statefile, updates_statefiles, desktop_file));
 }
