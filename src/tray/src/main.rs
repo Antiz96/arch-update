@@ -45,6 +45,6 @@ fn main() {
     tokio::runtime::Builder::new_current_thread()
         .enable_all()
         .build()
-        .unwrap()
+        .expect("Failed to create Tokio runtime")
         .block_on(tray::run(icon_statefile, updates_statefiles, desktop_file));
 }
