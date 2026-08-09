@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.4](https://github.com/Antiz96/arch-update/releases/tag/v4.1.4) - 2026-08-09
+
+### Fixes
+
+- *(tray)* Add a fallback for the gettext bindtextdomain directory ([#746](https://github.com/Antiz96/arch-update/pull/746)) - ([b5f08c1](https://github.com/Antiz96/arch-update/commit/b5f08c182377a15610213efdb02ff04ef4996a18)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Update Rust crate gettext-rs to 0.8.0 ([#741](https://github.com/Antiz96/arch-update/pull/741)) - ([c6f8f52](https://github.com/Antiz96/arch-update/commit/c6f8f52369dc71b1af46ecf75e6ea2b0fb35749f)) by @renovate[bot]
+- *(i18n)* Update translation files ([#747](https://github.com/Antiz96/arch-update/pull/747)) - ([724dd6d](https://github.com/Antiz96/arch-update/commit/724dd6d028f0908c75006acaf4d7ba9b7a8bbf9d)) by @Antiz96
+- *(tray)* Add context if panicking when creating the tokio runtime ([#743](https://github.com/Antiz96/arch-update/pull/743)) - ([2f7d128](https://github.com/Antiz96/arch-update/commit/2f7d12831c91c03499a40ea4fe389c0c546d3e7e)) by @Antiz96
+- *(tray)* Refactor i18n initialization ([#742](https://github.com/Antiz96/arch-update/pull/742)) - ([a98a475](https://github.com/Antiz96/arch-update/commit/a98a4750a943ae098c2fc89879d73ed1440151f4)) by @Antiz96
+- Switch to anyhow for a streamlined error propagation management ([#745](https://github.com/Antiz96/arch-update/pull/745)) - ([ee222a8](https://github.com/Antiz96/arch-update/commit/ee222a8ad828f621ae3d755925eea1c692bef912)) by @Antiz96
+
 ## [v4.1.3](https://github.com/Antiz96/arch-update/releases/tag/v4.1.3) - 2026-08-04
 
 ### Fixes
