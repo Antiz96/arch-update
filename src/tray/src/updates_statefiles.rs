@@ -1,8 +1,8 @@
 //! Find the updates statefile containing the list of pending updates for each package types
 
+use anyhow::Context;
 use std::env;
 use std::fs::File;
-use std::io::{self, Error};
 use std::path::PathBuf;
 
 pub struct UpdatesStateFiles {
@@ -13,7 +13,7 @@ pub struct UpdatesStateFiles {
     pub flatpak: PathBuf,
 }
 
-pub fn get_updates_statefiles() -> io::Result<UpdatesStateFiles> {
+pub fn get_updates_statefiles() -> anyhow::Result<UpdatesStateFiles> {
     let paths = [
         env::var_os("XDG_STATE_HOME").map(|path| PathBuf::from(path).join("arch-update")),
         env::var_os("HOME").map(|path| PathBuf::from(path).join(".local/state/arch-update")),
@@ -38,5 +38,5 @@ pub fn get_updates_statefiles() -> io::Result<UpdatesStateFiles> {
                 && File::open(&updates.flatpak).is_ok())
             .then_some(updates)
         })
-        .ok_or_else(|| Error::other("Unable to access updates statefiles"))
+        .context("Unable to access updates statefiles")
 }

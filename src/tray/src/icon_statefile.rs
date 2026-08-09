@@ -1,11 +1,11 @@
 //! Find the icon statefile containing the systray icon to set depending on the state
 
+use anyhow::Context;
 use std::env;
 use std::fs::File;
-use std::io::{self, Error};
 use std::path::PathBuf;
 
-pub fn get_icon_statefile() -> io::Result<PathBuf> {
+pub fn get_icon_statefile() -> anyhow::Result<PathBuf> {
     let paths = [
         env::var_os("XDG_STATE_HOME").map(|path| PathBuf::from(path).join("arch-update/tray_icon")),
         env::var_os("HOME")
@@ -16,5 +16,5 @@ pub fn get_icon_statefile() -> io::Result<PathBuf> {
         .into_iter()
         .flatten()
         .find_map(|path| File::open(&path).ok().map(|_| path))
-        .ok_or_else(|| Error::other("Unable to access the icon statefile"))
+        .context("Unable to access the icon statefile")
 }
