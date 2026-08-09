@@ -538,7 +538,7 @@ msgid "The update has been aborted\\n"
 msgstr "Абнаўленне было перарвана\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/tray/src/tray.rs:99
+#: src/tray/src/tray.rs:100
 #, sh-format
 msgid "1 update available"
 msgstr "Даступна 1 абнаўленне"
@@ -793,77 +793,77 @@ msgstr "Абнаўленне пакункаў Flatpak...\\n"
 msgid "The update has been applied\\n"
 msgstr "Абнаўленне было прыменена\\n"
 
-#: src/tray/src/tray_helpers.rs:107
+#: src/tray/src/tray_helpers.rs:108
 msgid "Next page"
 msgstr ""
 
-#: src/tray/src/tray_helpers.rs:254
+#: src/tray/src/tray_helpers.rs:253
 #, rust-format
 msgid "{days}d"
 msgstr ""
 
-#: src/tray/src/tray_helpers.rs:257
+#: src/tray/src/tray_helpers.rs:256
 #, rust-format
 msgid "{hours}h"
 msgstr ""
 
-#: src/tray/src/tray_helpers.rs:260
+#: src/tray/src/tray_helpers.rs:259
 #, rust-format
 msgid "{minutes}m"
 msgstr ""
 
-#: src/tray/src/tray_helpers.rs:263
+#: src/tray/src/tray_helpers.rs:262
 #, rust-format
 msgid "{seconds}s"
 msgstr ""
 
-#: src/tray/src/tray.rs:88
+#: src/tray/src/tray.rs:89
 msgid "System is up to date"
 msgstr "Сістэма абноўлена"
 
-#: src/tray/src/tray.rs:101
+#: src/tray/src/tray.rs:102
 #, rust-format
 msgid "{count} updates available"
 msgstr "{count} абнаўленняў даступна"
 
-#: src/tray/src/tray.rs:124
+#: src/tray/src/tray.rs:125
 #, rust-format
 msgid "All ({count})"
 msgstr "Усе ({count})"
 
-#: src/tray/src/tray.rs:138
+#: src/tray/src/tray.rs:139
 #, rust-format
 msgid "Packages ({count})"
 msgstr "Пакункі ({count})"
 
-#: src/tray/src/tray.rs:154
+#: src/tray/src/tray.rs:155
 #, rust-format
 msgid "AUR ({count})"
 msgstr "AUR ({count})"
 
-#: src/tray/src/tray.rs:168
+#: src/tray/src/tray.rs:169
 #, rust-format
 msgid "Flatpak ({count})"
 msgstr "Flatpak ({count})"
 
-#: src/tray/src/tray.rs:190
+#: src/tray/src/tray.rs:191
 #, rust-format
 msgid "Last check {last_check} ago"
 msgstr ""
 
-#: src/tray/src/tray.rs:207
+#: src/tray/src/tray.rs:208
 #, rust-format
 msgid "Next check in {next_check}"
 msgstr "Наступная праверка праз {next_check}"
 
-#: src/tray/src/tray.rs:224
+#: src/tray/src/tray.rs:225
 msgid "Run Arch-Update"
 msgstr "Запусціць Arch-Update"
 
-#: src/tray/src/tray.rs:232
+#: src/tray/src/tray.rs:233
 msgid "Check for updates"
 msgstr "Праверыць абнаўленні"
 
-#: src/tray/src/tray.rs:243
+#: src/tray/src/tray.rs:244
 msgid "Exit"
 msgstr "Выйсці"
