@@ -1,14 +1,14 @@
 //! Set and initialize localization
 
-use anyhow::Context;
 use gettextrs::*;
 use log::warn;
 use std::env;
 use std::fs::File;
 use std::path::PathBuf;
 
-// Find the directory containing translation files
-pub fn get_i18n_dir() -> anyhow::Result<String> {
+// Supersede default gettext bindtextdomain if needed (for instance if a different installation PREFIX
+// than "/usr/share" was used)
+pub fn get_i18n_dir() -> String {
     let paths = [
         env::var_os("XDG_DATA_HOME").map(|path| PathBuf::from(path).join("locale")),
         env::var_os("HOME").map(|path| PathBuf::from(path).join(".local/share/locale")),
@@ -18,7 +18,6 @@ pub fn get_i18n_dir() -> anyhow::Result<String> {
             PathBuf::from(path.to_string_lossy().split(':').next().unwrap_or("")).join("locale")
         }),
         Some(PathBuf::from("/usr/local/share/locale")),
-        Some(PathBuf::from("/usr/share/locale")),
     ];
 
     paths
@@ -31,7 +30,7 @@ pub fn get_i18n_dir() -> anyhow::Result<String> {
                 .ok()
                 .and_then(|_| path.to_str().map(str::to_owned))
         })
-        .context("Failed to access the translation directory")
+        .unwrap_or_else(|| String::from("/usr/share/locale"))
 }
 
 // Initialize localization

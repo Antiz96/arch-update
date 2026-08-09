@@ -36,10 +36,7 @@ fn main() {
     });
 
     // Get the translation directory and initialize localization
-    let i18n_dir = i18n::get_i18n_dir().unwrap_or_else(|error| {
-        error!("{error:?}");
-        process::exit(1);
-    });
+    let i18n_dir = i18n::get_i18n_dir();
     i18n::init_i18n(&i18n_dir);
 
     // Create single-threaded tokio runtime and start the systray applet
