@@ -1,11 +1,11 @@
 //! Find the desktop file needed to run Arch-Update from the terminal
 
+use anyhow::Context;
 use std::env;
 use std::fs::File;
-use std::io::{self, Error};
 use std::path::PathBuf;
 
-pub fn get_desktop_file() -> io::Result<PathBuf> {
+pub fn get_desktop_file() -> anyhow::Result<PathBuf> {
     let paths = [
         env::var_os("XDG_DATA_HOME")
             .map(|path| PathBuf::from(path).join("applications/arch-update.desktop")),
@@ -27,5 +27,5 @@ pub fn get_desktop_file() -> io::Result<PathBuf> {
         .into_iter()
         .flatten()
         .find_map(|path| File::open(&path).ok().map(|_| path))
-        .ok_or_else(|| Error::other("Unable to access the desktop file"))
+        .context("Failed to access the desktop file")
 }

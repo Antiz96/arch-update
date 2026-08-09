@@ -1,5 +1,6 @@
 //! Collection of helpers / functions used by the systray applet for various needs and features
 
+use anyhow::{Context, anyhow};
 use gettextrs::*;
 use ksni::Handle;
 use ksni::menu::*;
@@ -10,7 +11,7 @@ use std::env;
 use std::fs;
 use std::path::Path;
 use std::path::PathBuf;
-use std::process::{self, Command};
+use std::process::Command;
 use std::thread::sleep;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 use tokio::sync::mpsc;
@@ -151,7 +152,10 @@ fn open_package_url(package: &str) {
 
 // Watcher for the icon statefile, allowing to trigger a dynamic rebuild of the systray applet on
 // icon change
-pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::ArchUpdateTray>) {
+pub async fn icon_watcher(
+    icon_statefile: PathBuf,
+    handle: Handle<crate::tray::ArchUpdateTray>,
+) -> anyhow::Result<()> {
     let (tx, mut rx) = mpsc::unbounded_channel();
 
     let mut watcher = RecommendedWatcher::new(
@@ -160,17 +164,11 @@ pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::A
         },
         Config::default(),
     )
-    .unwrap_or_else(|error| {
-        error!("Unable to create icon statefile watcher: {error}");
-        process::exit(1);
-    });
+    .context("Unable to create icon statefile watcher")?;
 
     watcher
         .watch(&icon_statefile, RecursiveMode::NonRecursive)
-        .unwrap_or_else(|error| {
-            error!("Unable to watch icon statefile: {error}");
-            process::exit(1);
-        });
+        .context("Unable to watch icon statefile")?;
 
     while let Some(result) = rx.recv().await {
         match result {
@@ -180,11 +178,12 @@ pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::A
                 }
             }
             Err(error) => {
-                error!("Icon statefile watcher error: {error}");
-                process::exit(1);
+                return Err(anyhow!("Icon statefile watcher error: {error}"));
             }
         }
     }
+
+    Ok(())
 }
 
 // Helper to get the next check time from the systemd timer metadata

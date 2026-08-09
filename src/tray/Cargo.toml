@@ -7,6 +7,7 @@ description = "A systray applet for Arch-Update"
 license = "GPL-3.0-or-later"
 
 [dependencies]
+anyhow = "1.0.104"
 env_logger = "0.11.11"
 gettext-rs = { version = "0.8.0", features = ["gettext-system"] }
 ksni = "0.3.6"
