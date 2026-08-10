@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.5](https://github.com/Antiz96/arch-update/releases/tag/v4.1.5) - 2026-08-10
+
+### Styling
+
+- *(man)* Remove useless line breaks ([#749](https://github.com/Antiz96/arch-update/pull/749)) - ([99f8969](https://github.com/Antiz96/arch-update/commit/99f8969f7fb7ccf897267b67126c0245f73a56bc)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#748](https://github.com/Antiz96/arch-update/pull/748)) - ([1cde03b](https://github.com/Antiz96/arch-update/commit/1cde03bba950bc9d0a79134b28a74f43725d838f)) by @renovate[bot]
+- *(tray)* Improve wording and severity of some errors ([#750](https://github.com/Antiz96/arch-update/pull/750)) - ([31eca8e](https://github.com/Antiz96/arch-update/commit/31eca8ec6be1a0483661b5243909fe98cd93a87d)) by @Antiz96
+
 ## [v4.1.4](https://github.com/Antiz96/arch-update/releases/tag/v4.1.4) - 2026-08-09
 
 ### Fixes

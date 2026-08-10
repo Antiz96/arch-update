@@ -1,4 +1,4 @@
-arch-update.conf(5) ["Arch-Update 4.1.4" ["Arch-Update Manual"]]
+arch-update.conf(5) ["Arch-Update 4.1.5" ["Arch-Update Manual"]]
 
 # NAME
 
