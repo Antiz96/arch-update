@@ -16,5 +16,5 @@ pub fn get_icon_statefile() -> anyhow::Result<PathBuf> {
         .into_iter()
         .flatten()
         .find_map(|path| File::open(&path).ok().map(|_| path))
-        .context("Unable to access the icon statefile")
+        .context("Failed to access the icon statefile")
 }

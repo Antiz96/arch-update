@@ -40,19 +40,19 @@ pub fn init_i18n(i18n_dir: &str) {
     // See https://github.com/gettext-rs/gettext-rs/blob/0.8.0/gettext-sys/lib.rs#L37-L49
     unsafe {
         if setlocale(LocaleCategory::LcMessages, "").is_none() {
-            warn!("Unable to load locale environment");
+            warn!("Failed to load locale environment");
         }
     }
 
     if textdomain("Arch-Update").is_err() {
-        warn!("Unable to set gettext domain");
+        warn!("Failed to set gettext domain");
     }
 
     if bindtextdomain("Arch-Update", i18n_dir).is_err() {
-        warn!("Unable to bind gettext domain path");
+        warn!("Failed to bind gettext domain path");
     }
 
     if bind_textdomain_codeset("Arch-Update", "UTF-8").is_err() {
-        warn!("Unable to set gettext domain codeset");
+        warn!("Failed to set gettext domain codeset");
     }
 }
