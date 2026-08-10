@@ -38,5 +38,5 @@ pub fn get_updates_statefiles() -> anyhow::Result<UpdatesStateFiles> {
                 && File::open(&updates.flatpak).is_ok())
             .then_some(updates)
         })
-        .context("Unable to access updates statefiles")
+        .context("Failed to access updates statefiles")
 }

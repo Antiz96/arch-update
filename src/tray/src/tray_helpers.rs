@@ -4,7 +4,7 @@ use anyhow::{Context, anyhow};
 use gettextrs::*;
 use ksni::Handle;
 use ksni::menu::*;
-use log::{error, info};
+use log::{error, info, warn};
 use notify::{Config, EventKind, RecommendedWatcher, RecursiveMode, Watcher};
 use serde::Deserialize;
 use std::env;
@@ -22,7 +22,7 @@ use crate::tray;
 pub fn launch_arch_update(desktop_file: &Path) {
     match Command::new("gio").arg("launch").arg(desktop_file).spawn() {
         Ok(_) => info!("Arch-Update launched"),
-        Err(error) => error!("Unable to launch Arch-Update: {error}"),
+        Err(error) => error!("Failed to launch Arch-Update: {error}"),
     }
 }
 
@@ -61,7 +61,7 @@ pub fn build_updates_submenu(
         }
 
         Err(error) => {
-            error!("Unable to read updates statefile: {error}");
+            error!("Failed to read updates statefile: {error}");
             Vec::new()
         }
     }
@@ -121,13 +121,13 @@ fn open_package_url(package: &str) {
     let pacman_output = match Command::new("pacman").arg("-Qi").arg(package).output() {
         Ok(pacman_output) => pacman_output,
         Err(error) => {
-            error!("Unable to query the {package} package information: {error}");
+            warn!("Failed to query the {package} package information: {error}");
             return;
         }
     };
 
     if !pacman_output.status.success() {
-        error!("Unable to get the {package} package information");
+        warn!("Failed to get the {package} package information");
         return;
     }
 
@@ -141,7 +141,7 @@ fn open_package_url(package: &str) {
             if url.starts_with("http://") || url.starts_with("https://") {
                 match Command::new("xdg-open").arg(url).spawn() {
                     Ok(_) => info!("Opened the {package} package URL: {url}"),
-                    Err(error) => error!("Unable to open the {package} package URL {url}: {error}"),
+                    Err(error) => warn!("Failed to open the {package} package URL {url}: {error}"),
                 }
             }
 
@@ -164,11 +164,11 @@ pub async fn icon_watcher(
         },
         Config::default(),
     )
-    .context("Unable to create icon statefile watcher")?;
+    .context("Failed to create icon statefile watcher")?;
 
     watcher
         .watch(&icon_statefile, RecursiveMode::NonRecursive)
-        .context("Unable to watch icon statefile")?;
+        .context("Failed to watch icon statefile")?;
 
     while let Some(result) = rx.recv().await {
         match result {

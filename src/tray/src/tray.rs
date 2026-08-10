@@ -38,7 +38,7 @@ impl ksni::Tray for ArchUpdateTray {
                 icon
             }
             Err(error) => {
-                error!("Unable to set the icon: {error}");
+                error!("Failed to set the icon: {error}");
                 process::exit(1);
             }
         }
@@ -196,7 +196,7 @@ impl ksni::Tray for ArchUpdateTray {
                 .into(),
             );
         } else {
-            warn!("Unable to determine the last Arch-Update check time");
+            warn!("Failed to determine the last Arch-Update check time");
         }
 
         // Add the "Next Check" menu entry (if the systemd timer is started / enabled)
@@ -213,7 +213,7 @@ impl ksni::Tray for ArchUpdateTray {
                 .into(),
             );
         } else {
-            warn!("Unable to determine next Arch-Update check time");
+            warn!("Failed to determine next Arch-Update check time");
         }
 
         // Add a menu group containing a separator and the "Run Arch-Update", "Check for updates" & "Exit" buttons
@@ -234,7 +234,7 @@ impl ksni::Tray for ArchUpdateTray {
                 activate: Box::new(
                     |_| match Command::new("arch-update").arg("--check").spawn() {
                         Ok(_) => info!("Arch-Update check executed"),
-                        Err(error) => error!("Unable to execute Arch-Update check: {error}"),
+                        Err(error) => error!("Failed to execute Arch-Update check: {error}"),
                     },
                 ),
                 ..Default::default()
@@ -273,7 +273,7 @@ pub async fn run(
     let handle = tray
         .spawn()
         .await
-        .context("Unable to start the systray applet")?;
+        .context("Failed to start the systray applet")?;
 
     info!("Systray applet started");
 
