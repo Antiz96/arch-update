@@ -155,62 +155,43 @@ See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configu
 
 # EXIT STATUS
 
-*0*
-	OK.
+*0* OK.
 
-*1*
-	Invalid option.
+*1* Invalid option.
 
-*2*
-	No privilege elevation command (`sudo`, `sudo-rs`, `doas` or `run0`) is installed or the one set in the `arch-update.conf` configuration file isn't found.
+*2* No privilege elevation command (`sudo`, `sudo-rs`, `doas` or `run0`) is installed or the one set in the `arch-update.conf` configuration file isn't found.
 
-*3*
-	Error when launching the Arch-Update systray applet.
+*3* Error when launching the Arch-Update systray applet.
 
-*4*
-	User didn't gave the confirmation to proceed.
+*4* User didn't gave the confirmation to proceed.
 
-*5*
-	Error when updating packages.
+*5* Error when updating packages.
 
-*6*
-	Error when calling the reboot command to apply a pending kernel update.
+*6* Error when calling the reboot command to apply a pending kernel update.
 
-*7*
-	No pending update when using the `-l / --list` option.
+*7* No pending update when using the `-l / --list` option.
 
-*8*
-	Error when generating a configuration file with the `--gen-config` option.
+*8* Error when generating a configuration file with the `--gen-config` option.
 
-*9*
-	Error when reading the configuration file with the `--show-config` option.
+*9* Error when reading the configuration file with the `--show-config` option.
 
-*10*
-	Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option.
+*10* Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option.
 
-*11*
-	Error when restarting services that require a post upgrade restart.
+*11* Error when restarting services that require a post upgrade restart.
 
-*12*
-	Error during the pacnew files processing.
+*12* Error during the pacnew files processing.
 
-*13*
-	Error when editing the configuration file with the `--edit-config` option.
+*13* Error when editing the configuration file with the `--edit-config` option.
 
-*14*
-	Libraries directory not found.
+*14* Libraries directory not found.
 
-*15*
-	The "diff prog" editor set in the `arch-update.conf` configuration file isn't found.
+*15* The "diff prog" editor set in the `arch-update.conf` configuration file isn't found.
 
-*16*
-	Error when creating the `statedir` and / or the `tmpdir` directories.
+*16* Error when creating the `statedir` and / or the `tmpdir` directories.
 
-*17*
-	Another instance of Arch-Update is already running.
+*17* Another instance of Arch-Update is already running.
 
-*18*
-	Error when running Arch-Update from the desktop notification action.
+*18* Error when running Arch-Update from the desktop notification action.
 
 # SEE ALSO
 
