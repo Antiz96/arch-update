@@ -7,7 +7,7 @@
 # taotieren <admin@taotieren.com>, 2026
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.1.5\n"
+"Project-Id-Version: Arch-Update 4.1.6\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-08-12 12:00+0800\n"

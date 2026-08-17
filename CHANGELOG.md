@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.1.6](https://github.com/Antiz96/arch-update/releases/tag/v4.1.6) - 2026-08-17
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#752](https://github.com/Antiz96/arch-update/pull/752)) - ([09779c9](https://github.com/Antiz96/arch-update/commit/09779c90466e16530a5a02184e3183fcea063657)) by @renovate[bot]
+- *(i18n)* Update Chinese simplified translation ([#751](https://github.com/Antiz96/arch-update/pull/751)) - ([6429e9f](https://github.com/Antiz96/arch-update/commit/6429e9ff1ef6f5042cc1592a0502ce46598f6bde)) by @taotieren
+
 ## [v4.1.5](https://github.com/Antiz96/arch-update/releases/tag/v4.1.5) - 2026-08-10
 
 ### Styling
