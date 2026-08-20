@@ -29,9 +29,16 @@ launch_arch_update_in_terminal() {
 		terminal="$(sed -n 's/^TerminalApplication=//p' "${XDG_CONFIG_HOME:-${HOME}/.config}/kdeglobals" | head -n 1)"
 	fi
 
+	# Fallback to the `TerminalService` entry (KDE also stores the terminal emulator as a
+	# `.desktop` file name, e.g. `TerminalService=kitty.desktop`)
+	if [ -z "${terminal}" ] && [ -f "${XDG_CONFIG_HOME:-${HOME}/.config}/kdeglobals" ]; then
+		terminal="$(sed -n 's/^TerminalService=//p' "${XDG_CONFIG_HOME:-${HOME}/.config}/kdeglobals" | head -n 1)"
+		terminal="${terminal%.desktop}"
+	fi
+
 	# Check the terminal emulator configured in GNOME (gsettings)
 	if [ -z "${terminal}" ] && command -v gsettings > /dev/null; then
-		terminal="$(gsettings get org.gnome.desktop.default-applications.terminal exec 2> /dev/null | tr -d "'")"
+		terminal="$(gsettings get org.gnome.desktop.default-applications.terminal exec 2> /dev/null | tr -d "'" | xargs)"
 	fi
 
 	if [ -n "${terminal}" ] && command -v "${terminal}" > /dev/null; then
@@ -104,8 +111,11 @@ if [ "$(sed -n '2p' "${tmpdir}/notif_param")" == "run" ]; then
 
 	if flock -n "${fd_notif}"; then
 		# The launch function is exported so that it is available in the subshell started by
-		# `systemd-run` below
+		# `systemd-run` below. The desktop file path is passed as a positional argument (`$1`)
+		# instead of being interpolated into the command string, to avoid quoting issues and
+		# shell injection risks
 		export -f launch_arch_update_in_terminal
-		systemd-run --user --scope --unit="${name}"-run-"$(date +%Y%m%d-%H%M%S)" --quiet /bin/bash -c "launch_arch_update_in_terminal ${desktop_file}" || exit 18
+		# shellcheck disable=SC2016 # `$1` must be expanded in the subshell, not here
+		systemd-run --user --scope --unit="${name}"-run-"$(date +%Y%m%d-%H%M%S)" --quiet /bin/bash -c 'launch_arch_update_in_terminal "$1"' _ "${desktop_file}" || exit 18
 	fi
 fi

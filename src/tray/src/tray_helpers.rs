@@ -88,25 +88,6 @@ fn find_in_path(program: &str) -> Option<String> {
 
 // Helper to detect the terminal emulator configured in the desktop environment
 fn detect_terminal() -> Option<String> {
-    // Check the `$TERMINAL` environment variable
-    if let Some(terminal) = env::var_os("TERMINAL") {
-        let terminal = terminal.to_string_lossy().into_owned();
-        let terminal_bin = terminal.split_whitespace().next().unwrap_or(&terminal);
-
-        if find_in_path(terminal_bin).is_some() {
-            trace!(
-                "Terminal emulator detected from the $TERMINAL environment variable: {terminal}"
-            );
-            return Some(terminal_bin.to_owned());
-        }
-
-        trace!(
-            "$TERMINAL environment variable set to {terminal}, but the program wasn't found in PATH"
-        );
-    } else {
-        trace!("The $TERMINAL environment variable is not set");
-    }
-
     // Check the terminal emulator configured in KDE (kdeglobals)
     match kde_terminal() {
         Some(terminal) => match find_in_path(&terminal) {
@@ -141,6 +122,25 @@ fn detect_terminal() -> Option<String> {
         None => {
             trace!("No terminal emulator configured in GNOME (gsettings)");
         }
+    }
+
+    // Check the `$TERMINAL` environment variable
+    if let Some(terminal) = env::var_os("TERMINAL") {
+        let terminal = terminal.to_string_lossy().into_owned();
+        let terminal_bin = terminal.split_whitespace().next().unwrap_or(&terminal);
+
+        if find_in_path(terminal_bin).is_some() {
+            trace!(
+                "Terminal emulator detected from the $TERMINAL environment variable: {terminal}"
+            );
+            return Some(terminal_bin.to_owned());
+        }
+
+        trace!(
+            "$TERMINAL environment variable set to {terminal}, but the program wasn't found in PATH"
+        );
+    } else {
+        trace!("The $TERMINAL environment variable is not set");
     }
 
     None
@@ -544,6 +544,9 @@ mod tests {
 
     #[test]
     fn launch_arch_update_uses_kde_terminal() {
+        // Acquire the global env lock to serialize tests that mutate global environment
+        // variables (cargo test runs tests in parallel by default)
+        let _env_guard = EnvGuard::lock();
         let test_dir =
             std::env::temp_dir().join(format!("arch-update-tray-test-{}", std::process::id()));
         let fake_bin = test_dir.join("bin");
@@ -572,7 +575,8 @@ mod tests {
             path.push(':');
             path.push_str(&existing.to_string_lossy());
         }
-        // SAFETY: single-threaded test; no other thread reads these variables concurrently
+        // SAFETY: the test holds the global env lock, so no other test reads or mutates
+        // these variables concurrently
         unsafe {
             env::set_var("PATH", &path);
             // Simulate the common case where `XDG_CONFIG_HOME` is unset: the `kdeglobals`
@@ -596,5 +600,49 @@ mod tests {
 
         let _ = fs::remove_dir_all(&test_dir);
         assert_eq!(launched.trim(), "arch-update");
+    }
+
+    // Global lock to serialize tests that mutate global environment variables, as `cargo test`
+    // runs tests in parallel by default
+    static ENV_LOCK: std::sync::OnceLock<std::sync::Mutex<()>> = std::sync::OnceLock::new();
+
+    // Guard that holds the global env lock for the duration of the test and restores the
+    // `PATH`, `HOME`, `XDG_CONFIG_HOME` and `TERMINAL` environment variables to their original
+    // values on drop
+    struct EnvGuard {
+        _lock: std::sync::MutexGuard<'static, ()>,
+        original_values: std::collections::HashMap<String, Option<std::ffi::OsString>>,
+    }
+
+    impl EnvGuard {
+        fn lock() -> EnvGuard {
+            let lock = ENV_LOCK
+                .get_or_init(|| std::sync::Mutex::new(()))
+                .lock()
+                .unwrap();
+            let original_values = ["PATH", "HOME", "XDG_CONFIG_HOME", "TERMINAL"]
+                .iter()
+                .map(|var| (var.to_string(), env::var_os(var)))
+                .collect();
+            EnvGuard {
+                _lock: lock,
+                original_values,
+            }
+        }
+    }
+
+    impl Drop for EnvGuard {
+        fn drop(&mut self) {
+            for (var, value) in &self.original_values {
+                // SAFETY: the test holds the global env lock, so no other test reads or mutates
+                // these variables concurrently
+                unsafe {
+                    match value {
+                        Some(value) => env::set_var(var, value),
+                        None => env::remove_var(var),
+                    }
+                }
+            }
+        }
     }
 }
