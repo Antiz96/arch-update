@@ -146,12 +146,12 @@ In case you want `Arch-Update` to check for new updates only once at boot, you c
 
 ## Run Arch-Update in a specific terminal emulator
 
-"gio" (used to launch the `arch-update` terminal application via the `arch-update.desktop` file when the systray applet is clicked) currently has a default limited list of known terminal emulators.  
-As such, if you don't have any of these "known" terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing (as `gio` couldn't find a terminal emulator from the said list). Incidentally, you might have multiple terminal emulators installed on your systemi and you may want to force Arch-Update to use a specific one. In both cases, you can specify which terminal emulator to use.
+When the systray applet is clicked, `arch-update` is launched in the terminal emulator configured in your desktop environment (KDE `kdeglobals`, GNOME `gsettings` or the `$TERMINAL` environment variable).
 
-To do so, install the `xdg-terminal-exec` AUR package (https://aur.archlinux.org/packages/xdg-terminal-exec), create the `~/.config/xdg-terminals.list` file and add the name of the `.desktop` file of your terminal emulator of choice in it (e.g. `Alacritty.desktop`).
-
+If `xdg-terminal-exec` is installed (https://aur.archlinux.org/packages/xdg-terminal-exec), it takes precedence, as it honors the terminal emulator configured in the `~/.config/xdg-terminals.list` file.  
 See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configuration for more details.
+
+Otherwise, as a last resort, the terminal emulator is picked from GLib's own limited list of known terminal emulators (via `gio`), which may not honor your configuration.
 
 # EXIT STATUS
 

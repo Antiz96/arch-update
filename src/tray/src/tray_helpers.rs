@@ -4,11 +4,12 @@ use anyhow::{Context, anyhow};
 use gettextrs::*;
 use ksni::Handle;
 use ksni::menu::*;
-use log::{error, info, warn};
+use log::{error, info, trace, warn};
 use notify::{Config, EventKind, RecommendedWatcher, RecursiveMode, Watcher};
 use serde::Deserialize;
 use std::env;
 use std::fs;
+use std::os::unix::fs::PermissionsExt;
 use std::path::Path;
 use std::path::PathBuf;
 use std::process::Command;
@@ -18,11 +19,218 @@ use tokio::sync::mpsc;
 
 use crate::tray;
 
-// Helper to run Arch-Update from the desktop file (via `gio`)
+// Helper to run Arch-Update in the terminal emulator configured in the desktop environment
+// (as `gio`'s own list of known terminal emulators doesn't honor it)
 pub fn launch_arch_update(desktop_file: &Path) {
+    // Prefer `xdg-terminal-exec` (the freedesktop standard for launching applications in a
+    // terminal emulator), which honors the terminal emulator configured in the `xdg-terminals.list`
+    // file
+    if let Some(xdg_terminal_exec) = find_in_path("xdg-terminal-exec") {
+        match Command::new(&xdg_terminal_exec).arg("arch-update").spawn() {
+            Ok(_) => {
+                info!("Arch-Update launched via xdg-terminal-exec");
+                return;
+            }
+            Err(error) => {
+                warn!("Failed to launch Arch-Update via xdg-terminal-exec: {error}");
+            }
+        }
+    }
+
+    // Otherwise, try to launch Arch-Update in the terminal emulator configured in the desktop
+    // environment (KDE `kdeglobals` / GNOME `gsettings` / `$TERMINAL` environment variable)
+    if let Some(terminal) = detect_terminal() {
+        match launch_in_terminal(&terminal) {
+            Ok(_) => {
+                info!("Arch-Update launched in the {terminal} terminal emulator");
+                return;
+            }
+            Err(error) => {
+                warn!("Failed to launch Arch-Update in the {terminal} terminal emulator: {error}");
+            }
+        }
+    }
+
+    // Fallback: launch the desktop file via `gio`, which relies on GLib's own limited list of
+    // known terminal emulators
     match Command::new("gio").arg("launch").arg(desktop_file).spawn() {
         Ok(_) => info!("Arch-Update launched"),
         Err(error) => error!("Failed to launch Arch-Update: {error}"),
+    }
+}
+
+// Helper to find a program in the PATH (or check it directly if it contains a path)
+fn find_in_path(program: &str) -> Option<String> {
+    if program.contains('/') {
+        let path = Path::new(program);
+
+        return path
+            .metadata()
+            .ok()
+            .filter(|metadata| metadata.is_file() && metadata.permissions().mode() & 0o111 != 0)
+            .map(|_| program.to_owned());
+    }
+
+    env::var_os("PATH")
+        .and_then(|path| {
+            env::split_paths(&path)
+                .map(|dir| dir.join(program))
+                .find(|path| {
+                    path.metadata()
+                        .map(|metadata| {
+                            metadata.is_file() && metadata.permissions().mode() & 0o111 != 0
+                        })
+                        .unwrap_or(false)
+                })
+        })
+        .map(|path| path.to_string_lossy().into_owned())
+}
+
+// Helper to detect the terminal emulator configured in the desktop environment
+fn detect_terminal() -> Option<String> {
+    // Check the `$TERMINAL` environment variable
+    if let Some(terminal) = env::var_os("TERMINAL") {
+        let terminal = terminal.to_string_lossy().into_owned();
+        let terminal_bin = terminal.split_whitespace().next().unwrap_or(&terminal);
+
+        if find_in_path(terminal_bin).is_some() {
+            trace!(
+                "Terminal emulator detected from the $TERMINAL environment variable: {terminal}"
+            );
+            return Some(terminal_bin.to_owned());
+        }
+
+        trace!(
+            "$TERMINAL environment variable set to {terminal}, but the program wasn't found in PATH"
+        );
+    } else {
+        trace!("The $TERMINAL environment variable is not set");
+    }
+
+    // Check the terminal emulator configured in KDE (kdeglobals)
+    match kde_terminal() {
+        Some(terminal) => match find_in_path(&terminal) {
+            Some(_) => {
+                trace!("Terminal emulator detected from KDE (kdeglobals): {terminal}");
+                return Some(terminal);
+            }
+            None => {
+                trace!(
+                    "KDE (kdeglobals) configured terminal {terminal}, but the program wasn't found in PATH"
+                );
+            }
+        },
+        None => {
+            trace!("No terminal emulator configured in KDE (kdeglobals)");
+        }
+    }
+
+    // Check the terminal emulator configured in GNOME (gsettings)
+    match gnome_terminal() {
+        Some(terminal) => match find_in_path(&terminal) {
+            Some(_) => {
+                trace!("Terminal emulator detected from GNOME (gsettings): {terminal}");
+                return Some(terminal);
+            }
+            None => {
+                trace!(
+                    "GNOME (gsettings) configured terminal {terminal}, but the program wasn't found in PATH"
+                );
+            }
+        },
+        None => {
+            trace!("No terminal emulator configured in GNOME (gsettings)");
+        }
+    }
+
+    None
+}
+
+// Helper to get the terminal emulator configured in KDE (from the `kdeglobals` configuration file)
+fn kde_terminal() -> Option<String> {
+    let config_dir = match env::var_os("XDG_CONFIG_HOME") {
+        Some(config_home) => PathBuf::from(config_home),
+        None => env::var_os("HOME").map(|home| PathBuf::from(home).join(".config"))?,
+    };
+    let content = fs::read_to_string(config_dir.join("kdeglobals")).ok()?;
+
+    kde_terminal_from(&content)
+}
+
+// Helper to parse the terminal emulator configured in KDE from the `kdeglobals` file content
+fn kde_terminal_from(content: &str) -> Option<String> {
+    let mut terminal_service = None;
+
+    for line in content.lines() {
+        let line = line.trim();
+
+        if let Some(application) = line.strip_prefix("TerminalApplication=") {
+            if !application.is_empty() {
+                return Some(application.to_owned());
+            }
+        } else if let Some(service) = line.strip_prefix("TerminalService=") {
+            terminal_service = Some(service.trim_end_matches(".desktop").to_owned());
+        }
+    }
+
+    terminal_service
+}
+
+// Helper to get the terminal emulator configured in GNOME (via `gsettings`)
+fn gnome_terminal() -> Option<String> {
+    let output = Command::new("gsettings")
+        .args([
+            "get",
+            "org.gnome.desktop.default-applications.terminal",
+            "exec",
+        ])
+        .output()
+        .ok()?;
+
+    if !output.status.success() {
+        return None;
+    }
+
+    let terminal = String::from_utf8_lossy(&output.stdout);
+    let terminal = terminal.trim().trim_matches('\'').trim();
+
+    if terminal.is_empty() {
+        None
+    } else {
+        Some(terminal.to_owned())
+    }
+}
+
+// Helper to launch Arch-Update in the given terminal emulator
+fn launch_in_terminal(terminal: &str) -> std::io::Result<()> {
+    let terminal_bin = terminal.split_whitespace().next().unwrap_or(terminal);
+
+    Command::new(terminal_bin)
+        .args(terminal_command_args(terminal))
+        .spawn()?;
+
+    Ok(())
+}
+
+// Helper to build the arguments used to run Arch-Update in the given terminal emulator, using the
+// appropriate option to run a command in it depending on the terminal emulator
+fn terminal_command_args(terminal: &str) -> Vec<String> {
+    let terminal_bin = terminal.split_whitespace().next().unwrap_or(terminal);
+    let terminal_name = Path::new(terminal_bin)
+        .file_name()
+        .and_then(|name| name.to_str())
+        .unwrap_or(terminal_bin);
+
+    match terminal_name {
+        // These terminal emulators take the command to run directly as arguments
+        "kitty" | "foot" => vec!["arch-update".into()],
+        "wezterm" | "wezterm-gui" => vec!["start".into(), "arch-update".into()],
+        // These terminal emulators require the `--` option before the command to run
+        "gnome-terminal" | "ptyxis" => vec!["--".into(), "arch-update".into()],
+        // These terminal emulators require the `-x` option before the command to run
+        "xfce4-terminal" | "mate-terminal" => vec!["-x".into(), "arch-update".into()],
+        // Most terminal emulators use the `-e` option to run a command
+        _ => vec!["-e".into(), "arch-update".into()],
     }
 }
 
@@ -266,5 +474,127 @@ fn format_time(time: Duration) -> Option<String> {
         None
     } else {
         Some(parts.join(" "))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn kde_terminal_parses_terminal_application() {
+        let content = "[General]\nTerminalApplication=kitty\nTerminalService=kitty.desktop\n";
+        assert_eq!(kde_terminal_from(content).as_deref(), Some("kitty"));
+    }
+
+    #[test]
+    fn kde_terminal_falls_back_to_terminal_service() {
+        let content = "[General]\nTerminalService=org.gnome.Console.desktop\n";
+        assert_eq!(
+            kde_terminal_from(content).as_deref(),
+            Some("org.gnome.Console")
+        );
+    }
+
+    #[test]
+    fn kde_terminal_empty() {
+        let content = "[General]\n";
+        assert_eq!(kde_terminal_from(content), None);
+    }
+
+    #[test]
+    fn terminal_command_args_kitty() {
+        assert_eq!(
+            terminal_command_args("kitty"),
+            vec!["arch-update".to_string()]
+        );
+    }
+
+    #[test]
+    fn terminal_command_args_wezterm() {
+        assert_eq!(
+            terminal_command_args("wezterm"),
+            vec!["start".to_string(), "arch-update".to_string()]
+        );
+    }
+
+    #[test]
+    fn terminal_command_args_gnome_terminal() {
+        assert_eq!(
+            terminal_command_args("gnome-terminal"),
+            vec!["--".to_string(), "arch-update".to_string()]
+        );
+    }
+
+    #[test]
+    fn terminal_command_args_default() {
+        assert_eq!(
+            terminal_command_args("konsole"),
+            vec!["-e".to_string(), "arch-update".to_string()]
+        );
+    }
+
+    #[test]
+    fn terminal_command_args_with_path() {
+        assert_eq!(
+            terminal_command_args("/usr/bin/kitty"),
+            vec!["arch-update".to_string()]
+        );
+    }
+
+    #[test]
+    fn launch_arch_update_uses_kde_terminal() {
+        let test_dir =
+            std::env::temp_dir().join(format!("arch-update-tray-test-{}", std::process::id()));
+        let fake_bin = test_dir.join("bin");
+        let fake_home = test_dir.join("home");
+        let marker = test_dir.join("launched.txt");
+        let _ = fs::remove_dir_all(&test_dir);
+        fs::create_dir_all(&fake_bin).unwrap();
+        fs::create_dir_all(fake_home.join(".config")).unwrap();
+        fs::write(
+            fake_home.join(".config").join("kdeglobals"),
+            "[General]\nTerminalApplication=kitty\n",
+        )
+        .unwrap();
+        fs::write(
+            fake_bin.join("kitty"),
+            format!(
+                "#!/bin/sh\nprintf '%s\\n' \"$@\" > \"{}\"\n",
+                marker.display()
+            ),
+        )
+        .unwrap();
+        fs::set_permissions(fake_bin.join("kitty"), fs::Permissions::from_mode(0o755)).unwrap();
+
+        let mut path = fake_bin.to_string_lossy().into_owned();
+        if let Some(existing) = env::var_os("PATH") {
+            path.push(':');
+            path.push_str(&existing.to_string_lossy());
+        }
+        // SAFETY: single-threaded test; no other thread reads these variables concurrently
+        unsafe {
+            env::set_var("PATH", &path);
+            // Simulate the common case where `XDG_CONFIG_HOME` is unset: the `kdeglobals`
+            // file must then be looked up in `$HOME/.config`
+            env::remove_var("XDG_CONFIG_HOME");
+            env::set_var("HOME", &fake_home);
+            env::remove_var("TERMINAL");
+        }
+
+        launch_arch_update(Path::new("arch-update.desktop"));
+
+        let deadline = std::time::Instant::now() + Duration::from_secs(5);
+        let mut launched = String::new();
+        while std::time::Instant::now() < deadline {
+            if let Ok(content) = fs::read_to_string(&marker) {
+                launched = content;
+                break;
+            }
+            sleep(Duration::from_millis(100));
+        }
+
+        let _ = fs::remove_dir_all(&test_dir);
+        assert_eq!(launched.trim(), "arch-update");
     }
 }
