@@ -29,6 +29,11 @@ impl ksni::Tray for ArchUpdateTray {
         "Arch-Update".into()
     }
 
+    // Set category
+    fn category(&self) -> ksni::Category {
+        ksni::Category::SystemServices
+    }
+
     // Set icon
     fn icon_name(&self) -> String {
         match fs::read_to_string(&self.icon_statefile) {
