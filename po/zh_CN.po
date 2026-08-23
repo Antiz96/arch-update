@@ -349,7 +349,7 @@ msgstr "是否现在重启？[y/N]"
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
 msgid "Rebooting in ${sec}...\\r"
-msgstr "将在 ${sec} 秒后重启...\r"
+msgstr "将在 ${sec} 秒后重启...\\r"
 
 #: src/lib/kernel_reboot.sh:30
 #, sh-format
