@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.0](https://github.com/Antiz96/arch-update/releases/tag/v4.2.0) - 2026-08-23
+
+### Features
+
+- *(tray)* Show the current update state in tooltip ([#757](https://github.com/Antiz96/arch-update/pull/757)) - ([92aa085](https://github.com/Antiz96/arch-update/commit/92aa0855c09b6b4995e9934c7f30b918740a085e)) by @ahmubashshir
+
+### Fixes
+
+- *(check)* Set the tray icon after the update stafile has been (re)written ([#761](https://github.com/Antiz96/arch-update/pull/761)) - ([c79d1f9](https://github.com/Antiz96/arch-update/commit/c79d1f9c657fd1ca43fdb53081cdfec6b81cf0ba)) by @Antiz96
+- *(i18n)* Fix escaping in Chinese simplified translation ([#762](https://github.com/Antiz96/arch-update/pull/762)) - ([10e4421](https://github.com/Antiz96/arch-update/commit/10e44218ab4b6a8cfbdc095e0d4c28ef0a09b022)) by @Antiz96
+- *(tray)* Set Tray Category to SystemServices ([#758](https://github.com/Antiz96/arch-update/pull/758)) - ([3024106](https://github.com/Antiz96/arch-update/commit/3024106c09e23d22471a9f2d4c25f51e67ba0ec1)) by @ahmubashshir
+
+### Miscellaneous
+
+- *(deps)* Update Rust crate log to 0.4.34 ([#755](https://github.com/Antiz96/arch-update/pull/755)) - ([09c7d4c](https://github.com/Antiz96/arch-update/commit/09c7d4c9a5b54b31cd40cf2591c8af5923915a8b)) by @renovate[bot]
+- *(i18n)* Update translation files ([#760](https://github.com/Antiz96/arch-update/pull/760)) - ([ab04d9f](https://github.com/Antiz96/arch-update/commit/ab04d9f758510b6fd943436e408be23e3f2a86f1)) by @Antiz96
+- *(tray)* Reuse id for title and tooltip title ([#759](https://github.com/Antiz96/arch-update/pull/759)) - ([ce36dba](https://github.com/Antiz96/arch-update/commit/ce36dbad7414fd0eff5cac248d6ae28df349dc69)) by @Antiz96
+
 ## [v4.1.6](https://github.com/Antiz96/arch-update/releases/tag/v4.1.6) - 2026-08-17
 
 ### Miscellaneous
