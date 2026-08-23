@@ -52,7 +52,14 @@ impl ksni::Tray for ArchUpdateTray {
     // Set tooltip
     fn tool_tip(&self) -> ksni::ToolTip {
         ksni::ToolTip {
-            title: "Arch-Update".into(),
+            title: self.title(),
+            description: match tray_helpers::get_updates_count(&self.updates_statefile_type.all) {
+                0 => gettext("System is up to date"),
+                1 => gettext("1 update available"),
+                count => {
+                    gettext("{count} updates available").replace("{count}", &count.to_string())
+                }
+            },
             ..Default::default()
         }
     }
