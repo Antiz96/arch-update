@@ -86,8 +86,6 @@ update_available=$(cat "${statedir}"/last_updates_check_{packages,aur,flatpak})
 echo "${update_available}" > "${statedir}/current_updates_check"
 
 if [ -n "${update_available}" ]; then
-	icon_updates-available
-
 	if [ -n "${notification_support}" ]; then
 		if ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
 			update_number=$(wc -l "${statedir}/current_updates_check" | awk '{print $1}')
@@ -119,12 +117,16 @@ if [ -n "${update_available}" ]; then
 			 "${libdir}/notification.sh"
 		fi
 	fi
-else
-	icon_up-to-date
 fi
 
 if [ -f "${statedir}/current_updates_check" ]; then
 	mv -f "${statedir}/current_updates_check" "${statedir}/last_updates_check"
+fi
+
+if [ -n "${update_available}" ]; then
+	icon_updates-available
+else
+	icon_up-to-date
 fi
 
 date "+%s%n%F %T" > "${statedir}/last_updates_check_time"
