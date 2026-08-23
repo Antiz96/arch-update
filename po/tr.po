@@ -545,7 +545,7 @@ msgid "The update has been aborted\\n"
 msgstr "Güncelleme iptal edildi\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/tray/src/tray.rs:100
+#: src/tray/src/tray.rs:63 src/tray/src/tray.rs:112
 #, sh-format
 msgid "1 update available"
 msgstr "1 güncelleme var"
@@ -833,53 +833,53 @@ msgstr "{minutes}dk"
 msgid "{seconds}s"
 msgstr "{seconds}sn"
 
-#: src/tray/src/tray.rs:89
+#: src/tray/src/tray.rs:62 src/tray/src/tray.rs:101
 msgid "System is up to date"
 msgstr "Sistem güncel"
 
-#: src/tray/src/tray.rs:102
+#: src/tray/src/tray.rs:65 src/tray/src/tray.rs:114
 #, rust-format
 msgid "{count} updates available"
 msgstr "{count} güncelleme var"
 
-#: src/tray/src/tray.rs:125
+#: src/tray/src/tray.rs:137
 #, rust-format
 msgid "All ({count})"
 msgstr "Tümü ({count})"
 
-#: src/tray/src/tray.rs:139
+#: src/tray/src/tray.rs:151
 #, rust-format
 msgid "Packages ({count})"
 msgstr "Paketler ({count})"
 
-#: src/tray/src/tray.rs:155
+#: src/tray/src/tray.rs:167
 #, rust-format
 msgid "AUR ({count})"
 msgstr "AUR ({count})"
 
-#: src/tray/src/tray.rs:169
+#: src/tray/src/tray.rs:181
 #, rust-format
 msgid "Flatpak ({count})"
 msgstr "Flatpak ({count})"
 
-#: src/tray/src/tray.rs:191
+#: src/tray/src/tray.rs:203
 #, rust-format
 msgid "Last check {last_check} ago"
 msgstr "Son kontrol: {last_check} önce"
 
-#: src/tray/src/tray.rs:208
+#: src/tray/src/tray.rs:220
 #, rust-format
 msgid "Next check in {next_check}"
 msgstr "Sonraki kontrol: {next_check} sonra"
 
-#: src/tray/src/tray.rs:225
+#: src/tray/src/tray.rs:237
 msgid "Run Arch-Update"
 msgstr "Arch-Update'i çalıştır"
 
-#: src/tray/src/tray.rs:233
+#: src/tray/src/tray.rs:245
 msgid "Check for updates"
 msgstr "Güncellemeleri kontrol et"
 
-#: src/tray/src/tray.rs:244
+#: src/tray/src/tray.rs:256
 msgid "Exit"
 msgstr "Çıkış"
