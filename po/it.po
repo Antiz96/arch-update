@@ -260,8 +260,8 @@ msgstr ""
 "  -c, --check       Controlla gli aggiornamenti disponibili, cambia l'icona "
 "nel vassoio di sistema e invia una notifica desktop contenente il numero "
 "degli aggiornamenti disponibili (se ci sono nuovi aggiornamenti disponibili "
-"rispetto all'ultimo controllo). Opzionalmente, aggiungi l'argomento '--enable'"
-"per abilitare i controlli automatici degli aggiornamenti."
+"rispetto all'ultimo controllo). Opzionalmente, aggiungere l'argomento "
+"'--enable' per abilitare i controlli automatici degli aggiornamenti."
 
 #: src/lib/help.sh:17
 #, sh-format
