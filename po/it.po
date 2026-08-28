@@ -36,7 +36,7 @@ msgstr "Errore durante il controllo ALHP:"
 #: src/lib/check.sh:10
 #, sh-format
 msgid "Automated update checks have been enabled"
-msgstr ""
+msgstr "I controlli automatici degli aggiornamenti sono stati abilitati"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -260,7 +260,8 @@ msgstr ""
 "  -c, --check       Controlla gli aggiornamenti disponibili, cambia l'icona "
 "nel vassoio di sistema e invia una notifica desktop contenente il numero "
 "degli aggiornamenti disponibili (se ci sono nuovi aggiornamenti disponibili "
-"rispetto all'ultimo controllo)"
+"rispetto all'ultimo controllo). Opzionalmente, aggiungere l'argomento "
+"'--enable' per abilitare i controlli automatici degli aggiornamenti."
 
 #: src/lib/help.sh:17
 #, sh-format
@@ -331,7 +332,7 @@ msgid ""
 "add the '--enable' argument to start it automatically at boot"
 msgstr ""
 "  --tray            Avvia l'applet del vassoio di sistema ${_name}, "
-"opzionalmente è possibile aggiungere il parametro '--enable' per aprirla "
+"opzionalmente è possibile aggiungere il parametro '--enable' per eseguirlo "
 "automaticamente all'avvio"
 
 #: src/lib/help.sh:26
@@ -461,7 +462,7 @@ msgstr ""
 #: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
 msgid "Invalid input"
-msgstr ""
+msgstr "Input non valido"
 
 #: src/lib/list_news.sh:103
 #, sh-format
@@ -775,6 +776,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
+"Il file '${tray_desktop_file_autostart}' è stato creato, l'applet della barra "
+"delle applicazioni ${_name} verrà eseguito automaticamente all'avvio del sistema\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -786,7 +789,7 @@ msgstr ""
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr ""
+msgstr "Avvio dell'applet dell'area di notifica ${_name} in corso"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -819,27 +822,27 @@ msgstr "L'aggiornamento è stato effettuato\\n"
 
 #: src/tray/src/tray_helpers.rs:108
 msgid "Next page"
-msgstr ""
+msgstr "Pagina successiva"
 
 #: src/tray/src/tray_helpers.rs:253
 #, rust-format
 msgid "{days}d"
-msgstr ""
+msgstr "{days}g"
 
 #: src/tray/src/tray_helpers.rs:256
 #, rust-format
 msgid "{hours}h"
-msgstr ""
+msgstr "{hours}h"
 
 #: src/tray/src/tray_helpers.rs:259
 #, rust-format
 msgid "{minutes}m"
-msgstr ""
+msgstr "{minutes}m"
 
 #: src/tray/src/tray_helpers.rs:262
 #, rust-format
 msgid "{seconds}s"
-msgstr ""
+msgstr "{seconds}s"
 
 #: src/tray/src/tray.rs:62 src/tray/src/tray.rs:101
 msgid "System is up to date"
@@ -873,7 +876,7 @@ msgstr "Flatpak ({count})"
 #: src/tray/src/tray.rs:203
 #, rust-format
 msgid "Last check {last_check} ago"
-msgstr ""
+msgstr "Ultimo controllo {last_check} fa"
 
 #: src/tray/src/tray.rs:220
 #, rust-format
