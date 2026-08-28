@@ -777,7 +777,7 @@ msgid ""
 "systray applet will be automatically started at boot\\n"
 msgstr ""
 "Il file '${tray_desktop_file_autostart}' è stato creato; l'applet della barra "
-"delle applicazioni ${_name} verrà avviata automaticamente all'avvio del sistema\\n"
+"delle applicazioni ${_name} verrà aperta automaticamente all'avvio del sistema\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
