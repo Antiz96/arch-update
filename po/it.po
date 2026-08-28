@@ -332,7 +332,7 @@ msgid ""
 "add the '--enable' argument to start it automatically at boot"
 msgstr ""
 "  --tray            Avvia l'applet del vassoio di sistema ${_name}, "
-"opzionalmente è possibile aggiungere il parametro '--enable' per aprirla "
+"opzionalmente è possibile aggiungere il parametro '--enable' per eseguirlo "
 "automaticamente all'avvio"
 
 #: src/lib/help.sh:26
@@ -777,7 +777,7 @@ msgid ""
 "systray applet will be automatically started at boot\\n"
 msgstr ""
 "Il file '${tray_desktop_file_autostart}' è stato creato, l'applet della barra "
-"delle applicazioni ${_name} verrà aperta automaticamente all'avvio del sistema\\n"
+"delle applicazioni ${_name} verrà eseguito automaticamente all'avvio del sistema\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
