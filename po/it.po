@@ -81,7 +81,7 @@ msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
-"Il comando ${su_cmd} impostato per l'elevazione dei provilegi nel file di "
+"Il comando ${su_cmd} impostato per l'elevazione dei privilegi nel file di "
 "configurazione ${name}.conf non è stato trovato\\n"
 
 #: src/lib/common.sh:192
