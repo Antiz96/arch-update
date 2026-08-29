@@ -365,8 +365,8 @@ msgid ""
 "${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
 "information"
 msgstr ""
-"${name}: opzione non valida -- '${option}'\\nProvare '${name} --help' per "
-"ulteriori informazioni"
+"${name}: opzione non valida -- '${option}'\\nConsultare '${name} --help' "
+"per ulteriori informazioni"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
