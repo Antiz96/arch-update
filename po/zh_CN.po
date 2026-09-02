@@ -453,7 +453,7 @@ msgstr "URL："
 #: src/lib/list_packages.sh:7
 #, sh-format
 msgid "Looking for updates...\\n"
-msgstr "正在查找更新...\n"
+msgstr "正在查找更新...\\n"
 
 #: src/lib/list_packages.sh:16
 #, sh-format
@@ -550,12 +550,12 @@ msgstr "是否现在移除这些孤立包（及其可能的依赖）？[y/N]"
 #: src/lib/orphan_packages.sh:23
 #, sh-format
 msgid "Removing Orphan Packages...\\n"
-msgstr "正在移除孤立包...\n"
+msgstr "正在移除孤立包...\\n"
 
 #: src/lib/orphan_packages.sh:41
 #, sh-format
 msgid "No orphan package found\\n"
-msgstr "未找到孤立包\n"
+msgstr "未找到孤立包\\n"
 
 #: src/lib/packages_cache.sh:21
 #, sh-format
@@ -611,7 +611,7 @@ msgstr "是否现在处理这些文件？[Y/n]"
 #: src/lib/pacnew_files.sh:23
 #, sh-format
 msgid "Processing Pacnew Files...\\n"
-msgstr "正在处理 Pacnew 文件...\n"
+msgstr "正在处理 Pacnew 文件...\\n"
 
 #: src/lib/pacnew_files.sh:28
 #, sh-format
@@ -721,7 +721,7 @@ msgstr "正在启动 ${_name} 系统托盘小程序"
 #: src/lib/update.sh:9
 #, sh-format
 msgid "Updating Packages...\\n"
-msgstr "正在更新软件包...\n"
+msgstr "正在更新软件包...\\n"
 
 #: src/lib/update.sh:14 src/lib/update.sh:34 src/lib/update.sh:50
 #, sh-format
@@ -733,12 +733,12 @@ msgstr "更新过程中发生错误\\n更新已中止\\n"
 #: src/lib/update.sh:29
 #, sh-format
 msgid "Updating AUR Packages...\\n"
-msgstr "正在更新 AUR 软件包...\n"
+msgstr "正在更新 AUR 软件包...\\n"
 
 #: src/lib/update.sh:46
 #, sh-format
 msgid "Updating Flatpak Packages...\\n"
-msgstr "正在更新 Flatpak 包...\n"
+msgstr "正在更新 Flatpak 包...\\n"
 
 #: src/lib/update.sh:61
 #, sh-format
