@@ -1,7 +1,9 @@
 //! Systray applet implementation
-//! Built with ksni, inspired / based on the systray example at
-//! https://github.com/iovxw/ksni#example
+//! Built with ksni:
+//! https://github.com/iovxw/ksni
+//! https://crates.io/crates/ksni
 
+use anyhow::Context;
 use gettextrs::*;
 use ksni::TrayMethods;
 use ksni::menu::*;
@@ -27,6 +29,11 @@ impl ksni::Tray for ArchUpdateTray {
         "Arch-Update".into()
     }
 
+    // Set category
+    fn category(&self) -> ksni::Category {
+        ksni::Category::SystemServices
+    }
+
     // Set icon
     fn icon_name(&self) -> String {
         match fs::read_to_string(&self.icon_statefile) {
@@ -36,7 +43,7 @@ impl ksni::Tray for ArchUpdateTray {
                 icon
             }
             Err(error) => {
-                error!("Unable to set the icon: {error}");
+                error!("Failed to set the icon: {error}");
                 process::exit(1);
             }
         }
@@ -44,13 +51,20 @@ impl ksni::Tray for ArchUpdateTray {
 
     // Set title
     fn title(&self) -> String {
-        "Arch-Update".into()
+        self.id()
     }
 
     // Set tooltip
     fn tool_tip(&self) -> ksni::ToolTip {
         ksni::ToolTip {
-            title: "Arch-Update".into(),
+            title: self.id(),
+            description: match tray_helpers::get_updates_count(&self.updates_statefile_type.all) {
+                0 => gettext("System is up to date"),
+                1 => gettext("1 update available"),
+                count => {
+                    gettext("{count} updates available").replace("{count}", &count.to_string())
+                }
+            },
             ..Default::default()
         }
     }
@@ -194,7 +208,7 @@ impl ksni::Tray for ArchUpdateTray {
                 .into(),
             );
         } else {
-            warn!("Unable to determine the last Arch-Update check time");
+            warn!("Failed to determine the last Arch-Update check time");
         }
 
         // Add the "Next Check" menu entry (if the systemd timer is started / enabled)
@@ -211,7 +225,7 @@ impl ksni::Tray for ArchUpdateTray {
                 .into(),
             );
         } else {
-            warn!("Unable to determine next Arch-Update check time");
+            warn!("Failed to determine next Arch-Update check time");
         }
 
         // Add a menu group containing a separator and the "Run Arch-Update", "Check for updates" & "Exit" buttons
@@ -232,7 +246,7 @@ impl ksni::Tray for ArchUpdateTray {
                 activate: Box::new(
                     |_| match Command::new("arch-update").arg("--check").spawn() {
                         Ok(_) => info!("Arch-Update check executed"),
-                        Err(error) => error!("Unable to execute Arch-Update check: {error}"),
+                        Err(error) => error!("Failed to execute Arch-Update check: {error}"),
                     },
                 ),
                 ..Default::default()
@@ -257,19 +271,7 @@ pub async fn run(
     icon_statefile: PathBuf,
     updates_statefile_type: updates_statefiles::UpdatesStateFiles,
     desktop_file: PathBuf,
-    i18n_dir: PathBuf,
-) {
-    // Set gettext domain for translations
-    setlocale(LocaleCategory::LcAll, "").expect("Failed to load environment locale");
-
-    textdomain("Arch-Update").expect("Failed to set gettext domain");
-
-    bindtextdomain(
-        "Arch-Update",
-        i18n_dir.to_str().expect("Unknown or invalid locale path"),
-    )
-    .expect("Failed to bind gettext domain path");
-
+) -> anyhow::Result<()> {
     // Clone icon statefile path variable (used by the watcher)
     let watcher_icon_statefile = icon_statefile.clone();
 
@@ -283,7 +285,7 @@ pub async fn run(
     let handle = tray
         .spawn()
         .await
-        .expect("Unable to start the systray applet");
+        .context("Failed to start the systray applet")?;
 
     info!("Systray applet started");
 
@@ -294,5 +296,7 @@ pub async fn run(
     ));
 
     // Run forever
-    future::pending().await
+    future::pending::<()>().await;
+
+    Ok(())
 }

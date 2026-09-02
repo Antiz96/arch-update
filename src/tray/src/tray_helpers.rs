@@ -1,11 +1,13 @@
 //! Collection of helpers / functions used by the systray applet for various needs and features
 
+use anyhow::{Context, anyhow};
 use gettextrs::*;
 use ksni::Handle;
 use ksni::menu::*;
-use log::{error, info};
+use log::{error, info, warn};
 use notify::{Config, EventKind, RecommendedWatcher, RecursiveMode, Watcher};
 use serde::Deserialize;
+use std::env;
 use std::fs;
 use std::path::Path;
 use std::path::PathBuf;
@@ -20,7 +22,7 @@ use crate::tray;
 pub fn launch_arch_update(desktop_file: &Path) {
     match Command::new("gio").arg("launch").arg(desktop_file).spawn() {
         Ok(_) => info!("Arch-Update launched"),
-        Err(error) => error!("Unable to launch Arch-Update: {error}"),
+        Err(error) => error!("Failed to launch Arch-Update: {error}"),
     }
 }
 
@@ -38,8 +40,8 @@ pub fn count_update_types(updates_statefile: &Path) -> bool {
     get_updates_count(updates_statefile) > 0
 }
 
-// Helper to get the list of pending updates from the updates statefile and populate the submenus
-// accordingly
+// Helper to get the list of pending updates from the updates statefile as well as the number of
+// updates per pages for pagination
 pub fn build_updates_submenu(
     updates_statefile: &Path,
 ) -> Vec<ksni::MenuItem<tray::ArchUpdateTray>> {
@@ -50,25 +52,35 @@ pub fn build_updates_submenu(
                 .filter(|line| !line.trim().is_empty())
                 .collect();
 
-            build_updates_submenu_pagination(&updates, 0)
+            let updates_per_page = env::var("ARCH_UPDATE_TRAY_UPDATES_PER_PAGE")
+                .ok()
+                .and_then(|value| value.parse::<usize>().ok())
+                .unwrap_or(0);
+
+            build_updates_submenu_pagination(&updates, 0, updates_per_page)
         }
 
         Err(error) => {
-            error!("Unable to read updates statefile: {error}");
+            error!("Failed to read updates statefile: {error}");
             Vec::new()
         }
     }
 }
 
-// Helper to handle pagination for updates submenus
-// Set a limit to 20 packages per page, split to another page otherwise
-const UPDATES_PER_PAGE: usize = 20;
+// Helper to populate submenus with the list of pending updates and
+// handle pagination if needed (0 = no pagination)
 fn build_updates_submenu_pagination(
     updates: &[&str],
     page: usize,
+    updates_per_page: usize,
 ) -> Vec<ksni::MenuItem<tray::ArchUpdateTray>> {
-    let start = page * UPDATES_PER_PAGE;
-    let end = (start + UPDATES_PER_PAGE).min(updates.len());
+    let (start, end) = if updates_per_page == 0 {
+        (0, updates.len())
+    } else {
+        let start = page * updates_per_page;
+        let end = (start + updates_per_page).min(updates.len());
+        (start, end)
+    };
 
     let mut menu = updates[start..end]
         .iter()
@@ -90,11 +102,11 @@ fn build_updates_submenu_pagination(
         })
         .collect::<Vec<_>>();
 
-    if end < updates.len() {
+    if updates_per_page > 0 && end < updates.len() {
         menu.push(
             SubMenu {
                 label: gettext("Next page"),
-                submenu: build_updates_submenu_pagination(updates, page + 1),
+                submenu: build_updates_submenu_pagination(updates, page + 1, updates_per_page),
                 ..Default::default()
             }
             .into(),
@@ -109,13 +121,13 @@ fn open_package_url(package: &str) {
     let pacman_output = match Command::new("pacman").arg("-Qi").arg(package).output() {
         Ok(pacman_output) => pacman_output,
         Err(error) => {
-            error!("Unable to query the {package} package information: {error}");
+            warn!("Failed to query the {package} package information: {error}");
             return;
         }
     };
 
     if !pacman_output.status.success() {
-        error!("Unable to get the {package} package information");
+        warn!("Failed to get the {package} package information");
         return;
     }
 
@@ -129,7 +141,7 @@ fn open_package_url(package: &str) {
             if url.starts_with("http://") || url.starts_with("https://") {
                 match Command::new("xdg-open").arg(url).spawn() {
                     Ok(_) => info!("Opened the {package} package URL: {url}"),
-                    Err(error) => error!("Unable to open the {package} package URL {url}: {error}"),
+                    Err(error) => warn!("Failed to open the {package} package URL {url}: {error}"),
                 }
             }
 
@@ -140,7 +152,10 @@ fn open_package_url(package: &str) {
 
 // Watcher for the icon statefile, allowing to trigger a dynamic rebuild of the systray applet on
 // icon change
-pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::ArchUpdateTray>) {
+pub async fn icon_watcher(
+    icon_statefile: PathBuf,
+    handle: Handle<crate::tray::ArchUpdateTray>,
+) -> anyhow::Result<()> {
     let (tx, mut rx) = mpsc::unbounded_channel();
 
     let mut watcher = RecommendedWatcher::new(
@@ -149,17 +164,26 @@ pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::A
         },
         Config::default(),
     )
-    .expect("Unable to create icon statefile watcher");
+    .context("Failed to create icon statefile watcher")?;
 
     watcher
         .watch(&icon_statefile, RecursiveMode::NonRecursive)
-        .expect("Unable to watch icon statefile");
+        .context("Failed to watch icon statefile")?;
 
-    while let Some(Ok(event)) = rx.recv().await {
-        if matches!(event.kind, EventKind::Modify(_)) {
-            handle.update(|_| {}).await;
+    while let Some(result) = rx.recv().await {
+        match result {
+            Ok(event) => {
+                if matches!(event.kind, EventKind::Modify(_)) {
+                    handle.update(|_| {}).await;
+                }
+            }
+            Err(error) => {
+                return Err(anyhow!("Icon statefile watcher error: {error}"));
+            }
         }
     }
+
+    Ok(())
 }
 
 // Helper to get the next check time from the systemd timer metadata
@@ -226,16 +250,16 @@ fn format_time(time: Duration) -> Option<String> {
     let seconds = time.as_secs() % 60;
 
     if days > 0 {
-        parts.push(format!("{days}d"));
+        parts.push(gettext("{days}d").replace("{days}", &days.to_string()));
     }
     if hours > 0 {
-        parts.push(format!("{hours}h"));
+        parts.push(gettext("{hours}h").replace("{hours}", &hours.to_string()));
     }
     if minutes > 0 {
-        parts.push(format!("{minutes}m"));
+        parts.push(gettext("{minutes}m").replace("{minutes}", &minutes.to_string()));
     }
     if seconds > 0 {
-        parts.push(format!("{seconds}s"));
+        parts.push(gettext("{seconds}s").replace("{seconds}", &seconds.to_string()));
     }
 
     if parts.is_empty() {

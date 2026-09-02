@@ -45,6 +45,12 @@ Make sure to create your merge request from a dedicated branch (do not use the `
 
 Apart from trivial changes (like simple typo fixes), it is advised to first [open an issue](#open-an-issue) to expose and discuss your changes, verify its feasibility / necessity and agree on the specifications.
 
+### Development tips
+
+You can override the path to the Arch-Update libraries directory with the `$ARCH_UPDATE_LIBDIR` environment variable, allowing to test libraries during development. For instance: `ARCH_UPDATE_LIBDIR="${PWD}/src/lib" arch-update`
+
+You can also override the path to the Arch-Update systray applet binary with the `$ARCH_UPDATE_TRAY_BIN` environment variable, allowing to test the systray applet binary during development. For instance: `ARCH_UPDATE_TRAY_BIN="${PWD}/src/tray/target/release/arch-update-tray" arch-update --tray`
+
 ### Coding style
 
 When submitting code changes, try to respect the coding style and the overall way things work, as much as possible.  
