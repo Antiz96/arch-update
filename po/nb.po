@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 4.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-27 08:51+0100\n"
+"PO-Revision-Date: 2026-09-02 10:36+0200\n"
 "Last-Translator: Kjetil Sorlund <translate@sorlund.no>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
 "Language: nb_NO\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
@@ -37,7 +37,7 @@ msgstr "Feil under sjekk av AHLP:"
 #: src/lib/check.sh:10
 #, sh-format
 msgid "Automated update checks have been enabled"
-msgstr ""
+msgstr "Automatisk kontroll for oppdateringer er slått på"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -244,7 +244,7 @@ msgid "Options:"
 msgstr "Valg:"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
@@ -254,7 +254,8 @@ msgstr ""
 "  -c, --check       Se etter tilgjengelige oppdateringer, endre ikonet i "
 "systemkurven og send en notis på skrivebordet som forteller om antall "
 "tilgjengelige oppdateringer (dersom det er nye tilgjengelige oppdateringer "
-"siden sist sjekk)"
+"siden sist sjekk). Alternativt kan du legge til  argumentet «--enable» for å "
+"slå på automatisk sjekk etter oppdateringer."
 
 #: src/lib/help.sh:17
 #, sh-format
@@ -452,7 +453,7 @@ msgstr ""
 #: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
 msgid "Invalid input"
-msgstr ""
+msgstr "Ugyldig inndata"
 
 #: src/lib/list_news.sh:103
 #, sh-format
@@ -760,6 +761,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
+"Filen «${tray_desktop_file_autostart}» er opprettet, miniprogrammet ${_name} "
+"vil startes automatisk ved oppstart\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -769,7 +772,7 @@ msgstr "Det kjører allerede en instans av miniprogrammet ${_name}"
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr ""
+msgstr "Starter miniprogrammet ${_name} "
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -802,27 +805,27 @@ msgstr "Oppdateringen er blitt installert\\n"
 
 #: src/tray/src/tray_helpers.rs:108
 msgid "Next page"
-msgstr ""
+msgstr "Neste side"
 
 #: src/tray/src/tray_helpers.rs:253
 #, rust-format
 msgid "{days}d"
-msgstr ""
+msgstr "{days}d"
 
 #: src/tray/src/tray_helpers.rs:256
 #, rust-format
 msgid "{hours}h"
-msgstr ""
+msgstr "{hours}t"
 
 #: src/tray/src/tray_helpers.rs:259
 #, rust-format
 msgid "{minutes}m"
-msgstr ""
+msgstr "{minutes}m"
 
 #: src/tray/src/tray_helpers.rs:262
 #, rust-format
 msgid "{seconds}s"
-msgstr ""
+msgstr "{seconds}s"
 
 #: src/tray/src/tray.rs:62 src/tray/src/tray.rs:101
 msgid "System is up to date"
@@ -856,7 +859,7 @@ msgstr "Flatpak ({count})"
 #: src/tray/src/tray.rs:203
 #, rust-format
 msgid "Last check {last_check} ago"
-msgstr ""
+msgstr "Siste sjekk {last_check} siden"
 
 #: src/tray/src/tray.rs:220
 #, rust-format
