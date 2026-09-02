@@ -1,16 +1,16 @@
 # Arch-Update French translation
-# Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
+# Copyright (C) 2024 Robin Candau <robincandau@mailbox.org>
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
-# Robin Candau <robincandau@protonmail.com>, 2026
+# Robin Candau <robincandau@mailbox.org>, 2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 4.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-03-25 09:30+0100\n"
-"Last-Translator: Robin Candau <robincandau@protonmail.com>\n"
+"Last-Translator: Robin Candau <robincandau@mailbox.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

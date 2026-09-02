@@ -1,7 +1,7 @@
 [package]
 name = "arch-update-tray"
 version = "4.2.0"
-authors = ["Robin Candau <robincandau@protonmail.com>"]
+authors = ["Robin Candau <robincandau@mailbox.org>"]
 edition = "2024"
 description = "A systray applet for Arch-Update"
 license = "GPL-3.0-or-later"

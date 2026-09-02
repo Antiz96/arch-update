@@ -211,4 +211,4 @@ Please report bugs to the GitHub page: https://github.com/Antiz96/arch-update/is
 
 # AUTHOR
 
-Robin Candau <robincandau@protonmail.com>
+Robin Candau <robincandau@mailbox.org>

@@ -1,5 +1,5 @@
 # Arch-Update Chinese (traditional) translation
-# Copyright (C) 2024 Robin Candau <robincandau@protonmail.com>
+# Copyright (C) 2024 Robin Candau <robincandau@mailbox.org>
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
