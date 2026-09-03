@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.1](https://github.com/Antiz96/arch-update/releases/tag/v4.2.1) - 2026-09-03
+
+### Fixes
+
+- *(i18n)* Fix formating issues in Chinese simplified translation ([#771](https://github.com/Antiz96/arch-update/pull/771)) - ([fb4eae8](https://github.com/Antiz96/arch-update/commit/fb4eae888b7581314d73ffda9ef5bc6e30129c68)) by @Xdavius
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#769](https://github.com/Antiz96/arch-update/pull/769)) - ([a8775ef](https://github.com/Antiz96/arch-update/commit/a8775efce94f8106fdb64b5dc2b241a5051788a9)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#763](https://github.com/Antiz96/arch-update/pull/763)) - ([c3b38c0](https://github.com/Antiz96/arch-update/commit/c3b38c0a511f42e68a4cf2a2b58b4abc23db0562)) by @renovate[bot]
+- *(i18n)* Update Norwegian bokmål translation ([#770](https://github.com/Antiz96/arch-update/pull/770)) - ([8bab835](https://github.com/Antiz96/arch-update/commit/8bab83562597482e648a2eab05b2c64d4b61d920)) by @Kjodleiken
+- *(i18n)* Fixes for Italian translation ([#768](https://github.com/Antiz96/arch-update/pull/768)) - ([2174036](https://github.com/Antiz96/arch-update/commit/2174036a4703eb57f05eb0ce1c4f8fa9f01e55e6)) by @Mattyan89
+- *(i18n)* Update Italian translation ([#767](https://github.com/Antiz96/arch-update/pull/767)) - ([9b77d78](https://github.com/Antiz96/arch-update/commit/9b77d78066e6f9dff5d42856c6a58cbffc399ca9)) by @Mattyan89
+- Update email address ([#772](https://github.com/Antiz96/arch-update/pull/772)) - ([bcc2cf9](https://github.com/Antiz96/arch-update/commit/bcc2cf9cd1aac6a4ae64d1572ecaaee8654bb364)) by @Antiz96
+
 ## [v4.2.0](https://github.com/Antiz96/arch-update/releases/tag/v4.2.0) - 2026-08-23
 
 ### Features
