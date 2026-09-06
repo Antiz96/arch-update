@@ -10,6 +10,8 @@ license = "GPL-3.0-or-later"
 anyhow = "1.0.104"
 env_logger = "0.11.11"
 gettext-rs = { version = "0.8.0", features = ["gettext-system"] }
+gio = "0.22.9"
+gio-unix = "0.22.8"
 ksni = "0.3.6"
 log = "0.4.33"
 notify = "8.2.0"
