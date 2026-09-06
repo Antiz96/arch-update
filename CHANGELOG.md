@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.2](https://github.com/Antiz96/arch-update/releases/tag/v4.2.2) - 2026-09-06
+
+### Fixes
+
+- *(build)* Honor CARGO_TARGET_DIR in Makefile ([#778](https://github.com/Antiz96/arch-update/pull/778)) - ([92a1eec](https://github.com/Antiz96/arch-update/commit/92a1eec3e7d235ff0568f5e15bc1a329e0bcf23e)) by @Antiz96
+- *(tray)* Use gio crate to run the desktop file ([#775](https://github.com/Antiz96/arch-update/pull/775)) - ([5f56193](https://github.com/Antiz96/arch-update/commit/5f56193dd8828b0acf098da9fb2e23fc0afcea0b)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#777](https://github.com/Antiz96/arch-update/pull/777)) - ([79715b5](https://github.com/Antiz96/arch-update/commit/79715b5bc20020c63eef7e7b90e20d0cd5d2ac85)) by @Antiz96
+- *(lint)* Typo fix in CHANGELOG ([#776](https://github.com/Antiz96/arch-update/pull/776)) - ([ac34fee](https://github.com/Antiz96/arch-update/commit/ac34feeacafb9caa8efe3d2cc41298e8189e3a8a)) by @Antiz96
+
 ## [v4.2.1](https://github.com/Antiz96/arch-update/releases/tag/v4.2.1) - 2026-09-03
 
 ### Fixes
