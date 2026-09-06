@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixes
 
-- *(i18n)* Fix formating issues in Chinese simplified translation ([#771](https://github.com/Antiz96/arch-update/pull/771)) - ([fb4eae8](https://github.com/Antiz96/arch-update/commit/fb4eae888b7581314d73ffda9ef5bc6e30129c68)) by @Xdavius
+- *(i18n)* Fix formatting issues in Chinese simplified translation ([#771](https://github.com/Antiz96/arch-update/pull/771)) - ([fb4eae8](https://github.com/Antiz96/arch-update/commit/fb4eae888b7581314d73ffda9ef5bc6e30129c68)) by @Xdavius
 
 ### Miscellaneous
 
