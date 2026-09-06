@@ -826,26 +826,26 @@ msgstr "Actualizando paquetes Flatpak...\\n"
 msgid "The update has been applied\\n"
 msgstr "La actualización se ha aplicado\\n"
 
-#: src/tray/src/tray_helpers.rs:108
+#: src/tray/src/tray_helpers.rs:116
 msgid "Next page"
 msgstr "Página siguiente"
 
-#: src/tray/src/tray_helpers.rs:253
+#: src/tray/src/tray_helpers.rs:261
 #, rust-format
 msgid "{days}d"
 msgstr "{days}d"
 
-#: src/tray/src/tray_helpers.rs:256
+#: src/tray/src/tray_helpers.rs:264
 #, rust-format
 msgid "{hours}h"
 msgstr "{hours}h"
 
-#: src/tray/src/tray_helpers.rs:259
+#: src/tray/src/tray_helpers.rs:267
 #, rust-format
 msgid "{minutes}m"
 msgstr "{minutes}min"
 
-#: src/tray/src/tray_helpers.rs:262
+#: src/tray/src/tray_helpers.rs:270
 #, rust-format
 msgid "{seconds}s"
 msgstr "{seconds}s"
