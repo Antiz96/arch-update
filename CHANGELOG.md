@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.3](https://github.com/Antiz96/arch-update/releases/tag/v4.2.3) - 2026-09-11
+
+### Fixes
+
+- *(i18n)* Fix typos in Italian translation - ([deeecab](https://github.com/Antiz96/arch-update/commit/deeecab20e15552aa93c9f0117e25ef5a03d896a)) by @Mattyan89
+- Force C locale when parsing AUR helper output when checking / listing updates ([#782](https://github.com/Antiz96/arch-update/pull/782)) - ([6533a61](https://github.com/Antiz96/arch-update/commit/6533a615ea24777611b3c382761bcb954a6f9c1e)) by @EndEdEd
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#779](https://github.com/Antiz96/arch-update/pull/779)) - ([a20804b](https://github.com/Antiz96/arch-update/commit/a20804b6c3e3fbbaa57394002ec19f7c0c7d22f9)) by @renovate[bot]
+
 ## [v4.2.2](https://github.com/Antiz96/arch-update/releases/tag/v4.2.2) - 2026-09-06
 
 ### Fixes
