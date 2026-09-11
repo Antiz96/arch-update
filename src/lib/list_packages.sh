@@ -24,7 +24,7 @@ if [ -n "${aur_helper}" ]; then
 	# The former because it assumes an interactive TTY environment (causing `timeout` to behave unexpectedly) 
 	# The latter because it outputs some descriptive string in stderr when looking for updates with -Qua
 	# shellcheck disable=SC2154
-	unformatted_aur_packages=$(timeout "${update_check_timeout}" "${aur_helper}" --color never "${devel_flag[@]}" -Qua < /dev/null 2> /dev/null)
+	unformatted_aur_packages=$(timeout "${update_check_timeout}" LC_ALL=C "${aur_helper}" --color never "${devel_flag[@]}" -Qua < /dev/null 2> /dev/null)
 	unformatted_aur_packages_exit_code=$?
 	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
 
