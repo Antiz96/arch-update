@@ -34,6 +34,14 @@ impl ksni::Tray for ArchUpdateTray {
         ksni::Category::SystemServices
     }
 
+    // Set status
+    fn status(&self) -> ksni::Status {
+        match tray_helpers::get_updates_count(&self.updates_statefile_type.all) {
+            0 => ksni::Status::Passive,
+            _ => ksni::Status::Active,
+        }
+    }
+
     // Set icon
     fn icon_name(&self) -> String {
         match fs::read_to_string(&self.icon_statefile) {
