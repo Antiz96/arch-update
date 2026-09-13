@@ -541,7 +541,7 @@ msgid "The update has been aborted\\n"
 msgstr "Oppdateringen er avbrutt\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
-#: src/tray/src/tray.rs:63 src/tray/src/tray.rs:112
+#: src/tray/src/tray.rs:71 src/tray/src/tray.rs:120
 #, sh-format
 msgid "1 update available"
 msgstr "1 oppdatering tilgjengelig"
@@ -827,53 +827,53 @@ msgstr "{minutes}m"
 msgid "{seconds}s"
 msgstr "{seconds}s"
 
-#: src/tray/src/tray.rs:62 src/tray/src/tray.rs:101
+#: src/tray/src/tray.rs:70 src/tray/src/tray.rs:109
 msgid "System is up to date"
 msgstr "Systemet er oppdatert"
 
-#: src/tray/src/tray.rs:65 src/tray/src/tray.rs:114
+#: src/tray/src/tray.rs:73 src/tray/src/tray.rs:122
 #, rust-format
 msgid "{count} updates available"
 msgstr "{count} oppdateringer er tilgjengelige"
 
-#: src/tray/src/tray.rs:137
+#: src/tray/src/tray.rs:145
 #, rust-format
 msgid "All ({count})"
 msgstr "Alle ({count})"
 
-#: src/tray/src/tray.rs:151
+#: src/tray/src/tray.rs:159
 #, rust-format
 msgid "Packages ({count})"
 msgstr "Pakker ({count})"
 
-#: src/tray/src/tray.rs:167
+#: src/tray/src/tray.rs:175
 #, rust-format
 msgid "AUR ({count})"
 msgstr "AUR ({count})"
 
-#: src/tray/src/tray.rs:181
+#: src/tray/src/tray.rs:189
 #, rust-format
 msgid "Flatpak ({count})"
 msgstr "Flatpak ({count})"
 
-#: src/tray/src/tray.rs:203
+#: src/tray/src/tray.rs:211
 #, rust-format
 msgid "Last check {last_check} ago"
 msgstr "Siste sjekk {last_check} siden"
 
-#: src/tray/src/tray.rs:220
+#: src/tray/src/tray.rs:228
 #, rust-format
 msgid "Next check in {next_check}"
 msgstr "Neste kontroll om {next_check}"
 
-#: src/tray/src/tray.rs:237
+#: src/tray/src/tray.rs:245
 msgid "Run Arch-Update"
 msgstr "Kjør Arch-Update"
 
-#: src/tray/src/tray.rs:245
+#: src/tray/src/tray.rs:253
 msgid "Check for updates"
 msgstr "Se etter oppdateringer"
 
-#: src/tray/src/tray.rs:256
+#: src/tray/src/tray.rs:264
 msgid "Exit"
 msgstr "Avslutt"
