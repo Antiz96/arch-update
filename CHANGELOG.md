@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.3.1](https://github.com/Antiz96/arch-update/releases/tag/v4.3.1) - 2026-09-13
+
+### Fixes
+
+- Correct the LC_ALL language settings when listing AUR packages update ([#785](https://github.com/Antiz96/arch-update/pull/785)) - ([82e14cb](https://github.com/Antiz96/arch-update/commit/82e14cbff965ad6bfee43994bd977b0e8685b988)) by @Antiz96
+
 ## [v4.3.0](https://github.com/Antiz96/arch-update/releases/tag/v4.3.0) - 2026-09-13
 
 ### Features
