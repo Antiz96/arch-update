@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.3.0](https://github.com/Antiz96/arch-update/releases/tag/v4.3.0) - 2026-09-13
+
+### Features
+
+- *(tray)* Set ksni status according to the system state ([#783](https://github.com/Antiz96/arch-update/pull/783)) - ([7f5e473](https://github.com/Antiz96/arch-update/commit/7f5e4738e4f40ce111ad823ebf6cedea952aa6e9)) by @Foxxtail1
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#784](https://github.com/Antiz96/arch-update/pull/784)) - ([8713a58](https://github.com/Antiz96/arch-update/commit/8713a58fe6c34f4ca8ef9431dc5e55ae47d5150f)) by @Antiz96
+
 ## [v4.2.3](https://github.com/Antiz96/arch-update/releases/tag/v4.2.3) - 2026-09-11
 
 ### Fixes
