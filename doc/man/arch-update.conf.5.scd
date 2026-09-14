@@ -64,6 +64,9 @@ Options are case sensitive, so capital letters have to be respected.
 *DiffProg=[Editor]*
 	Editor to use to visualize / edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set).
 
+*ShowTrayWhenRelevant*
+	Set the SNI status of the systray applet to "Passive" when the system is up-to-date and "Active" when there are updates available. This allows related System Tray settings (such as KDE Plasma's "Show when relevant" option) to hide the Arch-Update systray applet when the system is up-to-date and show it only when updates are available.
+
 *TrayUpdatesPerPage=[Num]*
 	Number of updates to show per page in the systray applet sub-menus. Setting this option to "0" disables the pagination completely (show the entire updates list in a single page). Defaults to 0.
 

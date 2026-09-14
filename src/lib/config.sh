@@ -66,6 +66,10 @@ if [ -f "${config_file}" ]; then
 	# shellcheck disable=SC2034
 	diff_prog=$(grep -E '^[[:space:]]*DiffProg[[:space:]]*=[[:space:]]*[^[:space:]].*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
+	# Check the "ShowTrayWhenRelevant" option in arch-update.conf
+	# shellcheck disable=SC2034
+	show_tray_when_relevant=$(grep -Eq '^[[:space:]]*ShowTrayWhenRelevant[[:space:]]*$' "${config_file}" 2> /dev/null && echo "true")
+
 	# Check the "TrayUpdatesPerPage" option in arch-update.conf
 	# shellcheck disable=SC2034
 	tray_updates_per_page=$(grep -E '^[[:space:]]*TrayUpdatesPerPage[[:space:]]*=[[:space:]]*[0-9][0-9]*[[:space:]]*$' "${config_file}" 2> /dev/null | awk -F '=' '{print $2}' | tr -d '[:space:]')
