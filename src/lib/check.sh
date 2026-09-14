@@ -91,7 +91,9 @@ if [ -n "${update_available}" ] && [ -n "${notification_support}" ] && ! diff "$
 	# shellcheck disable=SC2154
 	last_notif_id=$(sed -n '1p' "${tmpdir}/notif_param" 2> /dev/null)
 
-	systemd-run --user --unit="${name}"-notification-"$(date +%Y%m%d-%H%M%S)" --quiet \
+	systemctl --user stop "${name}-notification.service" 2>/dev/null || true
+
+	systemd-run --user --unit="${name}-notification" --quiet \
 		--setenv=DISPLAY="${DISPLAY}" \
 		--setenv=DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS}" \
 		--setenv=TEXTDOMAIN="${_name}" \
