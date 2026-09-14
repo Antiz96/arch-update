@@ -51,7 +51,7 @@ Alternative AUR package variants:
 
 - [arch-update-bin](https://aur.archlinux.org/packages/arch-update-bin): Arch-Update package including a pre-compiled binary for the systray applet, avoiding the need to compile it locally (only available for the `x86_64` architecture). The pre-compiled binary is distributed as a [release asset](https://github.com/Antiz96/arch-update/releases/latest) (`arch-update-tray-<release_version>-x86_64`) and can be reproduced from source (in the sense of [reproducible builds](https://reproducible-builds.org/)). See [this chapter](#reproduce-the-pre-compiled-tray-binary-from-source) for related instructions.
 - [arch-update-git](https://aur.archlinux.org/packages/arch-update-git): Unstable version of Arch-Update, built against the latest commit from the main branch. This is mostly used for development and testing purposes, it is not recommended for regular usage.
-- [arch-update-no-tray](https://aur.archlinux.org/packages/arch-update-no-tray): Arch-Update package not including the systray applet (and the related dependencies). This stripped down version is useful for people that are only using Arch-Update from the CLI (for instance on headless machines / servers), without any use for the systray applet.
+- [arch-update-cli](https://aur.archlinux.org/packages/arch-update-cli): Arch-Update package not including elements related to graphical usage (such as the systray applet, icons, desktop files, etc...). This stripped down version is useful for people that are only using Arch-Update from the CLI (for instance on headless machines / servers), without any use for the other components.
 
 ### From Source
 
