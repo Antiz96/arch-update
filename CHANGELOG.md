@@ -6,13 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ### Fixes
 
-- *(build)* Fix the release script ([#795](https://github.com/Antiz96/arch-update/pull/795)) - ([a78aebf](https://github.com/Antiz96/arch-update/commit/a78aebfd233451ca79cf759d78ac9c4b37738c24))
+- *(build)* Fix the release script ([#795](https://github.com/Antiz96/arch-update/pull/795)) - ([a78aebf](https://github.com/Antiz96/arch-update/commit/a78aebfd233451ca79cf759d78ac9c4b37738c24)) by @Antiz96
 - *(notification)* Shut eventual old notification process before starting a new one ([#791](https://github.com/Antiz96/arch-update/pull/791)) - ([5ec056b](https://github.com/Antiz96/arch-update/commit/5ec056b294941aca924ecd0c7c8c48f8f06a30ca)) by @Antiz96
 - *(tray)* Make the SNI status configurable ([#789](https://github.com/Antiz96/arch-update/pull/789)) - ([eccf598](https://github.com/Antiz96/arch-update/commit/eccf5987df32b59778c4073cec070ece402a985b)) by @Antiz96
 
 ### Documentation
 
-- *(README)* Minor wording improvement ([#794](https://github.com/Antiz96/arch-update/pull/794)) - ([b46230b](https://github.com/Antiz96/arch-update/commit/b46230be4fa9b5c5850ad973f8232c2f0da95e48))
+- *(README)* Minor wording improvement ([#794](https://github.com/Antiz96/arch-update/pull/794)) - ([b46230b](https://github.com/Antiz96/arch-update/commit/b46230be4fa9b5c5850ad973f8232c2f0da95e48)) by @Antiz96
 - *(man)* Document which options require the systray applet to be refreshed or restarted ([#790](https://github.com/Antiz96/arch-update/pull/790)) - ([45138e4](https://github.com/Antiz96/arch-update/commit/45138e4418dcbbc38ce63b9dfbec148575467a0a)) by @Antiz96
 
 ### Miscellaneous
