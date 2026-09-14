@@ -30,7 +30,7 @@ jobs:
         run: cargo clippy --all-targets --all-features --manifest-path src/tray/Cargo.toml -- -D warnings
 
       - name: Run make
-        run: make WITH_TRAY=false
+        run: make
 
       - name: Run make test
         run: make test
