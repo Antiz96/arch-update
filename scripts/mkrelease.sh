@@ -96,8 +96,6 @@ sha256sum "src/tray/target/release/arch-update-tray-${release_tag}-x86_64" > "sr
 gpg --local-user D33FAA16B937F3B2 --armor --detach-sign "src/tray/target/release/arch-update-tray-${release_tag}-x86_64.sha256"
 
 # Upload assets
-gh release upload "v${release_tag}" "arch-update-${release_tag}.tar.gz.asc" "arch-update-${release_tag}.tar.gz.sha256" "arch-update-${release_tag}.tar.gz.sha256.asc"
-
 gh release upload "v${release_tag}" \
 	"arch-update-${release_tag}.tar.gz.asc" \
 	"arch-update-${release_tag}.tar.gz.sha256" \
