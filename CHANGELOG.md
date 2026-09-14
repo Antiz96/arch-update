@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.0](https://github.com/Antiz96/arch-update/releases/tag/v4.4.0) - 2026-09-14
+
+### Fixes
+
+- *(build)* Fix the release script ([#795](https://github.com/Antiz96/arch-update/pull/795)) - ([a78aebf](https://github.com/Antiz96/arch-update/commit/a78aebfd233451ca79cf759d78ac9c4b37738c24))
+- *(notification)* Shut eventual old notification process before starting a new one ([#791](https://github.com/Antiz96/arch-update/pull/791)) - ([5ec056b](https://github.com/Antiz96/arch-update/commit/5ec056b294941aca924ecd0c7c8c48f8f06a30ca)) by @Antiz96
+- *(tray)* Make the SNI status configurable ([#789](https://github.com/Antiz96/arch-update/pull/789)) - ([eccf598](https://github.com/Antiz96/arch-update/commit/eccf5987df32b59778c4073cec070ece402a985b)) by @Antiz96
+
+### Documentation
+
+- *(README)* Minor wording improvement ([#794](https://github.com/Antiz96/arch-update/pull/794)) - ([b46230b](https://github.com/Antiz96/arch-update/commit/b46230be4fa9b5c5850ad973f8232c2f0da95e48))
+- *(man)* Document which options require the systray applet to be refreshed or restarted ([#790](https://github.com/Antiz96/arch-update/pull/790)) - ([45138e4](https://github.com/Antiz96/arch-update/commit/45138e4418dcbbc38ce63b9dfbec148575467a0a)) by @Antiz96
+
+### Miscellaneous
+
+- *(build)* Add necessary changes to ship a pre-compiled binary for the systray applet and to build without the systray applet ([#793](https://github.com/Antiz96/arch-update/pull/793)) - ([fecca62](https://github.com/Antiz96/arch-update/commit/fecca6261be1768d519a3878f545b6056e5f4cf4)) by @Antiz96
+- *(deps)* Lock file maintenance ([#788](https://github.com/Antiz96/arch-update/pull/788)) - ([c0a1712](https://github.com/Antiz96/arch-update/commit/c0a171234cca446610b768bcd6a6ab2ea9b09588)) by @renovate[bot]
+- *(i18n)* Update translation files ([#792](https://github.com/Antiz96/arch-update/pull/792)) - ([1247bae](https://github.com/Antiz96/arch-update/commit/1247bae387a406af47f6b32604bb1af85d725216)) by @Antiz96
+
 ## [v4.3.1](https://github.com/Antiz96/arch-update/releases/tag/v4.3.1) - 2026-09-13
 
 ### Fixes
