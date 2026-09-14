@@ -8,6 +8,7 @@ use gettextrs::*;
 use ksni::TrayMethods;
 use ksni::menu::*;
 use log::{debug, error, info, warn};
+use std::env;
 use std::fs;
 use std::future;
 use std::path::PathBuf;
@@ -36,9 +37,13 @@ impl ksni::Tray for ArchUpdateTray {
 
     // Set status
     fn status(&self) -> ksni::Status {
-        match tray_helpers::get_updates_count(&self.updates_statefile_type.all) {
-            0 => ksni::Status::Passive,
-            _ => ksni::Status::Active,
+        if env::var("ARCH_UPDATE_SHOW_TRAY_WHEN_RELEVANT").is_ok_and(|value| value == "true") {
+            match tray_helpers::get_updates_count(&self.updates_statefile_type.all) {
+                0 => ksni::Status::Passive,
+                _ => ksni::Status::Active,
+            }
+        } else {
+            ksni::Status::Active
         }
     }
 
