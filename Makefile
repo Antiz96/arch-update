@@ -3,13 +3,16 @@ _pkgname=Arch-Update
 locales = be bg ca de es eu fr hu it ja ka nb nl pt_BR pt_PT ru sv tr zh_CN zh_TW
 
 PREFIX ?= /usr/local
+WITH_TRAY ?= true
 CARGO_TARGET_DIR ?= src/tray/target
 
 .PHONY: build test install clean uninstall
 
 build:
+ifneq ($(WITH_TRAY),false)
 	# Build systray applet
 	cargo build --release --manifest-path src/tray/Cargo.toml
+endif
 
 	# Generate man pages
 	scdoc < "doc/man/${pkgname}.1.scd" > "doc/man/${pkgname}.1"
@@ -31,8 +34,10 @@ install:
 	# Install libraries
 	install -Dm 755 src/lib/* -t "${DESTDIR}${PREFIX}/share/${pkgname}/lib/"
 
+ifneq ($(WITH_TRAY),false)
 	# Install systray applet
 	install -Dm 755 "$(CARGO_TARGET_DIR)/release/${pkgname}-tray" "${DESTDIR}${PREFIX}/lib/${pkgname}/${pkgname}-tray"
+endif
 
 	# Install icons
 	install -Dm 664 "res/icons/${pkgname}-blue.svg" "${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${pkgname}-blue.svg"
