@@ -49,9 +49,9 @@ Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-u
 
 Alternative versions:
 
-- [arch-update-bin](https://aur.archlinux.org/packages/arch-update-bin): Arch-Update package including a pre-compiled binary for the systray applet, avoiding the need to compile it locally (only available for the `x86_64` architecture). The pre-compiled binary is distributed as a [release asset](https://github.com/Antiz96/arch-update/releases/latest) (`arch-update-tray-<release_version>-x86_64`) and can be reproduced from source (in the sense of [reproducible builds)(https://reproducible-builds.org/). See [this chapter](#reproduce-the-pre-compiled-tray-binary-from-source) for related instructions.
+- [arch-update-bin](https://aur.archlinux.org/packages/arch-update-bin): Arch-Update package including a pre-compiled binary for the systray applet, avoiding the need to compile it locally (only available for the `x86_64` architecture). The pre-compiled binary is distributed as a [release asset](https://github.com/Antiz96/arch-update/releases/latest) (`arch-update-tray-<release_version>-x86_64`) and can be reproduced from source (in the sense of [reproducible builds](https://reproducible-builds.org/)). See [this chapter](#reproduce-the-pre-compiled-tray-binary-from-source) for related instructions.
 - [arch-update-git](https://aur.archlinux.org/packages/arch-update-git): Unstable version of Arch-Update, built against the latest commit from the main branch. This is mostly used for development and testing purposes, it is not recommended for regular usage.
-- [arch-update-no-tray](https://aur.archlinux.org/packages/arch-update-no-tray): Arch-Update package not including the systray applet (and the related dependencies). This stripped down version is useful for people only using Arch-Update fom the CLI (for instance on headless machines / servers), without any use for the systray applet.
+- [arch-update-no-tray](https://aur.archlinux.org/packages/arch-update-no-tray): Arch-Update package not including the systray applet (and the related dependencies). This stripped down version is useful for people that are only using Arch-Update from the CLI (for instance on headless machines / servers), without any use for the systray applet.
 
 ### From Source
 
@@ -86,9 +86,9 @@ Download the archive of the [latest stable release](https://github.com/Antiz96/a
 To build and install `arch-update`, go into the extracted / cloned directory and run the following commands:
 
 ```bash
-make # Alternatively pass the `WITH_TRAY=false` argument to not build the systray applet
+make # You can optionally pass the `WITH_TRAY=false` argument to not build the systray applet
 make test
-sudo make install # Alternatively pass the `WITH_TRAY=false` argument to not install the systray applet
+sudo make install # You can optionally pass the `WITH_TRAY=false` argument to not install the systray applet
 ```
 
 Once the installation is complete, you may optionally clean up the directory of files generated during installation by running the following command:
