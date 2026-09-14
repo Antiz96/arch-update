@@ -11,6 +11,7 @@
 - [Usage](#usage)
 - [Documentation](#documentation)
 - [Tips & tricks and troubleshooting](#tips--tricks-and-troubleshooting)
+- [Reproduce the pre-compiled tray binary from source](#reproduce-the-pre-compiled-tray-binary-from-source)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -46,6 +47,12 @@ Optional support for:
 
 Install the [arch-update](https://aur.archlinux.org/packages/arch-update "arch-update AUR package") AUR package (also check the list of optional dependencies for anything you may want or need).
 
+Alternative versions:
+
+- [arch-update-bin](https://aur.archlinux.org/packages/arch-update-bin): Arch-Update package including a pre-compiled binary for the systray applet, avoiding the need to compile it locally (only available for the `x86_64` architecture). The pre-compiled binary is distributed as a [release asset](https://github.com/Antiz96/arch-update/releases/latest) (`arch-update-tray-<release_version>-x86_64`) and can be reproduced from source (in the sense of [reproducible builds)(https://reproducible-builds.org/). See [this chapter](#reproduce-the-pre-compiled-tray-binary-from-source) for related instructions.
+- [arch-update-git](https://aur.archlinux.org/packages/arch-update-git): Unstable version of Arch-Update, built against the latest commit from the main branch. This is mostly used for development and testing purposes, it is not recommended for regular usage.
+- [arch-update-no-tray](https://aur.archlinux.org/packages/arch-update-no-tray): Arch-Update package not including the systray applet (and the related dependencies). This stripped down version is useful for people only using Arch-Update fom the CLI (for instance on headless machines / servers), without any use for the systray applet.
+
 ### From Source
 
 Install required runtime dependencies:
@@ -68,10 +75,10 @@ Additional optional dependencies you might want or need:
 - [sudo-rs](https://archlinux.org/packages/extra/x86_64/sudo-rs/): Privilege elevation
 - [opendoas](https://archlinux.org/packages/extra/x86_64/opendoas/): Privilege elevation
 
-Install required build dependencies:
+Install required build and test dependencies:
 
 ```bash
-sudo pacman -S --asdeps make scdoc bats cargo
+sudo pacman -S --asdeps make scdoc bats cargo pkgconf
 ```
 
 Download the archive of the [latest stable release](https://github.com/Antiz96/arch-update/releases/latest) and extract it (alternatively, you can clone this repository with `git`).
@@ -79,9 +86,9 @@ Download the archive of the [latest stable release](https://github.com/Antiz96/a
 To build and install `arch-update`, go into the extracted / cloned directory and run the following commands:
 
 ```bash
-make
+make # Alternatively pass the `WITH_TRAY=false` argument to not build the systray applet
 make test
-sudo make install
+sudo make install # Alternatively pass the `WITH_TRAY=false` argument to not install the systray applet
 ```
 
 Once the installation is complete, you may optionally clean up the directory of files generated during installation by running the following command:
@@ -216,6 +223,27 @@ As such, if you don't have any of these "known" terminal emulators installed on 
 
 To do so, install the [xdg-terminal-exec AUR package](https://aur.archlinux.org/packages/xdg-terminal-exec), create the `~/.config/xdg-terminals.list` file and add the name of the `.desktop` file of your terminal emulator of choice in it (e.g. `Alacritty.desktop`).  
 See <https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configuration> for more details.
+
+## Reproduce the pre-compiled tray binary from source
+
+A pre-compiled binary of the systray applet for the `x86_64 (amd64)` architecture is distributed as a [release asset](https://github.com/Antiz96/arch-update/releases/latest) (`arch-update-tray-<release_version>-x86_64`).  
+
+The pre-compiled binary can be reproduced from source (in the sense of [reproducible builds](https://reproducible-builds.org)).  
+The build environment is created and fully documented via [repro-env](https://github.com/kpcyrd/repro-env), and is tracked in this repository.
+
+To reproduce the pre-compiled binary for a given release, [install repro-env](https://github.com/kpcyrd/repro-env#download) and run the following:
+
+```bash
+git clone https://github.com/Antiz96/arch-update.git
+cd arch-update
+git checkout <tag> # Where <tag> is the git tag for the targeted release, e.g. "v4.3.2"
+repro-env build -- cargo build --release
+sha256sum src/tray/target/release/arch-update-tray
+```
+
+Then, compare the `sha256` hash of the built binary to the one of the pre-compiled release binary (which is also recorded in the `arch-update-tray-<release_version>-x86_64.sha256` file in the release assets). Both hashes should be equal, indicating that the binary has been successfully reproduced.
+
+Each release assets are also cryptographically signed, with the detached signature for each asset distributed as `<asset_name>.asc` (see the [MAINTAINERS.md file](https://github.com/Antiz96/arch-update/blob/main/MAINTAINERS.md) for a list of keys expected to emit signatures).
 
 ## Contributing
 

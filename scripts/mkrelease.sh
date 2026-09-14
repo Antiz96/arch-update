@@ -44,7 +44,11 @@ esac
 sed_pattern="${latest_tag//./\\.}" # escape dots
 sed -i "s/${sed_pattern#v}/${release_tag}/g" doc/man/arch-update.* po/* src/arch-update.sh
 sed -i "s/version = \"${sed_pattern#v}\"/version = \"${release_tag}\"/g" src/tray/Cargo.toml
-cargo update --package arch-update-tray --manifest-path src/tray/Cargo.toml
+
+# Build tray binary
+rm -rf src/tray/target 
+repro-env update
+repro-env build -- cargo build --release --manifest-path src/tray/Cargo.toml
 
 # Update changelog
 git-cliff -up CHANGELOG.md
@@ -85,6 +89,24 @@ gpg --local-user D33FAA16B937F3B2 --armor --detach-sign "arch-update-${release_t
 sha256sum "arch-update-${release_tag}.tar.gz" > "arch-update-${release_tag}.tar.gz.sha256"
 gpg --local-user D33FAA16B937F3B2 --armor --detach-sign "arch-update-${release_tag}.tar.gz.sha256"
 
-# Upload source tarball and checksum signatures
+# Sign binary and checksum
+mv src/tray/target/release/arch-update-tray "src/tray/target/release/arch-update-tray-${release_tag}-x86_64"
+gpg --local-user D33FAA16B937F3B2 --armor --detach-sign "src/tray/target/release/arch-update-tray-${release_tag}-x86_64"
+sha256sum "src/tray/target/release/arch-update-tray-${release_tag}-x86_64" > "src/tray/target/release/arch-update-tray-${release_tag}-x86_64.sha256"
+gpg --local-user D33FAA16B937F3B2 --armor --detach-sign "src/tray/target/release/arch-update-tray-${release_tag}-x86_64.sha256"
+
+# Upload assets
 gh release upload "v${release_tag}" "arch-update-${release_tag}.tar.gz.asc" "arch-update-${release_tag}.tar.gz.sha256" "arch-update-${release_tag}.tar.gz.sha256.asc"
-rm -f "arch-update-${release_tag}.tar.gz"*
+
+gh release upload "v${release_tag}" \
+	"arch-update-${release_tag}.tar.gz.asc" \
+	"arch-update-${release_tag}.tar.gz.sha256" \
+	"arch-update-${release_tag}.tar.gz.sha256.asc" \
+	"src/tray/target/release/arch-update-tray-${release_tag}-x86_64" \
+	"src/tray/target/release/arch-update-tray-${release_tag}-x86_64.asc" \
+	"src/tray/target/release/arch-update-tray-${release_tag}-x86_64.sha256" \
+	"src/tray/target/release/arch-update-tray-${release_tag}-x86_64.sha256.asc"
+
+# Cleanup
+rm -rf "arch-update-${release_tag}.tar.gz"* src/tray/target/
+podman image prune -af
