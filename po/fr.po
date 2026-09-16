@@ -183,12 +183,12 @@ msgstr "Il y a déjà une instance d'${_name} en cours d'exécution\\n"
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "Procéder malgré tout ? [o/N]"
 
 #: src/lib/full_upgrade.sh:22
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "L'exécution a été abandonnée\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
