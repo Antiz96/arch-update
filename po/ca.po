@@ -184,7 +184,7 @@ msgstr "Ja hi ha una instància de ${_name} en execució\\n"
 msgid "Proceed anyway? [y/N]"
 msgstr ""
 
-#: src/lib/full_upgrade.sh:22
+#: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr ""

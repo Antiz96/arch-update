@@ -187,7 +187,7 @@ msgstr "Un'istanza di ${_name} è già avviata\\n"
 msgid "Proceed anyway? [y/N]"
 msgstr ""
 
-#: src/lib/full_upgrade.sh:22
+#: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr ""

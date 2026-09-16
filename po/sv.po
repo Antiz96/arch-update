@@ -185,7 +185,7 @@ msgstr "Det finns redan en pågående instans av ${_name}\\n"
 msgid "Proceed anyway? [y/N]"
 msgstr "Fortsätt ändå [j/N]"
 
-#: src/lib/full_upgrade.sh:22
+#: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr "Utförandet har avbrutits\\n"
