@@ -16,6 +16,7 @@ if ! flock -n "${fd_upgrade}"; then
 	# shellcheck disable=SC2154
 	case "${answer}" in
 		"$(eval_gettext "Y")"|"$(eval_gettext "y")")
+			echo
 		;;
 		*)
 			echo
