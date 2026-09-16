@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.1](https://github.com/Antiz96/arch-update/releases/tag/v4.4.1) - 2026-09-16
+
+### Fixes
+
+- *(security)* Harden state / runtime temporary files and system-wide lockfile handling ([#799](https://github.com/Antiz96/arch-update/pull/799)) - ([b2d5ef1](https://github.com/Antiz96/arch-update/commit/b2d5ef10ad46f36271ffc12db4f3160ecab3a1d9)) by @xoity
+
+### Documentation
+
+- *(README)* Update version in reproducible builds example ([#797](https://github.com/Antiz96/arch-update/pull/797)) - ([303476a](https://github.com/Antiz96/arch-update/commit/303476a09536bbe75242b7c67ac9efe217ebb4a4)) by @Antiz96
+- *(README)* Update documentation to reflect the new arch-update-cli AUR package name ([#796](https://github.com/Antiz96/arch-update/pull/796)) - ([9cbdfee](https://github.com/Antiz96/arch-update/commit/9cbdfee403d6996966692a046f347ecb83561788)) by @Antiz96
+
+### Miscellaneous
+
+- *(CHANGELOG)* Update entries ([#798](https://github.com/Antiz96/arch-update/pull/798)) - ([70efb67](https://github.com/Antiz96/arch-update/commit/70efb67f44910c9ff81c6b30e48784f92f802525)) by @Antiz96
+- *(i18n)* Update German translation ([#802](https://github.com/Antiz96/arch-update/pull/802)) - ([9b9e311](https://github.com/Antiz96/arch-update/commit/9b9e3111f0f4a52509d25084f69d9734f9b018ca)) by @DeN-AlB
+- *(i18n)* Update French translation file ([#801](https://github.com/Antiz96/arch-update/pull/801)) - ([43b400f](https://github.com/Antiz96/arch-update/commit/43b400f2dd24ccaa755722d0033f0aff07a7d7e1)) by @Antiz96
+- *(i18n)* Update translation files ([#800](https://github.com/Antiz96/arch-update/pull/800)) - ([b7ca848](https://github.com/Antiz96/arch-update/commit/b7ca8484790a39b93a75c0c045f337689f6d4e96)) by @Antiz96
+
 ## [v4.4.0](https://github.com/Antiz96/arch-update/releases/tag/v4.4.0) - 2026-09-14
 
 ### Fixes

@@ -1,5 +1,5 @@
 [container]
-image = "docker.io/archlinux/archlinux@sha256:7cc4adc87a3f414c9b80fc14b90073d84ef27a170a89c00c5e40055bf20a80f7"
+image = "docker.io/archlinux/archlinux@sha256:a5a4d2d9c7d578dadb48c3523b7d22e0630bb8789d280beba0b772250355f293"
 
 [[package]]
 name = "compiler-rt"
@@ -50,14 +50,6 @@ sha256 = "880bdba957ebe5136449c7b61821e92628d7bdd43f370e5a0818d229372d3851"
 signature = "iQEzBAABCgAdFiEEFRnVq6Zb9vwrc8dWek52CV2KUuQFAmnhAlsACgkQek52CV2KUuSBcgf9E61NpAV+F+wHPlOgZOT9yurZAhQwUNd4SRQkNEFrbyMJ1C3Bu9vUayr05Q+MxeQ8/J0W5aACrWSOEAtvYlu9vfmzbn7/S9rHtH9fmvmj46hZemo48cVTq9YTQA1Doe5e9j3DTOWdEsWv7XCMSIXGI2RdIXYB+TH1DLNi7B95EwDySH7SpznjH+SGv9ttVMsmAChRbGR3fIVi6hz6OgSGErFJJmTI5jwt06U6L7Yhl/4ybvYXuh1DGhdFpNhJBGLcYmQhBhv3OGa2dwj051fEjneL2PK80u4nmc+3dP7cOW3pY8jBDpOVfRvnAwiY/NuJMK1YK3iFd3YbYQnuu1D2cQ=="
 
 [[package]]
-name = "libtirpc"
-version = "1.3.8-1"
-system = "archlinux"
-url = "https://archive.archlinux.org/packages/l/libtirpc/libtirpc-1.3.8-1-x86_64.pkg.tar.zst"
-sha256 = "4861eac60e6daffdf02366a09fc559ffe456e987410362793cd7faf91be22b30"
-signature = "iQEzBAABCgAdFiEErcih/MFeAdRTEEGelGV6sg8qCSsFAmqm5pYACgkQlGV6sg8qCSuvKwf/YB3nzb+s+hJgKT/5sM2cO1aKCKK85zZ7GhuxOglczl5Xu4wFkU+DifApCJheX1TC4jHR1Z2YFoqtWjNe3+CUgY3sNxUEN1Z7W6NSHDXRB85bMM6uEz/tJaCN59QRAsssv9yoRcPSgoN6XsucBWswV3LoG6hIkLDg2G0jlPE0ZIt4VzIdFDtTvhmJjUwndnVs6PpJB2sythuDk60L7MOzTrOo9eeMeQgzutmOuwFL7v0KMs5/IyXmmqWP3w/GrHFlkd7gZ9OjBgDax/MkiCRP2A+/XPsJzqrm39RDYSISN76858pKd+sDpcWxn4bS4CqCMBSrfLN1wuMN4j4+JWUx1g=="
-
-[[package]]
 name = "lld"
 version = "22.1.8-1"
 system = "archlinux"
@@ -97,11 +89,3 @@ url = "https://archive.archlinux.org/packages/r/rust/rust-1:1.98.1-1-x86_64.pkg.
 provides = ["cargo"]
 sha256 = "a0e72c52cf8b8cbc9a16a82fca439e6fe502c6dc4a27b7c1d805f0399ad709ba"
 signature = "iHUEABYKAB0WIQSDvIiJNRtd67toQW64rAhgDxCM3wUCapmxVAAKCRC4rAhgDxCM30hXAQCIXJGVVPNK0oVt5MNFOvNSG/ELVoKYghvBL0PS/qaJDgD/fAhFxAoNYzYvUHlqRivEm01JtibtZvKdqTefzO/I0Ac="
-
-[[package]]
-name = "tzdata"
-version = "2026d-1"
-system = "archlinux"
-url = "https://archive.archlinux.org/packages/t/tzdata/tzdata-2026d-1-x86_64.pkg.tar.zst"
-sha256 = "79e5fa331ef9a22746b2f8592ebc3c73d494b57c8d5718e17565ce3fdd6ce127"
-signature = "iQEzBAABCgAdFiEErcih/MFeAdRTEEGelGV6sg8qCSsFAmqlm/kACgkQlGV6sg8qCStixwgAnBo2IPI98ELw8XHTXmRyM6QKc9Az5/seN+QPbQCCjCwALH/R0khCh73/1LJl0JcYDf2zP8VqzWbZmgZRQBpt73RqZ7Cm9MR/WOyiXw09QvTf6L11tcsyhrWscJ4Huvr7/mpTX2SlqTQKllScGYCbLGu23wLa72Pli/n3P2AsVD8OQbWwYG5e6hMKnr6F0vE5dUrEtJ78OCAVJkNWSkfFndc69FeCAnvNZcWI5UZy7eHgXX0BMBuvgpVxptOylWCEpb27VBrb+678u4AMo967SD41Ca2UY0hKXm0WXg4tg7bSFJVGFocYxvPCpAAvNC9x8GNRPsToy041gZzKqp7kSA=="
