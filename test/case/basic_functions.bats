@@ -1,9 +1,9 @@
 export ARCH_UPDATE_LIBDIR="${PWD}/src/lib"
 
 @test "version" {
-	src/arch-update.sh --version
+	XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}" src/arch-update.sh --version
 }
 
 @test "help" {
-	src/arch-update.sh --help
+	XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}" src/arch-update.sh --help
 }

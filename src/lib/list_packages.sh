@@ -169,6 +169,7 @@ else
 				echo
 			;;
 			*)
+				echo
 				error_msg "$(eval_gettext "The update has been aborted\n")" && quit_msg
 				exit 4
 			;;
