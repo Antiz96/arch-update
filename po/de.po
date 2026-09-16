@@ -184,7 +184,7 @@ msgstr "Es gibt bereits eine laufende Instanz von ${_name}\\n"
 msgid "Proceed anyway? [y/N]"
 msgstr "Trotzdem fortfahren? [j/N]"
 
-#: src/lib/full_upgrade.sh:22
+#: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr "Die Ausführung wurde abgebrochen\\n"

@@ -173,7 +173,7 @@ msgstr "已经有一个 ${_name} 实例正在运行\\n"
 msgid "Proceed anyway? [y/N]"
 msgstr ""
 
-#: src/lib/full_upgrade.sh:22
+#: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr ""
