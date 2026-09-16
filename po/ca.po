@@ -126,16 +126,18 @@ msgstr "Voleu eliminar aquest paquet no utilitzat de Flatpak ara? [s/N]"
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Voleu eliminar aquests paquets no utilitzats de Flatpak ara? [s/N]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
-#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
+#: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "S"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/kernel_reboot.sh:15
-#: src/lib/list_packages.sh:166 src/lib/orphan_packages.sh:21
-#: src/lib/packages_cache.sh:30 src/lib/pacnew_files.sh:21
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
+#: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
 msgstr "s"
@@ -176,6 +178,16 @@ msgstr "No s'ha trobat cap paquet no utilitzat de Flatpak\\n"
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Ja hi ha una instància de ${_name} en execució\\n"
+
+#: src/lib/full_upgrade.sh:14
+#, sh-format
+msgid "Proceed anyway? [y/N]"
+msgstr ""
+
+#: src/lib/full_upgrade.sh:22
+#, sh-format
+msgid "The execution has been aborted\\n"
+msgstr ""
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -544,7 +556,7 @@ msgstr "No hi ha cap actualització disponible\\n"
 msgid "Proceed with update? [Y/n]"
 msgstr "Voleu procedir amb l'actualització? [S/n]"
 
-#: src/lib/list_packages.sh:172
+#: src/lib/list_packages.sh:173
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "S'ha interromput l'actualització\\n"
