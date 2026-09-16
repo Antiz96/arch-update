@@ -4,14 +4,25 @@
 # https://github.com/Antiz96/arch-update
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-# Hold the lockfile to avoid multiple parallel runs
+# Lockfile to detect concurrent runs
 # shellcheck disable=SC2154
-exec {fd_upgrade}> "${TMPDIR:-/tmp}/${name}.lock"
+exec {fd_upgrade}> "/tmp/${name}.lock"
 
-# Exit if the lockfile is already hold
+# Warn if another instance is already running
 if ! flock -n "${fd_upgrade}"; then
-	error_msg "$(eval_gettext "There's already a running instance of \${_name}\n")" && quit_msg
-	exit 17
+	warning_msg "$(eval_gettext "There's already a running instance of \${_name}\n")"
+	ask_msg "$(eval_gettext "Proceed anyway? [y/N]")"
+
+	# shellcheck disable=SC2154
+	case "${answer}" in
+		"$(eval_gettext "Y")"|"$(eval_gettext "y")")
+		;;
+		*)
+			echo
+			error_msg "$(eval_gettext "The execution has been aborted\n")" && quit_msg
+			exit 17
+		;;
+	esac
 fi
 
 # Source the "list_packages" library which displays the list of packages available for updates
@@ -35,7 +46,7 @@ fi
 # Source the "orphan_packages" library which displays orphan packages and offers to remove them if:
 # - There was no AUR package to update (meaning orphans have not been checked yet)
 # Or
-# - The was AUR package(s) to update but the list of orphans changed after the AUR package(s) update
+# - There was AUR package(s) to update but the list of orphans changed after the AUR package(s) update
 if [ -z "${aur_packages}" ] || ! diff <(printf "%s\n" "${orphan_packages[@]}" | sed '/^$/d' | sort) <(pacman -Qtdq | sort) > /dev/null; then
 	# shellcheck source=src/lib/orphan_packages.sh
 	source "${libdir}/orphan_packages.sh"
