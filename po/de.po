@@ -182,12 +182,12 @@ msgstr "Es gibt bereits eine laufende Instanz von ${_name}\\n"
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "Trotzdem fortfahren? [j/N]"
 
 #: src/lib/full_upgrade.sh:22
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "Die Ausführung wurde abgebrochen\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
