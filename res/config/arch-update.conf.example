@@ -16,6 +16,7 @@
 #KeepOldPackages=3
 #KeepUninstalledPackages=0
 #DiffProg=$DIFFPROG
+#ShowTrayWhenRelevant
 #TrayUpdatesPerPage=0
 #TrayIconStyle=blue
 #ColorblindMode

@@ -1,4 +1,4 @@
-arch-update(1) ["Arch-Update 4.2.0" ["Arch-Update Manual"]]
+arch-update(1) ["Arch-Update 4.4.1" ["Arch-Update Manual"]]
 
 # NAME
 
@@ -163,7 +163,7 @@ See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configu
 
 *3* Error when launching the Arch-Update systray applet.
 
-*4* User didn't gave the confirmation to proceed.
+*4* User didn't give the confirmation to proceed with updates.
 
 *5* Error when updating packages.
 
@@ -189,7 +189,7 @@ See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configu
 
 *16* Error when creating the `statedir` and / or the `tmpdir` directories.
 
-*17* Another instance of Arch-Update is already running.
+*17* User didn't give the confirmation to proceed after being warned that another instance of Arch-Update is already running.
 
 *18* Error when running Arch-Update from the desktop notification action.
 
@@ -211,4 +211,4 @@ Please report bugs to the GitHub page: https://github.com/Antiz96/arch-update/is
 
 # AUTHOR
 
-Robin Candau <robincandau@protonmail.com>
+Robin Candau <robincandau@mailbox.org>

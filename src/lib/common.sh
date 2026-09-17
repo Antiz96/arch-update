@@ -24,7 +24,7 @@ esac
 # Create state and tmp dirs if they don't exist
 # shellcheck disable=SC2154
 statedir="${XDG_STATE_HOME:-${HOME}/.local/state}/${name}"
-tmpdir="${TMPDIR:-/tmp}/${name}-${UID}"
+tmpdir="${XDG_RUNTIME_DIR}/${name}"
 mkdir -p "${statedir}" "${tmpdir}" || exit 16
 
 # Define checkupdates temporary db dir prefix

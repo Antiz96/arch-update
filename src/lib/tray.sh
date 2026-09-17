@@ -66,4 +66,6 @@ fi
 info_msg "$(eval_gettext "Starting the \${_name} systray applet")"
 
 # shellcheck disable=SC2154
-ARCH_UPDATE_TRAY_UPDATES_PER_PAGE="${tray_updates_per_page}" setsid "${tray_bin}" &
+ARCH_UPDATE_TRAY_UPDATES_PER_PAGE="${tray_updates_per_page}" \
+ARCH_UPDATE_SHOW_TRAY_WHEN_RELEVANT="${show_tray_when_relevant}" \
+setsid "${tray_bin}" &

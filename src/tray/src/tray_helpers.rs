@@ -2,6 +2,8 @@
 
 use anyhow::{Context, anyhow};
 use gettextrs::*;
+use gio::prelude::*;
+use gio_unix::DesktopAppInfo;
 use ksni::Handle;
 use ksni::menu::*;
 use log::{error, info, warn};
@@ -20,9 +22,15 @@ use crate::tray;
 
 // Helper to run Arch-Update from the desktop file (via `gio`)
 pub fn launch_arch_update(desktop_file: &Path) {
-    match Command::new("gio").arg("launch").arg(desktop_file).spawn() {
-        Ok(_) => info!("Arch-Update launched"),
-        Err(error) => error!("Failed to launch Arch-Update: {error}"),
+    let Some(app) = DesktopAppInfo::from_filename(desktop_file) else {
+        error!("Failed to load Arch-Update desktop file");
+        return;
+    };
+
+    if let Err(error) = app.launch(&[], None::<&gio::AppLaunchContext>) {
+        error!("Failed to launch Arch-Update: {error}");
+    } else {
+        info!("Arch-Update launched");
     }
 }
 
