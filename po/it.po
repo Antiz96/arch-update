@@ -233,7 +233,7 @@ msgid ""
 "confirmation to proceed with the installation."
 msgstr ""
 "Visualizza la lista di pacchetti disponibili per l'aggiornamento, poi "
-"chiedere all'utente la conferma di procedere con l'installazione."
+"chiede all'utente la conferma di procedere con l'installazione."
 
 #: src/lib/help.sh:12
 #, sh-format
@@ -253,7 +253,7 @@ msgid ""
 msgstr ""
 "Dopo l'aggiornamento, controlla la presenza di pacchetti orfani & "
 "inutilizzati, pacchetti obsoleti in cache, file pacnew & pacsave, un eventuale "
-"aggiornamento del kernel in sospeso, nonchè di servizi che richiedono un riavvio "
+"aggiornamento del kernel in sospeso, nonché di servizi che richiedono un riavvio "
 "post aggiornamento e, se ci sono, offre la possibilità di elaborarli."
 
 #: src/lib/help.sh:15
