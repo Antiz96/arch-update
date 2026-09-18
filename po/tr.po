@@ -183,12 +183,12 @@ msgstr "Zaten çalışan bir ${_name} örneği var\\n"
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "Yine de devam edilsin mi? [e/H]"
 
 #: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "İşlem iptal edildi\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
