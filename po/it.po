@@ -26,7 +26,7 @@ msgstr "Il tuo mirror primario ALHP non è aggiornato!\\n"
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr "I seguenti pacchetti hanno ancora delle build ALHP in attesa:"
+msgstr "I seguenti pacchetti hanno ancora delle build ALHP in sospeso:"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
@@ -224,7 +224,7 @@ msgstr ""
 #: src/lib/help.sh:10
 #, sh-format
 msgid "Run ${name} to perform the main 'update' function:"
-msgstr "Avvia ${name} per eseguire la funzione di 'aggiornamento' principale:"
+msgstr "Avvia ${name} per eseguire la funzione principale di 'aggiornamento':"
 
 #: src/lib/help.sh:11
 #, sh-format
@@ -252,9 +252,9 @@ msgid ""
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
 "Dopo l'aggiornamento, controlla la presenza di pacchetti orfani & "
-"inutilizzati, pacchetti obsoleti in cache, file pacnew & pacsave, "
-"aggiornamento del kernel in attesa e servizi che richiedono un riavvio post "
-"aggiornamento e, se ci sono, offre la possibilità di elaborarli."
+"inutilizzati, pacchetti obsoleti in cache, file pacnew & pacsave, eventuale "
+"aggiornamento del kernel in sospeso, nonchè di servizi che richiedono un riavvio "
+"post aggiornamento e, se ci sono, offre la possibilità di elaborarli."
 
 #: src/lib/help.sh:15
 #, sh-format
@@ -278,7 +278,7 @@ msgstr ""
 #: src/lib/help.sh:17
 #, sh-format
 msgid "  -l, --list        Display the list of pending updates"
-msgstr "  -l, --list        Visualizza la lista degli aggiornamenti in attesa"
+msgstr "  -l, --list        Visualizza la lista degli aggiornamenti disponibili"
 
 #: src/lib/help.sh:18
 #, sh-format
@@ -386,7 +386,7 @@ msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
-"Riavvio richiesto:\\nÈ presente un aggiornamento del kernel in attesa nel "
+"Riavvio richiesto:\\nÈ presente un aggiornamento del kernel in sospeso nel "
 "tuo sistema che richiede un riavvio per essere applicato\\n"
 
 #: src/lib/kernel_reboot.sh:11
@@ -415,12 +415,12 @@ msgid ""
 "the pending kernel update\\n"
 msgstr ""
 "Il riavvio non è stato effettuato\\nSi prega di effettuare un riavvio per "
-"finalizzare l'aggiornamento del kernel in attesa\\n"
+"finalizzare l'aggiornamento del kernel in sospeso\\n"
 
 #: src/lib/kernel_reboot.sh:42
 #, sh-format
 msgid "No pending kernel update found\\n"
-msgstr "Nessun aggiornamento del kernel in attesa trovato\\n"
+msgstr "Nessun aggiornamento del kernel in sospeso trovato\\n"
 
 #: src/lib/list_news.sh:7
 #, sh-format
