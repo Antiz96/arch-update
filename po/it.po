@@ -232,8 +232,8 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
-"Visualizza la lista di pacchetti disponibili per l'aggiornamento, poi "
-"chiede all'utente la conferma di procedere con l'installazione."
+"Visualizza la lista di pacchetti disponibili per l'aggiornamento, poi chiede "
+"all'utente la conferma di procedere con l'installazione."
 
 #: src/lib/help.sh:12
 #, sh-format
@@ -252,9 +252,10 @@ msgid ""
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
 "Dopo l'aggiornamento, controlla la presenza di pacchetti orfani & "
-"inutilizzati, pacchetti obsoleti in cache, file pacnew & pacsave, di un eventuale "
-"aggiornamento del kernel in sospeso, nonché di servizi che richiedono un riavvio "
-"post aggiornamento e, se ci sono, offre la possibilità di elaborarli."
+"inutilizzati, pacchetti obsoleti in cache, file pacnew & pacsave, di un "
+"eventuale aggiornamento del kernel in sospeso, nonché di servizi che "
+"richiedono un riavvio post aggiornamento e, se ci sono, offre la possibilità "
+"di elaborarli."
 
 #: src/lib/help.sh:15
 #, sh-format
@@ -278,7 +279,8 @@ msgstr ""
 #: src/lib/help.sh:17
 #, sh-format
 msgid "  -l, --list        Display the list of pending updates"
-msgstr "  -l, --list        Visualizza la lista degli aggiornamenti disponibili"
+msgstr ""
+"  -l, --list        Visualizza la lista degli aggiornamenti disponibili"
 
 #: src/lib/help.sh:18
 #, sh-format
