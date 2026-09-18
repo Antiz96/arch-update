@@ -4,14 +4,15 @@
 #
 # Translators:
 # Ekaterine Papava <papava.e@gtu.ge>, 2026
+# xor-xe, 2026
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 4.4.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-16 09:32+0100\n"
-"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"PO-Revision-Date: 2026-09-18 13:25+0400\n"
+"Last-Translator: xor-xe\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
@@ -22,22 +23,22 @@ msgstr ""
 #: src/lib/alhp_check.sh:14
 #, sh-format
 msgid "Your primary ALHP mirror is out of date!\\n"
-msgstr ""
+msgstr "თქვენი ძირითადი ALHP სარკე მოძველებულია!\\n"
 
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr ""
+msgstr "შემდეგი პაკეტების ALHP აგება ჯერ კიდევ რიგშია:"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
 msgid "Error during ALHP check:"
-msgstr ""
+msgstr "შეცდომა ALHP-ის შემოწმებისას:"
 
 #: src/lib/check.sh:10
 #, sh-format
 msgid "Automated update checks have been enabled"
-msgstr ""
+msgstr "განახლებების ავტომატური შემოწმება ჩართულია"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -181,12 +182,12 @@ msgstr "${_name}-ის გაშვებული ასლი უკვე �
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "მაინც გაგრძელდეს? [y/N]"
 
 #: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "შესრულება შეწყდა\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -257,7 +258,7 @@ msgid "Options:"
 msgstr "მორგება:"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
@@ -267,7 +268,8 @@ msgstr ""
 "  -c, --check       ხელმისაწვდომი განახლებების შემოწმება, სისტემურ საათთან "
 "ხატულას შეცვლა და სამუშაო მაგიდისთვის გაფრთხილების გაგზავნა რომელიც "
 "ხელმისაწვდომი განახლებების რაოდენობას შეიცავს (თუ არსებობს ხელმისაწვდომი "
-"განახლებები ბოლო შემოწმებასთან შედარებით)"
+"განახლებები ბოლო შემოწმებასთან შედარებით). ასევე შეგიძლიათ, დაამატოთ არგუმენტი "
+"'--enable', რომ განახლებების ავტომატური შემოწმება ჩართოთ."
 
 #: src/lib/help.sh:17
 #, sh-format
@@ -462,7 +464,7 @@ msgstr ""
 #: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
 msgid "Invalid input"
-msgstr ""
+msgstr "არასწორი შეყვანა"
 
 #: src/lib/list_news.sh:103
 #, sh-format
@@ -503,17 +505,17 @@ msgstr "განახლებების ძებნა...\\n"
 #: src/lib/list_packages.sh:16
 #, sh-format
 msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr ""
+msgstr "პაკეტების განახლებების მიღება შეუძლებელია (მოთხოვნის მოლოდინის ვადა ამოიწურა)\\n"
 
 #: src/lib/list_packages.sh:32
 #, sh-format
 msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr ""
+msgstr "AUR პაკეტების განახლებების მიღება შეუძლებელია (მოთხოვნის მოლოდინის ვადა ამოიწურა)\\n"
 
 #: src/lib/list_packages.sh:45
 #, sh-format
 msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr ""
+msgstr "Flatpak პაკეტების განახლებების მიღება შეუძლებელია (მოთხოვნის მოლოდინის ვადა ამოიწურა)\\n"
 
 #: src/lib/list_packages.sh:115
 #, sh-format
@@ -761,6 +763,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
+"ფაილი '${tray_desktop_file_autostart}' შეიქმნა. ${_name}-ის სისტემურ საათთან "
+"აპლეტი ჩატვირთვისას ავტომატურად გაეშვება\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -770,7 +774,7 @@ msgstr "${_name} სისტემურ საათთან აპლეტ�
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr ""
+msgstr "${_name}-ის სისტემურ საათთან აპლეტის გაშვება"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -801,27 +805,27 @@ msgstr "განახლება გადატარებულია\\n"
 
 #: src/tray/src/tray_helpers.rs:116
 msgid "Next page"
-msgstr ""
+msgstr "შემდეგი გვერდი"
 
 #: src/tray/src/tray_helpers.rs:261
 #, rust-format
 msgid "{days}d"
-msgstr ""
+msgstr "{days}დღ"
 
 #: src/tray/src/tray_helpers.rs:264
 #, rust-format
 msgid "{hours}h"
-msgstr ""
+msgstr "{hours}სთ"
 
 #: src/tray/src/tray_helpers.rs:267
 #, rust-format
 msgid "{minutes}m"
-msgstr ""
+msgstr "{minutes}წთ"
 
 #: src/tray/src/tray_helpers.rs:270
 #, rust-format
 msgid "{seconds}s"
-msgstr ""
+msgstr "{seconds}წმ"
 
 #: src/tray/src/tray.rs:75 src/tray/src/tray.rs:114
 msgid "System is up to date"
@@ -855,7 +859,7 @@ msgstr "Flatpak ({count})"
 #: src/tray/src/tray.rs:216
 #, rust-format
 msgid "Last check {last_check} ago"
-msgstr ""
+msgstr "ბოლო შემოწმება {last_check}-ის წინ"
 
 #: src/tray/src/tray.rs:233
 #, rust-format
