@@ -118,12 +118,12 @@ msgstr "Неиспользуемые пакеты Flatpak:"
 #: src/lib/flatpak_unused_packages.sh:14
 #, sh-format
 msgid "Would you like to remove this Flatpak unused package now? [y/N]"
-msgstr "Удалить этот неиспользуемый пакет Flatpak сейчас? [д/Н]"
+msgstr "Удалить этот неиспользуемый пакет Flatpak сейчас? [y/N]"
 
 #: src/lib/flatpak_unused_packages.sh:16
 #, sh-format
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
-msgstr "Удалить эти неиспользуемые пакеты Flatpak сейчас? [д/Н]"
+msgstr "Удалить эти неиспользуемые пакеты Flatpak сейчас? [y/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
@@ -179,7 +179,7 @@ msgstr "Уже запущен экземпляр ${_name}\\n"
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr "Всё равно продолжить? [д/Н]"
+msgstr "Всё равно продолжить? [y/N]"
 
 #: src/lib/full_upgrade.sh:23
 #, sh-format
@@ -374,7 +374,7 @@ msgstr ""
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr "Перезагрузиться сейчас? [д/Н]"
+msgstr "Перезагрузиться сейчас? [y/N]"
 
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
@@ -528,7 +528,7 @@ msgstr "Обновлений нет\\n"
 #: src/lib/list_packages.sh:162
 #, sh-format
 msgid "Proceed with update? [Y/n]"
-msgstr "Продолжить обновление? [Д/н]"
+msgstr "Продолжить обновление? [Y/n]"
 
 #: src/lib/list_packages.sh:173
 #, sh-format
@@ -574,7 +574,7 @@ msgid ""
 "Would you like to remove this orphan package (and its potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Удалить этот осиротевший пакет (и его возможные зависимости) сейчас? [д/Н]"
+"Удалить этот осиротевший пакет (и его возможные зависимости) сейчас? [y/N]"
 
 #: src/lib/orphan_packages.sh:16
 #, sh-format
@@ -582,7 +582,7 @@ msgid ""
 "Would you like to remove these orphan packages (and their potential "
 "dependencies) now? [y/N]"
 msgstr ""
-"Удалить эти осиротевшие пакеты (и их возможные зависимости) сейчас? [д/Н]"
+"Удалить эти осиротевшие пакеты (и их возможные зависимости) сейчас? [y/N]"
 
 #: src/lib/orphan_packages.sh:23
 #, sh-format
@@ -603,7 +603,7 @@ msgstr ""
 #: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Удалить его из кэша сейчас? [Д/н]"
+msgstr "Удалить его из кэша сейчас? [Y/n]"
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
@@ -615,7 +615,7 @@ msgstr ""
 #: src/lib/packages_cache.sh:25
 #, sh-format
 msgid "Would you like to remove them from the cache now? [Y/n]"
-msgstr "Удалить их из кэша сейчас? [Д/н]"
+msgstr "Удалить их из кэша сейчас? [Y/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
@@ -640,12 +640,12 @@ msgstr "Файлы pacnew:"
 #: src/lib/pacnew_files.sh:14
 #, sh-format
 msgid "Would you like to process this file now? [Y/n]"
-msgstr "Обработать этот файл сейчас? [Д/н]"
+msgstr "Обработать этот файл сейчас? [Y/n]"
 
 #: src/lib/pacnew_files.sh:16
 #, sh-format
 msgid "Would you like to process these files now? [Y/n]"
-msgstr "Обработать эти файлы сейчас? [Д/н]"
+msgstr "Обработать эти файлы сейчас? [Y/n]"
 
 #: src/lib/pacnew_files.sh:23
 #, sh-format
