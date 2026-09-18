@@ -188,7 +188,7 @@ msgstr "Yine de devam edilsin mi? [e/H]"
 #: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr "İşlem iptal edildi\n"
+msgstr "İşlem iptal edildi\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
