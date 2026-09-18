@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.2](https://github.com/Antiz96/arch-update/releases/tag/v4.4.2) - 2026-09-18
+
+### Fixes
+
+- Add a best-effort fallback in case `$XDG_RUNTIME_DIR` isn't set ([#816](https://github.com/Antiz96/arch-update/pull/816)) - ([400876f](https://github.com/Antiz96/arch-update/commit/400876f61b32e81ae19461ca753f7c1d47a87cb2)) by @Antiz96
+
+### Documentation
+
+- Update link to the official xdg-terminal-exec Arch package ([#814](https://github.com/Antiz96/arch-update/pull/814)) - ([d0b0b01](https://github.com/Antiz96/arch-update/commit/d0b0b01688af65afa9e7d616308ab413c2465856)) by @Antiz96
+
+### Styling
+
+- Add missing line break in output ([#804](https://github.com/Antiz96/arch-update/pull/804)) - ([ce3623c](https://github.com/Antiz96/arch-update/commit/ce3623ca3345254681378824f2fbd78dd816da40)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update Italian translation ([#813](https://github.com/Antiz96/arch-update/pull/813)) - ([6ee30bb](https://github.com/Antiz96/arch-update/commit/6ee30bbc05422de42d4c66be333008cfe111430f)) by @Mattyan89
+- *(i18n)* Update Georgian translation ([#812](https://github.com/Antiz96/arch-update/pull/812)) - ([ed119f3](https://github.com/Antiz96/arch-update/commit/ed119f39ab7c17b589c3b9b693566b61e819248d)) by @xor-xe
+- *(i18n)* Update Japanese translation ([#810](https://github.com/Antiz96/arch-update/pull/810)) - ([93210bc](https://github.com/Antiz96/arch-update/commit/93210bc735ad4931eec8835a02e30f2390a06802)) by @MintJapan
+- *(i18n)* Update Russian translation ([#809](https://github.com/Antiz96/arch-update/pull/809)) - ([8b319cb](https://github.com/Antiz96/arch-update/commit/8b319cb840c9da5c8805bf3d23a490cd2dcf968d)) by @DrWeb56
+- *(i18n)* Update Portuguese translation ([#808](https://github.com/Antiz96/arch-update/pull/808)) - ([7777058](https://github.com/Antiz96/arch-update/commit/7777058806056dbb15f7b8974866db86208a4d63)) by @NyaPuma
+- *(i18n)* Update Dutch translation ([#807](https://github.com/Antiz96/arch-update/pull/807)) - ([90a121a](https://github.com/Antiz96/arch-update/commit/90a121ae6795083124262a9621f20c59b26f98a9)) by @Vistaus
+- *(i18n)* Update Turkish translation ([#806](https://github.com/Antiz96/arch-update/pull/806)) - ([8847fc9](https://github.com/Antiz96/arch-update/commit/8847fc9130b033e8a0707b225ef504531e2dc590)) by @ALiAvkaya
+- *(i18n)* Update translation files ([#805](https://github.com/Antiz96/arch-update/pull/805)) - ([469821b](https://github.com/Antiz96/arch-update/commit/469821b3ae8ec68f517048d8989efc07481f8f0f)) by @Antiz96
+- *(i18n)* Update Swedish translation ([#803](https://github.com/Antiz96/arch-update/pull/803)) - ([0c6fb49](https://github.com/Antiz96/arch-update/commit/0c6fb49f2994e9166471f13cd952a75e8504bd1f)) by @bittin
+
 ## [v4.4.1](https://github.com/Antiz96/arch-update/releases/tag/v4.4.1) - 2026-09-16
 
 ### Fixes
