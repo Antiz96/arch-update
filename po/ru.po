@@ -6,10 +6,10 @@
 # DrWeb56 <borodaxxx@gmail.com>, 2025
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.4.1\n"
+"Project-Id-Version: Arch-Update 4.4.2\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-27 12:00+0500\n"
+"PO-Revision-Date: 2026-09-17 13:25+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -179,12 +179,12 @@ msgstr "Уже запущен экземпляр ${_name}\\n"
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "Всё равно продолжить? [y/N]"
 
 #: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "Выполнение прервано\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format

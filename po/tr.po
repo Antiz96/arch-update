@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2026 aliavkaya <aliavkaya@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.4.1\n"
+"Project-Id-Version: Arch-Update 4.4.2\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-08-03 05:35+0300\n"
@@ -183,12 +183,12 @@ msgstr "Zaten çalışan bir ${_name} örneği var\\n"
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "Yine de devam edilsin mi? [e/H]"
 
 #: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "İşlem iptal edildi\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
