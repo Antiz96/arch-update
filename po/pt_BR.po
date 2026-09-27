@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Arch-Update 4.4.2\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-31 21:32-0300\n"
+"PO-Revision-Date: 2026-09-26 23:27-0300\n"
 "Last-Translator: Diego N.S <degons490@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
@@ -182,12 +182,12 @@ msgstr "Já existe uma instância em execução do ${_name}\\n"
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "Prosseguir mesmo assim? [s/N]"
 
 #: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "A execução foi abortada\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
