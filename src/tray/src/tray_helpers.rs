@@ -1,16 +1,19 @@
 //! Collection of helpers / functions used by the systray applet for various needs and features
 
+use anyhow::{Context, anyhow};
 use gettextrs::*;
+use gio::prelude::*;
+use gio_unix::DesktopAppInfo;
 use ksni::Handle;
 use ksni::menu::*;
-use log::{error, info};
+use log::{error, info, warn};
 use notify::{Config, EventKind, RecommendedWatcher, RecursiveMode, Watcher};
 use serde::Deserialize;
 use std::env;
 use std::fs;
 use std::path::Path;
 use std::path::PathBuf;
-use std::process::{self, Command};
+use std::process::Command;
 use std::thread::sleep;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 use tokio::sync::mpsc;
@@ -19,9 +22,15 @@ use crate::tray;
 
 // Helper to run Arch-Update from the desktop file (via `gio`)
 pub fn launch_arch_update(desktop_file: &Path) {
-    match Command::new("gio").arg("launch").arg(desktop_file).spawn() {
-        Ok(_) => info!("Arch-Update launched"),
-        Err(error) => error!("Unable to launch Arch-Update: {error}"),
+    let Some(app) = DesktopAppInfo::from_filename(desktop_file) else {
+        error!("Failed to load Arch-Update desktop file");
+        return;
+    };
+
+    if let Err(error) = app.launch(&[], None::<&gio::AppLaunchContext>) {
+        error!("Failed to launch Arch-Update: {error}");
+    } else {
+        info!("Arch-Update launched");
     }
 }
 
@@ -60,7 +69,7 @@ pub fn build_updates_submenu(
         }
 
         Err(error) => {
-            error!("Unable to read updates statefile: {error}");
+            error!("Failed to read updates statefile: {error}");
             Vec::new()
         }
     }
@@ -120,13 +129,13 @@ fn open_package_url(package: &str) {
     let pacman_output = match Command::new("pacman").arg("-Qi").arg(package).output() {
         Ok(pacman_output) => pacman_output,
         Err(error) => {
-            error!("Unable to query the {package} package information: {error}");
+            warn!("Failed to query the {package} package information: {error}");
             return;
         }
     };
 
     if !pacman_output.status.success() {
-        error!("Unable to get the {package} package information");
+        warn!("Failed to get the {package} package information");
         return;
     }
 
@@ -140,7 +149,7 @@ fn open_package_url(package: &str) {
             if url.starts_with("http://") || url.starts_with("https://") {
                 match Command::new("xdg-open").arg(url).spawn() {
                     Ok(_) => info!("Opened the {package} package URL: {url}"),
-                    Err(error) => error!("Unable to open the {package} package URL {url}: {error}"),
+                    Err(error) => warn!("Failed to open the {package} package URL {url}: {error}"),
                 }
             }
 
@@ -151,7 +160,10 @@ fn open_package_url(package: &str) {
 
 // Watcher for the icon statefile, allowing to trigger a dynamic rebuild of the systray applet on
 // icon change
-pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::ArchUpdateTray>) {
+pub async fn icon_watcher(
+    icon_statefile: PathBuf,
+    handle: Handle<crate::tray::ArchUpdateTray>,
+) -> anyhow::Result<()> {
     let (tx, mut rx) = mpsc::unbounded_channel();
 
     let mut watcher = RecommendedWatcher::new(
@@ -160,17 +172,11 @@ pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::A
         },
         Config::default(),
     )
-    .unwrap_or_else(|error| {
-        error!("Unable to create icon statefile watcher: {error}");
-        process::exit(1);
-    });
+    .context("Failed to create icon statefile watcher")?;
 
     watcher
         .watch(&icon_statefile, RecursiveMode::NonRecursive)
-        .unwrap_or_else(|error| {
-            error!("Unable to watch icon statefile: {error}");
-            process::exit(1);
-        });
+        .context("Failed to watch icon statefile")?;
 
     while let Some(result) = rx.recv().await {
         match result {
@@ -180,11 +186,12 @@ pub async fn icon_watcher(icon_statefile: PathBuf, handle: Handle<crate::tray::A
                 }
             }
             Err(error) => {
-                error!("Icon statefile watcher error: {error}");
-                process::exit(1);
+                return Err(anyhow!("Icon statefile watcher error: {error}"));
             }
         }
     }
+
+    Ok(())
 }
 
 // Helper to get the next check time from the systemd timer metadata

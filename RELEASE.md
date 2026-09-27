@@ -4,7 +4,7 @@
 
 - `git-cliff`
 - `github-cli`
-- `cargo`
+- `repro-env`
 
 ## Disable the main branch protection rule temporarily
 

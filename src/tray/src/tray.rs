@@ -3,10 +3,12 @@
 //! https://github.com/iovxw/ksni
 //! https://crates.io/crates/ksni
 
+use anyhow::Context;
 use gettextrs::*;
 use ksni::TrayMethods;
 use ksni::menu::*;
 use log::{debug, error, info, warn};
+use std::env;
 use std::fs;
 use std::future;
 use std::path::PathBuf;
@@ -28,6 +30,23 @@ impl ksni::Tray for ArchUpdateTray {
         "Arch-Update".into()
     }
 
+    // Set category
+    fn category(&self) -> ksni::Category {
+        ksni::Category::SystemServices
+    }
+
+    // Set status
+    fn status(&self) -> ksni::Status {
+        if env::var("ARCH_UPDATE_SHOW_TRAY_WHEN_RELEVANT").is_ok_and(|value| value == "true") {
+            match tray_helpers::get_updates_count(&self.updates_statefile_type.all) {
+                0 => ksni::Status::Passive,
+                _ => ksni::Status::Active,
+            }
+        } else {
+            ksni::Status::Active
+        }
+    }
+
     // Set icon
     fn icon_name(&self) -> String {
         match fs::read_to_string(&self.icon_statefile) {
@@ -37,7 +56,7 @@ impl ksni::Tray for ArchUpdateTray {
                 icon
             }
             Err(error) => {
-                error!("Unable to set the icon: {error}");
+                error!("Failed to set the icon: {error}");
                 process::exit(1);
             }
         }
@@ -45,13 +64,20 @@ impl ksni::Tray for ArchUpdateTray {
 
     // Set title
     fn title(&self) -> String {
-        "Arch-Update".into()
+        self.id()
     }
 
     // Set tooltip
     fn tool_tip(&self) -> ksni::ToolTip {
         ksni::ToolTip {
-            title: "Arch-Update".into(),
+            title: self.id(),
+            description: match tray_helpers::get_updates_count(&self.updates_statefile_type.all) {
+                0 => gettext("System is up to date"),
+                1 => gettext("1 update available"),
+                count => {
+                    gettext("{count} updates available").replace("{count}", &count.to_string())
+                }
+            },
             ..Default::default()
         }
     }
@@ -195,7 +221,7 @@ impl ksni::Tray for ArchUpdateTray {
                 .into(),
             );
         } else {
-            warn!("Unable to determine the last Arch-Update check time");
+            warn!("Failed to determine the last Arch-Update check time");
         }
 
         // Add the "Next Check" menu entry (if the systemd timer is started / enabled)
@@ -212,7 +238,7 @@ impl ksni::Tray for ArchUpdateTray {
                 .into(),
             );
         } else {
-            warn!("Unable to determine next Arch-Update check time");
+            warn!("Failed to determine next Arch-Update check time");
         }
 
         // Add a menu group containing a separator and the "Run Arch-Update", "Check for updates" & "Exit" buttons
@@ -233,7 +259,7 @@ impl ksni::Tray for ArchUpdateTray {
                 activate: Box::new(
                     |_| match Command::new("arch-update").arg("--check").spawn() {
                         Ok(_) => info!("Arch-Update check executed"),
-                        Err(error) => error!("Unable to execute Arch-Update check: {error}"),
+                        Err(error) => error!("Failed to execute Arch-Update check: {error}"),
                     },
                 ),
                 ..Default::default()
@@ -258,25 +284,7 @@ pub async fn run(
     icon_statefile: PathBuf,
     updates_statefile_type: updates_statefiles::UpdatesStateFiles,
     desktop_file: PathBuf,
-    i18n_dir: String,
-) {
-    // Set gettext domain for translations
-    if setlocale(LocaleCategory::LcMessages, "").is_none() {
-        warn!("Unable to load locale environment");
-    }
-
-    if textdomain("Arch-Update").is_err() {
-        warn!("Unable to set gettext domain");
-    }
-
-    if bindtextdomain("Arch-Update", &i18n_dir).is_err() {
-        warn!("Unable to bind gettext domain path");
-    }
-
-    if bind_textdomain_codeset("Arch-Update", "UTF-8").is_err() {
-        warn!("Unable to set gettext domain codeset");
-    }
-
+) -> anyhow::Result<()> {
     // Clone icon statefile path variable (used by the watcher)
     let watcher_icon_statefile = icon_statefile.clone();
 
@@ -287,10 +295,10 @@ pub async fn run(
     };
 
     // Start the systray applet
-    let handle = tray.spawn().await.unwrap_or_else(|error| {
-        error!("Unable to start the systray applet: {error}");
-        process::exit(1);
-    });
+    let handle = tray
+        .spawn()
+        .await
+        .context("Failed to start the systray applet")?;
 
     info!("Systray applet started");
 
@@ -301,5 +309,7 @@ pub async fn run(
     ));
 
     // Run forever
-    future::pending().await
+    future::pending::<()>().await;
+
+    Ok(())
 }

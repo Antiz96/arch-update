@@ -1,4 +1,4 @@
-arch-update(1) ["Arch-Update 4.0.2" ["Arch-Update Manual"]]
+arch-update(1) ["Arch-Update 4.4.2" ["Arch-Update Manual"]]
 
 # NAME
 
@@ -149,68 +149,49 @@ In case you want `Arch-Update` to check for new updates only once at boot, you c
 "gio" (used to launch the `arch-update` terminal application via the `arch-update.desktop` file when the systray applet is clicked) currently has a default limited list of known terminal emulators.  
 As such, if you don't have any of these "known" terminal emulators installed on your system, you might face an issue where clicking the systray applet does nothing (as `gio` couldn't find a terminal emulator from the said list). Incidentally, you might have multiple terminal emulators installed on your systemi and you may want to force Arch-Update to use a specific one. In both cases, you can specify which terminal emulator to use.
 
-To do so, install the `xdg-terminal-exec` AUR package (https://aur.archlinux.org/packages/xdg-terminal-exec), create the `~/.config/xdg-terminals.list` file and add the name of the `.desktop` file of your terminal emulator of choice in it (e.g. `Alacritty.desktop`).
+To do so, install the `xdg-terminal-exec` package (https://archlinux.org/packages/?name=xdg-terminal-exec), create the `~/.config/xdg-terminals.list` file and add the name of the `.desktop` file of your terminal emulator of choice in it (e.g. `Alacritty.desktop`).
 
 See https://github.com/Vladimir-csp/xdg-terminal-exec?tab=readme-ov-file#configuration for more details.
 
 # EXIT STATUS
 
-*0*
-	OK.
+*0* OK.
 
-*1*
-	Invalid option.
+*1* Invalid option.
 
-*2*
-	No privilege elevation command (`sudo`, `sudo-rs`, `doas` or `run0`) is installed or the one set in the `arch-update.conf` configuration file isn't found.
+*2* No privilege elevation command (`sudo`, `sudo-rs`, `doas` or `run0`) is installed or the one set in the `arch-update.conf` configuration file isn't found.
 
-*3*
-	Error when launching the Arch-Update systray applet.
+*3* Error when launching the Arch-Update systray applet.
 
-*4*
-	User didn't gave the confirmation to proceed.
+*4* User didn't give the confirmation to proceed with updates.
 
-*5*
-	Error when updating packages.
+*5* Error when updating packages.
 
-*6*
-	Error when calling the reboot command to apply a pending kernel update.
+*6* Error when calling the reboot command to apply a pending kernel update.
 
-*7*
-	No pending update when using the `-l / --list` option.
+*7* No pending update when using the `-l / --list` option.
 
-*8*
-	Error when generating a configuration file with the `--gen-config` option.
+*8* Error when generating a configuration file with the `--gen-config` option.
 
-*9*
-	Error when reading the configuration file with the `--show-config` option.
+*9* Error when reading the configuration file with the `--show-config` option.
 
-*10*
-	Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option.
+*10* Error when creating the autostart desktop file for the systray applet with the `--tray --enable` option.
 
-*11*
-	Error when restarting services that require a post upgrade restart.
+*11* Error when restarting services that require a post upgrade restart.
 
-*12*
-	Error during the pacnew files processing.
+*12* Error during the pacnew files processing.
 
-*13*
-	Error when editing the configuration file with the `--edit-config` option.
+*13* Error when editing the configuration file with the `--edit-config` option.
 
-*14*
-	Libraries directory not found.
+*14* Libraries directory not found.
 
-*15*
-	The "diff prog" editor set in the `arch-update.conf` configuration file isn't found.
+*15* The "diff prog" editor set in the `arch-update.conf` configuration file isn't found.
 
-*16*
-	Error when creating the `statedir` and / or the `tmpdir` directories.
+*16* Error when creating the `statedir` and / or the `tmpdir` directories.
 
-*17*
-	Another instance of Arch-Update is already running.
+*17* User didn't give the confirmation to proceed after being warned that another instance of Arch-Update is already running.
 
-*18*
-	Error when running Arch-Update from the desktop notification action.
+*18* Error when running Arch-Update from the desktop notification action.
 
 # SEE ALSO
 
@@ -230,4 +211,4 @@ Please report bugs to the GitHub page: https://github.com/Antiz96/arch-update/is
 
 # AUTHOR
 
-Robin Candau <robincandau@protonmail.com>
+Robin Candau <robincandau@mailbox.org>

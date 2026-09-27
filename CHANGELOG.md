@@ -2,6 +2,229 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.2](https://github.com/Antiz96/arch-update/releases/tag/v4.4.2) - 2026-09-18
+
+### Fixes
+
+- Add a best-effort fallback in case `$XDG_RUNTIME_DIR` isn't set ([#816](https://github.com/Antiz96/arch-update/pull/816)) - ([400876f](https://github.com/Antiz96/arch-update/commit/400876f61b32e81ae19461ca753f7c1d47a87cb2)) by @Antiz96
+
+### Documentation
+
+- Update link to the official xdg-terminal-exec Arch package ([#814](https://github.com/Antiz96/arch-update/pull/814)) - ([d0b0b01](https://github.com/Antiz96/arch-update/commit/d0b0b01688af65afa9e7d616308ab413c2465856)) by @Antiz96
+
+### Styling
+
+- Add missing line break in output ([#804](https://github.com/Antiz96/arch-update/pull/804)) - ([ce3623c](https://github.com/Antiz96/arch-update/commit/ce3623ca3345254681378824f2fbd78dd816da40)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update Italian translation ([#813](https://github.com/Antiz96/arch-update/pull/813)) - ([6ee30bb](https://github.com/Antiz96/arch-update/commit/6ee30bbc05422de42d4c66be333008cfe111430f)) by @Mattyan89
+- *(i18n)* Update Georgian translation ([#812](https://github.com/Antiz96/arch-update/pull/812)) - ([ed119f3](https://github.com/Antiz96/arch-update/commit/ed119f39ab7c17b589c3b9b693566b61e819248d)) by @xor-xe
+- *(i18n)* Update Japanese translation ([#810](https://github.com/Antiz96/arch-update/pull/810)) - ([93210bc](https://github.com/Antiz96/arch-update/commit/93210bc735ad4931eec8835a02e30f2390a06802)) by @MintJapan
+- *(i18n)* Update Russian translation ([#809](https://github.com/Antiz96/arch-update/pull/809)) - ([8b319cb](https://github.com/Antiz96/arch-update/commit/8b319cb840c9da5c8805bf3d23a490cd2dcf968d)) by @DrWeb56
+- *(i18n)* Update Portuguese translation ([#808](https://github.com/Antiz96/arch-update/pull/808)) - ([7777058](https://github.com/Antiz96/arch-update/commit/7777058806056dbb15f7b8974866db86208a4d63)) by @NyaPuma
+- *(i18n)* Update Dutch translation ([#807](https://github.com/Antiz96/arch-update/pull/807)) - ([90a121a](https://github.com/Antiz96/arch-update/commit/90a121ae6795083124262a9621f20c59b26f98a9)) by @Vistaus
+- *(i18n)* Update Turkish translation ([#806](https://github.com/Antiz96/arch-update/pull/806)) - ([8847fc9](https://github.com/Antiz96/arch-update/commit/8847fc9130b033e8a0707b225ef504531e2dc590)) by @ALiAvkaya
+- *(i18n)* Update translation files ([#805](https://github.com/Antiz96/arch-update/pull/805)) - ([469821b](https://github.com/Antiz96/arch-update/commit/469821b3ae8ec68f517048d8989efc07481f8f0f)) by @Antiz96
+- *(i18n)* Update Swedish translation ([#803](https://github.com/Antiz96/arch-update/pull/803)) - ([0c6fb49](https://github.com/Antiz96/arch-update/commit/0c6fb49f2994e9166471f13cd952a75e8504bd1f)) by @bittin
+
+## [v4.4.1](https://github.com/Antiz96/arch-update/releases/tag/v4.4.1) - 2026-09-16
+
+### Fixes
+
+- *(security)* Harden state / runtime temporary files and system-wide lockfile handling ([#799](https://github.com/Antiz96/arch-update/pull/799)) - ([b2d5ef1](https://github.com/Antiz96/arch-update/commit/b2d5ef10ad46f36271ffc12db4f3160ecab3a1d9)) by @xoity
+
+### Documentation
+
+- *(README)* Update version in reproducible builds example ([#797](https://github.com/Antiz96/arch-update/pull/797)) - ([303476a](https://github.com/Antiz96/arch-update/commit/303476a09536bbe75242b7c67ac9efe217ebb4a4)) by @Antiz96
+- *(README)* Update documentation to reflect the new arch-update-cli AUR package name ([#796](https://github.com/Antiz96/arch-update/pull/796)) - ([9cbdfee](https://github.com/Antiz96/arch-update/commit/9cbdfee403d6996966692a046f347ecb83561788)) by @Antiz96
+
+### Miscellaneous
+
+- *(CHANGELOG)* Update entries ([#798](https://github.com/Antiz96/arch-update/pull/798)) - ([70efb67](https://github.com/Antiz96/arch-update/commit/70efb67f44910c9ff81c6b30e48784f92f802525)) by @Antiz96
+- *(i18n)* Update German translation ([#802](https://github.com/Antiz96/arch-update/pull/802)) - ([9b9e311](https://github.com/Antiz96/arch-update/commit/9b9e3111f0f4a52509d25084f69d9734f9b018ca)) by @DeN-AlB
+- *(i18n)* Update French translation file ([#801](https://github.com/Antiz96/arch-update/pull/801)) - ([43b400f](https://github.com/Antiz96/arch-update/commit/43b400f2dd24ccaa755722d0033f0aff07a7d7e1)) by @Antiz96
+- *(i18n)* Update translation files ([#800](https://github.com/Antiz96/arch-update/pull/800)) - ([b7ca848](https://github.com/Antiz96/arch-update/commit/b7ca8484790a39b93a75c0c045f337689f6d4e96)) by @Antiz96
+
+## [v4.4.0](https://github.com/Antiz96/arch-update/releases/tag/v4.4.0) - 2026-09-14
+
+### Fixes
+
+- *(build)* Fix the release script ([#795](https://github.com/Antiz96/arch-update/pull/795)) - ([a78aebf](https://github.com/Antiz96/arch-update/commit/a78aebfd233451ca79cf759d78ac9c4b37738c24)) by @Antiz96
+- *(notification)* Shut eventual old notification process before starting a new one ([#791](https://github.com/Antiz96/arch-update/pull/791)) - ([5ec056b](https://github.com/Antiz96/arch-update/commit/5ec056b294941aca924ecd0c7c8c48f8f06a30ca)) by @Antiz96
+- *(tray)* Make the SNI status configurable ([#789](https://github.com/Antiz96/arch-update/pull/789)) - ([eccf598](https://github.com/Antiz96/arch-update/commit/eccf5987df32b59778c4073cec070ece402a985b)) by @Antiz96
+
+### Documentation
+
+- *(README)* Minor wording improvement ([#794](https://github.com/Antiz96/arch-update/pull/794)) - ([b46230b](https://github.com/Antiz96/arch-update/commit/b46230be4fa9b5c5850ad973f8232c2f0da95e48)) by @Antiz96
+- *(man)* Document which options require the systray applet to be refreshed or restarted ([#790](https://github.com/Antiz96/arch-update/pull/790)) - ([45138e4](https://github.com/Antiz96/arch-update/commit/45138e4418dcbbc38ce63b9dfbec148575467a0a)) by @Antiz96
+
+### Miscellaneous
+
+- *(build)* Add necessary changes to ship a pre-compiled binary for the systray applet and to build without the systray applet ([#793](https://github.com/Antiz96/arch-update/pull/793)) - ([fecca62](https://github.com/Antiz96/arch-update/commit/fecca6261be1768d519a3878f545b6056e5f4cf4)) by @Antiz96
+- *(deps)* Lock file maintenance ([#788](https://github.com/Antiz96/arch-update/pull/788)) - ([c0a1712](https://github.com/Antiz96/arch-update/commit/c0a171234cca446610b768bcd6a6ab2ea9b09588)) by @renovate[bot]
+- *(i18n)* Update translation files ([#792](https://github.com/Antiz96/arch-update/pull/792)) - ([1247bae](https://github.com/Antiz96/arch-update/commit/1247bae387a406af47f6b32604bb1af85d725216)) by @Antiz96
+
+## [v4.3.1](https://github.com/Antiz96/arch-update/releases/tag/v4.3.1) - 2026-09-13
+
+### Fixes
+
+- Correct the LC_ALL language settings when listing AUR packages update ([#785](https://github.com/Antiz96/arch-update/pull/785)) - ([82e14cb](https://github.com/Antiz96/arch-update/commit/82e14cbff965ad6bfee43994bd977b0e8685b988)) by @Antiz96
+
+## [v4.3.0](https://github.com/Antiz96/arch-update/releases/tag/v4.3.0) - 2026-09-13
+
+### Features
+
+- *(tray)* Set ksni status according to the system state ([#783](https://github.com/Antiz96/arch-update/pull/783)) - ([7f5e473](https://github.com/Antiz96/arch-update/commit/7f5e4738e4f40ce111ad823ebf6cedea952aa6e9)) by @Foxxtail1
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#784](https://github.com/Antiz96/arch-update/pull/784)) - ([8713a58](https://github.com/Antiz96/arch-update/commit/8713a58fe6c34f4ca8ef9431dc5e55ae47d5150f)) by @Antiz96
+
+## [v4.2.3](https://github.com/Antiz96/arch-update/releases/tag/v4.2.3) - 2026-09-11
+
+### Fixes
+
+- *(i18n)* Fix typos in Italian translation - ([deeecab](https://github.com/Antiz96/arch-update/commit/deeecab20e15552aa93c9f0117e25ef5a03d896a)) by @Mattyan89
+- Force C locale when parsing AUR helper output when checking / listing updates ([#782](https://github.com/Antiz96/arch-update/pull/782)) - ([6533a61](https://github.com/Antiz96/arch-update/commit/6533a615ea24777611b3c382761bcb954a6f9c1e)) by @EndEdEd
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#779](https://github.com/Antiz96/arch-update/pull/779)) - ([a20804b](https://github.com/Antiz96/arch-update/commit/a20804b6c3e3fbbaa57394002ec19f7c0c7d22f9)) by @renovate[bot]
+
+## [v4.2.2](https://github.com/Antiz96/arch-update/releases/tag/v4.2.2) - 2026-09-06
+
+### Fixes
+
+- *(build)* Honor CARGO_TARGET_DIR in Makefile ([#778](https://github.com/Antiz96/arch-update/pull/778)) - ([92a1eec](https://github.com/Antiz96/arch-update/commit/92a1eec3e7d235ff0568f5e15bc1a329e0bcf23e)) by @Antiz96
+- *(tray)* Use gio crate to run the desktop file ([#775](https://github.com/Antiz96/arch-update/pull/775)) - ([5f56193](https://github.com/Antiz96/arch-update/commit/5f56193dd8828b0acf098da9fb2e23fc0afcea0b)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#777](https://github.com/Antiz96/arch-update/pull/777)) - ([79715b5](https://github.com/Antiz96/arch-update/commit/79715b5bc20020c63eef7e7b90e20d0cd5d2ac85)) by @Antiz96
+- *(lint)* Typo fix in CHANGELOG ([#776](https://github.com/Antiz96/arch-update/pull/776)) - ([ac34fee](https://github.com/Antiz96/arch-update/commit/ac34feeacafb9caa8efe3d2cc41298e8189e3a8a)) by @Antiz96
+
+## [v4.2.1](https://github.com/Antiz96/arch-update/releases/tag/v4.2.1) - 2026-09-03
+
+### Fixes
+
+- *(i18n)* Fix formatting issues in Chinese simplified translation ([#771](https://github.com/Antiz96/arch-update/pull/771)) - ([fb4eae8](https://github.com/Antiz96/arch-update/commit/fb4eae888b7581314d73ffda9ef5bc6e30129c68)) by @Xdavius
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#769](https://github.com/Antiz96/arch-update/pull/769)) - ([a8775ef](https://github.com/Antiz96/arch-update/commit/a8775efce94f8106fdb64b5dc2b241a5051788a9)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#763](https://github.com/Antiz96/arch-update/pull/763)) - ([c3b38c0](https://github.com/Antiz96/arch-update/commit/c3b38c0a511f42e68a4cf2a2b58b4abc23db0562)) by @renovate[bot]
+- *(i18n)* Update Norwegian bokmål translation ([#770](https://github.com/Antiz96/arch-update/pull/770)) - ([8bab835](https://github.com/Antiz96/arch-update/commit/8bab83562597482e648a2eab05b2c64d4b61d920)) by @Kjodleiken
+- *(i18n)* Fixes for Italian translation ([#768](https://github.com/Antiz96/arch-update/pull/768)) - ([2174036](https://github.com/Antiz96/arch-update/commit/2174036a4703eb57f05eb0ce1c4f8fa9f01e55e6)) by @Mattyan89
+- *(i18n)* Update Italian translation ([#767](https://github.com/Antiz96/arch-update/pull/767)) - ([9b77d78](https://github.com/Antiz96/arch-update/commit/9b77d78066e6f9dff5d42856c6a58cbffc399ca9)) by @Mattyan89
+- Update email address ([#772](https://github.com/Antiz96/arch-update/pull/772)) - ([bcc2cf9](https://github.com/Antiz96/arch-update/commit/bcc2cf9cd1aac6a4ae64d1572ecaaee8654bb364)) by @Antiz96
+
+## [v4.2.0](https://github.com/Antiz96/arch-update/releases/tag/v4.2.0) - 2026-08-23
+
+### Features
+
+- *(tray)* Show the current update state in tooltip ([#757](https://github.com/Antiz96/arch-update/pull/757)) - ([92aa085](https://github.com/Antiz96/arch-update/commit/92aa0855c09b6b4995e9934c7f30b918740a085e)) by @ahmubashshir
+
+### Fixes
+
+- *(check)* Set the tray icon after the update stafile has been (re)written ([#761](https://github.com/Antiz96/arch-update/pull/761)) - ([c79d1f9](https://github.com/Antiz96/arch-update/commit/c79d1f9c657fd1ca43fdb53081cdfec6b81cf0ba)) by @Antiz96
+- *(i18n)* Fix escaping in Chinese simplified translation ([#762](https://github.com/Antiz96/arch-update/pull/762)) - ([10e4421](https://github.com/Antiz96/arch-update/commit/10e44218ab4b6a8cfbdc095e0d4c28ef0a09b022)) by @Antiz96
+- *(tray)* Set Tray Category to SystemServices ([#758](https://github.com/Antiz96/arch-update/pull/758)) - ([3024106](https://github.com/Antiz96/arch-update/commit/3024106c09e23d22471a9f2d4c25f51e67ba0ec1)) by @ahmubashshir
+
+### Miscellaneous
+
+- *(deps)* Update Rust crate log to 0.4.34 ([#755](https://github.com/Antiz96/arch-update/pull/755)) - ([09c7d4c](https://github.com/Antiz96/arch-update/commit/09c7d4c9a5b54b31cd40cf2591c8af5923915a8b)) by @renovate[bot]
+- *(i18n)* Update translation files ([#760](https://github.com/Antiz96/arch-update/pull/760)) - ([ab04d9f](https://github.com/Antiz96/arch-update/commit/ab04d9f758510b6fd943436e408be23e3f2a86f1)) by @Antiz96
+- *(tray)* Reuse id for title and tooltip title ([#759](https://github.com/Antiz96/arch-update/pull/759)) - ([ce36dba](https://github.com/Antiz96/arch-update/commit/ce36dbad7414fd0eff5cac248d6ae28df349dc69)) by @Antiz96
+
+## [v4.1.6](https://github.com/Antiz96/arch-update/releases/tag/v4.1.6) - 2026-08-17
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#752](https://github.com/Antiz96/arch-update/pull/752)) - ([09779c9](https://github.com/Antiz96/arch-update/commit/09779c90466e16530a5a02184e3183fcea063657)) by @renovate[bot]
+- *(i18n)* Update Chinese simplified translation ([#751](https://github.com/Antiz96/arch-update/pull/751)) - ([6429e9f](https://github.com/Antiz96/arch-update/commit/6429e9ff1ef6f5042cc1592a0502ce46598f6bde)) by @taotieren
+
+## [v4.1.5](https://github.com/Antiz96/arch-update/releases/tag/v4.1.5) - 2026-08-10
+
+### Styling
+
+- *(man)* Remove useless line breaks ([#749](https://github.com/Antiz96/arch-update/pull/749)) - ([99f8969](https://github.com/Antiz96/arch-update/commit/99f8969f7fb7ccf897267b67126c0245f73a56bc)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#748](https://github.com/Antiz96/arch-update/pull/748)) - ([1cde03b](https://github.com/Antiz96/arch-update/commit/1cde03bba950bc9d0a79134b28a74f43725d838f)) by @renovate[bot]
+- *(tray)* Improve wording and severity of some errors ([#750](https://github.com/Antiz96/arch-update/pull/750)) - ([31eca8e](https://github.com/Antiz96/arch-update/commit/31eca8ec6be1a0483661b5243909fe98cd93a87d)) by @Antiz96
+
+## [v4.1.4](https://github.com/Antiz96/arch-update/releases/tag/v4.1.4) - 2026-08-09
+
+### Fixes
+
+- *(tray)* Add a fallback for the gettext bindtextdomain directory ([#746](https://github.com/Antiz96/arch-update/pull/746)) - ([b5f08c1](https://github.com/Antiz96/arch-update/commit/b5f08c182377a15610213efdb02ff04ef4996a18)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Update Rust crate gettext-rs to 0.8.0 ([#741](https://github.com/Antiz96/arch-update/pull/741)) - ([c6f8f52](https://github.com/Antiz96/arch-update/commit/c6f8f52369dc71b1af46ecf75e6ea2b0fb35749f)) by @renovate[bot]
+- *(i18n)* Update translation files ([#747](https://github.com/Antiz96/arch-update/pull/747)) - ([724dd6d](https://github.com/Antiz96/arch-update/commit/724dd6d028f0908c75006acaf4d7ba9b7a8bbf9d)) by @Antiz96
+- *(tray)* Add context if panicking when creating the tokio runtime ([#743](https://github.com/Antiz96/arch-update/pull/743)) - ([2f7d128](https://github.com/Antiz96/arch-update/commit/2f7d12831c91c03499a40ea4fe389c0c546d3e7e)) by @Antiz96
+- *(tray)* Refactor i18n initialization ([#742](https://github.com/Antiz96/arch-update/pull/742)) - ([a98a475](https://github.com/Antiz96/arch-update/commit/a98a4750a943ae098c2fc89879d73ed1440151f4)) by @Antiz96
+- Switch to anyhow for a streamlined error propagation management ([#745](https://github.com/Antiz96/arch-update/pull/745)) - ([ee222a8](https://github.com/Antiz96/arch-update/commit/ee222a8ad828f621ae3d755925eea1c692bef912)) by @Antiz96
+
+## [v4.1.3](https://github.com/Antiz96/arch-update/releases/tag/v4.1.3) - 2026-08-04
+
+### Fixes
+
+- *(i18n)* Use Latin [y/n] for the Russian translation confirmation prompts ([#738](https://github.com/Antiz96/arch-update/pull/738)) - ([2a57366](https://github.com/Antiz96/arch-update/commit/2a573662ce3e56265c4ac80d18b9e0ecc12ac0fc)) by @wehrwolfmann
+
+## [v4.1.2](https://github.com/Antiz96/arch-update/releases/tag/v4.1.2) - 2026-08-03
+
+### Features
+
+- *(i18n)* Add new Turkish translation ([#733](https://github.com/Antiz96/arch-update/pull/733)) - ([1371f84](https://github.com/Antiz96/arch-update/commit/1371f84fef28e8059c8afc02024697e22ffabeec)) by @ALiAvkaya
+- *(i18n)* Add spanish translation to .desktop files comments ([#734](https://github.com/Antiz96/arch-update/pull/734)) - ([e6cb548](https://github.com/Antiz96/arch-update/commit/e6cb548fb7353c4b46eabe7760b95377dfb61a02)) by @julionc
+- *(i18n)* Add Russian translation to the `.desktop` files comment ([#731](https://github.com/Antiz96/arch-update/pull/731)) - ([1b2264e](https://github.com/Antiz96/arch-update/commit/1b2264e8938420beb62c4d0133c44803586457c3)) by @wehrwolfmann
+
+### Miscellaneous
+
+- *(CI)* Update codespell path exclusion list ([#735](https://github.com/Antiz96/arch-update/pull/735)) - ([9685e02](https://github.com/Antiz96/arch-update/commit/9685e028dbeedaa1161cb78cd121cfeedf8d52d4)) by @Antiz96
+- *(deps)* Lock file maintenance ([#732](https://github.com/Antiz96/arch-update/pull/732)) - ([d69970b](https://github.com/Antiz96/arch-update/commit/d69970b284fe350cfa25b290b6e31fea20141cbf)) by @renovate[bot]
+
+## [v4.1.1](https://github.com/Antiz96/arch-update/releases/tag/v4.1.1) - 2026-08-02
+
+### Fixes
+
+- *(i18n)* Honor default choice capitalization in Dutch translation ([#730](https://github.com/Antiz96/arch-update/pull/730)) - ([179b3be](https://github.com/Antiz96/arch-update/commit/179b3beb22a53261538708b53d508b0a9686fe0d)) by @Antiz96
+- *(i18n)* Update answer choices translations in Russian translation ([#729](https://github.com/Antiz96/arch-update/pull/729)) - ([0afe73b](https://github.com/Antiz96/arch-update/commit/0afe73b2739c0596ecaffce3d166c45036a07bde)) by @DrWeb56
+
+## [v4.1.0](https://github.com/Antiz96/arch-update/releases/tag/v4.1.0) - 2026-08-01
+
+### Features
+
+- *(tray)* Add the `TrayUpdatesPerPage` option to configure pagination ([#716](https://github.com/Antiz96/arch-update/pull/716)) - ([bfbd739](https://github.com/Antiz96/arch-update/commit/bfbd7393b5ebd8208fafc5e491aac5b0ea068d0c)) by @Antiz96
+
+### Fixes
+
+- Add input error handling for service restart selection ([#713](https://github.com/Antiz96/arch-update/pull/713)) - ([19a34ca](https://github.com/Antiz96/arch-update/commit/19a34caaf7b90c742f934a16cb2c2e7065aef6f3)) by @Antiz96
+
+### Documentation
+
+- *(README)* Remove duplicated line ([#706](https://github.com/Antiz96/arch-update/pull/706)) - ([5477941](https://github.com/Antiz96/arch-update/commit/5477941e1c86816089d71923940ce8610c9eb48c)) by @Antiz96
+- *(man)* Wording improvements ([#719](https://github.com/Antiz96/arch-update/pull/719)) - ([fd595ed](https://github.com/Antiz96/arch-update/commit/fd595edff143deb239df2d64f52a4e42dc36761c)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#709](https://github.com/Antiz96/arch-update/pull/709)) - ([28f03c4](https://github.com/Antiz96/arch-update/commit/28f03c4f6fc239272148bcb8e7e091e34a5b3ebd)) by @renovate[bot]
+- *(i18n)* Update Brazilian Portuguese and Spanish translations ([#723](https://github.com/Antiz96/arch-update/pull/723)) - ([197d308](https://github.com/Antiz96/arch-update/commit/197d308e29fc95f1a056d560273448e6ed04ea48)) by @diegons490
+- *(i18n)* Update translation files ([#722](https://github.com/Antiz96/arch-update/pull/722)) - ([39836fd](https://github.com/Antiz96/arch-update/commit/39836fd083a5542f55f7cb87e9745760c9979d7d)) by @Antiz96
+- *(i18n)* Update translation files ([#717](https://github.com/Antiz96/arch-update/pull/717)) - ([aeef861](https://github.com/Antiz96/arch-update/commit/aeef861bd84ee05518f33c256f2338eb6f7d82fd)) by @Antiz96
+- *(i18n)* Update Japanese translation ([#714](https://github.com/Antiz96/arch-update/pull/714)) - ([986ae04](https://github.com/Antiz96/arch-update/commit/986ae04268ea2f13fea16cec13499b1f2c4456f7)) by @MintJapan
+- *(i18n)* Update Basque translation ([#707](https://github.com/Antiz96/arch-update/pull/707)) - ([38de92d](https://github.com/Antiz96/arch-update/commit/38de92d08cdbfe3c5a198ca350122388bac9ac9a)) by @bingenm
+- *(i18n)* Update Swedish translation ([#712](https://github.com/Antiz96/arch-update/pull/712)) - ([c0dcfd2](https://github.com/Antiz96/arch-update/commit/c0dcfd27c98dd9a1efc25e4081398074e7d51299)) by @bittin
+- *(i18n)* Update Portuguese translation ([#711](https://github.com/Antiz96/arch-update/pull/711)) - ([83c29d5](https://github.com/Antiz96/arch-update/commit/83c29d5b5fe1c76e416dd9aded67e583726ba1b2)) by @NyaPuma
+- *(i18n)* Update Russian translation ([#710](https://github.com/Antiz96/arch-update/pull/710)) - ([adc1342](https://github.com/Antiz96/arch-update/commit/adc134253fb0f61a2010f612fcb1dafce3f3c627)) by @DrWeb56
+- *(i18n)* Update German translation ([#708](https://github.com/Antiz96/arch-update/pull/708)) - ([9a6f324](https://github.com/Antiz96/arch-update/commit/9a6f32432f6591bc01b580d309707a02997c26d8)) by @DeN-AlB
+- *(release)* Add versioning to tray's Cargo.toml ([#718](https://github.com/Antiz96/arch-update/pull/718)) - ([fa80ee7](https://github.com/Antiz96/arch-update/commit/fa80ee76362d03795c69e93e23bd68febc1750e5)) by @Antiz96
+- *(tray)* Minor refactoring and error handling improvements ([#721](https://github.com/Antiz96/arch-update/pull/721)) - ([84c5a3e](https://github.com/Antiz96/arch-update/commit/84c5a3e7c31f0da9cd8def4f5dba2848f7c678ed)) by @Antiz96
+
 ## [v4.0.2](https://github.com/Antiz96/arch-update/releases/tag/v4.0.2) - 2026-07-26
 
 ### Fixes
