@@ -1,13 +1,13 @@
 [container]
-image = "docker.io/archlinux/archlinux@sha256:19cf56ad10e506552760107207dc7b86bbfba8d71be727e826713c4c702dab76"
+image = "docker.io/archlinux/archlinux@sha256:1f56be0674957b8aed6efd49a033f66960c6dbf38c3c71141282d6260460cd06"
 
 [[package]]
 name = "compiler-rt"
-version = "22.1.8-1"
+version = "23.1.1-1"
 system = "archlinux"
-url = "https://archive.archlinux.org/packages/c/compiler-rt/compiler-rt-22.1.8-1-x86_64.pkg.tar.zst"
-sha256 = "e7531589d13fcbacf3fe4a64624b2a62081f2532b690e77bbf88fbe0a5d1b75e"
-signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCajfhYwAKCRAkR0DRfH/Q7BkBAQD/2Kj1l+/9hGeo0pQqRP6wVTKCVoILVRvSXiLGB1WXDAD8CmUyN8kDvGYasFDEbCmZL5aAwH+TF2NlkcSaJuGT8w0="
+url = "https://archive.archlinux.org/packages/c/compiler-rt/compiler-rt-23.1.1-1-x86_64.pkg.tar.zst"
+sha256 = "4519a7bfe224af5e4c1dbd2fb39dd03fe6159cccf528fee3a0b4900f90d8e015"
+signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCaqlZFAAKCRAkR0DRfH/Q7NHzAQCe+ZWgvcl6gYYLuc9WFjTclHtkTQIKdvWC7psDZDU8HAEAuegHHLJIwCFTMk9g7ZxD+ZKm9qtxqJMZIvUWEsjSYAw="
 
 [[package]]
 name = "gcc"
@@ -51,11 +51,11 @@ signature = "iQEzBAABCgAdFiEEFRnVq6Zb9vwrc8dWek52CV2KUuQFAmnhAlsACgkQek52CV2KUuS
 
 [[package]]
 name = "lld"
-version = "22.1.8-1"
+version = "23.1.1-1"
 system = "archlinux"
-url = "https://archive.archlinux.org/packages/l/lld/lld-22.1.8-1-x86_64.pkg.tar.zst"
-sha256 = "3032282365f09110922c8df0ef6afc56be2427b9396044334e22dced1aadc31c"
-signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCajflPgAKCRAkR0DRfH/Q7AVFAQDJ3eLW4cf3dxIzwFpqbQp9SiyjynrUgiHhhYiZBnKQHQD+OtDRDXWRDiJgQxSG++3Lo2JxJlHrz3DiCWurtvEcnAU="
+url = "https://archive.archlinux.org/packages/l/lld/lld-23.1.1-1-x86_64.pkg.tar.zst"
+sha256 = "4c3505d01fd960f1e5292f87f30219d027991c34d4dd99034f2dc1d211f2b40f"
+signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCaqljXQAKCRAkR0DRfH/Q7L9PAQDjfthplyI0GVDt+UapuqHchNSQ8qt6KDgv1elwcUj43AEA8wqLYLEbs5I4cVGOolIZytGB8mydvKJzFllu0TZiGg8="
 
 [[package]]
 name = "llhttp"
@@ -67,11 +67,11 @@ signature = "iQIzBAABCgAdFiEEsNZSlUdmBrcfDG+CqF6BHrTKLggFAmmQzoAACgkQqF6BHrTKLgj
 
 [[package]]
 name = "llvm-libs"
-version = "22.1.8-2"
+version = "23.1.1-1"
 system = "archlinux"
-url = "https://archive.archlinux.org/packages/l/llvm-libs/llvm-libs-22.1.8-2-x86_64.pkg.tar.zst"
-sha256 = "ad4454d1b969192e7a878066400a583b984210322d67c6fa8958ad1175342658"
-signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCalc5awAKCRAkR0DRfH/Q7MUNAQCOh9XJ64uH5p1RL1zr5XbJTe7cG3gRcMnI4RvjsCPEHAD/cTIn9Y72hB23JWZxfV10B3h2H3lpyPRqfwyGl+6euQc="
+url = "https://archive.archlinux.org/packages/l/llvm-libs/llvm-libs-23.1.1-1-x86_64.pkg.tar.zst"
+sha256 = "4f7b545ae89f54492f401bf6faf09375ea97868a6c169c489cc60abc97e5be8f"
+signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCaqlVsgAKCRAkR0DRfH/Q7B4EAP91jr79ile/QFqmU4PoX5aky27DFfhOSqpPUguwtpt4EwEAwnb/hSarAI/nbMJraxJX6i2wYglf5jqPqJmwSxQdwgw="
 
 [[package]]
 name = "pkgconf"
@@ -83,9 +83,9 @@ signature = "iHUEABYKAB0WIQSDvIiJNRtd67toQW64rAhgDxCM3wUCaps1EwAKCRC4rAhgDxCM319
 
 [[package]]
 name = "rust"
-version = "1:1.98.1-1"
+version = "1:1.99.0-1"
 system = "archlinux"
-url = "https://archive.archlinux.org/packages/r/rust/rust-1:1.98.1-1-x86_64.pkg.tar.zst"
+url = "https://archive.archlinux.org/packages/r/rust/rust-1:1.99.0-1-x86_64.pkg.tar.zst"
 provides = ["cargo"]
-sha256 = "a0e72c52cf8b8cbc9a16a82fca439e6fe502c6dc4a27b7c1d805f0399ad709ba"
-signature = "iHUEABYKAB0WIQSDvIiJNRtd67toQW64rAhgDxCM3wUCapmxVAAKCRC4rAhgDxCM30hXAQCIXJGVVPNK0oVt5MNFOvNSG/ELVoKYghvBL0PS/qaJDgD/fAhFxAoNYzYvUHlqRivEm01JtibtZvKdqTefzO/I0Ac="
+sha256 = "3effef75c1be392a49adaddac3c22a1a82fa680f3c6713f690f6c3318aa9c8bb"
+signature = "iHUEABYKAB0WIQSDvIiJNRtd67toQW64rAhgDxCM3wUCar57lQAKCRC4rAhgDxCM35d1AP9lfsUEvwb7BpNQ/I/dm84R/mOGVhRRGbPBKnD0IThLIwD/WLVyNs48b1o9S6AV99bl7loctqNqgZY5uxVqSB+keQU="

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.3](https://github.com/Antiz96/arch-update/releases/tag/v4.4.3) - 2026-10-05
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#825](https://github.com/Antiz96/arch-update/pull/825)) - ([e0676ef](https://github.com/Antiz96/arch-update/commit/e0676efb0f8bd4818286ecaea139c8ef9ac3522d)) by @renovate[bot]
+- *(deps)* Update Rust crate tokio to 1.53.2 ([#824](https://github.com/Antiz96/arch-update/pull/824)) - ([d7a93b5](https://github.com/Antiz96/arch-update/commit/d7a93b5c8f9a58b9a309f491ad097be79393ee61)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#822](https://github.com/Antiz96/arch-update/pull/822)) - ([69189ae](https://github.com/Antiz96/arch-update/commit/69189aef728e5a91fdfeaa67a17442d665f0d89b)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#818](https://github.com/Antiz96/arch-update/pull/818)) - ([e27e5f7](https://github.com/Antiz96/arch-update/commit/e27e5f70ddd379ccbb298723e52f145b59d00520)) by @renovate[bot]
+- *(deps)* Update Rust crate gio to 0.22.10 ([#817](https://github.com/Antiz96/arch-update/pull/817)) - ([c81fe75](https://github.com/Antiz96/arch-update/commit/c81fe753b88cef228892f4de404d2936ab4ea3b7)) by @renovate[bot]
+- *(i18n)* Update Chinese (simplified) translation ([#823](https://github.com/Antiz96/arch-update/pull/823)) - ([352eca1](https://github.com/Antiz96/arch-update/commit/352eca127eeed7dde02b090e44cfac145aefb29e)) by @taotieren
+- *(i18n)* Update Brazilian Portuguese and Spanish translations ([#821](https://github.com/Antiz96/arch-update/pull/821)) - ([6445e52](https://github.com/Antiz96/arch-update/commit/6445e5231cb2a89a0f7496947d52dfcd7418106c)) by @diegons490
+- *(i18n)* Update Norwegian translation ([#819](https://github.com/Antiz96/arch-update/pull/819)) - ([8ecfedf](https://github.com/Antiz96/arch-update/commit/8ecfedfcf09733997b5733613f25546cf81a209e)) by @Kjodleiken
+
 ## [v4.4.2](https://github.com/Antiz96/arch-update/releases/tag/v4.4.2) - 2026-09-18
 
 ### Fixes
