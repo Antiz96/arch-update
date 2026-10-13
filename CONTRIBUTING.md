@@ -11,7 +11,8 @@ Please, don't refrain yourself from contributing if you feel that your contribut
 - [General rules](#general-rules)
 - [Open an issue](#open-an-issue)
 - [Open a pull request](#open-a-pull-request)
-- [Translation](#Translation)
+- [Translation](#translation)
+- [AI Policy](#ai-policy)
 - [Donations](#donations)
 - [Thank you](#thank-you)
 
@@ -132,6 +133,32 @@ By contributing to this project, you agree that your contributions will be licen
 ## Translation
 
 To contribute to translations, please follow the instructions in the [dedicated discussion thread](https://github.com/Antiz96/arch-update/discussions/436).
+
+## AI Policy
+
+I personally do not endorse the extensive usage of AI for various reasons:
+
+- Technical concerns:
+   - AI has a tendency to produce overwhelmingly verbose and complex content, as well as unnecessary and unsolicited changes
+   - The quality of the produced content often varies significantly as of now
+   - It is frequently used to submit changes that the submitter is not even able to understand or explain (partially or entirely)
+   - It generally results in additional burdens for maintainers when it comes to reviewing and maintaining the submitted changes overtime
+
+- Ethical concerns:
+   - It is often used as a substitute to actual people / human work
+   - It generally results in a lower quality of service
+   - It is subject to licensing implications
+   - It raises environmental concerns
+
+As such, this project will not accept large-scale AI assisted contributions at all.  
+For smaller-scale contributions, please take note of the following rules (which apply to both issues and pull requests):
+
+- AI assisted contributions (partially or entirely) should be clearly disclosed
+- Low quality / low effort AI assisted contributions (generally referred to as "[AI slop](https://en.wikipedia.org/wiki/AI_slop)") will be closed
+- Excessively verbose and complex AI assisted contributions that are judged too difficult and involved to read / review (or that contain unnecessary / unexpected changes) will be closed
+- AI assisted contributions that the submitter seemingly does not understand or is not able to explain (partially or entirely) will be closed
+- If necessary, using AI to translate the description of an issue or a pull request in English is tolerated (but a clear disclosure is still expected)
+- Don't be a "meat proxy" (see [this](https://gruhn.me/blog/2026-08-03/) and [this](https://nomeatproxy.com/))
 
 ## Donations
 
