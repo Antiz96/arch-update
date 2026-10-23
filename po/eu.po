@@ -1,16 +1,17 @@
-# Arch-Update translation template
+# Arch-Update Basque translation
 # Copyright (C) 2024 Robin Candau <robincandau@mailbox.org>
 # This file is distributed under the same license as the Arch-Update package.
 #
 # Translators:
 # bingenm <bingenm@gmail.com>, 2026
+# Eder Etxebarria <eder.etxebarria@ni.eus>, 2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Arch-Update 4.4.3\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-03-22 12:00+0100\n"
-"Last-Translator: bingenm <bingenm@gmail.com>\n"
+"PO-Revision-Date: 2026-10-23 13:30+0200\n"
+"Last-Translator: Eder Etxebarria <eder.etxebarria@ni.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,7 +74,7 @@ msgstr ""
 msgid ""
 "A privilege elevation command is required (sudo, sudo-rs, doas or run0)\\n"
 msgstr ""
-"Privilegioak igotzeko komando bat behar da (sudo, sudo-rs, doas edo run0)\\n"
+"Pribilegioak igotzeko komando bat behar da (sudo, sudo-rs, doas edo run0)\\n"
 
 #: src/lib/common.sh:180
 #, sh-format
@@ -81,7 +82,7 @@ msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
-"${name}.conf konfigurazio fitxategian privilegioak igotzeko ezarritako "
+"${name}.conf konfigurazio fitxategian pribilegioak igotzeko ezarritako "
 "${su_cmd} komandoa ez da aurkitu\\n"
 
 #: src/lib/common.sh:192
@@ -181,12 +182,12 @@ msgstr "Dagoeneko ${_name}-(r)en instantzia bat exekutatzen ari da\\n"
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "Jarraitu hala ere? [b/E]"
 
 #: src/lib/full_upgrade.sh:23
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "Exekuzioa bertan behera utzi da\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -199,7 +200,7 @@ msgid ""
 "The '${config_file}' configuration file already exists\\nPlease, remove it "
 "before generating a new one (or use --force to overwrite it)"
 msgstr ""
-"'${config_file}' konfigurazio fitxategia badago lehendik\\nMesezez, ezabatu "
+"'${config_file}' konfigurazio fitxategia badago lehendik\\nMesedez, ezabatu "
 "berri bat sortu aurretik (edo erabili --force gainidazteko)"
 
 #: src/lib/gen-config.sh:30
@@ -408,7 +409,7 @@ msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
 "the pending kernel update\\n"
 msgstr ""
-"Ez da berrabiarazi\\nMesezez, berrabiarazi zain dagoen kernel eguneraketa "
+"Ez da berrabiarazi\\nMesedez, berrabiarazi zain dagoen kernel eguneraketa "
 "amaitzeko\\n"
 
 #: src/lib/kernel_reboot.sh:42
@@ -429,7 +430,7 @@ msgid ""
 "your system"
 msgstr ""
 "Ezin izan dira Arch-eko azken berriak lortu (HTTP errore-erantzuna edo "
-"eskaeraren denbora-muga)\\nMesezez, begiratu azken berriak https://"
+"eskaeraren denbora-muga)\\nMesedez, begiratu azken berriak https://"
 "archlinux.org helbidean zure sistema eguneratu aurretik"
 
 #: src/lib/list_news.sh:23
@@ -478,7 +479,7 @@ msgid ""
 "updating your system"
 msgstr ""
 "Ezin izan dira hautatutako Arch-eko berriak lortu (HTTP errore-erantzuna edo "
-"eskaeraren denbora-muga)\\nMesezez, irakurri hautatutako berriak ${news_url} "
+"eskaeraren denbora-muga)\\nMesedez, irakurri hautatutako berriak ${news_url} "
 "helbidean zure sistema eguneratu aurretik"
 
 #: src/lib/list_news.sh:108
@@ -692,7 +693,7 @@ msgid ""
 "The pacnew file(s) processing hasn't been applied\\nPlease, consider "
 "processing them promptly\\n"
 msgstr ""
-"Pacnew fitxategien prozesaketa ez da aplikatu\\nMesezez, kudeatu itzazu "
+"Pacnew fitxategien prozesaketa ez da aplikatu\\nMesedez, kudeatu itzazu "
 "lehenbailehen\\n"
 
 #: src/lib/pacnew_files.sh:41
@@ -734,7 +735,7 @@ msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
 "above service(s) status\\n"
 msgstr ""
-"Errore bat gertatu da zerbitzua(k) berrabiaraztean\\nMesezez, egiaztatu "
+"Errore bat gertatu da zerbitzua(k) berrabiaraztean\\nMesedez, egiaztatu "
 "goiko zerbitzuen egoera\\n"
 
 #: src/lib/restart_services.sh:64
@@ -754,7 +755,7 @@ msgid ""
 "The service(s) restart hasn't been performed\\nPlease, consider restarting "
 "services that have been updated to fully apply the upgrade\\n"
 msgstr ""
-"Ez da zerbitzurik berrabiarazi\\nMesezez, berrabiarazi eguneratutako "
+"Ez da zerbitzurik berrabiarazi\\nMesedez, berrabiarazi eguneratutako "
 "zerbitzuak eguneraketa guztiz aplikatzeko\\n"
 
 #: src/lib/restart_services.sh:86
