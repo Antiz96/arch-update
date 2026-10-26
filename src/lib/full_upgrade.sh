@@ -6,7 +6,8 @@
 
 # Lockfile to detect concurrent runs
 # shellcheck disable=SC2154
-exec {fd_upgrade}> "/tmp/${name}.lock"
+touch "/tmp/${name}.lock" 2> /dev/null
+exec {fd_upgrade}<"/tmp/${name}.lock"
 
 # Warn if another instance is already running
 if ! flock -n "${fd_upgrade}"; then
