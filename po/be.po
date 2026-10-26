@@ -125,7 +125,7 @@ msgstr "Ці хочаце выдаліць гэты невыкарыстаны �
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Ці хочаце выдаліць гэтыя невыкарыстаныя пакункі Flatpak? [y/N]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
@@ -133,7 +133,7 @@ msgstr "Ці хочаце выдаліць гэтыя невыкарыстаны
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
@@ -171,17 +171,17 @@ msgstr "Выдаленне не было прыменена\\n"
 msgid "No Flatpak unused package found\\n"
 msgstr "Невыкарыстаныя пакункі Flatpak не знойдзены\\n"
 
-#: src/lib/full_upgrade.sh:13
+#: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Ужо існуе запушчаны экзэмпляр ${_name}\\n"
 
-#: src/lib/full_upgrade.sh:14
+#: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
 msgstr ""
 
-#: src/lib/full_upgrade.sh:23
+#: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr ""

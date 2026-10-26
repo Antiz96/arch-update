@@ -117,7 +117,7 @@ msgstr "是否现在移除这个未使用的 Flatpak 包？[y/N]"
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "是否现在移除这些未使用的 Flatpak 包？[y/N]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
@@ -125,7 +125,7 @@ msgstr "是否现在移除这些未使用的 Flatpak 包？[y/N]"
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
@@ -163,17 +163,17 @@ msgstr "未应用移除\\n"
 msgid "No Flatpak unused package found\\n"
 msgstr "未找到未使用的 Flatpak 包\\n"
 
-#: src/lib/full_upgrade.sh:13
+#: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "已经有一个 ${_name} 实例正在运行\\n"
 
-#: src/lib/full_upgrade.sh:14
+#: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
 msgstr "仍然继续？[y/N]"
 
-#: src/lib/full_upgrade.sh:23
+#: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr "执行已中止\\n"

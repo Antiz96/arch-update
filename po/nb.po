@@ -126,7 +126,7 @@ msgstr "Vil du fjerne denne ubrukte Flatpak-pakken nå? [ j/N ]"
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Vil du fjerne disse ubrukte Flatpak-pakkene nå? [ j/N ]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
@@ -134,7 +134,7 @@ msgstr "Vil du fjerne disse ubrukte Flatpak-pakkene nå? [ j/N ]"
 msgid "Y"
 msgstr "J"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
@@ -172,17 +172,17 @@ msgstr "Fjerningen er ikke gjennomført\\n"
 msgid "No Flatpak unused package found\\n"
 msgstr "Ingen Flatpak-pakker er funnet\\n"
 
-#: src/lib/full_upgrade.sh:13
+#: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Det kjører allerede en instans av ${_name}\\n"
 
-#: src/lib/full_upgrade.sh:14
+#: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
 msgstr "Fortsett likevel? [j/N]"
 
-#: src/lib/full_upgrade.sh:23
+#: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr "Kjøringen er avbrutt\\n"
