@@ -1,21 +1,13 @@
 [container]
-image = "docker.io/archlinux/archlinux@sha256:ef1b2d7b71ac9f1f5fe78b5ae66c3b3fa8f6f2a4486620233b7ed31b1d0c3aaf"
-
-[[package]]
-name = "brotli"
-version = "1.2.1-1"
-system = "archlinux"
-url = "https://archive.archlinux.org/packages/b/brotli/brotli-1.2.1-1-x86_64.pkg.tar.zst"
-sha256 = "dff80818057da76e93c90045f7d9eef0469c35caa03b153cae02ba47bd3c4db2"
-signature = "iQIzBAABCgAdFiEEtZcfLFwQqaCMYAMPeGxj8zDXy5IFAmrZ0PoACgkQeGxj8zDXy5JL3Q/+IavyI49XW4W3L7TALtMG8oLPATllNDibutYb54PAwCY4uQZOXXIAjtz8KPZqdPDobJZXZ8lDArXnVl2CastDgP1DsRLEYanEr/Y4uLTwRIQWRTAjRFy8fpeqEQdnpMftFhSssSHrX71jBbMoZKTz/uok1os7PJ0vQWddumfI3I9JNigpR5WLGh/9BCA+DRhhZvteag9OSQ9jjSbk+ybkUbxTvqinxa+e8KZ0VY5oMkjJsEQOiBoZPRAFN6WUgotKEJMqR7Z8/152XIe560BWotxdc527uAlVl/Iv6BefSnRIzLTKvwFXciNtUNBrVWKUA/qQ+MjnrhG5nX5/MboOa5XY7jip8JSNgLVqvsEmOyJVALAQImtRCJqfIhSNc7IJw47C2CzxX68Y4K9kzXFl8N8MpiOWfim6CBnyCINWc5cMh5stl4FnccDNRvOXBczkL5LTR6U4L1pRuzCH44XRy6GDimXNBs5nurBXjyBXZ7JEDjFgY28Q3nVoz28I4sJrQVu6hxlzehJLMCTlG9+EF35oq78LeVh/9k/yfw8nrnohUUF6IrpL0rpyH4LMVqtOB/zWRlj0kvYVz+ca9rMN13YPafXooqwd6shoTyUW+xV64UqmHNo2m80j5nzNO0R4nWuaEmmIS0dAAM7qNjSO1/2TvwFuctUgoOJ32cNakmA="
+image = "docker.io/archlinux/archlinux@sha256:6139c2e5e7e5affec0369bf125af7546c12cca174fd85a038f548af4fdb6df47"
 
 [[package]]
 name = "compiler-rt"
-version = "23.1.3-4"
+version = "23.1.4-1"
 system = "archlinux"
-url = "https://archive.archlinux.org/packages/c/compiler-rt/compiler-rt-23.1.3-4-x86_64.pkg.tar.zst"
-sha256 = "ee5aebbb5fcc147e3931736cc1a7db223239f8b2f1c8eb199b324384d8f2f62c"
-signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCatPApwAKCRAkR0DRfH/Q7MdgAQDq8zsiaHV70n+rpjmej+x4OhqsHXY79XRb9I5IZPRd2gEAr1lem9NOGwBkzp24ypbmj9WQGtf+yEmsAf1eXkM2/wE="
+url = "https://archive.archlinux.org/packages/c/compiler-rt/compiler-rt-23.1.4-1-x86_64.pkg.tar.zst"
+sha256 = "0a3f0f21a20b44fe4ab576c0ddf0038c433b780a9ab988a762fe384a6f2c017d"
+signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCateB7gAKCRAkR0DRfH/Q7NexAP0UubwKiXXNpHDCRqm+q8xSg5w16WlrBUYzkVY30e9L6gEA7j3X7/kSmBwdlr/j0h7KR8vX/8OEK/a2VHDN6PF42Qk="
 
 [[package]]
 name = "gcc"
@@ -59,11 +51,11 @@ signature = "iQEzBAABCgAdFiEEFRnVq6Zb9vwrc8dWek52CV2KUuQFAmnhAlsACgkQek52CV2KUuS
 
 [[package]]
 name = "lld"
-version = "23.1.3-4"
+version = "23.1.4-1"
 system = "archlinux"
-url = "https://archive.archlinux.org/packages/l/lld/lld-23.1.3-4-x86_64.pkg.tar.zst"
-sha256 = "b9a5ff7c252732b4e973927a1894a78d761664a6bd202cbc005e33381f8bf949"
-signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCatPApwAKCRAkR0DRfH/Q7Ik0AP9Hui2XqxxpxCbnp5tw1AH/0TTSCmzt/9Lsq3q5xEm0qgEAuVDZLeGCnR2ML60ByUOdWecfhyv/FAUywLetSCA3qgI="
+url = "https://archive.archlinux.org/packages/l/lld/lld-23.1.4-1-x86_64.pkg.tar.zst"
+sha256 = "ee0d30ba61239e72c07176f936e16d77f65857d22d2b9d9a7c03c58e9d8a5a40"
+signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCateB7gAKCRAkR0DRfH/Q7BkCAQC9cEoKHsNF2atvUk9tcxpHvoIyXFMzZMEoHZLaBgS3BgEAiw5IAf5v27NQtC045A01o7NeQFJKNhzBm8g58UjtuwA="
 
 [[package]]
 name = "llhttp"
@@ -75,11 +67,11 @@ signature = "iQIzBAABCgAdFiEEsNZSlUdmBrcfDG+CqF6BHrTKLggFAmmQzoAACgkQqF6BHrTKLgj
 
 [[package]]
 name = "llvm-libs"
-version = "23.1.3-4"
+version = "23.1.4-1"
 system = "archlinux"
-url = "https://archive.archlinux.org/packages/l/llvm-libs/llvm-libs-23.1.3-4-x86_64.pkg.tar.zst"
-sha256 = "8751a4da9ed384f3ef969be2067585f592edd29f4100bb3932b120aec2173774"
-signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCatPApwAKCRAkR0DRfH/Q7CEvAP96uQXDqNHPAN9p20MLmolqU+3dYTbpP0iZLHwHukSyxAEA+EhPH09M2PfUDuJ782SyGl+Ta/gXdWXX83Jpt5BfjwQ="
+url = "https://archive.archlinux.org/packages/l/llvm-libs/llvm-libs-23.1.4-1-x86_64.pkg.tar.zst"
+sha256 = "033a4c9b70686f2dca142087961add7db81ae816d85eb060bee91d05461ec5bd"
+signature = "iHUEABYKAB0WIQQhkbiUMbrAqLlt6T0kR0DRfH/Q7AUCateB7QAKCRAkR0DRfH/Q7KG/AP9OKns9pnmwHZW+aUxeboKLoR1/FMkhgBzuYtFbDUkeJAEAk4hsW1fT6rGTi2R0lk/V3RsxhGY61PMrZnHkzKB6XgE="
 
 [[package]]
 name = "pkgconf"

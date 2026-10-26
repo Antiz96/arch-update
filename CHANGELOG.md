@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.5](https://github.com/Antiz96/arch-update/releases/tag/v4.4.5) - 2026-10-26
+
+### Fixes
+
+- *(lockfile)* Fix cross user lockfile handling ([#841](https://github.com/Antiz96/arch-update/pull/841)) - ([6f96999](https://github.com/Antiz96/arch-update/commit/6f9699913e79dae4f5d9e4ba38eb74fbc1515e2f)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#840](https://github.com/Antiz96/arch-update/pull/840)) - ([dd0aa28](https://github.com/Antiz96/arch-update/commit/dd0aa28e2a3ea7a25b0ef11051f55b7dfb334730)) by @renovate[bot]
+- *(deps)* Update Rust crate notify to 8.2.1 ([#839](https://github.com/Antiz96/arch-update/pull/839)) - ([c8da106](https://github.com/Antiz96/arch-update/commit/c8da1063e4f5a3e33982e3b62c634017c3787e32)) by @renovate[bot]
+- *(i18n)* Update translation files ([#842](https://github.com/Antiz96/arch-update/pull/842)) - ([8a30142](https://github.com/Antiz96/arch-update/commit/8a30142bbb83ceeb099194e27926da060a4cf4cf)) by @Antiz96
+
 ## [v4.4.4](https://github.com/Antiz96/arch-update/releases/tag/v4.4.4) - 2026-10-23
 
 ### Miscellaneous
