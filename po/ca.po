@@ -36,7 +36,7 @@ msgstr "S'ha produït un error durant la comprovació d'ALHP:"
 #: src/lib/check.sh:10
 #, sh-format
 msgid "Automated update checks have been enabled"
-msgstr ""
+msgstr "S'han habilitat les comprovacions automàtiques d'actualitzacions"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -182,12 +182,12 @@ msgstr "Ja hi ha una instància de ${_name} en execució\\n"
 #: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "Voleu continuar de totes maneres? [s/N]"
 
 #: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "S'ha interromput l'execució\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -472,7 +472,7 @@ msgstr ""
 #: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
 msgid "Invalid input"
-msgstr ""
+msgstr "Entrada no vàlida"
 
 #: src/lib/list_news.sh:103
 #, sh-format
@@ -786,6 +786,8 @@ msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
 msgstr ""
+"S'ha creat el fitxer «${tray_desktop_file_autostart}», la miniaplicació de "
+"la bústia de ${_name} s'iniciarà automàticament amb l'arrencada\\n"
 
 #: src/lib/tray.sh:62
 #, sh-format
@@ -797,7 +799,7 @@ msgstr ""
 #: src/lib/tray.sh:66
 #, sh-format
 msgid "Starting the ${_name} systray applet"
-msgstr ""
+msgstr "S'està iniciant la miniaplicació de la bústia de ${_name}"
 
 #: src/lib/update.sh:9
 #, sh-format
@@ -816,7 +818,7 @@ msgstr ""
 #: src/lib/update.sh:29
 #, sh-format
 msgid "Updating AUR Packages...\\n"
-msgstr "S'estan actualitzant os paquets de l'AUR...\\n"
+msgstr "S'estan actualitzant els paquets de l'AUR...\\n"
 
 #: src/lib/update.sh:46
 #, sh-format
@@ -830,27 +832,27 @@ msgstr "S'ha aplicat l'actualització\\n"
 
 #: src/tray/src/tray_helpers.rs:116
 msgid "Next page"
-msgstr ""
+msgstr "Pàgina següent"
 
 #: src/tray/src/tray_helpers.rs:261
 #, rust-format
 msgid "{days}d"
-msgstr ""
+msgstr "{days}d"
 
 #: src/tray/src/tray_helpers.rs:264
 #, rust-format
 msgid "{hours}h"
-msgstr ""
+msgstr "{hours}h"
 
 #: src/tray/src/tray_helpers.rs:267
 #, rust-format
 msgid "{minutes}m"
-msgstr ""
+msgstr "{minutes}m"
 
 #: src/tray/src/tray_helpers.rs:270
 #, rust-format
 msgid "{seconds}s"
-msgstr ""
+msgstr "{seconds}s"
 
 #: src/tray/src/tray.rs:75 src/tray/src/tray.rs:114
 msgid "System is up to date"
@@ -884,7 +886,7 @@ msgstr "Flatpak ({count})"
 #: src/tray/src/tray.rs:216
 #, rust-format
 msgid "Last check {last_check} ago"
-msgstr ""
+msgstr "Darrera comprovació fa {last_check}"
 
 #: src/tray/src/tray.rs:233
 #, rust-format
