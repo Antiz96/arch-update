@@ -110,7 +110,7 @@ msgid ""
 "is not set and \"nano\" (fallback option) is not installed"
 msgstr ""
 "No s'ha pogut determinar l'editor a fer servir\\nLa variable d'entorn "
-"«EDITOR» lo està definida i «nano» (opció de reserva) no està instal·lat"
+"«EDITOR» no està definida i «nano» (opció de reserva) no està instal·lat"
 
 #: src/lib/flatpak_unused_packages.sh:10
 #, sh-format
@@ -202,7 +202,7 @@ msgid ""
 "before generating a new one (or use --force to overwrite it)"
 msgstr ""
 "El fitxer de configuració «${config_file}» ja existeix\\nSi us plau, "
-"elimineu-lo abans de generar-ne un de nou (o useu --force para "
+"elimineu-lo abans de generar-ne un de nou (o useu --force per a "
 "sobreescriure'l)"
 
 #: src/lib/gen-config.sh:30
@@ -261,17 +261,18 @@ msgid "Options:"
 msgstr "Opcions:"
 
 #: src/lib/help.sh:16
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "  -c, --check       Check for available updates, change the systray icon and "
 "send a desktop notification containing the number of available updates (if "
 "there are new available updates compared to the last check). Optionally add "
 "the '--enable' argument to enable automated update checks."
 msgstr ""
-"  -c, --check       Comprova les actualitzacions disponibles, canvia l'icona "
+"  -c, --check       Comprova les actualitzacions disponibles, canvia la icona "
 "de la bústia del sistema i envia una notificació d'escriptori amb el nombre "
 "d'actualitzacions disponibles (si hi ha noves actualitzacions disponibles en "
-"comparació amb la darrera comprovació)"
+"comparació amb la darrera comprovació). Opcionalment, afegiu l'argument "
+«--enable» per habilitar les comprovacions automàtiques d'actualitzacions."
 
 #: src/lib/help.sh:17
 #, sh-format
@@ -733,7 +734,7 @@ msgstr ""
 #: src/lib/restart_services.sh:48 src/lib/restart_services.sh:75
 #, sh-format
 msgid "Service(s) restarted successfully\\n"
-msgstr "Els serveis s'han reiniciar correctament\\n"
+msgstr "Els serveis s'han reiniciat correctament\\n"
 
 #: src/lib/restart_services.sh:51 src/lib/restart_services.sh:78
 #, sh-format
