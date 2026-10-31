@@ -268,11 +268,12 @@ msgid ""
 "there are new available updates compared to the last check). Optionally add "
 "the '--enable' argument to enable automated update checks."
 msgstr ""
-"  -c, --check       Comprova les actualitzacions disponibles, canvia la icona "
-"de la bústia del sistema i envia una notificació d'escriptori amb el nombre "
-"d'actualitzacions disponibles (si hi ha noves actualitzacions disponibles en "
-"comparació amb la darrera comprovació). Opcionalment, afegiu l'argument "
-«--enable» per habilitar les comprovacions automàtiques d'actualitzacions."
+"  -c, --check       Comprova les actualitzacions disponibles, canvia la "
+"icona de la bústia del sistema i envia una notificació d'escriptori amb el "
+"nombre d'actualitzacions disponibles (si hi ha noves actualitzacions "
+"disponibles en comparació amb la darrera comprovació). Opcionalment, afegiu "
+"l'argument '--enable' per habilitar les comprovacions automàtiques "
+"d'actualitzacions."
 
 #: src/lib/help.sh:17
 #, sh-format
