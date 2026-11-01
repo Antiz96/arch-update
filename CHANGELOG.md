@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.6](https://github.com/Antiz96/arch-update/releases/tag/v4.4.6) - 2026-11-01
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#846](https://github.com/Antiz96/arch-update/pull/846)) - ([ee221c2](https://github.com/Antiz96/arch-update/commit/ee221c2f5bdf5b7651f1b79880c2ccedb5a22465)) by @Antiz96
+- *(deps)* Update Rust crate log to 0.4.35 ([#845](https://github.com/Antiz96/arch-update/pull/845)) - ([7bec087](https://github.com/Antiz96/arch-update/commit/7bec087a68d19794896b76fe415e53aae4f49693)) by @renovate[bot]
+- *(i18n)* Update Catalan translation ([#844](https://github.com/Antiz96/arch-update/pull/844)) - ([bb34eb2](https://github.com/Antiz96/arch-update/commit/bb34eb2f872b235c200bf625df100804a6534d94)) by @Dunocat639
+
 ## [v4.4.5](https://github.com/Antiz96/arch-update/releases/tag/v4.4.5) - 2026-10-26
 
 ### Fixes
