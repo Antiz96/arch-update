@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.7](https://github.com/Antiz96/arch-update/releases/tag/v4.4.7) - 2026-11-08
+
+### Features
+
+- *(i18n)* Add Vietnamese translation ([#847](https://github.com/Antiz96/arch-update/pull/847)) - ([f4dce16](https://github.com/Antiz96/arch-update/commit/f4dce160eb5cba4926604c84b0b060c636f441ec)) by @imngkhang
+
 ## [v4.4.6](https://github.com/Antiz96/arch-update/releases/tag/v4.4.6) - 2026-11-01
 
 ### Miscellaneous
