@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.7](https://github.com/Antiz96/arch-update/releases/tag/v4.4.7) - 2026-11-08
+
+### Features
+
+- *(i18n)* Add Vietnamese translation ([#847](https://github.com/Antiz96/arch-update/pull/847)) - ([f4dce16](https://github.com/Antiz96/arch-update/commit/f4dce160eb5cba4926604c84b0b060c636f441ec)) by @imngkhang
+
+## [v4.4.6](https://github.com/Antiz96/arch-update/releases/tag/v4.4.6) - 2026-11-01
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#846](https://github.com/Antiz96/arch-update/pull/846)) - ([ee221c2](https://github.com/Antiz96/arch-update/commit/ee221c2f5bdf5b7651f1b79880c2ccedb5a22465)) by @Antiz96
+- *(deps)* Update Rust crate log to 0.4.35 ([#845](https://github.com/Antiz96/arch-update/pull/845)) - ([7bec087](https://github.com/Antiz96/arch-update/commit/7bec087a68d19794896b76fe415e53aae4f49693)) by @renovate[bot]
+- *(i18n)* Update Catalan translation ([#844](https://github.com/Antiz96/arch-update/pull/844)) - ([bb34eb2](https://github.com/Antiz96/arch-update/commit/bb34eb2f872b235c200bf625df100804a6534d94)) by @Dunocat639
+
+## [v4.4.5](https://github.com/Antiz96/arch-update/releases/tag/v4.4.5) - 2026-10-26
+
+### Fixes
+
+- *(lockfile)* Fix cross user lockfile handling ([#841](https://github.com/Antiz96/arch-update/pull/841)) - ([6f96999](https://github.com/Antiz96/arch-update/commit/6f9699913e79dae4f5d9e4ba38eb74fbc1515e2f)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#840](https://github.com/Antiz96/arch-update/pull/840)) - ([dd0aa28](https://github.com/Antiz96/arch-update/commit/dd0aa28e2a3ea7a25b0ef11051f55b7dfb334730)) by @renovate[bot]
+- *(deps)* Update Rust crate notify to 8.2.1 ([#839](https://github.com/Antiz96/arch-update/pull/839)) - ([c8da106](https://github.com/Antiz96/arch-update/commit/c8da1063e4f5a3e33982e3b62c634017c3787e32)) by @renovate[bot]
+- *(i18n)* Update translation files ([#842](https://github.com/Antiz96/arch-update/pull/842)) - ([8a30142](https://github.com/Antiz96/arch-update/commit/8a30142bbb83ceeb099194e27926da060a4cf4cf)) by @Antiz96
+
+## [v4.4.4](https://github.com/Antiz96/arch-update/releases/tag/v4.4.4) - 2026-10-23
+
+### Miscellaneous
+
+- *(CONTRIBUTING)* Add an AI Policy ([#833](https://github.com/Antiz96/arch-update/pull/833)) - ([18532b3](https://github.com/Antiz96/arch-update/commit/18532b3a3400d7506c6af76a312d4366b8364613)) by @Antiz96
+- *(deps)* Update Rust crate tokio to 1.54.1 ([#837](https://github.com/Antiz96/arch-update/pull/837)) - ([97a3c7c](https://github.com/Antiz96/arch-update/commit/97a3c7c1efb0132dc746bb11b4405eddad9b4435)) by @renovate[bot]
+- *(deps)* Update Rust crate ksni to 0.3.7 ([#836](https://github.com/Antiz96/arch-update/pull/836)) - ([8092c9e](https://github.com/Antiz96/arch-update/commit/8092c9ee71298705e9883f10f71ca6c75aba3891)) by @renovate[bot]
+- *(deps)* Update Rust crate tokio to 1.54.0 ([#835](https://github.com/Antiz96/arch-update/pull/835)) - ([29d50bb](https://github.com/Antiz96/arch-update/commit/29d50bb97a961126cb5c77104dd83f3c23426e4e)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#834](https://github.com/Antiz96/arch-update/pull/834)) - ([3043b59](https://github.com/Antiz96/arch-update/commit/3043b5982b5696fb219052ea42e80c43ff721c98)) by @renovate[bot]
+- *(deps)* Update Rust crate tokio to 1.53.3 ([#832](https://github.com/Antiz96/arch-update/pull/832)) - ([f819d42](https://github.com/Antiz96/arch-update/commit/f819d42c64d323fe7e81e57024b4f0bede7660b4)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#830](https://github.com/Antiz96/arch-update/pull/830)) - ([f822fb2](https://github.com/Antiz96/arch-update/commit/f822fb23ea6294b9417f23f3cd3ed52061d8aa28)) by @renovate[bot]
+- *(deps)* Update Rust crate serde_json to 1.0.154 ([#829](https://github.com/Antiz96/arch-update/pull/829)) - ([3643cbe](https://github.com/Antiz96/arch-update/commit/3643cbe716c00db6e7085a431aa0983fd46e437a)) by @renovate[bot]
+- *(deps)* Update Rust crate serde_json to 1.0.152 ([#828](https://github.com/Antiz96/arch-update/pull/828)) - ([3686af3](https://github.com/Antiz96/arch-update/commit/3686af399bdf286c8e0f677dabb38af9ab074b14)) by @renovate[bot]
+- *(i18n)* Update Basque translation ([#838](https://github.com/Antiz96/arch-update/pull/838)) - ([5d3c063](https://github.com/Antiz96/arch-update/commit/5d3c063693b3611baddcd508c50635324ac95e53)) by @ederto1987
+
+## [v4.4.3](https://github.com/Antiz96/arch-update/releases/tag/v4.4.3) - 2026-10-05
+
+### Miscellaneous
+
+- *(deps)* Lock file maintenance ([#825](https://github.com/Antiz96/arch-update/pull/825)) - ([e0676ef](https://github.com/Antiz96/arch-update/commit/e0676efb0f8bd4818286ecaea139c8ef9ac3522d)) by @renovate[bot]
+- *(deps)* Update Rust crate tokio to 1.53.2 ([#824](https://github.com/Antiz96/arch-update/pull/824)) - ([d7a93b5](https://github.com/Antiz96/arch-update/commit/d7a93b5c8f9a58b9a309f491ad097be79393ee61)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#822](https://github.com/Antiz96/arch-update/pull/822)) - ([69189ae](https://github.com/Antiz96/arch-update/commit/69189aef728e5a91fdfeaa67a17442d665f0d89b)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#818](https://github.com/Antiz96/arch-update/pull/818)) - ([e27e5f7](https://github.com/Antiz96/arch-update/commit/e27e5f70ddd379ccbb298723e52f145b59d00520)) by @renovate[bot]
+- *(deps)* Update Rust crate gio to 0.22.10 ([#817](https://github.com/Antiz96/arch-update/pull/817)) - ([c81fe75](https://github.com/Antiz96/arch-update/commit/c81fe753b88cef228892f4de404d2936ab4ea3b7)) by @renovate[bot]
+- *(i18n)* Update Chinese (simplified) translation ([#823](https://github.com/Antiz96/arch-update/pull/823)) - ([352eca1](https://github.com/Antiz96/arch-update/commit/352eca127eeed7dde02b090e44cfac145aefb29e)) by @taotieren
+- *(i18n)* Update Brazilian Portuguese and Spanish translations ([#821](https://github.com/Antiz96/arch-update/pull/821)) - ([6445e52](https://github.com/Antiz96/arch-update/commit/6445e5231cb2a89a0f7496947d52dfcd7418106c)) by @diegons490
+- *(i18n)* Update Norwegian translation ([#819](https://github.com/Antiz96/arch-update/pull/819)) - ([8ecfedf](https://github.com/Antiz96/arch-update/commit/8ecfedfcf09733997b5733613f25546cf81a209e)) by @Kjodleiken
+
 ## [v4.4.2](https://github.com/Antiz96/arch-update/releases/tag/v4.4.2) - 2026-09-18
 
 ### Fixes
