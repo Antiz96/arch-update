@@ -29,7 +29,7 @@ if [ -n "${aur_packages}" ]; then
 	main_msg "$(eval_gettext "Updating AUR Packages...\n")"
 
 	# shellcheck disable=SC2154
-	if ! "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Syu; then
+	if ! "${aur_helper}" --color "${pacman_color_opt}" "${devel_flag[@]}" -Sua; then
 		echo
 		warning_msg "$(eval_gettext "An error has occurred during the update process\nThe update has been aborted\n")"
 		error_during_update="true"
