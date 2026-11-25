@@ -32,33 +32,37 @@ color_update_list() {
 	done
 }
 
-if [ -n "${packages}" ]; then
+packages_updates=$(cat "${statedir}/last_updates_check_packages")
+aur_packages_updates=$(cat "${statedir}/last_updates_check_aur")
+flatpak_packages_updates=$(cat "${statedir}/last_updates_check_flatpak")
+
+if [ -n "${packages_updates}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
 	if [ -n "${no_color}" ] || [ -n "${no_version}" ]; then
-		echo "${packages}" | column -t
+		echo "${packages_updates}" | column -t
 	else
-		echo "${packages}" | color_update_list | column -t
+		echo "${packages_updates}" | color_update_list | column -t
 	fi
 	echo
 fi
 
-if [ -n "${aur_packages}" ]; then
+if [ -n "${aur_packages_updates}" ]; then
 	main_msg "$(eval_gettext "AUR Packages:")"
 	if [ -n "${no_color}" ] || [ -n "${no_version}" ]; then
-		echo "${aur_packages}" | column -t
+		echo "${aur_packages_updates}" | column -t
 	else
-		echo "${aur_packages}" | color_update_list | column -t
+		echo "${aur_packages_updates}" | color_update_list | column -t
 	fi
 	echo
 fi
 
-if [ "${#flatpak_packages[@]}" -gt 0 ]; then
+if [ -n "${flatpak_packages_updates}" ]; then
 	main_msg "$(eval_gettext "Flatpak Packages:")"
-	printf "%s\n" "${flatpak_packages[@]}" | column -t
+	echo "${flatpak_packages_updates}" | column -t
 	echo
 fi
 
-if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ "${#flatpak_packages[@]}" -eq 0 ]; then
+if [ -z "${packages_updates}" ] && [ -z "${aur_packages_updates}" ] && [ -z "${flatpak_packages_updates}" ]; then
 	icon_up-to-date
 	info_msg "$(eval_gettext "No update available\n")"
 
