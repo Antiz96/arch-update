@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.4.8](https://github.com/Antiz96/arch-update/releases/tag/v4.4.8) - 2026-11-26
+
+### Fixes
+
+- *(AUR)* Don't check for system package upgrades ([#862](https://github.com/Antiz96/arch-update/pull/862)) - ([8a7df50](https://github.com/Antiz96/arch-update/commit/8a7df5057f76ac95a9c621fb2798fb7d9f8116c0)) by @Antiz96
+- Don't overwrite updates state files and set the 'up-to-date' state unconditionally in case of timeout ([#865](https://github.com/Antiz96/arch-update/pull/865)) - ([fc19a0e](https://github.com/Antiz96/arch-update/commit/fc19a0e3b79e624fc1202d79cfaa8df94d062e2f)) by @Antiz96
+- Get rid of deduplicated update checking logic ([#864](https://github.com/Antiz96/arch-update/pull/864)) - ([14feeda](https://github.com/Antiz96/arch-update/commit/14feeda1f69ddce30ec2119e66c12369564facdd)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Update Rust crate anyhow to 1.0.105 ([#860](https://github.com/Antiz96/arch-update/pull/860)) - ([60ee7e9](https://github.com/Antiz96/arch-update/commit/60ee7e92e76ed456392695bdd52769517b043fd4)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#859](https://github.com/Antiz96/arch-update/pull/859)) - ([762dccf](https://github.com/Antiz96/arch-update/commit/762dccfb03e53e794f99a8796c94cd4214f9ae92)) by @renovate[bot]
+- *(deps)* Update Rust crate notify to 9.0.0 ([#858](https://github.com/Antiz96/arch-update/pull/858)) - ([5a5e156](https://github.com/Antiz96/arch-update/commit/5a5e156eb7a7218bc8d94ec64af06a614dce995e)) by @renovate[bot]
+- *(deps)* Update Rust crate env_logger to 0.11.12 ([#857](https://github.com/Antiz96/arch-update/pull/857)) - ([295af3c](https://github.com/Antiz96/arch-update/commit/295af3cc403779dce5b08049eebddc80c2be65f8)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#855](https://github.com/Antiz96/arch-update/pull/855)) - ([9210855](https://github.com/Antiz96/arch-update/commit/9210855c2a388823008a3ff18f1e78bcddb7af62)) by @renovate[bot]
+- *(deps)* Update Rust crate gio-unix to 0.22.11 ([#854](https://github.com/Antiz96/arch-update/pull/854)) - ([1f1a544](https://github.com/Antiz96/arch-update/commit/1f1a544ad9ca5bbabf2c0ea5ffb2eac15560b004)) by @renovate[bot]
+- *(deps)* Update Rust crate gio to 0.22.11 ([#853](https://github.com/Antiz96/arch-update/pull/853)) - ([8df8c68](https://github.com/Antiz96/arch-update/commit/8df8c686c7b6b0e300cae67a9e5a73ae0886dc82)) by @renovate[bot]
+- *(deps)* Lock file maintenance ([#849](https://github.com/Antiz96/arch-update/pull/849)) - ([88f8b5f](https://github.com/Antiz96/arch-update/commit/88f8b5fa703c681fa92bc3e8ddc39d063573ac17)) by @renovate[bot]
+- *(deps)* Update Rust crate notify to 8.2.2 ([#848](https://github.com/Antiz96/arch-update/pull/848)) - ([8d8b453](https://github.com/Antiz96/arch-update/commit/8d8b45362a3b5ac9840848482dc5175d9dfa76db)) by @renovate[bot]
+- *(i18n)* Update translation files ([#866](https://github.com/Antiz96/arch-update/pull/866)) - ([693be76](https://github.com/Antiz96/arch-update/commit/693be7696e54dfc65e088c8fc90268f7cd8e4dec)) by @Antiz96
+
 ## [v4.4.7](https://github.com/Antiz96/arch-update/releases/tag/v4.4.7) - 2026-11-08
 
 ### Features
