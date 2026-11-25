@@ -39,6 +39,27 @@ msgstr "S'ha produït un error durant la comprovació d'ALHP:"
 msgid "Automated update checks have been enabled"
 msgstr "S'han habilitat les comprovacions automàtiques d'actualitzacions"
 
+#: src/lib/check_updates.sh:17
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+"No s'han pogut recuperar les actualitzacions de paquets (temps d'espera "
+"esgotat)\\n"
+
+#: src/lib/check_updates.sh:34
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"No s'han pogut recuperar les actualitzacions de paquets de l'AUR (temps "
+"d'espera esgotat)\\n"
+
+#: src/lib/check_updates.sh:48
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"No s'han pogut recuperar les actualitzacions de paquets de Flatpak (temps "
+"d'espera esgotat)\\n"
+
 #: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
@@ -128,7 +149,7 @@ msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Voleu eliminar aquests paquets no utilitzats de Flatpak ara? [s/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -136,7 +157,7 @@ msgid "Y"
 msgstr "S"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -513,53 +534,32 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "S'estan cercant actualitzacions...\\n"
 
-#: src/lib/list_packages.sh:16
-#, sh-format
-msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr ""
-"No s'han pogut recuperar les actualitzacions de paquets (temps d'espera "
-"esgotat)\\n"
-
-#: src/lib/list_packages.sh:32
-#, sh-format
-msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr ""
-"No s'han pogut recuperar les actualitzacions de paquets de l'AUR (temps "
-"d'espera esgotat)\\n"
-
-#: src/lib/list_packages.sh:45
-#, sh-format
-msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr ""
-"No s'han pogut recuperar les actualitzacions de paquets de Flatpak (temps "
-"d'espera esgotat)\\n"
-
-#: src/lib/list_packages.sh:115
+#: src/lib/list_packages.sh:40
 #, sh-format
 msgid "Packages:"
 msgstr "Paquets:"
 
-#: src/lib/list_packages.sh:127
+#: src/lib/list_packages.sh:50
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Paquets de l'AUR:"
 
-#: src/lib/list_packages.sh:139
+#: src/lib/list_packages.sh:60
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Paquets de Flatpak:"
 
-#: src/lib/list_packages.sh:150
+#: src/lib/list_packages.sh:67
 #, sh-format
 msgid "No update available\\n"
 msgstr "No hi ha cap actualització disponible\\n"
 
-#: src/lib/list_packages.sh:162
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Voleu procedir amb l'actualització? [S/n]"
 
-#: src/lib/list_packages.sh:173
+#: src/lib/list_packages.sh:90
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "S'ha interromput l'actualització\\n"

@@ -36,6 +36,27 @@ msgstr "Грешка при проверка на ALHP:"
 msgid "Automated update checks have been enabled"
 msgstr "Автоматичните проверки за актуализации са включени"
 
+#: src/lib/check_updates.sh:17
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+"Не може да бъдат извлечени актуализациите на пакетите (изтичане на заявката)"
+"\\n"
+
+#: src/lib/check_updates.sh:34
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"Не може да бъдат извлечени актуализациите на AUR пакетите (изтичане на "
+"заявката)\\n"
+
+#: src/lib/check_updates.sh:48
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"Не може да бъдат извлечени актуализациите на Flatpak пакетите (изтичане на "
+"заявката)\\n"
+
 #: src/lib/common.sh:96
 #, sh-format
 msgid "WARNING"
@@ -125,7 +146,7 @@ msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Желаете ли да премахнете тези неизползвани Flatpak пакети сега? [y/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -133,7 +154,7 @@ msgid "Y"
 msgstr "Y"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -500,53 +521,32 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "Търсене на актуализации...\\n"
 
-#: src/lib/list_packages.sh:16
-#, sh-format
-msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr ""
-"Не може да бъдат извлечени актуализациите на пакетите (изтичане на заявката)"
-"\\n"
-
-#: src/lib/list_packages.sh:32
-#, sh-format
-msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr ""
-"Не може да бъдат извлечени актуализациите на AUR пакетите (изтичане на "
-"заявката)\\n"
-
-#: src/lib/list_packages.sh:45
-#, sh-format
-msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr ""
-"Не може да бъдат извлечени актуализациите на Flatpak пакетите (изтичане на "
-"заявката)\\n"
-
-#: src/lib/list_packages.sh:115
+#: src/lib/list_packages.sh:40
 #, sh-format
 msgid "Packages:"
 msgstr "Пакети:"
 
-#: src/lib/list_packages.sh:127
+#: src/lib/list_packages.sh:50
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR пакети:"
 
-#: src/lib/list_packages.sh:139
+#: src/lib/list_packages.sh:60
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak пакети:"
 
-#: src/lib/list_packages.sh:150
+#: src/lib/list_packages.sh:67
 #, sh-format
 msgid "No update available\\n"
 msgstr "Няма налични актуализации\\n"
 
-#: src/lib/list_packages.sh:162
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Продължаване с актуализацията? [Y/n]"
 
-#: src/lib/list_packages.sh:173
+#: src/lib/list_packages.sh:90
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Актуализацията е прекратена\\n"
