@@ -11,78 +11,11 @@ if [ "${2}" == "--enable" ]; then
 	exit 0
 fi
 
-# shellcheck disable=SC2154
-touch "${statedir}"/last_updates_check_{packages,aur,flatpak}
+# shellcheck source=src/lib/check_updates.sh
+source "${libdir}/check_updates.sh" check
 
 # shellcheck disable=SC2154
-checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
-
-# shellcheck disable=SC2154
-if [ -z "${no_version}" ]; then
-	# shellcheck disable=SC2154
-	CHECKUPDATES_DB="${checkupdates_db_tmpdir}" checkupdates > "${statedir}/last_updates_check_packages"
-else
-	# shellcheck disable=SC2154
-	CHECKUPDATES_DB="${checkupdates_db_tmpdir}" checkupdates | awk '{print $1}' > "${statedir}/last_updates_check_packages"
-fi
-
-if [ -n "${aur_helper}" ]; then
-	if [ -z "${no_version}" ]; then
-		# shellcheck disable=SC2154
-		LC_ALL=C "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" > "${statedir}/last_updates_check_aur"
-	else
-		# shellcheck disable=SC2154
-		LC_ALL=C "${aur_helper}" -Qua 2> /dev/null | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$" | awk '{print $1}' > "${statedir}/last_updates_check_aur"
-	fi
-fi
-
-if [ -n "${flatpak_support}" ]; then
-	flatpak update --appstream > /dev/null
-
-	mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
-
-	if [ "${#flatpak_mask[@]}" -gt 0 ]; then
-		mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=application,version | tr -s '\t' ' ')
-
-		declare -A app_names
-		while read -r flatpak_id flatpak_name; do
-			app_names["${flatpak_id}"]="${flatpak_name}"
-		done < <(flatpak list --columns=application,name)
-
-	        mapfile -t flatpak_packages < <(
-			for packages in "${flatpak_packages[@]}"; do
-				read -r app_id app_version <<< "${packages}"
-
-				for pattern in "${flatpak_mask[@]}"; do
-					# shellcheck disable=SC2053
-					[[ "${app_id}" == ${pattern} ]] && continue 2
-				done
-
-				app_name="${app_names[${app_id}]:-${app_id}}"
-
-				if [ -z "${no_version}" ]; then
-					echo "${app_name} ${app_version}"
-				else
-					echo "${app_name}"
-				fi
-			done
-		)
-	else
-		if [ -z "${no_version}" ]; then
-			mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=name,version | tr -s '\t' ' ')
-		else
-			mapfile -t flatpak_packages < <(flatpak remote-ls --updates --columns=name)
-		fi
-	fi
-
-	printf "%s\n" "${flatpak_packages[@]}" > "${statedir}/last_updates_check_flatpak"
-fi
-
-sed -i '/^\s*$/d' "${statedir}"/last_updates_check_{packages,aur,flatpak}
-sed -ri 's/\x1B\[[0-9;]*m//g' "${statedir}"/last_updates_check_{packages,aur,flatpak}
 update_available=$(cat "${statedir}"/last_updates_check_{packages,aur,flatpak})
-
-# shellcheck disable=SC2154
 echo "${update_available}" > "${statedir}/current_updates_check"
 
 if [ -n "${update_available}" ] && [ -n "${notification_support}" ] && ! diff "${statedir}/current_updates_check" "${statedir}/last_updates_check" &> /dev/null; then
@@ -126,5 +59,3 @@ if [ -n "${update_available}" ]; then
 else
 	icon_up-to-date
 fi
-
-date "+%s%n%F %T" > "${statedir}/last_updates_check_time"
