@@ -5,9 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # shellcheck disable=SC2154
-true > "${statedir}/last_updates_check_packages"
-true > "${statedir}/last_updates_check_aur"
-true > "${statedir}/last_updates_check_flatpak"
+touch "${statedir}"/last_updates_check{,_time,_packages,_aur,_flatpak}
 
 # shellcheck disable=SC2154
 checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
@@ -18,6 +16,7 @@ packages_exit_code=$?
 if [ "${packages_exit_code}" -eq 124 ]; then
 	warning_msg "$(eval_gettext "Unable to retrieve Packages updates (request timeout)\n")"
 	unset packages
+	packages_timeout="true"
 elif [ -n "${no_version}" ]; then
 	packages=$(echo "${packages}" | awk '{print $1}')
 fi
@@ -34,6 +33,7 @@ if [ -n "${aur_helper}" ]; then
 	if [ "${unformatted_aur_packages_exit_code}" -eq 124 ]; then
 		warning_msg "$(eval_gettext "Unable to retrieve AUR Packages updates (request timeout)\n")"
 		unset aur_packages
+		aur_packages_timeout="true"
 	elif [ -n "${no_version}" ]; then
 		aur_packages=$(echo "${aur_packages}" | awk '{print $1}')
 	fi
@@ -46,6 +46,7 @@ if [ -n "${flatpak_support}" ]; then
 
 	if [ "${flatpak_metadata_update_exit_code}" -eq 124 ]; then
 		warning_msg "$(eval_gettext "Unable to retrieve Flatpak packages updates (request timeout)\n")"
+		flatpak_packages_timeout="true"
 	else
 		mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
 
@@ -87,14 +88,20 @@ fi
 
 if [ -n "${packages}" ]; then
 	echo "${packages}" > "${statedir}/last_updates_check_packages"
+elif [ -z "${packages_timeout}" ]; then
+	true > "${statedir}/last_updates_check_packages"
 fi
 
 if [ -n "${aur_packages}" ]; then
 	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
+elif [ -z "${aur_packages_timeout}" ]; then
+	true > "${statedir}/last_updates_check_aur"
 fi
 
 if [ "${#flatpak_packages[@]}" -gt 0 ]; then
 	printf "%s\n" "${flatpak_packages[@]}" > "${statedir}/last_updates_check_flatpak"
+elif [ -z "${flatpak_packages_timeout}" ]; then
+	true > "${statedir}/last_updates_check_flatpak"
 fi
 
 # Don't rewrite the last_updates_check statefile if we come from the `check.sh` library as it already handles it after comparing the (previous) last update batch to the current one
