@@ -6,8 +6,7 @@
 
 info_msg "$(eval_gettext "Looking for updates...\n")"
 
-# Retrieve available updates
-# shellcheck source=src/lib/check_updates.sh
+# shellcheck source=src/lib/check_updates.sh disable=SC2154
 source "${libdir}/check_updates.sh"
 
 # Re-color update list output with version diff highlighting
