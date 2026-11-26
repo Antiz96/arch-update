@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.5.0](https://github.com/Antiz96/arch-update/releases/tag/v4.5.0) - 2026-11-26
+
+### Features
+
+- *(cache)* List cached packages before prompting to remove them ([#868](https://github.com/Antiz96/arch-update/pull/868)) - ([374aac7](https://github.com/Antiz96/arch-update/commit/374aac7422fbd9e464de4994ac6fc9b13ec44286)) by @Antiz96
+
+### Miscellaneous
+
+- *(deps)* Update Rust crate ksni to 0.3.8 ([#869](https://github.com/Antiz96/arch-update/pull/869)) - ([5cc0d46](https://github.com/Antiz96/arch-update/commit/5cc0d46f7f9e2d2a333b32a5f418304422aa9ba6)) by @renovate[bot]
+- *(i18n)* Update translation files ([#870](https://github.com/Antiz96/arch-update/pull/870)) - ([9e778d8](https://github.com/Antiz96/arch-update/commit/9e778d86e98962077074846e26e12e72f25a6efc)) by @Antiz96
+
 ## [v4.4.8](https://github.com/Antiz96/arch-update/releases/tag/v4.4.8) - 2026-11-26
 
 ### Fixes
