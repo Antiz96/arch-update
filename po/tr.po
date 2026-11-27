@@ -617,15 +617,25 @@ msgstr "Yetim Paketler Kaldırılıyor...\\n"
 msgid "No orphan package found\\n"
 msgstr "Yetim paket bulunamadı\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "Önbelleğe Alınmış Paketler:"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Önbelleğe Alınmış Paketler:\\nÖnbellekte eski veya kaldırılmış bir paket "
+"var\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Şimdi önbellekten silmek ister misiniz? [E/h]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Önbelleğe Alınmış Paketler:\\nÖnbellekte eski ve/veya kaldırılmış paketler "
+"var\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format

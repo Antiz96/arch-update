@@ -613,15 +613,25 @@ msgstr "Fjerner foreldreløse pakker …\\n"
 msgid "No orphan package found\\n"
 msgstr "Ingen foreldreløse pakker er funnet\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "Mellomlagrede pakker:"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Mellomlagrede pakker:\\nDet finnes gamle eller uinstallerte mellomlagrede "
+"pakker\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Vil du fjerne den fra mellomlageret nå? [ J/n ]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Mellomlagrede pakker:\\nDet finnes gamle og / eller uinstallerte "
+"mellomlagrede pakker\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format

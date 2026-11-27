@@ -567,15 +567,21 @@ msgstr "正在移除孤立套件...\\n"
 msgid "No orphan package found\\n"
 msgstr "找不到孤立套件\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "快取套件："
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr "快取套件：\\n有舊的或未安裝的快取套件\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "是否現在從快取中移除它？ [Y/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr "快取套件：\\n有舊的及/或未安裝的快取套件\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format

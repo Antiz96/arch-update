@@ -625,15 +625,25 @@ msgstr "S'estan eliminant els paquets omesos...\\n"
 msgid "No orphan package found\\n"
 msgstr "No s'ha trobat cap paquet omès\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "Paquets a la memòria cau:"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Paquets a la memòria cau:\\nHi ha un paquet antic o desinstal·lat a la "
+"memòria cau\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Voleu eliminar-lo de la memòria cau ara? [S/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Paquets a la memòria cau:\\nHi ha paquets antics i / o desinstal·lats a la "
+"memòria cau\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format
