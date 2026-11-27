@@ -237,7 +237,7 @@ To reproduce the pre-compiled binary for a given release, [install repro-env](ht
 git clone https://github.com/Antiz96/arch-update.git
 cd arch-update
 git checkout <tag> # Where <tag> is the git tag for the targeted release, e.g. "v4.4.0"
-repro-env build -- cargo build --release
+repro-env build -- cargo build --release --manifest-path src/tray/Cargo.toml
 sha256sum src/tray/target/release/arch-update-tray
 ```
 
