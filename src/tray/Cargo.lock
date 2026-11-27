@@ -78,7 +78,7 @@ dependencies = [
 
 [[package]]
 name = "arch-update-tray"
-version = "4.4.7"
+version = "4.5.0"
 dependencies = [
  "anyhow",
  "env_logger",
@@ -644,9 +644,9 @@ dependencies = [
 
 [[package]]
 name = "ksni"
-version = "0.3.7"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1bcc1cb43797140f74b711f1c4a49f48a7a7429f211c5fb78264e7bcd1e99caf"
+checksum = "d49a7ac89853917f01d75f6bac3e7c8e282ae621dd63fbbfc50fe331304fa580"
 dependencies = [
  "arc-swap",
  "crossbeam-queue",
