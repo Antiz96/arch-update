@@ -611,15 +611,25 @@ msgstr "Đang gỡ các gói mồ côi...\\n"
 msgid "No orphan package found\\n"
 msgstr "Không tìm thấy gói mồ côi nào\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "Gói trong bộ nhớ đệm:"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Gói trong bộ nhớ đệm:\\nCó một gói cũ hoặc chưa cài đặt nằm trong bộ nhớ "
+"đệm\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Bạn có muốn xóa nó khỏi bộ nhớ đệm ngay không? [Y/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Gói trong bộ nhớ đệm:\\nCó các gói cũ và / hoặc chưa cài đặt nằm trong bộ "
+"nhớ đệm\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format

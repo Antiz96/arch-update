@@ -619,15 +619,23 @@ msgstr "Pakete umezurtzak kentzen...\\n"
 msgid "No orphan package found\\n"
 msgstr "Ez da pakete umezurtzik aurkitu\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "Cacheko paketeak:"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Cacheko paketeak:\\nInstalatu gabeko edo cacheko pakete zahar bat dago\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Cachetik orain kendu nahi duzu? [B/e]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Cacheko paketeak:\\nInstalatu gabeko edo cacheko pakete zaharrak daude\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format

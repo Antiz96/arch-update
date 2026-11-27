@@ -610,15 +610,23 @@ msgstr "Выдаленне асірацелых пакункаў...\\n"
 msgid "No orphan package found\\n"
 msgstr "Асірацелыя пакункі не знойдзены\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "Кэшаваныя пакункі:"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Кэшаваныя пакункі:\\nЁсць састарэлы або неўсталяваны кэшаваны пакунак\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Ці хочаце выдаліць яго з кэша? [Y/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Кэшаваныя пакункі:\\nЁсць састарэлыя і/або выдаленыя кэшаваныя пакункі\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format

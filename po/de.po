@@ -620,15 +620,25 @@ msgstr "Lösche verwaiste Pakete...\\n"
 msgid "No orphan package found\\n"
 msgstr "Keine verwaisten Pakete gefunden\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "Zwischengespeicherte Pakete:"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Zwischengespeicherte Pakete:\\nEs gibt ein altes oder deinstalliertes "
+"Paket\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Soll es jetzt aus dem Cache gelöscht werden? [J/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Zwischengespeicherte Pakete:\\nEs gibt alte und / oder deinstallierte "
+"Pakete\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format

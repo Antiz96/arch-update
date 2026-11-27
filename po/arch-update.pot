@@ -541,14 +541,20 @@ msgstr ""
 msgid "No orphan package found\\n"
 msgstr ""
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+
+#: src/lib/packages_cache.sh:22
+#, sh-format
+msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr ""
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
-msgid "Would you like to remove it from the cache now? [Y/n]"
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
 
 #: src/lib/packages_cache.sh:26
