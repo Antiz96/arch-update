@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.5.1](https://github.com/Antiz96/arch-update/releases/tag/v4.5.1) - 2026-11-27
+
+### Fixes
+
+- *(cache)* Restore message about old and / or uninstalled cached packages ([#871](https://github.com/Antiz96/arch-update/pull/871)) - ([757d725](https://github.com/Antiz96/arch-update/commit/757d725411d24d0dc9d3c4531774efcd7174b321)) by @Antiz96
+
+### Documentation
+
+- *(README)* Fix reproducible builds documentation ([#873](https://github.com/Antiz96/arch-update/pull/873)) - ([0e5732e](https://github.com/Antiz96/arch-update/commit/0e5732e79d396fe63eb44f8dd65b002333a662fb)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translation files ([#872](https://github.com/Antiz96/arch-update/pull/872)) - ([25fa750](https://github.com/Antiz96/arch-update/commit/25fa7508cc8d58f8b32e9f14425601230abf3eec)) by @Antiz96
+
 ## [v4.5.0](https://github.com/Antiz96/arch-update/releases/tag/v4.5.0) - 2026-11-26
 
 ### Features

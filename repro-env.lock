@@ -34,6 +34,14 @@ sha256 = "1d79371ccf3138e3c172dd83b51560687b65ab824c1ad7e9cb41b7857ed9c55f"
 signature = "iNUEABYKAH0WIQQFx3danouXdAf+COadTFqhVCbaCgUCanpCXF8UgAAAAAAuAChpc3N1ZXItZnByQG5vdGF0aW9ucy5vcGVucGdwLmZpZnRoaG9yc2VtYW4ubmV0MDVDNzc3NUE5RThCOTc3NDA3RkUwOEU2OUQ0QzVBQTE1NDI2REEwQQAKCRCdTFqhVCbaCpgpAQDUHBVh5V/jhxkcwSgPWW9fvMuN+8/fK+wO8pNijiKPWgD/YBH5rJFKJMvNJEnGxtFrZYSOx5rz4/GnX6hR59nYHQg="
 
 [[package]]
+name = "glib2"
+version = "2.90.2-1"
+system = "archlinux"
+url = "https://archive.archlinux.org/packages/g/glib2/glib2-2.90.2-1-x86_64.pkg.tar.zst"
+sha256 = "b395f016a950c9f35a3bc149a2b0828d7c7584ca0d07478fe6fa29eb33a9eba5"
+signature = "iHUEABYKAB0WIQSDvIiJNRtd67toQW64rAhgDxCM3wUCawb4fgAKCRC4rAhgDxCM343DAP9l3nP5UjGc6PdV1rYu7cmz74cRMGh36+0ukI2beJIK+wD9E4bI1pfrsB/PCaJDqgTTsmj8ZL4FXwoPGRXjGaUfJgA="
+
+[[package]]
 name = "gpgme"
 version = "2.3.1-1"
 system = "archlinux"
