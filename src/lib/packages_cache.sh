@@ -16,13 +16,13 @@ pacman_cache_total=$(printf '%s\n' "${pacman_cache_list}" | grep -c .)
 
 if [ "${pacman_cache_total}" -gt 0 ]; then
 
-	main_msg "$(eval_gettext "Cached Packages:")"
-	[ -n "${pacman_cache_list}" ] && echo "${pacman_cache_list}"
-	echo
-
 	if [ "${pacman_cache_total}" -eq 1 ]; then
+		main_msg "$(eval_gettext "Cached Packages:\nThere's an old or uninstalled cached package\n")"
+		echo -e "${pacman_cache_list}\n"
 		ask_msg "$(eval_gettext "Would you like to remove it from the cache now? [Y/n]")"
 	else
+		main_msg "$(eval_gettext "Cached Packages:\nThere are old and / or uninstalled cached packages\n")"
+		echo -e "${pacman_cache_list}\n"
 		ask_msg "$(eval_gettext "Would you like to remove them from the cache now? [Y/n]")"
 	fi
 
