@@ -188,7 +188,7 @@ msgstr "Das Löschen wurde durchgeführt\\n"
 #: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
-msgstr "Das Löschen wurde nicht durchgeführt\\n"
+msgstr "Die Löschung wurde noch nicht vorgenommen\\n"
 
 #: src/lib/flatpak_unused_packages.sh:39
 #, sh-format
@@ -389,11 +389,9 @@ msgstr ""
 "Manpage."
 
 #: src/lib/invalid_option.sh:7
-#, fuzzy, sh-format
+#, sh-format
 msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
-msgstr ""
-"${name}: Unzulässige Option -- '${option}'\\n'${name} --help' für weitere "
-"Informationen aufrufen"
+msgstr "Ungültige Option: ${option}\\n'${name} --help' für weitere Informationen versuchen"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
@@ -624,28 +622,32 @@ msgid "Cached Packages:"
 msgstr "Zwischengespeicherte Pakete:"
 
 #: src/lib/packages_cache.sh:23
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "Would you like to remove this old or uninstalled package from the cache now? "
 "[Y/n]"
-msgstr "Sollen sie jetzt aus dem Cache gelöscht werden? [J/n]"
+msgstr ""
+"Soll dieses alte oder deinstallierte Paket jetzt aus dem Cache entfernt werden? "
+"[J/n]"
 
 #: src/lib/packages_cache.sh:25
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "Would you like to remove these old and / or uninstalled packages from the "
 "cache now? [Y/n]"
-msgstr "Sollen sie jetzt aus dem Cache gelöscht werden? [J/n]"
+msgstr ""
+"Sollen diese alten und/oder deinstallierten Pakete jetzt aus dem Cache entfernt "
+"werden? [J/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
 msgid "Removing old cached packages..."
-msgstr "Lösche alte Pakete aus dem Cache..."
+msgstr "Entferne alte Pakete aus dem Cache..."
 
 #: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
 #, sh-format
 msgid "Removing uninstalled cached packages..."
-msgstr "Lösche deinstallierte Pakete aus dem Cache..."
+msgstr "Entferne deinstallierte Pakete aus dem Cache..."
 
 #: src/lib/packages_cache.sh:79
 #, sh-format
@@ -779,7 +781,7 @@ msgstr ""
 #: src/lib/tray.sh:46
 #, sh-format
 msgid "Systray applet binary not found"
-msgstr ""
+msgstr "Systray-Applet-Binärdatei nicht gefunden"
 
 #: src/lib/tray.sh:62
 #, sh-format
