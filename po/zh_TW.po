@@ -134,7 +134,7 @@ msgstr "是否現在移除這些 Flatpak 未使用套件？ [y/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
-#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:31
+#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
@@ -142,7 +142,7 @@ msgstr "Y"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
-#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:31
+#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
@@ -154,8 +154,8 @@ msgid "Removing Flatpak Unused Packages..."
 msgstr "正在移除 Flatpak 未使用套件..."
 
 #: src/lib/flatpak_unused_packages.sh:27 src/lib/orphan_packages.sh:28
-#: src/lib/packages_cache.sh:39 src/lib/packages_cache.sh:49
-#: src/lib/packages_cache.sh:59 src/lib/packages_cache.sh:68
+#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
 #, sh-format
 msgid ""
 "An error has occurred during the removal process\\nThe removal has been "
@@ -168,7 +168,7 @@ msgid "The removal has been applied\\n"
 msgstr "已成功移除\\n"
 
 #: src/lib/flatpak_unused_packages.sh:35 src/lib/orphan_packages.sh:37
-#: src/lib/packages_cache.sh:76
+#: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
 msgstr "移除未套用\\n"
@@ -352,10 +352,8 @@ msgstr ""
 "上手冊。"
 
 #: src/lib/invalid_option.sh:7
-#, sh-format
-msgid ""
-"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
-"information"
+#, fuzzy, sh-format
+msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
 "${name}: 無效選項 --「${option}」\\n請嘗試「${name} --help」以取得更多資訊"
 
@@ -567,38 +565,36 @@ msgstr "正在移除孤立套件...\\n"
 msgid "No orphan package found\\n"
 msgstr "找不到孤立套件\\n"
 
-#: src/lib/packages_cache.sh:20
+#: src/lib/packages_cache.sh:19
 #, sh-format
-msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr "快取套件：\\n有舊的或未安裝的快取套件\\n"
+msgid "Cached Packages:"
+msgstr "快取套件："
 
-#: src/lib/packages_cache.sh:22
-#, sh-format
-msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "是否現在從快取中移除它？ [Y/n]"
-
-#: src/lib/packages_cache.sh:24
-#, sh-format
+#: src/lib/packages_cache.sh:23
+#, fuzzy, sh-format
 msgid ""
-"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
-msgstr "快取套件：\\n有舊的及/或未安裝的快取套件\\n"
-
-#: src/lib/packages_cache.sh:26
-#, sh-format
-msgid "Would you like to remove them from the cache now? [Y/n]"
+"Would you like to remove this old or uninstalled package from the cache now? "
+"[Y/n]"
 msgstr "是否現在從快取中移除它們？ [Y/n]"
 
-#: src/lib/packages_cache.sh:34 src/lib/packages_cache.sh:55
+#: src/lib/packages_cache.sh:25
+#, fuzzy, sh-format
+msgid ""
+"Would you like to remove these old and / or uninstalled packages from the "
+"cache now? [Y/n]"
+msgstr "是否現在從快取中移除它們？ [Y/n]"
+
+#: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
 msgid "Removing old cached packages..."
 msgstr "正在移除舊的快取套件...\\n"
 
-#: src/lib/packages_cache.sh:45 src/lib/packages_cache.sh:64
+#: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
 #, sh-format
 msgid "Removing uninstalled cached packages..."
 msgstr "正在移除未安裝的快取套件...\\n"
 
-#: src/lib/packages_cache.sh:80
+#: src/lib/packages_cache.sh:79
 #, sh-format
 msgid "No old or uninstalled cached package found\\n"
 msgstr "找不到舊的或未安裝的快取套件\\n"
@@ -714,6 +710,11 @@ msgstr "「${tray_desktop_file_autostart}」檔案已存在"
 msgid ""
 "The '${tray_desktop_file_autostart}' file has been created, the ${_name} "
 "systray applet will be automatically started at boot\\n"
+msgstr ""
+
+#: src/lib/tray.sh:46
+#, sh-format
+msgid "Systray applet binary not found"
 msgstr ""
 
 #: src/lib/tray.sh:62
