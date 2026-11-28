@@ -151,7 +151,7 @@ msgstr "¿Desea eliminar ahora estos paquetes Flatpak no utilizados? [s/N]"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
-#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:31
+#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
@@ -159,7 +159,7 @@ msgstr "S"
 
 #: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
 #: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
-#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:31
+#: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "y"
@@ -171,8 +171,8 @@ msgid "Removing Flatpak Unused Packages..."
 msgstr "Eliminando paquetes Flatpak no utilizados..."
 
 #: src/lib/flatpak_unused_packages.sh:27 src/lib/orphan_packages.sh:28
-#: src/lib/packages_cache.sh:39 src/lib/packages_cache.sh:49
-#: src/lib/packages_cache.sh:59 src/lib/packages_cache.sh:68
+#: src/lib/packages_cache.sh:38 src/lib/packages_cache.sh:48
+#: src/lib/packages_cache.sh:58 src/lib/packages_cache.sh:67
 #, sh-format
 msgid ""
 "An error has occurred during the removal process\\nThe removal has been "
@@ -187,7 +187,7 @@ msgid "The removal has been applied\\n"
 msgstr "La eliminación se ha aplicado\\n"
 
 #: src/lib/flatpak_unused_packages.sh:35 src/lib/orphan_packages.sh:37
-#: src/lib/packages_cache.sh:76
+#: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
 msgstr "La eliminación no se ha aplicado\\n"
@@ -393,10 +393,8 @@ msgstr ""
 "${name}.conf(5)."
 
 #: src/lib/invalid_option.sh:7
-#, sh-format
-msgid ""
-"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
-"information"
+#, fuzzy, sh-format
+msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
 "${name}: opción no válida -- «${option}»\\nPruebe «${name} --help» para "
 "obtener más información"
@@ -625,42 +623,36 @@ msgstr "Eliminando paquetes huérfanos...\\n"
 msgid "No orphan package found\\n"
 msgstr "No se ha encontrado ningún paquete huérfano\\n"
 
-#: src/lib/packages_cache.sh:20
+#: src/lib/packages_cache.sh:19
 #, sh-format
-msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr ""
-"Paquetes almacenados en la caché:\\nHay un paquete almacenado en la caché "
-"antiguo o desinstalado\\n"
+msgid "Cached Packages:"
+msgstr "Paquetes almacenados en la caché:"
 
-#: src/lib/packages_cache.sh:22
-#, sh-format
-msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "¿Desea eliminarlo de la caché ahora? [S/n]"
-
-#: src/lib/packages_cache.sh:24
-#, sh-format
+#: src/lib/packages_cache.sh:23
+#, fuzzy, sh-format
 msgid ""
-"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
-msgstr ""
-"Paquetes almacenados en la caché:\\nHay paquetes almacenados en la caché "
-"antiguos y/o desinstalados\\n"
-
-#: src/lib/packages_cache.sh:26
-#, sh-format
-msgid "Would you like to remove them from the cache now? [Y/n]"
+"Would you like to remove this old or uninstalled package from the cache now? "
+"[Y/n]"
 msgstr "¿Desea eliminarlos de la caché ahora? [S/n]"
 
-#: src/lib/packages_cache.sh:34 src/lib/packages_cache.sh:55
+#: src/lib/packages_cache.sh:25
+#, fuzzy, sh-format
+msgid ""
+"Would you like to remove these old and / or uninstalled package from the "
+"cache now? [Y/n]"
+msgstr "¿Desea eliminarlos de la caché ahora? [S/n]"
+
+#: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
 msgid "Removing old cached packages..."
 msgstr "Eliminando paquetes antiguos almacenados en la caché..."
 
-#: src/lib/packages_cache.sh:45 src/lib/packages_cache.sh:64
+#: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
 #, sh-format
 msgid "Removing uninstalled cached packages..."
 msgstr "Eliminando paquetes desinstalados almacenados en la caché..."
 
-#: src/lib/packages_cache.sh:80
+#: src/lib/packages_cache.sh:79
 #, sh-format
 msgid "No old or uninstalled cached package found\\n"
 msgstr "No se han encontrado paquetes antiguos o desinstalados en la caché\\n"
@@ -796,6 +788,11 @@ msgstr ""
 "Se ha creado el archivo '${tray_desktop_file_autostart}', el applet de la "
 "bandeja del sistema ${_name} se iniciará automáticamente durante el "
 "arranque\\n"
+
+#: src/lib/tray.sh:46
+#, sh-format
+msgid "Systray applet binary not found"
+msgstr ""
 
 #: src/lib/tray.sh:62
 #, sh-format
