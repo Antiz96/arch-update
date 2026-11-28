@@ -95,7 +95,7 @@ msgid ""
 "The ${su_cmd} command set for privilege escalation in the ${name}.conf "
 "configuration file is not found\\n"
 msgstr ""
-"Команда ${su_cmd}, установленная для повышения привилегий в конфигурационном "
+"Команда ${su_cmd}, заданная для повышения привилегий в конфигурационном "
 "файле ${name}.conf, не найдена\\n"
 
 #: src/lib/common.sh:192
@@ -104,7 +104,7 @@ msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
 "files in the ${name}.conf configuration file is not found\\n"
 msgstr ""
-"Редактор ${diff_prog}, указанный для просмотра и редактирования различий "
+"Редактор ${diff_prog}, заданный для просмотра и редактирования различий "
 "файлов pacnew в конфигурационном файле ${name}.conf, не найден\\n"
 
 #: src/lib/edit-config.sh:9 src/lib/show-config.sh:9
@@ -179,7 +179,7 @@ msgstr "Удаление выполнено\\n"
 #: src/lib/packages_cache.sh:75
 #, sh-format
 msgid "The removal hasn't been applied\\n"
-msgstr "Удаление не было выполнено\\n"
+msgstr "Удаление не выполнено\\n"
 
 #: src/lib/flatpak_unused_packages.sh:39
 #, sh-format
@@ -189,7 +189,7 @@ msgstr "Неиспользуемых пакетов Flatpak не найдено\
 #: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
-msgstr "Уже запущен экземпляр ${_name}\\n"
+msgstr "Экземпляр ${_name} уже запущен\\n"
 
 #: src/lib/full_upgrade.sh:15
 #, sh-format
@@ -226,8 +226,8 @@ msgid ""
 "An interactive update notifier & applier for Arch Linux that assists you "
 "with important pre / post update tasks."
 msgstr ""
-"Интерактивный помощник по обновлению Arch Linux: уведомляет и помогает "
-"выполнять важные задачи до и после обновления."
+"Интерактивный инструмент проверки и установки обновлений для Arch Linux, "
+"помогающий выполнять важные задачи до и после обновления."
 
 #: src/lib/help.sh:10
 #, sh-format
@@ -240,15 +240,15 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
-"Отобразить список доступных для обновления пакетов и запросить подтверждение "
-"пользователя для продолжения установки."
+"Отображает список пакетов, доступных для обновления, и запрашивает "
+"подтверждение пользователя перед установкой."
 
 #: src/lib/help.sh:12
 #, sh-format
 msgid ""
 "Before performing the update, it offers to display the latest Arch Linux "
 "news."
-msgstr "Перед обновлением предлагает показать последние новости Arch Linux."
+msgstr "Перед выполнением обновления предлагает показать свежие новости Arch Linux."
 
 #: src/lib/help.sh:13
 #, sh-format
@@ -258,9 +258,9 @@ msgid ""
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
 "После обновления проверяет наличие осиротевших и неиспользуемых пакетов, "
-"устаревших кэшированных пакетов, файлов pacnew и pacsave, ожидающих "
-"обновлений ядра, а также служб, требующих перезапуска, и предлагает их "
-"обработать."
+"устаревших кэшированных пакетов, файлов pacnew и pacsave, ожидающего "
+"обновления ядра, а также служб, требующих перезапуска после обновления, и "
+"при их наличии предлагает обработать."
 
 #: src/lib/help.sh:15
 #, sh-format
@@ -275,10 +275,11 @@ msgid ""
 "there are new available updates compared to the last check). Optionally add "
 "the '--enable' argument to enable automated update checks."
 msgstr ""
-"  -c, --check       Проверить наличие обновлений, изменить иконку в "
-"системном трее и отправить уведомление с количеством доступных обновлений "
-"(если появились новые по сравнению с предыдущей проверкой). Добавьте --"
-"enable, чтобы включить автоматическую проверку."
+"  -c, --check       Проверить наличие обновлений, изменить значок в трее и "
+"отправить уведомление рабочего стола с числом доступных обновлений (если "
+"появились новые по сравнению с последней проверкой). При необходимости "
+"укажите аргумент «--enable» для включения автоматической проверки "
+"обновлений."
 
 #: src/lib/help.sh:17
 #, sh-format
@@ -288,7 +289,7 @@ msgstr "  -l, --list        Показать список ожидающих о�
 #: src/lib/help.sh:18
 #, sh-format
 msgid "  -d, --devel       Include AUR development packages updates"
-msgstr "  -d, --devel       Включить обновления AUR-пакетов разработки"
+msgstr "  -d, --devel       Включить обновления пакетов разработки из AUR"
 
 #: src/lib/help.sh:19
 #, sh-format
@@ -296,8 +297,8 @@ msgid ""
 "  -n, --news [Num]  Display latest Arch news, you can optionally specify the "
 "number of Arch news to display with '--news [Num]' (e.g. '--news 10')"
 msgstr ""
-"  -n, --news [Число]  Показать последние новости Arch. Можно указать "
-"количество новостей, например --news 10"
+"  -n, --news [Число]  Показать последние новости Arch; при необходимости "
+"число новостей можно задать через «--news [Число]» (например, «--news 10»)"
 
 #: src/lib/help.sh:20
 #, sh-format
@@ -317,8 +318,9 @@ msgid ""
 "configuration file, you can optionally pass the '--force' argument to "
 "overwrite any existing '${name}.conf' configuration file"
 msgstr ""
-"  --gen-config      Создать пример конфигурационного файла «${name}.conf». "
-"Используйте --force для перезаписи существующего файла"
+"  --gen-config      Создать пример конфигурационного файла «${name}.conf» по "
+"умолчанию; при необходимости можно передать аргумент «--force» для "
+"перезаписи существующего файла «${name}.conf»"
 
 #: src/lib/help.sh:23
 #, sh-format
@@ -326,14 +328,17 @@ msgid ""
 "  --show-config     Display the '${name}.conf' configuration file currently "
 "used (if it exists)"
 msgstr ""
-"  --show-config     Показать текущий конфигурационный файл «${name}.conf»"
+"  --show-config     Показать используемый конфигурационный файл «${name}.conf» "
+"(если он существует)"
 
 #: src/lib/help.sh:24
 #, sh-format
 msgid ""
 "  --edit-config     Edit the '${name}.conf' configuration file currently "
 "used (if it exists)"
-msgstr "  --edit-config     Редактировать текущий файл «${name}.conf»"
+msgstr ""
+"  --edit-config     Отредактировать используемый конфигурационный файл "
+"«${name}.conf» (если он существует)"
 
 #: src/lib/help.sh:25
 #, sh-format
@@ -341,8 +346,9 @@ msgid ""
 "  --tray            Launch the ${_name} systray applet, you can optionally "
 "add the '--enable' argument to start it automatically at boot"
 msgstr ""
-"  --tray            Запустить апплет ${_name} в системном трее. Добавьте --"
-"enable, чтобы автоматически запускать его при загрузке"
+"  --tray            Запустить апплет системного трея ${_name}; при "
+"необходимости можно добавить аргумент «--enable» для автозапуска при "
+"загрузке системы"
 
 #: src/lib/help.sh:26
 #, sh-format
@@ -352,12 +358,12 @@ msgstr "  -h, --help        Показать эту справку и выйти
 #: src/lib/help.sh:27
 #, sh-format
 msgid "  -V, --version     Display version information and exit"
-msgstr "  -V, --version     Показать версию и выйти"
+msgstr "  -V, --version     Показать информацию о версии и выйти"
 
 #: src/lib/help.sh:29
 #, sh-format
 msgid "For more information, see the ${name}(1) man page."
-msgstr "Подробнее — в man-странице ${name}(1)."
+msgstr "Подробности приведены на man-странице ${name}(1)."
 
 #: src/lib/help.sh:30
 #, sh-format
@@ -365,15 +371,14 @@ msgid ""
 "Certain options can be enabled, disabled or modified via the ${name}.conf "
 "configuration file, see the ${name}.conf(5) man page."
 msgstr ""
-"Некоторые опции можно настроить в файле ${name}.conf — см. man-страницу "
-"${name}.conf(5)."
+"Некоторые параметры можно включать, отключать или изменять в "
+"конфигурационном файле ${name}.conf; см. man-страницу ${name}.conf(5)."
 
 #: src/lib/invalid_option.sh:7
 #, fuzzy, sh-format
 msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
-"${name}: неверная опция — «${option}»\\nПопробуйте «${name} --help» для "
-"получения справки"
+"Неверная опция: ${option}\\nДля получения справки выполните «${name} --help»"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
@@ -381,13 +386,13 @@ msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
-"Требуется перезагрузка:\\nВ системе ожидается обновление ядра — необходимо "
-"перезагрузиться\\n"
+"Требуется перезагрузка:\\nВ системе ожидает применения обновление ядра, для "
+"которого необходима перезагрузка\\n"
 
 #: src/lib/kernel_reboot.sh:11
 #, sh-format
 msgid "Would you like to reboot now? [y/N]"
-msgstr "Перезагрузиться сейчас? [y/N]"
+msgstr "Выполнить перезагрузку сейчас? [y/N]"
 
 #: src/lib/kernel_reboot.sh:24
 #, sh-format
@@ -399,7 +404,8 @@ msgstr "Перезагрузка через ${sec}...\\r"
 msgid ""
 "An error has occurred during the reboot process\\nThe reboot has been "
 "aborted\\n"
-msgstr "Во время перезагрузки произошла ошибка\\nПерезагрузка прервана\\n"
+msgstr ""
+"Во время перезагрузки произошла ошибка\\nПерезагрузка прервана\\n"
 
 #: src/lib/kernel_reboot.sh:38
 #, sh-format
@@ -407,8 +413,8 @@ msgid ""
 "The reboot hasn't been performed\\nPlease, consider rebooting to finalize "
 "the pending kernel update\\n"
 msgstr ""
-"Перезагрузка не выполнена\\nРекомендуется перезагрузиться для завершения "
-"обновления ядра\\n"
+"Перезагрузка не выполнена\\nВыполните перезагрузку, чтобы завершить "
+"обновление ядра\\n"
 
 #: src/lib/kernel_reboot.sh:42
 #, sh-format
@@ -418,7 +424,7 @@ msgstr "Ожидающих обновлений ядра не найдено\\n"
 #: src/lib/list_news.sh:7
 #, sh-format
 msgid "Looking for recent Arch News..."
-msgstr "Поиск последних новостей Arch..."
+msgstr "Поиск свежих новостей Arch..."
 
 #: src/lib/list_news.sh:13
 #, sh-format
@@ -427,8 +433,9 @@ msgid ""
 "\\nPlease, look for any recent news at https://archlinux.org before updating "
 "your system"
 msgstr ""
-"Не удалось получить последние новости Arch (ошибка HTTP или тайм-аут)"
-"\\nПроверьте новости на https://archlinux.org перед обновлением системы"
+"Не удалось получить свежие новости Arch (ошибка HTTP или превышено время "
+"ожидания ответа)\\nПеред обновлением системы проверьте новости на "
+"https://archlinux.org"
 
 #: src/lib/list_news.sh:23
 #, sh-format
@@ -443,7 +450,7 @@ msgstr "Новости Arch:"
 #: src/lib/list_news.sh:42
 #, sh-format
 msgid "[NEW]"
-msgstr "[НОВОЕ]"
+msgstr "[НОВЫЕ]"
 
 #: src/lib/list_news.sh:55
 #, sh-format
@@ -451,8 +458,8 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to quit:"
 msgstr ""
-"Выберите новости для чтения (например, 1 3 5), 0 — чтобы прочитать все, или "
-"нажмите Enter для выхода:"
+"Выберите номера новостей для чтения (например, 1 3 5), введите 0, чтобы "
+"прочитать все, или нажмите «Enter» для выхода:"
 
 #: src/lib/list_news.sh:57
 #, sh-format
@@ -460,13 +467,13 @@ msgid ""
 "Select the news to read (e.g. 1 3 5), select 0 to read them all or press "
 "\"enter\" to proceed with update:"
 msgstr ""
-"Выберите новости для чтения (например, 1 3 5), 0 — все, или нажмите Enter, "
-"чтобы продолжить обновление:"
+"Выберите номера новостей для чтения (например, 1 3 5), введите 0, чтобы "
+"прочитать все, или нажмите «Enter», чтобы продолжить обновление:"
 
 #: src/lib/list_news.sh:85 src/lib/restart_services.sh:39
 #, sh-format
 msgid "Invalid input"
-msgstr "Неверный ввод"
+msgstr "Некорректный ввод"
 
 #: src/lib/list_news.sh:103
 #, sh-format
@@ -475,8 +482,9 @@ msgid ""
 "timeout)\\nPlease, read the selected Arch News at ${news_url} before "
 "updating your system"
 msgstr ""
-"Не удалось получить выбранные новости (ошибка HTTP или тайм-аут)"
-"\\nПрочитайте их перед обновлением по адресу ${news_url}"
+"Не удалось получить выбранные новости Arch (ошибка HTTP или превышено время "
+"ожидания ответа)\\nПеред обновлением системы прочитайте их по адресу "
+"${news_url}"
 
 #: src/lib/list_news.sh:108
 #, sh-format
@@ -511,17 +519,17 @@ msgstr "Пакеты:"
 #: src/lib/list_packages.sh:50
 #, sh-format
 msgid "AUR Packages:"
-msgstr "AUR-пакеты:"
+msgstr "Пакеты AUR:"
 
 #: src/lib/list_packages.sh:60
 #, sh-format
 msgid "Flatpak Packages:"
-msgstr "Flatpak-пакеты:"
+msgstr "Пакеты Flatpak:"
 
 #: src/lib/list_packages.sh:67
 #, sh-format
 msgid "No update available\\n"
-msgstr "Обновлений нет\\n"
+msgstr "Доступных обновлений нет\\n"
 
 #: src/lib/list_packages.sh:79
 #, sh-format
@@ -531,7 +539,7 @@ msgstr "Продолжить обновление? [Y/n]"
 #: src/lib/list_packages.sh:90
 #, sh-format
 msgid "The update has been aborted\\n"
-msgstr "Обновление отменено\\n"
+msgstr "Обновление прервано\\n"
 
 #: src/lib/notification.sh:16 src/lib/notification.sh:19
 #: src/tray/src/tray.rs:76 src/tray/src/tray.rs:125
@@ -554,12 +562,12 @@ msgstr "Закрыть"
 #: src/lib/notification.sh:23 src/lib/notification.sh:25
 #, sh-format
 msgid "${update_number} updates available"
-msgstr "Доступно ${update_number} обновлений"
+msgstr "Доступно обновлений: ${update_number}"
 
 #: src/lib/notification.sh:41
 #, sh-format
 msgid "${_name} desktop file not found"
-msgstr "Файл рабочего стола ${_name} не найден"
+msgstr ".desktop-файл ${_name} не найден"
 
 #: src/lib/orphan_packages.sh:10
 #, sh-format
@@ -602,19 +610,21 @@ msgstr "Кэшированные пакеты:"
 msgid ""
 "Would you like to remove this old or uninstalled package from the cache now? "
 "[Y/n]"
-msgstr "Удалить их из кэша сейчас? [Y/n]"
+msgstr ""
+"Удалить этот старый или неустановленный пакет из кэша сейчас? [Y/n]"
 
 #: src/lib/packages_cache.sh:25
 #, fuzzy, sh-format
 msgid ""
 "Would you like to remove these old and / or uninstalled packages from the "
 "cache now? [Y/n]"
-msgstr "Удалить их из кэша сейчас? [Y/n]"
+msgstr ""
+"Удалить эти старые и/или неустановленные пакеты из кэша сейчас? [Y/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
 msgid "Removing old cached packages..."
-msgstr "Удаление устаревших кэшированных пакетов..."
+msgstr "Удаление старых кэшированных пакетов..."
 
 #: src/lib/packages_cache.sh:44 src/lib/packages_cache.sh:63
 #, sh-format
@@ -649,12 +659,12 @@ msgstr "Обработка файлов pacnew...\\n"
 #: src/lib/pacnew_files.sh:28
 #, sh-format
 msgid "The pacnew file(s) processing has been applied\\n"
-msgstr "Обработка файлов pacnew выполнена\\n"
+msgstr "Обработка файлов pacnew применена\\n"
 
 #: src/lib/pacnew_files.sh:31
 #, sh-format
 msgid "An error occurred during the pacnew file(s) processing\\n"
-msgstr "Произошла ошибка при обработке файлов pacnew\\n"
+msgstr "При обработке файлов pacnew произошла ошибка\\n"
 
 #: src/lib/pacnew_files.sh:37
 #, sh-format
@@ -668,7 +678,7 @@ msgstr ""
 #: src/lib/pacnew_files.sh:41
 #, sh-format
 msgid "No pacnew file found\\n"
-msgstr "Файлов pacnew не найдено\\n"
+msgstr "Файлы pacnew не найдены\\n"
 
 #: src/lib/restart_services.sh:13
 #, sh-format
@@ -686,8 +696,8 @@ msgid ""
 "Select the service(s) to restart (e.g. 1 3 5), select 0 to restart them all "
 "or press \"enter\" to continue without restarting the service(s):"
 msgstr ""
-"Выберите службы для перезапуска (например, 1 3 5), 0 — все, или нажмите "
-"Enter, чтобы продолжить без перезапуска:"
+"Выберите службы для перезапуска (например, 1 3 5), введите 0 для "
+"перезапуска всех или нажмите «Enter», чтобы продолжить без перезапуска:"
 
 #: src/lib/restart_services.sh:48 src/lib/restart_services.sh:75
 #, sh-format
@@ -749,7 +759,7 @@ msgstr ""
 #: src/lib/tray.sh:46
 #, sh-format
 msgid "Systray applet binary not found"
-msgstr ""
+msgstr "Исполняемый файл апплета системного трея не найден"
 
 #: src/lib/tray.sh:62
 #, sh-format
