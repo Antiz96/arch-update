@@ -6,7 +6,7 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.5.0\n"
+"Project-Id-Version: Arch-Update 4.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-09-17 10:12+0200\n"
@@ -615,15 +615,23 @@ msgstr "Bezig met verwijderen van onteigende pakketten…\\n"
 msgid "No orphan package found\\n"
 msgstr "Er zijn geen onteigende pakketten aangetroffen\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "Pakketten in cache:"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Pakketten in cache:\\nEr staat een oud of verwijderd pakket in de cache\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Wil je dit pakket uit de cache verwijderen? [J/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Pakketten in cache:\\nEr staan oude of verwijderde pakketten in de cache\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format

@@ -7,7 +7,7 @@
 # taotieren <admin@taotieren.com>, 2026
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.5.0\n"
+"Project-Id-Version: Arch-Update 4.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-09-29 12:00+0800\n"
@@ -569,15 +569,21 @@ msgstr "正在移除孤立包...\\n"
 msgid "No orphan package found\\n"
 msgstr "未找到孤立包\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "缓存的包："
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr "缓存的包：\\n存在旧的或未安装的缓存包\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "是否现在从缓存中移除它？[Y/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr "缓存的包：\\n存在旧的及 / 或卸载的缓存包\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format

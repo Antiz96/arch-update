@@ -6,7 +6,7 @@
 # Robin Candau <robincandau@mailbox.org>, 2026
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.5.0\n"
+"Project-Id-Version: Arch-Update 4.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-03-25 09:30+0100\n"
@@ -624,15 +624,25 @@ msgstr "Suppression des paquets orphelins...\\n"
 msgid "No orphan package found\\n"
 msgstr "Aucun paquet orphelin n'a été trouvé\\n"
 
-#: src/lib/packages_cache.sh:19
+#: src/lib/packages_cache.sh:20
 #, sh-format
-msgid "Cached Packages:"
-msgstr "Paquets mis en cache :"
+msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
+msgstr ""
+"Paquets mis en cache :\\nIl y a un paquet ancien ou désinstallé mis en "
+"cache\\n"
 
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:22
 #, sh-format
 msgid "Would you like to remove it from the cache now? [Y/n]"
 msgstr "Voulez-vous le supprimer du cache maintenant ? [O/n]"
+
+#: src/lib/packages_cache.sh:24
+#, sh-format
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+msgstr ""
+"Paquets mis en cache :\\nIl y a plusieurs paquets anciens et / ou "
+"désinstallés mis en cache\\n"
 
 #: src/lib/packages_cache.sh:26
 #, sh-format
