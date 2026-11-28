@@ -627,7 +627,7 @@ msgstr "გნებავთ მათი წაშლა კეშიდან
 #: src/lib/packages_cache.sh:25
 #, fuzzy, sh-format
 msgid ""
-"Would you like to remove these old and / or uninstalled package from the "
+"Would you like to remove these old and / or uninstalled packages from the "
 "cache now? [Y/n]"
 msgstr "გნებავთ მათი წაშლა კეშიდან ახლავე? [Y/n]"
 

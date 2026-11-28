@@ -638,7 +638,7 @@ msgstr "Voleu eliminar-los de la memòria cau ara? [S/n]"
 #: src/lib/packages_cache.sh:25
 #, fuzzy, sh-format
 msgid ""
-"Would you like to remove these old and / or uninstalled package from the "
+"Would you like to remove these old and / or uninstalled packages from the "
 "cache now? [Y/n]"
 msgstr "Voleu eliminar-los de la memòria cau ara? [S/n]"
 

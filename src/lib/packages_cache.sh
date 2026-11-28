@@ -22,7 +22,7 @@ if [ "${pacman_cache_total}" -gt 0 ]; then
 	if [ "${pacman_cache_total}" -eq 1 ]; then
 		ask_msg "$(eval_gettext "Would you like to remove this old or uninstalled package from the cache now? [Y/n]")"
 	else
-		ask_msg "$(eval_gettext "Would you like to remove these old and / or uninstalled package from the cache now? [Y/n]")"
+		ask_msg "$(eval_gettext "Would you like to remove these old and / or uninstalled packages from the cache now? [Y/n]")"
 	fi
 
 	# shellcheck disable=SC2154
