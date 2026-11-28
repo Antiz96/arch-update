@@ -16,14 +16,13 @@ pacman_cache_total=$(printf '%s\n' "${pacman_cache_list}" | grep -c .)
 
 if [ "${pacman_cache_total}" -gt 0 ]; then
 
+	main_msg "$(eval_gettext "Cached Packages:")"
+	echo -e "${pacman_cache_list}\n"
+
 	if [ "${pacman_cache_total}" -eq 1 ]; then
-		main_msg "$(eval_gettext "Cached Packages:\nThere's an old or uninstalled cached package\n")"
-		echo -e "${pacman_cache_list}\n"
-		ask_msg "$(eval_gettext "Would you like to remove it from the cache now? [Y/n]")"
+		ask_msg "$(eval_gettext "Would you like to remove this old or uninstalled package from the cache now? [Y/n]")"
 	else
-		main_msg "$(eval_gettext "Cached Packages:\nThere are old and / or uninstalled cached packages\n")"
-		echo -e "${pacman_cache_list}\n"
-		ask_msg "$(eval_gettext "Would you like to remove them from the cache now? [Y/n]")"
+		ask_msg "$(eval_gettext "Would you like to remove these old and / or uninstalled packages from the cache now? [Y/n]")"
 	fi
 
 	# shellcheck disable=SC2154
