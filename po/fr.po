@@ -391,10 +391,10 @@ msgstr ""
 "${name}.conf(5)."
 
 #: src/lib/invalid_option.sh:7
-#, fuzzy, sh-format
+#, sh-format
 msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
-"${name}: option invalide -- '${option}'\\nEssayez '${name} --help' pour plus "
+"Option invalide: ${option}\\nEssayez '${name} --help' pour plus "
 "d'informations"
 
 #: src/lib/kernel_reboot.sh:10
@@ -628,18 +628,22 @@ msgid "Cached Packages:"
 msgstr "Paquets mis en cache :"
 
 #: src/lib/packages_cache.sh:23
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "Would you like to remove this old or uninstalled package from the cache now? "
 "[Y/n]"
-msgstr "Voulez-vous les supprimer du cache maintenant ? [O/n]"
+msgstr ""
+"Voulez-vous supprimer ce paquet ancien ou désinstallé du cache maintenant ? "
+"[O/n]"
 
 #: src/lib/packages_cache.sh:25
-#, fuzzy, sh-format
+#, sh-format
 msgid ""
 "Would you like to remove these old and / or uninstalled packages from the "
 "cache now? [Y/n]"
-msgstr "Voulez-vous les supprimer du cache maintenant ? [O/n]"
+msgstr ""
+"Voulez-vous supprimer ces paquets anciens ou désinstallés du cache "
+"maintenant ? [O/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
@@ -790,7 +794,7 @@ msgstr ""
 #: src/lib/tray.sh:46
 #, sh-format
 msgid "Systray applet binary not found"
-msgstr ""
+msgstr "Le binaire de l'applet systray n'a pas été trouvé"
 
 #: src/lib/tray.sh:62
 #, sh-format
