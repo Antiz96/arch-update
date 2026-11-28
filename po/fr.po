@@ -632,14 +632,18 @@ msgstr "Paquets mis en cache :"
 msgid ""
 "Would you like to remove this old or uninstalled package from the cache now? "
 "[Y/n]"
-msgstr "Voulez-vous supprimer ce paquet ancien ou désinstallé du cache maintenant ? [O/n]"
+msgstr ""
+"Voulez-vous supprimer ce paquet ancien ou désinstallé du cache maintenant ? "
+"[O/n]"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
 msgid ""
 "Would you like to remove these old and / or uninstalled packages from the "
 "cache now? [Y/n]"
-msgstr "Voulez-vous supprimer ces paquets anciens ou désinstallés du cache maintenant ? [O/n]"
+msgstr ""
+"Voulez-vous supprimer ces paquets anciens ou désinstallés du cache "
+"maintenant ? [O/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
