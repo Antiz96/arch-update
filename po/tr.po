@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2026 aliavkaya <aliavkaya@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.4.1\n"
+"Project-Id-Version: Arch-Update 4.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-08-03 05:35+0300\n"
@@ -39,6 +39,21 @@ msgstr "ALHP kontrolü sırasında hata:"
 #, sh-format
 msgid "Automated update checks have been enabled"
 msgstr "Otomatik güncelleme kontrolleri etkinleştirildi"
+
+#: src/lib/check_updates.sh:17
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr "Paket güncellemeleri alınamadı (istek zaman aşımı)\\n"
+
+#: src/lib/check_updates.sh:34
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr "AUR Paketi güncellemeleri alınamadı (istek zaman aşımı)\\n"
+
+#: src/lib/check_updates.sh:48
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr "Flatpak paket güncellemeleri alınamadı (istek zaman aşımı)\\n"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -128,16 +143,16 @@ msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr ""
 "Kullanılmayan bu Flatpak paketlerini şimdi kaldırmak ister misiniz? [e/H]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "E"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -175,17 +190,17 @@ msgstr "Kaldırma işlemi uygulanmadı\\n"
 msgid "No Flatpak unused package found\\n"
 msgstr "Kullanılmayan Flatpak paketi bulunamadı\\n"
 
-#: src/lib/full_upgrade.sh:13
+#: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Zaten çalışan bir ${_name} örneği var\\n"
 
-#: src/lib/full_upgrade.sh:14
+#: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
 msgstr "Yine de devam edilsin mi? [e/H]"
 
-#: src/lib/full_upgrade.sh:23
+#: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr "İşlem iptal edildi\\n"
@@ -371,10 +386,8 @@ msgstr ""
 "${name}.conf(5) kılavuz sayfasına bakın."
 
 #: src/lib/invalid_option.sh:7
-#, sh-format
-msgid ""
-"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
-"information"
+#, fuzzy, sh-format
+msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
 "${name}: geçersiz seçenek -- '${option}'\\nDaha fazla bilgi için '${name} --"
 "help' komutunu deneyin"
@@ -511,47 +524,32 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "Güncellemeler aranıyor...\\n"
 
-#: src/lib/list_packages.sh:16
-#, sh-format
-msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr "Paket güncellemeleri alınamadı (istek zaman aşımı)\\n"
-
-#: src/lib/list_packages.sh:32
-#, sh-format
-msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr "AUR Paketi güncellemeleri alınamadı (istek zaman aşımı)\\n"
-
-#: src/lib/list_packages.sh:45
-#, sh-format
-msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr "Flatpak paket güncellemeleri alınamadı (istek zaman aşımı)\\n"
-
-#: src/lib/list_packages.sh:115
+#: src/lib/list_packages.sh:40
 #, sh-format
 msgid "Packages:"
 msgstr "Paketler:"
 
-#: src/lib/list_packages.sh:127
+#: src/lib/list_packages.sh:50
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR Paketleri:"
 
-#: src/lib/list_packages.sh:139
+#: src/lib/list_packages.sh:60
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak Paketleri:"
 
-#: src/lib/list_packages.sh:150
+#: src/lib/list_packages.sh:67
 #, sh-format
 msgid "No update available\\n"
 msgstr "Uygun güncelleme yok\\n"
 
-#: src/lib/list_packages.sh:162
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Güncellemeye devam edilsin mi? [E/h]"
 
-#: src/lib/list_packages.sh:173
+#: src/lib/list_packages.sh:90
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Güncelleme iptal edildi\\n"
@@ -617,29 +615,23 @@ msgstr "Yetim Paketler Kaldırılıyor...\\n"
 msgid "No orphan package found\\n"
 msgstr "Yetim paket bulunamadı\\n"
 
-#: src/lib/packages_cache.sh:21
+#: src/lib/packages_cache.sh:19
 #, sh-format
-msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr ""
-"Önbelleğe Alınmış Paketler:\\nÖnbellekte eski veya kaldırılmış bir paket "
-"var\\n"
+msgid "Cached Packages:"
+msgstr "Önbelleğe Alınmış Paketler:"
 
-#: src/lib/packages_cache.sh:22
-#, sh-format
-msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Şimdi önbellekten silmek ister misiniz? [E/h]"
-
-#: src/lib/packages_cache.sh:24
-#, sh-format
+#: src/lib/packages_cache.sh:23
+#, fuzzy, sh-format
 msgid ""
-"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
-msgstr ""
-"Önbelleğe Alınmış Paketler:\\nÖnbellekte eski ve/veya kaldırılmış paketler "
-"var\\n"
+"Would you like to remove this old or uninstalled package from the cache now? "
+"[Y/n]"
+msgstr "Bu paketleri şimdi önbellekten silmek ister misiniz? [E/h]"
 
 #: src/lib/packages_cache.sh:25
-#, sh-format
-msgid "Would you like to remove them from the cache now? [Y/n]"
+#, fuzzy, sh-format
+msgid ""
+"Would you like to remove these old and / or uninstalled packages from the "
+"cache now? [Y/n]"
 msgstr "Bu paketleri şimdi önbellekten silmek ister misiniz? [E/h]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
@@ -782,6 +774,11 @@ msgid ""
 msgstr ""
 "'${tray_desktop_file_autostart}' dosyası oluşturuldu, ${_name} sistem "
 "tepsisi uygulaması açılışta otomatik olarak başlatılacak\\n"
+
+#: src/lib/tray.sh:46
+#, sh-format
+msgid "Systray applet binary not found"
+msgstr ""
 
 #: src/lib/tray.sh:62
 #, sh-format

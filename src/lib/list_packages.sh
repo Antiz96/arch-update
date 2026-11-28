@@ -6,87 +6,8 @@
 
 info_msg "$(eval_gettext "Looking for updates...\n")"
 
-# shellcheck disable=SC2154
-checkupdates_db_tmpdir=$(mktemp -d "${checkupdates_db_tmpdir_prefix}XXXXX")
-# shellcheck disable=SC2154
-packages=$(CHECKUPDATES_DB="${checkupdates_db_tmpdir}" timeout "${update_check_timeout}" checkupdates --nocolor)
-packages_exit_code=$?
-
-if [ "${packages_exit_code}" -eq 124 ]; then
-	warning_msg "$(eval_gettext "Unable to retrieve Packages updates (request timeout)\n")"
-	unset packages
-elif [ -n "${no_version}" ]; then
-	packages=$(echo "${packages}" | awk '{print $1}')
-fi
-
-if [ -n "${aur_helper}" ]; then
-	# "< /dev/null" and "2 > /dev/null" needed for pikaur (which is not completely script friendly)
-	# The former because it assumes an interactive TTY environment (causing `timeout` to behave unexpectedly) 
-	# The latter because it outputs some descriptive string in stderr when looking for updates with -Qua
-	# shellcheck disable=SC2154
-	unformatted_aur_packages=$(LC_ALL=C timeout "${update_check_timeout}" "${aur_helper}" --color never "${devel_flag[@]}" -Qua < /dev/null 2> /dev/null)
-	unformatted_aur_packages_exit_code=$?
-	aur_packages=$(echo "${unformatted_aur_packages}" | sed 's/^ *//' | sed 's/ \+/ /g' | grep -vw "\[ignored\]$")
-
-	if [ "${unformatted_aur_packages_exit_code}" -eq 124 ]; then
-		warning_msg "$(eval_gettext "Unable to retrieve AUR Packages updates (request timeout)\n")"
-		unset aur_packages
-	elif [ -n "${no_version}" ]; then
-		aur_packages=$(echo "${aur_packages}" | awk '{print $1}')
-	fi
-fi
-
-if [ -n "${flatpak_support}" ]; then
-	# `--foreground` because Flatpak requires interactive authentications through Polkit's `pkttyagent` if it is executed from a TTY / SSH environment
-	timeout --foreground "${update_check_timeout}" flatpak update --appstream > /dev/null
-	flatpak_metadata_update_exit_code=$?
-
-	if [ "${flatpak_metadata_update_exit_code}" -eq 124 ]; then
-		warning_msg "$(eval_gettext "Unable to retrieve Flatpak packages updates (request timeout)\n")"
-	else
-		mapfile -t flatpak_mask < <(flatpak mask | tr -d ' ')
-
-		if [ "${#flatpak_mask[@]}" -gt 0 ]; then
-			mapfile -t flatpak_packages < <(flatpak remote-ls --updates --cached --columns=application,version | tr -s '\t' ' ')
-
-			declare -A app_names
-			while read -r flatpak_id flatpak_name; do
-				app_names["${flatpak_id}"]="${flatpak_name}"
-			done < <(flatpak list --columns=application,name)
-
-			mapfile -t flatpak_packages < <(
-				for packages in "${flatpak_packages[@]}"; do
-					read -r app_id app_version <<< "${packages}"
-
-					for pattern in "${flatpak_mask[@]}"; do
-						# shellcheck disable=SC2053
-						[[ "${app_id}" == ${pattern} ]] && continue 2
-					done
-
-					app_name="${app_names[${app_id}]:-${app_id}}"
-
-					if [ -z "${no_version}" ]; then
-						echo "${app_name} ${app_version}"
-					else
-						echo "${app_name}"
-					fi
-				done
-			)
-		else
-			if [ -z "${no_version}" ]; then
-				mapfile -t flatpak_packages < <(flatpak remote-ls --updates --cached --columns=name,version | tr -s '\t' ' ')
-			else
-				mapfile -t flatpak_packages < <(flatpak remote-ls --updates --cached --columns=name)
-			fi
-		fi
-	fi
-fi
-
-# shellcheck disable=SC2154
-true > "${statedir}/last_updates_check"
-true > "${statedir}/last_updates_check_packages"
-true > "${statedir}/last_updates_check_aur"
-true > "${statedir}/last_updates_check_flatpak"
+# shellcheck source=src/lib/check_updates.sh disable=SC2154
+source "${libdir}/check_updates.sh"
 
 # Re-color update list output with version diff highlighting
 color_update_list() {
@@ -111,41 +32,37 @@ color_update_list() {
 	done
 }
 
-if [ -n "${packages}" ]; then
+packages_updates=$(cat "${statedir}/last_updates_check_packages")
+aur_packages_updates=$(cat "${statedir}/last_updates_check_aur")
+flatpak_packages_updates=$(cat "${statedir}/last_updates_check_flatpak")
+
+if [ -n "${packages_updates}" ]; then
 	main_msg "$(eval_gettext "Packages:")"
 	if [ -n "${no_color}" ] || [ -n "${no_version}" ]; then
-		echo "${packages}" | column -t
+		echo "${packages_updates}" | column -t
 	else
-		echo "${packages}" | color_update_list | column -t
+		echo "${packages_updates}" | color_update_list | column -t
 	fi
 	echo
-	echo "${packages}" >> "${statedir}/last_updates_check"
-	echo "${packages}" > "${statedir}/last_updates_check_packages"
 fi
 
-if [ -n "${aur_packages}" ]; then
+if [ -n "${aur_packages_updates}" ]; then
 	main_msg "$(eval_gettext "AUR Packages:")"
 	if [ -n "${no_color}" ] || [ -n "${no_version}" ]; then
-		echo "${aur_packages}" | column -t
+		echo "${aur_packages_updates}" | column -t
 	else
-		echo "${aur_packages}" | color_update_list | column -t
+		echo "${aur_packages_updates}" | color_update_list | column -t
 	fi
 	echo
-	echo "${aur_packages}" >> "${statedir}/last_updates_check"
-	echo "${aur_packages}" > "${statedir}/last_updates_check_aur"
 fi
 
-if [ "${#flatpak_packages[@]}" -gt 0 ]; then
+if [ -n "${flatpak_packages_updates}" ]; then
 	main_msg "$(eval_gettext "Flatpak Packages:")"
-	printf "%s\n" "${flatpak_packages[@]}" | column -t
+	echo "${flatpak_packages_updates}" | column -t
 	echo
-	printf "%s\n" "${flatpak_packages[@]}" >> "${statedir}/last_updates_check"
-	printf "%s\n" "${flatpak_packages[@]}" > "${statedir}/last_updates_check_flatpak"
 fi
 
-date "+%s%n%F %T" > "${statedir}/last_updates_check_time"
-
-if [ -z "${packages}" ] && [ -z "${aur_packages}" ] && [ "${#flatpak_packages[@]}" -eq 0 ]; then
+if [ -z "${packages_updates}" ] && [ -z "${aur_packages_updates}" ] && [ -z "${flatpak_packages_updates}" ]; then
 	icon_up-to-date
 	info_msg "$(eval_gettext "No update available\n")"
 

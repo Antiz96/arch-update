@@ -6,17 +6,17 @@
 # Luna Jernberg <droidbittin@gmail.com>, 2024, 2025, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.4.1\n"
+"Project-Id-Version: Arch-Update 4.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-09-16 23:22+0200\n"
+"PO-Revision-Date: 2026-11-28 15:01+0100\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: \n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
@@ -37,6 +37,24 @@ msgstr "Fel under ALHP kontroll:"
 #, sh-format
 msgid "Automated update checks have been enabled"
 msgstr "Automatiska uppdateringskontroller har aktiverats"
+
+#: src/lib/check_updates.sh:17
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr "Det gick inte att hämta paketuppdateringar (timeout för begäran)\\n"
+
+#: src/lib/check_updates.sh:34
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"Det gick inte att hämta uppdateringar av AUR-paket (timeout för begäran)\\n"
+
+#: src/lib/check_updates.sh:48
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"Det gick inte att hämta uppdateringar av Flatpak-paket (timeout för begäran)"
+"\\n"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -127,16 +145,16 @@ msgstr "Vill du ta bort detta oanvända Flatpak-paket nu? [j/N]"
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Vill du ta bort dessa Flatpak oanvända paket nu? [j/N]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -175,17 +193,17 @@ msgstr "Borttagningen har inte tillämpats\\n"
 msgid "No Flatpak unused package found\\n"
 msgstr "Inget oanvänt Flatpak-paket hittades\\n"
 
-#: src/lib/full_upgrade.sh:13
+#: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Det finns redan en pågående instans av ${_name}\\n"
 
-#: src/lib/full_upgrade.sh:14
+#: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
 msgstr "Fortsätt ändå [j/N]"
 
-#: src/lib/full_upgrade.sh:23
+#: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr "Utförandet har avbrutits\\n"
@@ -368,12 +386,9 @@ msgstr ""
 
 #: src/lib/invalid_option.sh:7
 #, sh-format
-msgid ""
-"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
-"information"
+msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
-"${name}: ogiltigt alternativ -- '${option}'\\nTesta '${name} --help' för mer "
-"information"
+"Ogiltigt alternativ: ${option}\\nTesta '${name} --help' för mer information"
 
 #: src/lib/kernel_reboot.sh:10
 #, sh-format
@@ -506,50 +521,32 @@ msgstr "Webbadress:"
 msgid "Looking for updates...\\n"
 msgstr "Letar efter uppdateringar...\\n"
 
-#: src/lib/list_packages.sh:16
-#, sh-format
-msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr "Det gick inte att hämta paketuppdateringar (timeout för begäran)\\n"
-
-#: src/lib/list_packages.sh:32
-#, sh-format
-msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr ""
-"Det gick inte att hämta uppdateringar av AUR-paket (timeout för begäran)\\n"
-
-#: src/lib/list_packages.sh:45
-#, sh-format
-msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr ""
-"Det gick inte att hämta uppdateringar av Flatpak-paket (timeout för begäran)"
-"\\n"
-
-#: src/lib/list_packages.sh:115
+#: src/lib/list_packages.sh:40
 #, sh-format
 msgid "Packages:"
 msgstr "Paket:"
 
-#: src/lib/list_packages.sh:127
+#: src/lib/list_packages.sh:50
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-paket:"
 
-#: src/lib/list_packages.sh:139
+#: src/lib/list_packages.sh:60
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak paket:"
 
-#: src/lib/list_packages.sh:150
+#: src/lib/list_packages.sh:67
 #, sh-format
 msgid "No update available\\n"
 msgstr "Ingen uppdatering tillgänglig\\n"
 
-#: src/lib/list_packages.sh:162
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Fortsätt med uppdatering? [J/n]"
 
-#: src/lib/list_packages.sh:173
+#: src/lib/list_packages.sh:90
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Uppdatering har avbrutits\\n"
@@ -615,28 +612,28 @@ msgstr "Tar bort föräldralösa paket...\\n"
 msgid "No orphan package found\\n"
 msgstr "Inget föräldralöst paket hittades\\n"
 
-#: src/lib/packages_cache.sh:21
+#: src/lib/packages_cache.sh:19
 #, sh-format
-msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr ""
-"Cachade paket:\\nDet finns ett gammalt eller avinstallerat cachat paket\\n"
+msgid "Cached Packages:"
+msgstr "Cachade paket:"
 
-#: src/lib/packages_cache.sh:22
-#, sh-format
-msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Vill du ta bort det från cachen nu? [J/n]"
-
-#: src/lib/packages_cache.sh:24
+#: src/lib/packages_cache.sh:23
 #, sh-format
 msgid ""
-"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
+"Would you like to remove this old or uninstalled package from the cache now? "
+"[Y/n]"
 msgstr ""
-"Cachade paket:\\nDet finns gamla och/eller avinstallerade cachade paket\\n"
+"Vill du ta bort det här gamla eller avinstallerade paketet från cachen nu? "
+"[J/n]"
 
 #: src/lib/packages_cache.sh:25
 #, sh-format
-msgid "Would you like to remove them from the cache now? [Y/n]"
-msgstr "Vill du ta bort dem från cachen nu? [J/n]"
+msgid ""
+"Would you like to remove these old and / or uninstalled packages from the "
+"cache now? [Y/n]"
+msgstr ""
+"Vill du ta bort dessa gamla och / eller avinstallerade paket från cachen nu? "
+"[J/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
 #, sh-format
@@ -776,6 +773,11 @@ msgid ""
 msgstr ""
 "'${tray_desktop_file_autostart}' filen har skapats, ${_name} systemfält "
 "appleten startas automatiskt vid uppstart\\n"
+
+#: src/lib/tray.sh:46
+#, sh-format
+msgid "Systray applet binary not found"
+msgstr "Binärfil för systemfältsapplet hittades inte"
 
 #: src/lib/tray.sh:62
 #, sh-format

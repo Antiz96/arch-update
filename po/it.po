@@ -6,10 +6,10 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.4.1\n"
+"Project-Id-Version: Arch-Update 4.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-09-03 16:12+0200\n"
+"PO-Revision-Date: 2026-09-17 20:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -26,7 +26,7 @@ msgstr "Il tuo mirror primario ALHP non è aggiornato!\\n"
 #: src/lib/alhp_check.sh:20
 #, sh-format
 msgid "The following packages still have pending ALHP builds:"
-msgstr "I seguenti pacchetti hanno ancora delle build ALHP in attesa:"
+msgstr "I seguenti pacchetti hanno ancora delle build ALHP in sospeso:"
 
 #: src/lib/alhp_check.sh:23
 #, sh-format
@@ -37,6 +37,26 @@ msgstr "Errore durante il controllo ALHP:"
 #, sh-format
 msgid "Automated update checks have been enabled"
 msgstr "I controlli automatici degli aggiornamenti sono stati abilitati"
+
+#: src/lib/check_updates.sh:17
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+"Impossibile recuperare gli aggiornamenti dei pacchetti (richiesta scaduta)\\n"
+
+#: src/lib/check_updates.sh:34
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"Impossibile recuperare gli aggiornamenti dei pacchetti AUR (richiesta "
+"scaduta)\\n"
+
+#: src/lib/check_updates.sh:48
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"Impossibile recuperare gli aggiornamenti dei pacchetti Flatpak (richiesta "
+"scaduta)\\n"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -129,16 +149,16 @@ msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr ""
 "Si desidera rimuovere questi pacchetti Flatpak inutilizzati adesso? [s/N]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "S"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -177,20 +197,20 @@ msgstr "La rimozione non è stata effettuata\\n"
 msgid "No Flatpak unused package found\\n"
 msgstr "Nessun pacchetto Flatpak inutilizzato è stato trovato\\n"
 
-#: src/lib/full_upgrade.sh:13
+#: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Un'istanza di ${_name} è già avviata\\n"
 
-#: src/lib/full_upgrade.sh:14
+#: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "Procedere comunque? [s/N]"
 
-#: src/lib/full_upgrade.sh:23
+#: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "L'esecuzione è stata interrotta\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -224,7 +244,7 @@ msgstr ""
 #: src/lib/help.sh:10
 #, sh-format
 msgid "Run ${name} to perform the main 'update' function:"
-msgstr "Avvia ${name} per eseguire la funzione principale 'aggiornamento':"
+msgstr "Avvia ${name} per eseguire la funzione principale di 'aggiornamento':"
 
 #: src/lib/help.sh:11
 #, sh-format
@@ -232,8 +252,8 @@ msgid ""
 "Display the list of packages available for update, then ask for the user's "
 "confirmation to proceed with the installation."
 msgstr ""
-"Visualizza la lista di pacchetti disponibili per l'aggiornamento, poi "
-"chiedere all'utente la conferma di procedere con l'installazione."
+"Visualizza la lista di pacchetti disponibili per l'aggiornamento, poi chiede "
+"all'utente la conferma di procedere con l'installazione."
 
 #: src/lib/help.sh:12
 #, sh-format
@@ -252,9 +272,10 @@ msgid ""
 "a post upgrade restart and, if there are, offers to process them."
 msgstr ""
 "Dopo l'aggiornamento, controlla la presenza di pacchetti orfani & "
-"inutilizzati, pacchetti obsoleti in cache, file pacnew & pacsave, "
-"aggiornamento del kernel in attesa così come i servizi che richiedono un "
-"riavvio post aggiornamento e, se ci sono, offre di elaborarli."
+"inutilizzati, pacchetti obsoleti in cache, file pacnew & pacsave, di un "
+"eventuale aggiornamento del kernel in sospeso, nonché di servizi che "
+"richiedono un riavvio post aggiornamento e, se ci sono, offre la possibilità "
+"di elaborarli."
 
 #: src/lib/help.sh:15
 #, sh-format
@@ -278,7 +299,8 @@ msgstr ""
 #: src/lib/help.sh:17
 #, sh-format
 msgid "  -l, --list        Display the list of pending updates"
-msgstr "  -l, --list        Visualizza la lista degli aggiornamenti in attesa"
+msgstr ""
+"  -l, --list        Visualizza la lista degli aggiornamenti disponibili"
 
 #: src/lib/help.sh:18
 #, sh-format
@@ -317,7 +339,7 @@ msgid ""
 msgstr ""
 "  --gen-config      Crea un file di configurazione predefinito / di esempio "
 "'${name}.conf', opzionalmente è possibile passare il parametro '--force' per "
-"sovrascrivere qualsiasi file di configurazione '${name}.conf' esistente"
+"sovrascrivere un eventuale file di configurazione '${name}.conf' esistente"
 
 #: src/lib/help.sh:23
 #, sh-format
@@ -372,10 +394,8 @@ msgstr ""
 "il file di configurazione ${name}.conf, vedere la man page ${name}.conf(5)"
 
 #: src/lib/invalid_option.sh:7
-#, sh-format
-msgid ""
-"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
-"information"
+#, fuzzy, sh-format
+msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
 "${name}: opzione non valida -- '${option}'\\nEseguire '${name} --help' per "
 "ulteriori informazioni"
@@ -386,7 +406,7 @@ msgid ""
 "Reboot required:\\nThere's a pending kernel update on your system requiring "
 "a reboot to be applied\\n"
 msgstr ""
-"Riavvio richiesto:\\nÈ presente un aggiornamento del kernel in attesa nel "
+"Riavvio richiesto:\\nÈ presente un aggiornamento del kernel in sospeso nel "
 "tuo sistema che richiede un riavvio per essere applicato\\n"
 
 #: src/lib/kernel_reboot.sh:11
@@ -415,12 +435,12 @@ msgid ""
 "the pending kernel update\\n"
 msgstr ""
 "Il riavvio non è stato effettuato\\nSi prega di effettuare un riavvio per "
-"finalizzare l'aggiornamento del kernel in attesa\\n"
+"finalizzare l'aggiornamento del kernel in sospeso\\n"
 
 #: src/lib/kernel_reboot.sh:42
 #, sh-format
 msgid "No pending kernel update found\\n"
-msgstr "Nessun aggiornamento del kernel in attesa trovato\\n"
+msgstr "Nessun aggiornamento del kernel in sospeso trovato\\n"
 
 #: src/lib/list_news.sh:7
 #, sh-format
@@ -513,52 +533,32 @@ msgstr "Indirizzo:"
 msgid "Looking for updates...\\n"
 msgstr "Ricerca degli aggiornamenti in corso...\\n"
 
-#: src/lib/list_packages.sh:16
-#, sh-format
-msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr ""
-"Impossibile recuperare gli aggiornamenti dei pacchetti (richiesta scaduta)\\n"
-
-#: src/lib/list_packages.sh:32
-#, sh-format
-msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr ""
-"Impossibile recuperare gli aggiornamenti dei pacchetti AUR (richiesta "
-"scaduta)\\n"
-
-#: src/lib/list_packages.sh:45
-#, sh-format
-msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr ""
-"Impossibile recuperare gli aggiornamenti dei pacchetti Flatpak (richiesta "
-"scaduta)\\n"
-
-#: src/lib/list_packages.sh:115
+#: src/lib/list_packages.sh:40
 #, sh-format
 msgid "Packages:"
 msgstr "Pacchetti:"
 
-#: src/lib/list_packages.sh:127
+#: src/lib/list_packages.sh:50
 #, sh-format
 msgid "AUR Packages:"
 msgstr "Pacchetti AUR:"
 
-#: src/lib/list_packages.sh:139
+#: src/lib/list_packages.sh:60
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Pacchetti Flatpak:"
 
-#: src/lib/list_packages.sh:150
+#: src/lib/list_packages.sh:67
 #, sh-format
 msgid "No update available\\n"
 msgstr "Nessun aggiornamento disponibile\\n"
 
-#: src/lib/list_packages.sh:162
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Procedere con l'aggiornamento? [S/n]"
 
-#: src/lib/list_packages.sh:173
+#: src/lib/list_packages.sh:90
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "L'aggiornamento è stato interrotto\\n"
@@ -617,36 +617,30 @@ msgstr ""
 #: src/lib/orphan_packages.sh:23
 #, sh-format
 msgid "Removing Orphan Packages...\\n"
-msgstr "Rimozione dei Pacchetti orfani in corso...\\n"
+msgstr "Rimozione dei pacchetti orfani in corso...\\n"
 
 #: src/lib/orphan_packages.sh:41
 #, sh-format
 msgid "No orphan package found\\n"
 msgstr "Nessun pacchetto orfano trovato\\n"
 
-#: src/lib/packages_cache.sh:21
+#: src/lib/packages_cache.sh:19
 #, sh-format
-msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr ""
-"Pacchetti in cache:\\nÈ presente un pacchetto in cache obsoleto o "
-"disinstallato\\n"
+msgid "Cached Packages:"
+msgstr "Pacchetti in cache:"
 
-#: src/lib/packages_cache.sh:22
-#, sh-format
-msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Si desidera rimuoverlo dalla cache adesso? [S/n]"
-
-#: src/lib/packages_cache.sh:24
-#, sh-format
+#: src/lib/packages_cache.sh:23
+#, fuzzy, sh-format
 msgid ""
-"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
-msgstr ""
-"Pacchetti in cache:\\nSono presenti dei pacchetti in cache obsoleti e / o "
-"disinstallati\\n"
+"Would you like to remove this old or uninstalled package from the cache now? "
+"[Y/n]"
+msgstr "Si desidera rimuoverli dalla cache adesso? [S/n]"
 
 #: src/lib/packages_cache.sh:25
-#, sh-format
-msgid "Would you like to remove them from the cache now? [Y/n]"
+#, fuzzy, sh-format
+msgid ""
+"Would you like to remove these old and / or uninstalled packages from the "
+"cache now? [Y/n]"
 msgstr "Si desidera rimuoverli dalla cache adesso? [S/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
@@ -742,7 +736,7 @@ msgid ""
 "An error has occurred during the service(s) restart\\nPlease, verify the "
 "above service(s) status\\n"
 msgstr ""
-"Si è verificato un errore durante il riavvio di uno o più servizi\\nSi prega "
+"Si è verificato un errore durante il riavvio del/dei servizio/i\\nSi prega "
 "di verificare lo stato del/dei servizio/i di cui sopra\\n"
 
 #: src/lib/restart_services.sh:64
@@ -791,6 +785,11 @@ msgstr ""
 "Il file '${tray_desktop_file_autostart}' è stato creato, l'applet della "
 "barra delle applicazioni ${_name} verrà eseguito automaticamente all'avvio "
 "del sistema\\n"
+
+#: src/lib/tray.sh:46
+#, sh-format
+msgid "Systray applet binary not found"
+msgstr ""
 
 #: src/lib/tray.sh:62
 #, sh-format

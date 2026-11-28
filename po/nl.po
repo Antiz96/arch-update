@@ -6,7 +6,7 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.4.1\n"
+"Project-Id-Version: Arch-Update 4.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-09-17 10:12+0200\n"
@@ -37,6 +37,26 @@ msgstr "Fout tijdens ALHP-controle:"
 #, sh-format
 msgid "Automated update checks have been enabled"
 msgstr "Automatische updatecontrole is ingeschakeld"
+
+#: src/lib/check_updates.sh:17
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+"De pakketupdates kunnen niet worden opgehaald (het verzoek is verlopen)\\n"
+
+#: src/lib/check_updates.sh:34
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"De AUR-pakketupdates kunnen niet worden opgehaald (het verzoek is verlopen)"
+"\\n"
+
+#: src/lib/check_updates.sh:48
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"De Flatpak-pakketupdates kunnen niet worden opgehaald (het verzoek is "
+"verlopen)\\n"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -126,16 +146,16 @@ msgstr "Wil je dit ongebruikte Flatpak-pakket verwijderen? [j/N]"
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Wil je deze ongebruikte Flatpak-pakketten verwijderen? [j/N]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "J"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -174,17 +194,17 @@ msgstr "De pakketten zijn niet verwijderd\\n"
 msgid "No Flatpak unused package found\\n"
 msgstr "Er zijn geen ongebruikte Flatpak-pakketten aangetroffen\\n"
 
-#: src/lib/full_upgrade.sh:13
+#: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Er is al een ${_name}-proces actief.\\n"
 
-#: src/lib/full_upgrade.sh:14
+#: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
 msgstr "Wil je toch doorgaan? [j/N]"
 
-#: src/lib/full_upgrade.sh:23
+#: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr "Het uitvoeren is afgebroken\\n"
@@ -364,10 +384,8 @@ msgstr ""
 "pagina ‘${name}.conf(5)’."
 
 #: src/lib/invalid_option.sh:7
-#, sh-format
-msgid ""
-"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
-"information"
+#, fuzzy, sh-format
+msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
 "${name}: ongeldige optie -- ‘${option}’\\nBekijk voor meer informatie de "
 "hulptekst met ‘${name} --help’"
@@ -504,52 +522,32 @@ msgstr "Url:"
 msgid "Looking for updates...\\n"
 msgstr "Bezig met zoeken naar updates…\\n"
 
-#: src/lib/list_packages.sh:16
-#, sh-format
-msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr ""
-"De pakketupdates kunnen niet worden opgehaald (het verzoek is verlopen)\\n"
-
-#: src/lib/list_packages.sh:32
-#, sh-format
-msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr ""
-"De AUR-pakketupdates kunnen niet worden opgehaald (het verzoek is verlopen)"
-"\\n"
-
-#: src/lib/list_packages.sh:45
-#, sh-format
-msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr ""
-"De Flatpak-pakketupdates kunnen niet worden opgehaald (het verzoek is "
-"verlopen)\\n"
-
-#: src/lib/list_packages.sh:115
+#: src/lib/list_packages.sh:40
 #, sh-format
 msgid "Packages:"
 msgstr "Pakketten:"
 
-#: src/lib/list_packages.sh:127
+#: src/lib/list_packages.sh:50
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR-pakketten:"
 
-#: src/lib/list_packages.sh:139
+#: src/lib/list_packages.sh:60
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak-pakketten:"
 
-#: src/lib/list_packages.sh:150
+#: src/lib/list_packages.sh:67
 #, sh-format
 msgid "No update available\\n"
 msgstr "Er zijn geen updates beschikbaar\\n"
 
-#: src/lib/list_packages.sh:162
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Wil je het systeem bijwerken? [J/n]"
 
-#: src/lib/list_packages.sh:173
+#: src/lib/list_packages.sh:90
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Het bijwerken is afgebroken\\n"
@@ -615,27 +613,23 @@ msgstr "Bezig met verwijderen van onteigende pakketten…\\n"
 msgid "No orphan package found\\n"
 msgstr "Er zijn geen onteigende pakketten aangetroffen\\n"
 
-#: src/lib/packages_cache.sh:21
+#: src/lib/packages_cache.sh:19
 #, sh-format
-msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr ""
-"Pakketten in cache:\\nEr staat een oud of verwijderd pakket in de cache\\n"
+msgid "Cached Packages:"
+msgstr "Pakketten in cache:"
 
-#: src/lib/packages_cache.sh:22
-#, sh-format
-msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Wil je dit pakket uit de cache verwijderen? [J/n]"
-
-#: src/lib/packages_cache.sh:24
-#, sh-format
+#: src/lib/packages_cache.sh:23
+#, fuzzy, sh-format
 msgid ""
-"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
-msgstr ""
-"Pakketten in cache:\\nEr staan oude of verwijderde pakketten in de cache\\n"
+"Would you like to remove this old or uninstalled package from the cache now? "
+"[Y/n]"
+msgstr "Wil je deze pakketten uit de cache verwijderen? [J/n]"
 
 #: src/lib/packages_cache.sh:25
-#, sh-format
-msgid "Would you like to remove them from the cache now? [Y/n]"
+#, fuzzy, sh-format
+msgid ""
+"Would you like to remove these old and / or uninstalled packages from the "
+"cache now? [Y/n]"
 msgstr "Wil je deze pakketten uit de cache verwijderen? [J/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
@@ -775,6 +769,11 @@ msgstr ""
 "Het ‘${tray_desktop_file_autostart}’-bestand is aangemaakt. Het "
 "systeemvakpictogram van ${_name} wordt na het opstarten van de computer "
 "automatisch getoond.\\n"
+
+#: src/lib/tray.sh:46
+#, sh-format
+msgid "Systray applet binary not found"
+msgstr ""
 
 #: src/lib/tray.sh:62
 #, sh-format

@@ -7,10 +7,10 @@
 # SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.4.1\n"
+"Project-Id-Version: Arch-Update 4.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
-"PO-Revision-Date: 2026-07-28 17:49+0900\n"
+"PO-Revision-Date: 2026-09-17 20:11+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: src/lib/alhp_check.sh:14
 #, sh-format
@@ -39,6 +39,27 @@ msgstr "ALHP の確認中にエラーが発生しました。"
 #, sh-format
 msgid "Automated update checks have been enabled"
 msgstr "アップデートの自動確認が有効になりました"
+
+#: src/lib/check_updates.sh:17
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+"パッケージのアップデートの取得に失敗しました (リクエストがタイムアウトしまし"
+"た)\\n"
+
+#: src/lib/check_updates.sh:34
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"AUR パッケージのアップデートの取得に失敗しました (リクエストがタイムアウトし"
+"ました)\\n"
+
+#: src/lib/check_updates.sh:48
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"Flatpak パッケージのアップデートの取得に失敗しました (リクエストがタイムアウ"
+"トしました)\\n"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -124,16 +145,16 @@ msgstr "この Flatpak 未使用パッケージを今すぐ削除しますか？
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "これらの Flatpak 未使用パッケージを今すぐ削除しますか？ [y/N]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -170,20 +191,20 @@ msgstr "削除は実行されませんでした\\n"
 msgid "No Flatpak unused package found\\n"
 msgstr "Flatpak 未使用パッケージはありません\\n"
 
-#: src/lib/full_upgrade.sh:13
+#: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "${_name} はすでに起動しています\\n"
 
-#: src/lib/full_upgrade.sh:14
+#: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
-msgstr ""
+msgstr "無視して実行しますか？[y/N]"
 
-#: src/lib/full_upgrade.sh:23
+#: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
-msgstr ""
+msgstr "実行を中止しました\\n"
 
 #: src/lib/gen-config.sh:19
 #, sh-format
@@ -357,10 +378,8 @@ msgstr ""
 "できます。詳細は ${name}.conf(5) の man ページを参照してください。"
 
 #: src/lib/invalid_option.sh:7
-#, sh-format
-msgid ""
-"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
-"information"
+#, fuzzy, sh-format
+msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
 "${name}: 無効なオプションです (${option})\\n詳しくは '${name} --help' を実行"
 "してください"
@@ -494,53 +513,32 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "アップデートを確認中...\\n"
 
-#: src/lib/list_packages.sh:16
-#, sh-format
-msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr ""
-"パッケージのアップデートの取得に失敗しました (リクエストがタイムアウトしまし"
-"た)\\n"
-
-#: src/lib/list_packages.sh:32
-#, sh-format
-msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr ""
-"AUR パッケージのアップデートの取得に失敗しました (リクエストがタイムアウトし"
-"ました)\\n"
-
-#: src/lib/list_packages.sh:45
-#, sh-format
-msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr ""
-"Flatpak パッケージのアップデートの取得に失敗しました (リクエストがタイムアウ"
-"トしました)\\n"
-
-#: src/lib/list_packages.sh:115
+#: src/lib/list_packages.sh:40
 #, sh-format
 msgid "Packages:"
 msgstr "パッケージ:"
 
-#: src/lib/list_packages.sh:127
+#: src/lib/list_packages.sh:50
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR パッケージ:"
 
-#: src/lib/list_packages.sh:139
+#: src/lib/list_packages.sh:60
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak パッケージ:"
 
-#: src/lib/list_packages.sh:150
+#: src/lib/list_packages.sh:67
 #, sh-format
 msgid "No update available\\n"
 msgstr "利用可能なアップデートはありません\\n"
 
-#: src/lib/list_packages.sh:162
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "アップデートを行いますか？ [Y/n]"
 
-#: src/lib/list_packages.sh:173
+#: src/lib/list_packages.sh:90
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "アップデートを中止しました\\n"
@@ -606,29 +604,23 @@ msgstr "孤立パッケージを削除中...\\n"
 msgid "No orphan package found\\n"
 msgstr "孤立パッケージはありません\\n"
 
-#: src/lib/packages_cache.sh:21
+#: src/lib/packages_cache.sh:19
 #, sh-format
-msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr ""
-"キャッシュパッケージ:\\n古い、またはアンインストール済みのキャッシュパッケー"
-"ジがあります\\n"
+msgid "Cached Packages:"
+msgstr "キャッシュパッケージ:"
 
-#: src/lib/packages_cache.sh:22
-#, sh-format
-msgid "Would you like to remove it from the cache now? [Y/n]"
+#: src/lib/packages_cache.sh:23
+#, fuzzy, sh-format
+msgid ""
+"Would you like to remove this old or uninstalled package from the cache now? "
+"[Y/n]"
 msgstr "今すぐキャッシュから削除しますか？ [Y/n]"
 
-#: src/lib/packages_cache.sh:24
-#, sh-format
-msgid ""
-"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
-msgstr ""
-"キャッシュパッケージ:\\n古い、またはアンインストール済みのキャッシュパッケー"
-"ジが複数あります\\n"
-
 #: src/lib/packages_cache.sh:25
-#, sh-format
-msgid "Would you like to remove them from the cache now? [Y/n]"
+#, fuzzy, sh-format
+msgid ""
+"Would you like to remove these old and / or uninstalled packages from the "
+"cache now? [Y/n]"
 msgstr "今すぐキャッシュから削除しますか？ [Y/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
@@ -766,6 +758,11 @@ msgid ""
 msgstr ""
 "\"${tray_desktop_file_autostart}\" ファイルを作成しました。ブート後に "
 "${_name} のシステムトレイアプレットを自動で開始します\\n"
+
+#: src/lib/tray.sh:46
+#, sh-format
+msgid "Systray applet binary not found"
+msgstr ""
 
 #: src/lib/tray.sh:62
 #, sh-format

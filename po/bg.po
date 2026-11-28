@@ -6,7 +6,7 @@
 # Momchil Nikolov momchil.nikolov@outlook.com, 2026
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 4.4.1\n"
+"Project-Id-Version: Arch-Update 4.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: 2026-07-19 00:00+0000\n"
@@ -35,6 +35,27 @@ msgstr "Грешка при проверка на ALHP:"
 #, sh-format
 msgid "Automated update checks have been enabled"
 msgstr "Автоматичните проверки за актуализации са включени"
+
+#: src/lib/check_updates.sh:17
+#, sh-format
+msgid "Unable to retrieve Packages updates (request timeout)\\n"
+msgstr ""
+"Не може да бъдат извлечени актуализациите на пакетите (изтичане на заявката)"
+"\\n"
+
+#: src/lib/check_updates.sh:34
+#, sh-format
+msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
+msgstr ""
+"Не може да бъдат извлечени актуализациите на AUR пакетите (изтичане на "
+"заявката)\\n"
+
+#: src/lib/check_updates.sh:48
+#, sh-format
+msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
+msgstr ""
+"Не може да бъдат извлечени актуализациите на Flatpak пакетите (изтичане на "
+"заявката)\\n"
 
 #: src/lib/common.sh:96
 #, sh-format
@@ -124,16 +145,16 @@ msgstr "Желаете ли да премахнете този неизполз�
 msgid "Would you like to remove these Flatpak unused packages now? [y/N]"
 msgstr "Желаете ли да премахнете тези неизползвани Flatpak пакети сега? [y/N]"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
 msgid "Y"
 msgstr "Y"
 
-#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:18
-#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:166
+#: src/lib/flatpak_unused_packages.sh:21 src/lib/full_upgrade.sh:19
+#: src/lib/kernel_reboot.sh:15 src/lib/list_packages.sh:83
 #: src/lib/orphan_packages.sh:21 src/lib/packages_cache.sh:30
 #: src/lib/pacnew_files.sh:21
 #, sh-format
@@ -171,17 +192,17 @@ msgstr "Премахването не е извършено\\n"
 msgid "No Flatpak unused package found\\n"
 msgstr "Няма намерени неизползвани Flatpak пакети\\n"
 
-#: src/lib/full_upgrade.sh:13
+#: src/lib/full_upgrade.sh:14
 #, sh-format
 msgid "There's already a running instance of ${_name}\\n"
 msgstr "Вече има работеща инстанция на ${_name}\\n"
 
-#: src/lib/full_upgrade.sh:14
+#: src/lib/full_upgrade.sh:15
 #, sh-format
 msgid "Proceed anyway? [y/N]"
 msgstr ""
 
-#: src/lib/full_upgrade.sh:23
+#: src/lib/full_upgrade.sh:24
 #, sh-format
 msgid "The execution has been aborted\\n"
 msgstr ""
@@ -361,10 +382,8 @@ msgstr ""
 "конфигурационния файл ${name}.conf, вижте ръководството ${name}.conf(5)."
 
 #: src/lib/invalid_option.sh:7
-#, sh-format
-msgid ""
-"${name}: invalid option -- '${option}'\\nTry '${name} --help' for more "
-"information"
+#, fuzzy, sh-format
+msgid "Invalid option: ${option}\\nTry '${name} --help' for more information"
 msgstr ""
 "${name}: невалидна опция -- '${option}'\\nОпитайте '${name} --help' за "
 "повече информация"
@@ -500,53 +519,32 @@ msgstr "URL:"
 msgid "Looking for updates...\\n"
 msgstr "Търсене на актуализации...\\n"
 
-#: src/lib/list_packages.sh:16
-#, sh-format
-msgid "Unable to retrieve Packages updates (request timeout)\\n"
-msgstr ""
-"Не може да бъдат извлечени актуализациите на пакетите (изтичане на заявката)"
-"\\n"
-
-#: src/lib/list_packages.sh:32
-#, sh-format
-msgid "Unable to retrieve AUR Packages updates (request timeout)\\n"
-msgstr ""
-"Не може да бъдат извлечени актуализациите на AUR пакетите (изтичане на "
-"заявката)\\n"
-
-#: src/lib/list_packages.sh:45
-#, sh-format
-msgid "Unable to retrieve Flatpak packages updates (request timeout)\\n"
-msgstr ""
-"Не може да бъдат извлечени актуализациите на Flatpak пакетите (изтичане на "
-"заявката)\\n"
-
-#: src/lib/list_packages.sh:115
+#: src/lib/list_packages.sh:40
 #, sh-format
 msgid "Packages:"
 msgstr "Пакети:"
 
-#: src/lib/list_packages.sh:127
+#: src/lib/list_packages.sh:50
 #, sh-format
 msgid "AUR Packages:"
 msgstr "AUR пакети:"
 
-#: src/lib/list_packages.sh:139
+#: src/lib/list_packages.sh:60
 #, sh-format
 msgid "Flatpak Packages:"
 msgstr "Flatpak пакети:"
 
-#: src/lib/list_packages.sh:150
+#: src/lib/list_packages.sh:67
 #, sh-format
 msgid "No update available\\n"
 msgstr "Няма налични актуализации\\n"
 
-#: src/lib/list_packages.sh:162
+#: src/lib/list_packages.sh:79
 #, sh-format
 msgid "Proceed with update? [Y/n]"
 msgstr "Продължаване с актуализацията? [Y/n]"
 
-#: src/lib/list_packages.sh:173
+#: src/lib/list_packages.sh:90
 #, sh-format
 msgid "The update has been aborted\\n"
 msgstr "Актуализацията е прекратена\\n"
@@ -612,25 +610,23 @@ msgstr "Премахване на изоставените пакети...\\n"
 msgid "No orphan package found\\n"
 msgstr "Няма намерени изоставени пакети\\n"
 
-#: src/lib/packages_cache.sh:21
+#: src/lib/packages_cache.sh:19
 #, sh-format
-msgid "Cached Packages:\\nThere's an old or uninstalled cached package\\n"
-msgstr "Кеширани пакети:\\nИма стар или деинсталиран кеширан пакет\\n"
+msgid "Cached Packages:"
+msgstr "Кеширани пакети:"
 
-#: src/lib/packages_cache.sh:22
-#, sh-format
-msgid "Would you like to remove it from the cache now? [Y/n]"
-msgstr "Желаете ли да го премахнете от кеша сега? [Y/n]"
-
-#: src/lib/packages_cache.sh:24
-#, sh-format
+#: src/lib/packages_cache.sh:23
+#, fuzzy, sh-format
 msgid ""
-"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
-msgstr "Кеширани пакети:\\nИма стари и/или деинсталирани кеширани пакети\\n"
+"Would you like to remove this old or uninstalled package from the cache now? "
+"[Y/n]"
+msgstr "Желаете ли да ги премахнете от кеша сега? [Y/n]"
 
 #: src/lib/packages_cache.sh:25
-#, sh-format
-msgid "Would you like to remove them from the cache now? [Y/n]"
+#, fuzzy, sh-format
+msgid ""
+"Would you like to remove these old and / or uninstalled packages from the "
+"cache now? [Y/n]"
 msgstr "Желаете ли да ги премахнете от кеша сега? [Y/n]"
 
 #: src/lib/packages_cache.sh:33 src/lib/packages_cache.sh:54
@@ -769,6 +765,11 @@ msgid ""
 msgstr ""
 "Файлът '${tray_desktop_file_autostart}' е създаден, аплетът в системния трей "
 "${_name} ще се стартира автоматично при зареждане\\n"
+
+#: src/lib/tray.sh:46
+#, sh-format
+msgid "Systray applet binary not found"
+msgstr ""
 
 #: src/lib/tray.sh:62
 #, sh-format
